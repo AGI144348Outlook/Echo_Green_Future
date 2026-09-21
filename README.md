@@ -20,8 +20,8 @@ This is original research. It treads its own path.
 ## Status
 
 This project is under active development. The work is real and the
-architecture is complete through A-158. This repository is currently private.
-Public release will follow when the infrastructure and licensing are ready.
+architecture is complete through A-158. This repository is public. The infrastructure and licensing foundation is now in place,
+and development continues openly.
 
 **Do not attempt to use code from this repository in production without
 a commercial license. See LICENSE for terms.**
