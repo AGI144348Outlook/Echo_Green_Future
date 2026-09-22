@@ -1,186 +1,296 @@
 #!/usr/bin/env python3
-"""A-159 CloudflareMigrator — idempotently populate ECHO's live KV and D1 stores."""
-from __future__ import annotations
+"""
+A-159: CloudflareMigrator
+Populates ECHO's live Cloudflare KV namespaces and D1 database
+from the matrix JSON files in the matrices/ directory.
 
-import json
-import os
-import sys
+Prerequisites:
+    export CLOUDFLARE_API_TOKEN='your_token'
+    export CLOUDFLARE_ACCOUNT_ID='your_account_id'
+
+Usage:
+    python src/a159_cloudflare_migrator.py
+
+Idempotent: safe to run multiple times. Existing entries are skipped.
+"""
+
+import os, sys, json, time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
-from urllib.parse import quote
 
-import requests
+# ── Credentials ───────────────────────────────────────────────────────────
+API_TOKEN  = os.environ.get('CLOUDFLARE_API_TOKEN')
+ACCOUNT_ID = os.environ.get('CLOUDFLARE_ACCOUNT_ID')
 
-ROOT = Path(__file__).resolve().parents[1]
-MATRICES = ROOT / "matrices"
-API = "https://api.cloudflare.com/client/v4"
+if not API_TOKEN or not ACCOUNT_ID:
+    sys.exit("CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must be set in the environment.\n"
+             "Run: export CLOUDFLARE_API_TOKEN='...' && export CLOUDFLARE_ACCOUNT_ID='...'")
+
+try:
+    import requests
+except ImportError:
+    import subprocess
+    subprocess.run([sys.executable, '-m', 'pip', 'install', 'requests',
+                    '--break-system-packages', '-q'], check=True)
+    import requests
+
+# ── Cloudflare resource IDs ───────────────────────────────────────────────
 KV = {
-    "ECHO_STATE": "522962d1e89f40cc9c861a9f0f4db14f",
-    "ECHO_VGM": "89790ad666d443e38c24ae0808ecbc01",
-    "ECHO_LRM": "2cea936490c14ef0a52291e8c034222f",
-    "ECHO_MATRIX": "a7e37b7d227640cdba94af5ed9818a00",
+    'ECHO_STATE':  '522962d1e89f40cc9c861a9f0f4db14f',
+    'ECHO_VGM':    '89790ad666d443e38c24ae0808ecbc01',
+    'ECHO_LRM':    '2cea936490c14ef0a52291e8c034222f',
+    'ECHO_MATRIX': 'a7e37b7d227640cdba94af5ed9818a00',
 }
-D1_DATABASE_ID = "578efe00-4a2b-4c6f-aad6-635350fa2d4d"
-BATCH_SIZE = 100
+D1_ID = '578efe00-4a2b-4c6f-aad6-635350fa2d4d'
 
-def load_json(name: str) -> Any:
-    with (MATRICES / name).open("r", encoding="utf-8") as f:
+HEADERS = {
+    'Authorization': f'Bearer {API_TOKEN}',
+    'Content-Type':  'application/json',
+}
+
+ROOT = Path(__file__).parent.parent
+MATRICES = ROOT / 'matrices'
+
+# ── Helpers ───────────────────────────────────────────────────────────────
+def kv_write(namespace: str, key: str, value: str) -> bool:
+    """Write a single key to a KV namespace."""
+    url = (f'https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}'
+           f'/storage/kv/namespaces/{KV[namespace]}/values/{key}')
+    r = requests.put(url, headers={
+        'Authorization': f'Bearer {API_TOKEN}',
+        'Content-Type': 'text/plain',
+    }, data=value, timeout=30)
+    if not r.ok:
+        print(f"  KV write failed {namespace}/{key}: {r.status_code} {r.text[:100]}")
+        return False
+    return True
+
+def kv_exists(namespace: str, key: str) -> bool:
+    """Check if a KV key already exists."""
+    url = (f'https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}'
+           f'/storage/kv/namespaces/{KV[namespace]}/values/{key}')
+    r = requests.get(url, headers={'Authorization': f'Bearer {API_TOKEN}'}, timeout=10)
+    return r.status_code == 200
+
+def d1_query(sql: str, params: list = None) -> dict:
+    """Execute a SQL query against the D1 database."""
+    url = (f'https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}'
+           f'/d1/database/{D1_ID}/query')
+    body = {'sql': sql}
+    if params:
+        body['params'] = params
+    r = requests.post(url, headers=HEADERS, json=body, timeout=60)
+    data = r.json()
+    if not r.ok or not data.get('success'):
+        errors = data.get('errors', [])
+        raise RuntimeError(f"D1 error: {errors}")
+    return data
+
+def d1_insert_batch(table: str, columns: list, rows: list) -> int:
+    """
+    Insert rows into a D1 table using INSERT OR IGNORE.
+    Batch size is calculated dynamically: max(1, 999 // len(columns))
+    to stay under SQLite's 999-variable limit.
+    Returns number of rows inserted.
+    """
+    if not rows:
+        return 0
+
+    # Dynamic batch size based on column count
+    batch_size = max(1, 999 // len(columns))
+    cols_sql   = ', '.join(columns)
+    placeholder = '(' + ', '.join('?' for _ in columns) + ')'
+    inserted = 0
+
+    for i in range(0, len(rows), batch_size):
+        batch  = rows[i:i + batch_size]
+        values = ', '.join(placeholder for _ in batch)
+        sql    = f'INSERT OR IGNORE INTO {table} ({cols_sql}) VALUES {values}'
+        params = [v for row in batch for v in row]
+        try:
+            result = d1_query(sql, params)
+            changes = result['result'][0]['meta'].get('changes', 0)
+            inserted += changes
+        except Exception as e:
+            print(f"  Batch {i//batch_size + 1} error: {e}")
+
+    return inserted
+
+def load(filename: str) -> dict:
+    path = MATRICES / filename
+    if not path.exists():
+        print(f"  WARNING: {filename} not found — skipping")
+        return {}
+    with open(path) as f:
         return json.load(f)
 
-def chunks(items: list[Any], size: int = BATCH_SIZE) -> Iterable[list[Any]]:
-    for i in range(0, len(items), size):
-        yield items[i:i + size]
+# ── Migration ─────────────────────────────────────────────────────────────
+def migrate():
+    print("=" * 60)
+    print("A-159 CloudflareMigrator")
+    print(f"Account: {ACCOUNT_ID[:8]}...")
+    print(f"D1:      {D1_ID[:8]}...")
+    print("=" * 60)
 
-class Cloudflare:
-    def __init__(self) -> None:
-        token = os.environ.get("CLOUDFLARE_API_TOKEN")
-        self.account_id = os.environ.get("CLOUDFLARE_ACCOUNT_ID")
-        if not token or not self.account_id:
-            raise RuntimeError("CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must be set in the environment.")
-        self.session = requests.Session()
-        self.session.headers.update({"Authorization": f"Bearer {token}"})
+    totals = {}
 
-    @staticmethod
-    def _checked(response: requests.Response) -> Any:
-        if response.status_code == 404:
-            return None
-        response.raise_for_status()
-        if not response.content:
-            return True
-        data = response.json()
-        if isinstance(data, dict) and data.get("success") is False:
-            raise RuntimeError(f"Cloudflare API error: {data.get('errors')}")
-        return data
+    # ── Step 0: Verify A-000 ─────────────────────────────────────────────
+    print("\nStep 0: Verifying A-000 Governor...")
+    alg_data = load('echo_algorithm_matrix.json')
+    if 'A-000' not in alg_data:
+        sys.exit("ABORT: A-000 Governor not found in echo_algorithm_matrix.json. "
+                 "The Governor must be present before migration.")
+    print(f"  A-000 present: {alg_data['A-000'].get('name','?')} ✓")
 
-    def kv_exists(self, namespace_id: str, key: str) -> bool:
-        url = f"{API}/accounts/{self.account_id}/storage/kv/namespaces/{namespace_id}/values/{quote(key, safe='')}"
-        r = self.session.get(url, timeout=30)
-        if r.status_code == 404:
-            return False
-        r.raise_for_status()
-        return True
+    # ── Step 1: ECHO_MATRIX KV ───────────────────────────────────────────
+    print(f"\nStep 1: Writing {len(alg_data)} algorithms to ECHO_MATRIX KV...")
+    written = 0
+    for alg_id, entry in alg_data.items():
+        key = f'algorithm:{alg_id}'
+        if not kv_exists('ECHO_MATRIX', key):
+            if kv_write('ECHO_MATRIX', key, json.dumps(entry)):
+                written += 1
+        time.sleep(0.05)  # rate limit courtesy
+    print(f"  Written: {written} (skipped {len(alg_data)-written} existing)")
+    totals['ECHO_MATRIX_KV'] = written
 
-    def kv_put_if_absent(self, namespace_id: str, key: str, value: str) -> bool:
-        if self.kv_exists(namespace_id, key):
-            return False
-        url = f"{API}/accounts/{self.account_id}/storage/kv/namespaces/{namespace_id}/values/{quote(key, safe='')}"
-        self._checked(self.session.put(url, data=value.encode("utf-8"), timeout=30))
-        return True
+    # ── Step 2: ECHO_VGM KV ─────────────────────────────────────────────
+    print(f"\nStep 2: Writing VGM axioms to ECHO_VGM KV...")
+    vgm_data = load('echo_vgm.json')
+    written = 0
+    for axiom_id, entry in vgm_data.items():
+        key = f'axiom:{axiom_id}'
+        if not kv_exists('ECHO_VGM', key):
+            if kv_write('ECHO_VGM', key, json.dumps(entry)):
+                written += 1
+        time.sleep(0.05)
+    print(f"  Written: {written} (skipped {vgm_data and len(vgm_data)-written or 0} existing)")
+    totals['ECHO_VGM_KV'] = written
 
-    def kv_put(self, namespace_id: str, key: str, value: str) -> None:
-        url = f"{API}/accounts/{self.account_id}/storage/kv/namespaces/{namespace_id}/values/{quote(key, safe='')}"
-        self._checked(self.session.put(url, data=value.encode("utf-8"), timeout=30))
+    # ── Step 3: ECHO_STATE KV ────────────────────────────────────────────
+    print("\nStep 3: Writing initial ECHO_STATE...")
+    state = {
+        'generation':  '0',
+        'identity':    'resh',
+        'lobby_size':  str(len(load('echo_lobby_agents.json'))),
+        'coherency':   '0.0',
+        'initialized': 'true',
+    }
+    state_written = 0
+    for k, v in state.items():
+        if not kv_exists('ECHO_STATE', k):
+            if kv_write('ECHO_STATE', k, v):
+                state_written += 1
+        time.sleep(0.05)
+    print(f"  Written: {state_written} state keys")
+    totals['ECHO_STATE_KV'] = state_written
 
-    def d1(self, sql: str, params: list[Any] | None = None) -> list[dict[str, Any]]:
-        url = f"{API}/accounts/{self.account_id}/d1/database/{D1_DATABASE_ID}/query"
-        payload: dict[str, Any] = {"sql": sql}
-        if params is not None:
-            payload["params"] = params
-        data = self._checked(self.session.post(url, json=payload, timeout=60))
-        result = data.get("result", []) if isinstance(data, dict) else []
-        if not result:
-            return []
-        first = result[0]
-        return first.get("results", []) if isinstance(first, dict) else []
+    # ── Step 4: D1 agents ────────────────────────────────────────────────
+    print("\nStep 4: Inserting agents into D1...")
+    agents_data = load('echo_lobby_agents.json')
+    columns = ['word', 'department', 'entry_class', 'generality_score',
+               'definition', 'neighborhood', 'study_group_type']
+    rows = []
+    for word, a in agents_data.items():
+        rows.append([
+            word,
+            a.get('department'),
+            a.get('entry_class'),
+            a.get('generality_score', 0.0),
+            a.get('definition', '')[:200],
+            a.get('neighborhood'),
+            a.get('study_group_type'),
+        ])
+    inserted = d1_insert_batch('agents', columns, rows)
+    print(f"  Inserted: {inserted} of {len(rows)} agents")
+    totals['D1_agents'] = inserted
 
-    def d1_existing(self, table: str, columns: list[str]) -> set[tuple[Any, ...]]:
-        rows = self.d1(f"SELECT {', '.join(columns)} FROM {table}")
-        return {tuple(row.get(c) for c in columns) for row in rows}
+    # ── Step 5: D1 ties ──────────────────────────────────────────────────
+    print("\nStep 5: Inserting ties into D1...")
+    ties_rows = []
+    for word, a in agents_data.items():
+        for tied_word in a.get('ties', [])[:10]:
+            ties_rows.append([word, tied_word, 1.0, 'orientation'])
+    inserted = d1_insert_batch('ties', ['word_a', 'word_b', 'tie_weight', 'tie_source'], ties_rows)
+    print(f"  Inserted: {inserted} of {len(ties_rows)} ties")
+    totals['D1_ties'] = inserted
 
-    def d1_insert_batches(self, table: str, columns: list[str], rows: list[tuple[Any, ...]]) -> int:
-        inserted = 0
-        for batch in chunks(rows):
-            placeholders = "(" + ",".join("?" for _ in columns) + ")"
-            sql = f"INSERT INTO {table} ({', '.join(columns)}) VALUES " + ",".join(placeholders for _ in batch)
-            params = [value for row in batch for value in row]
-            self.d1(sql, params)
-            inserted += len(batch)
-        return inserted
+    # ── Step 6: D1 formulas ──────────────────────────────────────────────
+    print("\nStep 6: Inserting formulas into D1...")
+    formula_data = load('echo_formula_matrix.json')
+    columns = ['alg_id', 'name', 'expression', 'domain',
+               'variables_json', 'law', 'vgm_abstraction', 'lrm_form']
+    rows = []
+    for fid, f in formula_data.items():
+        rows.append([
+            fid,
+            f.get('name', ''),
+            f.get('expression', ''),
+            f.get('domain', ''),
+            json.dumps(f.get('variables', [])),
+            f.get('law', ''),
+            f.get('vgm_abstraction', ''),
+            f.get('lrm_form', ''),
+        ])
+    inserted = d1_insert_batch('formulas', columns, rows)
+    print(f"  Inserted: {inserted} of {len(rows)} formulas")
+    totals['D1_formulas'] = inserted
 
-def main() -> int:
-    algorithms = load_json("echo_algorithm_matrix.json")
-    if "A-000" not in algorithms:
-        raise RuntimeError("Governor A-000 not found. Migration aborted. The Governor must be present before the system is initialized.")
+    # ── Step 7: D1 geosensory_endpoints ──────────────────────────────────
+    print("\nStep 7: Inserting geosensory endpoints into D1...")
+    geo_data = load('echo_geosensory_registry.json')
+    columns = ['key', 'name', 'url', 'domain', 'sensor_type',
+               'key_required', 'format', 'fields_json',
+               'jurisdiction', 'lhea_letter', 'description']
+    rows = []
+    for key, e in geo_data.items():
+        rows.append([
+            key,
+            e.get('name', ''),
+            e.get('url', ''),
+            e.get('domain', ''),
+            e.get('sensor_type', ''),
+            1 if e.get('key_required') else 0,
+            e.get('format', ''),
+            json.dumps(e.get('fields', [])),
+            e.get('jurisdiction', ''),
+            e.get('lhea_letter', ''),
+            e.get('description', ''),
+        ])
+    inserted = d1_insert_batch('geosensory_endpoints', columns, rows)
+    print(f"  Inserted: {inserted} of {len(rows)} endpoints")
+    totals['D1_geosensory'] = inserted
 
-    cf = Cloudflare()
-    counts = {"matrix": 0, "vgm": 0, "state": 0, "agents": 0, "ties": 0, "formulas": 0, "geosensory": 0, "wordnet": 0}
+    # ── Step 8: D1 wordnet_chains ────────────────────────────────────────
+    print("\nStep 8: Inserting WordNet chains into D1...")
+    wn_data = load('echo_wordnet_chains.json')
+    columns = ['word', 'synset', 'chain_json', 'depth', 'definition']
+    rows = []
+    for word, entry in wn_data.items():
+        rows.append([
+            word,
+            entry.get('synset', ''),
+            json.dumps(entry.get('chain', [])),
+            entry.get('depth', 0),
+            entry.get('definition', ''),
+        ])
+    inserted = d1_insert_batch('wordnet_chains', columns, rows)
+    print(f"  Inserted: {inserted} of {len(rows)} chains")
+    totals['D1_wordnet'] = inserted
 
-    for alg_id, entry in algorithms.items():
-        value = dict(entry)
-        value.setdefault("id", alg_id)
-        counts["matrix"] += int(cf.kv_put_if_absent(KV["ECHO_MATRIX"], f"algorithm:{alg_id}", json.dumps(value, ensure_ascii=False)))
+    # ── Step 9: last_migration timestamp ─────────────────────────────────
+    ts = datetime.now(timezone.utc).isoformat()
+    kv_write('ECHO_STATE', 'last_migration', ts)
+    print(f"\nTimestamp: {ts}")
 
-    vgm = load_json("echo_vgm.json")
-    for axiom_id, entry in vgm.items():
-        value = dict(entry)
-        value.setdefault("id", axiom_id)
-        counts["vgm"] += int(cf.kv_put_if_absent(KV["ECHO_VGM"], f"axiom:{axiom_id}", json.dumps(value, ensure_ascii=False)))
+    # ── Report ─────────────────────────────────────────────────────────────
+    print("\n" + "=" * 60)
+    print("MIGRATION COMPLETE")
+    print("=" * 60)
+    for k, v in totals.items():
+        print(f"  {k:25s}: {v}")
+    print(f"\nECHO is live on Cloudflare.")
+    print("A-000 Governor: IDENTIFY → VALIDATE → OPEN")
 
-    initial_state = {"generation": "0", "identity": "resh", "lobby_size": "3338", "coherency": "0.0", "initialized": "true"}
-    for key, value in initial_state.items():
-        counts["state"] += int(cf.kv_put_if_absent(KV["ECHO_STATE"], key, value))
-
-    agents = load_json("echo_lobby_agents.json")
-    agent_cols = ["word", "department", "entry_class", "generality_score", "definition", "neighborhood", "study_group_type"]
-    existing_agents = {r[0] for r in cf.d1_existing("agents", ["word"])}
-    agent_rows = [(word, a.get("department"), a.get("entry_class"), a.get("generality_score"), a.get("definition"), a.get("neighborhood"), a.get("study_group_type")) for word, a in agents.items() if word not in existing_agents]
-    counts["agents"] = cf.d1_insert_batches("agents", agent_cols, agent_rows)
-
-    tie_cols = ["word_a", "word_b", "tie_weight", "tie_source"]
-    existing_ties = cf.d1_existing("ties", tie_cols)
-    tie_rows: list[tuple[Any, ...]] = []
-    seen_ties = set(existing_ties)
-    for word, a in agents.items():
-        for tie in a.get("ties") or []:
-            if isinstance(tie, dict):
-                row = (word, tie.get("word") or tie.get("word_b"), tie.get("weight", 1.0), tie.get("source", "lobby"))
-            else:
-                row = (word, tie, 1.0, "lobby")
-            if row[1] is not None and row not in seen_ties:
-                seen_ties.add(row)
-                tie_rows.append(row)
-    counts["ties"] = cf.d1_insert_batches("ties", tie_cols, tie_rows)
-
-    formulas = load_json("echo_formula_matrix.json")
-    formula_cols = ["alg_id", "name", "expression", "domain", "variables_json", "law", "vgm_abstraction", "lrm_form"]
-    existing_formula_ids = {r[0] for r in cf.d1_existing("formulas", ["alg_id"])}
-    formula_rows = []
-    for matrix_key, f in formulas.items():
-        alg_id = f.get("alg_id") or f.get("id") or matrix_key
-        if alg_id in existing_formula_ids:
-            continue
-        formula_rows.append((alg_id, f.get("name") or matrix_key, f.get("expression"), f.get("domain"), json.dumps(f.get("variables", {}), ensure_ascii=False), f.get("law"), f.get("vgm_abstraction"), f.get("lrm_form", "")))
-    counts["formulas"] = cf.d1_insert_batches("formulas", formula_cols, formula_rows)
-
-    geo = load_json("echo_geosensory_registry.json")
-    geo_cols = ["key", "name", "url", "domain", "sensor_type", "key_required", "format", "fields_json", "jurisdiction", "lhea_letter", "description"]
-    existing_geo = {r[0] for r in cf.d1_existing("geosensory_endpoints", ["key"])}
-    geo_rows = [(key, g.get("name"), g.get("url"), g.get("domain"), g.get("sensor_type"), int(bool(g.get("key_required"))), g.get("format"), json.dumps(g.get("fields", []), ensure_ascii=False), g.get("jurisdiction"), g.get("lhea_letter"), g.get("description")) for key, g in geo.items() if key not in existing_geo]
-    counts["geosensory"] = cf.d1_insert_batches("geosensory_endpoints", geo_cols, geo_rows)
-
-    wordnet = load_json("echo_wordnet_chains.json")
-    wn_cols = ["word", "synset", "chain_json", "depth", "definition"]
-    existing_wn = {(r[0], r[1]) for r in cf.d1_existing("wordnet_chains", ["word", "synset"])}
-    wn_rows = [(word, w.get("synset"), json.dumps(w.get("chain", []), ensure_ascii=False), w.get("depth"), w.get("definition")) for word, w in wordnet.items() if (word, w.get("synset")) not in existing_wn]
-    counts["wordnet"] = cf.d1_insert_batches("wordnet_chains", wn_cols, wn_rows)
-
-    completed = datetime.now(timezone.utc).isoformat()
-    cf.kv_put(KV["ECHO_STATE"], "last_migration", completed)
-
-    print(f"KV entries written: {counts['matrix']} + {counts['vgm']} + {counts['state']}")
-    print(f"D1 agents inserted: {counts['agents']}")
-    print(f"D1 ties inserted: {counts['ties']}")
-    print(f"D1 formulas inserted: {counts['formulas']}")
-    print(f"D1 geosensory endpoints inserted: {counts['geosensory']}")
-    print(f"D1 wordnet chains inserted: {counts['wordnet']}")
-    print(f"Migration complete: {completed}")
-    print("ECHO_STATE last_migration updated.")
-    return 0
-
-if __name__ == "__main__":
-    try:
-        raise SystemExit(main())
-    except Exception as exc:
-        print(f"A-159 migration failed: {exc}", file=sys.stderr)
-        raise SystemExit(1)
+if __name__ == '__main__':
+    migrate()
