@@ -89,15 +89,15 @@ def d1_query(sql: str, params: list = None) -> dict:
 def d1_insert_batch(table: str, columns: list, rows: list) -> int:
     """
     Insert rows into a D1 table using INSERT OR IGNORE.
-    Batch size is calculated dynamically: max(1, 999 // len(columns))
-    to stay under SQLite's 999-variable limit.
+    Batch size is calculated dynamically from Cloudflare D1's 100-bound-parameter limit.
     Returns number of rows inserted.
     """
     if not rows:
         return 0
 
-    # Dynamic batch size based on column count
-    batch_size = max(1, 999 // len(columns))
+    # Cloudflare D1 permits at most 100 bound parameters per query.
+    max_variables = 100
+    batch_size = max(1, max_variables // len(columns))
     cols_sql   = ', '.join(columns)
     placeholder = '(' + ', '.join('?' for _ in columns) + ')'
     inserted = 0
