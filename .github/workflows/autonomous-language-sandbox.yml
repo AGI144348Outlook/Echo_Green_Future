@@ -12,6 +12,8 @@ on:
       - "tests/test_echo_homework.py"
       - "experiments/echo_homework_session_001.py"
       - "src/echo_dictionary.py"
+      - "src/echo_comprehension_audit.py"
+      - "experiments/echo_homework_trial_001.py"
 
 permissions:
   contents: read
@@ -102,6 +104,10 @@ jobs:
       - name: Run ECHO Homework Session 001
         run: |
           python experiments/echo_homework_session_001.py | tee echo_homework_session_001.md
+
+      - name: Run initial comprehension-governed Homework trial
+        run: |
+          python experiments/echo_homework_trial_001.py | tee echo_homework_trial_001.md
 
       - uses: actions/upload-artifact@v4
         with:
