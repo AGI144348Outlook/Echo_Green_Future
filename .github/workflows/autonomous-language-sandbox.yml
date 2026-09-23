@@ -2,6 +2,13 @@ name: Autonomous Agency Language Sandbox
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - autonomous-agency
+    paths:
+      - ".github/workflows/autonomous-language-sandbox.yml"
+      - "src/echo_pe_mirror.py"
+      - "sandbox/echo_sandbox_swadesh.json"
 
 permissions:
   contents: read
