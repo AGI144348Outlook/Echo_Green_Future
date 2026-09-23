@@ -1,0 +1,30 @@
+name: ECHO Homework Boundary Tests
+
+on:
+  push:
+    branches:
+      - autonomous-agency
+    paths:
+      - "src/echo_homework.py"
+      - "src/echo_gf_wordnet.py"
+      - "src/echo_imagenet.py"
+      - "src/echo_live_image_search.py"
+      - "src/echo_homework_audit.py"
+      - "tests/test_echo_homework.py"
+      - ".github/workflows/homework-boundary-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  boundary-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Run homework boundary tests
+        run: python -m pytest -q tests/test_echo_homework.py
