@@ -8,8 +8,12 @@ optimizes its threshold, and generates a specific acquisition plan
 Then the PipelineOrchestrator runs the full pipeline autonomously
 and produces a detailed self-log.
 """
-import sys, json, re, time
-sys.path.insert(0, "/home/claude")
+import sys, json, re, time, os
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SRC = REPO_ROOT / "src"
+sys.path.insert(0, str(SRC))
 from echo_governor_skeleton import (
     AlgorithmMatrix, Lobby,
     PoolQualityAuditor, CorpusFitnessEvaluator,
@@ -21,8 +25,8 @@ from import_hebrew_demo import (HEBREW_LETTERS, HEBREW_ROOTS, EN_HE_DICT,
     letter_content, root_content, dict_content)
 from alphabet_data import (HEBREW_ENGLISH_EXPANDED, make_translation_documents)
 
-THESAURUS = "/home/claude/en_thesaurus.jsonl"
-BDB = "/home/claude/lattice-workbench/repo/data/raw/DictBDB.json"
+THESAURUS = Path(os.environ.get("ECHO_THESAURUS", REPO_ROOT / "en_thesaurus.jsonl"))
+BDB = Path(os.environ.get("ECHO_BDB", REPO_ROOT / "agency_workspace" / "repo" / "data" / "raw" / "DictBDB.json"))
 
 
 def clean_html(t):
