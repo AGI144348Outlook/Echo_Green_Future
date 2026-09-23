@@ -1,0 +1,94 @@
+name: Autonomous Agency Language Sandbox
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  swadesh-hypernym-sentences:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+
+      - name: Install WordNet
+        run: |
+          python -m pip install -q nltk
+          python - <<'PY'
+          import nltk
+          nltk.download("wordnet", quiet=True)
+          nltk.download("omw-1.4", quiet=True)
+          PY
+
+      - name: Run clean Swadesh baseline + hypernym + sentence tests
+        run: |
+          python - <<'PY' | tee autonomous_language_test.md
+          import json, sys, types, importlib.util
+          from pathlib import Path
+          from nltk.corpus import wordnet as wn
+
+          print("# Autonomous Agency Language Sandbox")
+          print("Branch: autonomous-agency")
+          print("Lobby condition: empty for this isolated test; preserved sandbox data is read-only.")
+
+          data=json.loads(Path("sandbox/echo_sandbox_swadesh.json").read_text())
+          chains=data["hypernym_chains"]
+          seeds=list(chains)
+          genus=set()
+          for chain in chains.values():
+              genus.update(chain[:-1])
+          print(f"\n## Test 1 — preserved Swadesh sandbox")
+          print(f"Recorded usable Swadesh seeds: {data['swadesh_count']}")
+          print(f"Recorded emerged genus terms: {data['genus_terms_added']}")
+          print(f"Recorded lobby size after sandbox expansion: {data['lobby_size']}")
+          print(f"Hypernym chains preserved in artifact: {len(chains)}")
+          print(f"Distinct superordinate terms in preserved subset: {len(genus)}")
+          for w in ("eye","water","fire","good"):
+              if w in chains: print(w, "→", " → ".join(chains[w]))
+
+          # Import the actual A-165 class without bootstrapping the rest of ECHO.
+          # Its source imports local governor classes at module load, so provide a
+          # minimal import shim; HypernymGrammarModule itself only needs WordNet.
+          shim=types.ModuleType("echo_governor_skeleton")
+          class Dummy: pass
+          for n in ["AlgorithmMatrix","Lobby","InwardSearchEngine","LogicReasoningMatrix",
+                    "VocabularyAcquisitionAgent","AlgorithmicCommunicator"]:
+              setattr(shim,n,Dummy)
+          shim.HEBREW_LETTER_INDEX={}
+          shim.build_number_matrix=lambda: None
+          sys.modules["echo_governor_skeleton"]=shim
+          spec=importlib.util.spec_from_file_location("echo_pe_mirror","src/echo_pe_mirror.py")
+          mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+          hg=mod.HypernymGrammarModule()
+
+          print("\n## Test 2 — live WordNet hypernym retrieval through A-165")
+          live={}
+          for w in ("eye","water","fire","good"):
+              c=hg.get_chain(w)
+              live[w]=[n["word"] for n in c]
+              print(w, "→", " → ".join(live[w]))
+
+          print("\n## Test 3 — live complete-sentence stream through A-165")
+          count=0
+          for w in ("eye","water","fire","good","go","see","grow"):
+              print(f"\n### {w}")
+              ss=hg.speak_chain(w, depth=6)
+              for s in ss:
+                  print(s); count+=1
+          print(f"\nSentence count: {count}")
+
+          print("\n## Meeting propositions")
+          for a,b in [("fire","eye"),("water","eye"),("go","grow")]:
+              print(f"{a} + {b}: {hg.speak_meeting(a,b)}")
+
+          print("\nSTATUS: LANGUAGE_SANDBOX_EXECUTED")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: autonomous-language-sandbox
+          path: autonomous_language_test.md
