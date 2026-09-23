@@ -112,7 +112,9 @@ def d1_insert_batch(table: str, columns: list, rows: list) -> int:
             changes = result['result'][0]['meta'].get('changes', 0)
             inserted += changes
         except Exception as e:
-            print(f"  Batch {i//batch_size + 1} error: {e}")
+            raise RuntimeError(
+                f"D1 migration failed for {table}, batch {i//batch_size + 1}: {e}"
+            ) from e
 
     return inserted
 
