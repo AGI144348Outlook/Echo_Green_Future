@@ -99,6 +99,10 @@ jobs:
           print("\nSTATUS: LANGUAGE_SANDBOX_EXECUTED")
           PY
 
+      - name: Run ECHO Homework Session 001
+        run: |
+          python experiments/echo_homework_session_001.py | tee echo_homework_session_001.md
+
       - uses: actions/upload-artifact@v4
         with:
           name: autonomous-language-sandbox
