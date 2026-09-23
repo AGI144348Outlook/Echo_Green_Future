@@ -1,0 +1,70 @@
+name: Resh Lattice Agency Experiment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bounded-agency-test:
+    if: github.ref == 'refs/heads/resh-lattice-agency'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: resh-lattice-agency
+
+      - name: Establish protected-branch boundary
+        run: |
+          test "$GITHUB_REF_NAME" = "resh-lattice-agency"
+          echo "Experiment branch: $GITHUB_REF_NAME"
+          echo "main, genesis-documentary, autonomous-agency: read-only / untouched"
+
+      - name: Expose unfamiliar environment
+        run: |
+          rm -rf agency_workspace
+          mkdir agency_workspace
+          unzip -q "lattice-workbench-repo (1).zip" -d agency_workspace
+          echo "=== WORKBENCH INVENTORY ==="
+          find agency_workspace -maxdepth 3 -type f | sort | head -200
+
+      - name: Run untouched workbench probes
+        id: probe
+        continue-on-error: true
+        run: |
+          set +e
+          {
+            echo "# Resh Lattice Agency Observation Log"
+            echo
+            echo "Objective: determine whether the supplied Lattice Workbench can be used or developed by ECHO."
+            echo
+            echo "## Initial inventory"
+            find agency_workspace -maxdepth 3 -type f | sort | head -200
+            echo
+            echo "## Candidate Python entry points"
+            find agency_workspace -type f -name '*.py' | sort
+            echo
+            echo "## Execution observations"
+            while IFS= read -r f; do
+              echo
+              echo "### PROBE: $f"
+              timeout 30s python "$f" 2>&1
+              echo "EXIT_CODE=$?"
+            done < <(find agency_workspace -type f \( -name 'lattice_workbench.py' -o -name 'main.py' -o -name 'run.py' \) | sort)
+          } | tee agency_observation.md
+          exit 0
+
+      - name: Let existing ECHO mechanisms inspect the observation
+        continue-on-error: true
+        run: |
+          echo "=== ECHO SELF-GOVERNANCE PROBE ===" | tee -a agency_observation.md
+          PYTHONPATH="$PWD/src:$PYTHONPATH" timeout 60s python tests/self_governance_test.py 2>&1 | tee -a agency_observation.md
+          echo "SELF_GOV_EXIT=${PIPESTATUS[0]}" | tee -a agency_observation.md
+
+      - name: Preserve evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: resh-lattice-agency-observation
+          path: agency_observation.md
