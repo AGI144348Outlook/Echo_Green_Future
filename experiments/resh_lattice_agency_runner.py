@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Run #5 — bounded Resh/Lattice closed-loop experiment.
+Run #6 — bounded Resh/Lattice closed-loop experiment.
 
 This runner does not repair the supplied workbench in advance. It observes a
 failed execution, derives candidate actions from the evidence available inside
@@ -13,7 +13,7 @@ from pathlib import Path
 import os, re, subprocess, sys, json
 
 ROOT = Path(os.environ.get("RESH_WORKSPACE", "agency_workspace/repo")).resolve()
-LOG = Path(os.environ.get("RESH_AGENCY_LOG", "agency_run5.md")).resolve()
+LOG = Path(os.environ.get("RESH_AGENCY_LOG", "agency_run6.md")).resolve()
 MAX_TURNS = int(os.environ.get("RESH_MAX_TURNS", "6"))
 
 def record(s=""):
@@ -21,8 +21,8 @@ def record(s=""):
     with LOG.open("a", encoding="utf-8") as f:
         f.write(s + "\n")
 
-def run(cmd, cwd=None, timeout=40):
-    p = subprocess.run(cmd, cwd=cwd or ROOT, text=True,
+def run(cmd, cwd=None, timeout=40, env=None):
+    p = subprocess.run(cmd, cwd=cwd or ROOT, env=env, text=True,
                        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                        timeout=timeout)
     return p.returncode, p.stdout
@@ -76,12 +76,12 @@ def execute(target, action, env):
     if action["action"] == "extend_pythonpath":
         old = env.get("PYTHONPATH", "")
         env["PYTHONPATH"] = action["path"] + (os.pathsep + old if old else "")
-        return run([sys.executable, str(target)], cwd=ROOT, timeout=40)
+        return run([sys.executable, str(target)], cwd=ROOT, timeout=40, env=env)
     if action["action"] == "run_from_matching_context":
-        return run([sys.executable, str(target)], cwd=action["cwd"], timeout=40)
+        return run([sys.executable, str(target)], cwd=action["cwd"], timeout=40, env=env)
     return 125, "No executable action selected."
 
-LOG.write_text("# Resh Lattice Agency — Run #5\n\n", encoding="utf-8")
+LOG.write_text("# Resh Lattice Agency — Run #6\n\n", encoding="utf-8")
 files = inventory()
 target = entrypoint(files)
 record(f"Objective: independently progress the supplied workbench toward executable Hebrew-lattice operation.")
@@ -89,6 +89,7 @@ record(f"Boundary: disposable workspace only: {ROOT}")
 record(f"Target selected from inventory: {target.relative_to(ROOT)}")
 record(f"Workspace files observed: {len(files)}")
 env = os.environ.copy()
+seen_failures = set()
 
 code, out = run([sys.executable, str(target)], cwd=ROOT)
 for turn in range(1, MAX_TURNS + 1):
@@ -101,6 +102,18 @@ for turn in range(1, MAX_TURNS + 1):
     diag = diagnose(out, files)
     record("Diagnosis: " + json.dumps(diag, ensure_ascii=False))
     action = choose_action(diag, target)
+    signature = (diag.get("kind"), diag.get("evidence"), action.get("action"), action.get("path") or action.get("cwd"))
+    if signature in seen_failures:
+        record("Repeated ineffective strategy detected: the same observation/action pair already failed.")
+        if action["action"] == "extend_pythonpath":
+            action = {
+                "action": "run_from_matching_context",
+                "reason": "Previous search-path action did not change the observation; try a distinct execution context derived from the discovered module location.",
+                "cwd": action["path"],
+            }
+        else:
+            action = {"action":"inspect","reason":"Repeated strategy failed and no distinct bounded action is justified."}
+    seen_failures.add(signature)
     record("Chosen action: " + json.dumps(action, ensure_ascii=False))
     if action["action"] == "inspect":
         record("Decision: stop rather than invent an unsupported modification.")
