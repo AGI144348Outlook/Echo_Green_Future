@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECHO — Governor Indexing Algorithm</title>
+<meta name="description" content="ECHO: symbolic AI by Mashet/LHEA Research">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="manifest" href="#" id="manifest-link">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --api:https://echo-green-future.agi144348.workers.dev;
+  --bg:#0f0f0f;--surface:#1a1a1a;--surface2:#222;--border:#2a2a2a;
+  --text:#f0f0f0;--muted:#888;--accent:#c8b87a;--accent-dim:#8a7d4a;
+  --radius:8px;--font:system-ui,-apple-system,sans-serif;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);
+  min-height:100vh;padding-bottom:env(safe-area-inset-bottom,0px)}
+
+header{padding:1.25rem 1rem 0;display:flex;align-items:baseline;gap:.75rem}
+.logo{font-size:1.4rem;font-weight:600;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.tagline{font-size:.75rem;color:var(--muted)}
+
+nav{display:flex;gap:0;padding:.75rem 1rem 0;border-bottom:1px solid var(--border);overflow-x:auto}
+nav button{flex-shrink:0;background:none;border:none;color:var(--muted);
+  font-size:.85rem;padding:.5rem .875rem;cursor:pointer;border-bottom:2px solid transparent;
+  transition:.15s;font-family:var(--font)}
+nav button.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+main{padding:1rem}
+
+.panel{display:none}
+.panel.active{display:block}
+
+input[type=text]{width:100%;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);color:var(--text);font-size:.95rem;padding:.625rem .875rem;
+  font-family:var(--font);outline:none;transition:.15s}
+input[type=text]:focus{border-color:var(--accent-dim)}
+input[type=text]::placeholder{color:var(--muted)}
+
+.search-row{display:flex;gap:.5rem;margin-bottom:1rem}
+.search-row input{flex:1}
+button.go{background:var(--accent);color:#0b0b0b;border:none;border-radius:var(--radius);
+  padding:.625rem 1rem;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--font);
+  white-space:nowrap;transition:.1s}
+button.go:active{opacity:.8}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1rem;margin-bottom:.75rem}
+.card-title{font-size:.8rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.06em;margin-bottom:.375rem}
+.card-value{font-size:1rem;font-weight:500}
+.card-sub{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:.75rem}
+.stat-n{font-size:1.4rem;font-weight:600;color:var(--accent)}
+.stat-l{font-size:.75rem;color:var(--muted);margin-top:.125rem}
+
+.tag{display:inline-block;background:var(--surface2);border:1px solid var(--border);
+  border-radius:4px;font-size:.75rem;padding:.2rem .5rem;margin:.2rem .2rem 0 0;
+  color:var(--muted)}
+.tag.dept{color:var(--accent);border-color:var(--accent-dim)}
+
+.ties-wrap{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.5rem}
+.tie{background:var(--surface2);border-radius:4px;font-size:.8rem;
+  padding:.25rem .625rem;color:var(--text);cursor:pointer;border:1px solid var(--border);
+  transition:.1s}
+.tie:hover{border-color:var(--accent-dim);color:var(--accent)}
+
+.list-item{padding:.75rem;border-bottom:1px solid var(--border);cursor:pointer}
+.list-item:last-child{border-bottom:none}
+.list-item:hover{background:var(--surface2)}
+.li-word{font-weight:500}
+.li-meta{font-size:.75rem;color:var(--muted);margin-top:.125rem}
+
+.lhea{font-size:.85rem;color:var(--accent);line-height:1.6;
+  background:var(--surface2);border-radius:var(--radius);padding:.75rem;margin-top:.5rem}
+
+.status{font-size:.8rem;color:var(--muted);text-align:center;padding:2rem 1rem}
+.err{color:#e06060}
+
+.geo-card{border-left:3px solid var(--accent-dim)}
+
+.pill{display:inline-block;font-size:.7rem;padding:.2rem .5rem;border-radius:12px;
+  background:var(--surface2);color:var(--muted);margin-left:.5rem}
+.pill.live{background:#1a3a1a;color:#6c6}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ר <span>ECHO</span></div>
+  <div class="tagline">Governor Indexing Algorithm · A-000</div>
+</header>
+
+<nav>
+  <button class="active" onclick="tab('search',this)">Search</button>
+  <button onclick="tab('algorithms',this)">Algorithms</button>
+  <button onclick="tab('axioms',this)">Axioms</button>
+  <button onclick="tab('geosensory',this)">Geosensory</button>
+  <button onclick="tab('status',this)">Status</button>
+</nav>
+
+<main>
+
+<!-- SEARCH -->
+<div class="panel active" id="panel-search">
+  <div class="search-row" style="margin-top:.25rem">
+    <input type="text" id="q" placeholder="Enter a word…" onkeydown="if(event.key==='Enter')lookup()">
+    <button class="go" onclick="lookup()">Look up</button>
+  </div>
+  <div id="result-search"></div>
+</div>
+
+<!-- ALGORITHMS -->
+<div class="panel" id="panel-algorithms">
+  <div class="search-row" style="margin-top:.25rem">
+    <input type="text" id="qa" placeholder="Algorithm ID (e.g. A-000)…" onkeydown="if(event.key==='Enter')lookupAlg()">
+    <button class="go" onclick="lookupAlg()">Look up</button>
+  </div>
+  <div id="result-alg"></div>
+  <div style="margin-top:.75rem;color:var(--muted);font-size:.8rem">Quick jump:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.5rem">
+    ${['A-000','A-124','A-145','A-151','A-152','A-153','A-156','A-157','A-158'].map(
+      a=>`<div class="tie" onclick="quickAlg('${a}')">${a}</div>`
+    ).join('')}
+  </div>
+</div>
+
+<!-- AXIOMS -->
+<div class="panel" id="panel-axioms">
+  <div class="search-row" style="margin-top:.25rem">
+    <input type="text" id="qv" placeholder="Axiom ID (e.g. UG-0000)…" onkeydown="if(event.key==='Enter')lookupAxiom()">
+    <button class="go" onclick="lookupAxiom()">Look up</button>
+  </div>
+  <div id="result-axiom"></div>
+  <div style="margin-top:.75rem;color:var(--muted);font-size:.8rem">Seed axioms:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.5rem">
+    ${['UG-0000','UG-0001','UG-0004','UG-0005','UG-0006','UG-0009','UG-0010','UG-0011','UG-0012'].map(
+      a=>`<div class="tie" onclick="quickAxiom('${a}')">${a}</div>`
+    ).join('')}
+  </div>
+</div>
+
+<!-- GEOSENSORY -->
+<div class="panel" id="panel-geosensory">
+  <div id="geo-list"><div class="status">Loading endpoints…</div></div>
+</div>
+
+<!-- STATUS -->
+<div class="panel" id="panel-status">
+  <div id="status-content"><div class="status">Loading…</div></div>
+</div>
+
+</main>
+
+<script>
+const API = 'https://echo-green-future.agi144348.workers.dev';
+
+function tab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  if (id === 'status') loadStatus();
+  if (id === 'geosensory') loadGeo();
+}
+
+async function apiFetch(path) {
+  const r = await fetch(API + path);
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}
+
+async function lookup() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  if (!q) return;
+  const el = document.getElementById('result-search');
+  el.innerHTML = '<div class="status">Searching…</div>';
+  try {
+    const d = await apiFetch('/agent/' + encodeURIComponent(q));
+    el.innerHTML = agentCard(d);
+  } catch(e) {
+    try {
+      const s = await apiFetch('/search?q=' + encodeURIComponent(q));
+      if (!s.results?.length) { el.innerHTML = '<div class="status err">Not found</div>'; return; }
+      el.innerHTML = '<div class="card">' +
+        '<div class="card-title">Search results</div>' +
+        s.results.map(r => `<div class="list-item" onclick="document.getElementById('q').value='${r.word}';lookup()">
+          <div class="li-word">${r.word}</div>
+          <div class="li-meta">${r.department || '—'} · gen ${(r.generality_score||0).toFixed(3)}</div>
+        </div>`).join('') + '</div>';
+    } catch(e2) { el.innerHTML = '<div class="status err">Error: ' + e2.message + '</div>'; }
+  }
+}
+
+function agentCard(d) {
+  const ties = (d.ties||[]).map(t => {
+    const w = typeof t === 'string' ? t : t.word_b;
+    return `<div class="tie" onclick="document.getElementById('q').value='${w}';lookup()">${w}</div>`;
+  }).join('');
+  return `<div class="card">
+    <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.75rem">
+      <div style="font-size:1.1rem;font-weight:600">${d.word}</div>
+      <div class="tag dept">${d.department||'?'}</div>
+      <div class="tag">${d.entry_class||'?'}</div>
+    </div>
+    ${d.definition ? `<div style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">${d.definition}</div>` : ''}
+    <div style="display:flex;gap:1rem;margin-bottom:.75rem">
+      <div><div style="font-size:.7rem;color:var(--muted)">Generality</div>
+        <div style="font-size:.95rem;font-weight:500;color:var(--accent)">${(d.generality_score||0).toFixed(4)}</div></div>
+      ${d.neighborhood ? `<div><div style="font-size:.7rem;color:var(--muted)">Neighborhood</div>
+        <div style="font-size:.85rem">${d.neighborhood}</div></div>` : ''}
+    </div>
+    ${ties ? `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.375rem">Semantic ties</div>
+      <div class="ties-wrap">${ties}</div>` : ''}
+  </div>`;
+}
+
+async function lookupAlg() {
+  const q = document.getElementById('qa').value.trim().toUpperCase();
+  if (!q) return;
+  quickAlg(q);
+}
+async function quickAlg(id) {
+  document.getElementById('qa').value = id;
+  const el = document.getElementById('result-alg');
+  el.innerHTML = '<div class="status">Loading…</div>';
+  try {
+    const d = await apiFetch('/algorithm/' + encodeURIComponent(id));
+    el.innerHTML = `<div class="card">
+      <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.5rem">
+        <div style="font-size:1rem;font-weight:600">${d.id||id}</div>
+        <div class="tag dept">${d.type||'?'}</div>
+        <div class="tag">${d.status||'?'}</div>
+      </div>
+      <div style="font-size:1rem;font-weight:500;margin-bottom:.5rem">${d.name||'?'}</div>
+      <div style="font-size:.85rem;color:var(--muted)">${d.description||''}</div>
+    </div>`;
+  } catch(e) { el.innerHTML = '<div class="status err">Not found</div>'; }
+}
+
+async function lookupAxiom() {
+  const q = document.getElementById('qv').value.trim();
+  if (!q) return;
+  quickAxiom(q);
+}
+async function quickAxiom(id) {
+  document.getElementById('qv').value = id;
+  const el = document.getElementById('result-axiom');
+  el.innerHTML = '<div class="status">Loading…</div>';
+  try {
+    const d = await apiFetch('/axiom/' + encodeURIComponent(id));
+    el.innerHTML = `<div class="card">
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:.375rem">${id}</div>
+      <div style="font-size:1rem;font-weight:500;margin-bottom:.5rem">"${d.text||'?'}"</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        ${(d.words||[]).map(w=>`<div class="tag">${w}</div>`).join('')}
+      </div>
+      ${d.score ? `<div style="font-size:.8rem;color:var(--muted);margin-top:.5rem">score ${d.score} · ${d.origin||'seed'}</div>` : ''}
+    </div>`;
+  } catch(e) { el.innerHTML = '<div class="status err">Not found</div>'; }
+}
+
+async function loadGeo() {
+  const el = document.getElementById('geo-list');
+  if (el.dataset.loaded) return;
+  const keys = ['NOAA_SWPC_SOLAR_WIND_MAG','NOAA_SWPC_KP_INDEX','NOAA_SWPC_XRAY',
+    'USGS_EARTHQUAKES_SIGNIFICANT','USGS_EARTHQUAKES_4_5_DAY','NOAA_NWS_API',
+    'INATURALIST_BIODIVERSITY','NASA_DONKI','IRIS_SEISMIC_WAVEFORMS',
+    'INTERMAGNET','USGS_GEOMAG','NOAA_SWPC_AURORA','USGS_FDSN_CATALOG','NOAA_SWPC_PLASMA'];
+  el.innerHTML = '';
+  for (const k of keys) {
+    try {
+      const d = await apiFetch('/geosensory/' + encodeURIComponent(k));
+      el.innerHTML += `<div class="card geo-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="font-size:.85rem;font-weight:500;flex:1">${d.name||k}</div>
+          <div class="pill live">live</div>
+        </div>
+        <div style="font-size:.75rem;color:var(--muted);margin:.375rem 0">${d.domain||''} · ${d.sensor_type||''}</div>
+        <div style="font-size:.75rem;color:var(--accent-dim)">${d.url||''}</div>
+      </div>`;
+    } catch(e) { continue; }
+  }
+  el.dataset.loaded = '1';
+}
+
+async function loadStatus() {
+  const el = document.getElementById('status-content');
+  if (el.dataset.loaded) return;
+  try {
+    const d = await apiFetch('/health');
+    el.innerHTML = `
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-n">${d.d1?.agents||0}</div><div class="stat-l">Lobby agents</div></div>
+        <div class="stat"><div class="stat-n">${d.d1?.formulas||0}</div><div class="stat-l">Formulas</div></div>
+        <div class="stat"><div class="stat-n">${d.d1?.geosensory_endpoints||0}</div><div class="stat-l">Geosensory</div></div>
+        <div class="stat"><div class="stat-n" style="font-size:.9rem">A-000</div><div class="stat-l">Governor</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Status</div>
+        <div class="card-value">${d.status}</div>
+        <div class="card-sub">${d.governor}</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Identity</div>
+        <div class="card-value">ר ${d.identity}</div>
+        <div class="card-sub">IDENTIFY → VALIDATE → OPEN</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Last migration</div>
+        <div class="card-value" style="font-size:.85rem">${d.last_migration||'—'}</div>
+      </div>`;
+    el.dataset.loaded = '1';
+  } catch(e) {
+    el.innerHTML = '<div class="status err">Could not reach ECHO API</div>';
+  }
+}
+</script>
+</body>
+</html>
