@@ -13,7 +13,7 @@ jobs:
   bounded-agency-test:
     if: github.ref == 'refs/heads/resh-lattice-agency'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -59,11 +59,15 @@ jobs:
           } | tee agency_observation.md
           exit 0
 
+      - name: Prepare portable ECHO corpus
+        run: |
+          python src/build_thesaurus.py 2>&1 | tee -a agency_observation.md
+
       - name: Let existing ECHO mechanisms inspect the observation
         continue-on-error: true
         run: |
           echo "=== ECHO SELF-GOVERNANCE PROBE ===" | tee -a agency_observation.md
-          PYTHONPATH="$PWD/src:$PYTHONPATH" timeout 60s python tests/self_governance_test.py 2>&1 | tee -a agency_observation.md
+          ECHO_THESAURUS="$PWD/en_thesaurus.jsonl" ECHO_BDB="$PWD/agency_workspace/repo/data/raw/DictBDB.json" PYTHONPATH="$PWD/src:$PYTHONPATH" timeout 180s python tests/self_governance_test.py 2>&1 | tee -a agency_observation.md
           echo "SELF_GOV_EXIT=${PIPESTATUS[0]}" | tee -a agency_observation.md
 
       - name: Preserve evidence
