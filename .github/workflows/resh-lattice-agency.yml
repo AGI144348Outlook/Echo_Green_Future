@@ -61,6 +61,7 @@ jobs:
 
       - name: Prepare portable ECHO corpus
         run: |
+          python -m pip install -q nltk
           python src/build_thesaurus.py 2>&1 | tee -a agency_observation.md
 
       - name: Let existing ECHO mechanisms inspect the observation
