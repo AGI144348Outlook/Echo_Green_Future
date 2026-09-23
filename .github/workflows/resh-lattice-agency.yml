@@ -59,6 +59,36 @@ jobs:
           } | tee agency_observation.md
           exit 0
 
+      - name: Audit Workbench Python dependencies
+        run: |
+          python - <<'PY' | tee dependency_audit.md
+          import ast, pathlib, sys
+          root = pathlib.Path("agency_workspace/repo")
+          std = set(getattr(sys, "stdlib_module_names", ()))
+          local = {p.stem for p in root.rglob("*.py")}
+          imports = {}
+          for p in root.rglob("*.py"):
+              try:
+                  tree = ast.parse(p.read_text(encoding="utf-8", errors="ignore"))
+              except SyntaxError:
+                  continue
+              names = set()
+              for n in ast.walk(tree):
+                  if isinstance(n, ast.Import):
+                      names.update(a.name.split(".")[0] for a in n.names)
+                  elif isinstance(n, ast.ImportFrom) and n.module:
+                      names.add(n.module.split(".")[0])
+              imports[p.relative_to(root).as_posix()] = sorted(names)
+          external = sorted({n for v in imports.values() for n in v if n not in std and n not in local and n != "__future__"})
+          print("# Lattice Workbench dependency audit")
+          print("\n## External Python import candidates")
+          for n in external: print("-", n)
+          print("\n## Imports by file")
+          for p,names in sorted(imports.items()):
+              print(f"\n### {p}")
+              print(", ".join(names) if names else "(none)")
+          PY
+
       - name: Run bounded Resh closed loop
         continue-on-error: true
         run: |
@@ -85,3 +115,4 @@ jobs:
           path: |
             agency_observation.md
             agency_run5.md
+            dependency_audit.md
