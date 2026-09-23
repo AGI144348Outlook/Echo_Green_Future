@@ -500,7 +500,3 @@ class AugmentedCommunicator:
 
         return {'sentence': sentence, 'reflection': reflection}
 
-
-print("Building infrastructure...")
-EOF
-echo "Framework written"
