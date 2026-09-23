@@ -15,6 +15,7 @@ on:
       - "src/echo_comprehension_audit.py"
       - "experiments/echo_homework_trial_001.py"
       - "experiments/echo_microclassroom_001.py"
+      - "experiments/echo_microclassroom_002.py"
 
 permissions:
   contents: read
@@ -113,6 +114,10 @@ jobs:
       - name: Run vocabulary-filtered Micro-Classroom
         run: |
           python experiments/echo_microclassroom_001.py | tee echo_microclassroom_001.md
+
+      - name: Run scored ECHO Micro-Classroom
+        run: |
+          python experiments/echo_microclassroom_002.py | tee echo_microclassroom_002.md
 
       - uses: actions/upload-artifact@v4
         with:
