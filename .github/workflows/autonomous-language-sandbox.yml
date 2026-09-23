@@ -33,6 +33,7 @@ jobs:
 
       - name: Run clean Swadesh baseline + hypernym + sentence tests
         run: |
+          set -o pipefail
           python - <<'PY' | tee autonomous_language_test.md
           import json, sys, types, importlib.util
           from pathlib import Path
