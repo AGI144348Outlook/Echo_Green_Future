@@ -262,3 +262,51 @@ Before the next run, the actuator should correctly pass selected environment cha
 Repeated ineffective actions should also become observations in their own right. A failed strategy should not be allowed to repeat indefinitely without affecting subsequent selection.
 
 Then the untouched Workbench can be presented again and the next observation allowed to emerge naturally.
+
+
+## Run #6 — closed-loop execution breakthrough
+
+Run #6 repaired laboratory actuation rather than modifying the supplied Workbench. The runner now passes selected environment changes into the subprocess and records repeated ineffective observation/action pairs so repetition can become evidence for reconsideration.
+
+### Observed progression
+
+1. The untouched Workbench again reported `ModuleNotFoundError: No module named 'lattice_prototype'`.
+2. The loop discovered `src/core/lattice_prototype.py` and selected `extend_pythonpath`.
+3. With the actuator corrected, that action changed the environment and the original error disappeared.
+4. A new observation emerged: `FileNotFoundError: bdb_roots.json`.
+5. The loop searched the workspace, found the requested data under `data/processed`, and selected a different action: execute from the matching data context.
+6. The next execution returned exit code 0.
+7. Workbench output reached lattice behavior, including `REGION CLOSED after step 7` and a final hand-built region with four closed Flags.
+8. The loop recognized successful target execution and stopped.
+
+Final experimental status: `WORKBENCH_EXECUTED`.
+
+This is stronger evidence than Run #5 because two different environmental states led to two different evidence-derived actions, and both actions measurably changed the subsequent observation. It remains a bounded engineered harness: its diagnostic categories and permitted actions were supplied by the experimenters. The result therefore supports a functioning multi-step perception/action feedback loop within those bounds, not a claim of AGI or human-like cognition.
+
+The dependency audit of the supplied Workbench identified `nltk` as the only external Python import candidate; other imports were standard-library or Workbench-local modules.
+
+### Next research boundary
+
+The experiment has moved from **environmental troubleshooting** to **lattice operation**. The next question is whether the governing system can inspect the successfully produced lattice structures, characterize their state and constraints, formulate a next objective, select a lattice-level operation, and evaluate the resulting structural change without being handed the solution sequence.
+
+## Research documentation protocol
+
+From this point forward, researcher-facing documentation is part of the experimental protocol rather than an optional cleanup step.
+
+After every meaningful progression on an experimental branch, the branch documentation should be updated in the same progression cycle. Each record should preserve:
+
+1. **Objective** — what question the run or change was testing.
+2. **Starting state** — relevant branch, environment, inputs, and protected boundaries.
+3. **Experimenter-supplied infrastructure** — plumbing, dependencies, harness capabilities, or corrections supplied by humans/automation.
+4. **System-visible evidence** — observations actually available to ECHO/Resh.
+5. **Decision trace** — diagnoses, candidate/selected actions, and stated reasons when available.
+6. **Executed actions** — what actually changed, distinguished from actions merely proposed.
+7. **Observed results** — exit states, measurements, artifacts, structural outputs, and newly exposed problems.
+8. **Interpretation** — what the evidence supports.
+9. **Limitations / non-claims** — what the run does not establish, especially distinctions among engineered, demonstrated, and hypothesized behavior.
+10. **Next research question** — the unresolved boundary exposed by the progression.
+11. **Provenance** — run IDs, commit SHAs, artifact IDs, and other identifiers needed to reproduce or audit the result when available.
+
+Documentation follows the same branch discipline as the experiment it describes. Experimental chronology remains on its experimental branch; it is not promoted to `main` or another stable branch without explicit direction.
+
+The protocol also preserves negative results. Failed runs, repeated strategies, infrastructure defects, and capability gaps are evidence and should not be silently rewritten into successful narratives.
