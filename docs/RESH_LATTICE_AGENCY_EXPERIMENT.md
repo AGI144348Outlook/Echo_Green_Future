@@ -310,3 +310,57 @@ After every meaningful progression on an experimental branch, the branch documen
 Documentation follows the same branch discipline as the experiment it describes. Experimental chronology remains on its experimental branch; it is not promoted to `main` or another stable branch without explicit direction.
 
 The protocol also preserves negative results. Failed runs, repeated strategies, infrastructure defects, and capability gaps are evidence and should not be silently rewritten into successful narratives.
+
+
+## Run #7 — first bounded lattice-level operation
+
+**Provenance:** GitHub Actions run `35920775406`; workflow head `faca6f89d2676edf13d851b045c2de5c2261f9a1`; evidence artifact `10777595069`.
+
+### Objective
+
+Move beyond execution troubleshooting and test whether the harness can observe a successfully running lattice, derive a structural description, choose one bounded lattice-level operation from the algorithms already present in the unfamiliar Workbench, execute it, and observe a resulting structure.
+
+### Starting state and experimenter-supplied infrastructure
+
+The Workbench source remained untouched in the disposable workspace. Run #7 reused the runtime context established experimentally in Run #6: `src/core` was exposed on `PYTHONPATH` and execution occurred from the processed-data context. The experimenters also supplied the candidate-ranking policy: observed structural terms are compared with available algorithm filenames. This policy is an explicit harness mechanism and must not be mistaken for unconstrained semantic reasoning by ECHO/Resh.
+
+### System-visible structural evidence
+
+The baseline Workbench executed with exit code 0. In this run its stochastic/variable construction closed after step 8, with 9 bricks and 4 closed Flags:
+
+- `כאה` — “be disheartened, cowed”
+- `סרכ` — “chief, overseer”
+- `ראה` — “see”
+- `רכה` — “in Judah”
+
+The difference from Run #6 (closure after step 7 with 8 bricks) is preserved as an observed run-to-run variation rather than normalized away.
+
+### Candidate selection
+
+The harness inventoried eleven available `lattice_*.py` operations. Against the observed closed-region/constraint description, the highest filename-semantic score (2) was shared by:
+
+- `lattice_distinct_regions.py`
+- `lattice_isolate_constraints.py`
+- `lattice_themed_regions.py`
+
+`lattice_lineage.py` scored 1; the remaining candidates scored 0. Deterministic alphabetical tie-breaking selected `lattice_distinct_regions.py`.
+
+This tie is an important limitation: Run #7 did not demonstrate that the system understood that “distinct regions” was intrinsically preferable to “isolate constraints” or “themed regions.” The harness supplied the scoring and tie-break rule.
+
+### Executed action and observation
+
+`lattice_distinct_regions.py` executed successfully with exit code 0 and produced output distinct from the baseline Workbench. The preserved tail showed multiple independently seeded closed regions and cross-talk analysis among them. Examples included direct shared-stem relationships between some region pairs and indirect shared-glyph relationships between others.
+
+The run ended with:
+
+`Final status: LATTICE_OPERATION_EXECUTED`.
+
+### Interpretation
+
+Run #7 establishes that the experimental loop can cross the boundary from repairing the Workbench runtime to invoking a lattice-level operation selected from the Workbench's own available algorithms using an explicit evidence-derived ranking procedure. It also produced a new class of observable structure: multiple separately seeded regions and reported inter-region cross-talk.
+
+It does **not** establish autonomous formulation of a research objective, unconstrained semantic understanding of the algorithms, or autonomous evaluation of which resulting region relationships are meaningful. The selection policy and its tie-break were experimenter supplied.
+
+### Next research question
+
+The next boundary is evaluation rather than mere execution: can the experimental governing layer inspect the multi-region/cross-talk output, turn measurable features of that result into competing next objectives or hypotheses, and choose among them using actual ECHO/Resh governance machinery rather than filename scoring alone?
