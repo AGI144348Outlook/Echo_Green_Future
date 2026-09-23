@@ -89,11 +89,11 @@ jobs:
               print(", ".join(names) if names else "(none)")
           PY
 
-      - name: Run bounded Resh closed loop
+      - name: Run #7 lattice-level operation probe
         continue-on-error: true
         run: |
-          echo "=== RUN #6: RESH CLOSED LOOP ===" | tee -a agency_observation.md
-          RESH_WORKSPACE="$PWD/agency_workspace/repo" RESH_AGENCY_LOG="$PWD/agency_run6.md" timeout 240s python experiments/resh_lattice_agency_runner.py 2>&1 | tee -a agency_observation.md
+          echo "=== RUN #7: LATTICE-LEVEL OPERATION ===" | tee -a agency_observation.md
+          RESH_WORKSPACE="$PWD/agency_workspace/repo" RESH_AGENCY_LOG="$PWD/agency_run7.md" timeout 240s python experiments/resh_lattice_run7.py 2>&1 | tee -a agency_observation.md
           echo "RESH_LOOP_EXIT=${PIPESTATUS[0]}" | tee -a agency_observation.md
 
       - name: Prepare portable ECHO corpus
@@ -114,5 +114,5 @@ jobs:
           name: resh-lattice-agency-observation
           path: |
             agency_observation.md
-            agency_run6.md
+            agency_run7.md
             dependency_audit.md
