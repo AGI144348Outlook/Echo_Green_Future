@@ -59,7 +59,14 @@ jobs:
           } | tee agency_observation.md
           exit 0
 
-      - name: Run bounded Resh closed loop\n        continue-on-error: true\n        run: |\n          echo "=== RUN #5: RESH CLOSED LOOP ===" | tee -a agency_observation.md\n          RESH_WORKSPACE="$PWD/agency_workspace/repo" RESH_AGENCY_LOG="$PWD/agency_run5.md" timeout 240s python experiments/resh_lattice_agency_runner.py 2>&1 | tee -a agency_observation.md\n          echo "RESH_LOOP_EXIT=${PIPESTATUS[0]}" | tee -a agency_observation.md\n\n      - name: Prepare portable ECHO corpus
+      - name: Run bounded Resh closed loop
+        continue-on-error: true
+        run: |
+          echo "=== RUN #5: RESH CLOSED LOOP ===" | tee -a agency_observation.md
+          RESH_WORKSPACE="$PWD/agency_workspace/repo" RESH_AGENCY_LOG="$PWD/agency_run5.md" timeout 240s python experiments/resh_lattice_agency_runner.py 2>&1 | tee -a agency_observation.md
+          echo "RESH_LOOP_EXIT=${PIPESTATUS[0]}" | tee -a agency_observation.md
+
+      - name: Prepare portable ECHO corpus
         run: |
           python -m pip install -q nltk
           python src/build_thesaurus.py 2>&1 | tee -a agency_observation.md
@@ -75,4 +82,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resh-lattice-agency-observation
-          path: |\n            agency_observation.md\n            agency_run5.md
+          path: |
+            agency_observation.md
+            agency_run5.md
