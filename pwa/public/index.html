@@ -1,24 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <title>PWA Hosting Environment</title>
-  <style>
-    html,body{margin:0;width:100%;min-height:100%;background:#fff}
-    body{min-height:100vh;min-height:100dvh}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#06131d"><link rel="manifest" href="./manifest.webmanifest">
+<title>EVE Development Suite</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#02080d;color:#9feaff;font-family:system-ui,sans-serif}
+body{min-height:100dvh;background:radial-gradient(circle at 50% -15%,#16384a 0,#07151f 37%,#02070b 72%)}
+.bridge{height:100dvh;display:grid;grid-template-rows:52% 48%;padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom));gap:9px}
+.upper{display:grid;grid-template-columns:minmax(0,1fr) 31%;gap:9px;min-height:0}
+.preview,.portal,.console{border:1px solid #287c9d;border-radius:15px;background:linear-gradient(145deg,rgba(8,30,43,.94),rgba(2,10,16,.97));box-shadow:inset 0 0 24px #0b3447,0 0 16px #04141d;position:relative;overflow:hidden}
+.preview{display:flex;align-items:center;justify-content:center;padding:34px 12px 12px}
+.label{position:absolute;top:9px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.18em;color:#69d7ff}
+.void{width:100%;height:100%;border:1px solid #225267;border-radius:9px;background:#fff;color:#68818d;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px}
+.void strong{color:#34515f;font-size:13px;margin-bottom:5px}
+.portal{display:flex;align-items:center;justify-content:center;padding-top:25px}
+.ring{width:min(21vw,120px);aspect-ratio:1;border-radius:50%;border:5px solid #2a7590;box-shadow:inset 0 0 18px #3be2ff,0 0 22px #18bce7;background:radial-gradient(circle,#082435 0 35%,#0b6181 38%,#03121b 64%);display:flex;align-items:center;justify-content:center;text-align:center;font-size:9px;letter-spacing:.12em}
+.console{padding:32px 9px 9px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:7px;perspective:700px}
+.console:before{content:"EVE DEVELOPMENT SUITE · CONTROL PANEL";position:absolute;top:9px;left:12px;font-size:10px;letter-spacing:.13em;color:#69d7ff}
+.pad{border:1px solid #1f789b;border-radius:9px;background:linear-gradient(160deg,#0c2d3d,#06151e);color:#87e5ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:10px;font-weight:650;letter-spacing:.07em;min-width:0;touch-action:manipulation}
+.pad:active,.pad.selected{background:#12445a;box-shadow:inset 0 0 18px #169bc4}
+.icon{font-size:21px;font-weight:300}.status{position:absolute;right:9px;top:8px;font-size:8px;color:#4eaac7;letter-spacing:.08em}
+@media(min-width:700px){.bridge{max-width:900px;margin:auto}.upper{grid-template-columns:1fr 240px}.console{grid-template-columns:repeat(4,1fr)}}
+</style>
 </head>
 <body>
-  <!-- Deliberately visually empty. Runtime capability exists beneath the VOID surface. -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
-  <script src="./eve/bootstrap.js"></script>
-  <script>
-    if("serviceWorker" in navigator) {
-      window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));
-    }
-  </script>
-</body>
-</html>
+<main class="bridge" aria-label="EVE Developer Suite">
+<section class="upper">
+ <div class="preview"><div class="label">ENVIRONMENT PREVIEW</div><div class="void" id="preview"><strong>VOID</strong>No environment selected</div></div>
+ <div class="portal"><div class="label">PORTAL</div><div class="ring" id="portal">NO<br>TARGET</div></div>
+</section>
+<section class="console" aria-label="Control panel">
+ <div class="status">GOVERNOR: ABSENT</div>
+ <button class="pad" data-target="Matrix"><span class="icon">▦</span>MATRIX</button>
+ <button class="pad" data-target="NVE"><span class="icon">⌬</span>NVE</button>
+ <button class="pad" data-target="Algorithms"><span class="icon">≡</span>ALGORITHMS</button>
+ <button class="pad" data-target="Environments"><span class="icon">◇</span>ENVIRONMENTS</button>
+ <button class="pad" data-target="Testing"><span class="icon">△</span>TESTING</button>
+ <button class="pad" data-target="State"><span class="icon">▥</span>STATE</button>
+ <button class="pad" data-target="Glyphs"><span class="icon">א</span>GLYPHS</button>
+ <button class="pad" data-target="Tools"><span class="icon">⚙</span>TOOLS</button>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+<script src="./eve/bootstrap.js"></script>
+<script>
+const preview=document.querySelector("#preview"),portal=document.querySelector("#portal");
+document.querySelectorAll(".pad").forEach(p=>p.addEventListener("click",()=>{
+ document.querySelectorAll(".pad").forEach(x=>x.classList.remove("selected"));p.classList.add("selected");
+ const target=p.dataset.target;
+ preview.innerHTML="<strong>"+target.toUpperCase()+"</strong>Selected structural view · not yet populated";
+ portal.innerHTML=target.toUpperCase()+"<br>READY";
+}));
+if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));
+</script>
+</body></html>
