@@ -1,6 +1,11 @@
 name: ECHO Trial 012 - Lesson 001 Hypernym Spectrum
 on:
   workflow_dispatch:
+  push:
+    branches: [autonomous-agency]
+    paths:
+      - "experiments/lesson_001_hypernym_spectrum_012.py"
+      - ".github/workflows/lesson-001-hypernym-spectrum-012.yml"
 permissions:
   contents: write
 jobs:
