@@ -1,47 +1,43 @@
-// Invisible browser-side runtime bootstrap.
-// No Governor, agent loop, or autonomous population is created here.
-
+// EVE + ECHO Classroom bootstrap.
 globalThis.__EVE_RUNTIME__ = Object.freeze({
   environment: "EVE",
   visualState: "VOID",
   governor: null,
-  python: {
-    engine: "Pyodide",
-    status: "loading"
-  }
+  classroom: { status: "loading", lesson: "L000" },
+  python: { engine: "Pyodide", status: "loading" }
 });
 
 (async () => {
   try {
     const pyodide = await loadPyodide();
-    const response = await fetch("./eve/inert_eve.py", { cache: "no-store" });
-    if (!response.ok) throw new Error(`EVE substrate load failed: ${response.status}`);
-    const source = await response.text();
-    await pyodide.runPythonAsync(source);
-
+    const eveResponse = await fetch("./eve/inert_eve.py", { cache: "no-store" });
+    const lobbyResponse = await fetch("./eve/classroom/lobby.py", { cache: "no-store" });
+    const lessonResponse = await fetch("./eve/classroom/lesson_000.json", { cache: "no-store" });
+    if (!eveResponse.ok || !lobbyResponse.ok || !lessonResponse.ok) {
+      throw new Error("EVE/Classroom substrate load failed.");
+    }
+    await pyodide.runPythonAsync(await eveResponse.text());
+    await pyodide.runPythonAsync(await lobbyResponse.text());
+    const assignment = await lessonResponse.json();
+    const lobbySnapshot = JSON.parse(
+      pyodide.runPython("import json; json.dumps(ECHO_LOBBY.snapshot())")
+    );
     globalThis.__EVE_RUNTIME__ = Object.freeze({
       environment: "EVE",
       visualState: "VOID",
       governor: null,
-      python: {
-        engine: "Pyodide",
+      classroom: {
         status: "ready",
-        version: pyodide.version
-      }
+        lesson: assignment.assignment_id,
+        assignment: assignment,
+        lobby: lobbySnapshot,
+        glyphRegistry: "pending-local-import"
+      },
+      python: { engine: "Pyodide", status: "ready", version: pyodide.version }
     });
     globalThis.__EVE_PYODIDE__ = pyodide;
-    console.info("EVE substrate ready; Governor absent; visual occupancy remains VOID.");
+    console.info("ECHO Classroom L000 ready.", lobbySnapshot);
   } catch (error) {
-    globalThis.__EVE_RUNTIME__ = Object.freeze({
-      environment: "EVE",
-      visualState: "VOID",
-      governor: null,
-      python: {
-        engine: "Pyodide",
-        status: "error",
-        message: String(error)
-      }
-    });
-    console.error("EVE substrate initialization failed.", error);
+    console.error("EVE/Classroom initialization failed.", error);
   }
 })();
