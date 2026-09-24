@@ -1,1 +1,24 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="manifest" href="./manifest.webmanifest"><title>PWA Hosting Environment</title><style>html,body{margin:0;width:100%;min-height:100%;background:#fff}body{min-height:100vh;min-height:100dvh}</style></head><body><script>if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <title>PWA Hosting Environment</title>
+  <style>
+    html,body{margin:0;width:100%;min-height:100%;background:#fff}
+    body{min-height:100vh;min-height:100dvh}
+  </style>
+</head>
+<body>
+  <!-- Deliberately visually empty. Runtime capability exists beneath the VOID surface. -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+  <script src="./eve/bootstrap.js"></script>
+  <script>
+    if("serviceWorker" in navigator) {
+      window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));
+    }
+  </script>
+</body>
+</html>
