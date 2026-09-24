@@ -1,0 +1,1119 @@
+{
+  "experiment": "AUTONOMOUS_PROPOSITION_CONSTRUCTION_009",
+  "frozen_population": 5460,
+  "sentence_templates_from_007_008": false,
+  "summary": {
+    "samples": 17,
+    "mean_score": 5.882,
+    "full_passes": 15,
+    "relation_counts": {
+      "process": 5,
+      "structure": 2,
+      "dynamic": 4,
+      "classification": 6
+    }
+  },
+  "records": [
+    {
+      "word": "viscosity",
+      "depth": 1,
+      "inputs": {
+        "parent": "gas",
+        "definition_atoms": [
+          "resistance",
+          "liquid",
+          "shear",
+          "forces",
+          "hence",
+          "flow"
+        ],
+        "glyph_operations": [
+          "FLOW",
+          "DIRECT",
+          "BOUND"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "dynamic",
+        "subject": "viscosity",
+        "parent": "gas",
+        "definition_atoms": [
+          "resistance",
+          "liquid",
+          "shear",
+          "forces"
+        ],
+        "glyph_predicates": [
+          "flow",
+          "direct",
+          "bound"
+        ],
+        "realization_tokens": [
+          "viscosity",
+          "describes",
+          "resistance",
+          "liquid",
+          "shear",
+          "forces",
+          "while",
+          "flow",
+          "direct",
+          "bound",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Viscosity describes resistance liquid shear forces while flow direct bound constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "precise",
+      "depth": 1,
+      "inputs": {
+        "parent": "definite",
+        "definition_atoms": [
+          "sharply",
+          "exact",
+          "accurate",
+          "delimited"
+        ],
+        "glyph_operations": [
+          "HUNT",
+          "TIMESTAMP"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "precise",
+        "parent": "definite",
+        "definition_atoms": [
+          "sharply",
+          "exact",
+          "accurate",
+          "delimited"
+        ],
+        "glyph_predicates": [
+          "hunt",
+          "timestamp"
+        ],
+        "realization_tokens": [
+          "precise",
+          "is",
+          "associated",
+          "with",
+          "sharply",
+          "exact",
+          "accurate",
+          "delimited",
+          "while",
+          "hunt",
+          "timestamp",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Precise is associated with sharply exact accurate delimited while hunt timestamp constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "located",
+      "depth": 1,
+      "inputs": {
+        "parent": "tongue",
+        "definition_atoms": [
+          "discover",
+          "location",
+          "determine",
+          "place",
+          "find",
+          "searching",
+          "examining"
+        ],
+        "glyph_operations": [
+          "SCAN_PERIPHERY",
+          "HUNT",
+          "INDIVIDUATE"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "located",
+        "parent": "tongue",
+        "definition_atoms": [
+          "discover",
+          "location",
+          "determine",
+          "place"
+        ],
+        "glyph_predicates": [
+          "scan_periphery",
+          "hunt",
+          "individuate"
+        ],
+        "realization_tokens": [
+          "located",
+          "is",
+          "associated",
+          "with",
+          "discover",
+          "location",
+          "determine",
+          "place",
+          "while",
+          "scan_periphery",
+          "hunt",
+          "individuate",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Located is associated with discover location determine place while scan_periphery hunt individuate constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": false,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 5,
+        "max": 6
+      }
+    },
+    {
+      "word": "vocalizations",
+      "depth": 1,
+      "inputs": {
+        "parent": "mouth",
+        "definition_atoms": [
+          "sound",
+          "made",
+          "vibration",
+          "vocal",
+          "folds",
+          "modified",
+          "resonance",
+          "tract"
+        ],
+        "glyph_operations": [
+          "HUNT",
+          "SEAL"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "dynamic",
+        "subject": "vocalizations",
+        "parent": "mouth",
+        "definition_atoms": [
+          "sound",
+          "made",
+          "vibration",
+          "vocal"
+        ],
+        "glyph_predicates": [
+          "hunt",
+          "seal"
+        ],
+        "realization_tokens": [
+          "vocalizations",
+          "describes",
+          "sound",
+          "made",
+          "vibration",
+          "vocal",
+          "while",
+          "hunt",
+          "seal",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Vocalizations describes sound made vibration vocal while hunt seal constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "column",
+      "depth": 1,
+      "inputs": {
+        "parent": "vertebrate",
+        "definition_atoms": [
+          "line",
+          "units",
+          "following",
+          "after",
+          "another"
+        ],
+        "glyph_operations": [
+          "SEAL",
+          "TRANSFORM",
+          "TIMESTAMP"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "structure",
+        "subject": "column",
+        "parent": "vertebrate",
+        "definition_atoms": [
+          "line",
+          "units",
+          "following",
+          "after"
+        ],
+        "glyph_predicates": [
+          "seal",
+          "transform",
+          "timestamp"
+        ],
+        "realization_tokens": [
+          "column",
+          "relates",
+          "to",
+          "line",
+          "units",
+          "following",
+          "after",
+          "while",
+          "seal",
+          "transform",
+          "timestamp",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Column relates to line units following after while seal transform timestamp constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "intermediary",
+      "depth": 5,
+      "inputs": {
+        "parent": "brokerage",
+        "definition_atoms": [
+          "negotiator",
+          "acts",
+          "link",
+          "between",
+          "parties"
+        ],
+        "glyph_operations": [
+          "FILTER",
+          "CONNECT",
+          "HUNT"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "process",
+        "subject": "intermediary",
+        "parent": "brokerage",
+        "definition_atoms": [
+          "negotiator",
+          "acts",
+          "link",
+          "between"
+        ],
+        "glyph_predicates": [
+          "filter",
+          "connect",
+          "hunt"
+        ],
+        "realization_tokens": [
+          "intermediary",
+          "acts",
+          "through",
+          "negotiator",
+          "acts",
+          "link",
+          "between",
+          "while",
+          "filter",
+          "connect",
+          "hunt",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Intermediary acts through negotiator acts link between while filter connect hunt constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "repeated",
+      "depth": 5,
+      "inputs": {
+        "parent": "polymers",
+        "definition_atoms": [
+          "say",
+          "state",
+          "perform",
+          "again"
+        ],
+        "glyph_operations": [
+          "TRANSFORM",
+          "SEAL",
+          "TIMESTAMP"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "process",
+        "subject": "repeated",
+        "parent": "polymers",
+        "definition_atoms": [
+          "say",
+          "state",
+          "perform",
+          "again"
+        ],
+        "glyph_predicates": [
+          "transform",
+          "seal",
+          "timestamp"
+        ],
+        "realization_tokens": [
+          "repeated",
+          "acts",
+          "through",
+          "say",
+          "state",
+          "perform",
+          "again",
+          "while",
+          "transform",
+          "seal",
+          "timestamp",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Repeated acts through say state perform again while transform seal timestamp constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "creates",
+      "depth": 5,
+      "inputs": {
+        "parent": "originator",
+        "definition_atoms": [
+          "make",
+          "cause",
+          "become"
+        ],
+        "glyph_operations": [
+          "REVEAL",
+          "DIRECT",
+          "EXPRESS"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "process",
+        "subject": "creates",
+        "parent": "originator",
+        "definition_atoms": [
+          "make",
+          "cause",
+          "become"
+        ],
+        "glyph_predicates": [
+          "reveal",
+          "direct",
+          "express"
+        ],
+        "realization_tokens": [
+          "creates",
+          "acts",
+          "through",
+          "make",
+          "cause",
+          "become",
+          "while",
+          "reveal",
+          "direct",
+          "express",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Creates acts through make cause become while reveal direct express constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "ovary",
+      "depth": 5,
+      "inputs": {
+        "parent": "angiosperms",
+        "definition_atoms": [
+          "organ",
+          "bears",
+          "ovules",
+          "flower"
+        ],
+        "glyph_operations": [
+          "EXPRESS"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "structure",
+        "subject": "ovary",
+        "parent": "angiosperms",
+        "definition_atoms": [
+          "organ",
+          "bears",
+          "ovules",
+          "flower"
+        ],
+        "glyph_predicates": [
+          "express"
+        ],
+        "realization_tokens": [
+          "ovary",
+          "relates",
+          "to",
+          "organ",
+          "bears",
+          "ovules",
+          "flower",
+          "while",
+          "express",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Ovary relates to organ bears ovules flower while express constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "self",
+      "depth": 5,
+      "inputs": {
+        "parent": "innermost",
+        "definition_atoms": [
+          "consciousness",
+          "identity"
+        ],
+        "glyph_operations": [
+          "GOVERN",
+          "INDIVIDUATE",
+          "CONTAIN"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "self",
+        "parent": "innermost",
+        "definition_atoms": [
+          "consciousness",
+          "identity"
+        ],
+        "glyph_predicates": [
+          "govern",
+          "individuate",
+          "contain"
+        ],
+        "realization_tokens": [
+          "self",
+          "is",
+          "associated",
+          "with",
+          "consciousness",
+          "identity",
+          "while",
+          "govern",
+          "individuate",
+          "contain",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Self is associated with consciousness identity while govern individuate contain constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "hades",
+      "depth": 10,
+      "inputs": {
+        "parent": "poseidon",
+        "definition_atoms": [
+          "greek",
+          "mythology",
+          "god",
+          "underworld",
+          "ancient",
+          "brother",
+          "zeus",
+          "husband",
+          "persephone"
+        ],
+        "glyph_operations": [
+          "HUNT",
+          "SEED"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "hades",
+        "parent": "poseidon",
+        "definition_atoms": [
+          "greek",
+          "mythology",
+          "god",
+          "underworld"
+        ],
+        "glyph_predicates": [
+          "hunt",
+          "seed"
+        ],
+        "realization_tokens": [
+          "hades",
+          "is",
+          "associated",
+          "with",
+          "greek",
+          "mythology",
+          "god",
+          "underworld",
+          "while",
+          "hunt",
+          "seed",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Hades is associated with greek mythology god underworld while hunt seed constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "indus",
+      "depth": 10,
+      "inputs": {
+        "parent": "pakistan",
+        "definition_atoms": [
+          "faint",
+          "constellation",
+          "southern",
+          "hemisphere",
+          "near",
+          "telescopium",
+          "tucana"
+        ],
+        "glyph_operations": [
+          "BOUND",
+          "CONTAIN",
+          "SCAN_PERIPHERY"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "indus",
+        "parent": "pakistan",
+        "definition_atoms": [
+          "faint",
+          "constellation",
+          "southern",
+          "hemisphere"
+        ],
+        "glyph_predicates": [
+          "bound",
+          "contain",
+          "scan_periphery"
+        ],
+        "realization_tokens": [
+          "indus",
+          "is",
+          "associated",
+          "with",
+          "faint",
+          "constellation",
+          "southern",
+          "hemisphere",
+          "while",
+          "bound",
+          "contain",
+          "scan_periphery",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Indus is associated with faint constellation southern hemisphere while bound contain scan_periphery constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": false,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 5,
+        "max": 6
+      }
+    },
+    {
+      "word": "curled",
+      "depth": 10,
+      "inputs": {
+        "parent": "uncurl",
+        "definition_atoms": [
+          "form",
+          "curl",
+          "curve",
+          "kink"
+        ],
+        "glyph_operations": [
+          "FLOW",
+          "CAPACITY",
+          "COIL"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "dynamic",
+        "subject": "curled",
+        "parent": "uncurl",
+        "definition_atoms": [
+          "form",
+          "curl",
+          "curve",
+          "kink"
+        ],
+        "glyph_predicates": [
+          "flow",
+          "capacity",
+          "coil"
+        ],
+        "realization_tokens": [
+          "curled",
+          "describes",
+          "form",
+          "curl",
+          "curve",
+          "kink",
+          "while",
+          "flow",
+          "capacity",
+          "coil",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Curled describes form curl curve kink while flow capacity coil constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "discovery",
+      "depth": 10,
+      "inputs": {
+        "parent": "exploration",
+        "definition_atoms": [
+          "act",
+          "discovering",
+          "something"
+        ],
+        "glyph_operations": [
+          "SEED",
+          "CONTAIN",
+          "CYCLE"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "process",
+        "subject": "discovery",
+        "parent": "exploration",
+        "definition_atoms": [
+          "act",
+          "discovering",
+          "something"
+        ],
+        "glyph_predicates": [
+          "seed",
+          "contain",
+          "cycle"
+        ],
+        "realization_tokens": [
+          "discovery",
+          "acts",
+          "through",
+          "act",
+          "discovering",
+          "something",
+          "while",
+          "seed",
+          "contain",
+          "cycle",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Discovery acts through act discovering something while seed contain cycle constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "herbs",
+      "depth": 10,
+      "inputs": {
+        "parent": "leguminosae",
+        "definition_atoms": [
+          "plant",
+          "lacking",
+          "permanent",
+          "woody",
+          "stem",
+          "many",
+          "flowering",
+          "garden",
+          "plants",
+          "potherbs",
+          "some",
+          "having",
+          "medicinal",
+          "properties",
+          "pests"
+        ],
+        "glyph_operations": [
+          "TRANSFORM",
+          "FLOW",
+          "INDIVIDUATE"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "classification",
+        "subject": "herbs",
+        "parent": "leguminosae",
+        "definition_atoms": [
+          "plant",
+          "lacking",
+          "permanent",
+          "woody"
+        ],
+        "glyph_predicates": [
+          "transform",
+          "flow",
+          "individuate"
+        ],
+        "realization_tokens": [
+          "herbs",
+          "is",
+          "associated",
+          "with",
+          "plant",
+          "lacking",
+          "permanent",
+          "woody",
+          "while",
+          "transform",
+          "flow",
+          "individuate",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Herbs is associated with plant lacking permanent woody while transform flow individuate constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "soul",
+      "depth": 15,
+      "inputs": {
+        "parent": "rebirth",
+        "definition_atoms": [
+          "immaterial",
+          "part",
+          "person",
+          "actuating",
+          "cause",
+          "individual",
+          "life"
+        ],
+        "glyph_operations": [
+          "INDIVIDUATE",
+          "BOUND",
+          "FILTER"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "process",
+        "subject": "soul",
+        "parent": "rebirth",
+        "definition_atoms": [
+          "immaterial",
+          "part",
+          "person",
+          "actuating"
+        ],
+        "glyph_predicates": [
+          "individuate",
+          "bound",
+          "filter"
+        ],
+        "realization_tokens": [
+          "soul",
+          "acts",
+          "through",
+          "immaterial",
+          "part",
+          "person",
+          "actuating",
+          "while",
+          "individuate",
+          "bound",
+          "filter",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Soul acts through immaterial part person actuating while individuate bound filter constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    },
+    {
+      "word": "cycle",
+      "depth": 15,
+      "inputs": {
+        "parent": "rebirth",
+        "definition_atoms": [
+          "interval",
+          "during",
+          "recurring",
+          "sequence",
+          "events",
+          "occurs"
+        ],
+        "glyph_operations": [
+          "GOVERN",
+          "TIMESTAMP",
+          "CONTAIN"
+        ]
+      },
+      "proposition_trace": {
+        "selected_relation": "dynamic",
+        "subject": "cycle",
+        "parent": "rebirth",
+        "definition_atoms": [
+          "interval",
+          "during",
+          "recurring",
+          "sequence"
+        ],
+        "glyph_predicates": [
+          "govern",
+          "timestamp",
+          "contain"
+        ],
+        "realization_tokens": [
+          "cycle",
+          "describes",
+          "interval",
+          "during",
+          "recurring",
+          "sequence",
+          "while",
+          "govern",
+          "timestamp",
+          "contain",
+          "constrain",
+          "its",
+          "operational",
+          "interpretation"
+        ]
+      },
+      "constructed_sentence": "Cycle describes interval during recurring sequence while govern timestamp contain constrain its operational interpretation.",
+      "grade": {
+        "checks": {
+          "target_present": true,
+          "definition_atoms_present": true,
+          "graph_relation_selected": true,
+          "glyph_predicates_present": true,
+          "complete_sentence": true,
+          "no_prior_scaffold": true
+        },
+        "score": 6,
+        "max": 6
+      }
+    }
+  ],
+  "boundary": "No vocabulary growth and no Trial-007/008 articulation frames. A minimal grammar composer realizes propositions selected from stored definition, lineage, and glyph relations.",
+  "critical_limit": "The relation selector and grammar rules are still programmed mechanisms. Success would show graph-to-proposition composition without canned word-specific prose, not unconstrained natural-language generation or subjective comprehension.",
+  "sha256": "f23bc94cd9eb796d5036779dc29b251a9d26340854f9f5612ec35daa8b4b0a4d"
+}
