@@ -29,3 +29,5 @@ jobs:
           git add results/resh_hebrew_operational_hypernymization_014.json
           git diff --cached --quiet || git commit -m "results: Resh Hebrew operational hypernymization trial 014"
           git push origin HEAD:autonomous-agency
+
+# retrigger deterministic registry ingestion
