@@ -1,0 +1,63 @@
+{
+  "experiment": "GLYPH_GOVERNOR_OBJECTIVE_CHAIN_003",
+  "objective": "Construct the smallest registry-supported self-governing complete chain.",
+  "proposed_chain": [
+    "INITIALIZE",
+    "GOVERN",
+    "SEAL"
+  ],
+  "transitions": [
+    {
+      "transition": "INITIALIZE -> GOVERN",
+      "objective": "Construct the smallest registry-supported self-governing complete chain.",
+      "current_state": "no chain state has yet been established",
+      "a_contribution": "INITIALIZE establishes the starting conditions from blank potential",
+      "registry_evidence": "Genesis First; Aleph's folding behavior says it appears at the start",
+      "why_b_follows": "GOVERN can then establish control/identity over an initialized chain",
+      "direction_test": "GOVERN → INITIALIZE conflicts with Genesis First for an ordinary start",
+      "objective_progress": "the chain advances from no established state to an initialized, governable state",
+      "governor_sentence": "For the objective 'Construct the smallest registry-supported self-governing complete chain.', INITIALIZE precedes GOVERN because initialize establishes the starting conditions from blank potential; Genesis First; Aleph's folding behavior says it appears at the start supports that placement, after which govern can then establish control/identity over an initialized chain, so the chain advances from no established state to an initialized, governable state.",
+      "verdict": "SUPPORTED",
+      "audit": {
+        "objective": true,
+        "current_state": true,
+        "a_contribution": true,
+        "registry_evidence": true,
+        "b_following_reason": true,
+        "direction_test": true,
+        "objective_progress": true,
+        "complete_sentence": true,
+        "verdict": true
+      },
+      "score": 9
+    },
+    {
+      "transition": "GOVERN -> SEAL",
+      "objective": "Construct the smallest registry-supported self-governing complete chain.",
+      "current_state": "an initialized chain exists and governance has been established",
+      "a_contribution": "GOVERN supplies the self-governing identity/control required by the objective",
+      "registry_evidence": "Govern Early; Completion Last; Aleph's combinatorial note names INITIALIZE + GOVERN + SEAL as the minimal complete algorithm",
+      "why_b_follows": "SEAL can certify/complete the governed chain after its operative structure exists",
+      "direction_test": "SEAL → GOVERN conflicts with Completion Last because sealing before governance would close the chain before self-governance is established",
+      "objective_progress": "the chain advances from governed-but-open to completed and sealed",
+      "governor_sentence": "For the objective 'Construct the smallest registry-supported self-governing complete chain.', GOVERN precedes SEAL because govern supplies the self-governing identity/control required by the objective; Govern Early; Completion Last; Aleph's combinatorial note names INITIALIZE + GOVERN + SEAL as the minimal complete algorithm supports that placement, after which seal can certify/complete the governed chain after its operative structure exists, so the chain advances from governed-but-open to completed and sealed.",
+      "verdict": "SUPPORTED",
+      "audit": {
+        "objective": true,
+        "current_state": true,
+        "a_contribution": true,
+        "registry_evidence": true,
+        "b_following_reason": true,
+        "direction_test": true,
+        "objective_progress": true,
+        "complete_sentence": true,
+        "verdict": true
+      },
+      "score": 9
+    }
+  ],
+  "score": 18,
+  "max_score": 18,
+  "boundary": "The trace is rule-grounded in supplied registry content. The harness structures the permitted evidence and audit; success does not establish independent discovery or general language comprehension.",
+  "sha256": "41df54c5dd4c0eba97456ba1605293ceb19f90a8a18649261ccef4970ccda361"
+}
