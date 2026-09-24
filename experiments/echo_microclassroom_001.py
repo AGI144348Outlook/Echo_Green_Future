@@ -13,11 +13,11 @@ SEEDS=["water","fire","sun","earth","eye","ear","hand","foot",
 
 # Items intentionally use Lobby vocabulary in the prompt/options.
 BANK=[
- ExamItem(id="m1",source="microclassroom",prompt="You drink water.",gold=True,metadata={"concept":"water"}),
- ExamItem(id="m2",source="microclassroom",prompt="You hear with an eye.",gold=False,metadata={"concept":"eye"}),
- ExamItem(id="m3",source="microclassroom",prompt="You see with an eye.",gold=True,metadata={"concept":"eye"}),
- ExamItem(id="m4",source="microclassroom",prompt="Fire is cold.",gold=False,metadata={"concept":"fire"}),
- ExamItem(id="m5",source="microclassroom",prompt="You eat water.",gold=False,metadata={"concept":"water"}),
+ ExamItem("Micro001","m1","boolq","You drink water.",("true","false"),True,phenomenon="water"),
+ ExamItem("Micro001","m2","boolq","You hear with an eye.",("true","false"),False,phenomenon="eye"),
+ ExamItem("Micro001","m3","boolq","You see with an eye.",("true","false"),True,phenomenon="eye"),
+ ExamItem("Micro001","m4","boolq","Fire is cold.",("true","false"),False,phenomenon="fire"),
+ ExamItem("Micro001","m5","boolq","You eat water.",("true","false"),False,phenomenon="water"),
 ]
 
 g=HomeworkGovernor(SEEDS,max_turns=100,max_new_words_per_turn=3)
@@ -30,16 +30,16 @@ print("Items:",len(BANK))
 
 # Validate that lexical tokens carrying test meaning are Lobby words.
 # Function words/punctuation are structural scaffolding, not new study concepts.
-concepts={x.metadata["concept"] for x in BANK}
+concepts={x.phenomenon for x in BANK}
 assert concepts <= set(g.lobby)
 print("Concept filter:",sorted(concepts))
 
 # Public views demonstrate gold answers are sealed.
 for item in BANK:
-    room.add(item)
-    public=room.public_view(item.id)
+    room.enroll(item)
+    public=room.administer(item.item_id)
     assert "gold" not in public
-    print("SEALED:",item.id,public["prompt"])
+    print("SEALED:",item.item_id,public["prompt"])
 
 print("STATUS: MICROCLASSROOM_FILTER_AND_SEAL_VALIDATED")
 print("NOTE: no answer-generating cognition is fabricated here; this run validates")
