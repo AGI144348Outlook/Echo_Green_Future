@@ -6,11 +6,23 @@ from nltk.corpus import wordnet as wn
 state=json.loads(Path("state/lesson_001_subject_spectrum.json").read_text())
 glyphs=[]
 for p in sorted(Path("ECHO_GlyphRegistry").glob("[0-9][0-9]-*.md")):
- txt=p.read_text(); gm=re.search(r"\\*\\*Glyph\\*\\* \\| ([^|]+)\\|",txt); op=re.search(r"\\*\\*Algorithmic Operation\\*\\* \\| ([^|]+)\\|",txt)
- hm=re.search(r"## Operation Hypernym Chain[\\s\\S]*?```\\s*([\\s\\S]*?)```",txt)
- if not(op and hm):continue
- chain=[x.strip() for x in hm.group(2).replace("\\n"," ").split("→") if x.strip()]
- glyphs.append({"file":str(p),"glyph":gm.group(1).strip() if gm else "?","operation":op.group(1).strip(),"chain":chain})
+ txt=p.read_text()
+ # Parse stable Markdown table rows without regex.
+ vals={}
+ for line in txt.splitlines():
+  if line.startswith("| **"):
+   cells=[x.strip() for x in line.strip().strip("|").split("|")]
+   if len(cells)>=2: vals[cells[0].replace("**","")]=cells[1]
+ marker="## Operation Hypernym Chain"
+ if marker not in txt: continue
+ tail=txt.split(marker,1)[1]
+ fence=chr(96)*3
+ blocks=tail.split(fence)
+ if len(blocks)<3: continue
+ chain=[x.strip() for x in blocks[1].replace("\n"," ").split("→") if x.strip()]
+ if vals.get("Glyph") and vals.get("Algorithmic Operation") and chain:
+  glyphs.append({"file":str(p),"glyph":vals["Glyph"],"operation":vals["Algorithmic Operation"],"chain":chain})
+assert len(glyphs)==22, f"REGISTRY INGESTION FAILURE: expected 22 glyphs, loaded {len(glyphs)}"
 def terms(x):return set(re.sub(r"[^a-z]+"," ",x.lower()).split())
 generic={"act","operation","function","algorithm","system","component"}
 for g in glyphs:g["evidence_terms"]=sorted(set().union(*(terms(x) for x in g["chain"]))-generic)
