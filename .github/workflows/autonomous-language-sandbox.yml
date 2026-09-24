@@ -23,6 +23,8 @@ permissions:
 jobs:
   swadesh-hypernym-sentences:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
