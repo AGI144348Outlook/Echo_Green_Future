@@ -1,0 +1,30 @@
+name: ECHO Trial 014 - Resh Hebrew Operational Hypernymization
+on:
+  workflow_dispatch:
+  push:
+    branches: [autonomous-agency]
+    paths:
+      - "experiments/resh_hebrew_operational_hypernymization_014.py"
+      - ".github/workflows/resh-hebrew-operational-014.yml"
+permissions:
+  contents: write
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          pip install nltk
+          python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+      - run: python experiments/resh_hebrew_operational_hypernymization_014.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/resh_hebrew_operational_hypernymization_014.json
+          git diff --cached --quiet || git commit -m "results: Resh Hebrew operational hypernymization trial 014"
+          git push origin HEAD:autonomous-agency
