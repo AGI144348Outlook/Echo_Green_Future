@@ -1,0 +1,29 @@
+name: Performative Glyph Transfer 008
+on:
+  push:
+    branches: [autonomous-agency]
+    paths:
+      - "experiments/performative_glyph_transfer_008.py"
+      - ".github/workflows/performative-glyph-transfer-008.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python experiments/performative_glyph_transfer_008.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/performative_glyph_transfer_008.*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "results: performative glyph transfer 008"
+          git push origin HEAD:autonomous-agency
