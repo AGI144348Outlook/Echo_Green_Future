@@ -5,6 +5,11 @@ relations available through Lobby-permitted concepts; Classroom seals gold
 until submission. This is a narrow symbolic/lexical test, not a claim of
 general comprehension.
 """
+import os, sys
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
 from nltk.corpus import wordnet as wn
 from src.echo_homework import HomeworkGovernor
 from src.echo_classroom import Classroom, ExamItem
