@@ -1,0 +1,33 @@
+name: ECHO Trial 013 - Persistent Definition Closure
+on:
+  workflow_dispatch:
+  push:
+    branches: [autonomous-agency]
+    paths:
+      - "experiments/lesson_001_definition_closure_013.py"
+      - ".github/workflows/lesson-001-definition-closure-013.yml"
+permissions:
+  contents: write
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install WordNet dependency
+        run: |
+          pip install nltk
+          python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+      - name: Run Trial 013
+        run: python experiments/lesson_001_definition_closure_013.py
+      - name: Commit experiential state and result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/lesson_001_subject_spectrum.json results/lesson_001_definition_closure_013.json
+          git diff --cached --quiet || git commit -m "results: persist lesson 001 spectrum and definition closure trial 013"
+          git push origin HEAD:autonomous-agency
