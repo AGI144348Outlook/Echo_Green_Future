@@ -104,15 +104,21 @@ jobs:
           PY
 
       - name: Run ECHO Homework Session 001
+        shell: bash
         run: |
+          set -o pipefail
           python experiments/echo_homework_session_001.py | tee echo_homework_session_001.md
 
       - name: Run initial comprehension-governed Homework trial
+        shell: bash
         run: |
+          set -o pipefail
           python experiments/echo_homework_trial_001.py | tee echo_homework_trial_001.md
 
       - name: Run vocabulary-filtered Micro-Classroom
+        shell: bash
         run: |
+          set -o pipefail
           python experiments/echo_microclassroom_001.py | tee echo_microclassroom_001.md
 
       - name: Run scored ECHO Micro-Classroom
