@@ -18,16 +18,11 @@ SEEDS=["water","fire","sun","earth","eye","ear","hand","foot",
        "eat","drink","see","hear","go","come","big","small","good","bad"]
 
 ITEMS=[
- ExamItem(id="r1",source="microclassroom-002",prompt="You drink water.",gold=True,
-          metadata={"subject":"you","verb":"drink","object":"water"}),
- ExamItem(id="r2",source="microclassroom-002",prompt="You hear with an eye.",gold=False,
-          metadata={"subject":"you","verb":"hear","instrument":"eye"}),
- ExamItem(id="r3",source="microclassroom-002",prompt="You see with an eye.",gold=True,
-          metadata={"subject":"you","verb":"see","instrument":"eye"}),
- ExamItem(id="r4",source="microclassroom-002",prompt="Fire is cold.",gold=False,
-          metadata={"subject":"fire","property":"cold"}),
- ExamItem(id="r5",source="microclassroom-002",prompt="You eat water.",gold=False,
-          metadata={"subject":"you","verb":"eat","object":"water"}),
+ ExamItem("Micro002","r1","boolq","You drink water.",("true","false"),True, context="you|drink|water"),
+ ExamItem("Micro002","r2","boolq","You hear with an eye.",("true","false"),False, context="you|hear|eye"),
+ ExamItem("Micro002","r3","boolq","You see with an eye.",("true","false"),True, context="you|see|eye"),
+ ExamItem("Micro002","r4","boolq","Fire is cold.",("true","false"),False, context="fire|is|cold"),
+ ExamItem("Micro002","r5","boolq","You eat water.",("true","false"),False, context="you|eat|water"),
 ]
 
 g=HomeworkGovernor(SEEDS,max_turns=100,max_new_words_per_turn=3)
@@ -38,7 +33,10 @@ def glosses(word):
     return " ".join(s.definition().lower() for s in wn.synsets(word)[:6])
 
 def answer(item):
-    m=item.metadata
+    parts=item.context.split("|")
+    if parts[1] == "is": m={"subject":parts[0],"property":parts[2]}
+    elif parts[1] in ("see","hear"): m={"subject":parts[0],"verb":parts[1],"instrument":parts[2]}
+    else: m={"subject":parts[0],"verb":parts[1],"object":parts[2]}
     # Evidence is lexical, retrieved only for Lobby concepts in the item.
     if "instrument" in m:
         inst,verb=m["instrument"],m["verb"]
@@ -66,15 +64,15 @@ def answer(item):
 print("# ECHO MICRO-CLASSROOM 002")
 correct=0
 for item in ITEMS:
-    room.add(item)
-    public=room.public_view(item.id)
+    room.enroll(item)
+    public=room.administer(item.item_id)
     assert "gold" not in public
     response,evidence=answer(item)
     # Response is committed before Classroom reveals correctness/gold.
-    result=room.submit(item.id,response)
+    result=room.submit(item.item_id,response)
     ok=result["correct"]
     correct+=int(ok)
-    print(item.id,"PROMPT:",public["prompt"])
+    print(item.item_id,"PROMPT:",public["prompt"])
     print("ECHO:",response,"CORRECT:",ok)
     print("EVIDENCE:",evidence[:220].replace("\n"," "))
 print("SCORE:",correct,"/",len(ITEMS),f"({correct/len(ITEMS):.1%})")
