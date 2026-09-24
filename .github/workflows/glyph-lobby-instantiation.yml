@@ -7,6 +7,7 @@ on:
       - "ECHO_GlyphRegistry.zip"
       - ".github/workflows/glyph-lobby-instantiation.yml"
       - "experiments/glyph_governor_hypernym_002.py"
+      - "experiments/glyph_governor_objective_chain_003.py"
   workflow_dispatch:
 
 permissions:
@@ -242,6 +243,7 @@ jobs:
           set -o pipefail
           python experiments/glyph_governor_hypernym_001.py | tee results/glyph_governor_hypernym_001.md
           python experiments/glyph_governor_hypernym_002.py
+          python experiments/glyph_governor_objective_chain_003.py
 
       - name: Commit registry, lobby scaffolds, harness, and results
         shell: bash
@@ -249,7 +251,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ECHO_GlyphRegistry lobbies/glyph experiments/glyph_governor_hypernym_001.py experiments/glyph_governor_hypernym_002.py results/glyph_governor_hypernym_001.* results/glyph_governor_hypernym_002.*
+          git add ECHO_GlyphRegistry lobbies/glyph experiments/glyph_governor_hypernym_001.py experiments/glyph_governor_hypernym_002.py results/glyph_governor_hypernym_001.* results/glyph_governor_hypernym_002.* experiments/glyph_governor_objective_chain_003.py results/glyph_governor_objective_chain_003.*
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
