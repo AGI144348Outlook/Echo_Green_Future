@@ -1,1 +1,24 @@
-const CACHE_NAME="pwa-hosting-environment-v1";const APP_SHELL=["./","./index.html","./manifest.webmanifest"];self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)));self.skipWaiting()});self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));self.clients.claim()});self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request).catch(()=>caches.match("./index.html"))))});
+const CACHE_NAME="pwa-hosting-environment-v2";
+const APP_SHELL=["./","./index.html","./manifest.webmanifest","./eve/bootstrap.js","./eve/inert_eve.py"];
+
+self.addEventListener("install",event=>{
+  event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));
+  self.skipWaiting();
+});
+
+self.addEventListener("activate",event=>{
+  event.waitUntil(
+    caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key))))
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch",event=>{
+  if(event.request.method!=="GET") return;
+  event.respondWith(
+    caches.match(event.request).then(cached=>cached||fetch(event.request).catch(()=>{
+      if(event.request.mode==="navigate") return caches.match("./index.html");
+      return Response.error();
+    }))
+  );
+});
