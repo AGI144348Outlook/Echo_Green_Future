@@ -9,7 +9,7 @@ for p in sorted(Path("ECHO_GlyphRegistry").glob("[0-9][0-9]-*.md")):
  txt=p.read_text(); gm=re.search(r"\\*\\*Glyph\\*\\* \\| ([^|]+)\\|",txt); op=re.search(r"\\*\\*Algorithmic Operation\\*\\* \\| ([^|]+)\\|",txt)
  hm=re.search(r"## Operation Hypernym Chain[\\s\\S]*?```\\s*([\\s\\S]*?)```",txt)
  if not(op and hm):continue
- chain=[x.strip() for x in hm.group(1).replace("\\n"," ").split("→") if x.strip()]
+ chain=[x.strip() for x in hm.group(2).replace("\\n"," ").split("→") if x.strip()]
  glyphs.append({"file":str(p),"glyph":gm.group(1).strip() if gm else "?","operation":op.group(1).strip(),"chain":chain})
 def terms(x):return set(re.sub(r"[^a-z]+"," ",x.lower()).split())
 generic={"act","operation","function","algorithm","system","component"}
