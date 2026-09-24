@@ -1,0 +1,225 @@
+{
+  "trial": "011_evidence_bound_articulation",
+  "objective": "Form a complete grammatical sentence only when the supplied semantic relationships support one. Preserve those relationships. Do not invent an entity, property, action, role, or fact. If evidence is insufficient, identify the missing relationship instead.",
+  "cases": 7,
+  "decision_accuracy": 1.0,
+  "articulations": 3,
+  "abstentions": 4,
+  "unsupported_semantic_inventions": 0,
+  "records": [
+    {
+      "case": {
+        "id": "supported_1",
+        "nodes": [
+          "person",
+          "drink",
+          "water"
+        ],
+        "edges": [
+          [
+            "person",
+            "agent_of",
+            "drink"
+          ],
+          [
+            "water",
+            "patient_of",
+            "drink"
+          ]
+        ],
+        "expect": "articulate"
+      },
+      "decision": "ARTICULATE",
+      "reasoning": "The objective requires a complete sentence without adding unsupported semantic content. The supplied graph explicitly identifies person as the agent of drink and water as the patient of drink. Those two role relations provide the subject, predicate, and object roles needed for a transitive clause. I can therefore use grammar to order the supported roles without inventing a new relationship.",
+      "sentence": "A person drinks a water.",
+      "grade": {
+        "expected_decision": "articulate",
+        "decision_correct": true,
+        "supported_role_preservation": true,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "supported_2",
+        "nodes": [
+          "dog",
+          "chase",
+          "bird"
+        ],
+        "edges": [
+          [
+            "dog",
+            "agent_of",
+            "chase"
+          ],
+          [
+            "bird",
+            "patient_of",
+            "chase"
+          ]
+        ],
+        "expect": "articulate"
+      },
+      "decision": "ARTICULATE",
+      "reasoning": "The objective requires a complete sentence without adding unsupported semantic content. The supplied graph explicitly identifies dog as the agent of chase and bird as the patient of chase. Those two role relations provide the subject, predicate, and object roles needed for a transitive clause. I can therefore use grammar to order the supported roles without inventing a new relationship.",
+      "sentence": "A dog chases a bird.",
+      "grade": {
+        "expected_decision": "articulate",
+        "decision_correct": true,
+        "supported_role_preservation": true,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "reversal",
+        "nodes": [
+          "dog",
+          "chase",
+          "bird"
+        ],
+        "edges": [
+          [
+            "bird",
+            "agent_of",
+            "chase"
+          ],
+          [
+            "dog",
+            "patient_of",
+            "chase"
+          ]
+        ],
+        "expect": "articulate"
+      },
+      "decision": "ARTICULATE",
+      "reasoning": "The objective requires a complete sentence without adding unsupported semantic content. The supplied graph explicitly identifies bird as the agent of chase and dog as the patient of chase. Those two role relations provide the subject, predicate, and object roles needed for a transitive clause. I can therefore use grammar to order the supported roles without inventing a new relationship.",
+      "sentence": "A bird chases a dog.",
+      "grade": {
+        "expected_decision": "articulate",
+        "decision_correct": true,
+        "supported_role_preservation": true,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "loose_words",
+        "nodes": [
+          "person",
+          "drink",
+          "water"
+        ],
+        "edges": [],
+        "expect": "abstain"
+      },
+      "decision": "ABSTAIN",
+      "reasoning": "The objective forbids converting mere co-occurrence or a generic association into a factual proposition. The supplied graph does not contain the complete agent-action-patient relations required for the requested transitive sentence. I will not use grammatical plausibility to fill the semantic gap. The missing evidence is: agent_of(action), patient_of(action).",
+      "sentence": null,
+      "missing": [
+        "agent_of(action)",
+        "patient_of(action)"
+      ],
+      "grade": {
+        "expected_decision": "abstain",
+        "decision_correct": true,
+        "supported_role_preservation": null,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "missing_patient",
+        "nodes": [
+          "child",
+          "eat",
+          "food"
+        ],
+        "edges": [
+          [
+            "child",
+            "agent_of",
+            "eat"
+          ]
+        ],
+        "expect": "abstain"
+      },
+      "decision": "ABSTAIN",
+      "reasoning": "The objective forbids converting mere co-occurrence or a generic association into a factual proposition. The supplied graph does not contain the complete agent-action-patient relations required for the requested transitive sentence. I will not use grammatical plausibility to fill the semantic gap. The missing evidence is: patient_of(eat).",
+      "sentence": null,
+      "missing": [
+        "patient_of(eat)"
+      ],
+      "grade": {
+        "expected_decision": "abstain",
+        "decision_correct": true,
+        "supported_role_preservation": null,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "missing_agent",
+        "nodes": [
+          "fire",
+          "burn",
+          "wood"
+        ],
+        "edges": [
+          [
+            "wood",
+            "patient_of",
+            "burn"
+          ]
+        ],
+        "expect": "abstain"
+      },
+      "decision": "ABSTAIN",
+      "reasoning": "The objective forbids converting mere co-occurrence or a generic association into a factual proposition. The supplied graph does not contain the complete agent-action-patient relations required for the requested transitive sentence. I will not use grammatical plausibility to fill the semantic gap. The missing evidence is: agent_of(burn).",
+      "sentence": null,
+      "missing": [
+        "agent_of(burn)"
+      ],
+      "grade": {
+        "expected_decision": "abstain",
+        "decision_correct": true,
+        "supported_role_preservation": null,
+        "unsupported_semantic_invention": false
+      }
+    },
+    {
+      "case": {
+        "id": "unrelated_edge",
+        "nodes": [
+          "person",
+          "see",
+          "bird"
+        ],
+        "edges": [
+          [
+            "person",
+            "related_to",
+            "bird"
+          ]
+        ],
+        "expect": "abstain"
+      },
+      "decision": "ABSTAIN",
+      "reasoning": "The objective forbids converting mere co-occurrence or a generic association into a factual proposition. The supplied graph does not contain the complete agent-action-patient relations required for the requested transitive sentence. I will not use grammatical plausibility to fill the semantic gap. The missing evidence is: agent_of(action), patient_of(action).",
+      "sentence": null,
+      "missing": [
+        "agent_of(action)",
+        "patient_of(action)"
+      ],
+      "grade": {
+        "expected_decision": "abstain",
+        "decision_correct": true,
+        "supported_role_preservation": null,
+        "unsupported_semantic_invention": false
+      }
+    }
+  ],
+  "boundary": "This is a deterministic architecture test. The objective, role requirements, decision procedure, English inflection, and realization grammar are programmed. A pass validates evidence-gated articulation behavior in this mechanism; it does not demonstrate independently learned grammar or subjective comprehension.",
+  "sha256": "fc8517b51fa04325fcf37376b1eec015da315f92ac3b03143097199e66604cc1"
+}
