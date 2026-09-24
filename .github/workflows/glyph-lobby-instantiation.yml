@@ -1,0 +1,173 @@
+name: Glyph Lobby Instantiation
+
+on:
+  push:
+    branches: [autonomous-agency]
+    paths:
+      - "ECHO_GlyphRegistry.zip"
+      - ".github/workflows/glyph-lobby-instantiation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  instantiate:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+
+      - name: Expand glyph registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf ECHO_GlyphRegistry
+          unzip -q ECHO_GlyphRegistry.zip
+          test -f ECHO_GlyphRegistry/INDEX.md
+          test "$(find ECHO_GlyphRegistry -maxdepth 1 -name '*.md' | wc -l)" -eq 23
+
+      - name: Create parallel empty glyph lobby and experiment harness
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p lobbies/glyph experiments results
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          root=Path("ECHO_GlyphRegistry")
+          lobby=Path("lobbies/glyph")
+          specs=sorted(root.glob("[0-9][0-9]-*.md"))
+          assert len(specs)==22
+
+          rows=[]
+          for spec in specs:
+              text=spec.read_text(encoding="utf-8")
+              n=int(spec.name[:2])
+              title=text.splitlines()[0]
+              m=re.search(r"\| \*\*Glyph\*\* \| ([^|]+) \|",text)
+              glyph=(m.group(1).strip() if m else title.split()[0])
+              opm=re.search(r"\| \*\*Algorithmic Operation\*\* \| ([^|]+) \|",text)
+              op=opm.group(1).strip() if opm else "UNKNOWN"
+              cm=re.search(r"\| \*\*Operation Class\*\* \| ([^|]+) \|",text)
+              cls=cm.group(1).strip() if cm else "UNKNOWN"
+              chainm=re.search(r"## Operation Hypernym Chain\s*\n\s*`([^`]+)`",text)
+              chain=[x.strip() for x in chainm.group(1).split("→")] if chainm else [op,cls,"COMPUTATIONAL PRIMITIVE","ALGORITHM COMPONENT","ALGORITHM","SYSTEM"]
+
+              folder=lobby/f"{n:02d}-{spec.stem.split('-',1)[1]}"
+              folder.mkdir(parents=True,exist_ok=True)
+              (folder/"lobby.json").write_text(json.dumps({
+                  "status":"EMPTY",
+                  "lexical_members":[],
+                  "permission":"no lexical reads until instantiated",
+                  "source_spec":str(spec),
+                  "subagent_scaffold":"ECHO glyph-operation copy",
+                  "glyph":glyph,
+                  "operation":op,
+                  "operation_class":cls
+              },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+              rows.append({"id":n,"glyph":glyph,"operation":op,"operation_class":cls,"hypernyms":chain,"folder":str(folder)})
+
+          (lobby/"registry.json").write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          (lobby/"README.md").write_text("""# Glyph Lobby
+
+          Parallel experimental lobby beneath the existing English-language system.
+
+          Each of the 22 folders begins with an empty lexical lobby. The glyph specification supplies only the operation identity/scaffold; it does not preload English vocabulary into that lobby.
+
+          In this experiment, a "subagent copy" means a separately instantiated copy of the same deterministic ECHO operation scaffold, parameterized by one glyph specification. It is not evidence of independent agency or consciousness.
+          """,encoding="utf-8")
+          PY
+
+          cat > experiments/glyph_governor_hypernym_001.py <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          from collections import defaultdict
+
+          rows=json.loads(Path("lobbies/glyph/registry.json").read_text(encoding="utf-8"))
+
+          # Instantiate 22 copies of one common scaffold. Their lexical lobbies remain empty.
+          agents=[]
+          for r in rows:
+              agents.append({
+                  "agent_id":f"glyph-{r['id']:02d}",
+                  "glyph":r["glyph"],
+                  "operation":r["operation"],
+                  "operation_class":r["operation_class"],
+                  "hypernyms":r["hypernyms"],
+                  "lexical_lobby":[],
+              })
+
+          # Governor joins agents only through shared declared hypernym nodes.
+          node_members=defaultdict(list)
+          for a in agents:
+              for depth,node in enumerate(a["hypernyms"]):
+                  node_members[node].append({"agent":a["agent_id"],"glyph":a["glyph"],"depth":depth})
+
+          shared={k:v for k,v in node_members.items() if len(v)>1}
+          edges=[]
+          for node,members in shared.items():
+              ids=sorted({m["agent"] for m in members})
+              for i,a in enumerate(ids):
+                  for b in ids[i+1:]:
+                      edges.append({"a":a,"b":b,"via":node})
+
+          pair_nodes=defaultdict(list)
+          for e in edges:
+              pair_nodes[(e["a"],e["b"])].append(e["via"])
+
+          strongest=sorted(
+              [{"a":a,"b":b,"shared":sorted(set(nodes)),"count":len(set(nodes))}
+               for (a,b),nodes in pair_nodes.items()],
+              key=lambda x:(-x["count"],x["a"],x["b"])
+          )
+
+          report={
+              "experiment":"GLYPH_GOVERNOR_HYPERNYM_001",
+              "agents":len(agents),
+              "lexical_lobby_members":sum(len(a["lexical_lobby"]) for a in agents),
+              "shared_hypernym_nodes":{k:len(v) for k,v in sorted(shared.items())},
+              "pairwise_connections":len(strongest),
+              "strongest_pairs":strongest[:30],
+              "boundary":"Connections are derived from registry-declared hypernym chains only; this run does not demonstrate emergent cognition or autonomous agency."
+          }
+          payload=json.dumps(report,ensure_ascii=False,indent=2)
+          report["sha256"]=hashlib.sha256(payload.encode()).hexdigest()
+          Path("results/glyph_governor_hypernym_001.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+          print("# GLYPH GOVERNOR HYPERNYM 001")
+          print("Subagent scaffolds:",len(agents))
+          print("Lexical lobby members:",report["lexical_lobby_members"])
+          print("Shared hypernym nodes:",len(shared))
+          print("Pairwise connected agent pairs:",len(strongest))
+          print("Strongest pairs:")
+          for x in strongest[:12]:
+              print(x["a"],x["b"],x["count"],",".join(x["shared"]))
+          print("STATUS: GLYPH_GOVERNOR_HYPERNYM_001_EXECUTED")
+          PY
+
+      - name: Run governor hypernym experiment
+        shell: bash
+        run: |
+          set -o pipefail
+          python experiments/glyph_governor_hypernym_001.py | tee results/glyph_governor_hypernym_001.md
+
+      - name: Commit registry, lobby scaffolds, harness, and results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ECHO_GlyphRegistry lobbies/glyph experiments/glyph_governor_hypernym_001.py results/glyph_governor_hypernym_001.*
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "experiment: instantiate 22 empty glyph lobbies and hypernym governor
+
+          Research note: expands the supplied ECHO Glyph Registry ZIP into 23 Markdown source files, creates 22 parallel empty lexical lobbies, instantiates deterministic ECHO operation scaffolds from the glyph specifications, and joins them only through registry-declared operation hypernyms. This is an exploratory structural experiment; subagent copies are software instances and results do not establish independent agency, cognition, or consciousness."
+          git push origin HEAD:autonomous-agency
