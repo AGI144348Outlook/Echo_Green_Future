@@ -1,0 +1,24 @@
+name: ECHO Trial 012 - Lesson 001 Hypernym Spectrum
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Trial 012
+        run: python experiments/lesson_001_hypernym_spectrum_012.py
+      - name: Commit measured result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/lesson_001_hypernym_spectrum_012.json
+          git diff --cached --quiet || git commit -m "results: lesson 001 hypernym spectrum trial 012"
+          git push origin HEAD:autonomous-agency
