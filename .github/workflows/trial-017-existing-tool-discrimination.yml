@@ -1,0 +1,26 @@
+name: Trial 017 - Existing Tool Discrimination
+on:
+  push:
+    branches: [algebra]
+    paths:
+      - "tests/trial_017_existing_tool_discrimination.py"
+      - ".github/workflows/trial-017-existing-tool-discrimination.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trial-017:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Run Trial 017
+        run: python tests/trial_017_existing_tool_discrimination.py
+      - name: Upload trace
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trial-017-trace
+          path: artifacts/trial_017_trace.json
+          if-no-files-found: error
