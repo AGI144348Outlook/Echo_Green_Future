@@ -46,7 +46,9 @@ globalThis.__EVE_RUNTIME__ = Object.freeze({
     });
     globalThis.__EVE_PYODIDE__ = pyodide;
     console.info("ECHO Classroom L000 ready.", lobbySnapshot);
+    globalThis.dispatchEvent(new CustomEvent("echo:l000-complete", { detail: l000Result }));
   } catch (error) {
     console.error("EVE/Classroom initialization failed.", error);
+    globalThis.dispatchEvent(new CustomEvent("echo:l000-error", { detail: String(error && error.message ? error.message : error) }));
   }
 })();
