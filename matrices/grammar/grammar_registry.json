@@ -1,0 +1,21 @@
+{
+  "schema": "echo.grammar-registry.v0.1",
+  "status": "working-empty-ruleset",
+  "principle": "grammar constrains linguistic construction; it does not select ECHO intent and never mutates word-only matrices",
+  "interfaces": {
+    "input": "lexical handles + candidate relations",
+    "output": "grammatical candidate/constraint report",
+    "expression_gate": "G::פ",
+    "governor": "G::ר"
+  },
+  "constraint_classes": [
+    "constituency",
+    "dependency",
+    "agreement",
+    "word_order",
+    "tense_aspect",
+    "reference",
+    "subject_object_role"
+  ],
+  "rules": []
+}
