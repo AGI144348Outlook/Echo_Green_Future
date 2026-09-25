@@ -686,11 +686,19 @@ if __name__ == '__main__':
     tsadi_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'tsadi_interrogative_index.json'
     interrogative_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'interrogative_matrix.json'
     glyph_index_path = ROOT / 'ECHO_AutonomousAgency' / 'docs' / 'glyphs' / 'INDEX.md'
-    carried_environment = {'matrix_dictionary': json.loads(env_path.read_text(encoding='utf-8')), 'exposed_index': json.loads(tsadi_path.read_text(encoding='utf-8')), 'index_target': json.loads(interrogative_path.read_text(encoding='utf-8')), 'glyph_blocks_index': str(glyph_index_path), 'available_matrix_actions': matrix_dictionary.available_actions(), 'observation_rule': 'Tsadi index exposed without explanation; access does not prescribe traversal.'}
+    glyph_algorithm_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'glyph_algorithm_index.json'
+    carried_environment = {'matrix_dictionary': json.loads(env_path.read_text(encoding='utf-8')), 'exposed_index': json.loads(tsadi_path.read_text(encoding='utf-8')), 'index_target': json.loads(interrogative_path.read_text(encoding='utf-8')), 'glyph_blocks_index': str(glyph_index_path), 'glyph_algorithm_index': json.loads(glyph_algorithm_path.read_text(encoding='utf-8')), 'available_matrix_actions': matrix_dictionary.available_actions(), 'observation_rule': 'Tsadi index exposed without explanation; access does not prescribe traversal.'}
     print('  Recess carried environment: Matrix Dictionary + 22 glyph blocks + Tsadi index exposed.')
 
-    result = recess.run_session(max_cycles=20, verbose=True)
+    result = recess.run_session(max_cycles=150, verbose=True)
     result['carried_environment'] = carried_environment
+    # UI semantics: any glyph used in a discovery lights when its registry entry has an established algorithm or subject-matrix tie.
+    lit=[]
+    for d in result['discoveries']:
+        for g in d.get('data',{}).get('glyphs',[]):
+            for name,b in carried_environment['glyph_algorithm_index']['blocks'].items():
+                if b['glyph']==g and (b['algorithm_ties'] or b['subject_matrices']): lit.append({'glyph':g,'block':name,'trigger_activity':d['activity'],'available_ties':b})
+    result['glyph_light_events']=lit
     result['external_answers'] = [
         {'question_subject':'conversation.','directed_to':'WORDNET','answer':'conversation','definition':'the use of speech for informal exchange of views, ideas, or information; a spoken exchange between participants','source':'external_interlocutor','note':"Normalized ECHO's token 'conversation.' to 'conversation' before answering."},
         {'question_subject':'self-knowledge','directed_to':'USER','answer':'Name','confirmation':'Yes, ECHO is his name.','source':'USER'}
