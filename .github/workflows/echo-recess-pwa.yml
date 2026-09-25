@@ -1,0 +1,37 @@
+name: ECHO Recess PWA Laboratory
+
+on:
+  push:
+    branches: [pwa-hosting-environment]
+    paths:
+      - ".github/workflows/echo-recess-pwa.yml"
+      - "pwa/recess/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PWA environment
+        uses: actions/checkout@v4
+      - name: Checkout Recess environment
+        uses: actions/checkout@v4
+        with:
+          ref: echo-recess-experiment
+          path: recess-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install runtime
+        run: pip install nltk
+      - name: Run ECHO Recess
+        working-directory: recess-src
+        run: python ECHO_AutonomousAgency/src/echo_recess.py
+      - name: Preserve Recess record
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo-recess-pwa-${{ github.run_number }}
+          path: recess-src/ECHO_AutonomousAgency/sandbox/recess_session_log.json
