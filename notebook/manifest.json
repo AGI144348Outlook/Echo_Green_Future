@@ -1,0 +1,53 @@
+{
+  "schema": "echo.notebook-manifest.v0.1",
+  "status": "working",
+  "principle": "Notebook is persistent address space/workbench; handles are not duplicated source objects and resolution is not authorization",
+  "sections": {
+    "T": {
+      "name": "TOC",
+      "target": "notebook/manifest.json"
+    },
+    "V": {
+      "name": "VGM",
+      "target": "matrices/echo_vgm.json"
+    },
+    "L": {
+      "name": "Logic Matrix",
+      "target": "matrices/logic/"
+    },
+    "G": {
+      "name": "Hebrew Glyph Registry",
+      "target": "matrices/glyphs/hebrew_glyph_registry.json"
+    },
+    "S": {
+      "name": "Symbol/Substrate Registries",
+      "target": "matrices/symbols/"
+    },
+    "W": {
+      "name": "Subject Word Matrices",
+      "target": "matrices/vocabulary/"
+    },
+    "F": {
+      "name": "Formula Registry",
+      "target": "matrices/formulas/formula_registry.json"
+    },
+    "R": {
+      "name": "Saved Relations",
+      "target": "notebook/retained/"
+    },
+    "X": {
+      "name": "Working Experiments",
+      "target": "notebook/working/"
+    },
+    "P": {
+      "name": "Provenance",
+      "target": "notebook/provenance/"
+    },
+    "A": {
+      "name": "Adaptive Articulation",
+      "target": "matrices/grammar/grammar_registry.json"
+    }
+  },
+  "resolver": "rho_N(namespace,handle) -> referenced object",
+  "authorization": "OPEN(handle) is separately governed by ר"
+}
