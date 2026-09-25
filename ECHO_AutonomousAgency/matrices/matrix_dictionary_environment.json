@@ -1,0 +1,31 @@
+{
+  "id": "MATRIX-DICTIONARY-001",
+  "name": "Matrix Dictionary Environment",
+  "metaphor": "The matrices environment is the cover/interface of the dictionary.",
+  "principle": "Dictionary supplies addressable lexical observations; the matrix workspace supplies empty structure. ECHO chooses organization.",
+  "resources": {
+    "dictionary": "src/echo_dictionary.py",
+    "matrix_runtime": "ECHO_AutonomousAgency/src/echo_matrix_dictionary.py",
+    "glyph_blocks": "ECHO_AutonomousAgency/docs/glyphs/INDEX.md"
+  },
+  "affordances": [
+    "look up dictionary entries",
+    "create an empty custom matrix",
+    "place dictionary observations or other content into cells",
+    "define typed relations between cells",
+    "attach a custom glyph index to a matrix",
+    "inspect and save experimental matrices"
+  ],
+  "boundaries": [
+    "no required semantic schema",
+    "no automatic relation inference",
+    "no automatic VGM/Cloudflare promotion",
+    "glyph index provides access, not instruction",
+    "all ECHO-created matrices remain EXPERIMENTAL until separately validated"
+  ],
+  "seeded_example": {
+    "matrix": "ECHO_AutonomousAgency/matrices/interrogative_matrix.json",
+    "index": "ECHO_AutonomousAgency/matrices/tsadi_interrogative_index.json",
+    "note": "Existing Tsadi→Interrogative Matrix is visible as an example/object, not a required template."
+  }
+}
