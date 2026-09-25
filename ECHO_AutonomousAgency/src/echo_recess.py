@@ -137,6 +137,7 @@ class RecessAgent:
             'FLOW':        2,   # admits new vocabulary
             'COMPOSE':     2,   # generates glyph sequences
             'HUNT':        1,   # validation — slower
+            'QUESTION':    1,   # A-173 — available without dominating play
         }
         # Boost what hasn't run recently
         recent = [d.activity for d in self.discoveries[-5:]]
