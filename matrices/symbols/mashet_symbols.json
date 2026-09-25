@@ -1,49 +1,69 @@
 {
-  "schema": "echo.mashet-symbols.v0.1",
-  "status": "seed-from-project-attachment",
+  "schema": "echo.mashet-symbols.v0.2",
+  "status": "working",
   "substrate": "mashet",
-  "principle": "preserve attachment-derived symbolic identities separately from mathematical and Hebrew operational semantics",
+  "principle": "project attachment supplies identities and candidate semantics; executable definitions must be separately validated",
   "records": [
     {
+      "id": "M::SUN",
       "symbol": "☉",
-      "status": "project-defined-core-symbol"
+      "role": "kernel/composition center",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::INPUT",
       "symbol": "⇢◇",
-      "status": "project-defined-symbol"
+      "role": "input/external forcing",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::MEMORY",
       "symbol": "∫↺",
-      "status": "project-defined-symbol"
+      "role": "memory/history accumulation",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::COUPLE",
       "symbol": "⧖",
-      "status": "project-defined-symbol"
+      "role": "coupling/interaction",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::NOISE",
       "symbol": "≋",
-      "status": "project-defined-symbol"
+      "role": "noise/stochastic variation",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::CONSTRAIN",
       "symbol": "⌖",
-      "status": "project-defined-symbol"
+      "role": "constraint/stability",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::EVALUATE",
       "symbol": "⚖",
-      "status": "project-defined-symbol"
+      "role": "evaluation/optimization",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::DESCEND",
       "symbol": "⤓",
-      "status": "project-defined-symbol"
+      "role": "lowering/descent",
+      "semantic_status": "UNRESOLVED_ATTACHMENT_SYMBOL"
     },
     {
+      "id": "M::COMPOSE",
       "symbol": "⊕",
-      "status": "project-defined-symbol"
+      "role": "composition",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     },
     {
+      "id": "M::RECURSE",
       "symbol": "⟲",
-      "status": "project-defined-symbol"
+      "role": "recursion/iteration",
+      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
     }
   ],
-  "note": "Do not infer executable semantics here; resolve semantics through provenance-bearing substrate/operator registries."
+  "note": "Candidate roles must not be reported as executable ECHO behavior until implemented and tested."
 }
