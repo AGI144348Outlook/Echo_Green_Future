@@ -1,0 +1,22 @@
+{
+  "id": "RECESS-PLAYSPACE-001",
+  "name": "Dictionary + Glyph Blocks",
+  "status": "READY",
+  "supervision_level": 1,
+  "dictionary": {
+    "provider": "src/echo_dictionary.py",
+    "source": "Princeton WordNet / NLTK",
+    "mode": "lookup/play reference",
+    "note": "Dictionary access is a reference resource; no definition is automatically promoted to VGM."
+  },
+  "glyph_blocks": {
+    "registry": "ECHO_AutonomousAgency/docs/glyphs/INDEX.md",
+    "documents": "ECHO_AutonomousAgency/docs/glyphs/01-ALEPH.md … 22-TAV.md",
+    "count": 22,
+    "mode": "free combinatorial blocks",
+    "constraint": "Preserve each supplied glyph operation definition; combinations are proposals until independently validated."
+  },
+  "special_visible_index": "ECHO_AutonomousAgency/matrices/tsadi_interrogative_index.json",
+  "observation_rule": "At Recess start, expose the Tsadi custom index. Otherwise do not instruct play. Observe dictionary lookups, glyph selections/compositions, index traversal, discoveries, and questions.",
+  "writes": "log only; no automatic Cloudflare/VGM promotion"
+}
