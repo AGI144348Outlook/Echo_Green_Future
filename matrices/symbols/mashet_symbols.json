@@ -1,69 +1,71 @@
 {
-  "schema": "echo.mashet-symbols.v0.2",
+  "schema": "echo.mashet-symbols.v0.3",
   "status": "working",
   "substrate": "mashet",
-  "principle": "project attachment supplies identities and candidate semantics; executable definitions must be separately validated",
+  "principle": "project attachment supplies identities/roles; executable definitions are separately formalized and tested",
+  "instruction_manual": "matrices/symbols/mashet_instruction_manual.json",
   "records": [
     {
       "id": "M::SUN",
       "symbol": "☉",
-      "role": "kernel/composition center",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Internal Dynamics / Self-Evolution",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::INPUT",
       "symbol": "⇢◇",
-      "role": "input/external forcing",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "External Forcing / Inputs",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::MEMORY",
       "symbol": "∫↺",
-      "role": "memory/history accumulation",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Memory / History / Integral Accumulation",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::COUPLE",
       "symbol": "⧖",
-      "role": "coupling/interaction",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Coupling / Network Interactions",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::NOISE",
       "symbol": "≋",
-      "role": "noise/stochastic variation",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Noise / Stochasticity",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::CONSTRAIN",
       "symbol": "⌖",
-      "role": "constraint/stability",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Constraints / Stability",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::EVALUATE",
       "symbol": "⚖",
-      "role": "evaluation/optimization",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Energy / Fitness / Optimization",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::DESCEND",
       "symbol": "⤓",
-      "role": "lowering/descent",
-      "semantic_status": "UNRESOLVED_ATTACHMENT_SYMBOL"
+      "role": "Selection / Adaptation",
+      "semantic_status": "PROJECT_ATTACHMENT",
+      "implementation_status": "UNRESOLVED_ALGEBRA"
     },
     {
       "id": "M::COMPOSE",
       "symbol": "⊕",
-      "role": "composition",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Summation / Composition",
+      "semantic_status": "PROJECT_ATTACHMENT"
     },
     {
       "id": "M::RECURSE",
       "symbol": "⟲",
-      "role": "recursion/iteration",
-      "semantic_status": "PROJECT_ATTACHMENT_CANDIDATE"
+      "role": "Recursion / Iteration",
+      "semantic_status": "PROJECT_ATTACHMENT"
     }
   ],
-  "note": "Candidate roles must not be reported as executable ECHO behavior until implemented and tested."
+  "note": "Registry meaning is distinct from executable implementation. Instruction manual examples are pedagogical and do not prescribe ECHO selection."
 }
