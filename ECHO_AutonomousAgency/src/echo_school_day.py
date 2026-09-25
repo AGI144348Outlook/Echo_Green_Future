@@ -21,7 +21,7 @@ def entry(word):
 
 def main():
     random.seed(173)
-    log={"started":datetime.now(timezone.utc).isoformat(),"curriculum_version":"SCHOOL-DAY-001",
+    log={"started":datetime.now(timezone.utc).isoformat(),"curriculum_version":"SCHOOL-DAY-002",
          "classes":[],"principle":"Teach affordances in class; measure unprompted transfer in Recess."}
 
     # GRAMMAR: explicit dictionary I/O demonstration, then vocabulary -> subject matrix.
@@ -39,20 +39,39 @@ def main():
                            "lesson":"unknown -> dictionary input -> lexical output -> inspect -> subject-matrix cell",
                            "compiled_matrix":grammar_matrix})
 
-    # LOGIC: laboratory exploration; multiple glyphs may index one subject matrix and one glyph many matrices.
+    # LOGIC LAB v2: words remain inert; glyphs are the variable modular indexing operators.
+    # This is an experimental laboratory, not a claim that proposed indexes are validated.
     gi=json.loads(GLYPH_INDEX.read_text())
-    subjects=["identity","relation","structure","operation","information","quantity","question","concept","algorithm","matrix"]
-    lturns=[]
     names=list(gi["blocks"])
+    word_matrix=["move","carry","transport","shift","position","place","direction"]
+    lturns=[]
+    # Hold one word-only matrix constant while changing glyph operation.
     for n in range(20):
-        block=gi["blocks"][names[n%len(names)]]
-        subject=subjects[n%len(subjects)]
-        lturns.append({"turn":n+1,"glyph":block["glyph"],"block":names[n%len(names)],
-                       "subject_matrix":subject,
-                       "available_repository_ties":block["algorithm_ties"],
-                       "experiment":"propose/test an index; proposal remains experimental unless separately validated"})
-    log["classes"].append({"class":"LOGIC_LAB","turn_budget":20,"turns":lturns,
-      "lesson":"glyph blocks are manipulable indexed operators; explore one-to-many and many-to-one subject-matrix indexing"})
+        block_name=names[n%len(names)]
+        block=gi["blocks"][block_name]
+        lturns.append({
+            "turn":n+1,
+            "word_matrix":word_matrix,
+            "matrix_mutated":False,
+            "selected_glyph":block["glyph"],
+            "block":block_name,
+            "registry_operation":block.get("operation"),
+            "available_repository_ties":block["algorithm_ties"],
+            "experimental_index":{
+                "source_matrix":"WM-MOVE-001",
+                "glyph":block["glyph"],
+                "operation":block.get("operation"),
+                "validation_status":"EXPERIMENTAL"
+            },
+            "concept_model_fragment":[block["glyph"]],
+            "boundary":"index result is separate from the unchanged word matrix; concept-model fragment is glyphic, not lexical"
+        })
+    log["classes"].append({
+        "class":"LOGIC_LAB_V2","turn_budget":20,"turns":lturns,
+        "word_matrix":{"id":"WM-MOVE-001","words":word_matrix},
+        "lesson":"hold words constant; vary glyphic indexing operation; keep glyphic concept modeling separate from lexical content",
+        "concept_modeling":"glyphs themselves are modular agentic components for later ordered composition"
+    })
 
     # MATH: glyph abacus. י bead/unit, ו rod/thread, ח bounded frame; SymPy verifies.
     try:
