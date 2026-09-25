@@ -1,0 +1,30 @@
+name: Trial 016 - ECHO Operator Selection
+on:
+  push:
+    branches: [algebra]
+    paths:
+      - "tests/trial_016_echo_operator_selection.py"
+      - "src/echo_governor_skeleton.py"
+      - "matrices/symbols/mashet_instruction_manual.json"
+      - "matrices/symbols/algebra_mashet.json"
+      - "matrices/glyphs/hebrew_glyph_registry.json"
+      - ".github/workflows/trial-016-echo-operator-selection.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trial-016:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Run Trial 016
+        run: python tests/trial_016_echo_operator_selection.py
+      - name: Upload raw selection trace
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trial-016-trace
+          path: artifacts/trial_016_trace.json
+          if-no-files-found: error
