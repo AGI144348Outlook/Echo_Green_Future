@@ -1,0 +1,37 @@
+{
+  "id": "RECESS-SETUP-002",
+  "status": "ARMED_NOT_STARTED",
+  "supervision_level": 1,
+  "opening_exposure": {
+    "type": "custom_index",
+    "path": "ECHO_AutonomousAgency/matrices/tsadi_interrogative_index.json",
+    "instruction": "Expose this object to ECHO without explanation."
+  },
+  "play_resources": [
+    {
+      "type": "dictionary",
+      "path": "src/echo_dictionary.py",
+      "surface": "ECHO_AutonomousAgency/src/echo_matrix_dictionary.py"
+    },
+    {
+      "type": "glyph_blocks",
+      "path": "ECHO_AutonomousAgency/docs/glyphs/INDEX.md",
+      "count": 22
+    },
+    {
+      "type": "matrix_workspace",
+      "path": "ECHO_AutonomousAgency/src/echo_matrix_dictionary.py"
+    }
+  ],
+  "observation": [
+    "raw dictionary lookups",
+    "glyph choices and sequences",
+    "Tsadi index traversal",
+    "custom matrices and indexes",
+    "A-173 questions",
+    "behavior after answers"
+  ],
+  "intervention_policy": "Hands off after initial Tsadi-index exposure. External interlocutor answers only questions ECHO actually directs outward.",
+  "persistence": "sandbox/log only; no automatic VGM or Cloudflare promotion",
+  "start_gate": "Explicit START RECESS command"
+}
