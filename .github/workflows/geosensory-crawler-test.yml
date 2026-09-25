@@ -2,6 +2,13 @@ name: ECHO Geosensory Crawler Test
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - geosensory-crawler-experiment
+    paths:
+      - '.github/workflows/geosensory-crawler-test.yml'
+      - 'src/**'
+      - 'matrices/echo_geosensory_registry.json'
 
 permissions:
   contents: read
