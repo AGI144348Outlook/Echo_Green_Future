@@ -1,0 +1,47 @@
+name: ECHO Geosensory Crawler Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: geosensory-crawler-experiment
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate live public geosensory seeds
+        shell: python
+        run: |
+          import json, urllib.request
+          from pathlib import Path
+          p=Path("matrices/echo_geosensory_registry.json")
+          data=json.loads(p.read_text())
+          keys=["NOAA_SWPC_SOLAR_WIND_MAG","NOAA_SWPC_PLASMA","USGS_EARTHQUAKES_4_5_DAY"]
+          report=[]
+          for key in keys:
+              url=data[key]["url"]
+              req=urllib.request.Request(url,headers={"User-Agent":"ECHO-Geosensory-Crawler/0.1 research"})
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as r:
+                      body=r.read(4096)
+                      report.append({"key":key,"url":url,"http":r.status,"sample_bytes":len(body),"validated":r.status==200})
+              except Exception as e:
+                  report.append({"key":key,"url":url,"validated":False,"error":str(e)})
+          print(json.dumps(report,indent=2))
+          if not all(x["validated"] for x in report):
+              raise SystemExit("One or more seed endpoints failed validation")
+
+      - name: Persist registry to Cloudflare D1
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python src/a159_cloudflare_migrator.py
