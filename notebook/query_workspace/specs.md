@@ -33,3 +33,23 @@ Saving is not validation. No temporary matrix or saved view enters the VGM merel
 
 ## Governance
 Resolution is not authorization. Existing notebook rule \`OPEN(handle)\` remains separately governed by ר.
+
+## Wired notebook sources
+The live catalog is `notebook/registry_catalog.json`. The query engine resolves handles through `notebook/manifest.json` rather than hard-coding source paths.
+
+Registry handles currently wired: `G` Hebrew Glyph Registry, `GR` Generalization Registry, `F` Formula Registry, `A` Grammar Registry, `SY` Symbol Registry, `SU` Substrate Registry, `MS` Mashet Symbols, `MA` Mashet Algebra, `MI` Mashet Instruction Manual, `MATH` Math Symbols, and `GEO` Geosensory Registry.
+
+Queryable matrix handles also exposed: `V` VGM, `ALG` Algorithm Matrix, `NUM` Number Matrix, and `EQ` Equilibria Matrix.
+
+## Executable interface
+`notebook/query_workspace/query_engine.py` implements:
+- `resolve(handle)` — load the authoritative source addressed by a notebook handle.
+- `sources()` — enumerate permanent registry sources.
+- `query(handles, predicate, projection)` — assemble an in-memory temporary matrix from one or more sources.
+- `retain(matrix, name)` — explicitly persist a useful temporary result under `notebook/retained/`.
+- `save_view(...)` — persist a reconstructable query definition under `notebook/views/`.
+
+All query results default to `validated: false`. Retention and saved views cannot promote a result into the VGM.
+
+## Source integrity
+The query workspace is read-only with respect to permanent registries. It may resolve, select, combine, and project their records, but registry mutation belongs to the registry's own governed tool/process.
