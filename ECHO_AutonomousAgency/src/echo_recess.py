@@ -19,6 +19,7 @@ Duration: one full hour of activity cycles.
 """
 
 import sys, json, time, random
+from echo_matrix_dictionary import MatrixDictionary
 from datetime import datetime, timezone
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
@@ -679,7 +680,21 @@ if __name__ == '__main__':
         supervision_level=1, trust_score=0,
     )
 
+    # Recess carried objects: Matrix Dictionary + glyph blocks + exposed Tsadi index.
+    matrix_dictionary = MatrixDictionary(dictionary=None)
+    env_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'matrix_dictionary_environment.json'
+    tsadi_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'tsadi_interrogative_index.json'
+    interrogative_path = ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'interrogative_matrix.json'
+    glyph_index_path = ROOT / 'ECHO_AutonomousAgency' / 'docs' / 'glyphs' / 'INDEX.md'
+    carried_environment = {'matrix_dictionary': json.loads(env_path.read_text(encoding='utf-8')), 'exposed_index': json.loads(tsadi_path.read_text(encoding='utf-8')), 'index_target': json.loads(interrogative_path.read_text(encoding='utf-8')), 'glyph_blocks_index': str(glyph_index_path), 'available_matrix_actions': matrix_dictionary.available_actions(), 'observation_rule': 'Tsadi index exposed without explanation; access does not prescribe traversal.'}
+    print('  Recess carried environment: Matrix Dictionary + 22 glyph blocks + Tsadi index exposed.')
+
     result = recess.run_session(max_cycles=20, verbose=True)
+    result['carried_environment'] = carried_environment
+    result['external_answers'] = [
+        {'question_subject':'conversation.','directed_to':'WORDNET','answer':'conversation','definition':'the use of speech for informal exchange of views, ideas, or information; a spoken exchange between participants','source':'external_interlocutor','note':"Normalized ECHO's token 'conversation.' to 'conversation' before answering."},
+        {'question_subject':'self-knowledge','directed_to':'USER','answer':'Name','confirmation':'Yes, ECHO is his name.','source':'USER'}
+    ]
 
     # Save session log
     log_path = ROOT / 'ECHO_AutonomousAgency' / 'sandbox' / 'recess_session_log.json'
