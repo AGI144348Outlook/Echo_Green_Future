@@ -1,5 +1,5 @@
 {
-  "schema": "echo.notebook-manifest.v0.1",
+  "schema": "echo.notebook-manifest.v0.2",
   "status": "working",
   "principle": "Notebook is persistent address space/workbench; handles are not duplicated source objects and resolution is not authorization",
   "sections": {
@@ -9,53 +9,94 @@
     },
     "V": {
       "name": "VGM",
-      "target": "matrices/echo_vgm.json"
-    },
-    "L": {
-      "name": "Logic Matrix",
-      "target": "matrices/logic/"
+      "target": "matrices/echo_vgm.json",
+      "kind": "matrix"
     },
     "G": {
       "name": "Hebrew Glyph Registry",
-      "target": "matrices/glyphs/hebrew_glyph_registry.json"
-    },
-    "S": {
-      "name": "Symbol/Substrate Registries",
-      "target": "matrices/symbols/"
-    },
-    "W": {
-      "name": "Subject Word Matrices",
-      "target": "matrices/vocabulary/"
-    },
-    "F": {
-      "name": "Formula Registry",
-      "target": "matrices/formulas/formula_registry.json"
-    },
-    "R": {
-      "name": "Saved Relations",
-      "target": "notebook/retained/"
-    },
-    "X": {
-      "name": "Working Experiments",
-      "target": "notebook/working/"
-    },
-    "P": {
-      "name": "Provenance",
-      "target": "notebook/provenance/"
-    },
-    "A": {
-      "name": "Adaptive Articulation",
-      "target": "matrices/grammar/grammar_registry.json"
+      "target": "matrices/glyphs/hebrew_glyph_registry.json",
+      "kind": "registry"
     },
     "GR": {
       "name": "Generalization Registry",
       "target": "registries/generalization_registry.json",
       "index": "indices/generalization_registry_index.json",
-      "queryable_by": [
-        "glyph",
-        "word",
-        "role"
-      ]
+      "kind": "registry"
+    },
+    "F": {
+      "name": "Formula Registry",
+      "target": "matrices/formulas/formula_registry.json",
+      "kind": "registry"
+    },
+    "A": {
+      "name": "Grammar Registry",
+      "target": "matrices/grammar/grammar_registry.json",
+      "kind": "registry"
+    },
+    "SY": {
+      "name": "Symbol Registry",
+      "target": "matrices/symbols/symbol_registry.json",
+      "kind": "registry"
+    },
+    "SU": {
+      "name": "Substrate Registry",
+      "target": "matrices/substrates/substrate_registry.json",
+      "kind": "registry"
+    },
+    "MS": {
+      "name": "Mashet Symbols",
+      "target": "matrices/symbols/mashet_symbols.json",
+      "kind": "registry-source"
+    },
+    "MA": {
+      "name": "Mashet Algebra",
+      "target": "matrices/symbols/algebra_mashet.json",
+      "kind": "registry-source"
+    },
+    "MI": {
+      "name": "Mashet Instruction Manual",
+      "target": "matrices/symbols/mashet_instruction_manual.json",
+      "kind": "registry-source"
+    },
+    "MATH": {
+      "name": "Math Symbols",
+      "target": "matrices/symbols/math_symbols.json",
+      "kind": "registry-source"
+    },
+    "GEO": {
+      "name": "Geosensory Registry",
+      "target": "matrices/echo_geosensory_registry.json",
+      "kind": "registry"
+    },
+    "ALG": {
+      "name": "Algorithm Matrix",
+      "target": "matrices/echo_algorithm_matrix.json",
+      "kind": "matrix"
+    },
+    "NUM": {
+      "name": "Number Matrix",
+      "target": "matrices/echo_number_matrix.json",
+      "kind": "matrix"
+    },
+    "EQ": {
+      "name": "Equilibria Matrix",
+      "target": "matrices/echo_equilibria.json",
+      "kind": "matrix"
+    },
+    "R": {
+      "name": "Saved Relations",
+      "target": "notebook/retained/",
+      "kind": "workspace"
+    },
+    "X": {
+      "name": "Working Experiments",
+      "target": "notebook/working/",
+      "kind": "workspace"
+    },
+    "P": {
+      "name": "Provenance",
+      "target": "notebook/provenance/",
+      "kind": "workspace"
     }
   },
   "resolver": "rho_N(namespace,handle) -> referenced object",
@@ -70,5 +111,7 @@
       "submit for validation"
     ],
     "rule": "Retaining or saving a query result does not promote it to VGM; VGM admission requires separate validation."
-  }
+  },
+  "registry_catalog": "notebook/registry_catalog.json",
+  "query_engine": "notebook/query_workspace/query_engine.py"
 }
