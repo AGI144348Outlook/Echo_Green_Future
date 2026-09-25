@@ -46,8 +46,29 @@
     "A": {
       "name": "Adaptive Articulation",
       "target": "matrices/grammar/grammar_registry.json"
+    },
+    "GR": {
+      "name": "Generalization Registry",
+      "target": "registries/generalization_registry.json",
+      "index": "indices/generalization_registry_index.json",
+      "queryable_by": [
+        "glyph",
+        "word",
+        "role"
+      ]
     }
   },
   "resolver": "rho_N(namespace,handle) -> referenced object",
-  "authorization": "OPEN(handle) is separately governed by ר"
+  "authorization": "OPEN(handle) is separately governed by ר",
+  "query_workspace": {
+    "model": "Access-like transient relational workspace",
+    "query": "Q(sources,predicate,projection) -> temporary matrix",
+    "lifetimes": [
+      "discard",
+      "retain in notebook",
+      "save as reusable view",
+      "submit for validation"
+    ],
+    "rule": "Retaining or saving a query result does not promote it to VGM; VGM admission requires separate validation."
+  }
 }
