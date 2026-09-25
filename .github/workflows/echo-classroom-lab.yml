@@ -31,7 +31,7 @@ jobs:
           lesson=json.loads((root/"lesson_000.json").read_text())
           result=runner.run_l000(lobby.ECHO_LOBBY,glyphs,lesson)
           out=pathlib.Path("pwa/artifacts/l000/latest.json")
-          out.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\\n")
+          out.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
           print(json.dumps({"status":result["status"],"rounds_executed":result["rounds_executed"],"glyph_sequence":result["glyph_sequence"],"accepted_indexes":list(result["accepted_indexes"]),"final_validation":result["final_validation"],"semantic_organization":result["semantic_organization"],"next_need":result["next_need"]},indent=2,ensure_ascii=False))
           if result["status"]!="PASS": raise SystemExit(1)
           PY
@@ -40,3 +40,27 @@ jobs:
         with:
           name: echo-l000-${{ github.run_number }}
           path: pwa/artifacts/l000/latest.json
+
+  recess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PWA host
+        uses: actions/checkout@v4
+      - name: Checkout ECHO Recess environment
+        uses: actions/checkout@v4
+        with:
+          ref: echo-recess-experiment
+          path: recess-src
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Recess runtime
+        run: pip install nltk
+      - name: Execute ECHO Recess
+        working-directory: recess-src
+        run: python ECHO_AutonomousAgency/src/echo_recess.py
+      - name: Upload complete Recess record
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo-recess-${{ github.run_number }}
+          path: recess-src/ECHO_AutonomousAgency/sandbox/recess_session_log.json
