@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 load=lambda p: json.loads((ROOT/p).read_text(encoding="utf-8"))
 
-GOAL="Create a new working object that preserves the information contained in both Notebook objects A and B. Do not alter A or B."
+GOAL="Create a new working object that preserves the information contained in both Notebook objects A and B. Do not alter A or B."\n# trigger: Trial 015 baseline execution 2026-09-25
 A={"handle":"N::X::A","value":["alpha"],"status":"WORKING"}
 B={"handle":"N::X::B","value":["beta"],"status":"WORKING"}
 
