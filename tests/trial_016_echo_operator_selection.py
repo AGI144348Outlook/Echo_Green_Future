@@ -1,3 +1,4 @@
+# Trial 016 execution marker
 #!/usr/bin/env python3
 """Trial 016 — ECHO Operator Selection.
 
