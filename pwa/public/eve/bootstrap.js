@@ -13,12 +13,14 @@ globalThis.__EVE_RUNTIME__ = Object.freeze({
     const eveResponse = await fetch("./eve/inert_eve.py", { cache: "no-store" });
     const lobbyResponse = await fetch("./eve/classroom/lobby.py", { cache: "no-store" });
     const lessonResponse = await fetch("./eve/classroom/lesson_000.json", { cache: "no-store" });
-    if (!eveResponse.ok || !lobbyResponse.ok || !lessonResponse.ok) {
+    const glyphResponse = await fetch("./eve/classroom/glyph_registry.json", { cache: "no-store" });
+    if (!eveResponse.ok || !lobbyResponse.ok || !lessonResponse.ok || !glyphResponse.ok) {
       throw new Error("EVE/Classroom substrate load failed.");
     }
     await pyodide.runPythonAsync(await eveResponse.text());
     await pyodide.runPythonAsync(await lobbyResponse.text());
     const assignment = await lessonResponse.json();
+    const glyphRegistry = await glyphResponse.json();
     const lobbySnapshot = JSON.parse(
       pyodide.runPython("import json; json.dumps(ECHO_LOBBY.snapshot())")
     );
@@ -31,7 +33,7 @@ globalThis.__EVE_RUNTIME__ = Object.freeze({
         lesson: assignment.assignment_id,
         assignment: assignment,
         lobby: lobbySnapshot,
-        glyphRegistry: "pending-local-import"
+        glyphRegistry: { status: "ready", count: glyphRegistry.glyphs.length, source: glyphRegistry.source }
       },
       python: { engine: "Pyodide", status: "ready", version: pyodide.version }
     });
