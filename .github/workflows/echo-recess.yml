@@ -1,0 +1,25 @@
+name: ECHO Recess
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: autonomous-agency
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install nltk
+      - name: Recess
+        run: python ECHO_AutonomousAgency/src/echo_recess.py
+      - name: Save log
+        run: |
+          git config user.name echo-recess
+          git config user.email actions@users.noreply.github.com
+          git add ECHO_AutonomousAgency/sandbox/recess_session_log.json
+          git commit -m "experiment: record autonomous Recess session" || true
+          git push origin HEAD:autonomous-agency
