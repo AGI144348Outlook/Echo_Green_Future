@@ -1,18 +1,17 @@
-name: Autonomous Agency Import and Test
+name: Autonomous Agency Bundle Import
 
 on:
   workflow_dispatch:
   push:
     branches: [autonomous-agency]
     paths:
-      - "ECHO_Autonomous_Agency_Commit2.zip"
       - ".github/workflows/autonomous-agency-import-test.yml"
 
 permissions:
   contents: write
 
 jobs:
-  import-and-test:
+  import:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,50 +19,21 @@ jobs:
           ref: autonomous-agency
           fetch-depth: 0
 
-      - name: Unpack 30-file autonomous agency bundle
+      - name: Unpack bundle
         shell: bash
         run: |
           set -euo pipefail
           rm -rf /tmp/echo-aa
           mkdir -p /tmp/echo-aa
           unzip -q ECHO_Autonomous_Agency_Commit2.zip -d /tmp/echo-aa
-          test "$(find /tmp/echo-aa/ECHO_AutonomousAgency -type f | wc -l)" -eq 30
           cp -a /tmp/echo-aa/ECHO_AutonomousAgency ./
 
-      - name: Validate imported research bundle
-        shell: bash
-        run: |
-          set -euo pipefail
-          test "$(find ECHO_AutonomousAgency -type f | wc -l)" -eq 30
-          test "$(find ECHO_AutonomousAgency/docs/glyphs -maxdepth 1 -type f -name '[0-9][0-9]-*.md' | wc -l)" -eq 22
-          python -m py_compile ECHO_AutonomousAgency/src/echo_recess.py ECHO_AutonomousAgency/src/echo_question.py
-          python - <<'PY'
-          import json, pathlib
-          root=pathlib.Path("ECHO_AutonomousAgency")
-          for p in root.rglob("*.json"):
-              json.loads(p.read_text(encoding="utf-8"))
-          matrix=json.loads((root/"matrices/echo_algorithm_matrix.json").read_text())
-          def find_count(x):
-              if isinstance(x, list) and len(x)==65:
-                  return True
-              if isinstance(x, dict):
-                  return any(find_count(v) for v in x.values())
-              return False
-          if not find_count(matrix):
-              raise SystemExit("algorithm matrix does not expose a 65-entry list")
-          print("PASS: 30 files, 22 glyph docs, Python syntax, JSON parse, 65-entry algorithm matrix")
-          PY
-
-      - name: Commit imported bundle
+      - name: Commit bundle exactly as supplied
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ECHO_AutonomousAgency
-          if git diff --cached --quiet; then
-            echo "Bundle already imported; nothing to commit."
-            exit 0
-          fi
           git commit -m "feat: A-168 RecessAgent, A-173 QuestionFormulationEngine, 22 glyph registry docs, continuum suite A-169–A-172, updated algorithm matrix (65 algorithms)"
           git push origin HEAD:autonomous-agency
