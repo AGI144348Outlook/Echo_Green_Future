@@ -26,6 +26,8 @@ jobs:
 
       - run: pip install nltk sympy
 
+      - run: python3 -m nltk.downloader wordnet omw-1.4
+
       - run: python3 -m py_compile ECHO_AutonomousAgency/src/echo_school_day.py
 
       - run: python3 ECHO_AutonomousAgency/src/echo_school_day.py
@@ -44,3 +46,5 @@ jobs:
 # trigger indexed-glyph 150-cycle recess
 
 # retry school-day-001 after runner hardening
+
+# retry after provisioning WordNet corpus
