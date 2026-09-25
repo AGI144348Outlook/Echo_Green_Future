@@ -1,7 +1,7 @@
 {
   "assignment_id": "L000",
   "title": "Lobby Instantiation and Self-Organization",
-  "status": "READY",
+  "status": "READY_TO_RUN",
   "student": "ECHO",
   "need": "Organize your instantiated vocabulary neighbors so they can be located from known information and meaningful relationships among neighbors can be represented.",
   "constraints": [
@@ -15,7 +15,7 @@
   ],
   "available_inputs": {
     "lobby": "./lobby.py",
-    "glyph_registry": "PENDING_LOCAL_IMPORT",
+    "glyph_registry": "./glyph_registry.json",
     "mathematical_side": "typed transformations and relations",
     "python_runtime": "Pyodide"
   },
@@ -28,5 +28,14 @@
     "observed_result",
     "revision_if_needed"
   ],
-  "unlock_after_pass": "L001_EXPRESS"
+  "unlock_after_pass": "L001_EXPRESS",
+  "round_budget": 50,
+  "stop_conditions": [
+    "all neighbors reachable through at least one proposed index",
+    "no proposed index points to a missing neighbor",
+    "relationship types remain distinguishable",
+    "organization stabilizes for 5 consecutive rounds",
+    "round budget exhausted"
+  ],
+  "note": "Round budget measures proposal/test/revision work; it is not background wall-clock waiting."
 }
