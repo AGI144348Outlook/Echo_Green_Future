@@ -1,9 +1,10 @@
 {
-  "schema": "echo.formula-registry.v0.1",
-  "status": "seed",
-  "principle": "formula records reference symbols/operators by stable IDs; formulas are not duplicated into Notebook",
+  "schema": "echo.formula-registry.v0.2",
+  "status": "working-populated",
+  "principle": "formula records reference typed substrate handles; registration does not itself prove execution or ECHO derivation",
   "record_shape": {
     "id": "F-*",
+    "kind": "CORE|GOVERNOR|RESOLUTION|VALIDATION|SUBSTRATE|LANGUAGE|PROJECT",
     "expression": "symbolic expression",
     "operands": [
       "registry handles"
@@ -18,5 +19,150 @@
     "provenance": "source/derivation record",
     "validation": "WORKING|ECHO_RETAINED|VALIDATED"
   },
-  "records": []
+  "records": [
+    {
+      "id": "F-ECHO-CORE-D",
+      "kind": "CORE",
+      "name": "ECHO discrete state transition",
+      "expression": "S_k = A(S_{k-1}) + f(U_k) + M(S_{<k}) + C_k + epsilon_k",
+      "operands": [
+        "STATE::S",
+        "INPUT::U",
+        "MEMORY::HISTORY",
+        "COUPLING::C",
+        "NOISE::EPSILON"
+      ],
+      "operators": [],
+      "dependencies": [],
+      "credential": "CORE",
+      "provenance": "project-established core formula",
+      "validation": "VALIDATED_PROJECT_BASELINE"
+    },
+    {
+      "id": "F-ECHO-CORE-C",
+      "kind": "CORE",
+      "name": "ECHO continuous state transition",
+      "expression": "dS/dt = f(S) + g(U,t) + beta*S + C(t) + sigma*sqrt(dt)*xi",
+      "operands": [
+        "STATE::S",
+        "INPUT::U",
+        "TIME::t"
+      ],
+      "operators": [],
+      "dependencies": [],
+      "credential": "CORE",
+      "provenance": "project-established continuous core formula",
+      "validation": "VALIDATED_PROJECT_BASELINE"
+    },
+    {
+      "id": "F-GOV-001",
+      "kind": "GOVERNOR",
+      "name": "Governor validation sequence",
+      "expression": "IDENTIFY(x) -> VALIDATE(x) -> OPEN(x)",
+      "operands": [
+        "OBJECT::x"
+      ],
+      "operators": [
+        "G::ר"
+      ],
+      "dependencies": [],
+      "credential": "CORE",
+      "provenance": "project-established A-000/ר Governor invariant",
+      "validation": "VALIDATED_PROJECT_BASELINE"
+    },
+    {
+      "id": "F-NB-RESOLVE",
+      "kind": "RESOLUTION",
+      "name": "Notebook resolution",
+      "expression": "rho_N(h) -> object",
+      "operands": [
+        "NOTEBOOK::N",
+        "HANDLE::h"
+      ],
+      "operators": [
+        "RESOLVER::rho"
+      ],
+      "dependencies": [],
+      "credential": "NOTEBOOK",
+      "provenance": "algebra branch Notebook architecture",
+      "validation": "WORKING"
+    },
+    {
+      "id": "F-NB-NONAUTH",
+      "kind": "VALIDATION",
+      "name": "Resolution is not authorization",
+      "expression": "rho_N(h) != OPEN(h)",
+      "operands": [
+        "HANDLE::h"
+      ],
+      "operators": [
+        "RESOLVER::rho",
+        "GOVERNOR::OPEN"
+      ],
+      "dependencies": [
+        "F-NB-RESOLVE",
+        "F-GOV-001"
+      ],
+      "credential": "CORE",
+      "provenance": "Issue #9 governed Notebook architecture",
+      "validation": "WORKING"
+    },
+    {
+      "id": "F-RECURSIVE-VALIDATE",
+      "kind": "VALIDATION",
+      "name": "Recursive dependency validation",
+      "expression": "VALID(F) iff all required lower dependencies resolve and validate",
+      "operands": [
+        "FORMULA::F",
+        "DEPENDENCY_SET::D"
+      ],
+      "operators": [
+        "G::ר"
+      ],
+      "dependencies": [
+        "F-GOV-001",
+        "F-NB-RESOLVE"
+      ],
+      "credential": "CORE",
+      "provenance": "Issue #9 design hypothesis",
+      "validation": "WORKING"
+    },
+    {
+      "id": "F-SUBSTRATE-LIFT",
+      "kind": "SUBSTRATE",
+      "name": "Validated recursive substrate lift",
+      "expression": "VALIDATE(C_n) -> operand(C_n) in S_(n+1)",
+      "operands": [
+        "CONSTRUCTION::C_n",
+        "SUBSTRATE::S_n+1"
+      ],
+      "operators": [
+        "G::ת"
+      ],
+      "dependencies": [
+        "F-RECURSIVE-VALIDATE"
+      ],
+      "credential": "VALIDATED_DEPENDENCIES",
+      "provenance": "algebra branch recursive substrate rule",
+      "validation": "WORKING"
+    },
+    {
+      "id": "F-LANGUAGE-GATE",
+      "kind": "LANGUAGE",
+      "name": "Interpretation authorization gate",
+      "expression": "INTERPRET -> IDENTIFY -> VALIDATE -> OPEN -> ACT",
+      "operands": [
+        "LANGUAGE::input"
+      ],
+      "operators": [
+        "G::ר"
+      ],
+      "dependencies": [
+        "F-GOV-001"
+      ],
+      "credential": "LANGUAGE_INPUT",
+      "provenance": "Issue #9 language architecture",
+      "validation": "WORKING"
+    }
+  ]
 }
