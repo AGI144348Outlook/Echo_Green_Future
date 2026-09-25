@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - autonomous-agency
+      - echo-recess-experiment
     paths:
-      - "ECHO_AutonomousAgency/sandbox/recess_trigger.txt"
+      - "ECHO_AutonomousAgency/sandbox/recess_trigger_new.txt"
 
 permissions:
   contents: write
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: autonomous-agency
+          ref: echo-recess-experiment
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -29,4 +29,4 @@ jobs:
           git config user.email actions@users.noreply.github.com
           git add ECHO_AutonomousAgency/sandbox/recess_session_log.json
           git commit -m "experiment: record autonomous Recess session" || true
-          git push origin HEAD:autonomous-agency
+          git push origin HEAD:echo-recess-experiment
