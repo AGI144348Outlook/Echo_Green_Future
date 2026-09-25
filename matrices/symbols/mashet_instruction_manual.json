@@ -1,0 +1,97 @@
+{
+  "schema": "echo.mashet-instruction-manual.v0.1",
+  "status": "WORKING",
+  "human_manual": "docs/mashet/MASHET_OPERATOR_MANUAL.md",
+  "governor": "G::ר",
+  "selection_rule": "Examples teach capability but do not prescribe ECHO's tool choice on novel tasks.",
+  "universal_rules": [
+    "resolve operands before manipulation",
+    "resolution does not imply authorization",
+    "preserve source objects unless mutation explicitly authorized",
+    "new constructions require identity and provenance",
+    "relations do not imply identity",
+    "results do not auto-retain or auto-validate",
+    "unresolved dependencies fail closed",
+    "log selection, operands, algebraic action, output, provenance, validation"
+  ],
+  "cards": [
+    {
+      "id": "M::SUN",
+      "symbol": "☉",
+      "source_role": "Internal Dynamics / Self-Evolution",
+      "formal": "☉_k := ⊕(admitted operator contributions at k)",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::INPUT",
+      "symbol": "⇢◇",
+      "source_role": "External Forcing / Inputs",
+      "formal": "⇢◇ : U_k -> admitted(U_k)",
+      "algebra_handle": "AM::INPUT",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::MEMORY",
+      "symbol": "∫↺",
+      "source_role": "Memory / History / Integral Accumulation",
+      "formal": "∫↺ : S_<k -> H_k",
+      "algebra_handle": "AM::MEMORY",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::COUPLE",
+      "symbol": "⧖",
+      "source_role": "Coupling / Network Interactions",
+      "formal": "⧖ : X × Y -> relation(X,Y)",
+      "algebra_handle": "AM::COUPLE",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::NOISE",
+      "symbol": "≋",
+      "source_role": "Noise / Stochasticity",
+      "formal": "≋ : (X,xi) -> X'",
+      "algebra_handle": "AM::NOISE",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::CONSTRAIN",
+      "symbol": "⌖",
+      "source_role": "Constraints / Stability",
+      "formal": "⌖_C(X) -> X_C",
+      "algebra_handle": "AM::CONSTRAIN",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::EVALUATE",
+      "symbol": "⚖",
+      "source_role": "Energy / Fitness / Optimization",
+      "formal": "⚖_q : X -> assessment_q(X)",
+      "algebra_handle": "AM::EVALUATE",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::DESCEND",
+      "symbol": "⤓",
+      "source_role": "Selection / Adaptation",
+      "formal": null,
+      "execution": "UNRESOLVED_ALGEBRA"
+    },
+    {
+      "id": "M::COMPOSE",
+      "symbol": "⊕",
+      "source_role": "Summation / Composition",
+      "formal": "⊕ : X^n -> X'",
+      "algebra_handle": "AM::COMPOSE",
+      "execution": "WORKING"
+    },
+    {
+      "id": "M::RECURSE",
+      "symbol": "⟲",
+      "source_role": "Recursion / Iteration",
+      "formal": "⟲_f^n(x) = f^n(x)",
+      "algebra_handle": "AM::RECURSE",
+      "execution": "WORKING"
+    }
+  ]
+}
