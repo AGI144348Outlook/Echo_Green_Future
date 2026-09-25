@@ -20,7 +20,10 @@ Duration: one full hour of activity cycles.
 
 import sys, json, time, random
 from datetime import datetime, timezone
-sys.path.insert(0, '/home/claude')
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'src'))
+sys.path.insert(0, str(ROOT / 'ECHO_AutonomousAgency' / 'src'))
 
 from echo_question import QuestionFormulationEngine, Receiver, QType
 from echo_governor_skeleton import (
@@ -624,7 +627,7 @@ if __name__ == '__main__':
     synonyms_map = {}
     lexicon = {}
 
-    with open('/home/claude/en_thesaurus.jsonl') as f:
+    with open(ROOT / 'en_thesaurus.jsonl') as f:
         qualifying = [json.loads(l) for l in f if json.loads(l).get('desc')]
     stride = max(1, len(qualifying)//1000)
     for entry in qualifying[::stride][:1000]:
@@ -636,7 +639,7 @@ if __name__ == '__main__':
         lexicon[entry['word'].lower()] = {
             'desc': ' '.join(entry['desc']), 'pos': entry.get('pos','?')}
 
-    with open('/home/claude/echo_matrices/echo_lobby_agents.json') as f:
+    with open(ROOT / 'matrices' / 'echo_lobby_agents.json') as f:
         saved = json.load(f)
     for word, data in list(saved.items())[:500]:
         desc = data.get('definition','')
@@ -652,9 +655,9 @@ if __name__ == '__main__':
     lobby.run_thesaurus(synonyms_map)
     lobby.compute_generality_scores()
 
-    with open('/home/claude/echo_matrices/echo_vgm.json') as f:
+    with open(ROOT / 'matrices' / 'echo_vgm.json') as f:
         VGM = json.load(f)
-    with open('/home/claude/echo_matrices/echo_algorithm_matrix.json') as f:
+    with open(ROOT / 'ECHO_AutonomousAgency' / 'matrices' / 'echo_algorithm_matrix.json') as f:
         ALG = json.load(f)
 
     lrm = LogicReasoningMatrix(VGM, lobby, ALG)
@@ -675,7 +678,7 @@ if __name__ == '__main__':
     result = recess.run_session(max_cycles=20, verbose=True)
 
     # Save session log
-    log_path = '/home/claude/recess_session_log.json'
+    log_path = ROOT / 'ECHO_AutonomousAgency' / 'sandbox' / 'recess_session_log.json'
     with open(log_path, 'w') as f:
         json.dump(result, f, indent=2)
     print(f"\n  Session log saved → recess_session_log.json")
