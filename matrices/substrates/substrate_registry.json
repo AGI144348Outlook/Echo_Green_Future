@@ -1,0 +1,23 @@
+{
+  "schema": "echo.substrate-registry.v0.1",
+  "status": "seed",
+  "rule": "a validated construction at level n may be registered as an addressable operand at level n+1 without erasing its provenance",
+  "substrates": [
+    {
+      "id": "S-MATH",
+      "kind": "mathematical",
+      "registry": "matrices/symbols/math_symbols.json"
+    },
+    {
+      "id": "S-HEBREW",
+      "kind": "hebrew-operational",
+      "registry": "matrices/glyphs/hebrew_glyph_registry.json"
+    },
+    {
+      "id": "S-MASHET",
+      "kind": "mashet-symbolic",
+      "registry": "matrices/symbols/mashet_symbols.json"
+    }
+  ],
+  "recursive_lift": "C_n validated -> operand(C_n) in S_(n+1)"
+}
