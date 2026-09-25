@@ -627,17 +627,21 @@ if __name__ == '__main__':
     synonyms_map = {}
     lexicon = {}
 
-    with open(ROOT / 'en_thesaurus.jsonl') as f:
-        qualifying = [json.loads(l) for l in f if json.loads(l).get('desc')]
-    stride = max(1, len(qualifying)//1000)
-    for entry in qualifying[::stride][:1000]:
-        matrix.index_dictionary_entry(entry['word'], ' '.join(entry['desc']),
-            pos=entry.get('pos'), synonyms=entry.get('synonyms',[]),
-            category='thesaurus_def')
-        if entry.get('synonyms'):
-            synonyms_map[entry['word'].lower()] = [s.lower() for s in entry['synonyms']]
-        lexicon[entry['word'].lower()] = {
-            'desc': ' '.join(entry['desc']), 'pos': entry.get('pos','?')}
+    thesaurus_path = ROOT / 'en_thesaurus.jsonl'
+    if thesaurus_path.exists():
+        with open(thesaurus_path) as f:
+            qualifying = [json.loads(l) for l in f if json.loads(l).get('desc')]
+        stride = max(1, len(qualifying)//1000)
+        for entry in qualifying[::stride][:1000]:
+            matrix.index_dictionary_entry(entry['word'], ' '.join(entry['desc']),
+                pos=entry.get('pos'), synonyms=entry.get('synonyms',[]),
+                category='thesaurus_def')
+            if entry.get('synonyms'):
+                synonyms_map[entry['word'].lower()] = [s.lower() for s in entry['synonyms']]
+            lexicon[entry['word'].lower()] = {
+                'desc': ' '.join(entry['desc']), 'pos': entry.get('pos','?')}
+    else:
+        print("  en_thesaurus.jsonl absent — continuing with saved lobby + WordNet.")
 
     with open(ROOT / 'matrices' / 'echo_lobby_agents.json') as f:
         saved = json.load(f)
