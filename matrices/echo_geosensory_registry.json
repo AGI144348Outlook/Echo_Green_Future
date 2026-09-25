@@ -263,5 +263,48 @@
     "lhea_letter": "shin",
     "jurisdiction": "J1 Continuity — solar wind plasma stream",
     "description": "DSCOVR plasma speed, density, temperature"
+  },
+  "USGS_WATER_CONTINUOUS_VALUES": {
+    "name": "USGS Water Data — Continuous Values API",
+    "url": "https://api.waterdata.usgs.gov/",
+    "domain": "J1_CONTINUITY",
+    "sensor_type": "HYDROLOGIC_CONTINUOUS",
+    "key_required": false,
+    "format": "JSON/OGC",
+    "resolution": "real-time",
+    "fields": [
+      "streamflow",
+      "gage_height",
+      "monitoring_location",
+      "parameter",
+      "time"
+    ],
+    "lhea_letter": "mem",
+    "jurisdiction": "J1 Continuity — continuous hydrologic sensor measurements",
+    "description": "Modern USGS Water Data APIs providing most recent real-time streamflow, gage height, and other continuous sensor measurements.",
+    "provenance": "USGS Water Data API documentation; discovered/validated 2026-09-25",
+    "validation_status": "VALIDATED_SOURCE"
+  },
+  "NOAA_COOPS_REALTIME": {
+    "name": "NOAA CO-OPS — Real-Time Coastal Observations",
+    "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",
+    "domain": "J1_CONTINUITY",
+    "sensor_type": "COASTAL_OCEANOGRAPHIC",
+    "key_required": false,
+    "format": "JSON/CSV/XML",
+    "resolution": "6-minute typical PORTS observations",
+    "fields": [
+      "water_level",
+      "currents",
+      "wind",
+      "air_pressure",
+      "air_temperature",
+      "water_temperature"
+    ],
+    "lhea_letter": "mem",
+    "jurisdiction": "J1 Continuity — coastal and marine observation stream",
+    "description": "NOAA CO-OPS public data endpoint supporting real-time coastal water-level, current, and meteorological observations.",
+    "provenance": "NOAA CO-OPS/PORTS documentation; discovered/validated 2026-09-25",
+    "validation_status": "VALIDATED_SOURCE"
   }
 }
