@@ -1,0 +1,86 @@
+{
+  "schema": "echo.algebra-mashet.v0.1",
+  "status": "working-specification",
+  "principle": "Mashet symbols receive formal signatures/invariants here; Hebrew may depend on these records without collapsing glyph identity into Mashet identity.",
+  "records": [
+    {
+      "id": "AM::COMPOSE",
+      "mashet": "M::COMPOSE",
+      "signature": "⊕ : X^n -> X'",
+      "law_status": "WORKING",
+      "invariants": [
+        "inputs remain provenance-addressable",
+        "composition result is a new object unless operation explicitly declares identity"
+      ]
+    },
+    {
+      "id": "AM::RECURSE",
+      "mashet": "M::RECURSE",
+      "signature": "⟲_f^n(x) = f^n(x)",
+      "law_status": "WORKING",
+      "invariants": [
+        "n >= 0",
+        "each iteration records predecessor when provenance mode is enabled"
+      ]
+    },
+    {
+      "id": "AM::CONSTRAIN",
+      "mashet": "M::CONSTRAIN",
+      "signature": "⌖_C(X) -> X_C",
+      "law_status": "WORKING",
+      "invariants": [
+        "result satisfies C",
+        "source X is not mutated"
+      ]
+    },
+    {
+      "id": "AM::INPUT",
+      "mashet": "M::INPUT",
+      "signature": "⇢◇ : U_k -> admitted(U_k)",
+      "law_status": "WORKING",
+      "invariants": [
+        "input provenance retained",
+        "admission is distinct from authorization"
+      ]
+    },
+    {
+      "id": "AM::MEMORY",
+      "mashet": "M::MEMORY",
+      "signature": "∫↺ : S_<k -> H_k",
+      "law_status": "WORKING",
+      "invariants": [
+        "history references are ordered",
+        "retention status remains explicit"
+      ]
+    },
+    {
+      "id": "AM::COUPLE",
+      "mashet": "M::COUPLE",
+      "signature": "⧖ : X × Y -> relation(X,Y)",
+      "law_status": "WORKING",
+      "invariants": [
+        "relation does not assert identity",
+        "both endpoints remain resolvable"
+      ]
+    },
+    {
+      "id": "AM::EVALUATE",
+      "mashet": "M::EVALUATE",
+      "signature": "⚖_q : X -> assessment_q(X)",
+      "law_status": "WORKING",
+      "invariants": [
+        "criterion q is explicit",
+        "assessment does not auto-promote validation"
+      ]
+    },
+    {
+      "id": "AM::NOISE",
+      "mashet": "M::NOISE",
+      "signature": "≋ : (X, ξ) -> X'",
+      "law_status": "WORKING",
+      "invariants": [
+        "stochastic source/seed recorded when executable"
+      ]
+    }
+  ]
+}
