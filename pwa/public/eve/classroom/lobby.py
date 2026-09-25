@@ -1,16 +1,31 @@
 """ECHO Classroom Lobby — Lesson 000 substrate.
 
-This module instantiates identity + vocabulary neighbors only.
-It deliberately supplies no semantic index, taxonomy, clustering, or answer
-to the organization assignment. ECHO must devise those later.
+Identity + vocabulary neighbors only. The vocabulary is deliberately
+systems-oriented rather than anthropocentric. No taxonomy, semantic clusters,
+POS index, or organizational answer is supplied.
 """
 from dataclasses import dataclass, field
-from typing import Dict, List
+from typing import Dict
 
 SEED_VOCABULARY = (
-    "I", "you", "we", "this", "that", "who", "what", "not",
-    "all", "many", "one", "two", "person", "water", "fire",
-    "earth", "eat", "drink", "see", "hear",
+    # identity / distinction
+    "identity", "entity", "state", "difference", "same", "other", "boundary", "context",
+    # structure / environment
+    "environment", "system", "structure", "matrix", "index", "node", "edge", "cell",
+    "coordinate", "position", "axis", "anchor", "region", "layer", "network", "field",
+    # relation / causality
+    "relation", "connection", "constraint", "condition", "cause", "effect", "event", "transition",
+    "input", "output", "source", "target", "path", "sequence", "cycle", "feedback",
+    # information / knowledge
+    "information", "signal", "data", "pattern", "value", "meaning", "reference", "memory",
+    "known", "unknown", "uncertain", "inference", "question", "answer", "error", "noise",
+    # operation / agency
+    "operation", "algorithm", "process", "action", "change", "create", "connect", "separate",
+    "select", "compare", "validate", "compose", "transform", "organize", "express", "perceive",
+    # quantity / logic
+    "one", "many", "none", "part", "whole", "true", "false", "possible",
+    # time / persistence
+    "before", "after", "present", "history", "persist", "repeat", "begin", "complete",
 )
 
 @dataclass(frozen=True)
