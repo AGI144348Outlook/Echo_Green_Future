@@ -1,0 +1,48 @@
+{
+  "schema": "echo.math-symbols.v0.1",
+  "status": "seed",
+  "substrate": "mathematical",
+  "classes": [
+    "arithmetic",
+    "relation",
+    "set",
+    "logic",
+    "calculus",
+    "linear_algebra",
+    "geometry",
+    "probability",
+    "indexing"
+  ],
+  "records": [
+    {
+      "symbol": "+",
+      "role": "addition",
+      "arity": 2
+    },
+    {
+      "symbol": "=",
+      "role": "equality",
+      "arity": 2
+    },
+    {
+      "symbol": "→",
+      "role": "mapping_or_transition",
+      "arity": 2
+    },
+    {
+      "symbol": "∫",
+      "role": "integration",
+      "arity": 1
+    },
+    {
+      "symbol": "Σ",
+      "role": "summation_or_symbol-space",
+      "arity": "contextual"
+    },
+    {
+      "symbol": "∘",
+      "role": "composition",
+      "arity": 2
+    }
+  ]
+}
