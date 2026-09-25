@@ -55,13 +55,13 @@ def main():
       "lesson":"glyph blocks are manipulable indexed operators; explore one-to-many and many-to-one subject-matrix indexing"})
 
     # MATH: glyph abacus. י bead/unit, ו rod/thread, ח bounded frame; SymPy verifies.
-    import sympy as sp
+    try:\n        import sympy as sp\n    except ImportError:\n        sp=None
     mturns=[]
     problems=[(a,b,op) for a,b,op in [(3,4,"+"),(9,2,"-"),(4,5,"*"),(12,3,"/"),(7,8,"+"),
       (15,6,"-"),(6,6,"*"),(18,2,"/"),(11,9,"+"),(20,7,"-"),(8,7,"*"),(21,3,"/"),
       (13,12,"+"),(30,11,"-"),(9,9,"*"),(24,4,"/"),(17,16,"+"),(40,13,"-"),(12,8,"*"),(36,6,"/")]]
     for n,(a,b,op) in enumerate(problems,1):
-        expr=sp.sympify(f"{a}{op}{b}"); answer=sp.simplify(expr)
+        if sp is not None:\n            expr=sp.sympify(f"{a}{op}{b}"); answer=sp.simplify(expr)\n        else:\n            answer={"+":lambda:a+b,"-":lambda:a-b,"*":lambda:a*b,"/":lambda:a/b}[op]()
         mturns.append({"turn":n,"abacus":{"frame":"ח","rod":"ו","bead":"י","a":a,"operator":op,"b":b},
                        "sympy_verification":str(answer),"lesson_state":"manipulate quantity, then independently verify"})
     log["classes"].append({"class":"MATH_LAB","turn_budget":20,"object":"ח[ו:י...]ח glyph abacus",
