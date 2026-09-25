@@ -15,3 +15,6 @@ L001 remains locked until L000 produces a tested organization. Its purpose is fo
 ## Experimental record rule
 
 Preserve proposal, test, failure, feedback, revision, and validated result as distinct records. Do not rewrite history to make a later solution appear to have been the original answer.
+
+
+<!-- Recess graft-prune trigger test -->
