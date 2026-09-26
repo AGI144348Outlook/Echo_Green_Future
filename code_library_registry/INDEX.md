@@ -50,3 +50,5 @@
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
+
+| RP-0003 | Mathematical Frameworks | **STRUCTURAL INTELLIGENCE — Emergent Collective Behavior** | Archived; Assessed; Validation Pending | Very High — Core Formula recurrences, swarm dynamics, ghost-attractor hypothesis, algebra registry |
