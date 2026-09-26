@@ -54,3 +54,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | RP-0003 | Mathematical Frameworks | **STRUCTURAL INTELLIGENCE — Emergent Collective Behavior** | Archived; Assessed; Validation Pending | Very High — Core Formula recurrences, swarm dynamics, ghost-attractor hypothesis, algebra registry |
 
 | CLR-0016 | **OPERATOR WEIGHT SYSTEM / MASHET OPERATOR VISUALIZER** | Assessed; Source archival pending | Very High — operator-valued weights, compositional state transforms, candidate Hebrew operator basis |
+
+| CLR-0017 | **EXECUTABLE OPERATOR WEIGHT SYSTEM + HEBREW LETTER BASIS** | Assessed; Source archival pending | Very High — 22-operator basis, coefficient learning, ordered glyph composition; symbol readout degeneracy identified |
