@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embryonic Development Lab - Molecular Simulation</title>
+    <style>
+        body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; margin:0; padding:20px; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#333; min-height:100vh; }
+        .lab-container { max-width:1400px; margin:0 auto; background:rgba(255,255,255,.95); border-radius:15px; padding:30px; box-shadow:0 20px 40px rgba(0,0,0,.1); backdrop-filter:blur(10px); }
+        .header { text-align:center; margin-bottom:30px; border-bottom:3px solid #667eea; padding-bottom:20px; }
+        .simulation-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:30px; }
+        .module { background:#f8f9fa; border-radius:10px; padding:20px; border-left:4px solid #667eea; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+        .controls { background:#e8f2ff; border-radius:10px; padding:20px; margin-bottom:20px; }
+        .status-display { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin:20px 0; }
+        .status-card { background:white; padding:15px; border-radius:8px; text-align:center; border:2px solid #e0e0e0; transition:all .3s ease; }
+        .status-card:hover { border-color:#667eea; transform:translateY(-2px); }
+        .value { font-size:24px; font-weight:bold; color:#667eea; display:block; }
+        .label { font-size:12px; color:#666; margin-top:5px; }
+        button { background:linear-gradient(45deg,#667eea,#764ba2); color:white; border:none; padding:12px 25px; border-radius:25px; cursor:pointer; margin:5px; font-weight:bold; transition:all .3s ease; }
+        button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,.2); }
+        button:disabled { background:#ccc; cursor:not-allowed; transform:none; }
+        .log-container { background:#2d3748; color:#e2e8f0; padding:20px; border-radius:10px; max-height:400px; overflow-y:auto; font-family:'Courier New',monospace; font-size:14px; }
+        .progress-bar { width:100%; height:20px; background:#e0e0e0; border-radius:10px; overflow:hidden; margin:10px 0; }
+        .progress-fill { height:100%; background:linear-gradient(90deg,#667eea,#764ba2); width:0%; transition:width .5s ease; }
+        .visualization { width:100%; height:300px; background:#f8f9fa; border-radius:10px; display:flex; align-items:center; justify-content:center; border:2px dashed #ccc; margin:20px 0; }
+        .cell-visual { width:60px; height:60px; border-radius:50%; background:radial-gradient(circle,#4CAF50,#2E7D32); margin:5px; display:inline-block; animation:pulse 2s infinite; position:relative; }
+        .cell-visual::after { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:20px; height:20px; background:#1976D2; border-radius:50%; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+        .molecular-display { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:20px; }
+        .molecule-card { background:white; padding:15px; border-radius:8px; text-align:center; border:1px solid #e0e0e0; }
+        .dna-strand { height:4px; background:linear-gradient(90deg,#FF5722,#FF9800,#FFC107,#8BC34A,#4CAF50,#2196F3,#9C27B0); border-radius:2px; margin:10px 0; animation:replication 3s infinite; }
+        @keyframes replication { 0%,100%{opacity:1} 50%{opacity:.5} }
+    </style>
+</head>
+<body>
+<div class="lab-container">
+<div class="header"><h1>🧬 Molecular Embryonic Development Laboratory</h1><p>Bottom-up simulation focusing on DNA, RNA, and protein dynamics</p><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><div id="currentPhase">Initializing...</div></div>
+<div class="controls"><button onclick="startSimulation()" id="startBtn">Start Experiment</button><button onclick="pauseSimulation()" id="pauseBtn" disabled>Pause</button><button onclick="resetSimulation()" id="resetBtn">Reset</button><button onclick="speedUp()" id="speedBtn">Speed Up</button><button onclick="addPerturbation()" id="perturbBtn">Add Perturbation</button></div>
+<div class="simulation-grid">
+<div class="module"><h3>🧬 DNA Replication & Transcription</h3><div class="dna-strand"></div><div class="status-display"><div class="status-card"><span class="value" id="dnaReplication">0%</span><div class="label">DNA Replicated</div></div><div class="status-card"><span class="value" id="transcriptionRate">0</span><div class="label">Genes/Hour</div></div></div></div>
+<div class="module"><h3>🧪 RNA Processing</h3><div class="molecular-display"><div class="molecule-card"><strong id="mrnaCount">0</strong><br>mRNA</div><div class="molecule-card"><strong id="trnaCount">0</strong><br>tRNA</div><div class="molecule-card"><strong id="rrnaCount">0</strong><br>rRNA</div></div></div>
+<div class="module"><h3>🔗 Protein Folding</h3><div class="status-display"><div class="status-card"><span class="value" id="proteinCount">0</span><div class="label">Proteins Synthesized</div></div><div class="status-card"><span class="value" id="foldingEfficiency">99.9%</span><div class="label">Folding Efficiency</div></div></div></div>
+<div class="module"><h3>🔬 Cell Division</h3><div class="visualization" id="cellVisualization"><div class="cell-visual"></div></div><div class="status-display"><div class="status-card"><span class="value" id="cellCount">1</span><div class="label">Total Cells</div></div><div class="status-card"><span class="value" id="divisionCycle">G1</span><div class="label">Current Phase</div></div></div></div>
+</div>
+<div class="module"><h3>📊 Real-time Molecular Data</h3><div class="log-container" id="experimentLog"><div>🔬 Laboratory initialized...</div><div>📋 Molecular systems ready for observation</div><div>⚡ Waiting for experiment to begin...</div></div></div>
+</div>
+<script>
+class MolecularSimulation {
+constructor(){this.time=0;this.isRunning=false;this.speed=1;this.cellCount=1;this.dnaReplication=0;this.proteins=0;this.mrna=15000;this.trna=3050;this.rrna=800;this.currentPhase='G1';this.transcriptionRate=12000;this.foldingEfficiency=99.9;this.divisionTimer=0;this.perturbations=[];this.genomeData={totalGenes:20000,activeGenes:15000,chromatinState:'euchromatin',methylationLevel:2.5,histoneMarks:['H3K4me3','H3K27me3','H3K36me3']};this.rnaData={splicingEfficiency:95,alternativeSplicing:30,processingRate:850,degradationRate:0.1};this.proteinData={ribosomes:10000000,chaperones:{hsp70:50000,hsp60:20000,hsp90:10000},misfolding:0.001};}
+start(){this.isRunning=true;document.getElementById('startBtn').disabled=true;document.getElementById('pauseBtn').disabled=false;this.log('🚀 Simulation started - Beginning molecular observations...');this.run();}
+pause(){this.isRunning=false;document.getElementById('startBtn').disabled=false;document.getElementById('pauseBtn').disabled=true;this.log('⏸️ Simulation paused');}
+reset(){this.isRunning=false;this.time=0;this.cellCount=1;this.dnaReplication=0;this.proteins=0;this.perturbations=[];this.updateDisplay();document.getElementById('startBtn').disabled=false;document.getElementById('pauseBtn').disabled=true;document.getElementById('experimentLog').innerHTML='<div>🔬 Laboratory reset and ready</div>';}
+speedUp(){this.speed*=2;if(this.speed>16)this.speed=1;this.log(`⚡ Simulation speed: ${this.speed}x`);}
+addPerturbation(){const perturbations=['DNA_DAMAGE','PROTEIN_MISFOLD','RNA_DEGRADATION','OXIDATIVE_STRESS','HEAT_SHOCK','NUTRIENT_DEPLETION'];const perturbation=perturbations[Math.floor(Math.random()*perturbations.length)];this.perturbations.push(perturbation);this.log(`⚠️ Perturbation added: ${perturbation}`);this.handlePerturbation(perturbation);}
+handlePerturbation(p){switch(p){case'DNA_DAMAGE':this.transcriptionRate*=0.7;this.log('🧬 DNA damage detected - transcription rate reduced');break;case'PROTEIN_MISFOLD':this.foldingEfficiency*=0.9;this.proteinData.chaperones.hsp70*=2;this.log('🔗 Protein misfolding - chaperone upregulation activated');break;case'OXIDATIVE_STRESS':this.rnaData.degradationRate*=2;this.log('⚡ Oxidative stress - increased RNA degradation');break;}}
+run(){if(!this.isRunning)return;this.time+=this.speed;this.updateMolecularProcesses();this.updateCellCycle();this.checkEmergentProperties();this.updateDisplay();setTimeout(()=>this.run(),100);}
+updateMolecularProcesses(){if(this.currentPhase==='S')this.dnaReplication=Math.min(100,this.dnaReplication+(this.speed*0.5));const transcriptionNoise=(Math.random()-0.5)*0.1;this.transcriptionRate=Math.max(8000,this.transcriptionRate+(transcriptionNoise*1000));this.mrna+=(this.transcriptionRate*this.speed*0.001)-(this.mrna*this.rnaData.degradationRate*this.speed*0.01);this.trna=Math.max(3000,this.trna+(Math.random()-0.5)*10);this.rrna=Math.max(800,this.rrna+(Math.random()-0.5)*5);const translationRate=this.mrna*0.1*this.speed;this.proteins+=translationRate;this.applyPerturbationEffects();}
+updateCellCycle(){this.divisionTimer+=this.speed;if(this.divisionTimer<660)this.currentPhase='G1';else if(this.divisionTimer<1140)this.currentPhase='S';else if(this.divisionTimer<1380){this.currentPhase='G2';if(this.dnaReplication<100)this.divisionTimer=1140;}else if(this.divisionTimer<1440)this.currentPhase='M';else{this.cellCount*=2;this.divisionTimer=0;this.dnaReplication=0;this.currentPhase='G1';this.log(`🔬 Cell division complete - Cell count: ${this.cellCount}`);this.updateCellVisualization();}}
+checkEmergentProperties(){if(this.cellCount>=4&&this.time%500===0)this.log('🌟 Emergent property detected: Early cell fate specification signals');if(this.proteins>1000000&&this.time%700===0)this.log('🔗 Protein complexity threshold reached - Enhanced folding networks forming');if(this.cellCount>=16)this.log('🧬 Morula stage reached - Compaction and polarity establishment beginning');}
+applyPerturbationEffects(){if(this.perturbations.length>0){this.transcriptionRate=Math.min(12000,this.transcriptionRate*1.001);this.foldingEfficiency=Math.min(99.9,this.foldingEfficiency*1.0001);this.rnaData.degradationRate=Math.max(0.1,this.rnaData.degradationRate*0.999);}}
+updateCellVisualization(){const v=document.getElementById('cellVisualization');v.innerHTML='';const n=Math.min(this.cellCount,32);for(let i=0;i<n;i++){const c=document.createElement('div');c.className='cell-visual';c.style.animationDelay=`${i*0.1}s`;v.appendChild(c);}if(this.cellCount>32){const m=document.createElement('div');m.textContent=`...and ${this.cellCount-32} more cells`;m.style.color='#666';m.style.fontSize='14px';m.style.marginTop='10px';v.appendChild(m);}}
+updateDisplay(){document.getElementById('progressFill').style.width=`${(this.time%1440)/14.4}%`;document.getElementById('currentPhase').textContent=`Time: ${Math.floor(this.time/60)}h ${this.time%60}m - Phase: ${this.currentPhase}`;document.getElementById('dnaReplication').textContent=`${Math.round(this.dnaReplication)}%`;document.getElementById('transcriptionRate').textContent=Math.round(this.transcriptionRate);document.getElementById('mrnaCount').textContent=Math.round(this.mrna);document.getElementById('trnaCount').textContent=Math.round(this.trna);document.getElementById('rrnaCount').textContent=Math.round(this.rrna);document.getElementById('proteinCount').textContent=Math.round(this.proteins);document.getElementById('foldingEfficiency').textContent=`${this.foldingEfficiency.toFixed(2)}%`;document.getElementById('cellCount').textContent=this.cellCount;document.getElementById('divisionCycle').textContent=this.currentPhase;}
+log(message){const l=document.getElementById('experimentLog');const ts=`[${Math.floor(this.time/60).toString().padStart(2,'0')}:${(this.time%60).toString().padStart(2,'0')}]`;const e=document.createElement('div');e.textContent=`${ts} ${message}`;l.appendChild(e);l.scrollTop=l.scrollHeight;}
+}
+const simulation=new MolecularSimulation();
+function startSimulation(){simulation.start()} function pauseSimulation(){simulation.pause()} function resetSimulation(){simulation.reset()} function speedUp(){simulation.speedUp()} function addPerturbation(){simulation.addPerturbation()}
+simulation.updateDisplay();
+</script>
+</body></html>
