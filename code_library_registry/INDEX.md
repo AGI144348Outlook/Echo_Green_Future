@@ -20,6 +20,12 @@
 
 | CLR-0009 | **ENERGY FRACTAL GRID — Multiscale Transition & Cost Prototype** | Historical | Python | Assessed; Candidate | assessments/CLR-0009_ENERGY_FRACTAL_GRID.md | **High — scale transitions, adaptive resolution, generalization operators** | Candidate-cost bug identified; prototype scale/precision constants are heuristic |
 
+## Research Papers
+
+| Paper ID | Section | Title | Status | Echo/EVE relevance |
+| --- | --- | --- | --- | --- |
+| RP-0001 | Ethics & Governance | **THE CONSENT PARADOX — Ethical Frameworks for Consciousness Creation** | Archived; Assessed | High — stewardship, ongoing consent, welfare safeguards, EVE governance |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
