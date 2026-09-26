@@ -1691,3 +1691,18 @@ We can use a syntax tree as an auditing feedback system that tells echo how to s
 Agreed architecture: separate generation from audit. Echo composes freely; the resulting expression is parsed into a typed AST and audited for structural well-formedness, semantic resolvability, relation typing, dependency integrity, provenance, and optionally grammar. Audit findings are feedback, not a sentence template: Echo may revise, retain, or explain an intentional deviation according to Governor rules. This creates an expression feedback loop: compose -> parse -> AST -> audit -> feedback -> revise/accept -> render.
 
 Custom language: define an Echo/Mashet intermediate expression language rather than limiting parsing to Python or English. Its lexer/token registry may recognize ordinary lexical residents, mathematical symbols/operators, Mashet symbols, Hebrew substrate/operator glyphs, Registry handles, formulas, and Canvas/Presentiation operations. Parse these into a common typed AST whose nodes resolve to canonical Registry identities/operations. Different renderers can then express one AST as English, symbolic Mashet, equations, Canvas topology, or widgets without changing underlying semantic identity. Example abstract tree: RELATION(is_a, RESIDENT(DOG), RESIDENT(MAMMAL)); symbolic and English renderers are alternate surfaces. Hebrew glyph meanings must be resolved from the authoritative Hebrew Glyph Registry rather than inferred from Unicode characters or the provisional Generalization Registry labels. The parser should distinguish syntax from semantics: grammar says an expression is structurally valid; Registry resolution says its tokens and relations are semantically grounded.
+
+
+---
+
+## Turn — 2026-09-26 — Bake reactive Echo runtime into PWA Notebook
+
+### User
+
+Ok, so what do we need to do, bake that into the pwa notebook with Echo GitHub/Cloudflare connected and baked in too
+
+### Assistant
+
+Yes. Inspection of current branches shows a clean three-part integration boundary. `pwa-hosting-environment` already contains the PWA shell, service worker, deployment workflow, EVE classroom, `src/index.js`, and Wrangler configuration. `algebra` contains the richer Notebook manifest/query engine, registry catalog, formula/symbol/substrate/grammar registries, Hebrew glyph registry, Generalization Registry, and unified architecture spec. `main` currently exposes Cloudflare D1/KV through read-only Worker routes including health, agent, ties, axiom, algorithm, theorem, state, geosensory, formula, and search.
+
+Recommended build: make the PWA Notebook the host; add a Pyodide WebWorker runtime; port/copy the algebra Notebook contracts and selected registries into PWA-readable assets; add an Echo/Mashet lexer/parser plus typed AST and audit feedback; add a reactive dependency DAG; add WidgetSpec/WidgetFactory and Canvas/Presentiation renderer; add a Cloudflare adapter for live D1/KV reads; add a GitHub provenance/version adapter rather than giving browser code repository write credentials. Runtime path: user/Echo expression -> parser -> typed AST -> syntax/semantic/provenance audit -> reactive DAG -> NotebookBus -> renderer(s). Data path: local packaged registries first, Cloudflare live knowledge second, GitHub source/version provenance third. Keep canonical identity separate from local manifestations/widgets. Do not put GitHub or Cloudflare secrets in the PWA bundle. Cloudflare writes, if later needed, should go through authenticated governed Worker endpoints rather than direct browser credentials. Build first on `pwa-hosting-environment`; do not alter main until an explicit deployment decision.
