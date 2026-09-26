@@ -181,3 +181,19 @@ This is a candidate semantic mapping and should not yet be labeled strict algebr
 ### CFA-0018 — Ordered Glyph-Operator Composition
 **Source:** CLR-0016. **Classification:** proposed compositional algebra.
 `O_word=ell_i1 ell_i2 ... ell_ik`. Operator order is generally significant because `ell_i ell_j != ell_j ell_i`. The commutator `[ell_i,ell_j]=ell_i ell_j-ell_j ell_i` becomes a direct diagnostic of order sensitivity.
+
+### CFA-0019 — Operator-Basis Vectorization
+**Source:** CLR-0017. **Classification:** exact linear representation within the chosen span.
+Let `L=[vec(ell_1) ... vec(ell_22)]`. Then `vec(W_hat)=Lc`, with least-squares coefficients `c=L^+vec(W)`. For d=8, 22 elements span at most a 22-dimensional subspace of the 64-dimensional full matrix space.
+
+### CFA-0020 — Gram-Corrected Coefficient Update
+**Source:** CLR-0017 assessment. **Classification:** proposed correction.
+For a non-orthonormal operator frame, coefficient geometry is governed by `G=L^T L`. A projected operator-space update `delta_w` can be mapped by `delta_c=L^+ delta_w=(L^T L)^+L^T delta_w` when appropriate. Using only `L^T delta_w` assumes orthonormal-coordinate geometry.
+
+### CFA-0021 — Orthogonal-Activation Degeneracy
+**Source:** CLR-0017. **Classification:** exact diagnostic result.
+If every glyph operator is orthogonal, `ell_j^T ell_j=I`, then `||ell_j S||_2=||S||_2` for all j. Therefore `argmax_j ||ell_j S||` cannot provide meaningful state-dependent glyph selection. A discriminative readout must depend on direction, task consequence, prediction, or a non-isometric transform.
+
+### CFA-0022 — Glyph Composition Commutator Test
+**Source:** CLR-0017. **Classification:** diagnostic algebra.
+`[ell_i,ell_j]=ell_i ell_j-ell_j ell_i`. Nonzero commutator identifies order-sensitive operator pairs and provides a direct test for whether glyph sequence can encode distinct transformations.
