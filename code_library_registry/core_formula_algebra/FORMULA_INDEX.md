@@ -197,3 +197,19 @@ If every glyph operator is orthogonal, `ell_j^T ell_j=I`, then `||ell_j S||_2=||
 ### CFA-0022 — Glyph Composition Commutator Test
 **Source:** CLR-0017. **Classification:** diagnostic algebra.
 `[ell_i,ell_j]=ell_i ell_j-ell_j ell_i`. Nonzero commutator identifies order-sensitive operator pairs and provides a direct test for whether glyph sequence can encode distinct transformations.
+
+### CFA-0023 — Task-Operator Alignment Objective
+**Source:** CLR-0019. **Classification:** defined supervised operator objective.
+For external task operator `T`, internal composite `W_c=sum_i alpha_i W_i`, and transition `f_W(S)=tanh(W_c S)`, define `L_T(S)=||f_W(S)-TS||_2^2`. T is an externally specified target transformation, not a reward scalar and, in the executable implementation, is not multiplied into the forward dynamics.
+
+### CFA-0024 — Exact One-Step Operator Gradient Through Tanh
+**Source:** CLR-0019 assessment. **Classification:** derived correction.
+Let `y=tanh(W_c x)`, `y*=Tx`, and `delta=2(y-y*) elementwise (1-y^2)`. Then `dL/dW_i=alpha_i(delta outer x)` for the one-step squared alignment loss. The source update omits the tanh derivative.
+
+### CFA-0025 — Persistent-Excitation Operator Identification
+**Source:** CLR-0019 assessment. **Classification:** experimental criterion.
+A contracting task can make trajectory error vanish as `S->0` without identifying T. Evaluate over a probe distribution `x~D`: `E_T=E_x ||f_W(x)-Tx||^2`. For linear diagnostics also measure `||W_c-T||_F` and/or induced operator norm.
+
+### CFA-0026 — Factorial Operator/Context Ablation
+**Source:** CLR-0019 assessment. **Classification:** experimental decomposition.
+Separate adaptation axes: fixed/learned `W` x fixed/learned `alpha`. This yields four core conditions and identifies whether alignment gains arise from operator adaptation, mixture adaptation, or their interaction.
