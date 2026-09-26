@@ -1489,3 +1489,30 @@ Identity(R).
 The lattice case is especially useful because the perimetering cell/region can itself carry environmental semantics. A presentiated resident can occupy a bounded lattice locus while its canonical hypernym and other semantic relations remain resolvable through the Registry. The Canvas can therefore visualize not only entities but the semantic topology among them.
 
 Selections of these visual presentiations should remain queryable back into Notebook matrices, so spatial organization can become computational input rather than merely a picture.
+
+
+---
+
+## Turn — 2026-09-26 — Code-library UI lookup
+
+### User
+
+Can you locate the code in the code library branch that has the text input widget output windowing feature
+
+### Assistant
+
+Located on branch `code-library-registry`.
+
+Primary match:
+`code_library_registry/artifacts/CLR-0002/exosuit_developer_suite_v3.html`
+
+It implements multiple independent UI panels (Architect, Maven, Claude, Forge, Terminal, Output). Each panel combines an `output-area` with a text input (`textarea` or terminal `input`) and send/execute control. The panels also expose minimize/maximize controls, making this the strongest match for the requested text-input + output-windowing feature.
+
+Examples include IDs such as `architect-output` / `architect-input`, `claude-output` / `claude-input`, `terminal-output` / `terminal-input`, and `output-results` / `output-input`.
+
+Secondary match:
+`code_library_registry/artifacts/CLR-0009/fractalgrid_ai_assistant.html`
+
+This has a simpler single chat surface: scrollable `chatMessages`, `messageInput`, Send button, dynamically appended user/AI messages, auto-scroll, and typing indicator. It lacks CLR-0002's multi-panel window controls.
+
+For the future Notebook/Canvas interface, CLR-0002 is therefore the more relevant reusable UI precedent, while CLR-0009 is a useful compact conversational input/output component.
