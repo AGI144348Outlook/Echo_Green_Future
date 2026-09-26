@@ -16,6 +16,8 @@
 
 | CLR-0007 | **BIOLOGICAL AVATAR — Whole-System Embodiment Specification** | Historical | JSON conceptual specification | Assessed; Reference | assessments/CLR-0007_BIOLOGICAL_AVATAR.md | Moderate/High — recursive entity systems, feedback/control, avatar modeling | Extension of CLR-0006; 28-year testing/incarnation claims preserved as unverified provenance |
 
+| CLR-0008 | **EVE R&D LAB — Biological Avatar Research Dashboard** | Historical | React/JavaScript | Assessed; Reference | assessments/CLR-0008_EVE_RD_LAB.md | Moderate — research dashboards, registry status, notebook panels | UI descendant of CLR-0007; progress values/actions are simulated rather than measured |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
