@@ -12,6 +12,8 @@
 
 | CLR-0005 | **EVE HYDROGEN — Origin/Vector NVE Prototype** | Historical | HTML/CSS/JavaScript | Assessed; Candidate | assessments/CLR-0005_EVE_HYDROGEN.md | **High — EVE/NVE geometry, local origins, transforms, entity placement** | Physics display is conceptual; scientific claims require validation |
 
+| ★ CLR-0006 | **COMPLETE EVE BLUEPRINT — Conceptual Consciousness Architecture** | 2025-08-23 | JSON conceptual specification | ★ STARRED; Foundational lineage | assessments/CLR-0006_STAR_COMPLETE_EVE_BLUEPRINT.md | **Very High — EVE/NVE ontology, Unit recursion, state potential, cognition** | Conceptual spec behind CLR-0005; speculative physics/consciousness claims explicitly separated |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
