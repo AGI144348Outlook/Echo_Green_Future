@@ -1624,3 +1624,16 @@ First standalone milestone:
 - no external LLM/API dependency.
 
 The resulting artifact is not merely a mockup: it is the first host for the production Canvas engine. Once stable, mount that same engine in the PWA.
+
+
+---
+
+## Turn — 2026-09-26 — Notebook widgeting layer
+
+### User
+
+And what about the widgeting feature itself
+
+### Assistant
+
+Promote widgeting into a core Notebook/Canvas capability rather than limiting it to the I/O dock. Generalize CLR-0002's independently addressable minimize/maximize panels into NotebookWidget instances. A widget has stable widget identity, type, geometry, dock/floating state, visibility, z-order, data binding, and permissions. Canvas, I/O, Registry browser, query/matrix results, audit history, Echo status, formula workspace, and other tools can all be widgets. Touch mechanics should support drag, resize, minimize, maximize, dock/undock, tab/stack, and collapse. Widgets may bind to Canvas selections and canonical Registry residents, but widget identity remains distinct from semantic resident identity and Canvas Presentiation identity. Widget layout should be saved as a Notebook view/workspace and restored without changing canonical semantic data. Both user and Echo may open/focus/update widgets through the same governed Widget API; Echo should not arbitrarily move or close user workspace elements without appropriate permission.
