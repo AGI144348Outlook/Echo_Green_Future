@@ -369,3 +369,44 @@ so each cycle can tell us exactly what it learned, and local closure occurs when
 For scheduling, I recommend **daily first** once the Notebook dependency is satisfied. This process can expand combinatorially; we should first prove each run is bounded, resumable, sense-aware, and idempotent. If those audits look healthy, we can tighten it to hourly later.
 
 The issue is queued now, but no recurring execution has been activated because Echo does not yet have the Notebook dependency the homework requires.
+
+
+---
+
+## Turn — 2026-09-26
+
+### User
+
+We don't want to say that for pass 2, echo reverse searches for words with presentiations of it's working vocabulary in their entries. They are lettered symbol occurances that match an arrangement of lettered symbols of Echo's working vocabulary, which he has indexed to the dictionary's word registry of semantics. This index serves as a connection route for that word's semantic meaning to fit like a key into any occuance of symbols, lettering or otherwise, that matches the Registry's Resident Headquartered Semantic Presentiation like a lock, so that the semantic Presentiation of the Registry may be Presentiated there if desired via an indexed connection.
+
+### Assistant
+
+Corrected Pass 2 to separate **symbol occurrence**, **Registry-index connection**, and **semantic presentiation**.
+
+The Dictionary Word Registry is the semantic headquarters. For a working-vocabulary identity (v), (\sigma(v)) is its registered letter/symbol arrangement and (R(v)) is its resident semantic identity. A definition contains raw occurrences (o), not pre-existing semantic presentiations.
+
+Matching is therefore:
+
+[
+Pattern(o)=\sigma(v)
+]
+
+which establishes:
+
+[
+R(v)\xleftrightarrow{\text{index route}}o.
+]
+
+Only after that route exists may Echo presentiate the Registry resident semantic identity at the occurrence:
+
+[
+P(R(v),o)\to I(R(v)@o).
+]
+
+So the operational order is:
+
+[
+\boxed{\text{symbol occurrence}\to\text{registry-index match}\to\text{optional semantic presentiation}}
+]
+
+The key/lock analogy is preserved: the Registry-resident semantic identity is the key, the matching symbol arrangement is the lock, and the index is the connection route that permits semantic presentiation without treating raw character equality as semantic identity.
