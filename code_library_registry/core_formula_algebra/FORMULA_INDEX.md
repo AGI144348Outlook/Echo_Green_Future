@@ -245,3 +245,19 @@ For Euclidean norm, `||Phi(S)||_2=sqrt(2)||S||_2`; for coordinate sum, `1^T Phi(
 ### CFA-0034 — Governed Structural Transition Gate
 **Source:** CLR-0021 assessment. **Classification:** proposed governance schema.
 A structural transition `(X,F) --Phi--> (X',F')` is admissible only when declared preservation/covariance laws commute within tolerance, stability constraints hold, target schema is valid, and audit/rollback metadata exists. This generalizes scaling from a hard-coded resize into a Registry-addressable governed transformation.
+
+### CFA-0035 — Token Capability Predicates
+**Source:** CLR-0022. **Classification:** defined authorization algebra.
+Let `TC(x)`, `TI(x)`, and `TA(x)` denote create, issue, and admit capabilities. The prototype's admission rule is `Admit(r,t) iff TA(r) AND Carried(t)`. Modernization should resolve these predicates through Governor-managed scoped capabilities rather than mutable booleans.
+
+### CFA-0036 — Domain-Bounded Composition Rule
+**Source:** CLR-0022. **Classification:** exact rule implemented by prototype.
+For domain `d` with carried operand set `K_d`, a requested combination `C` is constructible only if `TC(d) AND C subseteq K_d`. This is a bounded compositional-generation rule, not proof that the result has novel semantic meaning.
+
+### CFA-0037 — Create-Issue-Admit Transition Chain
+**Source:** CLR-0022 assessment. **Classification:** proposed typed protocol.
+`Symbol=Compose_d(C)`; `Token=Issue_i(Symbol)`; `Admit_r(Token)`. Each arrow has independent capability, schema, provenance, and environment constraints. Separating Symbol from TokenInstance resolves the source artifact's carried=false admission contradiction.
+
+### CFA-0038 — Scoped Governor Authorization Relation
+**Source:** CLR-0022 assessment. **Classification:** proposed governance generalization.
+`Permit(subject, action, object, environment, constraints)`. TC/TI/TA become action-specific projections of this relation. This allows the same authorization algebra to govern Registry queries, operator/glyph composition, NVE admission, structural transitions, and executable Notebook ActionRequests.
