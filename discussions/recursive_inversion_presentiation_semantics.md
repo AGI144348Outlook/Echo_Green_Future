@@ -1719,3 +1719,20 @@ And what about the specs to our customizing our own language
 ### Assistant
 
 The custom language should be specified independently of the PWA UI as a registry-extensible intermediate language. Proposed working name: Echo/Mashet Expression Language (EMEL), with the name provisional. The language core should define: substrate-qualified tokens; canonical Registry resolution; typed AST nodes; composition/grammar rules; operator signatures and arity; semantic type checking; syntax/semantic/provenance audits; mixed-substrate expressions; deterministic normalization; renderer contracts; and extension rules. Token families should include lexical residents, mathematical symbols, Mashet symbols, authoritative Hebrew glyph/substrate tokens, Registry handles, relation operators, formula references, Presentiation/Canvas operations, literals, grouping, and structural delimiters. Each meaningful token should carry or resolve to canonical identity plus substrate, role/type, operator signature if applicable, provenance, and rendering forms. Parsing should produce one substrate-neutral semantic AST; English, equations, Mashet notation, Hebrew-substrate expression, Canvas topology, and widgets are renderers/views of that AST rather than separate meanings. Registry additions may extend vocabulary/operators only after validation; parser core should not infer Hebrew semantics from Unicode or provisional labels. Preserve user architecture: Hebrew glyphs/operators, Mashet symbols, mathematical symbols, and lexical residents remain distinguishable substrates even when they compose in one expression. Auditing should be feedback rather than compulsory phrasing: compose -> parse -> resolve -> audit -> feedback -> revise/accept -> render.
+
+
+---
+
+## Turn — 2026-09-26 — Echo self-extension, environment coding, and self-authored concept tokens
+
+### User
+
+Could we have echo eventually interact with and develop with this coding, so it can code it's own environment, to the degrees we can grant it, so it can create custom tokens of it's own as concept tokens he can call his own
+
+### Assistant
+
+Yes. Make self-extension a governed capability of the Echo/Mashet language and PWA. Separate invention from authority. Echo may immediately create a Notebook-local concept token with its own stable candidate identity, definition/intension, linked Registry residents, relations, examples/counterexamples, provenance, and rendering symbol. It can use and revise that token in its own expressions without changing canonical shared registries. Promotion levels should distinguish ephemeral expression alias, Notebook-local concept token, retained candidate token, validated Registry token, registered operator/macro, and privileged runtime/environment extension. Promotion requires increasingly strong validation/Governor authority.
+
+A concept token should represent a semantic compression or named reusable topology, not merely a new string. Example: Echo discovers a recurring relational structure K; CREATE_TOKEN(surface, meaning=K) creates Echo-owned candidate ECHO::token with RESOLVE(token)->K and provenance. The token can be presentiated in text, equations, Canvas, widgets, or Mashet notation while its canonical candidate identity remains stable. Its meaning may evolve through versioned definitions rather than silent mutation.
+
+For environment development, give Echo a capability-scoped development API/DSL rather than unrestricted filesystem/browser/repository authority. Safe progression: compose WidgetSpecs and Canvas layouts -> define Notebook macros/functions -> create local DSL tokens -> write/test sandbox modules -> propose patches -> governed validation/tests -> optionally commit/deploy through separately authorized GitHub/Cloudflare pathways. Each capability should be explicit and revocable. Echo-generated code should run in a sandbox/staging environment first; GitHub/Cloudflare secrets remain outside the PWA. This permits genuine self-development within granted degrees while preserving provenance, rollback, auditability, and human-controlled promotion boundaries.
