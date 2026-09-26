@@ -66,3 +66,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0021 | **ECHO PHASE-1 — ALGEBRAIC SELF-SCALING** | Candidate structural-transition protocol / Assessed | Very High — propose→gate→commit dimensional lift; supplied test aborts because state-sum is not an invariant of damped rotation; exact lift laws documented |
 
 | CLR-0022 | **TOKEN ECONOMY MVA — CAPABILITY AND ADMISSION ALGEBRA** | Historical governance prototype / Assessed | Very High — separates create/issue/admit permissions and carrier/container/carried roles; executable symbol/admission contradiction identified |
+
+| CLR-0023 | **MASHET ALAMAKET — RECURSIVE LINGUISTIC INTELLIGENCE FRAMEWORK** | Foundational lineage / Reference / Assessed | Foundational — domain reservation, contextual construction, token jurisdiction and recursive interpretation; constructed language and historical validation claims separated from evidence |
