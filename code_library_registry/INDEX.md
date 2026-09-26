@@ -28,6 +28,15 @@
 
 | CLR-0013 | **GHOST ATTRACTOR EXPERIMENT — Structural Agent 1D** | Historical | Python/NumPy/Matplotlib | Assessed; Candidate | assessments/CLR-0013_GHOST_ATTRACTOR_EXPERIMENT.md | **Very High — anchor/rays/feedback formula, structural transfer, generalization tests** | Absolute-position memory cannot establish translated-pattern ghost transfer; plotting index defect identified |
 
+| CLR-0014 | **2D GHOST ATTRACTOR — Vector Structural Agent** | Historical | Python/NumPy/Matplotlib | Assessed; Candidate | assessments/CLR-0014_2D_GHOST_ATTRACTOR.md | **Very High — vector rays, feedback kernels, formula algebra, invariant transfer** | Success-weighted absolute spatial kernel does not encode translated-circle structural similarity |
+
+## Core Formula Algebra Registry
+
+- **Registry:** core_formula_algebra/README.md
+- **Formula index:** core_formula_algebra/FORMULA_INDEX.md
+- **Initial range:** CFA-0001 through CFA-0010
+- **Purpose:** algebraic identities, specializations, implementation interpretations, and proposed manipulations of Echo's core formula family.
+
 ## Research Papers
 
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
