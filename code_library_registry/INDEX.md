@@ -64,3 +64,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0020 | **OPERATOR TRANSLATION LAYER — MAKING ECHO LEGIBLE** | Candidate interpretability architecture / Assessed | Very High — deterministic Operator→Signature→Concept→Rendering bridge; separates machine record from human language; mathematical/attribution corrections documented |
 
 | CLR-0021 | **ECHO PHASE-1 — ALGEBRAIC SELF-SCALING** | Candidate structural-transition protocol / Assessed | Very High — propose→gate→commit dimensional lift; supplied test aborts because state-sum is not an invariant of damped rotation; exact lift laws documented |
+
+| CLR-0022 | **TOKEN ECONOMY MVA — CAPABILITY AND ADMISSION ALGEBRA** | Historical governance prototype / Assessed | Very High — separates create/issue/admit permissions and carrier/container/carried roles; executable symbol/admission contradiction identified |
