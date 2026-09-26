@@ -156,3 +156,49 @@ This is more useful to Echo than retaining the prototype's arbitrary physical sc
 
 ## Assessment note
 This is a worthwhile algorithmic ancestor. Its reusable contribution is **adaptive resolution through registered scale transitions**. With the domain assumptions removed and the optimizer corrected, the pattern could become a strong part of Echo's algebraic/indexing machinery: Echo can choose how finely or generally to represent something, invoke a known transition operator, and retain a trace of how the representation changed.
+
+
+## Companion artifact — FractalGrid AI Assistant
+
+A browser chat interface was subsequently supplied and archived as:
+
+`artifacts/CLR-0009/fractalgrid_ai_assistant.html`.
+
+The interface exposes four explanatory topics—carbon reduction, hierarchical instancing, multiscale optimization, and efficiency gains—through suggested questions and keyword-routed canned responses.
+
+Despite the UI label "AI Assistant" and a comment mentioning simulated Groq responses, this version performs **no model/API inference**. `getAIResponse()` is deterministic keyword routing into a fixed knowledge object, with a 1.5-second artificial delay.
+
+### Hierarchical instancing
+The companion introduces an additional concept not implemented in the submitted EnergyFractalGrid Python class: compute a complex structure once, preserve it as a reusable template, then instantiate it repeatedly at lower marginal computational cost.
+
+That is architecturally relevant to Echo and should be assessed independently of the energy-domain claims. It maps naturally to reusable matrix/environment templates and NVE instantiation.
+
+### Quantitative claims boundary
+The interface contains strong quantitative statements including:
+- carbon reductions "up to 25%",
+- computational efficiency gains of "15–70%",
+- transmission-loss reductions of "2–5%",
+- "10^15x speedup",
+- "90%+ cache hit rates",
+- "sub-millisecond response times".
+
+No benchmark implementation, dataset, measurement protocol, cache subsystem, power-flow solver comparison, carbon accounting method, or experimental evidence supporting these figures is present in CLR-0009's supplied Python prototype or this HTML companion.
+
+These figures must therefore remain tagged as **unverified historical/promotional claims**, not performance results.
+
+The same applies to descriptions such as "physics-based accuracy" and "revolutionary" unless separately demonstrated.
+
+### Echo extraction
+The useful architectural combination is:
+
+`Scale Registry + Transition Operators + Reusable Template/Instance Registry`.
+
+That could support:
+- canonical environment templates,
+- reusable matrix structures,
+- cached registry query plans,
+- formula/operator templates,
+- repeated NVE instantiation,
+- explicit provenance from instance back to template.
+
+Any efficiency claim in a modern implementation should be generated from reproducible benchmarks rather than embedded explanatory copy.
