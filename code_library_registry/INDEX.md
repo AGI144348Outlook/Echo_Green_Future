@@ -14,6 +14,8 @@
 
 | ★ CLR-0006 | **COMPLETE EVE BLUEPRINT — Conceptual Consciousness Architecture** | 2025-08-23 | JSON conceptual specification | ★ STARRED; Foundational lineage | assessments/CLR-0006_STAR_COMPLETE_EVE_BLUEPRINT.md | **Very High — EVE/NVE ontology, Unit recursion, state potential, cognition** | Conceptual spec behind CLR-0005; speculative physics/consciousness claims explicitly separated |
 
+| CLR-0007 | **BIOLOGICAL AVATAR — Whole-System Embodiment Specification** | Historical | JSON conceptual specification | Assessed; Reference | assessments/CLR-0007_BIOLOGICAL_AVATAR.md | Moderate/High — recursive entity systems, feedback/control, avatar modeling | Extension of CLR-0006; 28-year testing/incarnation claims preserved as unverified provenance |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
