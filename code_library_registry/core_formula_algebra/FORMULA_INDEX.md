@@ -213,3 +213,19 @@ A contracting task can make trajectory error vanish as `S->0` without identifyin
 ### CFA-0026 — Factorial Operator/Context Ablation
 **Source:** CLR-0019 assessment. **Classification:** experimental decomposition.
 Separate adaptation axes: fixed/learned `W` x fixed/learned `alpha`. This yields four core conditions and identifies whether alignment gains arise from operator adaptation, mixture adaptation, or their interaction.
+
+### CFA-0027 — Operator Signature Map
+**Source:** CLR-0020. **Classification:** diagnostic map.
+Define `phi(W)=(tr(W), det(W), rho(W), ||W||_F, symmetry(W), rotation(W), damping(W))`. The components have different invariance classes: trace/determinant/spectrum are similarity invariants; Frobenius norm is invariant under orthogonal basis changes but not arbitrary similarity; symmetry/threshold scores are representation-dependent diagnostics.
+
+### CFA-0028 — Deterministic Legibility Pipeline
+**Source:** CLR-0020. **Classification:** architectural mapping.
+`W -> phi(W) -> ConceptToken(phi, rule_id) -> CompositionRecord -> HumanRenderer`. Human language is a terminal rendering of a provenance-bearing intermediate representation, not the operator substrate itself.
+
+### CFA-0029 — State-Conditioned Operator Attribution
+**Source:** CLR-0020 assessment. **Classification:** proposed attribution metric.
+For mixture `W_c=sum_i alpha_i W_i`, replace norm-only influence with `I_i(x)=||alpha_i W_i x||`, or intervention attribution `Delta_i(x)=||f_W(x)-f_{W\\i}(x)||`. Aggregate over held-out `x~D` for global attribution.
+
+### CFA-0030 — Additive Mixture vs Sequential Operator Syntax
+**Source:** CLR-0020 assessment. **Classification:** structural distinction.
+Mixture: `W_mix=sum_i alpha_i W_i`. Sequential syntax: `W_seq=W_k ... W_2 W_1`. In general `W_2W_1 != W_1W_2`; therefore order-sensitive operator language must preserve product order rather than infer syntax from mixture weights.
