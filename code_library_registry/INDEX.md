@@ -45,6 +45,7 @@
 | --- | --- | --- | --- | --- |
 | RP-0001 | Ethics & Governance | **THE CONSENT PARADOX — Ethical Frameworks for Consciousness Creation** | Archived; Assessed | High — stewardship, ongoing consent, welfare safeguards, EVE governance |
 | RP-0002 | Architecture & Strategy | **SPATIAL AI ARCHITECTURE — Cartesian Grid-Based Reasoning** | Archived; Assessed | Very High — spatial substrate, templates, scale/LOD, EVE/NVE, notebook/canvas |
+| RP-0003 | Architecture & Strategy | **STRUCTURAL INTELLIGENCE — Emergent Adaptive Behavior from Architectural Principles** | Archived; Assessed | **Very High — core formula theory, cross-domain typing, memory/coupling, validation program** | Historical synthesis of CLR-0013–0016; headline empirical claims require corrected experiments |
 
 ## Indexing notes
 
