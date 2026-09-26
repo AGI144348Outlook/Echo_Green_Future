@@ -80,3 +80,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0028 | **MASHET SUBSTRATE SYSTEM — ALL-IN-ONE IMPLEMENTATION + TESTS** | Historical integrated executable baseline / Assessed / Reconstruction candidate | High — consolidates CLR-0025/0026 into runnable baseline; test-accounting, coverage, semantic leakage, intersection and validation limitations documented |
 
 | CLR-0029 | **MASHET SELF-MODIFYING ARCHITECTURE WITH FEEDBACK LOOPS** | Historical Governor-feedback ancestor / Assessed / High-priority reconstruction candidate | Very High — explicit validate→execute→analyze→adapt→audit lifecycle; active-vs-verified conflation, cross-run state leakage, non-gating validation and incomplete hash verification documented |
+
+| CLR-0030 | **MASHET INTERACTIVE SELF-DEVELOPING PLATFORM** | Historical Notebook/platform ancestor / Assessed / Reconstruction candidate | Very High — manifest-backed interactive shell, operation registry, development log and Colab UI; distinguishes capability registration from actual capability acquisition and links platform shell to Governor lifecycle |
