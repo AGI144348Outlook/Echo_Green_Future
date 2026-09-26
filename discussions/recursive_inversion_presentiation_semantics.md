@@ -1426,3 +1426,66 @@ This makes the adaptive-learning idea stronger, not weaker: RIE can progressivel
 For semantic generalization/specification, this suggests a particularly clean next experiment. A word (w) becomes the center object. Generalization (G) removes distinguishing constraints and expands extension; specification (S) adds constraints and contracts extension. Rather than pretending (G^{-1}=S), RIE can recursively probe both directions and record which semantic features survive across the branching lattice. The Notebook can retain those traces as temporary matrices/saved views; only repeated, well-covered survivors become VGM candidates.
 
 This also connects directly to Presentiation: when a Registry resident is presentiated at a new symbolic occurrence, its existing RIE-tested invariant/hypernym structure can be made addressable there. New contexts then provide new inversion probes against the same canonical resident, turning the evolving Registry into a continuing invariant-testing machine rather than a static store.
+
+
+---
+
+## Turn — 2026-09-26 — Visual-spatial Presentiation
+
+### User
+
+Eventually, with the canvas set up, Semantic Presentiations can be Presentiated in, and as, Circles on a mind map, or as icons within the perimetering spaces of a lattice and such
+
+### Assistant
+
+Yes. This extends Presentiation from textual/symbol-occurrence loci into **visual-spatial loci** on the Canvas.
+
+For canonical semantic resident (R), a Canvas manifestation can carry a presentation mode:
+
+[
+I(R,C,p,m)
+]
+
+where (C) is the Canvas/environment, (p) is placement, and (m) is a rendering/presentation mode.
+
+Examples:
+
+[
+P(R,C,p,	ext{mind-map-circle})
+]
+
+or:
+
+[
+P(R,C,p,	ext{lattice-icon}).
+]
+
+Both must satisfy:
+
+[
+RESOLVE(I(R,C,p,m))=R.
+]
+
+Thus a circle, icon, node, glyph, or other visual object is **not a duplicate semantic entity**. It is a local visual presentiation of the same Registry resident.
+
+This suggests the Canvas API should separate at least three layers:
+
+1. **Semantic identity** — canonical Registry resident.
+2. **Spatial/relational manifestation** — where that identity is presentiated in the current environment and what local relations it participates in.
+3. **Renderer/presentation form** — circle, icon, glyph, label, lattice occupant, etc.
+
+Then changing the renderer:
+
+[
+circleightarrow icon
+]
+
+does not change:
+
+[
+Identity(R).
+]
+
+The lattice case is especially useful because the perimetering cell/region can itself carry environmental semantics. A presentiated resident can occupy a bounded lattice locus while its canonical hypernym and other semantic relations remain resolvable through the Registry. The Canvas can therefore visualize not only entities but the semantic topology among them.
+
+Selections of these visual presentiations should remain queryable back into Notebook matrices, so spatial organization can become computational input rather than merely a picture.
