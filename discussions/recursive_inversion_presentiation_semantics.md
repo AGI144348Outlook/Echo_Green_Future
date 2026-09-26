@@ -1650,3 +1650,16 @@ Not what I mean. I mean there's a code snippet in cr 002 that allows for me to t
 ### Assistant
 
 Clarified distinction: user means text-to-widget generation, not generic movable Notebook windows. Direct inspection of CLR-0002 shows the Forge panel advertises code generation/compilation and accepts textual forge directives, while the Claude panel accepts technical specifications. However, in the stored CLR-0002 HTML itself, the JavaScript present in the artifact only wires local panel controls, emergency controls, and textarea autosizing; the actual request-to-generated-widget implementation is not visibly contained in this file. Therefore preserve the desired capability as an architectural requirement, but do not claim CLR-0002 currently contains a complete local widget compiler unless another linked artifact/script contains it. Proposed model-independent replacement: textual request -> parsed WidgetSpec -> validated registered primitives -> WidgetFactory -> live widget, with Echo able to compose widgets from a bounded registry of controls/renderers/data bindings rather than requiring an LLM to emit arbitrary HTML/JS.
+
+
+---
+
+## Turn — 2026-09-26 — Pyodide deterministic widget DSL architecture
+
+### User
+
+Shared Gemini notes describing AST parsing, DAG execution, state synchronization, and deterministic DSL-driven text-to-widget construction in Pyodide.
+
+### Assistant
+
+This supplies a strong model-independent mechanism for Echo's requested text-to-widget capability. Recommended architecture: textual/DSL request -> Python ast.parse or custom parser -> safe normalized WidgetSpec/IR -> dependency DAG -> registered WidgetFactory primitives -> DOM/Canvas rendering. Widget events update state; the dependency graph recomputes only affected downstream nodes; render patches are returned to the browser UI. Pyodide provides browser CPython and Python-JavaScript FFI. Web Workers are recommended for keeping computation off the UI thread. Clarification: postMessage is message passing rather than direct shared-memory synchronization; SharedArrayBuffer is a distinct mechanism with browser/security requirements and is documented by Pyodide particularly for worker interrupt support. Do not execute unrestricted user AST/eval; whitelist DSL node types, calls, properties, and registered operations. This allows Echo to compose widgets deterministically without requiring Claude or another LLM.
