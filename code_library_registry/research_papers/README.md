@@ -4,6 +4,7 @@ This section preserves non-code research papers, essays, conceptual analyses, an
 
 ## Sections
 - **Ethics & Governance** — normative frameworks, research ethics, rights, stewardship, safety, and governance.
+- **Architecture & Strategy** — architectural synthesis, platform concepts, technical strategy, product strategy, and historical market analysis.
 - Future research-paper categories may be added without mixing papers into the code-artifact namespace.
 
 ## Identifier convention
