@@ -62,3 +62,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0019 | **TASK OPERATOR FRAMEWORK — EXTERNALLY LEGIBLE CAUSAL INTERFACE** | Candidate experiment / Assessed | Very High — externally specified operator target, architecture ablation scaffold; baseline and state-collapse confounds identified |
 
 | CLR-0020 | **OPERATOR TRANSLATION LAYER — MAKING ECHO LEGIBLE** | Candidate interpretability architecture / Assessed | Very High — deterministic Operator→Signature→Concept→Rendering bridge; separates machine record from human language; mathematical/attribution corrections documented |
+
+| CLR-0021 | **ECHO PHASE-1 — ALGEBRAIC SELF-SCALING** | Candidate structural-transition protocol / Assessed | Very High — propose→gate→commit dimensional lift; supplied test aborts because state-sum is not an invariant of damped rotation; exact lift laws documented |
