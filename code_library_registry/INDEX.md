@@ -56,3 +56,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0016 | **OPERATOR WEIGHT SYSTEM / MASHET OPERATOR VISUALIZER** | Assessed; Source archival pending | Very High — operator-valued weights, compositional state transforms, candidate Hebrew operator basis |
 
 | CLR-0017 | **EXECUTABLE OPERATOR WEIGHT SYSTEM + HEBREW LETTER BASIS** | Assessed; Source archival pending | Very High — 22-operator basis, coefficient learning, ordered glyph composition; symbol readout degeneracy identified |
+
+| CLR-0018 | **EXTERNAL-STYLE ASSESSMENT — ECHO SYNTELLIGENCE ARCHITECTURE** | Reference / Assessed | High — benchmark, ablation, theory, symbol-grounding and efficiency validation roadmap; opinions separated from evidence |
