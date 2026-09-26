@@ -8,6 +8,8 @@
 
 | ★ CLR-0003 | **THE FOUNDRY — Generative Windowing PWA** | Historical | HTML/CSS/JavaScript | ★ STARRED; Assessed; Candidate | assessments/CLR-0003_STAR_THE_FOUNDRY.md | **Very High — generative windows, notebook/canvas, EVE/NVE instantiation** | Dynamic intent→module→window→export architecture |
 
+| ★ CLR-0004 | **AGENTIC FOUNDRY — Foundry v2.1 AI Windowing Exosuit** | Historical | Partial HTML/CSS/JavaScript | ★ STARRED; Assessed; Candidate | assessments/CLR-0004_STAR_AGENTIC_FOUNDRY.md | **Very High — EVE/NVE event fabric, agentic workspace actions, canvas** | Descendant of CLR-0003; submitted source truncated |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
