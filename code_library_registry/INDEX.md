@@ -68,3 +68,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0022 | **TOKEN ECONOMY MVA — CAPABILITY AND ADMISSION ALGEBRA** | Historical governance prototype / Assessed | Very High — separates create/issue/admit permissions and carrier/container/carried roles; executable symbol/admission contradiction identified |
 
 | CLR-0023 | **MASHET ALAMAKET — RECURSIVE LINGUISTIC INTELLIGENCE FRAMEWORK** | Foundational lineage / Reference / Assessed | Foundational — domain reservation, contextual construction, token jurisdiction and recursive interpretation; constructed language and historical validation claims separated from evidence |
+
+| CLR-0024 | **LIMINAL VISION TOKEN (LVT) MIND DOMAIN ARCHITECTURE** | Foundational lineage / Reference / Assessed | Very High architectural relevance — recursive environments, template instancing, dual-process loops, scale-aware views and domain credentials; consciousness/physics/performance claims separated from evidence |
