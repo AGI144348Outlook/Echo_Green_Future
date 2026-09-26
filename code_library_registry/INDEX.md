@@ -20,6 +20,8 @@
 
 | CLR-0009 | **ENERGY FRACTAL GRID — Multiscale Transition & Cost Prototype** | Historical | Python | Assessed; Candidate | assessments/CLR-0009_ENERGY_FRACTAL_GRID.md | **High — scale transitions, adaptive resolution, generalization operators** | Candidate-cost bug identified; prototype scale/precision constants are heuristic |
 
+| CLR-0010 | **EMBRYONIC MOLECULAR FOUNDATION — Development Simulation Spec** | 2025-08-29 | JSON simulation specification | Assessed; Candidate | assessments/CLR-0010_EMBRYONIC_MOLECULAR_FOUNDATION.md | **High — experiment schema, emergence monitors, perturbations, runtime controls** | Biological parameters require independent validation; no executable dynamics supplied |
+
 ## Research Papers
 
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
