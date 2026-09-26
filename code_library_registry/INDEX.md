@@ -60,3 +60,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0018 | **EXTERNAL-STYLE ASSESSMENT — ECHO SYNTELLIGENCE ARCHITECTURE** | Reference / Assessed | High — benchmark, ablation, theory, symbol-grounding and efficiency validation roadmap; opinions separated from evidence |
 
 | CLR-0019 | **TASK OPERATOR FRAMEWORK — EXTERNALLY LEGIBLE CAUSAL INTERFACE** | Candidate experiment / Assessed | Very High — externally specified operator target, architecture ablation scaffold; baseline and state-collapse confounds identified |
+
+| CLR-0020 | **OPERATOR TRANSLATION LAYER — MAKING ECHO LEGIBLE** | Candidate interpretability architecture / Assessed | Very High — deterministic Operator→Signature→Concept→Rendering bridge; separates machine record from human language; mathematical/attribution corrections documented |
