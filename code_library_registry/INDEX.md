@@ -22,6 +22,8 @@
 
 | CLR-0010 | **EMBRYONIC MOLECULAR FOUNDATION — Development Simulation Spec** | 2025-08-29 | JSON simulation specification | Assessed; Candidate | assessments/CLR-0010_EMBRYONIC_MOLECULAR_FOUNDATION.md | **High — experiment schema, emergence monitors, perturbations, runtime controls** | Biological parameters require independent validation; no executable dynamics supplied |
 
+| CLR-0011 | **SPATIAL REASONING GRID — Cartesian Workspace Prototype** | Historical | HTML/CSS/JavaScript | Assessed; Candidate | assessments/CLR-0011_SPATIAL_REASONING_GRID.md | **Very High — notebook/canvas, spatial API, coordinate placements, queries** | Implementation companion to RP-0002; 2D prototype, not evidence of paper's broader performance claims |
+
 ## Research Papers
 
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
