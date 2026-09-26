@@ -410,3 +410,32 @@ So the operational order is:
 ]
 
 The key/lock analogy is preserved: the Registry-resident semantic identity is the key, the matching symbol arrangement is the lock, and the index is the connection route that permits semantic presentiation without treating raw character equality as semantic identity.
+
+
+---
+
+## Turn — 2026-09-26
+
+### User
+
+Exactly. And the hypernyming of the words in their definitions means that when echo presentiates that word in another words' entries, those hypernym chains are also presentiated
+
+### Assistant
+
+Exactly. This means Pass 1 is building more than a dictionary lookup for each working-vocabulary word: it is building a **resident semantic identity with an attached typed hypernym neighborhood**.
+
+If (R(v)) is the canonical Registry resident and:
+
+[
+H(R(v))=R(v)\to h_1\to h_2\to\cdots,
+]
+
+then a later symbol occurrence (o) matched through the index does not receive a bare word label. Presentiation exposes the resident together with its already-established relational context:
+
+[
+P(R(v),o)\Rightarrow I(R(v)@o,H(R(v))).
+]
+
+The important identity rule is that neither the word nor its hypernym chain is copied. The Registry remains headquarters; the occurrence becomes another locus from which the same semantic identity and canonical hypernym relations are present/addressable.
+
+That makes the recursive curriculum considerably richer: every newly promoted vocabulary word can arrive carrying semantic ancestry learned in Pass 1, so when it is subsequently presentiated into other definitions, those definitions become connected into the existing semantic lattice immediately. New relationships discovered from the containing definition can then extend the lattice as new evidence rather than forcing Echo to rebuild inherited chains.
