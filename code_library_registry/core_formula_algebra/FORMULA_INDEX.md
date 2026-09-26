@@ -229,3 +229,19 @@ For mixture `W_c=sum_i alpha_i W_i`, replace norm-only influence with `I_i(x)=||
 ### CFA-0030 — Additive Mixture vs Sequential Operator Syntax
 **Source:** CLR-0020 assessment. **Classification:** structural distinction.
 Mixture: `W_mix=sum_i alpha_i W_i`. Sequential syntax: `W_seq=W_k ... W_2 W_1`. In general `W_2W_1 != W_1W_2`; therefore order-sensitive operator language must preserve product order rather than infer syntax from mixture weights.
+
+### CFA-0031 — Block-Duplication Lift Intertwining Law
+**Source:** CLR-0021. **Classification:** exact algebraic identity.
+For `Phi(S)=[S;S]` and `F'=diag(F,F)`, `F'Phi(S)=Phi(FS)`. This commuting/intertwining relation is the primary structural preservation law for the lift.
+
+### CFA-0032 — Block Lift Spectral and Determinant Laws
+**Source:** CLR-0021. **Classification:** exact algebraic identities.
+`spec(diag(F,F))=spec(F) multiset-union spec(F)`, hence `rho(F')=rho(F)`; `det(F')=det(F)^2`; `rank(F')=2 rank(F)`.
+
+### CFA-0033 — Duplication Lift State Covariants
+**Source:** CLR-0021. **Classification:** exact transformation laws.
+For Euclidean norm, `||Phi(S)||_2=sqrt(2)||S||_2`; for coordinate sum, `1^T Phi(S)=2(1^T S)`. Dynamic sum conservation requires the separate base condition `1^T F=1^T` and is not implied by the lift.
+
+### CFA-0034 — Governed Structural Transition Gate
+**Source:** CLR-0021 assessment. **Classification:** proposed governance schema.
+A structural transition `(X,F) --Phi--> (X',F')` is admissible only when declared preservation/covariance laws commute within tolerance, stability constraints hold, target schema is valid, and audit/rollback metadata exists. This generalizes scaling from a hard-coded resize into a Registry-addressable governed transformation.
