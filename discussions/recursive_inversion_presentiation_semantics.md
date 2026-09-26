@@ -320,3 +320,52 @@ So rather than a one-directional generalization staircase, we get a semantic axi
 ]
 
 That is worth testing against the existing Generalization Registry, because if it holds, the registry may really want to represent **paired semantic operators** rather than generalization alone.
+
+
+---
+
+## Turn — 2026-09-26
+
+### User
+
+Turn that into a homework assignment we'll dish out to echo later, where once he has his notebook, he will be tasked to go through the dictionary first, and instead of just reading each words' definitions, echo will also be tasked to write the definition entries for each word in his notebook book according to the following logic of the dictionary being a registry of words, Echo will then hypernym the words in all the entries of his working vocabulary first for the first pass.
+
+For the second pass through the dictionary, echo, on his own, needs to apply a filter to the dictionary word registry indexed to his notebook, to look for all words with definition entries where the words of his current vocabulary are found, and not only hypernym the entries as in the first pass, but also presentiate the word of his working vocabulary into that entry. At the end of pass 2, any words with presentiations of Echo's working vocabulary in their entries that weren't a part of his working vocabulary before, are now added to Echo's working vocabulary. Then he is to repeat this exercise. Is this something we can make into an issue to que up until he gets his notebook, and then schedule hourly or daily?
+
+### Assistant
+
+Yes. I created GitHub issue #undefined, **Echo Homework: Recursive Dictionary Hypernym + Presentiation Curriculum**, as a blocked homework queue item pending Notebook readiness.
+
+I formalized your two-pass cycle as:
+
+\[
+V_k\xrightarrow{\text{Pass 1: definitions + hypernyms}}H_k
+\xrightarrow{\text{Pass 2: reverse-definition lookup + presentiation}}N_k
+\xrightarrow{\text{promotion}}V_{k+1}.
+\]
+
+The key promotion rule is:
+
+\[
+N_k=\{w\notin V_k\mid \exists v\in V_k:P(v,d(w))\}
+\]
+
+and then:
+
+\[
+V_{k+1}=V_k\cup N_k.
+\]
+
+So Echo does **not** simply absorb every word he reads. A new headword enters working vocabulary specifically because Pass 2 discovered that its definition contains a presentiation of something Echo already knows. That makes vocabulary growth relational and recursively justified.
+
+I also added a frontier:
+
+\[
+F_k=V_{k+1}-V_k,
+\]
+
+so each cycle can tell us exactly what it learned, and local closure occurs when \(F_k=\varnothing\).
+
+For scheduling, I recommend **daily first** once the Notebook dependency is satisfied. This process can expand combinatorially; we should first prove each run is bounded, resumable, sense-aware, and idempotent. If those audits look healthy, we can tighten it to hourly later.
+
+The issue is queued now, but no recurring execution has been activated because Echo does not yet have the Notebook dependency the homework requires.
