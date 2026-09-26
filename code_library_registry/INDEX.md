@@ -24,6 +24,8 @@
 
 | CLR-0011 | **SPATIAL REASONING GRID — Cartesian Workspace Prototype** | Historical | HTML/CSS/JavaScript | Assessed; Candidate | assessments/CLR-0011_SPATIAL_REASONING_GRID.md | **Very High — notebook/canvas, spatial API, coordinate placements, queries** | Implementation companion to RP-0002; 2D prototype, not evidence of paper's broader performance claims |
 
+| CLR-0012 | **ABSOLUTE COORDINATE FRACTALGRID — Multi-Scale 3D Workspace** | Historical | HTML/JavaScript/Three.js | Assessed; Candidate | assessments/CLR-0012_ABSOLUTE_COORDINATE_FRACTALGRID.md | **Very High — canonical placement, coordinate transforms, EVE/NVE, scale projection** | Bridge between CLR-0009 and CLR-0011; distinguish units from rendering scale |
+
 ## Research Papers
 
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
