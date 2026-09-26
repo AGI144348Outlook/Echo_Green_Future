@@ -18,6 +18,8 @@
 
 | CLR-0008 | **EVE R&D LAB — Biological Avatar Research Dashboard** | Historical | React/JavaScript | Assessed; Reference | assessments/CLR-0008_EVE_RD_LAB.md | Moderate — research dashboards, registry status, notebook panels | UI descendant of CLR-0007; progress values/actions are simulated rather than measured |
 
+| CLR-0009 | **ENERGY FRACTAL GRID — Multiscale Transition & Cost Prototype** | Historical | Python | Assessed; Candidate | assessments/CLR-0009_ENERGY_FRACTAL_GRID.md | **High — scale transitions, adaptive resolution, generalization operators** | Candidate-cost bug identified; prototype scale/precision constants are heuristic |
+
 ## Indexing notes
 
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
