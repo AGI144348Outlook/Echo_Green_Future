@@ -1564,3 +1564,16 @@ A local event/operation schema can be:
 Notebook persistence can save operation logs, current snapshots, and reconstructable Canvas views. This integrates with existing retain/save_view semantics while keeping validation separate.
 
 The resulting Canvas is a shared semantic workspace: a user can touch-drag a semantic presentiation while Echo can query it, relate it, or presentiate another canonical resident into the same environment. Both observe the same state and all semantic manifestations resolve back to authoritative Registry residents.
+
+
+---
+
+## Turn — 2026-09-26 — Unified polymath specification committed
+
+### User
+
+Claude wants to commit this document.
+
+### Assistant
+
+Reviewed the uploaded `ECHO_Polymath_Unified_Spec.md`. It explicitly merges the autonomous-agency algorithm layer with the algebra addressing/Notebook layer, preserves Presentiation and query-lifecycle distinctions, proposes A-175/A-176/A-177 as pending merger algorithms, and gives a staged development sequence. No existing file with the same name was found. Committed the document unchanged to `algebra` at `docs/ECHO_Polymath_Unified_Spec.md`, leaving `main` and `autonomous-agency` untouched. Commit: `eaf165991c9879d101771ebc8ff998fad8ae4963`.
