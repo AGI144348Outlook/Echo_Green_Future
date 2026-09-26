@@ -119,3 +119,141 @@ That sequence is increasingly useful as a test suite for what is invariant in th
 
 ## Disposition
 Candidate for a corrected multi-agent benchmark. Do not record the historical threshold result as proof of collective intelligence. Preserve the stronger architectural result: the core formula can be investigated at both individual-agent and coupled-system levels.
+
+
+---
+
+# Refined Structural Agent Swarm — Revision Assessment
+
+## Status
+Substantial companion/revision of CLR-0016. Preserve in the same lineage.
+
+## What this revision improves
+
+### Explicit memory state
+The earlier swarm mixed historical density feedback with current social forces. This revision makes memory an explicit recurrence:
+
+M_i(t) = (1-lambda) M_i(t-1) + feedback_i(t).
+
+That is much cleaner and maps directly to a state-space representation.
+
+### Explicit damped dynamics
+Velocity is now independently stateful:
+
+v_i(t+1) = (1-gamma) v_i(t) + S_i(t).
+
+This separates decision/force state from motion state, which is architecturally important.
+
+### Explicit ghost state
+Ghosts now have their own positions and update law rather than being only a retrospective label.
+
+This enables direct experiments on coupled latent/environmental states.
+
+### Better component instrumentation
+Ray, feedback, memory, cohesion, and alignment magnitudes are recorded independently. This is useful for ablation and stability studies.
+
+## Remaining mathematical mismatches
+
+### 1. The implemented ray term is not fractal recursion
+The header states a term of the form sum F_n(R_in), but compute_fractal_rays() implements:
+
+sum_i tanh(R_i)
+
+There is no recursion depth n, no lambda^n scaling, and no context-dependent recursive transform.
+
+This is not necessarily a defect. In fact it may be scientifically useful: it creates a simpler nonlinear carrier baseline. But it should be named accurately.
+
+A true recursive version could be:
+
+R_i* = sum_{n=0}^{N} lambda^n F_n(R_i, context)
+
+followed by aggregation across i.
+
+### 2. Ghost attractors are explicit attractor agents/fields, not discovered memory attractors
+GhostAttractor objects are initialized at random locations, exert direct attraction, move toward nearby-agent centroids, decay in strength, and may be newly created at the swarm centroid.
+
+Therefore any attraction toward them is causally programmed.
+
+This experiment can test **dynamic environmental attractor fields**, but cannot by itself demonstrate a ghost attractor emerging implicitly from memory.
+
+Recommended terminology:
+- explicit ghost field / persistent attractor marker for this implementation;
+- latent ghost attractor only for an attractor inferred from prior state/memory without being directly inserted as a force object.
+
+### 3. Ghost strength does not affect force
+compute_ghost_influence() receives only positions. A GhostAttractor's strength controls survival but not attraction magnitude.
+
+If strength is intended as intensity, pass (position,strength) and multiply its contribution accordingly.
+
+### 4. Anchor is restorative home-position force
+A_i is implemented as:
+
+w_A (initial_position - current_position).
+
+So Anchor here means a homeostatic spatial reference, not merely identity.
+
+This is a good concrete anchor operator but should be typed as such.
+
+### 5. Update timing remains partly asynchronous
+The neighbor distance matrix uses the pre-step positions snapshot, but neighbor objects themselves are live objects. Earlier agents mutate before later agents call compute_collective_feedback(), which reads n.position.
+
+Thus neighbor membership is snapshot-based while neighbor coordinates are partly updated in-place.
+
+For controlled experiments, snapshot all neighbor states and compute all S_i before committing any positions/velocities.
+
+### 6. Recorded positions are stale within step()
+The local positions array is captured before agent actions and appended to positions_history unless the optional ghost-creation block happens to recompute it.
+
+Therefore the animation/history can lag or inconsistently represent the actual post-step agent positions.
+
+Recompute positions after all commits before recording.
+
+## Better algebraic decomposition
+
+This revision motivates separating five state classes:
+
+Decision:
+S_i(t) = H_i(t) + R_i(t) + M_i(t) + G_i(t)
+
+Memory:
+M_i(t+1) = (1-lambda)M_i(t) + C_i(t)
+
+Motion:
+v_i(t+1) = (1-gamma)v_i(t) + S_i(t)
+
+Position:
+x_i(t+1) = x_i(t) + v_i(t+1)
+
+Environmental attractor:
+G_k(t+1) = (1-eta)G_k(t) + eta centroid(N_k(t)).
+
+Here H denotes the home-anchor restoring term to avoid conflating identity with a force.
+
+This is substantially more informative than forcing every process into one additive state equation: the system is becoming a **coupled recurrence family**.
+
+## Most important Echo implication
+The Core Formula Algebra Registry should allow one conceptual architecture to expand into multiple coupled recurrences rather than requiring every state variable to occupy one monolithic formula.
+
+A Notebook/Registry representation could store:
+- state variable,
+- recurrence/evolution operator,
+- dependencies,
+- coupling edges,
+- decay/damping constants,
+- constraints,
+- provenance.
+
+That turns a formula into an executable dependency graph.
+
+## Recommended next benchmark
+Run four ablations under identical seeded initial conditions:
+
+A. rays only
+B. rays + memory
+C. rays + explicit ghost fields
+D. rays + memory + ghost fields
+
+Then add:
+E. memory-derived latent attractors with **no explicit ghost force objects**.
+
+E is the decisive comparison if the research question remains whether ghost attractors can emerge from accumulated structural memory.
