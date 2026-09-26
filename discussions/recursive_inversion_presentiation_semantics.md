@@ -1516,3 +1516,51 @@ Secondary match:
 This has a simpler single chat surface: scrollable `chatMessages`, `messageInput`, Send button, dynamically appended user/AI messages, auto-scroll, and typing indicator. It lacks CLR-0002's multi-panel window controls.
 
 For the future Notebook/Canvas interface, CLR-0002 is therefore the more relevant reusable UI precedent, while CLR-0009 is a useful compact conversational input/output component.
+
+
+---
+
+## Turn — 2026-09-26 — Shared touchscreen Notebook Canvas
+
+### User
+
+Can you provide the original code snippets to that along to me, along with drafted snippet versions of how you'd improve on it and remove LLM dependancies. I want this to be not only a tool feature for echo to use, but an interactive feature enabled via touchscreen API display mechanics that presentiates a canvas in echo's notebook as a shared canvas that a user, like myself, can interactive together with echo with
+
+### Assistant
+
+Reviewed CLR-0002 directly. The reusable ancestor consists of independent DOM panels with output areas, textarea/input controls, minimize/maximize buttons, and textarea autosizing. The future Notebook version should preserve the windowing interaction while replacing any LLM-oriented contract with a local deterministic NotebookBus + CanvasStore.
+
+Proposed architecture:
+
+[
+User\ Touch/Text \leftrightarrow Shared\ Canvas\ State \leftrightarrow Echo\ Tool\ Operations
+]
+
+Both human and Echo issue typed operations against the same Canvas state. Neither owns a private visual copy.
+
+A Canvas object should separate canonical identity, manifestation, and renderer:
+
+[
+I(R,C,p,m)
+]
+
+with RESOLVE(I)=R. Rendering as circle/icon/glyph changes (m), not (R).
+
+Use Pointer Events rather than touch-only events so the same API supports finger, stylus, mouse, and future pointer devices. Required actions include pointerdown/move/up, pointer capture, pan/zoom, hit-testing, selection, drag/move, and explicit semantic commands such as PRESENTIATE, MOVE, RELATE, REMOVE, RESOLVE, QUERY_SELECTION, SAVE_VIEW.
+
+The command input should dispatch into Notebook/Canvas APIs, not an external LLM. Echo can call the same operation bus programmatically. Every mutation should produce an audit event with actor=user|echo, operation, target canonical ID/manifestation ID, before/after state, timestamp, and provenance.
+
+Shared-state principle:
+
+[
+Canvas_{t+1}=Reduce(Canvas_t,Operation_t)
+]
+
+This makes synchronization deterministic and replayable. The UI renders CanvasStore; it is not the authority.
+
+A local event/operation schema can be:
+`{id, actor, op, target, args, timestamp, provenance}`.
+
+Notebook persistence can save operation logs, current snapshots, and reconstructable Canvas views. This integrates with existing retain/save_view semantics while keeping validation separate.
+
+The resulting Canvas is a shared semantic workspace: a user can touch-drag a semantic presentiation while Echo can query it, relate it, or presentiate another canonical resident into the same environment. Both observe the same state and all semantic manifestations resolve back to authoritative Registry residents.
