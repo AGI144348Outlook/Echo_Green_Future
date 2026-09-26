@@ -1577,3 +1577,50 @@ Claude wants to commit this document.
 ### Assistant
 
 Reviewed the uploaded `ECHO_Polymath_Unified_Spec.md`. It explicitly merges the autonomous-agency algorithm layer with the algebra addressing/Notebook layer, preserves Presentiation and query-lifecycle distinctions, proposes A-175/A-176/A-177 as pending merger algorithms, and gives a staged development sequence. No existing file with the same name was found. Committed the document unchanged to `algebra` at `docs/ECHO_Polymath_Unified_Spec.md`, leaving `main` and `autonomous-agency` untouched. Commit: `eaf165991c9879d101771ebc8ff998fad8ae4963`.
+
+
+---
+
+## Turn — 2026-09-26 — Canvas implementation choice
+
+### User
+
+Claude asks:
+
+Do you want the Canvas as a standalone published artifact first (something you can open and use immediately on mobile), or should it be built as a component inside the existing PWA? And should ECHO's side of the Canvas be powered by the sample capability (calling Claude to generate ECHO's operations) or should it run from the embedded notebook data without a model call?
+
+### Assistant
+
+Answer for Claude:
+
+Build the Canvas as a **standalone mobile-first published artifact first**, but architect it from day one as the same reusable Canvas component/state engine that will later be mounted inside the existing PWA. This gives Timothy an immediately usable touchscreen test surface without creating a disposable prototype.
+
+The standalone artifact should therefore have no architecture unique to standalone mode. Separate:
+1. CanvasStore / operation reducer — authoritative shared state.
+2. Presentiation + RESOLVE API — canonical identity routing.
+3. Pointer/touch interaction layer — human operations.
+4. Renderer — circles/icons/lattice loci/edges.
+5. NotebookBus adapter — queries, saved views, audit/provenance.
+6. Host shell — standalone now, PWA host later.
+
+For ECHO's side, use **embedded Notebook/Registry data without a model call**. ECHO should manipulate the Canvas through the same deterministic operation API as the user:
+[
+Canvas_{t+1}=Reduce(Canvas_t,O_t)
+]
+where actor is user or echo.
+
+Claude/model sampling must not be required to decide what ECHO does on the Canvas. That would make an external model the hidden semantic/controller layer and undermine the purpose of developing ECHO's own Registry, Notebook, Governor, algorithms, and agency. If a model is later connected, expose it as an optional governed tool that can propose operations; ECHO/Governor must still identify/validate/open those proposals before they affect shared Canvas state.
+
+First standalone milestone:
+- openable on Android/mobile browser;
+- shared semantic Canvas;
+- PRESENTIATE, RESOLVE, MOVE, REMOVE, RELATE, SELECT;
+- finger/stylus/mouse via Pointer Events;
+- mind-map circle and lattice-icon renderers;
+- text command/query window derived from CLR-0002;
+- embedded Notebook/Registry fixture/data adapter;
+- actor-tagged user/ECHO operation log;
+- save/export/reload Canvas state;
+- no external LLM/API dependency.
+
+The resulting artifact is not merely a mockup: it is the first host for the production Canvas engine. Once stable, mount that same engine in the PWA.
