@@ -76,3 +76,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0026 | **MASHET SUBSTRATE FUNCTIONALITY TEST SUITE** | Historical validation scaffold / Assessed / Reconstruction candidate | High — companion validation scaffold to CLR-0025; conformance-vs-validity distinction and summary/test-accounting defects identified |
 
 | CLR-0027 | **MASHET ONTOLOGICAL FRAMEWORK — COMPLETE LINGUISTIC SUBSTRATE DOCUMENTATION** | Pre-implementation specification / Assessed / Normalization candidate | Very High — semantic-contract layer linking glyph credentials, substrate ontology, operational contracts and Governor validation; project axioms separated from external evidence claims |
+
+| CLR-0028 | **MASHET SUBSTRATE SYSTEM — ALL-IN-ONE IMPLEMENTATION + TESTS** | Historical integrated executable baseline / Assessed / Reconstruction candidate | High — consolidates CLR-0025/0026 into runnable baseline; test-accounting, coverage, semantic leakage, intersection and validation limitations documented |
