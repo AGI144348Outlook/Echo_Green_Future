@@ -52,3 +52,5 @@
 Registry entries should point to the preserved artifact location and its matching assessment report. Cross-links may also identify later artifacts that refine, replace, or reuse an earlier mechanism.
 
 | RP-0003 | Mathematical Frameworks | **STRUCTURAL INTELLIGENCE — Emergent Collective Behavior** | Archived; Assessed; Validation Pending | Very High — Core Formula recurrences, swarm dynamics, ghost-attractor hypothesis, algebra registry |
+
+| CLR-0016 | **OPERATOR WEIGHT SYSTEM / MASHET OPERATOR VISUALIZER** | Assessed; Source archival pending | Very High — operator-valued weights, compositional state transforms, candidate Hebrew operator basis |
