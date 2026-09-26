@@ -72,3 +72,5 @@ Registry entries should point to the preserved artifact location and its matchin
 | CLR-0024 | **LIMINAL VISION TOKEN (LVT) MIND DOMAIN ARCHITECTURE** | Foundational lineage / Reference / Assessed | Very High architectural relevance — recursive environments, template instancing, dual-process loops, scale-aware views and domain credentials; consciousness/physics/performance claims separated from evidence |
 
 | CLR-0025 | **MASHET SUBSTRATE SYSTEM — COMPLETE PYTHON IMPLEMENTATION** | Historical executable prototype / Assessed / Reconstruction candidate | High — executable concept→substrate→glyph generator; exposes union-vs-intersection, semantic leakage, greedy-selection, unenforced-constraint and phonology gaps |
+
+| CLR-0026 | **MASHET SUBSTRATE FUNCTIONALITY TEST SUITE** | Historical validation scaffold / Assessed / Reconstruction candidate | High — companion validation scaffold to CLR-0025; conformance-vs-validity distinction and summary/test-accounting defects identified |
