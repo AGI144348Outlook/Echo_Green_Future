@@ -26,6 +26,8 @@
 
 | CLR-0012 | **ABSOLUTE COORDINATE FRACTALGRID — Multi-Scale 3D Workspace** | Historical | HTML/JavaScript/Three.js | Assessed; Candidate | assessments/CLR-0012_ABSOLUTE_COORDINATE_FRACTALGRID.md | **Very High — canonical placement, coordinate transforms, EVE/NVE, scale projection** | Bridge between CLR-0009 and CLR-0011; distinguish units from rendering scale |
 
+| CLR-0013 | **GHOST ATTRACTOR EXPERIMENT — Structural Agent 1D** | Historical | Python/NumPy/Matplotlib | Assessed; Candidate | assessments/CLR-0013_GHOST_ATTRACTOR_EXPERIMENT.md | **Very High — anchor/rays/feedback formula, structural transfer, generalization tests** | Absolute-position memory cannot establish translated-pattern ghost transfer; plotting index defect identified |
+
 ## Research Papers
 
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
