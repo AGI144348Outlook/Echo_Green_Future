@@ -30,6 +30,8 @@
 
 | CLR-0014 | **2D GHOST ATTRACTOR — Vector Structural Agent** | Historical | Python/NumPy/Matplotlib | Assessed; Candidate | assessments/CLR-0014_2D_GHOST_ATTRACTOR.md | **Very High — vector rays, feedback kernels, formula algebra, invariant transfer** | Success-weighted absolute spatial kernel does not encode translated-circle structural similarity |
 
+| CLR-0016 | **MULTI-AGENT STRUCTURAL SWARM — Coupled Structural Systems** | Historical | Python/NumPy/Matplotlib | Assessed; Candidate | assessments/CLR-0016_MULTI_AGENT_STRUCTURAL_SWARM.md | **Very High — agent composition, coupling, swarm tests, subagent architecture** | Hand-designed flocking forces; rays not yet independent directional operands; emergence claim requires controls |
+
 ## Core Formula Algebra Registry
 
 - **Registry:** core_formula_algebra/README.md
