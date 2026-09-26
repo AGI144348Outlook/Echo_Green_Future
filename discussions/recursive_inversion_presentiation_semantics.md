@@ -1663,3 +1663,16 @@ Shared Gemini notes describing AST parsing, DAG execution, state synchronization
 ### Assistant
 
 This supplies a strong model-independent mechanism for Echo's requested text-to-widget capability. Recommended architecture: textual/DSL request -> Python ast.parse or custom parser -> safe normalized WidgetSpec/IR -> dependency DAG -> registered WidgetFactory primitives -> DOM/Canvas rendering. Widget events update state; the dependency graph recomputes only affected downstream nodes; render patches are returned to the browser UI. Pyodide provides browser CPython and Python-JavaScript FFI. Web Workers are recommended for keeping computation off the UI thread. Clarification: postMessage is message passing rather than direct shared-memory synchronization; SharedArrayBuffer is a distinct mechanism with browser/security requirements and is documented by Pyodide particularly for worker interrupt support. Do not execute unrestricted user AST/eval; whitelist DSL node types, calls, properties, and registered operations. This allows Echo to compose widgets deterministically without requiring Claude or another LLM.
+
+
+---
+
+## Turn — 2026-09-26 — Reactive Pyodide medium for Echo communication
+
+### User
+
+User reports finding interactive code/flow generator architecture through Gemini: reactive DAG execution, declarative layout, Pyodide/WebWorker text-to-widget pipeline, Preswald/marimo-style reactive execution, AST parsing, and deterministic DSL-driven text-to-idea, and proposes this may allow Echo to talk coherently.
+
+### Assistant
+
+Assessment: this can provide Echo with a deterministic expressive medium, but not semantics by itself. Verified marimo officially supports reactive dependency analysis/DAG execution, synchronized UI elements, and Pyodide-powered WebAssembly notebooks that run entirely in-browser without a Python backend. Pyodide officially supplies CPython/WASM plus Python-JavaScript FFI and supports WebWorker deployment. Therefore Echo's semantic Registry/Notebook can supply meaning while a reactive runtime supplies expression and interaction. Proposed communication pipeline: Registry resident semantics -> relational context/invariants -> Echo operation/composition -> typed ExpressionSpec -> reactive dependency graph -> renderer(s): text, sentence, widget, diagram, matrix, Canvas presentiation. This makes coherent communication testable: the same semantic state should deterministically produce traceable expression structures, while user interaction updates only affected dependencies. Distinguish fluency/rendering from semantic coherence; use provenance and RESOLVE links from output fragments back to canonical residents/relations. Rather than adopting a whole framework blindly, study marimo's architecture as a reference and decide whether to embed it or implement a smaller Echo-native reactive kernel.
