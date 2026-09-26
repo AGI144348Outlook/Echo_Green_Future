@@ -27,6 +27,7 @@
 | Paper ID | Section | Title | Status | Echo/EVE relevance |
 | --- | --- | --- | --- | --- |
 | RP-0001 | Ethics & Governance | **THE CONSENT PARADOX — Ethical Frameworks for Consciousness Creation** | Archived; Assessed | High — stewardship, ongoing consent, welfare safeguards, EVE governance |
+| RP-0002 | Architecture & Strategy | **SPATIAL AI ARCHITECTURE — Cartesian Grid-Based Reasoning** | Archived; Assessed | Very High — spatial substrate, templates, scale/LOD, EVE/NVE, notebook/canvas |
 
 ## Indexing notes
 
