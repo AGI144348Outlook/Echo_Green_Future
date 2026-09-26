@@ -1637,3 +1637,16 @@ And what about the widgeting feature itself
 ### Assistant
 
 Promote widgeting into a core Notebook/Canvas capability rather than limiting it to the I/O dock. Generalize CLR-0002's independently addressable minimize/maximize panels into NotebookWidget instances. A widget has stable widget identity, type, geometry, dock/floating state, visibility, z-order, data binding, and permissions. Canvas, I/O, Registry browser, query/matrix results, audit history, Echo status, formula workspace, and other tools can all be widgets. Touch mechanics should support drag, resize, minimize, maximize, dock/undock, tab/stack, and collapse. Widgets may bind to Canvas selections and canonical Registry residents, but widget identity remains distinct from semantic resident identity and Canvas Presentiation identity. Widget layout should be saved as a Notebook view/workspace and restored without changing canonical semantic data. Both user and Echo may open/focus/update widgets through the same governed Widget API; Echo should not arbitrarily move or close user workspace elements without appropriate permission.
+
+
+---
+
+## Turn — 2026-09-26 — Clarification: textual request to widget generation
+
+### User
+
+Not what I mean. I mean there's a code snippet in cr 002 that allows for me to textually request a widget, and it could be made into a widget
+
+### Assistant
+
+Clarified distinction: user means text-to-widget generation, not generic movable Notebook windows. Direct inspection of CLR-0002 shows the Forge panel advertises code generation/compilation and accepts textual forge directives, while the Claude panel accepts technical specifications. However, in the stored CLR-0002 HTML itself, the JavaScript present in the artifact only wires local panel controls, emergency controls, and textarea autosizing; the actual request-to-generated-widget implementation is not visibly contained in this file. Therefore preserve the desired capability as an architectural requirement, but do not claim CLR-0002 currently contains a complete local widget compiler unless another linked artifact/script contains it. Proposed model-independent replacement: textual request -> parsed WidgetSpec -> validated registered primitives -> WidgetFactory -> live widget, with Echo able to compose widgets from a bounded registry of controls/renderers/data bindings rather than requiring an LLM to emit arbitrary HTML/JS.
