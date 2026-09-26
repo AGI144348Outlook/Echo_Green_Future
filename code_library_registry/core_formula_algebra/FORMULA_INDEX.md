@@ -165,3 +165,19 @@ Potential correspondence to the earlier formula:
 - stochastic residual ↔ `ε_k`.
 
 This is a candidate semantic mapping and should not yet be labeled strict algebraic equivalence.
+
+### CFA-0015 — Context-Weighted Operator Mixture
+**Source:** CLR-0016. **Classification:** defined operator specialization.
+`W_c(t)=sum_i alpha_i(t) W_i(t)`; executable update is `S(t+1)=tanh(W_c(t)S(t))`. This upgrades scalar weighting into a state-transforming operator mixture.
+
+### CFA-0016 — Rank-One Operator Adaptation
+**Source:** CLR-0016. **Classification:** implementation heuristic.
+`W_i <- W_i + eta alpha_i (g tensor S)`, with `g=0.1(target-S_next)`. This is a local outer-product adaptation rule, not a demonstrated exact gradient of the full recurrent objective.
+
+### CFA-0017 — Basis Decomposition of Learned Operators
+**Source:** CLR-0016. **Classification:** proposed algebraic representation.
+`W_i=sum_j c_ij ell_j`. If the `ell_j` form a chosen operator basis/frame, learned transformations can be represented by coefficients over registry-addressable primitive operators. Basis completeness/independence must be specified.
+
+### CFA-0018 — Ordered Glyph-Operator Composition
+**Source:** CLR-0016. **Classification:** proposed compositional algebra.
+`O_word=ell_i1 ell_i2 ... ell_ik`. Operator order is generally significant because `ell_i ell_j != ell_j ell_i`. The commutator `[ell_i,ell_j]=ell_i ell_j-ell_j ell_i` becomes a direct diagnostic of order sensitivity.
