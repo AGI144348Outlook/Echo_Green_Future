@@ -2,7 +2,7 @@
 
 | Registry ID | Artifact | Approx. Date | Language / Type | Status | Assessment | Echo Relevance | Lineage / Notes |
 |---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | Registry initialized |
+| CLR-0001 | Mathematical Substrate System — Core Formula Exercise Platform | Historical / pre-registry | Python | Assessed; Candidate | assessments/CLR-0001.md | High — Symbol/Formula Registry, notebook operands, formula decomposition | First registered artifact; source intake pending archival file |
 
 ## Indexing notes
 
