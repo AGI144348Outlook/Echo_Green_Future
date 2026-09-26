@@ -147,3 +147,43 @@ The strongest cross-project transfer is from CLR-0010 into Echo's **experiment i
 
 ## Assessment note
 This is a useful methodological artifact. Its organization is close to what Echo needs for reproducible trials: explicitly separate the thing being modeled, its starting state, its environment, what can be changed, what is observed, what counts as emergence, and how the run is bounded. The biological parameter set should be independently validated before any scientific use.
+
+
+## Executable companion — Molecular Embryonic Development Laboratory
+
+A browser-executable HTML/CSS/JavaScript companion was subsequently supplied and archived under:
+
+`artifacts/CLR-0010/embryonic_development_lab.html`.
+
+It implements:
+- start/pause/reset and speed controls,
+- stochastic transcription variation,
+- simplified RNA/protein accumulation,
+- a simplified G1→S→G2→M cycle,
+- cell-count doubling,
+- random perturbation injection,
+- partial perturbation responses and gradual recovery,
+- cell visualization,
+- runtime logging,
+- threshold-based "emergent property" messages.
+
+### Important distinction: detector vs declaration
+The routines labeled as emergence detection do not infer emergent behavior from an independently specified metric. They declare named outcomes when hard-coded thresholds are crossed. For example, cell count/time conditions directly emit a "cell fate specification" message, and protein count/time conditions emit an "enhanced folding networks" message.
+
+For Echo experiments this is an important methodological lesson:
+
+`threshold reached → hypothesis trigger`
+
+should not automatically become
+
+`threshold reached → emergence proven`.
+
+A modern EmergenceMonitor should emit an observation/event with evidence, then let an independent analysis/audit layer determine whether the operational emergence criterion was satisfied.
+
+### Perturbation implementation notes
+Six perturbation labels are selectable, but only three have explicit switch-case effects: DNA_DAMAGE, PROTEIN_MISFOLD, and OXIDATIVE_STRESS. RNA_DEGRADATION, HEAT_SHOCK, and NUTRIENT_DEPLETION are recorded but have no direct handler behavior.
+
+Randomness is unseeded, so runs are not reproducible.
+
+### Simulation fidelity
+The executable code confirms that CLR-0010 is a conceptual toy model rather than a mechanistic embryology simulation. Its value is the architecture of controlled runs, perturbations, observations, logs, and state transitions. Biological conclusions should not be drawn from its output.
