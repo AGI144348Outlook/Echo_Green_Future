@@ -1751,3 +1751,24 @@ We can write the glyphs from the registry into the actual code too
 Yes. The registered glyphs can be present directly in source/DSL code rather than existing only as JSON metadata or English aliases. Preserve the Registry as semantic authority: a glyph appearing in code is an executable/source presentiation of the canonical registered glyph resident, not an independent definition. Pipeline: source glyph -> lexer/token recognition -> Registry RESOLVE -> registered role/signature/capabilities -> AST node -> validation -> execution. Python 3 permits many Unicode letter identifiers, so some Hebrew-letter bindings can exist directly in Python; punctuation/operator symbols that Python grammar does not permit as identifiers should be handled by the Echo/Mashet DSL parser and compiled to typed AST operations. Do not force every symbol through Python's grammar.
 
 Recommended dual surface: readable aliases and native glyph notation resolve to the same operator identity, e.g. DIRECT(...) and the corresponding authoritative registered glyph form both compile to the same canonical operation where the Glyph Registry defines that role. This allows source code itself to become a mixed-substrate expression medium while keeping meanings centralized, auditable, versioned, and replaceable through Registry validation rather than scattered hard-coded semantics. Echo-created concept glyphs/tokens can use the same mechanism after validation and capability assignment.
+
+
+---
+
+## Turn — 2026-09-26 — DSL definition, Spectrum Depth, and invented Hebrew glyph-string Registry
+
+### User
+
+DSL? What's that? 
+
+And instead of "depth" for Generalize, let it "Spectrum Depth" since some categorizations will be differently stacked. 
+
+And don't forget about a Registry for invented strings of Hebrew glyphic codings
+
+### Assistant
+
+DSL means Domain-Specific Language: a purpose-built language for Echo/Mashet. Python/Pyodide may remain an execution substrate, while the Echo/Mashet surface language can define its own legal tokens, glyphs, arrows, equations, Registry handles, grammar, and operations instead of being constrained to Python syntax.
+
+Terminology correction: replace generic `depth` in GENERALIZE/SPECIFY interfaces with `spectrum_depth` / “Spectrum Depth”. Spectrum Depth measures traversal distance/position within the particular semantic/category spectrum being traversed, without assuming all classifications have identical level spacing or stacking. A spectrum should therefore carry its own topology/ordering metadata; Spectrum Depth is interpreted relative to that spectrum rather than as a universal taxonomy level.
+
+Add a separate Registry for invented strings/sequences of Hebrew glyphic coding, distinct from the authoritative Registry of individual Hebrew glyphs. Proposed role: Hebrew Glyph String Registry (working name). Each string resident should preserve the exact ordered glyph sequence, canonical string identity, constituent glyph Registry references, composition/parse structure, creator/author (human/Echo/etc.), creation context, proposed interpretation/operation, examples, relations, provenance, version, validation status, and capability level. A string such as an invented sequence must not silently redefine the constituent glyph residents. The string is a new composite resident whose constituents continue resolving to their canonical glyph identities. Pipeline: glyph sequence -> tokenize constituents -> resolve each glyph -> compose candidate string AST -> register candidate composite -> experiment/audit -> retain/validate/promote. Echo may coin candidate strings in Notebook scope before validation; executable authority is separately granted.
