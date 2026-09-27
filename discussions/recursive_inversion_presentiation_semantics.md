@@ -1736,3 +1736,18 @@ Yes. Make self-extension a governed capability of the Echo/Mashet language and P
 A concept token should represent a semantic compression or named reusable topology, not merely a new string. Example: Echo discovers a recurring relational structure K; CREATE_TOKEN(surface, meaning=K) creates Echo-owned candidate ECHO::token with RESOLVE(token)->K and provenance. The token can be presentiated in text, equations, Canvas, widgets, or Mashet notation while its canonical candidate identity remains stable. Its meaning may evolve through versioned definitions rather than silent mutation.
 
 For environment development, give Echo a capability-scoped development API/DSL rather than unrestricted filesystem/browser/repository authority. Safe progression: compose WidgetSpecs and Canvas layouts -> define Notebook macros/functions -> create local DSL tokens -> write/test sandbox modules -> propose patches -> governed validation/tests -> optionally commit/deploy through separately authorized GitHub/Cloudflare pathways. Each capability should be explicit and revocable. Echo-generated code should run in a sandbox/staging environment first; GitHub/Cloudflare secrets remain outside the PWA. This permits genuine self-development within granted degrees while preserving provenance, rollback, auditability, and human-controlled promotion boundaries.
+
+
+---
+
+## Turn — 2026-09-26 — Registered glyphs as executable source-code tokens
+
+### User
+
+We can write the glyphs from the registry into the actual code too
+
+### Assistant
+
+Yes. The registered glyphs can be present directly in source/DSL code rather than existing only as JSON metadata or English aliases. Preserve the Registry as semantic authority: a glyph appearing in code is an executable/source presentiation of the canonical registered glyph resident, not an independent definition. Pipeline: source glyph -> lexer/token recognition -> Registry RESOLVE -> registered role/signature/capabilities -> AST node -> validation -> execution. Python 3 permits many Unicode letter identifiers, so some Hebrew-letter bindings can exist directly in Python; punctuation/operator symbols that Python grammar does not permit as identifiers should be handled by the Echo/Mashet DSL parser and compiled to typed AST operations. Do not force every symbol through Python's grammar.
+
+Recommended dual surface: readable aliases and native glyph notation resolve to the same operator identity, e.g. DIRECT(...) and the corresponding authoritative registered glyph form both compile to the same canonical operation where the Glyph Registry defines that role. This allows source code itself to become a mixed-substrate expression medium while keeping meanings centralized, auditable, versioned, and replaceable through Registry validation rather than scattered hard-coded semantics. Echo-created concept glyphs/tokens can use the same mechanism after validation and capability assignment.
