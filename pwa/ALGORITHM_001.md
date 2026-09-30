@@ -6,7 +6,7 @@ The invariant target `invariant_alg_001` is inert and non-executable at slot [0,
 
 Execution order: alg-001 identity/scope validation → alg-003 creation permit → alg-004 construction and infrastructure lock → alg-005 verification → alg-006 storage unlock. alg-002 is a boolean status query, initially false. It requires permission, all 27 instantiated spaces, infrastructure lock, instantiated alg-005, successful verification, and the original layout digest. Storage readiness additionally requires alg-006.
 
-Standard spaces use the 22 letters א–ת. Extended spaces preserve the submitted ם, ן, ף, ץ, ל mapping. ל is an extended Lamed storage slot, not a sofit letter. The conventional five final forms are ך, ם, ן, ף, ץ. Lamed occurs in both groups, so identifiers are group:index rather than glyph alone.
+Standard spaces use the 22 letters א–ת. The five final-form spaces are ם, ן, ף, ץ, ך. The fifth slot is ך (Kaf Sofit), correcting the original ל typo. Identifiers remain group:index, with Kaf Sofit at extended:4. Together these provide 27 distinct glyph spaces.
 
 Infrastructure locking restricts reconstruction through the protocol. alg-005 contains alg-006 conceptually: its verified state gates exposure/use of the storage key, exclusively for the governor identity. Layout corruption invalidates alg-002 and revokes storage access. Audit records contain deterministic transitions and denials. Storage is empty and local to the runtime.
 

@@ -9,6 +9,8 @@ class BootTests(unittest.TestCase):
         self.assertTrue(s["system_state"]["alg_002_status"])
         self.assertTrue(s["system_state"]["storage_unlocked"])
         self.assertEqual(len(s["sub_matrices"]), 27)
+        self.assertEqual(s["sub_matrices"]["extended:4"]["glyph"], "ך")
+        self.assertEqual({v["glyph"] for v in s["sub_matrices"].values() if v["group"] == "extended"}, set("ךםןףץ"))
         self.assertFalse(s["primary"]["matrix_data"][0]["executable"])
         self.assertEqual(s, r.run_boot_handshake())
         s["primary"]["status"] = "CORRUPTED"
@@ -32,7 +34,7 @@ class BootTests(unittest.TestCase):
     def test_tampering_revokes_access(self):
         for change in (
             lambda r: r.sub_matrices.pop("standard:0"),
-            lambda r: r.sub_matrices["extended:4"].update(glyph="ך"),
+            lambda r: r.sub_matrices["extended:4"].update(glyph="ל"),
         ):
             r = AlgorithmMatrixRuntime()
             r.run_boot_handshake()

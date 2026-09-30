@@ -4,7 +4,7 @@ import hashlib
 import json
 
 STANDARD = tuple("אבגדהוזחטיכלמנסעפצקרשת")
-EXTENDED = ("ם", "ן", "ף", "ץ", "ל")
+EXTENDED = ("ם", "ן", "ף", "ץ", "ך")
 TARGET = "invariant_alg_001"
 GOVERNOR = "governor_indexing_alg"
 
