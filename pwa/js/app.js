@@ -364,7 +364,7 @@
       AUDIT: { id: 'audit', type: 'AUDIT', x: 8, y: TOOLBAR + 8, w: 340, h: 340 },
       STATUS: { id: 'status', type: 'STATUS', x: 8, y: TOOLBAR + 8, w: 330, h: 380 },
       REGISTRY: { id: 'registry', type: 'REGISTRY', x: 8, y: TOOLBAR + 8, w: 300, h: 380 },
-      DATA: { id: 'data', type: 'DATA', x: 8, y: TOOLBAR + 8, w: 330, h: 420 },
+      DATA: { id: 'data', type: 'DATA', x: 8, y: TOOLBAR + 8, w: 330, h: 420 },\n      KSM_RECESS: { id: 'ksm-recess', type: 'KSM_RECESS', x: 8, y: TOOLBAR + 8, w: 360, h: 430 },\n      LESSONS: { id: 'lessons', type: 'LESSONS', x: 8, y: TOOLBAR + 8, w: 360, h: 430 },
     };
     const spec = specs[type]; if (!spec) return;
     W.dispatch({ op: 'OPEN_WIDGET', spec });
