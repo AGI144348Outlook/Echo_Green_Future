@@ -21,16 +21,25 @@
   // Widget API: OPEN_WIDGET CLOSE_WIDGET FOCUS_WIDGET MOVE_WIDGET RESIZE_WIDGET
   // DOCK_WIDGET MINIMIZE_WIDGET MAXIMIZE_WIDGET BIND_WIDGET SAVE_LAYOUT RESTORE_LAYOUT
   function dispatch(op) {
+    if (!op || typeof op !== 'object') return false;
     const actor = op.actor || 'user';
+    if (!['user', 'echo'].includes(actor)) return false;
     const w = op.id && W.items.get(op.id);
     // ECHO may open and focus widgets, but may not rearrange or close the person's workspace.
     if (actor === 'echo' && w && w.owner === 'user' &&
-        ['CLOSE_WIDGET', 'MOVE_WIDGET', 'RESIZE_WIDGET', 'DOCK_WIDGET', 'MAXIMIZE_WIDGET', 'MINIMIZE_WIDGET'].includes(op.op)) {
+        ['CLOSE_WIDGET', 'MOVE_WIDGET', 'RESIZE_WIDGET', 'DOCK_WIDGET', 'MAXIMIZE_WIDGET', 'MINIMIZE_WIDGET', 'BIND_WIDGET'].includes(op.op)) {
       E.audit && E.audit.workspace({ ...op, actor, result: 'rejected', reason: 'user-owned widget' });
       return false;
     }
+    if (op.op === 'OPEN_WIDGET') {
+      if (!op.spec || typeof op.spec !== 'object' || !Object.hasOwn(W.types, op.spec.type)) return false;
+      const existing = op.spec.id && W.items.get(op.spec.id);
+      if (actor === 'echo' && existing && existing.owner === 'user' && op.spec.binding) return false;
+    } else if (!w) return false;
+    if (op.op === 'MOVE_WIDGET' && ![op.x, op.y].every(Number.isFinite)) return false;
+    if (op.op === 'RESIZE_WIDGET' && (![op.w, op.h].every(Number.isFinite) || op.w <= 0 || op.h <= 0)) return false;
     switch (op.op) {
-      case 'OPEN_WIDGET': open(op.spec, actor); break;
+      case 'OPEN_WIDGET': if (!open(op.spec, actor)) return false; break;
       case 'CLOSE_WIDGET': close(op.id); break;
       case 'FOCUS_WIDGET': focus(op.id); break;
       case 'MOVE_WIDGET': if (w) { w.x = op.x; w.y = op.y; place(w); } break;
@@ -46,10 +55,13 @@
     return true;
   }
 
-  function open(spec, actor) {
+  function open(spec, actor = 'user') {
+    if (!spec || !Object.hasOwn(W.types, spec.type)) return null;
+    if (['x','y','w','h'].some(key => spec[key] != null && (!Number.isFinite(spec[key]) || (['w','h'].includes(key) && spec[key] <= 0)))) return null;
     const id = spec.id || (spec.type + ':' + Date.now().toString(36));
     const existing = W.items.get(id);
     if (existing) {
+      if (actor === 'echo' && existing.owner === 'user' && spec.binding) return null;
       if (spec.binding) { existing.binding = spec.binding; rebuild(existing); }
       existing.minimized = false; place(existing); focus(id);
       return existing;
@@ -61,7 +73,7 @@
       x: spec.x != null ? spec.x : 12, y: spec.y != null ? spec.y : TOOLBAR + 12,
       w: spec.w || Math.min(340, vw() - 24), h: spec.h || 320,
       minimized: !!spec.minimized, maximized: !!spec.maximized, docked: !!spec.docked,
-      binding: spec.binding || null, owner: spec.owner || actor || 'user', el: null,
+      binding: spec.binding || null, owner: actor === 'echo' ? 'echo' : (spec.owner || 'user'), el: null,
     };
     // Cascade so a new widget never sits exactly on top of another one.
     for (let i = 0; i < 12 && [...W.items.values()].some(o => !o.docked && !o.maximized && Math.abs(o.x - w.x) < 6 && Math.abs(o.y - w.y) < 6); i++) {
@@ -166,8 +178,8 @@
       el.style.left = el.style.top = el.style.width = el.style.height = '';
       return;
     }
-    w.w = Math.min(w.w, vw() - 8);
-    w.h = Math.min(w.h, vh() - TOOLBAR - 8);
+    w.w = Math.max(1, Math.min(w.w, vw() - 8));
+    w.h = Math.max(1, Math.min(w.h, vh() - TOOLBAR - 8));
     w.x = Math.min(Math.max(0, w.x), Math.max(0, vw() - 80));
     w.y = Math.min(Math.max(TOOLBAR, w.y), Math.max(TOOLBAR, vh() - 44));
     el.style.left = w.x + 'px';
@@ -205,3 +217,4 @@
   function clampAll() { W.items.forEach(place); }
   window.addEventListener('resize', clampAll);
 })(window.ECHO = window.ECHO || {});
+
