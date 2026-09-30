@@ -1,32 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="background-color" content="#ffffff">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <title>PWA Hosting Environment</title>
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      min-height: 100%;
-      background: #ffffff;
-    }
-    body {
-      min-height: 100vh;
-      min-height: 100dvh;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<meta name="theme-color" content="#0b1016">
+<meta name="description" content="ECHO Notebook: shared semantic Canvas with ECHO's Python runtime in Pyodide.">
+<title>ECHO Notebook</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js");
-      });
-    }
-  </script>
+<header id="toolbar">
+  <span class="brand" aria-label="ECHO">&#x5E8;</span>
+  <nav class="tools" aria-label="Canvas tools">
+    <button id="btn-present" class="tool primary" title="Presentiate a Registry resident">+ Presentiate</button>
+    <button id="btn-relate" class="tool" aria-pressed="false" title="Relate two Presentiations">Relate</button>
+    <button id="btn-multi" class="tool" aria-pressed="false" title="Taps add to the selection">Multi</button>
+    <button id="btn-clear" class="tool" title="Clear selection">Deselect <span id="sel-count" class="badge" hidden></span></button>
+  </nav>
+  <button id="btn-menu" class="tool icon" aria-haspopup="true" aria-expanded="false" aria-label="Widgets and views" title="Widgets and views">&#9776;</button>
+  <button id="rt-pill" data-state="idle" title="ECHO runtime"><span class="dot"></span><span id="rt-text">ECHO</span></button>
+</header>
+
+<main id="stage">
+  <svg id="canvas" role="application" aria-label="Shared semantic Canvas">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 8" markerWidth="9" markerHeight="7" refX="9" refY="4" orient="auto">
+        <path d="M0,0 L10,4 L0,8 z" class="arrowhead"/>
+      </marker>
+      <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+        <path d="M48 0 L0 0 0 48" class="gridline"/>
+      </pattern>
+    </defs>
+    <rect class="grid-bg" x="-5000" y="-5000" width="10000" height="10000" fill="url(#grid)"/>
+    <g id="world"><g id="rels"></g><g id="mans"></g></g>
+  </svg>
+  <p id="empty-hint">Presentiate a word to begin. Try <em>dog</em>, <em>echo</em> or <em>boundary</em>.</p>
+</main>
+
+<div id="widget-layer"></div>
+
+<div id="menu" class="menu" hidden role="menu">
+  <div class="menu-group">Widgets</div>
+  <button data-cmd="IO_DOCK" role="menuitem">Notebook I/O</button>
+  <button data-cmd="inspect" role="menuitem">Inspect selection</button>
+  <button data-cmd="REGISTRY" role="menuitem">Registry</button>
+  <button data-cmd="STATUS" role="menuitem">ECHO runtime</button>
+  <button data-cmd="AUDIT" role="menuitem">Operation audit</button>
+  <button data-cmd="DATA" role="menuitem">MCW &amp; data</button>
+  <div class="menu-group">Canvas</div>
+  <button data-cmd="query-sel" role="menuitem">Common hypernym of selection</button>
+  <button data-cmd="fit" role="menuitem">Fit everything in view</button>
+  <button data-cmd="lattice" role="menuitem">Draw as lattice</button>
+  <button data-cmd="circle" role="menuitem">Draw as circles</button>
+  <div class="menu-group">Workspace</div>
+  <button data-cmd="save-layout" role="menuitem">Save layout</button>
+  <button data-cmd="restore-layout" role="menuitem">Restore layout</button>
+</div>
+
+<div id="backdrop" hidden></div>
+<form id="present-form" autocomplete="off">
+  <div id="present-dialog" class="sheet" hidden role="dialog" aria-labelledby="present-title">
+    <h2 id="present-title">Presentiate a resident</h2>
+    <input id="present-input" list="resident-list" type="text" enterkeyhint="go" autocapitalize="none"
+           autocorrect="off" spellcheck="false" placeholder="dog, echo, boundary…" aria-label="Word">
+    <datalist id="resident-list"></datalist>
+    <div class="row"><button type="button" id="present-cancel">Cancel</button><button type="submit" class="primary">Presentiate</button></div>
+  </div>
+</form>
+<div id="toast" hidden role="status"></div>
+
+<script src="./js/store.js"></script>
+<script src="./js/nve.js"></script>
+<script src="./js/renderer.js"></script>
+<script src="./js/widgets.js"></script>
+<script src="./js/io.js"></script>
+<script src="./js/panels.js"></script>
+<script src="./js/bridge.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>
