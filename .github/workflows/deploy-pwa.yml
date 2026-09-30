@@ -16,15 +16,31 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy PWA
-    defaults:
-      run:
-        working-directory: pwa
     steps:
       - uses: actions/checkout@v4
+
+      - name: Build clean deployment bundle
+        run: |
+          rm -rf deploy-pwa
+          mkdir deploy-pwa
+          cp pwa/index.html deploy-pwa/
+          cp pwa/manifest.webmanifest deploy-pwa/
+          cp pwa/sw.js deploy-pwa/
+          cp -R pwa/css deploy-pwa/css
+          cp -R pwa/js deploy-pwa/js
+          cp -R pwa/echo deploy-pwa/echo
+          cp -R pwa/icons deploy-pwa/icons
+          cat > deploy-pwa/wrangler.toml <<'EOF'
+          name = "echo-pwa-hosting-environment"
+          compatibility_date = "2026-09-24"
+
+          [assets]
+          directory = "."
+          EOF
 
       - name: Deploy PWA to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: pwa
+          workingDirectory: deploy-pwa
