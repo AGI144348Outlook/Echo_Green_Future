@@ -1,0 +1,44 @@
+name: Unpack notebook PWA archive
+
+on:
+  push:
+    branches: [pwa-hosting-environment]
+    paths:
+      - ".github/workflows/unpack-notebook-pwa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pwa-hosting-environment
+      - name: Audit ZIP archives
+        run: |
+          echo "=== echo-notebook-pwa.zip ==="
+          unzip -l echo-notebook-pwa.zip
+          echo "=== ECHO_Autonomous_Agency_Branch.zip ==="
+          unzip -l ECHO_Autonomous_Agency_Branch.zip
+          echo "=== ECHO_GlyphRegistry.zip ==="
+          unzip -l ECHO_GlyphRegistry.zip
+      - name: Merge notebook package into pwa
+        run: |
+          rm -rf /tmp/echo-notebook-pwa
+          mkdir -p /tmp/echo-notebook-pwa
+          unzip -q echo-notebook-pwa.zip -d /tmp/echo-notebook-pwa
+          cp -a /tmp/echo-notebook-pwa/. pwa/
+      - name: Commit unpacked PWA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pwa
+          if git diff --cached --quiet; then
+            echo "No PWA changes required."
+            exit 0
+          fi
+          git commit -m "feat: unpack Echo notebook PWA runtime"
+          git push origin HEAD:pwa-hosting-environment
