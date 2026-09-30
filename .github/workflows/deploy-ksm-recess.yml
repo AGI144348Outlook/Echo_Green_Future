@@ -4,9 +4,9 @@ on:
   push:
     branches: [ksm-recess-wholesale]
     paths:
-      - "pwa/ksm.html"
+      - "pwa/ksm-live.html"
       - "pwa/css/ksm-recess.css"
-      - "pwa/js/ksm-replay.js"
+      - "pwa/js/ksm-live.js"
       - "experiments/e12_recess_log.json"
       - ".github/workflows/deploy-ksm-recess.yml"
   workflow_dispatch:
@@ -23,9 +23,9 @@ jobs:
         run: |
           rm -rf deploy-ksm wrangler-tooling
           mkdir -p deploy-ksm/css deploy-ksm/js wrangler-tooling
-          cp pwa/ksm.html deploy-ksm/index.html
-          cp pwa/css/ksm-recess.css deploy-ksm/css/
-          cp pwa/js/ksm-replay.js deploy-ksm/js/
+          cp pwa/ksm-live.html deploy-ksm/index.html
+          cp pwa/css/ksm-recess.css deploy-ksm/css/ksm-live.css
+          cp pwa/js/ksm-live.js deploy-ksm/js/\n          cp -R echo deploy-ksm/echo
           cp experiments/e12_recess_log.json deploy-ksm/
       - name: Install Wrangler
         working-directory: wrangler-tooling
