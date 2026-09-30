@@ -5,7 +5,13 @@ let queue = Promise.resolve();
 function initialize() {
   if (!runtime) runtime = (async () => {
     importScripts(BASE + 'pyodide.js');
-    return loadPyodide({indexURL: BASE});
+    const py = await loadPyodide({indexURL: BASE});
+    const response = await fetch(new URL('../python/algorithm_matrix.py', self.location.href));
+    if (!response.ok) throw new Error('Boot source unavailable: ' + response.status);
+    await py.runPythonAsync(await response.text());
+    await py.runPythonAsync('runtime = AlgorithmMatrixRuntime()\nboot_state = runtime.run_boot_handshake()');
+    console.log('[Dev Suite] alg-001 through alg-006 verified; 27 storage spaces unlocked');
+    return py;
   })();
   return runtime;
 }

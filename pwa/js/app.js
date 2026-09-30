@@ -22,5 +22,5 @@ function call(op, code) {
 }
 const ready = call('init');
 ready.catch(error => console.error('Pyodide initialization failed', error));
-window.DevSuite = Object.freeze({ready, run: async code => {await ready; return call('run', code);}});
+window.DevSuite = Object.freeze({ready, bootState: async () => {await ready; return call('run', 'runtime.snapshot()');}, run: async code => {await ready; return call('run', code);}});
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(console.error);
