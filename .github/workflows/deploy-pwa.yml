@@ -21,8 +21,8 @@ jobs:
 
       - name: Build clean deployment bundle
         run: |
-          rm -rf deploy-pwa
-          mkdir deploy-pwa
+          rm -rf deploy-pwa wrangler-tooling
+          mkdir -p deploy-pwa wrangler-tooling
           cp pwa/index.html deploy-pwa/
           cp pwa/manifest.webmanifest deploy-pwa/
           cp pwa/sw.js deploy-pwa/
@@ -30,17 +30,20 @@ jobs:
           cp -R pwa/js deploy-pwa/js
           cp -R pwa/echo deploy-pwa/echo
           cp -R pwa/icons deploy-pwa/icons
-          cat > deploy-pwa/wrangler.toml <<'EOF'
-          name = "echo-pwa-hosting-environment"
-          compatibility_date = "2026-09-24"
 
-          [assets]
-          directory = "."
-          EOF
+      - name: Install Wrangler outside asset directory
+        working-directory: wrangler-tooling
+        run: |
+          npm init -y
+          npm install wrangler@4
 
-      - name: Deploy PWA to Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: deploy-pwa
+      - name: Deploy clean PWA assets
+        working-directory: wrangler-tooling
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler deploy \
+            --name echo-pwa-hosting-environment \
+            --compatibility-date 2026-09-24 \
+            --assets ../deploy-pwa
