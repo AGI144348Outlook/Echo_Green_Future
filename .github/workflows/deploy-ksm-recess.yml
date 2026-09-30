@@ -25,8 +25,8 @@ jobs:
           mkdir -p deploy-ksm/css deploy-ksm/js wrangler-tooling
           cp pwa/ksm-live.html deploy-ksm/index.html
           cp pwa/css/ksm-recess.css deploy-ksm/css/ksm-live.css
-          cp pwa/js/ksm-live.js deploy-ksm/js/\n          cp -R echo deploy-ksm/echo
-          cp experiments/e12_recess_log.json deploy-ksm/
+          cp pwa/js/ksm-live.js deploy-ksm/js/
+          cp -R echo deploy-ksm/echo
       - name: Install Wrangler
         working-directory: wrangler-tooling
         run: |
