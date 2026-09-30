@@ -1,0 +1,47 @@
+name: Unpack KSM Recess Wholesale
+
+on:
+  push:
+    branches:
+      - ksm-recess-wholesale
+    paths:
+      - "ECHO_Canvas_Recess_KSM.zip"
+      - ".github/workflows/unpack-ksm-recess.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ksm-recess-wholesale
+
+      - name: Verify archive
+        run: |
+          test -f ECHO_Canvas_Recess_KSM.zip
+          unzip -t ECHO_Canvas_Recess_KSM.zip
+          unzip -Z1 ECHO_Canvas_Recess_KSM.zip
+
+      - name: Unpack wholesale package
+        run: |
+          unzip -o ECHO_Canvas_Recess_KSM.zip -d .
+          test -f echo/canvas/ks_recess.py
+          test -f echo/language/parser.py
+          test -f experiments/e12_ks_canvas_recess.py
+          test -f experiments/e12_recess_log.json
+
+      - name: Commit exact unpacked contents
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add echo experiments
+          if git diff --cached --quiet; then
+            echo "Archive contents already present; nothing to commit."
+            exit 0
+          fi
+          git commit -m "feat: preserve KSM Canvas Recess wholesale package"
+          git push origin HEAD:ksm-recess-wholesale
