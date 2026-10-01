@@ -30,3 +30,13 @@ code_library_registry/modules/<module-id>/
 
 ## Discovery/review records
 code_library_registry/reviews/ contains dated branch snapshots, changed-module assessments, verified repository counts, evidence and resume state. Existing assessments and artifacts retain their identities.
+
+
+## Checkpoint — 2026-10-01
+
+- Branch snapshot recorded for all 15 current branches.
+- MOD-0001 (`verified-resource-gate`) preserved, generalized, validated and abstraction-locked before discovery. Preserved source tests: 3/3 passing; generalized tests: 5/5 passing.
+- Frozen abstraction commit: `f27de97fd6e65ed57e7e8c27f60982abbea93be2`.
+- External discovery: 5 distinct repositories reviewed; 0 selected; cumulative progress 5/1,000.
+- License compatibility remains unasserted. Four candidates lacked a retrievable root project license; the fifth uses path-sensitive mixed licensing.
+- Resume at repository ordinal 6. Continue narrower issue-first searches for staged initialization and fail-closed resource exposure. See `reviews/MOD-0001_DISCOVERY_BATCH_2026-10-01.md` and `reviews/PROGRESS_2026-10-01.md`.
