@@ -1,0 +1,28 @@
+{
+  "module_id": "MOD-0002-bounded-composition-search",
+  "frozen_utc": "2026-10-02T14:05:00Z",
+  "freeze_condition": "created and verified before external repository discovery",
+  "source_commit": "583caad066fe68b7595fa2bea1d083a0f9e6acd9",
+  "source_blob_sha": "a5d4ece3ad283e576ac0761039332a70c818ba35",
+  "verification": {
+    "preserved_source": {
+      "command": "python original/test_autonomous_agency_a1.py",
+      "result": "PASS; source assertion satisfied"
+    },
+    "generalized": {
+      "command": "PYTHONPATH=generalized python -m unittest discover -s validation -p 'test_*.py'",
+      "result": "7 passed, 0 failed"
+    }
+  },
+  "sha256": {
+    "original/test_autonomous_agency_a1.py": "6488d32baf498d6db0405f50fc20365498a5ae996835632ee9bda09fe3fa5a45",
+    "original/SOURCE_LICENSE_SNAPSHOT.txt": "b03a358f9f214ffdc634632ac0b75d92cfee5b07af1445ebb480a299902d0285",
+    "generalized/bounded_composition_search.py": "dea6d5b648b628982612e7929e29dd1aeff20494b89ec2833613415dd7fc1c3d",
+    "generalized/APPLICATIONS.md": "cb631819b0ee39a81840097f068cb2e947ac99ed7abc1a2fd954c75d0a6aec12",
+    "validation/test_bounded_composition_search.py": "01789549552890cd840aa34ddd5d2a9e8fc0196bf167d628df9f89f1c0a1f7e1",
+    "validation/README.md": "d4cf2c9add5a119c59efd548c6484d58d5d9443625221e201725893ac971f3fa",
+    "README.md": "58002b55a741528d28dba8f0cd1f6e806395c7e1be5c59e238046b41bd3de800",
+    "ASSESSMENT.md": "2a774b5a6779e79ee85f980ee89160c70f4005a364b9e55a04150cb492be79c9",
+    "provenance.json": "0fe54edd8ec003d3ec6147b3502f0ddbd469d96a2a0aae62bb46c26fba997b4d"
+  }
+}
