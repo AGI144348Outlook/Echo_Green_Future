@@ -40,3 +40,16 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - External discovery: 5 distinct repositories reviewed; 0 selected; cumulative progress 5/1,000.
 - License compatibility remains unasserted. Four candidates lacked a retrievable root project license; the fifth uses path-sensitive mixed licensing.
 - Resume at repository ordinal 6. Continue narrower issue-first searches for staged initialization and fail-closed resource exposure. See `reviews/MOD-0001_DISCOVERY_BATCH_2026-10-01.md` and `reviews/PROGRESS_2026-10-01.md`.
+
+
+## Checkpoint — 2026-10-02
+
+- All 18 current branch heads pinned; two new archive/workbench branches inspected and deduplicated by blob identity.
+- `autonomous-agency` advanced five commits since the prior snapshot, changing only two JSON logs and no executable source.
+- MOD-0002 (`bounded-composition-search`) preserved, generalized, validated and frozen before discovery at `de8e7489d61306851f1ba573c052893ffa19242f`.
+- Preserved source assertion passed; generalized suite passed 7/7 tests.
+- External discovery reviewed repositories 6–10; 0 selected; cumulative progress 10/1,000.
+- `mishaturnbull/edgegraph#107` is the strongest technical watch candidate but is not selected because Echo's outbound license is unresolved and the target needs a native API adaptation.
+- MOD-0001 application review added a prospective readiness gate for the archive workbench; the workbench ZIP extractor remains a stub.
+- Resume at repository ordinal 11. See `reviews/MOD-0002_DISCOVERY_BATCH_2026-10-02.md`, `reviews/INVENTORY_DELTA_2026-10-02.md` and `reviews/PROGRESS_2026-10-02.md`.
+
