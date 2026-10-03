@@ -53,3 +53,15 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - MOD-0001 application review added a prospective readiness gate for the archive workbench; the workbench ZIP extractor remains a stub.
 - Resume at repository ordinal 11. See `reviews/MOD-0002_DISCOVERY_BATCH_2026-10-02.md`, `reviews/INVENTORY_DELTA_2026-10-02.md` and `reviews/PROGRESS_2026-10-02.md`.
 
++
++## Checkpoint — 2026-10-03
++
++- All 18 current branch heads pinned; no branch was added or removed.
++- `autonomous-agency` advanced five commits, changing only two session-log JSON files and no executable source.
++- MOD-0003 (`structured-workspace-registry`) preserved, generalized, validated and frozen before discovery at `3226d71e9f2ec0fb21312ea6856e500267dfc7ff`.
++- Independent source characterization passed 2/2 tests; generalized suite passed 5/5 tests.
++- External discovery reviewed repositories 11–15; 0 selected; cumulative progress 15/1,000.
++- `AI-Degen-69/crypto-spread#413` is the closest functional watch candidate but is unselected because no root project license was found, design questions remain and the target already has native persistence seams.
++- MOD-0002 application review identified bounded search over pure immutable workspace repair/migration states; persistence must remain outside search.
++- Resume at repository ordinal 16. See `reviews/MOD-0003_DISCOVERY_BATCH_2026-10-03.md`, `reviews/INVENTORY_DELTA_2026-10-03.md` and `reviews/PROGRESS_2026-10-03.md`.
++
