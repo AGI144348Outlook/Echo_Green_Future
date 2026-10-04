@@ -64,3 +64,15 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - `AI-Degen-69/crypto-spread#413` is the closest functional watch candidate but is unselected because no root project license was found, design questions remain and the target already has native persistence seams.
 - MOD-0002 application review identified bounded search over pure immutable workspace repair/migration states; persistence must remain outside search.
 - Resume at repository ordinal 16. See `reviews/MOD-0003_DISCOVERY_BATCH_2026-10-03.md`, `reviews/INVENTORY_DELTA_2026-10-03.md` and `reviews/PROGRESS_2026-10-03.md`.
+
+## Checkpoint — 2026-10-04
+
+- All 18 current branch heads pinned; no branch was added or removed.
+- `autonomous-agency` advanced five commits, changing only two session-log JSON files and no executable source.
+- MOD-0004 (`safe-relative-entry-writer`) preserved, generalized, validated and frozen before discovery at `a38b4f6e99de6c064c101fa81374576c07c5cbae`.
+- Independent source characterization passed 2/2 tests; generalized suite passed 6/6 tests.
+- The workbench ZIP parser remains a stub; MOD-0004 supplies only validated relative entry writing.
+- External discovery reviewed repositories 16–20; 0 selected; cumulative progress 20/1,000.
+- `scanny/python-pptx#1137` is retained only as a domain-specific, maintenance-sensitive watch candidate.
+- MOD-0003 application review added a metadata-only archive import manifest gated by path and quota validation.
+- Resume at repository ordinal 21. See `reviews/MOD-0004_DISCOVERY_BATCH_2026-10-04.md`, `reviews/INVENTORY_DELTA_2026-10-04.md` and `reviews/PROGRESS_2026-10-04.md`.
