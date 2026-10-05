@@ -1,0 +1,36 @@
+name: Apply dev-suite data split
+on:
+  push:
+    branches: [dev-suite-integration-staging]
+    paths: ['.github/workflows/apply-dev-suite-data-split.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev-suite-integration-staging
+      - name: Apply verified replacement ZIP
+        run: |
+          unzip -o dev-suite-data-split.zip
+          git rm -f dev-suite-data-split.zip
+      - name: Verify split fingerprints
+        run: |
+          python - <<'PY'
+          import hashlib, pathlib, re
+          m=pathlib.Path('dev-suite/SPLIT_MANIFEST.md').read_text()
+          for short,path in re.findall(r'^([0-9a-f]{16})  (dev-suite/\\S+)$',m,re.M):
+              got=hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+              if not got.startswith(short): raise SystemExit(f'hash mismatch: {path}')
+              print('OK', path)
+          PY
+      - name: Commit split only
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Refactor dev-suite data out of application source"
+          git push
