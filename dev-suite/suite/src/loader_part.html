@@ -1,0 +1,33 @@
+<script>
+/* ===== Embedded Pyodide 0.26.4 assets (gzip+base64), served from memory ===== */
+const ASSETS = {
+  "pyodide.asm.wasm": {b64:"__WASM_GZ__", gz:true, type:"application/wasm"},
+  "python_stdlib.zip": {b64:"__STDLIB__", gz:false, type:"application/zip"},
+  "pyodide-lock.json": {b64:"__LOCK_GZ__", gz:true, type:"application/json"}
+};
+const INDEX = "https://pyodide.local/";
+const cache = {};
+async function assetBytes(name){
+  if (cache[name]) return cache[name];
+  const a = ASSETS[name];
+  const bin = Uint8Array.from(atob(a.b64), c => c.charCodeAt(0));
+  let bytes = bin;
+  if (a.gz){
+    const s = new Blob([bin]).stream().pipeThrough(new DecompressionStream("gzip"));
+    bytes = new Uint8Array(await new Response(s).arrayBuffer());
+  }
+  return (cache[name] = bytes);
+}
+const realFetch = window.fetch.bind(window);
+window.fetch = async (input, init) => {
+  const url = (typeof Request !== "undefined" && input instanceof Request) ? input.url : String(input);
+  if (url.startsWith(INDEX)){
+    const name = url.slice(INDEX.length).split("?")[0];
+    if (ASSETS[name]) return new Response(await assetBytes(name), {status:200, headers:{"Content-Type":ASSETS[name].type}});
+    return new Response("Not embedded: " + name, {status:404});
+  }
+  return realFetch(input, init);
+};
+</script>
+<script>__ASM_JS__</script>
+<script>__LOADER_JS__</script>

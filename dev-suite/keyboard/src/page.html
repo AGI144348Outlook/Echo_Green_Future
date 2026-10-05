@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Canvas Keyboard and Terminal</title>
+<style>
+:root{--paper:#ffffff;--minor:#e8edf2;--major:#cdd5de;--ink:#1d2731;--soft:#5d6b79;--node:#3b6ea8;--ok:#2f8f5b;--warn:#b4392f;--sheet:#f4f7fa;--key:#ffffff;--line:#d5dce4;--hl:rgba(59,110,168,.10);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root{--paper:#14181d;--minor:#1f252c;--major:#2d3640;--ink:#e3e8ee;--soft:#97a4b2;--node:#7fa8d8;--ok:#5cc489;--warn:#ef7a6f;--sheet:#1a1f25;--key:#232a32;--line:#2c343d;--hl:rgba(127,168,216,.12)}}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--sheet);color:var(--ink);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{display:flex;flex-direction:column;height:100%}
+header{display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) 10px 6px}
+header b{font-size:15px}#pos{white-space:nowrap}header small{color:var(--soft);font-size:12px;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+.btn{white-space:nowrap;border:1px solid var(--line);background:var(--key);color:var(--ink);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+#term{flex:1;min-height:120px;position:relative}
+#compact{position:relative;height:0;display:none;border-top:2px solid var(--node)}
+body.dual #compact{display:block;height:28%}
+#compact .lbl{position:absolute;right:8px;bottom:4px;background:var(--paper);padding:0 4px;z-index:2;font-size:11px;color:var(--soft);pointer-events:none}
+#keys{position:relative;height:38vh;min-height:220px;border-top:1px solid var(--line)}
+body.folded #keys{height:58px;min-height:0}
+body.folded .tabs{display:none}
+body.native #keys{height:58px;min-height:0}
+body.native .tabs{display:none}
+#native{position:fixed;left:-1000px;top:0;width:10px;height:10px;opacity:0}
+#kNative[aria-pressed=true],#kFold[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;display:block}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:6px 8px;border-top:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid var(--line);background:var(--key);color:var(--soft);border-radius:999px;padding:5px 11px;font:inherit;font-size:13px;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.row{display:flex;gap:6px;padding:6px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+.row button{flex:1;height:46px;border:1px solid var(--line);background:var(--key);color:var(--ink);border-radius:8px;font:600 17px ui-monospace,Menlo,monospace;cursor:pointer}
+.row button.wide{flex:1.6;font:500 14px system-ui,sans-serif;color:var(--soft)}
+.info{position:fixed;left:10px;right:10px;top:calc(56px + env(safe-area-inset-top,0px));display:none;padding:14px;border-radius:12px;background:var(--sheet);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.25);z-index:5;max-height:50vh;overflow:auto}
+.info.open{display:block}
+.info .g{font:600 42px/1 ui-monospace,Menlo,monospace;float:left;min-width:56px;margin-right:12px;text-align:center}
+.info h2{margin:0;font-size:15px}.info p{margin:2px 0;color:var(--soft);font-size:13px}.info ul{clear:both;margin:10px 0 0;padding-left:18px;font-size:14px}
+.info .acts{clear:both;display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c08a1e;margin-right:6px}.dot.ok{background:var(--ok)}.dot.err{background:var(--warn)}
+</style>
+</head>
+<body>
+<header><b>Terminal</b><button class="btn" id="mode" type="button" aria-label="Terminal mode">✎ Insert</button><button class="btn" id="view" type="button" aria-label="Highlight frame or operation">◫</button><button class="btn" id="dual" type="button" aria-label="Dual display">⇅</button><span id="pos" class="btn" style="border:none;background:none;padding:0 4px;color:var(--soft)">Ln 1, Col 1</span><small><span class="dot" id="dot"></span><span id="st">Loading Python…</span></small></header>
+<div id="term"><canvas id="tc" aria-label="Terminal grid. Tap a cell to place the cursor; drag to scroll; drop keys anywhere; link symbols in Link mode."></canvas></div>
+<div id="ghost" style="position:fixed;pointer-events:none;display:none;z-index:9;font:600 30px ui-monospace,Menlo,monospace;padding:4px 10px;border-radius:8px;background:var(--key);border:2px solid var(--node);transform:translate(-50%,-120%)"></div>
+<div id="compact"><span class="lbl">compact: one line per block</span><canvas id="cc" aria-label="Compact pane: each block compacted into one line. Tap a line to edit it; the linear pane follows."></canvas></div>
+<div class="tabs" id="tabs" role="tablist" aria-label="Keyboards"></div>
+<div id="keys"><canvas id="kc" aria-label="Keyboard. Tap a key to type it; hold a key for its details."></canvas></div>
+<div class="row">
+  <button id="kFold" aria-label="Collapse the symbol keyboard">▾</button>
+  <button id="kNative" aria-label="Your phone's keyboard, for words" style="font:600 15px system-ui,sans-serif">Aa</button>
+  <button id="kSwitch" aria-label="Next keyboard">⌨</button>
+  <button id="kLeft" aria-label="Cursor left">⇦</button>
+  <button id="kRight" aria-label="Cursor right">⇨</button>
+  <button id="kSpace" class="wide" aria-label="Space">space</button>
+  <button id="kBack" aria-label="Delete">⌫</button>
+  <button id="kEnter" aria-label="New line">↵</button>
+  <button id="kFlip" aria-label="Turn the keys over to their backs">%</button>
+  <button id="kMenu" aria-label="Terminal options">⋯</button>
+</div>
+<textarea id="native" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Typing with your phone's keyboard"></textarea>
+<section class="info" id="info" aria-live="polite"></section>
+
+<!-- ======================= THE SUBSTRATE (edit freely) =======================
+     KEYBOARDS: every keyboard and its keys, in order. A key can be several characters (like __י__).
+     USES: each key's logic card: its descriptive uses, on the back of the key (% once).
+     EXAMPLES: the other side of the logic card: examples to try and practice (% again; tap one to type it).
+     audit(lines): audits each block (lines run together until a blank line); edit it to check your own invariants.
+     invariant(line): % as mirror inversion: what stays the same is frame, what changes is operation. -->
+<script type="text/python" id="substrate">
+import unicodedata as ud, json
+
+__KEYBOARDS3__
+
+PAIRS = {"(": ")", "[": "]", "{": "}", "⟨": "⟩", "⟦": "⟧", "⌈": "⌉", "⌊": "⌋", "«": "»", "‹": "›"}
+
+def identity(key):
+    return [{"ch": c, "cp": "U+%04X" % ord(c), "name": ud.name(c, "(unnamed)"), "cat": ud.category(c)} for c in key]
+
+MIRROR = {"(": ")", ")": "(", "[": "]", "]": "[", "{": "}", "}": "{", "<": ">", ">": "<", "/": "\\", "\\": "/", "⟨": "⟩", "⟩": "⟨"}
+
+def blocks(lines):
+    """Lines run together until a blank line: one structure may span many lines (a trailing / continues it)."""
+    out, cur = [], []
+    for i, l in enumerate(lines):
+        if l.strip(): cur.append(i)
+        elif cur: out.append(cur); cur = []
+    if cur: out.append(cur)
+    return out
+
+def join_block(block_lines):
+    """The hinge rule: each line begins with the token the previous one ended on, so that shared token is counted once.
+    Returns the joined text and, for each character, the line it came from."""
+    text, origin = "", []
+    for li, n in block_lines:
+        k = min(len(text), len(n))
+        while k > 0 and not text.endswith(n[:k]): k -= 1
+        text += n[k:]; origin += [li] * (len(n) - k)
+    return text, origin
+
+def audit(lines):
+    """Audit each block as one structure (lines run together until a blank line, joined by the hinge rule):
+    =T when every bracket that opens also closes, in order. The line where it breaks gets the !, with the reason.
+    | is left out: it is both boundary and division."""
+    out = [{"ok": False, "empty": not l.strip(), "why": "", "pending": False} for l in lines]
+    closers = {v: k for k, v in PAIRS.items()}
+    for blk in blocks(lines):
+        text, origin = join_block([(li, lines[li]) for li in blk])
+        stack, bad_line, why = [], None, ""
+        for i, c in enumerate(text):
+            if c in PAIRS: stack.append((c, origin[i]))
+            elif c in closers:
+                if not stack or stack[-1][0] != closers[c]:
+                    bad_line, why = origin[i], f"{c} closes nothing open"; break
+                stack.pop()
+        if bad_line is None and stack:
+            bad_line, why = blk[-1], "".join(s[0] for s in stack) + f" left open (opened on line {stack[0][1] + 1})"
+        for li in blk:
+            out[li]["ok"] = bad_line is None
+            out[li]["pending"] = bad_line is not None and li != bad_line
+        if bad_line is not None: out[bad_line]["why"] = why
+    return json.dumps(out, ensure_ascii=False)
+
+def invariant(line):
+    """% as mirror inversion: reverse the line and flip every glyph that has a mirror form.
+    Positions that stay the same are invariant (frame); positions that change are operation."""
+    inv = "".join(MIRROR.get(c, c) for c in reversed(line))
+    return json.dumps({"inverted": inv, "mask": [a == b for a, b in zip(line, inv)]}, ensure_ascii=False)
+
+def config():
+    return json.dumps({"keyboards": KEYBOARDS, "uses": USES, "examples": EXAMPLES}, ensure_ascii=False)
+</script>

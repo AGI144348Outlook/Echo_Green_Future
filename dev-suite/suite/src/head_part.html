@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECHO Canvas — Pyodide substrate</title>
+<style>
+:root{
+  --A-paper:#ffffff; --A-minor:#e4e9ef; --A-major:#c6cfd9; --A-axis:#93a1b0; --A-ink:#1d2731;
+  --B-paper:#14181d; --B-minor:#20262d; --B-major:#2e3741; --B-axis:#4d5b6a; --B-ink:#e3e8ee;
+  --ink:#1d2731; --soft:#5d6b79; --sheet:#f7f9fb; --paper:#ffffff; --line:#d5dce4;
+  --ok:#2f8f5b; --wait:#c08a1e; --err:#b4392f; --off:#9aa5b1; --node:#3b6ea8;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --A-paper:#14181d; --A-minor:#20262d; --A-major:#2e3741; --A-axis:#4d5b6a; --A-ink:#e3e8ee;
+    --B-paper:#ffffff; --B-minor:#e4e9ef; --B-major:#c6cfd9; --B-axis:#93a1b0; --B-ink:#1d2731;
+    --ink:#e3e8ee; --soft:#97a4b2; --sheet:#1a1f25; --paper:#14181d; --line:#2c343d;
+    --ok:#5cc489; --wait:#e0b04f; --err:#ef7a6f; --off:#5f6b78; --node:#7fa8d8;
+  }
+}
+:root[data-theme="dark"]{
+  --A-paper:#14181d; --A-minor:#20262d; --A-major:#2e3741; --A-axis:#4d5b6a; --A-ink:#e3e8ee;
+  --B-paper:#ffffff; --B-minor:#e4e9ef; --B-major:#c6cfd9; --B-axis:#93a1b0; --B-ink:#1d2731;
+  --ink:#e3e8ee; --soft:#97a4b2; --sheet:#1a1f25; --paper:#14181d; --line:#2c343d;
+  --ok:#5cc489; --wait:#e0b04f; --err:#ef7a6f; --off:#5f6b78; --node:#7fa8d8;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);
+  font:15px/1.45 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+canvas.turning{animation:turn .32s ease-in-out}
+@keyframes turn{0%{transform:scaleX(1)}50%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+  display:flex;gap:8px;align-items:center;justify-content:space-between;pointer-events:none}
+.left,.right{display:flex;gap:8px;align-items:center;min-width:0}
+.chip{pointer-events:auto;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
+  background:color-mix(in srgb,var(--sheet) 90%,transparent);border:1px solid var(--line);color:var(--soft);
+  font-size:13px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);min-width:0}
+#stxt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:24vw}
+.chip.icon{padding:7px 10px;font-size:15px;line-height:1}
+.chip.icon:disabled{opacity:.35;cursor:default}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--wait);flex:none}
+.dot.ok{background:var(--ok)} .dot.err{background:var(--err)}
+button.chip{cursor:pointer;color:var(--ink);font:inherit;font-size:13px}
+.sq{pointer-events:auto;width:44px;height:44px;border-radius:6px;border:1px solid var(--line);cursor:pointer;flex:none;
+  background:color-mix(in srgb,var(--sheet) 90%,transparent);color:var(--ink);
+  font:500 18px/1 ui-monospace,"SF Mono",Menlo,Consolas,monospace;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sq:disabled{opacity:.35;cursor:default}
+.sq.armed{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--node);outline-offset:2px}
+
+/* console sheet */
+.sheet{position:fixed;left:0;right:0;bottom:var(--symH,0px);max-height:62%;display:flex;flex-direction:column;z-index:5;
+  background:var(--sheet);border-top:1px solid var(--line);
+  padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .22s ease}
+.sheet.open{transform:none}
+.sheet header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sheet header span{color:var(--soft);font-size:13px}
+pre#out,pre#echoOut{flex:1;min-height:80px;margin:0 0 8px;padding:10px;overflow:auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:8px;font:12.5px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+.row{display:flex;gap:8px;align-items:stretch}
+textarea{flex:1;resize:vertical;padding:9px 10px;border-radius:8px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink);font:13px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+#code,#echoIn{min-height:44px;max-height:140px}
+.run{min-width:64px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:inherit;font-size:14px;cursor:pointer;padding:0 14px}
+.run:disabled{opacity:.4;cursor:default}
+.ghost{background:none;border:none;color:var(--soft);font:inherit;font-size:13px;cursor:pointer;padding:6px}
+
+/* logic box */
+.scrim{position:fixed;inset:0;z-index:6;display:none;align-items:center;justify-content:center;
+  background:color-mix(in srgb,#000 28%,transparent);padding:16px;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+.scrim.open{display:flex}
+.card{position:relative;width:min(520px,100%);height:min(470px,78vh);perspective:1200px}
+.face{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;
+  background:var(--sheet);border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.25);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .38s ease}
+.face.back{transform:rotateY(180deg)}
+.card.reversed .front{transform:rotateY(-180deg)}
+.card.reversed .back{transform:rotateY(0deg)}
+.face header{display:flex;gap:8px;align-items:center}
+.face header input{flex:1;min-width:0;font:600 16px/1.3 inherit;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--line);padding:4px 2px}
+.face header h2{flex:1;margin:0;font-size:16px;font-weight:600}
+.hint{margin:0;color:var(--soft);font-size:13px}
+#logicIn{flex:1;min-height:90px}
+.peek{display:block;text-align:left;max-height:34%;overflow:auto;padding:9px 10px;border-radius:8px;border:1px solid var(--ok);background:var(--paper);color:var(--ink);font:12.5px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;cursor:pointer}
+.peek small{display:block;font:12px/1.4 system-ui,sans-serif;color:var(--ok);margin-bottom:4px}
+.foot{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.foot .left{gap:4px}
+.pct{width:40px;height:40px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--off);
+  font:600 17px/1 ui-monospace,"SF Mono",Menlo,Consolas,monospace;cursor:pointer;flex:none}
+.pct:disabled{cursor:default}
+.pct.green{border-color:var(--ok);color:var(--ok)}
+.entries{flex:1;overflow:auto;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.entries li{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:9px 10px;
+  font:13px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;position:relative}
+.entries li time{display:block;color:var(--soft);font:12px/1.4 system-ui,sans-serif;margin-bottom:4px}
+.entries li button{position:absolute;top:4px;right:4px}
+
+/* header */
+.top{position:fixed;left:0;right:0;top:0;z-index:7;display:flex;gap:8px;align-items:center;pointer-events:none;
+  padding:calc(10px + env(safe-area-inset-top,0px)) 12px 10px}
+.titlebox{pointer-events:auto;flex:1;min-width:0;display:flex;flex-direction:column;padding:6px 12px;border-radius:10px;
+  background:color-mix(in srgb,var(--sheet) 90%,transparent);border:1px solid var(--line);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.titlebox input{font:600 16px/1.3 inherit;color:var(--ink);background:none;border:none;padding:0;min-width:0;width:100%}
+.titlebox small{color:var(--soft);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.help{pointer-events:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);cursor:pointer;flex:none;
+  background:color-mix(in srgb,var(--sheet) 90%,transparent);color:var(--ink);font:600 18px/1 inherit;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+body.kb .bar{display:none}
+#mxBtn{border-radius:6px;font-size:20px}
+#symStrip{position:fixed;left:0;right:0;z-index:20;display:flex;gap:6px;align-items:center;padding:6px 6px;background:var(--sheet);border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.12)}
+#symStrip[hidden]{display:none}
+#symRow{flex:1;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+#symRow::-webkit-scrollbar{display:none}
+.symk{flex:none;min-width:40px;height:40px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:500 18px ui-monospace,Menlo,monospace;cursor:pointer}
+.symk.name{font:600 12px system-ui,sans-serif;color:var(--soft);min-width:58px}
+[hidden]{display:none!important}
+.list li .acts{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+.scrim{height:var(--vvh,100%);bottom:auto}
+.card{height:min(470px,calc(var(--vvh,100vh) - 130px))}
+
+/* touch menu */
+.menu{position:fixed;z-index:8;display:none;grid-template-columns:1fr 1fr;gap:6px;padding:8px;width:236px;border-radius:12px;
+  background:var(--sheet);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.menu.open{display:grid}
+.menu button{display:flex;gap:8px;align-items:center;text-align:left;padding:9px 10px;border-radius:8px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.menu button b{width:18px;text-align:center;font:600 14px/1 ui-monospace,Menlo,monospace;color:var(--node)}
+
+/* generic item box + help panel */
+.panel{position:fixed;z-index:9;display:none;left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 24px));
+  top:calc(70px + env(safe-area-inset-top,0px));max-height:calc(var(--vvh,100vh) - 150px - env(safe-area-inset-top,0px));
+  flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:var(--sheet);border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.panel.open{display:flex}
+body.nodebox .panel{max-height:52vh}
+.panel header{display:flex;gap:8px;align-items:center}
+.panel header input{flex:1;min-width:0;font:600 16px/1.3 inherit;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--line);padding:4px 2px}
+.panel header h2{flex:1;margin:0;font-size:16px}
+.pbody{overflow:auto;display:flex;flex-direction:column;gap:10px;min-height:0}
+.pbody label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--soft)}
+.pbody textarea,.pbody input[type=text]{min-height:40px;font:13px/1.5 ui-monospace,"SF Mono",Menlo,monospace;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.pbody textarea{min-height:90px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:13px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.list li{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:13px}
+.list li .k{font:600 15px/1.3 ui-monospace,Menlo,monospace;min-width:34px;color:var(--node)}
+.list li .m{flex:1;min-width:0}
+.list li .m strong{display:block;font-size:13px}
+.list li .m span{color:var(--soft)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.guide h3{margin:4px 0 2px;font-size:14px}
+.guide p{margin:0 0 6px;font-size:13.5px;line-height:1.5;max-width:68ch}
+.letters{display:flex;flex-wrap:wrap;gap:6px}
+.letters button{width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:500 17px/1 inherit;cursor:pointer}
+.pfoot{display:flex;gap:8px;justify-content:space-between;align-items:center}
+.small{font-size:12.5px;color:var(--soft);margin:0}
+@media (prefers-reduced-motion: reduce){.sheet,.face{transition:none}canvas.turning{animation:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <button class="help" id="mxBtn" type="button" aria-label="Matrices menu">▭</button>
+  <div class="titlebox"><input id="canvasName" aria-label="Canvas name" spellcheck="false" autocomplete="off"><small id="pathTxt"></small></div>
+  <button class="help" id="exitBtn" type="button" aria-label="Exit to the Dev Suite" hidden>✕</button>
+  <button class="help" id="helpBtn" type="button" aria-label="Help">?</button>
+</div>
+<canvas id="cv" aria-label="ECHO canvas. Drag to pan, pinch or scroll to zoom. On the underside, tap the grid to place an item and tap an item to open it."></canvas>
+
+<div class="bar">
+  <span class="left">
+    <span class="chip" id="status" role="status"><span class="dot" id="dot"></span><span id="stxt">Loading Python…</span></span>
+    <button class="chip" id="openBtn" type="button">Py</button>
+    <button class="chip" id="echoBtn" type="button" hidden>ECHO</button>
+    <button class="chip icon" id="undoBtn" type="button" aria-label="Undo" disabled>↶</button>
+    <button class="chip icon" id="redoBtn" type="button" aria-label="Redo" disabled>↷</button>
+  </span>
+  <span class="right">
+    <button class="sq" id="liftBtn" type="button" aria-label="Lift up one level">-%</button>
+    <button class="sq" id="stepBtn" type="button" aria-label="Step down: invert">%</button>
+  </span>
+</div>
+
+<section class="sheet" id="sheet" aria-label="Python console">
+  <header><span id="where">Top</span><button class="ghost" id="closeBtn" type="button">Close</button></header>
+  <pre id="out"></pre>
+  <div class="row">
+    <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="import grid; grid.nodes()"></textarea>
+    <button class="run" id="runBtn" type="button" disabled>Run</button>
+  </div>
+</section>
+
+<section class="sheet" id="echoSheet" aria-label="Sandbox ECHO">
+  <header><span id="echoState">Sandbox ECHO: not booted</span><button class="ghost" id="echoClose" type="button">Close</button></header>
+  <div class="row" style="margin-bottom:8px;align-items:center">
+    <button class="run" id="echoRun" type="button" disabled>▶ Run</button>
+    <button class="run" id="echoStep" type="button" disabled>⏭ Step</button>
+    <span class="small" id="echoCycle" style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">no cycles yet</span>
+  </div>
+  <div class="row" style="margin-bottom:8px;align-items:center">
+    <span class="small">Homework</span>
+    <input id="hwN" type="number" min="1" max="500" value="8" aria-label="Number of steps" style="width:64px;font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)">
+    <button class="run" id="hwStep" type="button" disabled>⏭ 1</button>
+    <button class="run" id="hwRun" type="button" disabled>▶ N</button>
+    <span class="small" id="hwState" style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></span>
+  </div>
+  <pre id="echoOut"></pre>
+  <div class="row">
+    <textarea id="echoIn" spellcheck="false" autocapitalize="off" placeholder="Talk to ECHO, or: teach speed: the rate at which something moves"></textarea>
+    <button class="run" id="echoSend" type="button" disabled>Send</button>
+  </div>
+  <div class="row" style="margin-top:6px;align-items:center">
+    <span class="small" style="flex:1">Last reply:</span>
+    <button class="chip" id="echoYes" type="button" disabled>=T</button>
+    <button class="chip" id="echoNo" type="button" disabled>=F</button>
+  </div>
+</section>
+<div id="symStrip" role="toolbar" aria-label="Symbol keys" hidden>
+  <button type="button" id="symKb" class="symk name">DSL</button>
+  <div id="symRow"></div>
+  <button type="button" id="symX" class="symk" aria-label="Hide the symbol keys">×</button>
+</div>
+<div class="menu" id="menu" role="menu" aria-label="Place on canvas"></div>
+<section class="panel" id="panel" role="dialog" aria-modal="false">
+  <header id="pHead"></header>
+  <div class="pbody" id="pBody"></div>
+  <div class="pfoot" id="pFoot"></div>
+</section>
+<div class="scrim" id="scrim">
+  <div class="card" id="card" role="dialog" aria-modal="true" aria-labelledby="nodeName">
+    <div class="face front">
+      <header>
+        <input id="nodeName" aria-label="Node name" spellcheck="false" autocomplete="off">
+        <button class="ghost" id="boxClose" type="button">Close</button>
+      </header>
+      <button type="button" id="logicPeek" class="peek" hidden></button>
+      <textarea id="logicIn" spellcheck="false" autocapitalize="off" placeholder="Write this node's logic…"></textarea>
+      <div class="foot">
+        <span class="left">
+          <button class="run" id="writeBtn" type="button">Write logic</button>
+          <button class="ghost" id="removeBtn" type="button">Remove node</button>
+        </span>
+        <button class="pct" id="pctFront" type="button" disabled aria-label="No logic written yet">%</button>
+      </div>
+    </div>
+    <div class="face back" aria-hidden="true">
+      <header><h2 id="backName"></h2><button class="ghost" id="boxClose2" type="button">Close</button></header>
+      <p class="hint">Current logic</p>
+      <ul class="entries" id="entries"></ul>
+      <div class="foot"><span></span>
+        <button class="pct green" id="pctBack" type="button" aria-label="Return to the input">%</button>
+      </div>
+    </div>
+  </div>
+</div>
