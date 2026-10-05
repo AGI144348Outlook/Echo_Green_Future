@@ -76,3 +76,15 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - `scanny/python-pptx#1137` is retained only as a domain-specific, maintenance-sensitive watch candidate.
 - MOD-0003 application review added a metadata-only archive import manifest gated by path and quota validation.
 - Resume at repository ordinal 21. See `reviews/MOD-0004_DISCOVERY_BATCH_2026-10-04.md`, `reviews/INVENTORY_DELTA_2026-10-04.md` and `reviews/PROGRESS_2026-10-04.md`.
+
+
+## Checkpoint — 2026-10-05
+
+- All 18 current branch heads pinned; no branch was added or removed.
+- The latest five `autonomous-agency` commits change only two session-log JSON files and no executable source.
+- MOD-0005 (`bounded-affinity-admission`) preserved, generalized, validated and frozen before discovery at `3e28fe69942088d3f65caa9aab572baf1d3a97d1`.
+- Independent source characterization passed 2/2 tests; generalized suite passed 7/7 tests.
+- External discovery reviewed repositories 21–25; 0 selected; cumulative progress 25/1,000.
+- `areguig/petit-poucet#107` is retained only as a Rust/model-benchmark watch candidate.
+- MOD-0001 application review added fail-closed scorer/model/index resource gating for MOD-0005.
+- Resume at repository ordinal 26. See `reviews/MOD-0005_DISCOVERY_BATCH_2026-10-05.md`, `reviews/INVENTORY_DELTA_2026-10-05.md` and `reviews/PROGRESS_2026-10-05.md`.
