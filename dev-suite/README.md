@@ -40,8 +40,10 @@ npm install          # pyodide 0.26.4 into node_modules
 python build.py      # writes dist/canvas-keyboard-terminal.html and dist/dev-suite.html
 ```
 
-`build.py` also re-embeds the keyboard into the Suite (`KB_DOC_B64` in `suite/src/app_part.html`),
-so edit the keyboard in `keyboard/src/`, then build.
+The build never modifies sources. It fills placeholders in `suite/src/app_part.html`:
+`__DATA_*__` from `suite/src/data/`, `__PY_*__` from `suite/python/`, and `__BUILD_KEYBOARD_B64__`
+with the keyboard built from `keyboard/src/`. So: code in `suite/src/*.html`, data in `suite/src/data/`,
+Python in `suite/python/`, keyboard in `keyboard/src/`, generated output only in `dist/`.
 
 ## Source map
 
@@ -49,7 +51,14 @@ so edit the keyboard in `keyboard/src/`, then build.
 |---|---|
 | `suite/src/head_part.html` | Suite page structure and styles |
 | `suite/src/loader_part.html` | Serves the packed Pyodide files from memory |
-| `suite/src/app_part.html` | The Suite application, with its embedded data (Genesis skeleton, ECHO's matrices, dictionary, registries, keyboard) |
+| `suite/src/app_part.html` | The Suite application: code only, with placeholders for data (about 170 KB) |
+| `suite/src/data/genesis_skeleton.py` | The Genesis ECHO skeleton source (Sandbox ECHO and the flow maps) |
+| `suite/src/data/dictionary.json.gz.b64` | The 5,000-word dictionary, gzip + base64 |
+| `suite/src/data/echo_matrices.json.gz.b64` | ECHO's matrices (lobby agents, VGM, WordNet chains, numbers, algorithms), gzip + base64 |
+| `suite/src/data/registries.json` | LHEA glyph registry, glyph legend, grammar, formula symbols, formulas |
+| `suite/src/data/genesis_structure.json` | Genesis classes, functions, constants and the algorithm list |
+| `suite/src/data/latin_registries.json` | Latin roots, prefixes, suffixes; syntax tree registry |
+| `suite/src/data/symbols.json` | mini§ר§ symbol registries (straight, curved, hybrid) |
 | `suite/python/echo_loader.py` | Sandbox ECHO: loader, tokenizer, Evolution, Dictionary, Homework |
 | `suite/python/libmap.py` | Maps Python modules and the skeleton into flow maps |
 | `suite/python/build_dict.py` | Builds the dictionary from WordNet (needs nltk) |

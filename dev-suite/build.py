@@ -3,11 +3,15 @@
     npm install            (fetches pyodide 0.26.4 into node_modules)
     python build.py        (writes dist/canvas-keyboard-terminal.html and dist/dev-suite.html)
 
+Sources are never modified by the build:
 1. Keyboard: keyboard/src/page.html + keyboard/src/substrate_data.py + keyboard/src/app.js
    -> dist/canvas-keyboard-terminal.html (standalone; loads Python from the jsDelivr CDN).
-2. The same keyboard, adapted to borrow the Dev Suite's Python, is embedded (base64) into
-   suite/src/app_part.html as KB_DOC_B64.
-3. Suite: head_part + loader_part + app_part, with Pyodide packed in from node_modules
+2. The same keyboard, adapted to borrow the Dev Suite's Python, is embedded (base64) into the Suite
+   at the placeholder __BUILD_KEYBOARD_B64__.
+3. Suite: head_part + loader_part + app_part, with
+   - data placeholders (__DATA_*__) filled from suite/src/data/,
+   - Python placeholders (__PY_*__) filled from suite/python/,
+   - Pyodide packed in from node_modules
    -> dist/dev-suite.html (self-contained, works offline, about 10 MB).
 """
 import base64, gzip, os, re
@@ -38,12 +42,30 @@ new = '''    const host=window.parent&&window.parent!==window?window.parent:null
 assert old in emb, "keyboard boot block not found"
 emb = emb.replace(old, new).replace('''$("st").textContent="Python "+py.runPython("import sys; sys.version.split()[0]");''',
                                     '''$("st").textContent="Python "+py.runPython("import sys; sys.version.split()[0]")+" (Dev Suite)";''')
-b64 = base64.b64encode((page + emb).encode()).decode()
-app_part = read("suite", "src", "app_part.html")
-app_part = re.sub(r'const KB_DOC_B64="[A-Za-z0-9+/=]*";', 'const KB_DOC_B64="' + b64 + '";', app_part, count=1)
-write(app_part, "suite", "src", "app_part.html")
+kb_b64 = base64.b64encode((page + emb).encode()).decode()
 
 # 3. the Suite, with Pyodide packed in
+# data and Python, inlined exactly as the code expects them (same escaping as before the split)
+import json
+js_str = lambda s: json.dumps(s).replace("</", "<\\/")                       # a JSON string literal
+py_str = lambda s: repr(s).replace("</", "<\\/")                             # a Python-repr string literal
+data = lambda f: read("suite", "src", "data", f)
+fills = {
+    "__DATA_GENESIS_SRC__":        js_str(data("genesis_skeleton.py")),
+    "__DATA_DICTIONARY_B64__":     '"' + data("dictionary.json.gz.b64") + '"',
+    "__DATA_ECHO_MATRICES_B64__":  '"' + data("echo_matrices.json.gz.b64") + '"',
+    "__DATA_REGISTRIES__":         data("registries.json"),
+    "__DATA_GENESIS_STRUCTURE__":  data("genesis_structure.json"),
+    "__DATA_LATIN_REGISTRIES__":   data("latin_registries.json"),
+    "__DATA_SYMBOLS__":            data("symbols.json"),
+    "__PY_ECHO_LOADER__":          py_str(read("suite", "python", "echo_loader.py")),
+    "__PY_LIBMAP__":               py_str(read("suite", "python", "libmap.py")),
+    "__BUILD_KEYBOARD_B64__":      '"' + kb_b64 + '"',
+}
+app_part = read("suite", "src", "app_part.html")
+for k, v in fills.items():
+    assert app_part.count(k) == 1, f"placeholder {k} must appear exactly once"
+    app_part = app_part.replace(k, v)
 tpl = read("suite", "src", "head_part.html") + read("suite", "src", "loader_part.html") + app_part
 PY = P("node_modules", "pyodide") + os.sep
 pack = lambda f, gz: base64.b64encode(gzip.compress(open(PY + f, "rb").read(), 9, mtime=0) if gz else open(PY + f, "rb").read()).decode()
