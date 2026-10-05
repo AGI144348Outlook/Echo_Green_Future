@@ -1,0 +1,27 @@
+{
+  "module_id": "MOD-0005-bounded-affinity-admission",
+  "frozen_on": "2026-10-05",
+  "pre_search": true,
+  "source_commit": "72f7589532a4108442882206fbffacf4c0376284",
+  "source_path": "src/echo_hourglass.py",
+  "source_blob_sha": "c635113417a7879a58f3023ec3b729522a9837a5",
+  "source_sha256": "b2ce8f09443a4c78666ae0cb5a581c7197c67835f461395940d6c469fda9b514",
+  "license_path": "LICENSE",
+  "license_blob_sha": "7659678e8d58b160e9c84cef8b1580c4abc8d439",
+  "license_sha256": "b03a358f9f214ffdc634632ac0b75d92cfee5b07af1445ebb480a299902d0285",
+  "generalized_path": "generalized/bounded_affinity_admission.py",
+  "generalized_sha256": "a9cbfaf7b6f8e22c5f502c1d4d7fa851593394f75aed38f9f0001cc5bb518e93",
+  "validation": {
+    "command": "PYTHONPATH=generalized python -m unittest discover -s validation -p 'test_*.py' -v",
+    "source_characterization_tests": 2,
+    "generalized_tests": 7,
+    "total_tests": 9,
+    "result": "pass"
+  },
+  "scope_limits": [
+    "No real-world affinity or tie scorer is validated.",
+    "No threshold is represented as fair, safe or generally suitable.",
+    "The source characterization tests are independently written, not upstream tests.",
+    "The source-branch license snapshot is evidence only; compatibility remains unaudited."
+  ]
+}
