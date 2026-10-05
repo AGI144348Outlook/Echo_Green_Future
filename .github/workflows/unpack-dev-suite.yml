@@ -1,0 +1,26 @@
+name: Unpack dev-suite ZIP
+on:
+  push:
+    branches: [dev-suite-integration-staging]
+    paths: ['.github/workflows/unpack-dev-suite.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev-suite-integration-staging
+      - name: Extract ZIP without modifying contents
+        run: |
+          unzip -o dev-suite-branch.zip
+          git rm -f dev-suite-branch.zip
+      - name: Commit extracted tree
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Unpack dev-suite source tree" || echo "nothing to commit"
+          git push
