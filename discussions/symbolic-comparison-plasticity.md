@@ -176,3 +176,103 @@ The current hypothesis can be summarized as:
 ## Status
 
 Research/design discussion only. This note records the current hypothesis and should not yet be treated as a locked invariant or implementation specification.
+
+
+## Extension — Dormant Candidate Forging and Memory Attachment
+
+A further refinement gives the Active slot a candidate-forging role.
+
+Dormant mid-term meta-thoughts / concepts / tokens may be filtered from durable mid-term storage and temporarily recalled as a candidate structure:
+
+```text
+%Dormant_n
+→ filtered recall set
+→ temporary/candidate Concept Token
+→ Active slot
+→ comparison / trial / refinement
+```
+
+The candidate does not become hardened knowledge merely because it was recalled. Repeated successful comparison, explanatory utility, coherence, and compatibility with established constraints may strengthen it until it qualifies for a more durable mid-term representation.
+
+Conversely, an unsuccessful candidate can return to dormancy, be revised, or be purposefully discarded.
+
+The Active slot may also use a temporary token as an appended working attachment to an already durable long-term representation:
+
+```text
+LongTerm(X) + Candidate(c)
+→ Active refinement
+→ differential testing
+→ {reject c | revise c | integrate c into X | harden c separately}
+```
+
+This allows refinement of established knowledge without rewriting the durable representation before the candidate has survived testing.
+
+### Anti-ossification hypothesis
+
+This mechanism may help mitigate attention/pathway ossification if retrieval is designed to prevent the currently dominant/high-priority structures from monopolizing candidate generation.
+
+The intended mechanism is not that eigenvectors or eigenvalues are themselves biases. Rather, a repeatedly reinforced transition/attention operator can develop dominant modes: future traversal increasingly projects onto the same high-weight directions, creating an attractor-like or low-diversity attention regime.
+
+Dormant candidate forging can act as an exploration mechanism by periodically sampling less-active but still relevant representations and returning them to Active for comparison.
+
+A candidate-selection policy should therefore combine exploitation and exploration rather than simply selecting the highest-priority dormant item:
+
+```text
+CandidateScore(d) =
+  relevance
++ unresolved_value
++ novelty
++ dormant_return_value
++ cross-domain_value
+- redundancy
+- retrieval_cost
+```
+
+with explicit scheduling constraints so dominant pathways cannot indefinitely starve alternatives.
+
+This relates to the existing homeodynamic proposal:
+
+```text
+dominant Active route
+→ temporal displacement
+→ %Dormant_0
+→ alternate/candidate activation
+→ comparison
+→ refinement
+→ possible later recursive return
+```
+
+The purpose is controlled turnover of the active computational budget while preserving durable provenance.
+
+### Memory-tier hypothesis
+
+A provisional hierarchy is:
+
+```text
+Active Slot
+↕
+Candidate / Temporary Concept Token
+↕
+Mid-term Dormant Metadata / Meta-token Store
+↕
+Hardened Meta Mid-term Token
+↕
+Long-term Consolidated Representation
+↕
+Full Source / Provenance Material
+```
+
+Cloud-hosted durable objects or other appropriately selected storage services may hold compact metadata and retrieval references, while larger source materials remain externally addressable. Storage technology should remain separable from the semantic state model.
+
+### Design implication
+
+Concept Tokens are therefore not only compression devices. They can serve as movable units of resource reallocation:
+
+- recalled from dormancy for temporary testing;
+- forged from several dormant structures;
+- attached temporarily to established long-term representations;
+- hardened when repeated testing supports them;
+- detached or discarded when testing fails;
+- recursively expanded back toward provenance when the compact token proves insufficient.
+
+This provides a possible computational analogue of plastic reorganization under a hard environmental resource budget while retaining exploratory capacity.
