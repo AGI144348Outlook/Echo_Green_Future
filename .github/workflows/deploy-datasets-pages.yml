@@ -1,0 +1,41 @@
+name: Deploy Datasets PWA
+
+on:
+  push:
+    branches: [dev-suite-datasets]
+    paths:
+      - "datasets/**"
+      - "directory/**"
+      - "index.html"
+      - "_headers"
+      - "scripts/fetch-pyodide.sh"
+      - ".github/workflows/deploy-datasets-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Datasets environment
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build isolated Pages bundle
+        run: |
+          rm -rf .pages-datasets
+          mkdir -p .pages-datasets/datasets .pages-datasets/directory .pages-datasets/scripts
+          cp index.html _headers .pages-datasets/
+          cp datasets/index.html .pages-datasets/datasets/
+          cp directory/index.html .pages-datasets/directory/
+          cp scripts/fetch-pyodide.sh .pages-datasets/scripts/
+          cd .pages-datasets
+          sh scripts/fetch-pyodide.sh
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .pages-datasets --project-name=echo-dev-datasets --branch=main
