@@ -1,0 +1,26 @@
+name: Unpack LHEA environments
+on:
+  push:
+    branches: [dev-suite-datasets]
+    paths: ['.github/workflows/unpack-lhea-environments.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev-suite-datasets
+      - name: Extract exact archive contents
+        run: |
+          unzip -o lhea-environments.zip
+          git rm -f lhea-environments.zip
+      - name: Commit extracted dataset environment
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Unpack LHEA dataset environments" || echo "nothing to commit"
+          git push
