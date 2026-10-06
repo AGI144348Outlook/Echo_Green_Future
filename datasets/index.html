@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datasets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEFF2; --panel:#F8F9FB; --ink:#18202B; --muted:#5B6573; --line:#D3D8DF;
+  --accent:#2B5FD9; --accent-ink:#FFFFFF; --ok:#23764A; --warn:#9A5A0E; --danger:#B4322A;
+  --canvas:#FFFFFF; --grid:#C9D3E0; --point:#2B5FD9;
+  --sans:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15191F; --panel:#1C2129; --ink:#E6EAF0; --muted:#98A2B0; --line:#2D343E;
+    --accent:#7FA2FF; --accent-ink:#0E1420; --ok:#5CC08A; --warn:#E0A458; --danger:#F07B72;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15191F; --panel:#1C2129; --ink:#E6EAF0; --muted:#98A2B0; --line:#2D343E;
+  --accent:#7FA2FF; --accent-ink:#0E1420; --ok:#5CC08A; --warn:#E0A458; --danger:#F07B72;
+}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none !important}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%; margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 var(--sans);
+  display:grid; grid-template-rows:auto 1fr auto auto; overflow:hidden}
+button,input,textarea,select{font:inherit; color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+a{color:var(--accent)}
+
+/* header */
+.top{display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--line); background:var(--panel)}
+.top h1{font-size:17px; font-weight:600; margin:0; letter-spacing:.01em}
+.top .env{color:var(--muted); font-size:13px}
+.top .spacer{flex:1}
+.top a{font-size:14px; text-decoration:none}
+.top a:hover{text-decoration:underline}
+
+/* layout */
+.main{display:grid; grid-template-columns:1fr; min-height:0; min-width:0}
+.rail{display:none}
+.panel{display:none; min-height:0; min-width:0; overflow:auto; background:var(--panel)}
+.panel.active{display:flex; flex-direction:column}
+.panel[data-panel="canvas"]{background:var(--canvas); position:relative; overflow:hidden}
+
+.tabs{display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--line); background:var(--panel)}
+.tabs button{border:0; background:none; padding:8px 2px 10px; font-size:12px; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:2px}
+.tabs button .g{font-family:var(--mono); font-size:16px; line-height:1.2}
+.tabs button[aria-selected="true"]{color:var(--accent); box-shadow:inset 0 2px 0 var(--accent)}
+
+@media (min-width:900px){
+  .main{grid-template-columns:56px 300px 1fr}
+  .rail{display:flex; flex-direction:column; gap:4px; padding:8px 6px; border-right:1px solid var(--line); background:var(--bg)}
+  .rail button{border:0; background:none; border-radius:6px; padding:8px 0; color:var(--muted); display:flex; flex-direction:column; align-items:center; font-size:10px; gap:2px}
+  .rail button .g{font-family:var(--mono); font-size:17px}
+  .rail button[aria-selected="true"]{color:var(--accent); background:var(--panel)}
+  .rail button[data-go="explorer"]{display:none}
+  .tabs{display:none}
+  .panel[data-panel="explorer"]{display:flex; flex-direction:column; border-right:1px solid var(--line); grid-column:2}
+  .panel:not([data-panel="explorer"]).active{grid-column:3}
+}
+
+/* status bar */
+.status{display:flex; flex-wrap:wrap; gap:4px 16px; padding:4px 14px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); background:var(--bg)}
+.status .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--warn); margin-right:6px; vertical-align:1px}
+.status .dot.ready{background:var(--ok)} .status .dot.fail{background:var(--danger)}
+
+/* shared */
+.ph{padding:12px 14px 6px; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.ph h2{font-size:15px; font-weight:600; margin:0; flex:1}
+.body{padding:6px 14px 16px}
+.btn{border:1px solid var(--line); background:var(--bg); border-radius:6px; padding:6px 12px; font-size:14px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn.danger{color:var(--danger)}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+.empty{color:var(--muted); padding:28px 14px; text-align:center; font-size:14px}
+input[type=text],input[type=url],textarea{width:100%; border:1px solid var(--line); background:var(--canvas); color:#18202B; border-radius:6px; padding:7px 9px}
+textarea{font-family:var(--mono); font-size:13px; resize:vertical}
+.form{display:none; flex-direction:column; gap:8px; padding:10px 14px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg)}
+.form.open{display:flex}
+.form .row{display:flex; gap:8px; justify-content:flex-end}
+.note{font-size:13px; color:var(--muted)}
+.err{font-size:13px; color:var(--danger)}
+
+/* canvas */
+.canvas-stage{position:absolute; inset:0}
+.canvas-stage svg{width:100%; height:100%; display:block}
+.canvas-stage line{stroke:var(--grid); stroke-width:1}
+.canvas-stage circle{fill:var(--point)}
+.pct{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%;
+  border:1px solid #C9D3E0; background:#FFFFFF; color:#2B5FD9; font:500 26px/1 var(--mono); display:grid; place-items:center}
+.pct:hover{border-color:#2B5FD9}
+.pct[hidden]{display:none}
+.canvas-mark{position:absolute; left:12px; bottom:10px; font:12px var(--mono); color:#8793A3}
+.drawn line{animation:draw .7s ease-out both}
+.drawn circle{animation:pop .3s ease-out both}
+@keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes pop{from{r:0}}
+@media (prefers-reduced-motion: reduce){.drawn line,.drawn circle{animation:none}}
+
+/* explorer */
+.list{list-style:none; margin:0; padding:4px 0}
+.list li button{width:100%; text-align:left; border:0; background:none; padding:9px 14px; display:grid; grid-template-columns:1fr auto; gap:2px 10px; border-left:3px solid transparent}
+.list li button:hover{background:var(--bg)}
+.list li button[aria-current="true"]{border-left-color:var(--accent); background:var(--bg)}
+.list .nm{font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.list .meta{font-size:12px; color:var(--muted); grid-column:1}
+.badge{font-size:12px; border-radius:10px; padding:1px 8px; align-self:center; grid-row:1 / span 2; grid-column:2; white-space:nowrap}
+.badge.unv{color:var(--warn); border:1px solid currentColor}
+.badge.ver{color:var(--ok); border:1px solid currentColor}
+
+/* editor */
+.subtabs{display:flex; gap:2px; padding:8px 14px 0; border-bottom:1px solid var(--line)}
+.subtabs button{border:0; background:none; padding:6px 12px; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px}
+.subtabs button[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--accent)}
+.raw{font:13px/1.55 var(--mono); background:var(--canvas); color:#18202B; border:1px solid var(--line); border-radius:6px; padding:10px; overflow:auto; max-height:45vh; white-space:pre; margin:0}
+.prov{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px}
+.prov th{text-align:left; font-weight:500; color:var(--muted); padding:6px 8px 6px 0; width:84px; vertical-align:middle}
+.prov td{padding:4px 0}
+.prov td.st{width:1%; padding-left:8px; white-space:nowrap}
+.chip{border:1px solid currentColor; background:none; border-radius:10px; padding:1px 9px; font-size:12px}
+.chip.unv{color:var(--warn)} .chip.ver{color:var(--ok)}
+.prov input[readonly]{background:var(--bg); color:var(--ink); font-family:var(--mono); font-size:12px}
+.scratch{display:flex; flex-direction:column; gap:8px; flex:1; padding:12px 14px}
+.scratch textarea{flex:1; min-height:220px}
+
+/* console */
+.out{flex:1; overflow:auto; font:13px/1.5 var(--mono); padding:10px 14px; white-space:pre-wrap; word-break:break-word}
+.out .in{color:var(--accent)} .out .er{color:var(--danger)} .out .sys{color:var(--muted)}
+.cin{display:flex; gap:8px; padding:10px 14px; border-top:1px solid var(--line)}
+.cin textarea{min-height:40px; height:40px}
+
+/* storage */
+.stores{display:flex; gap:8px; flex-wrap:wrap; padding:4px 14px 10px}
+.stores button{border:1px solid var(--line); background:var(--bg); border-radius:6px; padding:6px 12px}
+.stores button[aria-pressed="true"]{border-color:var(--accent); color:var(--accent)}
+.tbl-wrap{overflow-x:auto; padding:0 14px}
+table.kv{border-collapse:collapse; width:100%; font-size:13px}
+table.kv th,table.kv td{text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap}
+table.kv th{color:var(--muted); font-weight:500}
+table.kv td.k{font-family:var(--mono)}
+table.kv tr[data-k]{cursor:pointer}
+table.kv tr[data-k]:hover td{background:var(--bg)}
+.jsonview{margin:12px 14px}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Datasets</h1>
+  <span class="env">environment</span>
+  <span class="spacer"></span>
+  <a id="dirLink" href="/directory/">Directory</a>
+</header>
+
+<div class="main">
+  <nav class="rail" aria-label="Panels"></nav>
+
+  <!-- Canvas -->
+  <section class="panel" data-panel="canvas" aria-label="Canvas">
+    <div class="canvas-stage" id="stage"></div>
+    <button class="pct" id="pctBtn" aria-label="Open the grid (%)">%</button>
+    <div class="canvas-mark" id="canvasMark"></div>
+  </section>
+
+  <!-- Explorer -->
+  <section class="panel" data-panel="explorer" aria-label="Explorer">
+    <div class="ph"><h2>Datasets</h2>
+      <button class="btn" data-form="paste">Paste</button>
+      <button class="btn" id="uploadBtn">Upload</button>
+      <button class="btn" data-form="fetch">Fetch URL</button>
+      <input type="file" id="fileIn" multiple hidden>
+    </div>
+    <div class="form" id="form-paste">
+      <input type="text" id="pasteName" placeholder="Name">
+      <textarea id="pasteText" rows="6" placeholder="Paste raw data. It is stored exactly as given."></textarea>
+      <div class="row"><button class="btn" data-close="paste">Cancel</button><button class="btn primary" id="pasteAdd">Add dataset</button></div>
+    </div>
+    <div class="form" id="form-fetch">
+      <input type="url" id="fetchUrl" placeholder="https://…">
+      <div class="note" id="fetchNote">The published claude.ai page blocks requests to other sites, so fetching works in the self-hosted version only.</div>
+      <div class="row"><button class="btn" data-close="fetch">Cancel</button><button class="btn primary" id="fetchAdd">Fetch and add</button></div>
+    </div>
+    <div class="note" id="exNote" style="padding:0 14px"></div>
+    <ul class="list" id="itemList"></ul>
+  </section>
+
+  <!-- Editor -->
+  <section class="panel" data-panel="editor" aria-label="Editor">
+    <div class="subtabs" role="tablist">
+      <button role="tab" data-sub="raw" aria-selected="true">Raw</button>
+      <button role="tab" data-sub="scratch" aria-selected="false">Scratch</button>
+    </div>
+    <div id="sub-raw" class="body"></div>
+    <div id="sub-scratch" class="scratch" hidden>
+      <textarea id="scratchText" spellcheck="false" placeholder="# Python. items() and raw(id) are available.&#10;for it in await items():&#10;    print(it['name'], it['size'])"></textarea>
+      <div class="row" style="display:flex;gap:8px;justify-content:space-between;align-items:center">
+        <span class="note" id="scratchNote">Saved locally as you type.</span>
+        <button class="btn primary" id="scratchRun">Run in Console</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Console -->
+  <section class="panel" data-panel="console" aria-label="Console">
+    <div class="out" id="out" aria-live="polite"></div>
+    <div class="cin">
+      <textarea id="cmd" spellcheck="false" placeholder=">>> Python" aria-label="Python input"></textarea>
+      <button class="btn primary" id="cmdRun">Run</button>
+    </div>
+  </section>
+
+  <!-- Storage -->
+  <section class="panel" data-panel="storage" aria-label="Storage">
+    <div class="ph"><h2>Storage</h2><button class="btn" id="stRefresh">Refresh</button><button class="btn danger" id="stClear">Clear environment</button></div>
+    <div class="note" style="padding:0 14px 8px" id="stSummary"></div>
+    <div class="stores" id="stStores"></div>
+    <div class="tbl-wrap" id="stTable"></div>
+    <pre class="raw jsonview" id="stJson" hidden></pre>
+  </section>
+</div>
+
+<footer class="status" role="status">
+  <span><span class="dot" id="pyDot"></span><span id="pyStatus">Python starting…</span></span>
+  <span id="pyVer"></span>
+  <span id="stCount"></span>
+  <span id="stUsed"></span>
+</footer>
+<nav class="tabs" aria-label="Panels"></nav>
+
+<script>
+"use strict";
+const CONFIG = {
+  PYODIDE_BASE: "/pyodide/v0.26.4/",
+  DB_NAME: "lhea-env-datasets",
+  ENV: "datasets"
+};
+
+/* ---------------- Panels ---------------- */
+const PANELS = [
+  ["canvas","Canvas","%"], ["explorer","Explorer","[ ]"], ["editor","Editor","{ }"],
+  ["console","Console",">_"], ["storage","Storage","[#]"]
+];
+const isWide = () => matchMedia("(min-width:900px)").matches;
+let current = "canvas";
+for (const nav of document.querySelectorAll(".rail,.tabs")) {
+  for (const [id,label,g] of PANELS) {
+    const b = document.createElement("button");
+    b.dataset.go = id; b.setAttribute("aria-selected","false");
+    b.innerHTML = `<span class="g" aria-hidden="true"></span><span></span>`;
+    b.querySelector(".g").textContent = g; b.lastChild.textContent = label;
+    b.onclick = () => show(id);
+    nav.appendChild(b);
+  }
+}
+function show(id){
+  if (id === "explorer" && isWide()) id = "canvas";
+  current = id;
+  document.querySelectorAll(".panel").forEach(p => p.classList.toggle("active", p.dataset.panel === id));
+  document.querySelectorAll("[data-go]").forEach(b => b.setAttribute("aria-selected", String(b.dataset.go === id)));
+  if (id === "canvas") drawGrid(false);
+  if (id === "storage") refreshStorage();
+  if (id === "console") document.getElementById("out").scrollTop = 1e9;
+}
+matchMedia("(min-width:900px)").addEventListener("change", () => show(current));
+
+/* ---------------- Storage layer (IndexedDB, in-memory fallback) ---------------- */
+let db = null, memMode = false;
+const mem = { items:new Map(), raw:new Map(), meta:new Map() };
+const KEYS = { items:"id", raw:"id", meta:"key" };
+function openDB(){
+  return new Promise((res) => {
+    try {
+      const r = indexedDB.open(CONFIG.DB_NAME, 1);
+      r.onupgradeneeded = () => {
+        const d = r.result;
+        d.createObjectStore("items", {keyPath:"id"});
+        d.createObjectStore("raw", {keyPath:"id"});
+        d.createObjectStore("meta", {keyPath:"key"});
+      };
+      r.onsuccess = () => res(r.result);
+      r.onerror = () => res(null);
+      r.onblocked = () => res(null);
+    } catch(e){ res(null); }
+  });
+}
+function req(store, mode, fn){
+  if (!db) return Promise.resolve(fn(null));
+  return new Promise((res, rej) => {
+    try {
+      const t = db.transaction(store, mode); let out;
+      const r = fn(t.objectStore(store));
+      if (r) r.onsuccess = () => { out = r.result; };
+      t.oncomplete = () => res(out);
+      t.onerror = () => rej(t.error); t.onabort = () => rej(t.error);
+    } catch(e){ rej(e); }
+  });
+}
+const store = {
+  get:(s,k) => db ? req(s,"readonly",o=>o.get(k)) : Promise.resolve(mem[s].get(k)),
+  all:(s)   => db ? req(s,"readonly",o=>o.getAll()) : Promise.resolve([...mem[s].values()]),
+  put:(s,v) => db ? req(s,"readwrite",o=>o.put(v)) : Promise.resolve(void mem[s].set(v[KEYS[s]], v)),
+  count:(s) => db ? req(s,"readonly",o=>o.count()) : Promise.resolve(mem[s].size),
+  clear:(s) => db ? req(s,"readwrite",o=>o.clear()) : Promise.resolve(void mem[s].clear()),
+  putItem(item, bytes){
+    if (!db){ mem.items.set(item.id,item); mem.raw.set(item.id,{id:item.id,bytes}); return Promise.resolve(); }
+    return new Promise((res,rej) => {
+      const t = db.transaction(["items","raw"],"readwrite");
+      t.objectStore("items").put(item); t.objectStore("raw").put({id:item.id, bytes});
+      t.oncomplete = res; t.onerror = () => rej(t.error); t.onabort = () => rej(t.error);
+    });
+  },
+  delItem(id){
+    if (!db){ mem.items.delete(id); mem.raw.delete(id); return Promise.resolve(); }
+    return new Promise((res,rej) => {
+      const t = db.transaction(["items","raw"],"readwrite");
+      t.objectStore("items").delete(id); t.objectStore("raw").delete(id);
+      t.oncomplete = res; t.onerror = () => rej(t.error);
+    });
+  }
+};
+async function safe(fn, fallback){ try { return await fn(); } catch(e){ log("Storage error: " + (e && e.message || e), "er"); return fallback; } }
+
+/* ---------------- Pyodide ---------------- */
+let py = null;
+const PY_CORE = String.raw`
+import hashlib, json, ast, asyncio, traceback
+from datetime import datetime, timezone
+import ds_bridge
+
+FIELDS = ["source", "version", "date", "license", "method", "checksum"]
+
+def _bytes(data):
+    return data.to_bytes() if hasattr(data, "to_bytes") else bytes(data)
+
+def sha256_tag(data):
+    return "sha256:" + hashlib.sha256(_bytes(data)).hexdigest()
+
+def new_record(item_id, name, mime, data, method, source):
+    b = _bytes(data)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    prov = {f: {"value": "", "status": "unverified"} for f in FIELDS}
+    prov["method"]["value"] = method
+    prov["source"]["value"] = source
+    prov["checksum"]["value"] = sha256_tag(b)
+    return json.dumps({"id": item_id, "name": name, "mime": mime, "size": len(b),
+                       "ingested_at": now, "provenance": prov})
+
+def recheck(data, expected):
+    return sha256_tag(data) == expected
+
+async def items():
+    return json.loads(await ds_bridge.list())
+
+async def raw(item_id):
+    r = await ds_bridge.raw(item_id)
+    return None if r is None else r.to_bytes()
+
+_console_globals = {"items": items, "raw": raw, "__name__": "__console__"}
+
+async def console_run(src):
+    try:
+        tree = ast.parse(src, mode="exec")
+        last = None
+        if tree.body and isinstance(tree.body[-1], ast.Expr):
+            last = ast.Expression(tree.body.pop().value)
+        flags = ast.PyCF_ALLOW_TOP_LEVEL_AWAIT
+        r = eval(compile(tree, "<console>", "exec", flags=flags), _console_globals)
+        if asyncio.iscoroutine(r):
+            await r
+        if last is not None:
+            v = eval(compile(last, "<console>", "eval", flags=flags), _console_globals)
+            if asyncio.iscoroutine(v):
+                v = await v
+            if v is not None:
+                return json.dumps(["ok", repr(v)])
+        return json.dumps(["ok", None])
+    except Exception:
+        return json.dumps(["err", traceback.format_exc()])
+`;
+function loadScript(src){
+  return new Promise((res,rej) => { const s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = () => rej(new Error("Could not load " + src)); document.head.appendChild(s); });
+}
+async function startPython(){
+  const t0 = performance.now();
+  try {
+    await loadScript(CONFIG.PYODIDE_BASE + "pyodide.js");
+    py = await loadPyodide({ indexURL: CONFIG.PYODIDE_BASE });
+    py.setStdout({ batched: s => log(s) });
+    py.setStderr({ batched: s => log(s, "er") });
+    py.registerJsModule("ds_bridge", {
+      list: async () => JSON.stringify(await store.all("items")),
+      raw: async (id) => { const r = await store.get("raw", id); return r ? new Uint8Array(r.bytes) : null; }
+    });
+    await py.runPythonAsync(PY_CORE);
+    const ver = py.runPython("import sys; sys.version.split()[0]");
+    setStatus("ready", "Python ready (" + ((performance.now()-t0)/1000).toFixed(1) + "s)");
+    document.getElementById("pyVer").textContent = "Python " + ver + " · Pyodide " + py.version;
+    log("Python " + ver + " on Pyodide " + py.version + ". Helpers: await items(), await raw(id).", "sys");
+    setAddEnabled(true);
+  } catch(e){
+    setStatus("fail", "Python failed to start");
+    log("Python failed to start: " + (e && e.message || e), "er");
+    document.getElementById("exNote").textContent = "Adding data needs Python for checksums. It failed to start, so adding is off.";
+  }
+}
+function setStatus(kind, text){
+  const d = document.getElementById("pyDot");
+  d.className = "dot" + (kind === "ready" ? " ready" : kind === "fail" ? " fail" : "");
+  document.getElementById("pyStatus").textContent = text;
+}
+function pyCall(name, ...args){ const f = py.globals.get(name); try { return f(...args); } finally { f.destroy(); } }
+
+/* ---------------- Canvas: % opens [#] ---------------- */
+let canvasOpen = false;
+const STEP = 32;
+function drawGrid(animate){
+  const stage = document.getElementById("stage");
+  document.getElementById("pctBtn").hidden = canvasOpen;
+  document.getElementById("canvasMark").textContent = canvasOpen ? "[#]" : "";
+  if (!canvasOpen){ stage.innerHTML = ""; return; }
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (!w || !h) return;
+  const ox = (w % STEP) / 2, oy = (h % STEP) / 2, cx = w/2, cy = h/2;
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`); svg.setAttribute("aria-label", "Grid");
+  if (animate) svg.classList.add("drawn");
+  const xs = [], ys = [];
+  for (let x = ox; x <= w; x += STEP) xs.push(x);
+  for (let y = oy; y <= h; y += STEP) ys.push(y);
+  const add = (x1,y1,x2,y2,dist,len) => {
+    const l = document.createElementNS(NS,"line");
+    l.setAttribute("x1",x1); l.setAttribute("y1",y1); l.setAttribute("x2",x2); l.setAttribute("y2",y2);
+    if (animate){ l.style.strokeDasharray = len; l.style.setProperty("--len", len); l.style.animationDelay = (dist/Math.max(w,h)*0.5) + "s"; }
+    svg.appendChild(l);
+  };
+  xs.forEach(x => add(x,0,x,h,Math.abs(x-cx),h));
+  ys.forEach(y => add(0,y,w,y,Math.abs(y-cy),w));
+  for (const x of xs) for (const y of ys){
+    const c = document.createElementNS(NS,"circle");
+    c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",1.6);
+    if (animate) c.style.animationDelay = (0.7 + Math.hypot(x-cx,y-cy)/Math.max(w,h)*0.4) + "s";
+    svg.appendChild(c);
+  }
+  stage.innerHTML = ""; stage.appendChild(svg);
+}
+document.getElementById("pctBtn").onclick = async () => {
+  canvasOpen = true; drawGrid(true);
+  await safe(() => store.put("meta", {key:"canvas", open:true, opened_at:new Date().toISOString()}));
+  log("% opened the canvas [#].", "sys");
+};
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { if (current === "canvas") drawGrid(false); }, 120); });
+
+/* ---------------- Explorer ---------------- */
+let selected = null;
+function setAddEnabled(on){
+  document.querySelectorAll("[data-form],#uploadBtn,#pasteAdd,#fetchAdd").forEach(b => b.disabled = !on);
+  document.getElementById("exNote").textContent = on ? "" : "Python is starting. Adding data opens once checksums can be computed.";
+}
+setAddEnabled(false);
+document.querySelectorAll("[data-form]").forEach(b => b.onclick = () => {
+  const f = document.getElementById("form-" + b.dataset.form);
+  const open = !f.classList.contains("open");
+  document.querySelectorAll(".form").forEach(x => x.classList.remove("open"));
+  f.classList.toggle("open", open);
+});
+document.querySelectorAll("[data-close]").forEach(b => b.onclick = () => document.getElementById("form-" + b.dataset.close).classList.remove("open"));
+
+const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+
+async function ingest(bytes, name, mime, method, source){
+  const u8 = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  const id = uid();
+  const rec = JSON.parse(pyCall("new_record", id, name, mime || "application/octet-stream", u8, method, source));
+  const buf = u8.buffer.slice(u8.byteOffset, u8.byteOffset + u8.byteLength);
+  await store.putItem(rec, buf);
+  log(`Added "${name}" (${fmtBytes(rec.size)}, ${rec.provenance.checksum.value.slice(0,19)}…).`, "sys");
+  await renderList(); select(id);
+  return rec;
+}
+document.getElementById("pasteAdd").onclick = async () => {
+  const text = document.getElementById("pasteText").value;
+  if (!text){ document.getElementById("exNote").textContent = "Paste some data first."; return; }
+  const name = document.getElementById("pasteName").value.trim() || "Pasted " + new Date().toLocaleString();
+  await safe(() => ingest(new TextEncoder().encode(text), name, "text/plain;charset=utf-8", "paste", "pasted by user"));
+  document.getElementById("pasteText").value = ""; document.getElementById("pasteName").value = "";
+  document.getElementById("form-paste").classList.remove("open");
+};
+document.getElementById("uploadBtn").onclick = () => document.getElementById("fileIn").click();
+document.getElementById("fileIn").onchange = async (e) => {
+  for (const f of e.target.files){
+    await safe(async () => ingest(new Uint8Array(await f.arrayBuffer()), f.name, f.type, "upload", "file: " + f.name));
+  }
+  e.target.value = "";
+};
+document.getElementById("fetchAdd").onclick = async () => {
+  const url = document.getElementById("fetchUrl").value.trim();
+  const note = document.getElementById("fetchNote");
+  if (!/^https?:\/\//.test(url)){ note.textContent = "Enter a full http(s) address."; note.className = "err"; return; }
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error("Server answered " + r.status);
+    const buf = new Uint8Array(await r.arrayBuffer());
+    const name = decodeURIComponent(new URL(url).pathname.split("/").pop() || new URL(url).hostname);
+    await ingest(buf, name, r.headers.get("content-type"), "fetch", url);
+    document.getElementById("form-fetch").classList.remove("open");
+    note.textContent = ""; note.className = "note";
+  } catch(e){
+    note.className = "err";
+    note.textContent = "Fetch failed: " + (e.message || e) + ". This page may block requests to other sites; download the file and use Upload instead.";
+  }
+};
+function verifiedCount(rec){ return Object.values(rec.provenance).filter(f => f.status === "verified").length; }
+async function renderList(){
+  const items = await safe(() => store.all("items"), []);
+  items.sort((a,b) => a.ingested_at < b.ingested_at ? 1 : -1);
+  const ul = document.getElementById("itemList"); ul.innerHTML = "";
+  if (!items.length){ ul.innerHTML = `<li class="empty">No datasets yet. Paste, upload or fetch raw data to begin.</li>`; }
+  for (const it of items){
+    const li = document.createElement("li"), b = document.createElement("button");
+    const v = verifiedCount(it), n = Object.keys(it.provenance).length;
+    b.innerHTML = `<span class="nm"></span><span class="badge ${v === n ? "ver" : "unv"}"></span><span class="meta"></span>`;
+    b.querySelector(".nm").textContent = it.name;
+    b.querySelector(".badge").textContent = v === n ? "verified" : `${v}/${n} verified`;
+    b.querySelector(".meta").textContent = `${fmtBytes(it.size)} · ${it.provenance.method.value}`;
+    if (it.id === selected) b.setAttribute("aria-current","true");
+    b.onclick = () => { select(it.id); show("editor"); };
+    li.appendChild(b); ul.appendChild(li);
+  }
+  updateCounts(items.length);
+}
+
+/* ---------------- Editor ---------------- */
+document.querySelectorAll("[data-sub]").forEach(b => b.onclick = () => {
+  document.querySelectorAll("[data-sub]").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+  document.getElementById("sub-raw").hidden = b.dataset.sub !== "raw";
+  document.getElementById("sub-scratch").hidden = b.dataset.sub !== "scratch";
+});
+const MAX_VIEW = 200 * 1024;
+function rawText(buf){
+  const u8 = new Uint8Array(buf), view = u8.subarray(0, MAX_VIEW);
+  try { return { text: new TextDecoder("utf-8", {fatal:true}).decode(view), kind:"text" }; }
+  catch(e){
+    const lines = []; const n = Math.min(view.length, 4096);
+    for (let i = 0; i < n; i += 16){
+      const row = view.subarray(i, i+16);
+      const hex = [...row].map(x => x.toString(16).padStart(2,"0")).join(" ");
+      const asc = [...row].map(x => x >= 32 && x < 127 ? String.fromCharCode(x) : ".").join("");
+      lines.push(i.toString(16).padStart(8,"0") + "  " + hex.padEnd(47," ") + "  " + asc);
+    }
+    return { text: lines.join("\n"), kind:"hex" };
+  }
+}
+async function select(id){
+  selected = id;
+  document.querySelectorAll("#itemList button").forEach(b => b.removeAttribute("aria-current"));
+  await renderList();
+  await renderRaw();
+}
+async function renderRaw(){
+  const host = document.getElementById("sub-raw"); host.innerHTML = "";
+  if (!selected){ host.innerHTML = `<div class="empty">Select a dataset in Explorer to view its raw data and provenance.</div>`; return; }
+  const rec = await safe(() => store.get("items", selected)), raw = await safe(() => store.get("raw", selected));
+  if (!rec || !raw){ host.innerHTML = `<div class="empty">This dataset is no longer stored.</div>`; selected = null; return; }
+  const head = document.createElement("div"); head.className = "ph"; head.style.padding = "4px 0 8px";
+  head.innerHTML = `<h2></h2><button class="btn danger" id="delItem">Delete</button>`;
+  head.querySelector("h2").textContent = rec.name;
+  const meta = document.createElement("div"); meta.className = "note";
+  const shown = rawText(raw.bytes);
+  meta.textContent = `${rec.mime} · ${fmtBytes(rec.size)} · ingested ${new Date(rec.ingested_at).toLocaleString()} · read-only` +
+    (shown.kind === "hex" ? " · binary, hex view of first 4 KB" : rec.size > MAX_VIEW ? " · showing first 200 KB" : "");
+  const pre = document.createElement("pre"); pre.className = "raw"; pre.textContent = shown.text;
+  host.append(head, meta, pre);
+
+  const t = document.createElement("table"); t.className = "prov";
+  t.innerHTML = `<caption class="note" style="text-align:left;padding-bottom:4px">Provenance. Editing a value marks it unverified.</caption>`;
+  for (const [f, cell] of Object.entries(rec.provenance)){
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<th scope="row"></th><td></td><td class="st"></td>`;
+    tr.querySelector("th").textContent = f[0].toUpperCase() + f.slice(1);
+    const inp = document.createElement("input"); inp.type = "text"; inp.value = cell.value;
+    inp.setAttribute("aria-label", f);
+    if (f === "checksum") inp.readOnly = true;
+    else inp.onchange = async () => {
+      rec.provenance[f] = { value: inp.value, status: "unverified" };
+      await safe(() => store.put("items", rec)); renderRaw(); renderList();
+    };
+    tr.children[1].appendChild(inp);
+    const st = tr.children[2];
+    if (f === "checksum"){
+      const b = document.createElement("button"); b.className = "chip " + (cell.status === "verified" ? "ver" : "unv");
+      b.textContent = cell.status === "verified" ? "verified" : "recheck";
+      b.title = "Recompute SHA-256 over the stored bytes";
+      b.onclick = async () => {
+        const ok = pyCall("recheck", new Uint8Array(raw.bytes), cell.value);
+        rec.provenance.checksum.status = ok ? "verified" : "unverified";
+        rec.provenance.checksum.checked_at = new Date().toISOString();
+        await safe(() => store.put("items", rec));
+        log(ok ? `Checksum matched for "${rec.name}".` : `Checksum MISMATCH for "${rec.name}". Stored bytes differ from the recorded hash.`, ok ? "sys" : "er");
+        renderRaw(); renderList();
+      };
+      if (!py) b.disabled = true;
+      st.appendChild(b);
+    } else {
+      const b = document.createElement("button"); b.className = "chip " + (cell.status === "verified" ? "ver" : "unv");
+      b.textContent = cell.status;
+      b.title = cell.status === "verified" ? "Mark unverified" : "Mark verified";
+      b.onclick = async () => {
+        rec.provenance[f].status = cell.status === "verified" ? "unverified" : "verified";
+        await safe(() => store.put("items", rec)); renderRaw(); renderList();
+      };
+      st.appendChild(b);
+    }
+    t.appendChild(tr);
+  }
+  host.appendChild(t);
+  head.querySelector("#delItem").onclick = async () => {
+    if (!confirm(`Delete "${rec.name}" and its raw data from this browser?`)) return;
+    await safe(() => store.delItem(rec.id)); log(`Deleted "${rec.name}".`, "sys");
+    selected = null; renderList(); renderRaw();
+  };
+}
+let scratchT;
+document.getElementById("scratchText").oninput = (e) => {
+  clearTimeout(scratchT);
+  scratchT = setTimeout(() => safe(() => store.put("meta", {key:"scratch", text:e.target.value, saved_at:new Date().toISOString()})), 400);
+};
+document.getElementById("scratchRun").onclick = () => { const src = document.getElementById("scratchText").value; show("console"); runPy(src); };
+
+/* ---------------- Console ---------------- */
+const out = document.getElementById("out");
+function log(text, cls){
+  const d = document.createElement("div"); if (cls) d.className = cls; d.textContent = text;
+  out.appendChild(d); out.scrollTop = out.scrollHeight;
+}
+const hist = []; let hi = 0;
+async function runPy(src){
+  if (!src.trim()) return;
+  log(src.split("\n").map((l,i) => (i ? "... " : ">>> ") + l).join("\n"), "in");
+  if (!py){ log("Python is not ready yet.", "er"); return; }
+  const f = py.globals.get("console_run");
+  try {
+    const [kind, val] = JSON.parse(await f(src));
+    if (kind === "err") log(val.trimEnd(), "er"); else if (val !== null) log(val);
+  } catch(e){ log(String(e.message || e), "er"); }
+  finally { f.destroy(); }
+  renderList();
+}
+const cmd = document.getElementById("cmd");
+function submitCmd(){ const src = cmd.value; if (!src.trim()) return; hist.push(src); hi = hist.length; cmd.value = ""; runPy(src); }
+document.getElementById("cmdRun").onclick = submitCmd;
+cmd.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey && isWide()){ e.preventDefault(); submitCmd(); }
+  else if (e.key === "ArrowUp" && !cmd.value.includes("\n") && hi > 0){ e.preventDefault(); cmd.value = hist[--hi]; }
+  else if (e.key === "ArrowDown" && !cmd.value.includes("\n") && hi < hist.length){ e.preventDefault(); hi++; cmd.value = hist[hi] || ""; }
+});
+
+/* ---------------- Storage inspector ---------------- */
+let stSel = "items";
+async function refreshStorage(){
+  const counts = {};
+  for (const s of ["items","raw","meta"]) counts[s] = await safe(() => store.count(s), 0);
+  const host = document.getElementById("stStores"); host.innerHTML = "";
+  for (const s of ["items","raw","meta"]){
+    const b = document.createElement("button"); b.textContent = `${s} (${counts[s]})`;
+    b.setAttribute("aria-pressed", String(s === stSel));
+    b.onclick = () => { stSel = s; document.getElementById("stJson").hidden = true; refreshStorage(); };
+    host.appendChild(b);
+  }
+  document.getElementById("stSummary").textContent = memMode
+    ? "IndexedDB is unavailable here, so data lives in memory for this session only."
+    : `IndexedDB database "${CONFIG.DB_NAME}", private to this page in this browser.`;
+  const rows = await safe(() => store.all(stSel), []);
+  const wrap = document.getElementById("stTable");
+  if (!rows.length){ wrap.innerHTML = `<div class="empty">The ${stSel} store is empty.</div>`; return; }
+  const tb = document.createElement("table"); tb.className = "kv";
+  tb.innerHTML = `<thead><tr><th>Key</th><th>Size</th><th>Summary</th></tr></thead><tbody></tbody>`;
+  for (const r of rows){
+    const k = r[KEYS[stSel]];
+    const size = stSel === "raw" ? r.bytes.byteLength : JSON.stringify(r).length;
+    const summary = stSel === "items" ? r.name : stSel === "raw" ? "unaltered bytes" : Object.keys(r).filter(x => x !== "key").join(", ");
+    const tr = document.createElement("tr"); tr.dataset.k = k;
+    tr.innerHTML = `<td class="k"></td><td></td><td></td>`;
+    tr.children[0].textContent = String(k).length > 14 ? String(k).slice(0,13) + "…" : k;
+    tr.children[1].textContent = fmtBytes(size); tr.children[2].textContent = summary;
+    tr.onclick = () => {
+      const view = stSel === "raw" ? { id:r.id, bytes:`ArrayBuffer(${r.bytes.byteLength})` } : r;
+      const pre = document.getElementById("stJson"); pre.hidden = false; pre.textContent = JSON.stringify(view, null, 2);
+    };
+    tb.tBodies[0].appendChild(tr);
+  }
+  wrap.innerHTML = ""; wrap.appendChild(tb);
+  updateCounts(counts.items);
+}
+document.getElementById("stRefresh").onclick = refreshStorage;
+document.getElementById("stClear").onclick = async () => {
+  if (!confirm("Clear every dataset, the scratch file and canvas state from this browser? This cannot be undone.")) return;
+  for (const s of ["items","raw","meta"]) await safe(() => store.clear(s));
+  canvasOpen = false; selected = null; document.getElementById("scratchText").value = "";
+  log("Environment cleared. It is inert again.", "sys");
+  renderList(); renderRaw(); refreshStorage(); drawGrid(false);
+};
+async function updateCounts(n){
+  document.getElementById("stCount").textContent = n === 1 ? "1 dataset" : `${n} datasets`;
+  try {
+    if (navigator.storage && navigator.storage.estimate){
+      const e = await navigator.storage.estimate();
+      document.getElementById("stUsed").textContent = fmtBytes(e.usage || 0) + " stored";
+    }
+  } catch(e){}
+}
+
+/* ---------------- Util + boot ---------------- */
+function fmtBytes(n){ if (n < 1024) return n + " B"; if (n < 1048576) return (n/1024).toFixed(1) + " KB"; return (n/1048576).toFixed(2) + " MB"; }
+(async function boot(){
+  db = await openDB(); memMode = !db;
+  const c = await safe(() => store.get("meta","canvas"));
+  canvasOpen = !!(c && c.open);
+  const s = await safe(() => store.get("meta","scratch"));
+  if (s && s.text) document.getElementById("scratchText").value = s.text;
+  show("canvas"); renderList(); renderRaw();
+  if (memMode) log("IndexedDB is unavailable; working in memory for this session.", "er");
+  startPython();
+})();
+</script>
+</body>
+</html>
