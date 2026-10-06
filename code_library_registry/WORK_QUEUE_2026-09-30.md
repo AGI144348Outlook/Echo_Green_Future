@@ -88,3 +88,15 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - `areguig/petit-poucet#107` is retained only as a Rust/model-benchmark watch candidate.
 - MOD-0001 application review added fail-closed scorer/model/index resource gating for MOD-0005.
 - Resume at repository ordinal 26. See `reviews/MOD-0005_DISCOVERY_BATCH_2026-10-05.md`, `reviews/INVENTORY_DELTA_2026-10-05.md` and `reviews/PROGRESS_2026-10-05.md`.
+
+
+## Checkpoint — 2026-10-06
+
+- All 26 current branch heads were inspected; eight new Dev Suite branches were added to the snapshot.
+- Seven new branch names share commit `03978f7e...` and were deduplicated by source blob identity; `dev-suite-datasets` has a distinct head and additional LHEA/workflow material.
+- MOD-0006 (`static-python-flow-outline`) was preserved, generalized, validated and frozen before discovery at `85e4fda147e7c01dad94c210d12c4e3fa7e603aa`.
+- Independent source characterization passed 2/2 tests; the generalized suite passed 7/7 tests.
+- External discovery reviewed repositories 26–30; 0 selected; cumulative progress 30/1,000.
+- `Technologicat/pyan#53` is retained only as a conceptual watch item: execution ordering exceeds the frozen lexical-outline contract, and licensing compatibility remains unresolved.
+- MOD-0004 application review added a prospective safe persistence boundary for bounded MOD-0006 JSON exports.
+- Resume at repository ordinal 31. See `reviews/MOD-0006_DISCOVERY_BATCH_2026-10-06.md`, `reviews/INVENTORY_DELTA_2026-10-06.md` and `reviews/PROGRESS_2026-10-06.md`.
