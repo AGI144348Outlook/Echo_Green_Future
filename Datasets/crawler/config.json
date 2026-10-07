@@ -1,0 +1,11 @@
+{
+ "user_agent": "EchoDatasetCrawler/0.1 (+https://github.com/AGI144348Outlook/Echo_Green_Future)",
+ "max_file_mb": 10,
+ "max_total_files_mb": 300,
+ "download_licenses": ["cc0-1.0", "public-domain", "pddl", "cc-by", "cc-by-sa", "odc-by", "odbl", "mit", "apache-2.0", "bsd"],
+ "sources": {
+  "zenodo": {"enabled": true, "results_per_keyword": 10, "seconds_between_requests": 2.5},
+  "huggingface": {"enabled": true, "results_per_keyword": 10, "seconds_between_requests": 1.0},
+  "datagov": {"enabled": true, "results_per_keyword": 10, "seconds_between_requests": 2.0}
+ }
+}
