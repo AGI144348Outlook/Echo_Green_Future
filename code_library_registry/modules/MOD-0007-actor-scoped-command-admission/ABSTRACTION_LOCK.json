@@ -1,0 +1,25 @@
+{
+  "module_id": "MOD-0007-actor-scoped-command-admission",
+  "frozen_utc": "2026-10-07T13:23:52Z",
+  "freeze_condition": "created and verified before external repository discovery",
+  "source_commit": "cddcfe2866aee79da1d0115201454d62333a45ce",
+  "source_path": "pwa/js/widgets.js",
+  "source_blob_sha": "de6b78994451575eb79eb28c02d30e8eab3b05c2",
+  "source_license_blob_sha": "02b1b4026ec7479d892ef951148798567444e07d",
+  "verification": {
+    "source_characterization": "3 passed, 0 failed; independently written",
+    "generalized": "8 passed, 0 failed",
+    "total": "11 passed, 0 failed"
+  },
+  "sha256": {
+    "original/widgets.js": "5dc3a7da9bc5901f3fb3ef6dc902c97b49d931bbfec495bf73dc64a3da2fc298",
+    "original/SOURCE_LICENSE_SNAPSHOT.txt": "9c54d78b34e36e555502b2ffdabc909dc134a78a832ddf08c96bfc8cada478d1",
+    "generalized/actor_scoped_command_admission.mjs": "b4942a3680e834bc95cf76b0eb4d071dd3f641d6d0c0acbf81b5a44ace45a8f0"
+  },
+  "scope_limits": [
+    "Admission does not authenticate the declared principal.",
+    "The caller is responsible for registry integrity and downstream execution.",
+    "No DOM, pointer-event, persistence, binding-resolution or sandboxing claim is made.",
+    "The source-branch license snapshot is evidence only; compatibility remains unaudited."
+  ]
+}
