@@ -100,3 +100,16 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - `Technologicat/pyan#53` is retained only as a conceptual watch item: execution ordering exceeds the frozen lexical-outline contract, and licensing compatibility remains unresolved.
 - MOD-0004 application review added a prospective safe persistence boundary for bounded MOD-0006 JSON exports.
 - Resume at repository ordinal 31. See `reviews/MOD-0006_DISCOVERY_BATCH_2026-10-06.md`, `reviews/INVENTORY_DELTA_2026-10-06.md` and `reviews/PROGRESS_2026-10-06.md`.
+
+
+## Checkpoint — 2026-10-07
+
+- All 27 current branch heads were inspected; `stress-test-002-clean` is new.
+- The new stress-test branch contains protocols, a manifest, inputs and candidate-algorithms documentation but no executable runner; it is classified as specification/input evidence.
+- MOD-0007 (`actor-scoped-command-admission`) was preserved, generalized, validated and frozen before discovery at `8a203a7399a5327a4fd160aae997eb6df8633528`.
+- Independent source characterization passed 3/3 tests; the generalized suite passed 8/8 tests.
+- External discovery reviewed repositories 31–35; 1 prepared proposal selected; cumulative progress 35/1,000.
+- `excalidraw/excalidraw#12216` is selected for a native view-only stylus-eraser guard and focused regression test; nothing was submitted.
+- MOD-0003 application review added a prospective ownership/kind snapshot boundary for MOD-0007.
+- Echo's outbound license remains unresolved; no compatibility or submission clearance is asserted.
+- Resume at repository ordinal 36. See `reviews/MOD-0007_DISCOVERY_BATCH_2026-10-07.md`, `reviews/INVENTORY_DELTA_2026-10-07.md` and `reviews/PROGRESS_2026-10-07.md`.
