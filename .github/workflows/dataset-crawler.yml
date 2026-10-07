@@ -27,7 +27,7 @@ jobs:
         with:
           ref: code-library-registry
 
-      - name: Install crawler from preserved package if needed
+      - name: Install preserved crawler
         run: |
           if [ ! -f Datasets/crawler/crawl.py ]; then
             test -f echo-dataset-crawler.zip
@@ -44,6 +44,16 @@ jobs:
           DATAGOV_API_KEY: ${{ secrets.DATAGOV_API_KEY }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
+            # First live contact is probe-only. Second scheduled contact is
+            # records-only. Normal downloads begin only after both stages exist.
+            if [ ! -f Datasets/state/probe/zenodo.json ] || [ ! -f Datasets/state/probe/huggingface.json ] || [ ! -f Datasets/state/probe/datagov.json ]; then
+              python3 Datasets/crawler/crawl.py --probe
+              exit 0
+            fi
+            if [ ! -f Datasets/state/runs.json ]; then
+              python3 Datasets/crawler/crawl.py --dry-run
+              exit 0
+            fi
             python3 Datasets/crawler/crawl.py --scheduled
             exit 0
           fi
