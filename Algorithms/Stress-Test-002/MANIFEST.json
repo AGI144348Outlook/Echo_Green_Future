@@ -1,0 +1,35 @@
+{
+  "test": "Stress-Test-002",
+  "package_status": "clean-preflight",
+  "input_policy": "only Algorithms/Stress-Test-002/input/** is ingestible",
+  "inputs": [
+    {
+      "path": "Algorithms/Stress-Test-002/input/ECHO_GlyphRegistry.zip",
+      "bytes": 39739,
+      "git_blob_sha1": "b98a26bc006f15ea8dde30bbc79157b0788173da",
+      "canonical_source": "dev-suite-registries:ECHO_GlyphRegistry.zip",
+      "handling": "unpack before ingestion; ingest complete archive corpus"
+    },
+    {
+      "path": "Algorithms/Stress-Test-002/input/neuroplasticity-candidate-algorithms.md",
+      "lines": 483,
+      "git_blob_sha1": "4336de5ce60be05dd974793a29b8d516bd2b4302",
+      "canonical_source": "neuroplasticity-candidate-algorithms.md",
+      "handling": "ingest complete file"
+    }
+  ],
+  "excluded_from_ingestion": [
+    "Algorithms/Stress-Test-002/PROTOCOL.md",
+    "Algorithms/Stress-Test-002/MANIFEST.json",
+    "Algorithms/Stress-Test-001/benchmark/**",
+    "Algorithms/Stress-Test-001/result/**",
+    "all expected-answer/evaluator material"
+  ],
+  "invariants": [
+    "raw evidence is immutable",
+    "later stages may reference earlier stages but may not rewrite them",
+    "Definition != Authority",
+    "Registration != Execution",
+    "similarity != identity"
+  ]
+}
