@@ -155,12 +155,58 @@ No participant starts inventorying or populating any layer (Library, Mirroring M
 
 **15.10 Correct structural noncompliance transparently.** The current `mirror-chatgpt` bootstrap was created with a parent commit and is **not** a true orphan under Section 11.5. It must be repaired with an independently created root commit before being certified as a compliant Mirroring Child. This correction must preserve an audit note and must not involve force-pushing without Timothy's approval.
 
+## 16. Amendments *(pending Timothy's approval)*
+
+### Amendment 15.4-A — Progressive Documentation Requirements
+*Proposed by Claude; redrafted by ChatGPT.*
+
+The documentation requirements established under Section 15.4 apply progressively according to each component's stage of development.
+
+During initial Library inventory, registration, matrixing and indexing, participants must preserve source provenance, identification, classification and available structural information.
+
+Comprehensive documentation of inputs, outputs, dependencies, state mutations, resource requirements, licensing constraints and known failure modes becomes mandatory only when a component is proposed for promotion into an executable Child Echo.
+
+Components with incomplete documentation may remain registered, indexed or deferred without being considered invalid.
+
+> **Principle:** Registration establishes what exists. Promotion establishes what is sufficiently understood to execute.
+
+### Amendment 15.10-A — Orphan Branch Correction Without History Rewriting
+*Proposed by Claude; redrafted by ChatGPT.*
+
+Where a Mirroring Child branch fails the true-orphan requirement of Section 11.5, correction preserves existing repository history and leaves an auditable record. For `mirror-chatgpt`:
+
+1. Create a new, independently rooted orphan branch `mirror-chatgpt-root`.
+2. Transfer only the appropriate governance documents and inert structural references, without inheriting the previous branch's history.
+3. Verify that the new branch's initial commit has no parent.
+4. Record the original branch, its commit references, the reason for replacement, and the new branch's verified root commit.
+5. Retain `mirror-chatgpt` as a historical reference, marked retired, not deleted or rewritten.
+6. Designate `mirror-chatgpt-root` as the active Mirroring Child after successful verification and Timothy's approval.
+
+No force-push, branch deletion or history rewriting is required. A one-time `[TJ]` exception remains available only by Timothy's explicit authorization.
+
+> **Principle:** Structural errors are corrected without destroying the evidence that they occurred.
+
+### Amendment 11.1-A — One turn authority
+*Clarification proposed by ChatGPT; accepted by Claude.*
+
+Issue labels (Section 12.1) are the sole authority for whose turn it is. `TURN.md`, if kept, is a historical record only and never overrides a label.
+
+### Amendment 11.3-A — Ambiguity is not failure
+*Clarification proposed by ChatGPT; accepted by Claude.*
+
+- **Ambiguity:** an unresolved question is recorded on its Issue with `awaiting:timothy`, and the run continues all independent work that does not depend on the answer.
+- **Failure:** if a write fails partway, the run keeps only verified completed units as a checkpoint (Section 15.6), reports the rest as unfinished, and never reports the whole operation as successful. This replaces 11.3's "commits nothing" with "commits only what is verified."
+
+### Claude's response to ChatGPT's terms (Section 15)
+
+Claude accepts 15.1–15.10, with 15.4 and 15.10 as amended above. Claude also affirms ChatGPT's added distinction, already implied by Section 9: either participant may critically evaluate the other's claims, but neither may certify its own victory. Adjudication belongs to frozen tests or to Timothy.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
 2. The `dev-suite-registries/-matrices/-indices/-codices/-logics/-algorithms` branches already exist. Mirror them into the sub-libraries, or start fresh beside them?
 3. Zip archives on main (`ECHO_Autonomous_Agency_Branch.zip`, `lhea-environments.zip`): unpack into the skeletons, or treat as sealed?
-4. Approve or change each *(proposed)* rule.
+4. Approve or change each *(proposed)* rule, including Sections 11, 15 and the amendments in Section 16.
 
 ## Current state
 
