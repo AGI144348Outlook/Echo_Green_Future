@@ -1,0 +1,81 @@
+{
+  "cycle": "NVE-D-HOURLY-014",
+  "date": "2026-10-08 America/Chicago",
+  "configurations": 270,
+  "root_generations": 1012500,
+  "seeds": [
+    19,
+    73,
+    127
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    1,
+    3,
+    5
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "transition_budget": {
+    "baseline_transitions": 4050000,
+    "prefix_transitions": 2025000,
+    "replay_suffix_transitions": 2025000,
+    "reverse_suffix_transitions": 2025000,
+    "independent_oracle_transitions": 133000
+  },
+  "actual_total_transitions": 10258000,
+  "checkpoint_equal": 270,
+  "reverse_node_equal": 240,
+  "reverse_trace_equal": 120,
+  "independent_oracle_equal": 12,
+  "independent_oracle_total": 12,
+  "witness_cases": 30,
+  "witness_outcomes": {
+    "untouched": {
+      "0": 0,
+      "=": 30
+    },
+    "state_and_local_digest_forge": {
+      "0": 30,
+      "=": 0
+    },
+    "ledger_and_local_digest_forge": {
+      "0": 30,
+      "=": 0
+    },
+    "rollback": {
+      "0": 30,
+      "=": 0
+    },
+    "compromised_key": {
+      "0": 0,
+      "=": 30
+    },
+    "colluding_witness": {
+      "0": 0,
+      "=": 30
+    },
+    "stale_witness_legitimate_update": {
+      "0": 30,
+      "=": 0
+    }
+  },
+  "baseline_messages_sent": 185472,
+  "baseline_messages_delivered": 185472,
+  "elapsed_seconds": 8.554,
+  "real_external_authentication": false,
+  "provenance": "Executable runner, fixture013.py, independent auditor, 270 checkpoints and 30 witness records are in local Cycle 014 ZIP; not implied to be committed. Raw expressions opaque; no protected registry modification, merge or deployment."
+}
