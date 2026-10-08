@@ -1,0 +1,27 @@
+{
+  "experiment": "NVE-D-004",
+  "protocol": "100 sequential generations, 20 seeds x 3 synthetic tasks, 24 candidate pool; frozen, random best-so-far archive, elitist selection",
+  "results": {
+    "runs": 60,
+    "mean_held_out_loss": {
+      "frozen": 0.1946657460326952,
+      "random_archive": 0.14801975740082202,
+      "selection": 0.01340000106718592
+    },
+    "selection_wins_both": 60,
+    "independent_invariant_audit_failures": 0
+  },
+  "interpretation": "Selection improved performance in this synthetic, deterministic environment; no validation of Mashet glyph semantics.",
+  "caveats": [
+    "Fixed synthetic feature mapping",
+    "Fixed deterministic held-out index shift, not independent distribution",
+    "Audit checks trace invariants, not independently reimplemented loss oracle",
+    "Random archive and selection use different search dynamics"
+  ],
+  "queue": [
+    "Separate scoring oracle",
+    "Out-of-distribution target trials",
+    "Operator-role mutation",
+    "Audit the meta-audit"
+  ]
+}
