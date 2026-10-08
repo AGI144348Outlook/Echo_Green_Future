@@ -1,0 +1,71 @@
+{
+ "id": "zenodo:291991",
+ "title": "Lexical Relations from the Wisdom of the Crowd 1.0",
+ "url": "https://zenodo.org/records/291991",
+ "doi": "10.5281/zenodo.291991",
+ "description": "<p>A set of 300 most frequent nouns has been extracted from the Russian National Corpus. Then, each method or resource, including RuThes, produced at most five hypernyms, if possible. In case it is not possible, missing answers treated as empty results. This resulted in 9 322 unique non-empty subsumption pairs that have been passed for crowdsourcing annotation on the Yandex.Toloka&nbsp;microtask platform. Each pair has been annotated by seven different annotators whose mother tongue is Russian and the age is at least 20 by February 1, 2017.</p>\n\n<p>The layout of the human intelligence task (HIT) design assumes the direct answer to a simple question: does the given pair of words represent a meaningful <em>is-a</em> relation? Since the crowd workers are not expert lexicographers and this question might be difficult for them, it has been rephrased as &ldquo;Is it correct that a <em>kitten</em> is a kind of <em>mammal</em>?&rdquo; (in Russian).</p>\n\n<p>The answers have been aggregated using the Yandex.Toloka proprietary answer aggregation mechanism. As the result, 3&nbsp;940 out of 9&nbsp;322 pairs have been annotated as positive while the rest 5&nbsp;382 have been annotated as negative.</p>\n\n<p>Interestingly, the workers were more confident in negative answers rather than in the positive ones. These negative answers are extremely useful for both training and testing different relation extraction methods. To the best of our knowledge, this is the first dataset of this kind made for the Russian language using microtask-based crowdsourcing.</p>",
+ "found_by_keywords": [
+  "semantic network"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/291991",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "v1.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2020-01-21T07:23:07.721954+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-sa-4.0",
+   "normalized": "cc-by-sa",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'semantic network'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:e854a7e7cbf08b03e5f902015e44ea9b4278bd68e39701befbeed236f795a678",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:17+00:00",
+ "files": [
+  {
+   "name": "lrwc-1.0-aggregated.tsv",
+   "url": "https://zenodo.org/api/records/291991/files/lrwc-1.0-aggregated.tsv/content",
+   "declared_size": 670049,
+   "declared_checksum": "md5:83f09c5bb3f4730e9878f2182eb86088",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "toloka-isa-50-skip-300-train-hit.tsv",
+   "url": "https://zenodo.org/api/records/291991/files/toloka-isa-50-skip-300-train-hit.tsv/content",
+   "declared_size": 6076,
+   "declared_checksum": "md5:831878245bb9e5b41c08f4a5f58cc3de",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "lrwc-1.0-assignments.tsv",
+   "url": "https://zenodo.org/api/records/291991/files/lrwc-1.0-assignments.tsv/content",
+   "declared_size": 15914260,
+   "declared_checksum": "md5:42dddb6bff4c709440a55b1e6e042cd9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

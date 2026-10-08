@@ -1,0 +1,80 @@
+{
+ "id": "zenodo:3676483",
+ "title": "Salvaging the Internet Hate Machine: Using the discourse of extremist online subcultures to identify emergent extreme speech",
+ "url": "https://zenodo.org/records/3676483",
+ "doi": "10.5281/zenodo.3676483",
+ "description": "<p>This dataset accompanies a paper submitted to the WebSci 20 conference.&nbsp;In this paper, we present a lexicon of &#39;extreme speech&#39; that may be used to detect hate speech and extreme speech on online platforms. We outline a cross-disciplinary research protocol through which this lexicon is initially extracted from a corpus of 3,335,265 posts from 4chan&#39;s /pol/ sub-forum using a hybrid method comprising word2vec modeling and subsequent snowballing of nearest neighbours of a small initial expert seed list of extreme language. The choice of corpus is significant, as 4chan is a space of rapid language innovation and obscure extreme vernacular, complicating generalised approaches. Our lexicon detects significantly more extreme posts within a corpus from a more mainstream platform (Reddit) than another popular lexicon, Hatebase, with similar accuracy. &nbsp;Our lexicon and the method of its creation thus provide a contribution to the study of the toxicity of online subcultures similar to 4chan, as well as more mainstream platforms. As we demonstrate, the lexicon allows for more effective detecting of extreme speech in these spaces. This method and the lexicon have further been made available through an open-source web tool for the study of online social platforms, 4CAT. The computational methods and lexicon on offer here can thus be used by a wide academic audience, fostering interdisciplinary approaches to the study of online hate and extreme speech.&nbsp;</p>\n\n<p>The dataset comprises the following items:</p>\n\n<ul>\n\t<li>The 4chan corpus from which the extreme speech lexicon was generated (posts from /pol/, 1 October 2019 - 1 November 2019)</li>\n\t<li>The Reddit corpus used to verify and test the lexicon (posts from the_donald, theredpill, politics and chapotraphouse, 1 October 2019 - 1 November 2019)</li>\n\t<li>The word2vec model from which the extreme speech lexicon was generated</li>\n\t<li>The extreme speech lexicon that was generated</li>\n</ul>",
+ "found_by_keywords": [
+  "lexicon"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/3676483",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "1.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2020-02-21T19:20:56.053368+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'lexicon'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:cf6fe3a8481516e55f4e35e57a01442bf9c9979a583efff92002ae9295be4da7",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:19:55+00:00",
+ "files": [
+  {
+   "name": "oilab-extreme-speech-lexicon.csv",
+   "url": "https://zenodo.org/api/records/3676483/files/oilab-extreme-speech-lexicon.csv/content",
+   "declared_size": 7956,
+   "declared_checksum": "md5:a6dd04d904d911e88c085e5b49822e82",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "reddit-dataset.csv",
+   "url": "https://zenodo.org/api/records/3676483/files/reddit-dataset.csv/content",
+   "declared_size": 659912882,
+   "declared_checksum": "md5:6fb74f2539e9ad2679b28eb627668246",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "extreme-speech-word2vec.model",
+   "url": "https://zenodo.org/api/records/3676483/files/extreme-speech-word2vec.model/content",
+   "declared_size": 14872178,
+   "declared_checksum": "md5:00dd51e0deb2244d04ba1b07ef8207c9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "4chan-pol-dataset.csv",
+   "url": "https://zenodo.org/api/records/3676483/files/4chan-pol-dataset.csv/content",
+   "declared_size": 711123567,
+   "declared_checksum": "md5:e7dd7619b2aac84ba4706edb28d35360",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

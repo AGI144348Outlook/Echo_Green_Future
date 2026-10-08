@@ -1,0 +1,53 @@
+{
+ "id": "zenodo:22938926",
+ "title": "Mechanism-separated lattice and cavity markers for differential liquid refractive-index readout: simulation data and postprocessing code",
+ "url": "https://zenodo.org/records/22938926",
+ "doi": "10.5281/zenodo.22938926",
+ "description": "<p>Simulation data and postprocessing code supporting the manuscript\n<em>Mechanism-separated lattice and cavity markers for differential liquid refractive-index readout</em>.</p>\n\n<p>A square array of silver nanocylinders on an Ag/SiO<sub>2</sub>/Ag stack supports two reflection minima\ngoverned by two different optical length scales: the long-wave marker is pinned to the ambient diagonal\nRayleigh diffraction threshold, and the short-wave marker is the second longitudinal resonance of the\ndielectric spacer. This deposit contains every input the manuscript's figure and number producers read,\nthose producers, the derived analysis records, and the eight published figures.</p>\n\n<p><strong>Contents.</strong> Ambient-index, spacer, upper-film, radius, height, angle and period sweeps;\nbaseline field cuts at both marker wavelengths; pattern-removal and dielectric-cylinder controls;\norder-resolved complex-field coefficients and the height-resolved decay record; paired-coordinate metric\ntables; the analysis code and the manuscript sources needed to regenerate the figures and reported values.</p>\n\n<p><strong>Reproducing.</strong> Requires Python 3.11+ with NumPy, SciPy and Matplotlib. Run\n<code>verify_deposit.py</code> to check all files against <code>MANIFEST.sha256</code>, then\n<code>build_figures.py</code>, <code>build_strengthled_figure.py</code> and <code>analyze_sensing.py</code>.\nVerified from a clean extraction: all three producers complete and reproduce the manuscript's reported\nvalues, with a maximum relative deviation of 1.9&times;10<sup>-7</sup> arising from iterative fits &mdash;\nfar below the precision printed in the manuscript.</p>\n\n<p><strong>Scope.</strong> The study is numerical throughout; no experimental data are included and none were\ntaken. Calculations used Ansys Lumerical FDTD 2024 R1 with the solver's tabulated Palik silver and silica.\nThe proprietary solver project (.fsp) files are not redistributed &mdash; one exceeds 400&nbsp;MB and they\nare not inpu",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/22938926",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "1.0.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-09-25T01:30:58.356644+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:1501a9955026e5983f8ac3d3970ac3d5ef75ae0c7f93ca92e33664b08ef0f639",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:43+00:00",
+ "files": [
+  {
+   "name": "silver-cylinder-dualmarker-v1.0.0.zip",
+   "url": "https://zenodo.org/api/records/22938926/files/silver-cylinder-dualmarker-v1.0.0.zip/content",
+   "declared_size": 3653128,
+   "declared_checksum": "md5:7a107f23791253bfcb2c58980020a4da",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

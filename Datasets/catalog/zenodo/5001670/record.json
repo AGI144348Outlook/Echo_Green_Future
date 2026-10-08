@@ -1,0 +1,62 @@
+{
+ "id": "zenodo:5001670",
+ "title": "Data from: Correction for bias in meta-analysis of little-replicated studies",
+ "url": "https://zenodo.org/records/5001670",
+ "doi": "10.5061/dryad.5f4g6",
+ "description": "1.\tMeta-analyses conventionally weight study estimates on the inverse of their error variance, in order to maximize precision. Unbiased variability in the estimates of these study-level error variances increases with the inverse of study-level replication. Here we demonstrate how this variability accumulates asymmetrically across studies in precision-weighted meta-analysis, to cause undervaluation of the meta-level effect size or its error variance (the meta-effect and meta-variance).\n2.\tSmall samples, typical of the ecological literature, induce big sampling errors in variance estimation, which substantially bias precision-weighted meta-analysis. Simulations revealed that biases differed little between random- and fixed-effects tests. Meta-estimation of a one-sample mean from 20 studies, with sample sizes of 3 to 20 observations, undervalued the meta-variance by ~20%. Meta-analysis of two-sample designs from 20 studies, with sample sizes of 3 to 10 observations, undervalued the meta-variance by 15-20% for the log response ratio (lnR);  it undervalued the meta-effect by ~10% for the standardised mean difference (SMD).\n3.\tFor all estimators, biases were eliminated or reduced by a simple adjustment to the weighting on study precision. The study-specific component of error variance prone to sampling error and not parametrically attributable to study-specific replication was replaced by its cross-study mean, on the assumption of random sampling from the same population variance for all studies, and sufficient studies for averaging. Weighting each study by the inverse of this mean-adjusted error variance universally improved accuracy in estimation of both the meta-effect and its significance, regardless of number of studies. For comparison, weighting only on sample size gave the same improvement in accuracy, but could not sensibly estimate significance.\n4.\tFor the one-sample mean and two-sample lnR, adjusted weighting also improved estimation of between-study variance by",
+ "found_by_keywords": [
+  "Harappan script"
+ ],
+ "topic_section": "indus valley script",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/5001670",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 3,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2022-05-30T11:31:44.234346+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-zero",
+   "normalized": "cc-zero",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'Harappan script'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:2f117b0490472d2119960c33a4a429f5d8a603f298cc338128ba1d8c699d52f7",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:29:26+00:00",
+ "files": [
+  {
+   "name": "Doncaster&Spake_Data_S1.txt",
+   "url": "https://zenodo.org/api/records/5001670/files/Doncaster&Spake_Data_S1.txt/content",
+   "declared_size": 22118,
+   "declared_checksum": "md5:d5962d026d88f9616881b2659db78057",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "Doncaster&Spake_Data_S2.txt",
+   "url": "https://zenodo.org/api/records/5001670/files/Doncaster&Spake_Data_S2.txt/content",
+   "declared_size": 5101,
+   "declared_checksum": "md5:133d11a3e1045fa8101f41efdd36af24",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zenodo:3257146",
+ "title": "arabic-digital-humanities/root-extraction-validation-data: 0.1.0",
+ "url": "https://zenodo.org/records/3257146",
+ "doi": "10.5281/zenodo.3257146",
+ "description": "<p>Dataset for evaluating root extraction</p>\n\n<p>This dataset contains data to evaluate the roots extracted by Arabic stemmers and morphological analyzers.</p>\n\n<p>The dataset was created in the context of the <a href=\"https://www.esciencecenter.nl/project/bridging-the-gap\">Bridging the Gap project</a>.</p>\n\n<p>The <code>txt</code> directory contains the text files for which roots were extracted, and <code>gs</code> contains csv files with columns <code>word</code> and <code>root</code>, containing the words from the text and the manually corrected roots. If multiple roots apply, they have been separated using a backslash (<code>\\</code>). If the word is a letter, the root is <code>#</code>.</p>\n\n<p>The text files have been analyzed using <a href=\"http://arabic.emi.ac.ma/safar/\">SAFAR</a>, using <a href=\"https://github.com/arabic-digital-humanities/research-scripts\">our software</a>. The directories <code>khoja</code>, <code>isri</code>, and <code>alkhalil</code> contain the output xml files.</p>\n\n<p>License</p>\n\n<p>&nbsp;</p>\n\n<p>The data in this repository is licensed under a <a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>.</p>\n\n<ul>\n\t<li>The text fragments have been taken from the <a href=\"https://alraqmiyyat.github.io/OpenITI/\">OpenITI project</a>.</li>\n\t<li>The stopword list was created by Maksim Abdul Latif.</li>\n</ul>",
+ "found_by_keywords": [
+  "word roots"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/3257146",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "0.1.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2020-01-21T07:23:14.664251+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'word roots'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:3827b14e705b8d8c81f4b2568bb5492804d3ccc56086497c18101aa882d3f1d7",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:19:52+00:00",
+ "files": [
+  {
+   "name": "arabic-digital-humanities/root-extraction-validation-data-0.1.0.zip",
+   "url": "https://zenodo.org/api/records/3257146/files/arabic-digital-humanities/root-extraction-validation-data-0.1.0.zip/content",
+   "declared_size": 744291,
+   "declared_checksum": "md5:61820c8ed5634bee5b1f0733913ea9f2",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

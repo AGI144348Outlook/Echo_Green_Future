@@ -1,0 +1,80 @@
+{
+ "id": "huggingface:hellosindh/indus-script-synthetic",
+ "title": "hellosindh/indus-script-synthetic",
+ "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\tSynthetic Indus Script Dataset\n\t\n\nThis dataset contains 5,000 synthetic Indus Script sequences produced by a two-stage training and generation pipeline built on 3,310 real archaeological inscriptions.\nStage 1 — Train on real inscriptions:\nFour models were trained independently on the 3,310 real sequences. TinyBERT was trained as both a masked language model (predicting missing signs) and a sequence classifier (valid vs corrupted). An N-gram RTL model was trained to learn right-to-left… See the full description on the dataset page: https://huggingface.co/datasets/hellosindh/indus-script-synthetic.",
+ "found_by_keywords": [
+  "Indus script"
+ ],
+ "topic_section": "indus valley script",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "e455cfc7e9069ade81ce994b47b7a7533308627e",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-04-10T23:57:12.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'Indus script'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:81b5d111a59fb3bdb911cc6c0459c1402ddb8d87a48447662f015aafc4fa17f4",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:21:17+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic/resolve/e455cfc7e9069ade81ce994b47b7a7533308627e/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic/resolve/e455cfc7e9069ade81ce994b47b7a7533308627e/README.md",
+   "declared_size": 8615,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "reference/sign_index.json",
+   "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic/resolve/e455cfc7e9069ade81ce994b47b7a7533308627e/reference/sign_index.json",
+   "declared_size": 140867,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "synthetic_indus_5k.csv",
+   "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic/resolve/e455cfc7e9069ade81ce994b47b7a7533308627e/synthetic_indus_5k.csv",
+   "declared_size": 746845,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

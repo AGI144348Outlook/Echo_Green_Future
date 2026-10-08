@@ -1,0 +1,818 @@
+{
+ "id": "huggingface:Rapidata/world-model-physics-human-preference-283k",
+ "title": "Rapidata/world-model-physics-human-preference-283k",
+ "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tRapidata Physics Benchmark\n\t\n\nBuilt by Rapidata.\nDo video and world models understand physics? We gave 25 video- and world models the same\nreal-world starting frame and scene description from Physics-IQ and asked\nthem to predict what happens next. ~283,000 human votes, collected with the\nRapidata Python SDK, decided which continuation is more realistic — with the\nreal recording competing as a hidden 26th participant.\nEach row is a head-to-head matchup between two participants on… See the full description on the dataset page: https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k.",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "cf0e0724866405b3b7fb8faae3e59b9f7569138b",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-09-16T16:08:47.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:03f2ad4f4120055f785a104009b6b92d704a78cdccc47d4248880b38791e911b",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:53+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/README.md",
+   "declared_size": 28717,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00000-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00000-of-00043.parquet",
+   "declared_size": 213699,
+   "declared_checksum": "sha256:ddc7d0449e5a89f973090eb4fe8ff7e868ff1db1ef7253b0094f590cd26673ca",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00001-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00001-of-00043.parquet",
+   "declared_size": 210321,
+   "declared_checksum": "sha256:978609adbeb88366fa1387ac8e6fc5a28ec9bac02ed378a7ef3a21271f423748",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00002-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00002-of-00043.parquet",
+   "declared_size": 213567,
+   "declared_checksum": "sha256:945063fbb798bafb65905906f00a1261abc376f5adebda70cb88721a45fac548",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00003-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00003-of-00043.parquet",
+   "declared_size": 213036,
+   "declared_checksum": "sha256:356a1d75abc4b0b849a0ac62db4d61174e8bee10f487b11002635cd0665a8ec8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00004-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00004-of-00043.parquet",
+   "declared_size": 219173,
+   "declared_checksum": "sha256:d01f03d5d30755a4d680f7feecf995d57b5f9bbb0a2f811554f52ac513a8ab55",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00005-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00005-of-00043.parquet",
+   "declared_size": 221740,
+   "declared_checksum": "sha256:970316be891dc5d5982d3534134274e4e11d598a7535e9c8351139bf591c7294",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00006-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00006-of-00043.parquet",
+   "declared_size": 212389,
+   "declared_checksum": "sha256:38d275f399c26e3b4c418048b4554f5429df9594e58ffa9157023216566a90e2",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00007-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00007-of-00043.parquet",
+   "declared_size": 208452,
+   "declared_checksum": "sha256:051edc7429772aa90a7a33275b1a902efdf3bc9081bda2a98fac4441a0ce3e8a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00008-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00008-of-00043.parquet",
+   "declared_size": 207796,
+   "declared_checksum": "sha256:e2966d1c8aad65d70f1771299f2b3dceb825570d49ca5f79bb673c4d7df80828",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00009-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00009-of-00043.parquet",
+   "declared_size": 210186,
+   "declared_checksum": "sha256:f3326b5291ba9cd2a2991f1afa2a139596b9bb17a35aa370279b3c941b345d86",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00010-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00010-of-00043.parquet",
+   "declared_size": 210505,
+   "declared_checksum": "sha256:4fc98f9221f6e93ebbe93ffc6f20d5d3bc9f8f7f6eb23e2b0a712c6c764b3cb6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00011-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00011-of-00043.parquet",
+   "declared_size": 211375,
+   "declared_checksum": "sha256:405d4bff4c1490d3a490f2c042f3c783b64d421a8f7b97d6161cbb535182600b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00012-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00012-of-00043.parquet",
+   "declared_size": 209822,
+   "declared_checksum": "sha256:2a111db8f926145d0f8016e1898c0f16434368022fec1a8034eb8a83f656a838",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00013-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00013-of-00043.parquet",
+   "declared_size": 463521,
+   "declared_checksum": "sha256:f20c91aff080755a17b0c8dd55431f4a98ac2d397f853b6dff49410607259b80",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00014-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00014-of-00043.parquet",
+   "declared_size": 477195,
+   "declared_checksum": "sha256:654e80f5f0123671420be601678640eea6ae4ed7bf4cfa778e2066a3e9a882a4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00015-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00015-of-00043.parquet",
+   "declared_size": 280043,
+   "declared_checksum": "sha256:93d698246efbfb1d76dd84f565e1a9743fb6b71088876236a6bd58774e1bf006",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00016-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00016-of-00043.parquet",
+   "declared_size": 282287,
+   "declared_checksum": "sha256:451dd8ba51d617b357307567df40fde96d5e62ccc62df67a52cce79c102ce643",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00017-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00017-of-00043.parquet",
+   "declared_size": 283641,
+   "declared_checksum": "sha256:7a827843bb816cee2e2eede3d7ef010a818d0d275b2e872f5814661f87c63030",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00018-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00018-of-00043.parquet",
+   "declared_size": 248230,
+   "declared_checksum": "sha256:bf540435ad87bab7316f2729c257d93c131b4d61a4a4d21234423ad4f6026cdf",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00019-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00019-of-00043.parquet",
+   "declared_size": 201417,
+   "declared_checksum": "sha256:3b25de9ddf59266f3a4c8f41d93b2e629bf2e75732d005b20807630583e6229b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00020-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00020-of-00043.parquet",
+   "declared_size": 200955,
+   "declared_checksum": "sha256:6a42affa22d09b4e6e4469ce140e3ba4d4938d572411f9daa19a89c4ed219c85",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00021-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00021-of-00043.parquet",
+   "declared_size": 200046,
+   "declared_checksum": "sha256:9842f65f85bf46b92f048bd11ee251ca64b3d6a5aed4bf5710972e833a95003e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00022-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00022-of-00043.parquet",
+   "declared_size": 201863,
+   "declared_checksum": "sha256:c76d9cf147fb0aa3e454039f9a8d576b7de76c19c267e000fa74d4a8ca67543d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00023-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00023-of-00043.parquet",
+   "declared_size": 201419,
+   "declared_checksum": "sha256:286b8063ef125a8dd1452ae004defd1510cb233732f91203ce7241b12a2d7069",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00024-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00024-of-00043.parquet",
+   "declared_size": 201649,
+   "declared_checksum": "sha256:9ae719691fe2a724a55798efbe8f898486948a2d1c02e2621a89e0e34941dde0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00025-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00025-of-00043.parquet",
+   "declared_size": 199796,
+   "declared_checksum": "sha256:8e554eebcb383b579c4b28f176bc85a0cfa20f157b879931ee816b2d09f1383f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00026-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00026-of-00043.parquet",
+   "declared_size": 207036,
+   "declared_checksum": "sha256:94bee8ae40978dfa1ea50029608e9269c8cc0f56edb15433f09376e87f3f221f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00027-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00027-of-00043.parquet",
+   "declared_size": 199611,
+   "declared_checksum": "sha256:39a9451c937e51a7db5498ec3fd612f1d1b86276f7568cc0f711e400f859ba23",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00028-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00028-of-00043.parquet",
+   "declared_size": 195594,
+   "declared_checksum": "sha256:370b437c87d62e34ff779f5ab022b697b1e8fd126a480381e9d3c649b449e783",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00029-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00029-of-00043.parquet",
+   "declared_size": 319200,
+   "declared_checksum": "sha256:9e0869c1f69283cdc74ca39c14b088a64fc6b9595f01e17d47fd99a20c709cc9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00030-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00030-of-00043.parquet",
+   "declared_size": 343220,
+   "declared_checksum": "sha256:bcf6df397010000500aceba9b955ee35ccfc70af438542c4c18a71ad6671add5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00031-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00031-of-00043.parquet",
+   "declared_size": 210433,
+   "declared_checksum": "sha256:c9e553ac9050f766b52b68a5987bc37c4fa974593bc01e771fe6f0dff481dc00",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00032-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00032-of-00043.parquet",
+   "declared_size": 201137,
+   "declared_checksum": "sha256:aa46af09399b19b05816425cb0961bb911e7ae1042aa07b25e2e244ee0624db0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00033-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00033-of-00043.parquet",
+   "declared_size": 191070,
+   "declared_checksum": "sha256:22009d9ef1b534fe424214f331b064692c06d0fc3a4a58c8013941c27b53e6df",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00034-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00034-of-00043.parquet",
+   "declared_size": 187851,
+   "declared_checksum": "sha256:dd4b3ce92ec9d8cdea137a4ef896a00878213cfa8ddc1f235410946ad9196842",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00035-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00035-of-00043.parquet",
+   "declared_size": 274086,
+   "declared_checksum": "sha256:31df4683545825ec22a7f70da9488e0a8bc5d37619a3dcb3e5209c9b439e85d0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00036-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00036-of-00043.parquet",
+   "declared_size": 202713,
+   "declared_checksum": "sha256:e9ea8c7524a2885609df6640486577f7433aa5d542c5fbb3978de72f11fcbd81",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00037-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00037-of-00043.parquet",
+   "declared_size": 188750,
+   "declared_checksum": "sha256:4cd714fb66e89534f5d5f9f27395da24b83a54559f8d97f7c0a5fc165de870d4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00038-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00038-of-00043.parquet",
+   "declared_size": 188443,
+   "declared_checksum": "sha256:88c63aaef1280a85a26d9f64506667c89fffad22836d3882e15bec1364ae6f93",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00039-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00039-of-00043.parquet",
+   "declared_size": 197640,
+   "declared_checksum": "sha256:0710693a439ec36c1dfa0182d0c45a4c085ab7a1755262aa94cd29133f99e97d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00040-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00040-of-00043.parquet",
+   "declared_size": 187207,
+   "declared_checksum": "sha256:073325f1f66f9852bd8e5b0ab277dcce4ff1d190ba224644ae1c55fae5141512",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00041-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00041-of-00043.parquet",
+   "declared_size": 186824,
+   "declared_checksum": "sha256:e46b672c315ac921e0147dc6e112a80b8a0a8382869c82b285639cf17b5ccdb3",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-00042-of-00043.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-00042-of-00043.parquet",
+   "declared_size": 61882,
+   "declared_checksum": "sha256:c8aa2bb61209e2d76df8b88c9a6084e31d880a01b8086238c25425746e77d8d1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-append-hfa1vkiajsosr2si5-00000.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-append-hfa1vkiajsosr2si5-00000.parquet",
+   "declared_size": 187463,
+   "declared_checksum": "sha256:f085b1cfc5d500ac9365ce90f3fce1cb88179ee06a8d307fea7ee340aafd7719",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-append-hfa1vkiajsosr2si5-00001.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-append-hfa1vkiajsosr2si5-00001.parquet",
+   "declared_size": 187226,
+   "declared_checksum": "sha256:051207a01162cebcccd757b744dfaa1acd1ee3ef41099aa5ef57baab55348fad",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/train-append-hfa1vkiajsosr2si5-00002.parquet",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/data/train-append-hfa1vkiajsosr2si5-00002.parquet",
+   "declared_size": 183934,
+   "declared_checksum": "sha256:b510e2980436d4446f4cc31f6e55d3e3ca2035e87ce58987d90e8cb79c35cc54",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/blind_0083_shadow.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/blind_0083_shadow.gif",
+   "declared_size": 1482422,
+   "declared_checksum": "sha256:08e36e8d503e5458bea591a24b692f3c311ceb9882a79a15c0b46dad8dbeb97a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/blind_0125_mug.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/blind_0125_mug.gif",
+   "declared_size": 1500873,
+   "declared_checksum": "sha256:a98c843e2ad1b8abd90f15786a510eb9e8cb970a1472cd54c77b49fa59ab9bdb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/blind_0191_kettlebell.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/blind_0191_kettlebell.gif",
+   "declared_size": 1579833,
+   "declared_checksum": "sha256:bd9b502af961b73f4d4696fc8458771d51a8f3e3bb7fa19f82c15c7fcf6ebcc6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/dreamxworld_0017.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/dreamxworld_0017.mp4",
+   "declared_size": 520713,
+   "declared_checksum": "sha256:2318e1b57888278564fa4da3e7766d1218869107132f909121080573b0ebd740",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/gemini11flash_0191.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/gemini11flash_0191.mp4",
+   "declared_size": 400197,
+   "declared_checksum": "sha256:a4c3f8c981dbef06fc7042319430cf03315654e445c463b0bccb3f996393be0b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/geminiflash_0083.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/geminiflash_0083.mp4",
+   "declared_size": 411608,
+   "declared_checksum": "sha256:0bab92876b89714c22df91ca748326628feef7857ee3b42d4c5bd1bee782996d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/grok15_0170.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/grok15_0170.mp4",
+   "declared_size": 482577,
+   "declared_checksum": "sha256:200e27d5e53e80a8755b9577dddae04f73a94aeaa58a7953e38a7cb26c413af8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/gt_0017.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/gt_0017.mp4",
+   "declared_size": 100893,
+   "declared_checksum": "sha256:96f34f01922b7e2beed62c02fb29df50be144007f7222382e2227d31f449f25e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/gt_0164.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/gt_0164.mp4",
+   "declared_size": 228122,
+   "declared_checksum": "sha256:f5797a640f370e3819138825446cadfd8b3805cc241b07b299f3c458b636e6ed",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/kling26_0083.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/kling26_0083.mp4",
+   "declared_size": 298972,
+   "declared_checksum": "sha256:0221910026d3c0d28e012f2796d129b2522b76ea8fadc25240e773cc234facf0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/kling30_0083.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/kling30_0083.mp4",
+   "declared_size": 403335,
+   "declared_checksum": "sha256:25ee199acf8715ce6926e8af1fad59b11241e82a995b7294d0a80b86b7ee8e11",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/minimaxh3_0164.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/minimaxh3_0164.mp4",
+   "declared_size": 499379,
+   "declared_checksum": "sha256:ca3c8252d25f8ffe9602aab26b21330bcc75494b32ada71a33405bccb37cbc2e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/ref_0008.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/ref_0008.mp4",
+   "declared_size": 120056,
+   "declared_checksum": "sha256:c431b93b67ea6dd215a9794e13ed75e2da5f2559d422bb4653572eeda51e40f9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/ref_0110.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/ref_0110.mp4",
+   "declared_size": 169111,
+   "declared_checksum": "sha256:488db79f075f10ddf44401ed2f89b26a2943d7a04687850e7643e0ef5736dbc8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/ref_0143.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/ref_0143.mp4",
+   "declared_size": 211053,
+   "declared_checksum": "sha256:4e6c92366a98436cbc3d23553178e92d50d486eb1527f4a99499300414289f70",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/ref_0170.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/ref_0170.mp4",
+   "declared_size": 375892,
+   "declared_checksum": "sha256:ea6e9cdf136d003bc9c485bc564207168b86d3175146dbdbc85d655286d17f9c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/seedance20_0143.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/seedance20_0143.mp4",
+   "declared_size": 306776,
+   "declared_checksum": "sha256:9f12b1f66e4d730fe36eb51daa7b9d28be7dc769b5fdb90b157cc31d7ea4c042",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/seedance25_0008.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/seedance25_0008.mp4",
+   "declared_size": 180996,
+   "declared_checksum": "sha256:f61fc30b8a3349cbfba5d8ce048baba714b8e1e2c986fd9c28ee6bdcc2bcc92c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/seedance25_0083.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/seedance25_0083.mp4",
+   "declared_size": 340973,
+   "declared_checksum": "sha256:50424bda1039cd8befb683ef5e5d3b8ae5412d1230d537d69aa3a19266b31830",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/seedance25_0110.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/seedance25_0110.mp4",
+   "declared_size": 201591,
+   "declared_checksum": "sha256:48e90103c5f745169d03eee93d0504d5f8e4c5dcb5d02d1e39809beab57a61bb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/veo31fast_0008.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/veo31fast_0008.mp4",
+   "declared_size": 211160,
+   "declared_checksum": "sha256:99da66c6a2fad50eb4a760c5eb0656628497a1e5bc86f16057465c598244801a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/veo31fast_0125.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/veo31fast_0125.mp4",
+   "declared_size": 755855,
+   "declared_checksum": "sha256:c1ba5c09c9796866760299de9efbe9cee8ff57ef418a9bfe70e284bbc6a83bd7",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/vidu_0143.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/vidu_0143.mp4",
+   "declared_size": 371292,
+   "declared_checksum": "sha256:608e23554e9e248ff403fc4588f8a3957f2669926ce3414512a48d024f6002fe",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/wan25_0191.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/wan25_0191.mp4",
+   "declared_size": 553101,
+   "declared_checksum": "sha256:15963d240ef14051c8ddba613b41ceae5fa5389eeda49da526ff1b6b5926a705",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/wan26_0125.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/wan26_0125.mp4",
+   "declared_size": 396258,
+   "declared_checksum": "sha256:d69622315c619a6ca823bd58888c83be9120c523d389451fbbddfc80fed522f7",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/wan27_0170.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/wan27_0170.mp4",
+   "declared_size": 610919,
+   "declared_checksum": "sha256:3b29bf8df0d198fdb8c58c666633db0b5b643d471366884cfd13e7078eabcafc",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/clips/wan30_0110.mp4",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/clips/wan30_0110.mp4",
+   "declared_size": 621914,
+   "declared_checksum": "sha256:f3e33231968760ba1fe4ea14ab7bb6f99148ff2bafb04d30610bf8285618f435",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/elo_blind_vs_reference.png",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/elo_blind_vs_reference.png",
+   "declared_size": 293909,
+   "declared_checksum": "sha256:cbf88d7feaae0f5f8c58afac9790ffe061c94a6c3ceb90906d96f4d8a4aac50a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/gt_0017_sand.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/gt_0017_sand.gif",
+   "declared_size": 1653837,
+   "declared_checksum": "sha256:5ac64c504ecfed127d6dee96a93b0ae42409ea60292dde15eb372180bcf2fa75",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/gt_0164_matches.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/gt_0164_matches.gif",
+   "declared_size": 1551243,
+   "declared_checksum": "sha256:11054245290807a5d4964032e5c8ca97f49162d3a065745baeece20950082926",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/head_to_head.png",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/head_to_head.png",
+   "declared_size": 198467,
+   "declared_checksum": "sha256:3100d33d61fc04d44cc5eee6f4bd1d24162ec83eb99194b71b1390266d261a2c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/how_it_works.png",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/how_it_works.png",
+   "declared_size": 184492,
+   "declared_checksum": "sha256:0f83d73bebcb0fbe295bb0f89ea94193c02113c80dcb3b95fd0a09ec65d241a0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/leaderboard.png",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/leaderboard.png",
+   "declared_size": 316628,
+   "declared_checksum": "sha256:872ca6d85a3aec2f9da661f9b5821dbd3cff1d9dfbd5fe9aba840f021dc9597b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/ref_0008_ducky.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/ref_0008_ducky.gif",
+   "declared_size": 1059913,
+   "declared_checksum": "sha256:f5a319cfa2b0e180ad331f17d5e9a55b2fa2c9eae809aaead022a476b0dd5e02",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/ref_0110_match.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/ref_0110_match.gif",
+   "declared_size": 2087596,
+   "declared_checksum": "sha256:e6bb800846d564fbe7b1bb1a7c2d58a1aaf5ca22481501132f9770b2cf0f1a0e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/ref_0170_magnet.gif",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/ref_0170_magnet.gif",
+   "declared_size": 2221887,
+   "declared_checksum": "sha256:1b10cf11eaaf4e0fff40ca1b227b98e6ab430d0913aa3a1cd1984d4c01110ba0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/score_vs_cost.png",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/score_vs_cost.png",
+   "declared_size": 151143,
+   "declared_checksum": "sha256:e40bfc98879ea3a3e3af6915349409718d2f8e83cbbd60c0caf41b02312e0360",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "media/switch_frame_0191.jpg",
+   "url": "https://huggingface.co/datasets/Rapidata/world-model-physics-human-preference-283k/resolve/cf0e0724866405b3b7fb8faae3e59b9f7569138b/media/switch_frame_0191.jpg",
+   "declared_size": 43245,
+   "declared_checksum": "sha256:dfca8ced3c6ba13505975f23d10555983acc99fb5a2b4e6212a3082c84c45625",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

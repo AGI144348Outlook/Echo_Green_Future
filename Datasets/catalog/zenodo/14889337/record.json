@@ -1,0 +1,872 @@
+{
+ "id": "zenodo:14889337",
+ "title": "A Near-Real-Time Data-Assimilative Model of the Solar Corona",
+ "url": "https://zenodo.org/records/14889337",
+ "doi": "10.5281/zenodo.14889337",
+ "description": "<p>This archive contains the magnetohydrodynamic (MHD) modeling materials associated with the publication:</p>\n<p>\"A Near-Real Time Data-Assimilative Model of the Solar Corona\"</p>\n<p><em>Science</em>, 388:1306-1310,&nbsp;<strong>2025</strong>, DOI:&nbsp;<a href=\"https://doi.org/10.1126/science.adq0872\" target=\"_blank\" rel=\"noopener\">10.1126/science.adq0872</a></p>\n<p>Cooper Downs, Jon A. Linker, Ronald M. Caplan, Emily I. Mason, Pete Riley, Ryder Davidson, Andres Reyes, Erika Palmerio, Roberto Lionello, James Turtle, Michal Ben-Nun, Miko M. Stulajter, Viacheslav S. Titov, Tibor T&ouml;r&ouml;k, Lisa A. Upton, Raphael Attie, Bibhuti K. Jha, Charles N. Arge, Carl J. Henney, Gherardo Valori, Hanna Strecker, Daniele Calchetti, Dietmar Germerott, Johann Hirzberger, David Orozco Su&aacute;rez, Julian Blanco Rodr&iacute;guez, Sami K. Solanki, Xin Cheng, Sizhe Wu</p>\n<p>This archive is intended for transparency and reproducibility purposes. It contains the MHD model source code, run inputs, run outputs, synthetic&nbsp;observables, and example python scripts for working with the model data. This includes data from the MHD calculation and the surface flux transport calculation used to create the magnetic boundary conditions for MHD model.</p>\n<p>See below for more information on each of the subfolders in this archive. Folders A, F, and I together contain all files required for recreating the MHD calculation.</p>\n<h1>Contents</h1>\n<p>The subfolders are organized as follows:</p>\n<h3>A_MAS_source_and_example_run</h3>\n<p>This folder contains the the high-performance MHD code \"Magnetohydrodynamic Algorithm outside a Sphere\" (MAS) and associated files. MAS is written in Fortran. The dependencies are very straightforward. See <code>README_MAS.txt</code> and the associated Makefile for compilation instructions.</p>\n<p>It also contains a working MAS input file and other files that can be used to&nbsp;begin and repeat the time-evolving MHD calculation.&nbsp;See&nbsp;<code>run_example/",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/14889337",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "1.0.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2025-06-24T22:29:42.212584+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-nc-nd-4.0",
+   "normalized": "cc-by-nc",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:5e006376c71cfccc40a45960ad69cb40764c2246dbd6150d38b96fb78adcbe94",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:43+00:00",
+ "files": [
+  {
+   "name": "C2_run_index_mhd_subset.ecsv",
+   "url": "https://zenodo.org/api/records/14889337/files/C2_run_index_mhd_subset.ecsv/content",
+   "declared_size": 6541,
+   "declared_checksum": "md5:534b2ab56471bb895aab564c04026897",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "A_MAS_source_and_example_run.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/A_MAS_source_and_example_run.zip/content",
+   "declared_size": 424759,
+   "declared_checksum": "md5:8699ac176059f786e31c9f86623dcecf",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "B_data_readers.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/B_data_readers.zip/content",
+   "declared_size": 7100,
+   "declared_checksum": "md5:b591b402b5844b23cabad44412751077",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "C1_run_index_full.ecsv",
+   "url": "https://zenodo.org/api/records/14889337/files/C1_run_index_full.ecsv/content",
+   "declared_size": 61189,
+   "declared_checksum": "md5:7eb386bbba20c129308d1280a6212fe3",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "LICENSE",
+   "url": "https://zenodo.org/api/records/14889337/files/LICENSE/content",
+   "declared_size": 19126,
+   "declared_checksum": "md5:dfd05ee1d586a3ba5da11d8cc332ada6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "J_mhd_steady_state_001970.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/J_mhd_steady_state_001970.zip/content",
+   "declared_size": 2145872982,
+   "declared_checksum": "md5:d0d4e0859847f4a060b62aa4b4ddf5b6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "F_boundary_data.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/F_boundary_data.zip/content",
+   "declared_size": 1114975094,
+   "declared_checksum": "md5:0ce574dec679e500adaa54e0e16f4a9d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "I_mhd_restart.h5",
+   "url": "https://zenodo.org/api/records/14889337/files/I_mhd_restart.h5/content",
+   "declared_size": 7511317352,
+   "declared_checksum": "md5:74d447d69f76a9b2ef6202e765130e04",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002276.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002276.zip/content",
+   "declared_size": 2145302935,
+   "declared_checksum": "md5:95b8476f95d15178d2fd439d807fe682",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001892.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001892.zip/content",
+   "declared_size": 2146553456,
+   "declared_checksum": "md5:da695d78fe21644a951cdd67183d7385",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002012.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002012.zip/content",
+   "declared_size": 2146702256,
+   "declared_checksum": "md5:261ddc16734895dc5e18adb2878f98d4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001970.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001970.zip/content",
+   "declared_size": 2146874069,
+   "declared_checksum": "md5:794252c609784ddc1dab52a4036970b1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002363.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002363.zip/content",
+   "declared_size": 2144990237,
+   "declared_checksum": "md5:cbf28254bd2690ca777829dcbb221240",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002060.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002060.zip/content",
+   "declared_size": 2145380290,
+   "declared_checksum": "md5:cb0df7f2f713f9bd9b5357cf5111bfa2",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002215.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002215.zip/content",
+   "declared_size": 2145326538,
+   "declared_checksum": "md5:10663ba458592fb7a6afd89cf5cac7fb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002135.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002135.zip/content",
+   "declared_size": 2145252473,
+   "declared_checksum": "md5:1f9742e00cb4a8818540efaba0b3dfa8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002349.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002349.zip/content",
+   "declared_size": 2145098316,
+   "declared_checksum": "md5:ed632bb03b6ab351437ba1aef7f54b9b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002358.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002358.zip/content",
+   "declared_size": 2145056781,
+   "declared_checksum": "md5:7b35dd7c5713f2587bf6ab78a63813fc",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002367.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002367.zip/content",
+   "declared_size": 2144895287,
+   "declared_checksum": "md5:0cb2aa46f18d866b6e696ccefc7757e8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002241.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002241.zip/content",
+   "declared_size": 2145276268,
+   "declared_checksum": "md5:1f2535e5fb636fb20032f43da5acbf52",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001844.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001844.zip/content",
+   "declared_size": 2146830573,
+   "declared_checksum": "md5:ace24f03f8b5676063028d8cfa87ea9f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002530.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002530.zip/content",
+   "declared_size": 2144917088,
+   "declared_checksum": "md5:4dd462b014958a80cffc531d6b290b69",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001916.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001916.zip/content",
+   "declared_size": 2146849498,
+   "declared_checksum": "md5:cab94972b9c0c1b9a2f25324c3382d83",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "E_hipft_data.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/E_hipft_data.zip/content",
+   "declared_size": 1528041735,
+   "declared_checksum": "md5:aac1cf5bff2f54e65b374e34143320d8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001868.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001868.zip/content",
+   "declared_size": 2146771690,
+   "declared_checksum": "md5:cc765f32620f433a3fec8950cc28375a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001989.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001989.zip/content",
+   "declared_size": 2146667193,
+   "declared_checksum": "md5:1afc8ee77426b2ffe843ac27e3b258a1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002042.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002042.zip/content",
+   "declared_size": 2146251059,
+   "declared_checksum": "md5:e2bbe10973f1682cd03fc6c5116f22b9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002049.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002049.zip/content",
+   "declared_size": 2145661999,
+   "declared_checksum": "md5:c7869a1f40270e7a73b18685f50a6532",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001940.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001940.zip/content",
+   "declared_size": 2146747566,
+   "declared_checksum": "md5:e546b2dcd0d10f1fae635c23d2c905f4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002023.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002023.zip/content",
+   "declared_size": 2146282978,
+   "declared_checksum": "md5:f0589be05dbf4462eddfe070d10f9a40",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001979.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001979.zip/content",
+   "declared_size": 2146414224,
+   "declared_checksum": "md5:755030be164033ee75ab3560ff2dee73",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001988.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001988.zip/content",
+   "declared_size": 2146671876,
+   "declared_checksum": "md5:4cc5f07dfa7325349d797d137a575752",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002061.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002061.zip/content",
+   "declared_size": 2145419916,
+   "declared_checksum": "md5:1e00af0591cb3080e77eacb9d4f81ebc",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002067.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002067.zip/content",
+   "declared_size": 2145245618,
+   "declared_checksum": "md5:b6b68968fb9350ac5b98ad41b145086d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002233.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002233.zip/content",
+   "declared_size": 2145395884,
+   "declared_checksum": "md5:3157080366ecf0e4020f11e12a80ee5b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002108.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002108.zip/content",
+   "declared_size": 2145707884,
+   "declared_checksum": "md5:6c69dc00bdbe590b49980d9f625761df",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002063.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002063.zip/content",
+   "declared_size": 2145278501,
+   "declared_checksum": "md5:57a42b3940cb44080d5eea4049cf24e9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002065.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002065.zip/content",
+   "declared_size": 2145103415,
+   "declared_checksum": "md5:2a07c2ce5eb798cb67ed80d904209b7b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002156.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002156.zip/content",
+   "declared_size": 2145127149,
+   "declared_checksum": "md5:3923a7ecfde86f75214d72f7a0bd6db0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002219.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002219.zip/content",
+   "declared_size": 2145360035,
+   "declared_checksum": "md5:ffd15dc2cdafb3a2a5556a80c052f440",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002227.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002227.zip/content",
+   "declared_size": 2145527685,
+   "declared_checksum": "md5:ca3fdc045af0ea9e361ad52ef33e0cf7",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002252.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002252.zip/content",
+   "declared_size": 2145403309,
+   "declared_checksum": "md5:66cd181e6c6d2bd21e61fabdeac4b337",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002348.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002348.zip/content",
+   "declared_size": 2145016343,
+   "declared_checksum": "md5:777ebb66e1bb7d6e78ab3883d9bc49b1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002228.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002228.zip/content",
+   "declared_size": 2145526431,
+   "declared_checksum": "md5:24383e16cfb1a387136256eaa7853406",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002180.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002180.zip/content",
+   "declared_size": 2145398614,
+   "declared_checksum": "md5:156492a1105e2df364c1296155e4e5fe",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002359.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002359.zip/content",
+   "declared_size": 2145005324,
+   "declared_checksum": "md5:80b23aa0f544d6772efe4552e7da8c07",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002361.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002361.zip/content",
+   "declared_size": 2145066019,
+   "declared_checksum": "md5:aca491b24d1ef5ed0375b441f4190adb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002249.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002249.zip/content",
+   "declared_size": 2145294093,
+   "declared_checksum": "md5:17fdbae6257965f38d68cf128f925d33",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002350.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002350.zip/content",
+   "declared_size": 2145120279,
+   "declared_checksum": "md5:891f861b91fc178969041be93d5b895f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002264.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002264.zip/content",
+   "declared_size": 2145408331,
+   "declared_checksum": "md5:63cd4b4d271039a0a1623da28a82e36a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002351.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002351.zip/content",
+   "declared_size": 2145068535,
+   "declared_checksum": "md5:95acc7aa5f030cf8a8ba2fc90761a470",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002324.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002324.zip/content",
+   "declared_size": 2145039076,
+   "declared_checksum": "md5:8db9b533e85fe70aa621f0a5531d0acf",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002355.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002355.zip/content",
+   "declared_size": 2145033947,
+   "declared_checksum": "md5:7b3554cb2aed1cc5bd6d17147dc0cf91",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002357.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002357.zip/content",
+   "declared_size": 2145067273,
+   "declared_checksum": "md5:27e7221704338477c006232a3ac61afe",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002362.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002362.zip/content",
+   "declared_size": 2144998331,
+   "declared_checksum": "md5:9ad4d23efd99b34d29ff2203f310886c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002364.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002364.zip/content",
+   "declared_size": 2144942615,
+   "declared_checksum": "md5:edd859ee1ed6ec9b1ce07bed2f392d01",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002365.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002365.zip/content",
+   "declared_size": 2144911513,
+   "declared_checksum": "md5:06c6f8e9b37c354909b1f1378ac36571",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002369.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002369.zip/content",
+   "declared_size": 2144864571,
+   "declared_checksum": "md5:7d2911b90748e6bba77df786400676a1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002468.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002468.zip/content",
+   "declared_size": 2144811692,
+   "declared_checksum": "md5:45977ff9f1816d744ab67867351f5649",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002371.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002371.zip/content",
+   "declared_size": 2144724835,
+   "declared_checksum": "md5:2adf838f8c9469af4989dcb16dbc2f62",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002420.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002420.zip/content",
+   "declared_size": 2144710549,
+   "declared_checksum": "md5:0bd3d98182c201a7d7559c65838b5a6d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002564.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002564.zip/content",
+   "declared_size": 2146314825,
+   "declared_checksum": "md5:167ba2c0451fa0c3499ca8d0f01e167a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "G_fits_data.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/G_fits_data.zip/content",
+   "declared_size": 13240697700,
+   "declared_checksum": "md5:a6949c7e01e8e0bb34ddcb25b4f70dde",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "J_mhd_steady_state_002204.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/J_mhd_steady_state_002204.zip/content",
+   "declared_size": 2144057015,
+   "declared_checksum": "md5:963addbbb8e52189a68eea98eb783329",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "J_mhd_steady_state_002372.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/J_mhd_steady_state_002372.zip/content",
+   "declared_size": 2144041171,
+   "declared_checksum": "md5:41f1a3ed8f613eb618db7dd6f6090752",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002540.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002540.zip/content",
+   "declared_size": 2145172771,
+   "declared_checksum": "md5:8ea35f8e7517a78cccd1ea67d40990e6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002084.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002084.zip/content",
+   "declared_size": 2145469194,
+   "declared_checksum": "md5:ea46e310caf93bb9dd394c3a2e336c2c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002353.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002353.zip/content",
+   "declared_size": 2145043027,
+   "declared_checksum": "md5:70c1b673e288612cdd0783728e10c608",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002372.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002372.zip/content",
+   "declared_size": 2144818398,
+   "declared_checksum": "md5:2c1d79809e08e78158aa1658d328abd7",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002444.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002444.zip/content",
+   "declared_size": 2144755348,
+   "declared_checksum": "md5:5c58bed0af5f8916f93b5028e274d32e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002366.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002366.zip/content",
+   "declared_size": 2144872371,
+   "declared_checksum": "md5:e631ce44ff2df8a632169ced3f010297",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002370.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002370.zip/content",
+   "declared_size": 2144784435,
+   "declared_checksum": "md5:a53445d9b51ab8898408e89dea90f8ee",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002396.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002396.zip/content",
+   "declared_size": 2144805298,
+   "declared_checksum": "md5:12097d61cd0b94f8ff4ee38f7254a0c9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002492.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002492.zip/content",
+   "declared_size": 2145312155,
+   "declared_checksum": "md5:b3141b5f58ca8ece249d485786d45ad2",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002516.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002516.zip/content",
+   "declared_size": 2144704476,
+   "declared_checksum": "md5:4718d384888bf4aac09170e5f356948a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "D_magnetic_data.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/D_magnetic_data.zip/content",
+   "declared_size": 2782576891,
+   "declared_checksum": "md5:e40e5941eed217b6d8810b87efd40565",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002588.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002588.zip/content",
+   "declared_size": 2145442104,
+   "declared_checksum": "md5:44e02290dc4a88d61fe5b3a40971ae81",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002036.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002036.zip/content",
+   "declared_size": 2146393785,
+   "declared_checksum": "md5:bc734082601b510aa2574fc0478a1f0b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001820.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001820.zip/content",
+   "declared_size": 2147101118,
+   "declared_checksum": "md5:772f5311580d4545d72a087436dee595",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001961.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001961.zip/content",
+   "declared_size": 2146848010,
+   "declared_checksum": "md5:6f69701a8e38aea228187c8b8eaa9dd4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001964.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001964.zip/content",
+   "declared_size": 2146847948,
+   "declared_checksum": "md5:cf515737ca0a7d7fc432b6c6c3f841f3",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_001937.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_001937.zip/content",
+   "declared_size": 2146778760,
+   "declared_checksum": "md5:71c25f096070039b3e77441b89b92ac0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.txt",
+   "url": "https://zenodo.org/api/records/14889337/files/README.txt/content",
+   "declared_size": 6954,
+   "declared_checksum": "md5:ce52c1774d8f2917fb5a04ca6b447091",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002132.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002132.zip/content",
+   "declared_size": 2145087844,
+   "declared_checksum": "md5:463ed328b74dc10f7bba07426c3ab6a1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002204.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002204.zip/content",
+   "declared_size": 2145169753,
+   "declared_checksum": "md5:cfb176f548c1fdead235b48f9765fa52",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002127.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002127.zip/content",
+   "declared_size": 2144996800,
+   "declared_checksum": "md5:f0cf4f9a6e4035200493c04ba99fa5c4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002300.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002300.zip/content",
+   "declared_size": 2145177091,
+   "declared_checksum": "md5:2ab87672e28a578227c9246940312fbb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002356.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002356.zip/content",
+   "declared_size": 2145034706,
+   "declared_checksum": "md5:e9e16e0dc00dff96692384a4d9ae3709",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002352.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002352.zip/content",
+   "declared_size": 2145000354,
+   "declared_checksum": "md5:b955501f58dd585f68ca55b62067d846",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002354.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002354.zip/content",
+   "declared_size": 2145035653,
+   "declared_checksum": "md5:53896359976464bae9b0312f82b042f4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002368.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002368.zip/content",
+   "declared_size": 2144778242,
+   "declared_checksum": "md5:7c9942ad0c08b68e0c26817ba988e2fb",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "H_mhd_002360.zip",
+   "url": "https://zenodo.org/api/records/14889337/files/H_mhd_002360.zip/content",
+   "declared_size": 2145003023,
+   "declared_checksum": "md5:1ea1f80d5530ee52440adf7b0b838ee4",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

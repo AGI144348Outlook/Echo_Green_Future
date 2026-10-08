@@ -1,0 +1,62 @@
+{
+ "id": "datagov:http://datainventory.doi.gov/id/dataset/USGS_664cb465d34e1955f5a4f57e",
+ "title": "Grammar transformations of topographic feature type annotations of the U.S. to structured graph data.",
+ "url": "https://catalog.data.gov/dataset/grammar-transformations-of-topographic-feature-type-annotations-of-the-u-s-to-structured-g",
+ "doi": null,
+ "description": "These data were used to examine grammatical structures and patterns within a set of geospatial glossary definitions. Objectives of our study were to analyze the semantic structure of input definitions, use this information to build triple structures of RDF graph data, upload our lexicon to a knowledge graph software, and perform SPARQL queries on the data. Upon completion of this study, SPARQL queries were proven to effectively convey graph triples which displayed semantic significance. These data represent and characterize the lexicon of our input text which are used to form graph triples. These data were collected in 2024 by passing text through multiple Python programs utilizing spaCy (a natural language processing library) and its pre-trained English transformer pipeline. Before data was processed by the Python programs, input definitions were first rewritten as natural language and formatted as tabular data. Passages were then tokenized and characterized by their part-of-speech, tag, dependency relation, dependency head, and lemma. Each word within the lexicon was tokenized. A stop-words list was utilized only to remove punctuation and symbols from the text, excluding hyphenated words (ex. bowl-shaped) which remained as such. The tokens’ lemmas were then aggregated and totaled to find their recurrences within the lexicon. This procedure was repeated for tokenizing noun chunks using the same glossary definitions.",
+ "found_by_keywords": [
+  "lexicon"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://catalog.data.gov/dataset/grammar-transformations-of-topographic-feature-type-annotations-of-the-u-s-to-structured-g",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "2024-07-11T00:00:00Z",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2024-07-11T00:00:00Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": null,
+   "normalized": null,
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (datagov) for 'lexicon'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:94c9d451ce5e74da67b3546f18def160701c21bebe1d1a669da0baa938693f13",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:05+00:00",
+ "files": [
+  {
+   "name": "Digital Data",
+   "url": "https://doi.org/10.5066/P1BDPXKZ",
+   "declared_size": null,
+   "declared_checksum": null,
+   "format": "XML",
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "Original Metadata",
+   "url": "https://data.usgs.gov/datacatalog/metadata/USGS.664cb465d34e1955f5a4f57e.xml",
+   "declared_size": null,
+   "declared_checksum": null,
+   "format": "XML",
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

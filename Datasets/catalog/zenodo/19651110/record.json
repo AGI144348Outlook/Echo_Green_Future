@@ -1,0 +1,611 @@
+{
+ "id": "zenodo:19651110",
+ "title": "Dataset used for ethical discussions detection",
+ "url": "https://zenodo.org/records/19651110",
+ "doi": "10.5281/zenodo.19651110",
+ "description": "<p>This database contains the input and output files used for the analysis of ethical discussions in GenAI open-source repositories hosted on GitHub. The files are organized into six groups:</p>\n<ol>\n<li>\n<p><strong>Lexicons</strong> (<code>lexico*.csv</code>)</p>\n</li>\n<li>\n<p><strong>Anonymized datasets</strong> by repository after the final lexicon expansion (<code>*_crescimento.csv</code>)</p>\n</li>\n<li>\n<p><strong>Anonymized lists of terms</strong> by repository throughout the lexicon expansion stages (<code>*_base.csv</code>, <code>*_literatura-adhoc.csv</code>, <code>*_rsl-etico.csv</code>)</p>\n</li>\n<li><strong>Anonymized input files</strong> for BERTopic analysis before the final lexicon expansion (<code>*-bertopic.csv</code>)</li>\n<li>\n<p><strong>Anonymized input files</strong> for BERTopic analysis after the final lexicon expansion (<code>*_pre-expansao.csv</code>)</p>\n</li>\n<li>\n<p><strong>BERTopic outputs</strong> before the final expansion (<code>*_expansao*.csv</code>)</p>\n</li>\n<li>\n<p><strong>BERTopic outputs</strong> after the final expansion (<code>*_rsl*.csv</code>)</p>\n</li>\n</ol>",
+ "found_by_keywords": [
+  "lexicon"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/19651110",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 4,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-05-03T23:05:00.866985+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'lexicon'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:12d738a35ae437f1e2fd4cd906c37863a1028a0f6fc12241e5bd0cd693ad9124",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:19:55+00:00",
+ "files": [
+  {
+   "name": "deepseek-v3_base.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek-v3_base.csv/content",
+   "declared_size": 5937,
+   "declared_checksum": "md5:388ed5f5312cdb113498b63f9f46932a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_literatura-adhoc.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_literatura-adhoc.csv/content",
+   "declared_size": 2166,
+   "declared_checksum": "md5:92b6b499d6dfa20a293b32fbb4759889",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok-1_literatura-adhoc.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok-1_literatura-adhoc.csv/content",
+   "declared_size": 593,
+   "declared_checksum": "md5:0fb6b41a586a086d1457656915a8aba9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "lexico_base.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/lexico_base.csv/content",
+   "declared_size": 711,
+   "declared_checksum": "md5:acfd4ff30905f5037a336f0fbec795f6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_crescimento.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_crescimento.csv/content",
+   "declared_size": 407011,
+   "declared_checksum": "md5:d5818166ac5a46dbd2260194d1cf401d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_literatura-adhoc.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_literatura-adhoc.csv/content",
+   "declared_size": 8237,
+   "declared_checksum": "md5:778a402cc0ec646921144245324d0f91",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_rsl_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_rsl_invalidado-limpo.csv/content",
+   "declared_size": 2016038,
+   "declared_checksum": "md5:45fbbe7e05f399a6b14fc1d5022c8686",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok-1_rsl-etico.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok-1_rsl-etico.csv/content",
+   "declared_size": 864,
+   "declared_checksum": "md5:7bf7e0e839ee4ea60ddfd7ff66cb9fa5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_base.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_base.csv/content",
+   "declared_size": 7683,
+   "declared_checksum": "md5:a5e2d309ecaf3d34b352df2b5664004d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "lexico_rsl_expandido.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/lexico_rsl_expandido.csv/content",
+   "declared_size": 3693,
+   "declared_checksum": "md5:d8a3ec0b095096945d28cbb207e628d7",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2_literatura-adhoc.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2_literatura-adhoc.csv/content",
+   "declared_size": 1734,
+   "declared_checksum": "md5:1aa3372ba784df88d145a2cf8f95243b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_base.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_base.csv/content",
+   "declared_size": 1839,
+   "declared_checksum": "md5:0da9b85504833dfe7386697933dd295a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "lexico_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/lexico_rsl.csv/content",
+   "declared_size": 2916,
+   "declared_checksum": "md5:6c578f8669cd2aa2dd921e1f6d1c8ecf",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok-1_crescimento.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok-1_crescimento.csv/content",
+   "declared_size": 51292,
+   "declared_checksum": "md5:1862005596bf4a61044fe11a918412e1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3-bertopic.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3-bertopic.csv/content",
+   "declared_size": 1074823,
+   "declared_checksum": "md5:cd76b247afff6b34b44e08b37886fe35",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2_crescimento.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2_crescimento.csv/content",
+   "declared_size": 236527,
+   "declared_checksum": "md5:b16cb14faa39179e2d526ff185961c1f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "DeepSeek-V3_crescimento.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/DeepSeek-V3_crescimento.csv/content",
+   "declared_size": 1828258,
+   "declared_checksum": "md5:00fa6d9a9699de3fa2a9f59b9db5f110",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_crescimento.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_crescimento.csv/content",
+   "declared_size": 2253600,
+   "declared_checksum": "md5:193f841272af25369c536381331b74fc",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2_base.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2_base.csv/content",
+   "declared_size": 1441,
+   "declared_checksum": "md5:f3700a68564193da2fcf2a78793b83d3",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek-v3_literatura-adhoc.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek-v3_literatura-adhoc.csv/content",
+   "declared_size": 6820,
+   "declared_checksum": "md5:b8463457ff867a4b9a2445348bcf5e8f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek-v3_rsl-etico.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek-v3_rsl-etico.csv/content",
+   "declared_size": 22302,
+   "declared_checksum": "md5:f3ae33f996f0b84970d6cf4bebb06d05",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2_rsl-etico.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2_rsl-etico.csv/content",
+   "declared_size": 5924,
+   "declared_checksum": "md5:d1f5b138be69dba3e45087836a29ee63",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_rsl-etico.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_rsl-etico.csv/content",
+   "declared_size": 6908,
+   "declared_checksum": "md5:15683f08da2f06b1eb1069ac975e5bf8",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2-bertopic.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2-bertopic.csv/content",
+   "declared_size": 771808,
+   "declared_checksum": "md5:9b976496698e0a7d6cf1f64b3cb1e911",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_rsl-etico.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_rsl-etico.csv/content",
+   "declared_size": 29315,
+   "declared_checksum": "md5:51c3efdc6906e86f3a528e8d771d018b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok-1-bertopic.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok-1-bertopic.csv/content",
+   "declared_size": 107210,
+   "declared_checksum": "md5:b332aecfea2cd0ad28e504a0774c4fda",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "DeepSeek-V3-bertopic.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/DeepSeek-V3-bertopic.csv/content",
+   "declared_size": 2753197,
+   "declared_checksum": "md5:449980a355ac932be6242b9db98fb882",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama-bertopic.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama-bertopic.csv/content",
+   "declared_size": 5146631,
+   "declared_checksum": "md5:4b799bde08201b3407faa9318953b242",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3_expansao-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3_expansao-limpo.csv/content",
+   "declared_size": 880220,
+   "declared_checksum": "md5:433580ac65ba00bebac294c129d67fb5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2-limpo_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2-limpo_rsl.csv/content",
+   "declared_size": 317575,
+   "declared_checksum": "md5:fd6283b78a34adaef9bb62b65618865f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama-limpo_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama-limpo_rsl.csv/content",
+   "declared_size": 2144655,
+   "declared_checksum": "md5:d9c3881e5739202e8799b5dd4e86d49f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_expansao_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_expansao_validado-limpo.csv/content",
+   "declared_size": 1719,
+   "declared_checksum": "md5:a0b6bab616e2247259785fb3c7ee519a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_expansao-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_expansao-limpo.csv/content",
+   "declared_size": 2144655,
+   "declared_checksum": "md5:d9c3881e5739202e8799b5dd4e86d49f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2_expansao-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2_expansao-limpo.csv/content",
+   "declared_size": 317575,
+   "declared_checksum": "md5:fd6283b78a34adaef9bb62b65618865f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1_expansao_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1_expansao_validado-limpo.csv/content",
+   "declared_size": 1637,
+   "declared_checksum": "md5:c7891fd6cef0a0b4b9cd264384354d7e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2_expansao_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2_expansao_validado-limpo.csv/content",
+   "declared_size": 16444,
+   "declared_checksum": "md5:ff3325b687d1a8f4d9ab4f006b0058a0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3_expansao_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3_expansao_validado-limpo.csv/content",
+   "declared_size": 175548,
+   "declared_checksum": "md5:3844dbdf9e8d3cca2d02fa730bb8577a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2_expansao_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2_expansao_invalidado-limpo.csv/content",
+   "declared_size": 301149,
+   "declared_checksum": "md5:2fd321b0dc069fba0e84be5f673368bd",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_expansao_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_expansao_validado-limpo.csv/content",
+   "declared_size": 128635,
+   "declared_checksum": "md5:11737195b08b57b61c33e9efb3d535ee",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1_expansao_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1_expansao_invalidado-limpo.csv/content",
+   "declared_size": 37464,
+   "declared_checksum": "md5:20e782d453ce7bee526943785329ccc9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3_expansao_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3_expansao_invalidado-limpo.csv/content",
+   "declared_size": 704690,
+   "declared_checksum": "md5:1e5f3830ac8eae09ac3ff1748f5e375e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1_rsl_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1_rsl_invalidado-limpo.csv/content",
+   "declared_size": 37464,
+   "declared_checksum": "md5:20e782d453ce7bee526943785329ccc9",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3_rsl_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3_rsl_invalidado-limpo.csv/content",
+   "declared_size": 704690,
+   "declared_checksum": "md5:1e5f3830ac8eae09ac3ff1748f5e375e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_expansao_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_expansao_invalidado-limpo.csv/content",
+   "declared_size": 2016038,
+   "declared_checksum": "md5:45fbbe7e05f399a6b14fc1d5022c8686",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_expansao-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_expansao-limpo.csv/content",
+   "declared_size": 445850,
+   "declared_checksum": "md5:7d78a1070877be231bf2fffaacc4f93b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1_expansao-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1_expansao-limpo.csv/content",
+   "declared_size": 39083,
+   "declared_checksum": "md5:aa9b8b124f40819f6fbb469eb3da70b6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_expansao_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_expansao_invalidado-limpo.csv/content",
+   "declared_size": 444149,
+   "declared_checksum": "md5:7b8e23f52ef85af11458e64fd955979d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_rsl_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_rsl_validado-limpo.csv/content",
+   "declared_size": 128635,
+   "declared_checksum": "md5:11737195b08b57b61c33e9efb3d535ee",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1-limpo_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1-limpo_rsl.csv/content",
+   "declared_size": 39083,
+   "declared_checksum": "md5:aa9b8b124f40819f6fbb469eb3da70b6",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3-limpo_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3-limpo_rsl.csv/content",
+   "declared_size": 880220,
+   "declared_checksum": "md5:433580ac65ba00bebac294c129d67fb5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3-limpo_rsl.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3-limpo_rsl.csv/content",
+   "declared_size": 445850,
+   "declared_checksum": "md5:7d78a1070877be231bf2fffaacc4f93b",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "deepseek_v3_rsl_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/deepseek_v3_rsl_validado-limpo.csv/content",
+   "declared_size": 175548,
+   "declared_checksum": "md5:3844dbdf9e8d3cca2d02fa730bb8577a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2_rsl_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2_rsl_invalidado-limpo.csv/content",
+   "declared_size": 302708,
+   "declared_checksum": "md5:b1c4adebda457aefc553233f3d1805dc",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt_2_rsl_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt_2_rsl_validado-limpo.csv/content",
+   "declared_size": 14885,
+   "declared_checksum": "md5:b66c07b18f90776e5760b41a5dd90a38",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_rsl_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_rsl_validado-limpo.csv/content",
+   "declared_size": 1719,
+   "declared_checksum": "md5:a0b6bab616e2247259785fb3c7ee519a",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok_1_rsl_validado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok_1_rsl_validado-limpo.csv/content",
+   "declared_size": 1637,
+   "declared_checksum": "md5:c7891fd6cef0a0b4b9cd264384354d7e",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_rsl_invalidado-limpo.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_rsl_invalidado-limpo.csv/content",
+   "declared_size": 444149,
+   "declared_checksum": "md5:7b8e23f52ef85af11458e64fd955979d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "grok-1_pre-expansao.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/grok-1_pre-expansao.csv/content",
+   "declared_size": 107172,
+   "declared_checksum": "md5:92fd31dbc00a4ee4079d14090ad163e0",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "DeepSeek-V3_pre-expansao.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/DeepSeek-V3_pre-expansao.csv/content",
+   "declared_size": 2752851,
+   "declared_checksum": "md5:65a8da1d296426cd46cd7124ea1ff781",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama3_pre-expansao.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama3_pre-expansao.csv/content",
+   "declared_size": 1074865,
+   "declared_checksum": "md5:098a136f70488e2682f9bbb044a1df5f",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "llama_pre-expansao.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/llama_pre-expansao.csv/content",
+   "declared_size": 5146272,
+   "declared_checksum": "md5:c3fa7933ed8d2474484217b6d89db496",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "gpt-2_pre-expansao.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/gpt-2_pre-expansao.csv/content",
+   "declared_size": 771630,
+   "declared_checksum": "md5:ffb3ea73c4128c11274b03fc4e88c7b1",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "lexico_literatura.csv",
+   "url": "https://zenodo.org/api/records/19651110/files/lexico_literatura.csv/content",
+   "declared_size": 1842,
+   "declared_checksum": "md5:855931d76b53b13f0bb9aa4c341120d5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

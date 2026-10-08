@@ -1,0 +1,5201 @@
+{
+ "id": "huggingface:OpenMOSS-Team/SWE-bench-Science",
+ "title": "OpenMOSS-Team/SWE-bench-Science",
+ "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tSWE-bench Science\n\t\n\nSWE-bench Science evaluates coding agents on software-engineering tasks drawn from scientific-computing repositories. The release contains 119 tasks across 20 scientific domains, with isolated environments and separate programmatic verifiers.\n\nGitHub release repository: OpenMOSS/SWE-bench-Science\nRuntime images: Docker Hub, pinned by immutable linux/amd64 digests\nEvaluation framework: Pier, compatible with Harbor task format\n\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Summary… See the full description on the dataset page: https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "997408298e8e4d09978b1120b95c4540d1a71bcb",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-01T16:50:26.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "mit",
+   "normalized": "mit",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:f355a955f72a965764012cb735b9f59021826d2fd618927de8983b6212846631",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:41+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "NOTICE.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/NOTICE.md",
+   "declared_size": 2830,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/README.md",
+   "declared_size": 9589,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/statistics.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/data/statistics.md",
+   "declared_size": 6225,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "data/tasks.csv",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/data/tasks.csv",
+   "declared_size": 78473,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "docs/run-batch.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/docs/run-batch.md",
+   "declared_size": 12546,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "manifests/release_provenance.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/manifests/release_provenance.json",
+   "declared_size": 2018,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "manifests/tasks.jsonl",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/manifests/tasks.jsonl",
+   "declared_size": 218893,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "profiles/claude.env.example",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/profiles/claude.env.example",
+   "declared_size": 188,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "profiles/codex.env.example",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/profiles/codex.env.example",
+   "declared_size": 237,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "profiles/mini-swe-agent.env.example",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/profiles/mini-swe-agent.env.example",
+   "declared_size": 156,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/materialize.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/materialize.py",
+   "declared_size": 5917,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/pier_adapters.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/pier_adapters.py",
+   "declared_size": 567,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/pier_network.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/pier_network.py",
+   "declared_size": 9177,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/provider_config.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/provider_config.py",
+   "declared_size": 3304,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/run_batch.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/run_batch.py",
+   "declared_size": 15735,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "scripts/summarize_results.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/scripts/summarize_results.py",
+   "declared_size": 4178,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "selections/all-119.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/selections/all-119.json",
+   "declared_size": 1369,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "selections/default-96.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/selections/default-96.json",
+   "declared_size": 1117,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/environment/Dockerfile",
+   "declared_size": 2143,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/instruction.md",
+   "declared_size": 1004,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/metadata.json",
+   "declared_size": 857,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/task.toml",
+   "declared_size": 1104,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/tests/Dockerfile",
+   "declared_size": 406,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_001/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_001/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/instruction.md",
+   "declared_size": 557,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/metadata.json",
+   "declared_size": 826,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/task.toml",
+   "declared_size": 1100,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_002/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_002/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/instruction.md",
+   "declared_size": 1337,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/metadata.json",
+   "declared_size": 818,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/task.toml",
+   "declared_size": 1107,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_003/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_003/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/environment/Dockerfile",
+   "declared_size": 2195,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/instruction.md",
+   "declared_size": 1213,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/metadata.json",
+   "declared_size": 781,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/task.toml",
+   "declared_size": 1077,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/tests/Dockerfile",
+   "declared_size": 249,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_004/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_004/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/instruction.md",
+   "declared_size": 1114,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/metadata.json",
+   "declared_size": 773,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/task.toml",
+   "declared_size": 1078,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/tests/Dockerfile",
+   "declared_size": 261,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_005/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_005/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/environment/Dockerfile",
+   "declared_size": 2195,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/instruction.md",
+   "declared_size": 833,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/metadata.json",
+   "declared_size": 789,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/task.toml",
+   "declared_size": 1091,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/tests/Dockerfile",
+   "declared_size": 249,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_006/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_006/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/instruction.md",
+   "declared_size": 1054,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/metadata.json",
+   "declared_size": 808,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/task.toml",
+   "declared_size": 1114,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_007/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_007/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/instruction.md",
+   "declared_size": 928,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/metadata.json",
+   "declared_size": 871,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/task.toml",
+   "declared_size": 1140,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_008/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_008/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/instruction.md",
+   "declared_size": 1179,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/metadata.json",
+   "declared_size": 858,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/task.toml",
+   "declared_size": 1127,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_009/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_009/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/instruction.md",
+   "declared_size": 696,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/metadata.json",
+   "declared_size": 835,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/task.toml",
+   "declared_size": 1104,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_010/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_010/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/instruction.md",
+   "declared_size": 1553,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/metadata.json",
+   "declared_size": 821,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/task.toml",
+   "declared_size": 1090,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_011/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_011/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/instruction.md",
+   "declared_size": 1398,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/metadata.json",
+   "declared_size": 826,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/task.toml",
+   "declared_size": 1095,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_012/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_012/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/instruction.md",
+   "declared_size": 1772,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/metadata.json",
+   "declared_size": 865,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/task.toml",
+   "declared_size": 1134,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_013/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_013/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/instruction.md",
+   "declared_size": 2160,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/metadata.json",
+   "declared_size": 787,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/task.toml",
+   "declared_size": 1108,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_014/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_014/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/instruction.md",
+   "declared_size": 1125,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/metadata.json",
+   "declared_size": 798,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/task.toml",
+   "declared_size": 1110,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/tests/Dockerfile",
+   "declared_size": 261,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_015/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_015/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/instruction.md",
+   "declared_size": 1409,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/metadata.json",
+   "declared_size": 831,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/task.toml",
+   "declared_size": 1133,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/tests/Dockerfile",
+   "declared_size": 261,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_016/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_016/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/instruction.md",
+   "declared_size": 1102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/metadata.json",
+   "declared_size": 766,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/task.toml",
+   "declared_size": 1058,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_017/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_017/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/environment/Dockerfile",
+   "declared_size": 2126,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/instruction.md",
+   "declared_size": 1733,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/metadata.json",
+   "declared_size": 832,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/task.toml",
+   "declared_size": 1146,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/tests/Dockerfile",
+   "declared_size": 261,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_018/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_018/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/instruction.md",
+   "declared_size": 1968,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/metadata.json",
+   "declared_size": 874,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/task.toml",
+   "declared_size": 1133,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_019/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_019/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/instruction.md",
+   "declared_size": 2729,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/metadata.json",
+   "declared_size": 1020,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/task.toml",
+   "declared_size": 1130,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_020/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_020/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/instruction.md",
+   "declared_size": 1318,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/metadata.json",
+   "declared_size": 864,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/task.toml",
+   "declared_size": 1119,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_021/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_021/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/instruction.md",
+   "declared_size": 1500,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/metadata.json",
+   "declared_size": 786,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/task.toml",
+   "declared_size": 1101,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_022/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_022/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/instruction.md",
+   "declared_size": 1771,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/metadata.json",
+   "declared_size": 828,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/task.toml",
+   "declared_size": 1101,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_023/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_023/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/environment/Dockerfile",
+   "declared_size": 2131,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/instruction.md",
+   "declared_size": 1176,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/metadata.json",
+   "declared_size": 811,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/task.toml",
+   "declared_size": 1114,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_024/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_024/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/instruction.md",
+   "declared_size": 1017,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/metadata.json",
+   "declared_size": 835,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/task.toml",
+   "declared_size": 1131,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/tests/Dockerfile",
+   "declared_size": 261,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_025/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_025/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/instruction.md",
+   "declared_size": 1033,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/metadata.json",
+   "declared_size": 920,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/task.toml",
+   "declared_size": 1115,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_026/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_026/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/environment/Dockerfile",
+   "declared_size": 2159,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/instruction.md",
+   "declared_size": 2239,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/metadata.json",
+   "declared_size": 812,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/task.toml",
+   "declared_size": 1110,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_027/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_027/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/instruction.md",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/metadata.json",
+   "declared_size": 849,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/task.toml",
+   "declared_size": 1133,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_028/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_028/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/instruction.md",
+   "declared_size": 1567,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/metadata.json",
+   "declared_size": 837,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/task.toml",
+   "declared_size": 1128,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_029/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_029/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/instruction.md",
+   "declared_size": 1448,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/metadata.json",
+   "declared_size": 843,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/task.toml",
+   "declared_size": 1132,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_030/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_030/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/environment/public/MATERIALS.json",
+   "declared_size": 1327,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1057,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/instruction.md",
+   "declared_size": 1809,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/metadata.json",
+   "declared_size": 957,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/task.toml",
+   "declared_size": 1126,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_031/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_031/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/environment/public/MATERIALS.json",
+   "declared_size": 3124,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 2733,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/instruction.md",
+   "declared_size": 804,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/metadata.json",
+   "declared_size": 1107,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/task.toml",
+   "declared_size": 1102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_032/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_032/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/environment/public/MATERIALS.json",
+   "declared_size": 1676,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1348,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/instruction.md",
+   "declared_size": 1002,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/metadata.json",
+   "declared_size": 972,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/task.toml",
+   "declared_size": 1121,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_033/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_033/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/environment/public/MATERIALS.json",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1405,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/instruction.md",
+   "declared_size": 930,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/metadata.json",
+   "declared_size": 980,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/task.toml",
+   "declared_size": 1106,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_034/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_034/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/environment/public/MATERIALS.json",
+   "declared_size": 2358,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 2023,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/instruction.md",
+   "declared_size": 1024,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/metadata.json",
+   "declared_size": 1246,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/task.toml",
+   "declared_size": 1094,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_035/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_035/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/environment/public/MATERIALS.json",
+   "declared_size": 1122,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 861,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/instruction.md",
+   "declared_size": 946,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/metadata.json",
+   "declared_size": 989,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/task.toml",
+   "declared_size": 1116,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_036/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_036/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/environment/public/MATERIALS.json",
+   "declared_size": 2311,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1920,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/instruction.md",
+   "declared_size": 888,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/metadata.json",
+   "declared_size": 960,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/task.toml",
+   "declared_size": 1101,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_037/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_037/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/environment/public/MATERIALS.json",
+   "declared_size": 2118,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1725,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/instruction.md",
+   "declared_size": 1183,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/metadata.json",
+   "declared_size": 977,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/task.toml",
+   "declared_size": 1071,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/tests/Dockerfile",
+   "declared_size": 249,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_038/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_038/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/environment/public/MATERIALS.json",
+   "declared_size": 1669,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1339,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/instruction.md",
+   "declared_size": 1101,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/metadata.json",
+   "declared_size": 973,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/task.toml",
+   "declared_size": 1103,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_039/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_039/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/environment/public/MATERIALS.json",
+   "declared_size": 1180,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 917,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/instruction.md",
+   "declared_size": 1525,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/metadata.json",
+   "declared_size": 980,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/task.toml",
+   "declared_size": 1111,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_040/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_040/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/environment/public/MATERIALS.json",
+   "declared_size": 1680,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1354,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/instruction.md",
+   "declared_size": 1090,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/metadata.json",
+   "declared_size": 966,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/task.toml",
+   "declared_size": 1101,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_041/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_041/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/environment/public/MATERIALS.json",
+   "declared_size": 1960,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1565,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/instruction.md",
+   "declared_size": 1364,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/metadata.json",
+   "declared_size": 992,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/task.toml",
+   "declared_size": 1106,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_042/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_042/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/environment/public/MATERIALS.json",
+   "declared_size": 1783,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1457,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/instruction.md",
+   "declared_size": 1015,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/metadata.json",
+   "declared_size": 947,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/task.toml",
+   "declared_size": 1103,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_043/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_043/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/environment/public/MATERIALS.json",
+   "declared_size": 1195,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 932,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/instruction.md",
+   "declared_size": 897,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/metadata.json",
+   "declared_size": 969,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/task.toml",
+   "declared_size": 1103,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_044/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_044/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/environment/public/MATERIALS.json",
+   "declared_size": 2392,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 2001,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/instruction.md",
+   "declared_size": 2165,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/metadata.json",
+   "declared_size": 973,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/task.toml",
+   "declared_size": 1125,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_045/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_045/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/environment/public/MATERIALS.json",
+   "declared_size": 2137,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/instruction.md",
+   "declared_size": 864,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/metadata.json",
+   "declared_size": 966,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/task.toml",
+   "declared_size": 1103,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_046/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_046/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/environment/public/MATERIALS.json",
+   "declared_size": 1326,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1065,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/instruction.md",
+   "declared_size": 1109,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/metadata.json",
+   "declared_size": 1025,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/task.toml",
+   "declared_size": 1102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_047/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_047/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/environment/Dockerfile",
+   "declared_size": 2204,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/environment/public/MATERIALS.json",
+   "declared_size": 1595,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1269,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/instruction.md",
+   "declared_size": 1420,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/metadata.json",
+   "declared_size": 960,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/task.toml",
+   "declared_size": 1061,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_048/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_048/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/environment/public/MATERIALS.json",
+   "declared_size": 1130,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 869,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/instruction.md",
+   "declared_size": 1900,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/metadata.json",
+   "declared_size": 949,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/task.toml",
+   "declared_size": 1114,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_049/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_049/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/environment/public/MATERIALS.json",
+   "declared_size": 1205,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 942,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/instruction.md",
+   "declared_size": 962,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/metadata.json",
+   "declared_size": 937,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/task.toml",
+   "declared_size": 1065,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_050/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_050/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/environment/Dockerfile",
+   "declared_size": 2178,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/environment/public/MATERIALS.json",
+   "declared_size": 1504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1176,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/instruction.md",
+   "declared_size": 1008,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/metadata.json",
+   "declared_size": 971,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/task.toml",
+   "declared_size": 1113,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/tests/Dockerfile",
+   "declared_size": 255,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_051/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_051/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/environment/public/MATERIALS.json",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1414,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/instruction.md",
+   "declared_size": 903,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/metadata.json",
+   "declared_size": 1046,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/task.toml",
+   "declared_size": 1105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_052/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_052/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/environment/Dockerfile",
+   "declared_size": 2162,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/environment/public/MATERIALS.json",
+   "declared_size": 1069,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 808,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/instruction.md",
+   "declared_size": 1739,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/metadata.json",
+   "declared_size": 975,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/task.toml",
+   "declared_size": 1114,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_053/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_053/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/environment/public/MATERIALS.json",
+   "declared_size": 1649,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1323,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/instruction.md",
+   "declared_size": 1167,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/metadata.json",
+   "declared_size": 935,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/task.toml",
+   "declared_size": 1113,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_054/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_054/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/environment/Dockerfile",
+   "declared_size": 2105,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/environment/public/MATERIALS.json",
+   "declared_size": 1507,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1179,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/instruction.md",
+   "declared_size": 973,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/metadata.json",
+   "declared_size": 952,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/task.toml",
+   "declared_size": 1099,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/tests/grader.py",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/tests/grader.py",
+   "declared_size": 2948,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_055/tests/test.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_055/tests/test.sh",
+   "declared_size": 202,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/environment/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/environment/Dockerfile",
+   "declared_size": 2102,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/environment/public/MATERIALS.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/environment/public/MATERIALS.json",
+   "declared_size": 2170,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/environment/public/MATERIALS_LICENSES.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/environment/public/MATERIALS_LICENSES.md",
+   "declared_size": 1777,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/instruction.md",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/instruction.md",
+   "declared_size": 1890,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/metadata.json",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/metadata.json",
+   "declared_size": 930,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/pre_artifacts.sh",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/pre_artifacts.sh",
+   "declared_size": 744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/task.toml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/task.toml",
+   "declared_size": 1106,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/tests/Dockerfile",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/tests/Dockerfile",
+   "declared_size": 254,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "tasks/task_056/tests/docker-compose.yaml",
+   "url": "https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science/resolve/997408298e8e4d09978b1120b95c4540d1a71bcb/tasks/task_056/tests/docker-compose.yaml",
+   "declared_size": 135,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

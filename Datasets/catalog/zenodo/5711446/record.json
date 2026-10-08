@@ -1,0 +1,89 @@
+{
+ "id": "zenodo:5711446",
+ "title": "Global Biotic Interactions: Elton Dataset Cache Museum of Southwestern Biology and dependencies",
+ "url": "https://zenodo.org/records/5711446",
+ "doi": "10.5281/zenodo.5711446",
+ "description": "<p>Global Biotic Interactions: Elton Dataset Cache Museum for Southwestern Biology and dependencies</p>\n\n<p>The intended use of this archive/cache is to allow for offline-enabled access versions of existing species interaction datasets. The program &quot;Elton&quot; (https://doi.org/10.5281/zenodo.998263) was used to populate the content of elton-datasets.tar.gz . The same program can be used to extract information from the cache archive also. Global Biotic Interactions (https://globalbioticinteractions.org,&nbsp;https://doi.org/10.1016/j.ecoinf.2014.08.005) also uses these archives to create derived species interaction data archives, search indexes&nbsp;and APIs.</p>\n\n<p>Please note that due to size considerations, offline-enabled access to an elton dataset cache of iNaturalist interaction data has been excluded from this publications and moved into a separate Zenodo publication at https://doi.org/10.5281/zenodo.3950546 .</p>\n\n<p>Contents<br>\n--------</p>\n\n<p>README:<br>\nthis file</p>\n\n<p>elton-datasets.tar.gz:<br>\nversioned archive with species interaction datasets</p>\n\n<p>elton-datasets.tar.sha256:<br>\ncontent signature of elton-datasets.tar</p>\n\n<p>elton-datasets.tsv:<br>\nlist of included datasets</p>\n\n<p>elton.jar:<br>\ncommandline program to help access the species interaction datasets</p>\n\n<p>Usage<br>\n-----</p>\n\n<p>To install, extract elton-datasets.tar.gz into a directory of choice using:</p>\n\n<p>tar xfz elton-dataset.tar.gz</p>\n\n<p>To use, download elton.jar included&nbsp;this publication and execute the following to get a list of available datasets:</p>\n\n<p>java -Xmx4G -jar elton.jar datasets</p>\n\n<p>on a system that has java v8+ installed.</p>\n\n<p>If all goes well, you should be able to regenerate the included file elton-dataset.tsv .</p>\n\n<p>For more information on how to use elton.jar, execute:</p>\n\n<p>java -jar elton.jar usage</p>\n\n<p>or visit https://github.com/globalbioticinteractions/elton for more available commands.</p>\n\n<p>Alternatively, without ",
+ "found_by_keywords": [
+  "biology"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/5711446",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "0.1",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2021-11-23T17:11:04.338904+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-zero",
+   "normalized": "cc-zero",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'biology'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:31afa1525874ccab1e8a8f73a2bc229a99e3d8f185e26557c0d3fa13d061d875",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:55+00:00",
+ "files": [
+  {
+   "name": "elton.jar",
+   "url": "https://zenodo.org/api/records/5711446/files/elton.jar/content",
+   "declared_size": 32027748,
+   "declared_checksum": "md5:288e6669a2f86c45f6c4f844d19f0923",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "elton-datasets.tar.gz",
+   "url": "https://zenodo.org/api/records/5711446/files/elton-datasets.tar.gz/content",
+   "declared_size": 19742108092,
+   "declared_checksum": "md5:5ab1c096053a98c88144d84f155a0794",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "elton-datasets.tsv",
+   "url": "https://zenodo.org/api/records/5711446/files/elton-datasets.tsv/content",
+   "declared_size": 357,
+   "declared_checksum": "md5:6aeaa17dc66c713445c30dbd246276e3",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README",
+   "url": "https://zenodo.org/api/records/5711446/files/README/content",
+   "declared_size": 12578,
+   "declared_checksum": "md5:32cb7722c6da609434439c827bba91ec",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "elton-datasets.tar.gz.sha256",
+   "url": "https://zenodo.org/api/records/5711446/files/elton-datasets.tar.gz.sha256/content",
+   "declared_size": 65,
+   "declared_checksum": "md5:5f896bc52834dfac09d05323889eadc5",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

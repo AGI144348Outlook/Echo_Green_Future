@@ -1,0 +1,98 @@
+{
+ "id": "huggingface:nvidia/Nemotron-SFT-Science-v2",
+ "title": "nvidia/Nemotron-SFT-Science-v2",
+ "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset Description:\n\t\n\nNemotron-Science-v2 is a science reasoning dataset with synthetic (synthetic MCQ, RQA) and non-synthetic vendor problems and LLM-generated solutions. It comprises three domains (Physics, Biology, and Chemistry), two question formats (multiple-choice questions [MCQ] and open questions [OpenQ]), and three generation setups: chain-of-thought (CoT) reasoning without tools, Python tool usage, and search tools usage with the Tavily API.\nThe solutions were… See the full description on the dataset page: https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "6536a5021222a94126968e8c92f29ee47fc8a7df",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-06-04T04:50:29.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-sa-4.0",
+   "normalized": "cc-by-sa",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:8736959a637aaec59ada0672c5817db52c232ef2482427a19a3e10734f451607",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:41+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/.gitattributes",
+   "declared_size": 2694,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/README.md",
+   "declared_size": 3439,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "rqa.jsonl",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/rqa.jsonl",
+   "declared_size": 9534379615,
+   "declared_checksum": "sha256:2679a7673bf009af0fa8f4e8871f975a7b247583da390dba700de17be02a4f65",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "so.jsonl",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/so.jsonl",
+   "declared_size": 15941758748,
+   "declared_checksum": "sha256:7cccf3c84219a829ad2edb07de7e5ba52004ccf2f6ad21f4008ac24b878db6bd",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "syn_mcq.jsonl",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/syn_mcq.jsonl",
+   "declared_size": 569824996,
+   "declared_checksum": "sha256:966b1ecd6b60563e432b7839de5e8a1c98ba77dcf874a974285bc5988192de5d",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "vendor.jsonl",
+   "url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-Science-v2/resolve/6536a5021222a94126968e8c92f29ee47fc8a7df/vendor.jsonl",
+   "declared_size": 26639470663,
+   "declared_checksum": "sha256:e23f6f5615c2fc0e69483124ff08aa613462efd2f69c80e27a1113a246a04d05",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

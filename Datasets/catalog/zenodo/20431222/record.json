@@ -1,0 +1,62 @@
+{
+ "id": "zenodo:20431222",
+ "title": "Aerial survey counts of ice-associated seals in the eastern Bering Sea (U.S. waters) in April and May of 2012 and 2013",
+ "url": "https://zenodo.org/records/20431222",
+ "doi": "10.5281/zenodo.20431222",
+ "description": "<p>This data set consists of aerial survey counts of 4 species of ice-associated seals: bearded seals (Erignathus barbatus), ribbon seals (Histriophoca fasciata), ringed seals (Pusa hispida), and spotted seals (Phoca largha) obtained in April and May of 2012 and 2013.&nbsp; These surveys used a combination of thermal and color imagery to detect the warm bodies of seals resting on sea ice, with associated color imagery used to determine species (see Conn et al. 2014 for details).&nbsp; Aerial survey effort and counts were discretized into a grid, each cell of which was approximately 625 km^2.&nbsp; However, typically only small portions of each grid cell were surveyed, since the effective strip width of aerial survey transects was approximately 470 m.&nbsp;&nbsp;</p>\n<p>Data are summarized in a comma delimited .csv file, with the following columns (fields)</p>\n<ol>\n<li>Grid cell ID</li>\n<li>Minimum latitude of grid cell</li>\n<li>Maximum latitude of grid cell</li>\n<li>Minimum longitude of grid cell</li>\n<li>Maximum longitude of grid cell</li>\n<li>Date-time string</li>\n<li>Flight ID string</li>\n<li>Proportion of grid cell surveyed (\"effort_prop\")</li>\n<li>Detection probability of thermal sensors/hot spot detection (\"p_detect\")</li>\n<li>Bearded seal count (\"bd\")</li>\n<li>Ribbon seal count (\"rn\")</li>\n<li>Ringed seal count (\"rd\")</li>\n<li>Spotted seal count (\"sd\")</li>\n<li>Unknown seal species count (e.g., because of blurry imagery) (\"unk\")</li>\n<li>Availability probability for bearded seals (a_bd)</li>\n<li>Availability probability for ribbon seals (a_bd)</li>\n<li>Availability probability for ringed seals (a_rd)</li>\n<li>Availability probability for spotted seals (a_sd)</li>\n</ol>\n<p>To model abundance, the product (effort_prop * p_detect * a_sp * p_b) would typically be used as a log-offset when modeling counts within a generalized modeling framework, where a_sp is availability probability for the species of interest, and p_b is the proportion of availabile seals who re",
+ "found_by_keywords": [
+  "Harappan seals"
+ ],
+ "topic_section": "indus valley script",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/20431222",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 4,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-08-25T23:33:18.255561+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'Harappan seals'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:bea64d344251786be3c781da94cc48b7acf2414aa21e09e280159f9dcf029858",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:33:29+00:00",
+ "files": [
+  {
+   "name": "US_Bering_seal_counts_2012.csv",
+   "url": "https://zenodo.org/api/records/20431222/files/US_Bering_seal_counts_2012.csv/content",
+   "declared_size": 243155,
+   "declared_checksum": "md5:847a515a1bd4c0a37928e2d61ed15a6c",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "US_Bering_seal_counts_2013.csv",
+   "url": "https://zenodo.org/api/records/20431222/files/US_Bering_seal_counts_2013.csv/content",
+   "declared_size": 291531,
+   "declared_checksum": "md5:74b4e4aefb7c3984109312028a993bce",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

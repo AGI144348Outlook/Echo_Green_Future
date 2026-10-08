@@ -1,0 +1,71 @@
+{
+ "id": "huggingface:income/cqadupstack-physics-top-20-gen-queries",
+ "title": "income/cqadupstack-physics-top-20-gen-queries",
+ "url": "https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\tNFCorpus: 20 generated queries (BEIR Benchmark)\n\t\n\nThis HF dataset contains the top-20 synthetic queries generated for each passage in the above BEIR benchmark dataset.\n\nDocT5query model used: BeIR/query-gen-msmarco-t5-base-v1\nid (str): unique document id in NFCorpus in the BEIR benchmark (corpus.jsonl).\nQuestions generated: 20\nCode used for generation: evaluate_anserini_docT5query_parallel.py\n\nBelow contains the old dataset card for the BEIR benchmark.\n\n\t\n\t\n\t\n\t\tDataset Card for BEIR… See the full description on the dataset page: https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries.",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "d00ec7b4129c7106a28a6b311ae5fdba2e45891a",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2023-01-24T19:52:41.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-sa-4.0",
+   "normalized": "cc-by-sa",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:c069a22f473765e3fcb6df42d3e3844f4c739b09a9082ab874ac69da06714b6a",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-08T06:20:53+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries/resolve/d00ec7b4129c7106a28a6b311ae5fdba2e45891a/.gitattributes",
+   "declared_size": 2265,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries/resolve/d00ec7b4129c7106a28a6b311ae5fdba2e45891a/README.md",
+   "declared_size": 27382,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  },
+  {
+   "name": "train.jsonl.gz",
+   "url": "https://huggingface.co/datasets/income/cqadupstack-physics-top-20-gen-queries/resolve/d00ec7b4129c7106a28a6b311ae5fdba2e45891a/train.jsonl.gz",
+   "declared_size": 7457435,
+   "declared_checksum": "sha256:d24679568304fe280b909bb8d4892a22a51b961672c2c46a79bc098618f5d491",
+   "format": null,
+   "stored": null,
+   "skipped": "dry run"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
