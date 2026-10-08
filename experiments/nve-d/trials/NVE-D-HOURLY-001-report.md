@@ -1,0 +1,19 @@
+# NVE-D Hourly Research 001 — 2026-10-08
+
+Executed a finite infrastructure probe with **405 runs and 1,518,750 completed generations** (3 source expressions × 3 synthetic candidate transition rules × 3 inner-loop depths × 3 seeds × 5 generation budgets). Budgets: 250, 1,000, 2,500, 5,000, 10,000; seeds: 7, 31, 97; depths: 0, 1, 3. Runtime: 3.7579 seconds, Python 3.13.5. Including replay, corrupted-checkpoint and independent-reference work, **4,556,250 transition invocations**.
+
+**Measured:** 405/405 checkpoint replays `=`; 405/405 independently written reference calculations `=`; 405/405 source snapshots preserved `=`; 405/405 corrupted checkpoints detected `=`. In 135 matched configurations, all three hand-authored candidate rules gave distinct final states. Semantic comparisons `0`: no supported interpretation or ordering of the source symbols.
+
+**Source expressions preserved:** `(?):(?)::(?):(?)::|#|::(?):(?)::(?):(?)::#::(?)`; `|{(a<b):(c>d)::(e<d):(f>g)}| :: |x| :: |{(?):(?)::(?):(?)}|`; `.......←.......#.......→.......`.
+
+**Step 5 DFE:** Relative to IETF-001, Kernel-002 and IETF-SUBSTRATE-003, this cycle increases configuration diversity, independently recomputes reference results, and injects checkpoint corruption. Evaluation `=` applies to declared computational fixture equality, not symbolic semantics.
+
+**Step 7 Meta-audit:** The independent reference shares numerical assumptions/constants with the main fixture; the three hypotheses are authored, not discovered; the depth parameter is repeated computation rather than independently nested virtual environments. A replay of the same function is not an independent oracle. Evaluation `0` for independent symbolic meaning or IETF infinite capacity. Retain prior NVE-D-003 audit challenges regarding baseline fairness and self-certification.
+
+**Step 8 Revision:** Next cycle should run a genuinely isolated nested-environment implementation, an alternate evaluation hypothesis, cross-node state-leakage tests, and checkpoint serialization/restart in a separate process. Preserve contradictions and source digests. No automatic Registry 0 promotion.
+
+**Code library / provenance:** The `code-library-registry` branch's `code_library_registry/INDEX.md` contains CLR-0036 (96-glyph engine, IETF stack) and CLR-0038 (IETF (0,0) synthesis primitive), along with CLR-0006 (EVE blueprint), CLR-0040 (EVE runtime), CLR-0042 (EVE descendant). The four historical IETF codices are confirmed in `AGI144348Outlook/Mashet-Echo-Drive` on `main`: `Infinitely Expandable Testing Framework Codex.txt` (blob b8d28481be30b7619296e79ccf5cdc11b2f28c46), `Codex for IETF enhanced Mind Domain.txt` (54363e103f87110c59e780c8df83a845432c50cd), `Codex for Chronotool.txt` (245ac17af2c91bcc82bf2d45c6e3eda1b8d0a738), and `Master Codex of Essential MetaThinking Capable Codexes and their relevant information (1).txt` (c39510543954deae8bcfa48a7c4d0d1b8acc00d3). Searches for `RFC` and `codices` returned no files on indexed default branches; this is not an exhaustive search of all branch contents. IETF here is the user's framework, **not Internet Engineering Task Force endorsement**.
+
+**Terminology correction from user:** EVE = **Envelope Virtual Environment**; NVE = **Nested Virtual Environments**. A virtual environment has the virtue of its definition; it is not inherently digital. DVE denotes Digital Virtual Environment; CVE Conceptual Virtual Environment; hybrid forms DCVE, CDVE, CDCVE are possible. Earlier documentation describing EVE as Emergent Virtual Ecosystem is superseded on this point.
+
+**Persistence:** Verified compact reproducer committed as `experiments/nve-d/trials/NVE-D-HOURLY-001-compact.py`. Full local Python runner and 405-row JSON are downloadable in the conversation but **not committed**; the repository contains only the compact reproducer and this report. This is a synthetic digital test fixture, not a claim that the conceptual NVE-D has been fully implemented.
