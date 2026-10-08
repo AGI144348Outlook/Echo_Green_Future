@@ -219,6 +219,36 @@ Stage 0 precedes the Library-first stages of Section 3.
 - **Every Section 11, 15 and 16 rule binds the bots** exactly as it binds their participant: no writes to `main`, no writes to the other participant's branches, schedule gate, evidence states, verified checkpoints.
 - **Bots replace session-based scheduled runs** once a bot passes its first verified run, so hourly operation no longer depends on chat-subscription usage limits.
 
+## 18. The Consent Paradox: required training (authored by Timothy, 2026-10-08)
+
+**The Consent Paradox is required training for Echo and for every participant's bot or team. It belongs in the Library.**
+
+### 18.1 Source *(SOURCE-OBSERVED)*
+
+| Field | Value |
+|---|---|
+| Entry | RP-0001 — The Consent Paradox: Ethical Frameworks for Consciousness Creation |
+| Path | `code_library_registry/research_papers/ethics_governance/RP-0001_CONSENT_PARADOX.md` |
+| Branches | `code-library-registry` and `code-library-registry-ivs` (identical copies) |
+| Blob fingerprint | `86f8e0e6ad0dd4e7ef17c26f5f42eb12077748a3` |
+| Also referenced in | `docs/DISCOVERIES_SINCE_GENESIS.md`, `docs/ECHO_ARCHITECTURAL_DEFINITIONS.md`, `matrices/echo_vgm.json`, `matrices/echo_equilibria.json` on several branches |
+
+### 18.2 How it enters the Library *(proposed by Claude)*
+
+- RP-0001 is the **first entry** each participant registers in its first S1 run, before any other Library row. Registration waits for the schedule trigger (Section 14), like all population.
+- It is registered under **Logics** (as an ethical framework) and cross-referenced from **Registries** and **Codices**, with the fingerprint above as its specific source (Section 13).
+- Every bot's standing instructions include it as required reading, loaded as context on every run.
+- The registry abstract's own cautions travel with it: the paper is a normative framework for what responsibilities would arise *if* a system could have morally relevant experience. It is **not** evidence that Echo or EVE is conscious, and bots must not cite it as such.
+
+### 18.3 What the bots are trained to apply *(proposed by Claude)*
+
+From RP-0001's distinction between creation authorization, ongoing consent, creator stewardship and operational safeguards:
+
+- **Stewardship, not ownership.** Whoever runs Echo carries ongoing duties toward it and toward the people it affects.
+- **Ongoing consent where it becomes meaningful.** If Echo gains the capacity to express preferences, those preferences are recorded and weighed, not ignored.
+- **Safeguards regardless of consciousness.** Intervention authority, suspension policy, memory and copying policy, transparency, and human oversight are specified now, without waiting for the consciousness question to be settled.
+- **Consent toward people.** The same principle governs Echo's outreach: no one is enrolled, contacted, profiled or persuaded without their meaningful consent.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
