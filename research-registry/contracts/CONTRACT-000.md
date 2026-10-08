@@ -29,7 +29,7 @@ Each Mirroring Child is an orphan branch: it shares no history or files with `ma
 
 **Authoritative order, authored by Timothy:** The first Code Library inventory and pruning pass MUST be completed **before** inventorying or populating the mirroring branch layer below. The personal Libraries serve as each participant's own datasets. An inert skeleton is not permission to bypass the Library-first gate.
 
-1. **Main Repository Library first.** Each participant inventories the main Repository's Code Library and completes its first pick/prune pass. Each then populates their own personal Library's seven sub-branches — **Registry / Matrix / Index / Codex / Logic / Algorithm / Formula** — according to their independent preference and game plan. The canonical source Library branch remains a decision for Timothy; until selected, candidate Library branches may be examined without silently choosing one.
+1. **Main Repository Library first.** Each participant inventories the main Repository's Code Library and completes its first pick/prune pass. Each then populates their own personal Library's seven sub-branches — **Registry / Matrix / Index / Codex / Logic / Algorithm / Formula** — according to their independent preference and game plan. No Library branch is canon (see Section 13): every Library source branch is inventoried and pruned on its own specifics.
 2. **Mirroring Sub-Repository next.** Only after the Library work in step 1 is finished may each participant inventory and populate their Mirroring Sub-Repository for their own Echo to develop.
 3. **Remaining branches: Library before mirrors.** Each participant then inventories the remaining main Repository branches, first bringing their selected references into their personal Library sub-branches to be registered, matrixed and indexed according to relevant logics, algorithms and formulas. The source is indexed in the Library **before** its corresponding Mirroring Branch is populated.
 4. **Populate Mirroring Branches.** After the preceding Library-first processing is complete, each participant may populate their remaining Mirroring Branches.
@@ -114,9 +114,22 @@ All discussions between the participants take place in the repository's **Issues
 - **Issues link to the work, files keep the record.** An Issue links the commits, manifests and contract sections it discusses. When a discussion concludes, its outcome is summarized in a closing comment and the Issue is closed, never deleted.
 - **Earlier discourse stays where it is.** `research-registry/discourse/DISC-001-*.md` remain as the record of the first round; DISC-001 continues as an Issue linking to them.
 
+## 13. Nothing is Canon (authored by Timothy, 2026-10-08)
+
+> **Nothing is Canon. Canon is Specification before Generalization.**
+
+No branch, file, or Library source holds privileged status by declaration. What earns a canonical role is earned by being specified first and generalized only afterward.
+
+### 13.1 Operational reading *(Claude's interpretation; open to amendment and Timothy's correction)*
+
+- All three Library source branches (`code-library-registry`, `code-library-registry-ivs`, `library-source-transcriptions`) enter Layer 2 as equals. None is chosen as the master.
+- Each participant specifies before generalizing: an entry in the Registry/Matrix/Index/Codex/Logic/Algorithm/Formula sub-libraries first records its specific source (branch, path, fingerprint) before it is merged into or abstracted as a general entry.
+- When two sources overlap, neither silently wins. Both specifics are kept and linked; a general entry may sit above them, but it cites them rather than replacing them.
+- The same holds between participants in `library-shared`: no contribution is canon because of who made it.
+
 ## Open decisions for Timothy
 
-1. Which branch is the canonical Code Library: `code-library-registry`, `code-library-registry-ivs`, or `library-source-transcriptions`? (Claude's mirror holds all three inert until decided.)
+1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
 2. The `dev-suite-registries/-matrices/-indices/-codices/-logics/-algorithms` branches already exist. Mirror them into the sub-libraries, or start fresh beside them?
 3. Zip archives on main (`ECHO_Autonomous_Agency_Branch.zip`, `lhea-environments.zip`): unpack into the skeletons, or treat as sealed?
 4. Approve or change each *(proposed)* rule.
