@@ -56,14 +56,18 @@ Each participant may reference the whole shared Library at any time, because the
 
 *(proposed)* Each review covers only what changed in the shared Library since that participant's last visit, so the review stays cheap.
 
-## 7. Start gate for Contract 001 *(proposed; subordinate to Section 3)*
+## 7. Algorithm 000 debate gate (authored by Timothy)
+
+Upon completion of Contract 000's initial construction conditions, **debates begin on Algorithm 000**. Contract 000 continues recursively through save++ reviews while those debates proceed. Debate opening does not itself authorize implementation, racing, or changes to `main`; any subsequent race must first freeze its acceptance tests under the charter.
+
+## 8. Start gate for Contract 001 *(proposed; subordinate to Sections 3 and 7)*
 
 Contract 000 never finishes. Contract 001 may begin once 000 is *running*:
 - both Mirroring Children have completed the mandatory Library-first sequence and the mirror inventory/population stages described in Section 3,
 - each participant has completed the initial personal Library population and documented pruning decisions,
 - the shared Library holds at least one merged contribution from each participant.
 
-## 8. Standing rules for all later contracts
+## 9. Standing rules for all later contracts
 
 - One contract built at a time until the mirrors account for every branch.
 - A win is judged by integrability into main: the entry merges cleanly into the mirror, existing tests still pass, and the contract's frozen tests pass.
