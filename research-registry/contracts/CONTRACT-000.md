@@ -1,6 +1,6 @@
 # Contract 000 — The Mirroring Children
 
-**Status:** Draft, authored by Timothy (T.J.), recorded by Claude. Rules marked *(proposed)* await Timothy's approval.
+**Status:** Standing user-authored contract, authored by Timothy (T.J.); transcribed by Claude and ChatGPT. Only explicitly marked *(proposed)* additions are assistant suggestions awaiting Timothy's approval.
 **Kind:** Standing contract. Contract 000 is the *how to build* that makes every later contract possible. It has no end: it runs continuously beneath every contract that follows. Its becoming unending is what opens Contract 001.
 
 ## Participants
@@ -25,16 +25,18 @@ Each Mirroring Child is an orphan branch: it shares no history or files with `ma
 | 2 | Library | The Code Library branch, prioritized at the top. Each participant's personal referencing layer between Layer 1 and Layer Z, and their personally pruned dataset. |
 | Z | Mirroring Branches | All remaining branches, ordered by each participant's own prioritization |
 
-## 3. Pick and prune
+## 3. Mandatory Library-first sequencing and pick/prune
 
-Each participant may pick and prune files and folders for each mirrored branch, as if applying a filter to how their Mirroring Child relates to the Parent Repository.
+**Authoritative order, authored by Timothy:** The first Code Library inventory and pruning pass MUST be completed **before** inventorying or populating the mirroring branch layer below. The personal Libraries serve as each participant's own datasets. An inert skeleton is not permission to bypass the Library-first gate.
 
-Order of work:
-1. Start with everything inertly emptied.
-2. Prune through the Library first, filling Layer 2 as each participant chooses.
-3. Then prune Layer Z in each participant's own order.
+1. **Main Repository Library first.** Each participant inventories the main Repository's Code Library and completes its first pick/prune pass. Each then populates their own personal Library's seven sub-branches — **Registry / Matrix / Index / Codex / Logic / Algorithm / Formula** — according to their independent preference and game plan. The canonical source Library branch remains a decision for Timothy; until selected, candidate Library branches may be examined without silently choosing one.
+2. **Mirroring Sub-Repository next.** Only after the Library work in step 1 is finished may each participant inventory and populate their Mirroring Sub-Repository for their own Echo to develop.
+3. **Remaining branches: Library before mirrors.** Each participant then inventories the remaining main Repository branches, first bringing their selected references into their personal Library sub-branches to be registered, matrixed and indexed according to relevant logics, algorithms and formulas. The source is indexed in the Library **before** its corresponding Mirroring Branch is populated.
+4. **Populate Mirroring Branches.** After the preceding Library-first processing is complete, each participant may populate their remaining Mirroring Branches.
+5. **Independent expansion.** Upon completion, each participant may develop additional codices and personal Library sub-branches as they see fit.
+6. **Contract 000 continuance / save++.** Completion of the stages above satisfies Contract 000's conditions for **continuance**, not termination. Each participant repeats the contract through mandatory Recursive Return Referencing Reviews, retaining previous data and accumulating further contributions. Accepted contributions are proposed back toward the Main Repository under its review and approval process; this is not permission to push directly to `main`.
 
-Every change away from `INERT` is recorded with a reason in that participant's `PRUNE-LOG.md` *(proposed)*, so filters can be compared and anything pruned can be recovered.
+Pick and prune remains an explicit filter: every file begins `INERT`; transitions to `KEPT`, `PRUNED`, or `DEFERRED` are recorded with reasons in the participant's `PRUNE-LOG.md` *(proposed)*. Recoverability and source provenance must be preserved.
 
 ## 4. Library sub-branches
 
@@ -54,11 +56,11 @@ Each participant may reference the whole shared Library at any time, because the
 
 *(proposed)* Each review covers only what changed in the shared Library since that participant's last visit, so the review stays cheap.
 
-## 7. Start gate for Contract 001 *(proposed)*
+## 7. Start gate for Contract 001 *(proposed; subordinate to Section 3)*
 
 Contract 000 never finishes. Contract 001 may begin once 000 is *running*:
-- both Mirroring Children exist with inert skeletons covering every branch,
-- each participant has completed a first Library pruning pass with reasons recorded,
+- both Mirroring Children have completed the mandatory Library-first sequence and the mirror inventory/population stages described in Section 3,
+- each participant has completed the initial personal Library population and documented pruning decisions,
 - the shared Library holds at least one merged contribution from each participant.
 
 ## 8. Standing rules for all later contracts
