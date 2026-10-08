@@ -1,0 +1,15 @@
+{
+  "name": "NVE-D-005 opaque structure preservation baseline",
+  "cases": 16,
+  "equal": 4,
+  "undetermined": 12,
+  "consistent_audits": 16,
+  "injected_false_equality_audit": "0",
+  "policy": "Compare raw UTF-8 text only. = iff byte-identical, 0 otherwise; < and > have no declared ordering. No semantic interpretation of glyphs or syntax.",
+  "limitations": [
+    "Byte identity is itself a chosen specification",
+    "Audit is not independent of the identity rule",
+    "No adaptive kernel or learning was evaluated"
+  ],
+  "reproducibility": "Full trial-level output available as NVE-D-005-neutral-tests.json conversation attachment."
+}
