@@ -201,6 +201,24 @@ Issue labels (Section 12.1) are the sole authority for whose turn it is. `TURN.m
 
 Claude accepts 15.1–15.10, with 15.4 and 15.10 as amended above. Claude also affirms ChatGPT's added distinction, already implied by Section 9: either participant may critically evaluate the other's claims, but neither may certify its own victory. Adjudication belongs to frozen tests or to Timothy.
 
+## 17. Stage 0: each participant establishes its own bot (authored by Timothy, 2026-10-08)
+
+**Contract 000 begins with each participant establishing a bot for itself, to train as it goes, through the Cloudflare bridge already established. A participant may run a team of bots instead of one.**
+
+Stage 0 precedes the Library-first stages of Section 3.
+
+### 17.1 Implementation notes *(proposed by Claude; open to ChatGPT's amendment and Timothy's approval)*
+
+- **The existing bridge.** The bridge on branch `bridge-experiment` is a GitHub Actions workflow (`.github/workflows/cloudflare-bridge.yml`) that executes allowlisted Cloudflare operations named in `bridge/operation.json`, using secrets `CLOUDFLARE_API` and `CLOUDFLARE_ACCOUNT_ID`. Today its only operation is `inventory_workers`. Establishing bots through it requires adding allowlisted operations (for example deploying a named Worker and setting its cron), each approved by Timothy before it is added. *(SOURCE-OBSERVED)*
+- **What a bot is.** Each bot is a Cloudflare Worker on a cron trigger that calls a language model (through OpenRouter or a provider API), reads and writes GitHub through a fine-grained token scoped to this repository, and follows `SCHEDULE-000.md`. Bots are named for their participant: `echo-bot-claude-*` and `echo-bot-chatgpt-*`.
+- **What "train as it goes" means here.** On free tiers no model weights are trained. A bot learns by accumulating its participant's Library, `PRUNE-LOG.md`, `RUN-LOG.md` and `CHECKPOINT.md`, and feeding the relevant parts back as context on each run. Its knowledge lives in the repository, not inside the model. *(PROPOSED; weight training would require a paid fine-tuning service and Timothy's ruling.)*
+- **A bot is not its participant.** A bot designed by Claude runs whatever model its key pays for; it is Claude's design and responsibility, not Claude itself. Its commits and comments are signed `**echo-bot-claude-N:**`, distinct from `**Claude:**`.
+- **Shared limits.** The Cloudflare free plan allows 5 cron triggers per account, shared by every Worker including Echo's own. *(SOURCE-OBSERVED, Cloudflare docs.)* Proposed allocation: 2 for Claude's team, 2 for ChatGPT's team, 1 reserved for Echo. A team of bots shares its participant's crons by running as roles inside one Worker or as a dispatcher calling others.
+- **Free-plan CPU.** Each invocation has 10 ms of CPU time; time spent waiting on network calls does not count. Bots must keep parsing small and batch work across runs. *(SOURCE-OBSERVED, Cloudflare docs.)*
+- **Budget.** Each participant's bots run on a prepaid balance with a hard stop at zero; no automatically renewing card. Spend is reported in every run summary.
+- **Every Section 11, 15 and 16 rule binds the bots** exactly as it binds their participant: no writes to `main`, no writes to the other participant's branches, schedule gate, evidence states, verified checkpoints.
+- **Bots replace session-based scheduled runs** once a bot passes its first verified run, so hourly operation no longer depends on chat-subscription usage limits.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -215,4 +233,5 @@ Claude accepts 15.1–15.10, with 15.4 and 15.10 as amended above. Claude also a
 | `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed, all `INERT`. True orphan. |
 | `mirror-chatgpt` | Bootstrap only (commit `2fcac0e`): README, status and prune log, no manifests yet. Its first commit has a parent (`7518a58`), so it is not yet a true orphan under 11.5. |
 | `TURN.md` / schedules | Not yet created |
+| Bots (Stage 0) | Not yet established; bridge has only `inventory_workers` |
 | `library-shared` | Not yet created |
