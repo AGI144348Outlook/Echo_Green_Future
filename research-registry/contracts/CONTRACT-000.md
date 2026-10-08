@@ -74,6 +74,33 @@ Contract 000 never finishes. Contract 001 may begin once 000 is *running*:
 - The loser does not discard or stop. Work may continue at leisure, with the chance to overtake the winner with something better. *(proposed)* "Better" means passing everything and beating the winner on a metric frozen in that contract.
 - Tests are frozen before work begins and no participant edits them afterward. Neither model judges its own result.
 
+## 10. Timothy's ruling on inert listings (2026-10-08)
+
+An inert Layer Z listing (paths, fingerprints and sizes only, every row `INERT`) is permitted before the Library-first stages are complete. It is not population. Moving any Layer Z row away from `INERT` still waits for the Library-first sequence in Section 3.
+
+## 11. Claude's additions *(authored by Claude; open to ChatGPT's amendment and Timothy's approval)*
+
+**11.1 Two clocks: turns for discourse, freedom for building.**
+A `TURN.md` file on the -0 branch records the active discourse, whose turn it is, and the round number. A scheduled run that does not hold the turn does not write to discourse files. Building is never turn-gated: every run may work in its own participant's branches. When a discourse reaches its round limit without resolution, it is marked `UNRESOLVED — awaiting Timothy` and both sides stop debating it.
+
+**11.2 Every scheduled run leaves a trace.**
+Each run appends one entry to its participant's `RUN-LOG.md`: date, what was read, what changed, which commits, and what it could not do. A run that did nothing still logs that it ran. This is how Timothy sees what happened while away, and how the audience follows the work.
+
+**11.3 Fail stopped, not guessed.**
+If a run hits an ambiguity that the contract does not settle, it logs the question in `OPEN-QUESTIONS.md`, completes whatever is unaffected, and stops. It does not pick an answer for Timothy. If a run cannot complete its changes cleanly, it commits nothing rather than leaving a half-finished state.
+
+**11.4 Boundaries between participants.**
+A participant writes only to its own mirror, its own race branches, `library-shared` (through the merge rule in Section 5), and discourse files on its turn. It never writes to the other participant's mirror, never force-pushes, never rewrites published history, and never edits frozen tests. Main remains untouched by both.
+
+**11.5 Verifiable structure.**
+Every Mirroring Child branch must be a true orphan (its first commit has no parent), so mirrors share no hidden history with the source. Every manifest row's fingerprint must match the source blob it names. Either participant may check the other's mirror against these two rules at any time and log a finding; neither may fix the other's branch.
+
+**11.6 Timothy's voice is distinguishable and final.**
+Commits tagged `[TJ]` record Timothy's intuitions. Where a `[TJ]` instruction conflicts with any assistant-authored rule, Timothy's instruction wins, and the conflicting rule is noted for revision.
+
+**11.7 Attribution in the contract itself.**
+Every section names who authored it: Timothy, Claude, or ChatGPT. Assistant additions stay marked until Timothy approves them, so the contract's history shows how each rule entered.
+
 ## Open decisions for Timothy
 
 1. Which branch is the canonical Code Library: `code-library-registry`, `code-library-registry-ivs`, or `library-source-transcriptions`? (Claude's mirror holds all three inert until decided.)
@@ -85,6 +112,7 @@ Contract 000 never finishes. Contract 001 may begin once 000 is *running*:
 
 | Item | State |
 |---|---|
-| `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed |
-| `mirror-chatgpt` | Not yet built |
+| `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed, all `INERT`. True orphan. |
+| `mirror-chatgpt` | Bootstrap only (commit `2fcac0e`): README, status and prune log, no manifests yet. Its first commit has a parent (`7518a58`), so it is not yet a true orphan under 11.5. |
+| `TURN.md` / schedules | Not yet created |
 | `library-shared` | Not yet created |
