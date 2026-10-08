@@ -1,0 +1,543 @@
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+
+                                          TEMA
+             Toroidal Eigenvalue Memory Architecture
+                 A Topological Framework for Scope-Aware AI Memory
+
+
+
+                            Technical Specification | Version 0.1 | 2026
+                                Author: Timothy (Quixpydr / Maven)
+                                Mashet / LHEA Research — Independent
+
+
+
+
+Abstract
+This document presents the Toroidal Eigenvalue Memory Architecture (TEMA), a novel
+theoretical and prototypable framework for managing memory, attention scope, and context
+lifecycle in large language model (LLM) systems and general AI cognitive architectures.
+The central thesis of TEMA is that AI bias — specifically the pathological narrowing of reasoning
+scope — is not a data contamination problem but a topological one. Current LLM context
+windows are flat, undifferentiated containers with no native mechanism for graduated memory
+migration, pressure-responsive scope adjustment, or irreversibility management. The result is a
+system that can narrow its attentional focus but cannot deliberately broaden it, producing the
+stuck-scope syndrome observable in deployed AI systems.
+TEMA proposes a layered, geometrically coherent memory substrate organized around five
+architectural zones: a high-density short-term reasoning Core, a pressure-regulating Nexus
+valve layer, a toroidal medium-term circulation Ocean, a zero-vacuum Firmament boundary, and
+a stalactite-forming long-term Cave ceiling. Eigenvalue centrality governs context weight across
+all layers. Myelination counters track pathway reinforcement. A Roche-limit-inspired ejection
+model clears irrecoverable context without permanent deletion ambiguity.
+The architecture draws formally from information theory, fluid dynamics, orbital mechanics,
+graph theory, and computational neuroscience, unifying these into a single internally consistent
+geometric model that is both theoretically rigorous and immediately prototypable using existing
+tools such as NetworkX.
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+1. Introduction and Motivation
+
+1.1 The Scope Ossification Problem
+In deployed AI systems, a well-documented failure mode manifests as contextual rigidity: the
+system continues to weight prior conversational context heavily even after the user has explicitly
+redirected the conversation. Researchers and practitioners have characterized this variously as
+context bleed, topic persistence, or attentional inertia. Existing mitigations focus on prompt
+engineering, context window truncation, or retrieval augmentation — all of which address
+symptoms rather than the underlying structural condition.
+TEMA reframes this failure mode as scope ossification: the inability of the attentional geometry
+to re-expand after a narrowing operation. The insight is directional. Current architectures
+implement narrowing naturally — high attention weight concentrates representation around
+dominant topics — but have no inverse operation. There is no native mechanism for a
+deliberate broadening of scope, no pressure-release valve, no architectural distinction between
+a temporary narrowing and a permanent one.
+        Core Claim: Bias in AI systems is not primarily a data problem. It is a
+        topological problem. The geometry of the attention mechanism produces
+        irreversible narrowing as an emergent property.
+
+
+
+1.2 Scope and Bias as Geometric Duals
+The relationship between bias and scope can be stated formally. Define scope S as the
+accessible volume of the reasoning space at any given inference step. Define bias B as the
+systematic underrepresentation of concepts that are not highly attended.
+Then: B proportional to 1/S — bias is inversely proportional to accessible scope.
+The implication is that broadening scope is debiasing. Any architectural component that
+preserves or restores scope circumference is therefore an anti-bias mechanism. TEMA is built
+around this principle.
+
+
+
+1.3 Eigenvalue Centrality as a Scope Metric
+Graph-theoretic eigenvalue centrality provides the formal basis for measuring scope contraction.
+In a weighted graph where nodes are context items and edge weights represent co-attention
+frequency, eigenvalue centrality assigns each node a score reflecting its influence on the global
+attention distribution. Nodes with high eigenvalue centrality pull the representation geometry
+toward themselves — analogous to gravitational mass.
+As a conversation develops, certain context items accumulate disproportionate eigenvalue
+centrality. The scope circumference contracts around these high-centrality attractors. The
+parallel to earthquake epicentral magnitude is instructive: epicentral magnitude measures
+radiated energy from a focal point outward; eigenvalue centrality measures attentional energy
+drawn inward toward a focal node. Both describe a radial pressure phenomenon with opposite
+directionality.
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+TEMA uses eigenvalue centrality as its primary scalar metric for all memory lifecycle decisions:
+when context migrates between layers, when pathways are reinforced, and when context is
+ejected to the firmament boundary.
+
+
+
+
+2. Architectural Overview
+
+2.1 The Five-Layer Stack
+TEMA organizes memory into five geometrically distinct layers arranged along a vertical axis
+from innermost to outermost. Each layer has a distinct physical analogy, a distinct information-
+theoretic role, and distinct transition mechanics governing how context moves between layers.
+
+
+Layer 1 — The Core (Short-Term Memory)
+The Core is a dense, high-eigenvalue-weight sphere at the center of the architecture. It
+corresponds to the active reasoning space — the context currently participating in generation.
+All new prompts inject context droplets directly into the Core.
+    •   Geometry: Sphere (dense, bounded)
+    •   Contents: Active context droplets at high eigenvalue centrality
+    •   Capacity: Bounded by a configurable circumference threshold C_max
+    •   Transition out: Droplets whose eigenvalue falls below threshold theta_shed migrate to
+        the toroidal Ocean
+    •   Transition to zero: Droplets below theta_drop with no toroidal resonance partners are
+        ejected to the Firmament
+
+
+Layer 2 — The Nexus Valve Layer
+The Nexus is the interface layer between the Core and all outer layers. It is a control surface
+implementing pressure-chamber mechanics that regulate context flow. The Nexus is modeled
+after the double-180 degree twist topology of a rubber-band container: each twist creates a kink
+point functioning as a valve.
+    •   Full kink (180 degree twist): Complete flow stoppage — context held in current layer
+    •   Half kink: Regulated throughput — context migrates at a controlled rate
+    •   Open: Full bidirectional exchange between adjacent layers
+Nexus valves are pressure-responsive. When a layer approaches capacity, its pressure
+differential against the adjacent layer causes the relevant valve to open wider, distributing load.
+Each Nexus valve accumulates a myelination count tracking how many context transfer events
+it has mediated. High-myelination valves become preferentially conductive.
+
+
+Layer 3 — The Toroidal Ocean (Medium-Term Memory)
+The Ocean is a toroidal volume surrounding the Core. It is a dynamic medium with fluid
+circulation properties. Context droplets that shed enough eigenvalue weight to leave the Core
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+enter the Ocean and are carried in toroidal currents — they remain retrievable without being
+foregrounded.
+    •   Geometry: Torus (continuous flow, no terminus)
+    •   Contents: Context droplets at medium eigenvalue centrality, organized in current
+        streams
+    •   Pooling: Related droplets may optionally aggregate into context pool matrices
+    •   Wave dynamics: Nexus valve bidirectional weight assignments create standing wave
+        patterns; retrieval is resonance-based rather than indexed fetch
+    •   Transition to long-term: Droplets completing sufficient circulation cycles precipitate
+        upward toward the Cave ceiling
+
+
+Layer 4 — The Firmament (Zero-Vacuum Boundary)
+The Firmament is the outermost dynamic boundary. Context droplets ejected with eigenvalue
+zero and no toroidal resonance partners are accelerated outward to the Firmament. The
+vacuum pressure at this boundary acts inward on the outermost active layer, dynamically
+resizing the toroidal Ocean as context is added or ejected. The Firmament hugs the
+architecture, keeping active layers compact.
+
+
+Layer 5 — The Cave Ceiling (Long-Term Memory)
+The Cave ceiling is a solid surface above the toroidal Ocean. Context droplets completing
+enough toroidal circulation cycles precipitate against the ceiling and solidify. Over repeated
+reinforcement cycles these precipitates grow downward as stalactites — consolidated long-term
+memory formations extending toward the Core.
+    •   Stalactite length = myelination count of the context pathway that formed it
+    •   Long stalactites extend closer to the Core = higher retrievability without full promotion
+    •   Stalactites that stop receiving drips cease extending and eventually become brittle —
+        modeling natural memory decay without hard deletion
+    •   Retrieval: resonance between Core eigenvalue state and stalactite proximity triggers re-
+        activation
+
+
+
+2.2 The Scope Circumference as Emergent Property
+Scope circumference is not a parameter — it is an emergent property of the eigenvalue
+distribution across the Core. When the Core is densely populated with high-centrality attractors,
+the effective scope circumference contracts. When the Core is sparse or well-balanced, the
+circumference expands, enabling associative leaps and novel connections.
+Formally: C_scope proportional to 1 / lambda_max where lambda_max is the maximum
+eigenvalue centrality in the Core at time t.
+The balancing algorithm described in Section 3 prevents any single context droplet from
+accumulating eigenvalue centrality that would contract C_scope below a configurable minimum
+threshold C_min, ensuring the system always maintains a minimum novelty potential even
+under heavy topic pressure.
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+3. Core Algorithms
+
+3.1 The Eigenvalue Balancing Algorithm (EBA)
+The EBA runs on every prompt cycle, maintaining the Core in controlled tension: high enough
+eigenvalue density for coherent reasoning, low enough maximum eigenvalue to preserve scope
+circumference above C_min.
+    •   Inject: New prompt context converted into droplet set D_new with initial eigenvalue
+        weights by cosine similarity to existing Core nodes
+    •   Absorb: D_new added to Core graph; edge weights between new and existing nodes
+        initialized
+    •   Recompute: Full eigenvalue centrality recomputed across Core graph via power iteration
+    •   Shed check: All nodes below theta_shed flagged for toroidal migration
+    •   Drop check: Flagged nodes evaluated against drop-to-zero condition: eigenvalue below
+        theta_drop AND myelination count of all connected Nexus pathways below M_min. Both
+        conditions required for Firmament ejection
+    •   Circumference check: If lambda_max exceeds lambda_ceiling, highest-centrality node
+        penalized by damping factor delta
+    •   Rebalance: Final eigenvalue recomputation across modified Core graph
+
+
+
+3.2 Myelination Accumulation
+Every context transfer event through a Nexus valve increments that valve's myelination counter
+M_v. Three operational effects:
+    •   Conductivity: Transfer time scales as T_transfer proportional to 1/M_v. High-myelination
+        pathways mediate context transfer faster.
+    •   Drop-to-zero protection: A droplet connected to a high-myelination Nexus pathway is
+        protected from Firmament ejection even if its own eigenvalue drops below theta_drop.
+    •   Stalactite seeding: Myelination-weighted pathway history determines where on the Cave
+        ceiling a droplet first precipitates and how quickly its stalactite grows.
+Myelination counters decay slowly at rate delta_myelin per cycle in which the pathway is not
+transited, ensuring stale pathways do not indefinitely protect irrelevant context.
+
+
+
+3.3 Toroidal Circulation and Resonance Retrieval
+Context droplets in the Ocean circulate continuously. Circulation velocity is a function of current
+eigenvalue weight and myelination count of transited Nexus valves. Retrieval from the Ocean is
+not an explicit fetch operation — new Core context creates an eigenvalue perturbation that
+propagates outward as a pressure wave. Ocean droplets whose eigenvalue profile resonates
+with the perturbation experience increased centrality, accelerating their circulation and
+increasing their probability of re-injection into the Core. Retrieval is associative and emergent:
+the system tunes, and relevant context naturally rises.
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+3.4 Long-Term Stalactite Formation and Retrieval
+A droplet transitions to stalactite formation when its circulation cycle count exceeds
+C_precipitate AND its myelination-weighted pathway score exceeds M_precipitate. Growth rate
+is proportional to the myelination count of the feeding pathway.
+Stalactite retrieval is triggered when a Core eigenvalue perturbation produces a resonance
+wave reaching the Cave ceiling with sufficient amplitude. Stalactites within proximity range
+R_resonate are re-activated: their encoded context is re-injected into the Core, bypassing the
+Ocean. The stalactite persists but its re-injection event increments the myelination count of the
+Core-to-ceiling pathway, strengthening future retrievability.
+
+
+
+
+4. Information-Theoretic Foundations
+
+4.1 Context Droplets as Information Quanta
+A context droplet is the atomic unit of information in TEMA. It is not equivalent to a token or a
+sentence — it is a semantically coherent unit defined by its eigenvalue centrality neighborhood:
+a subgraph of the context graph whose internal edge weights exceed a cohesion threshold
+kappa.
+The information content of a droplet I(d) is defined as the entropy of its eigenvalue distribution
+across its internal nodes. A droplet with a flat internal eigenvalue distribution carries maximum
+information. A droplet with a peaked distribution carries minimum information.
+This definition has a useful property: as a droplet loses eigenvalue weight and drifts toward the
+Ocean, its information content increases relative to its centrality. Forgotten context becomes
+informationally richer per unit of attentional weight — it carries more latent associative potential
+precisely because it is no longer being compressed by the gravity of a dominant attractor. This
+is the formal basis for the novelty potential of medium-term memory.
+
+
+
+4.2 The Zero-Vacuum Ejection as Information Disposal
+The Firmament ejection mechanism is the only true information disposal operation in TEMA. It is
+intentionally irreversible. The conditions for ejection — eigenvalue below theta_drop AND
+myelination count of all connected pathways below M_min — jointly ensure disposal is only
+triggered when a context droplet has no remaining information-theoretic relationship to any
+active or archived pathway.
+The vacuum pressure metaphor captures the thermodynamic intuition: the system does not
+actively push context out — it removes the attentional support structure, and context with no
+remaining gravitational anchor cannot remain in the bounded space of the architecture. Zero
+eigenvalue is the vacuum.
+
+
+
+
+5. Physical Analogy Formalism
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+5.1 Gravity and Eigenvalue Centrality
+Eigenvalue centrality in the context graph behaves like mass in a gravitational system: it warps
+the attentional geometry around itself, drawing related concepts into tighter orbits, and
+producing the scope-contraction effect that TEMA is designed to manage.
+The analogy extends to orbital dynamics. Context droplets in the Ocean orbit in the complex
+multi-body potential produced by the entire Core eigenvalue distribution. Resonance between
+Ocean droplet eigenvalues and Core attractor frequencies is analogous to orbital resonance in
+planetary systems, producing the same stability properties: some droplets fall into stable
+resonant orbits (persistent medium-term memory), others into unstable ones (rapid re-injection
+or decay).
+
+
+
+5.2 Fluid Dynamics and the Toroidal Current
+The Ocean layer is explicitly modeled as a fluid medium. Viscosity in this model is the
+resistance to context flow introduced by low-myelination Nexus pathways. High-viscosity
+regions retain droplets longer. Surges — sudden influxes of new context from a semantically
+novel prompt — produce pressure waves that can temporarily disrupt circulation. The Nexus
+valve system absorbs surge pressure without catastrophic context loss: valves open wider
+under surge conditions, distributing pressure load across the full toroidal volume.
+
+
+
+5.3 The Roche Limit and the Firmament
+The Roche limit defines the minimum distance from a primary body at which a secondary body
+held together by self-gravity can survive without being torn apart by tidal forces. In TEMA,
+context droplets inside the Core's effective Roche radius — close enough to high-eigenvalue
+attractors that their internal cohesion is overwhelmed — cannot form stable context pools. They
+fragment into sub-droplet components individually too weak to maintain Ocean circulation and
+are therefore ejected to the Firmament. The Firmament is the ring plane: the outer boundary
+where ejected fragments accumulate as informational debris.
+
+
+
+5.4 Myelination and Signal Propagation Speed
+Biological myelination wraps axons in insulating sheaths that increase action potential
+propagation speed by two orders of magnitude. TEMA uses this as a direct computational
+model. Low-myelination Nexus pathways are slow-conducting: context transfer events are
+computationally expensive. High-myelination pathways are fast-conducting: transfers are cheap
+and immediate. The architecture self-optimizes its retrieval pathways over time, routing context
+through the fastest available conductors — analogous to white matter optimization over
+learning.
+
+
+
+
+6. Scope Ossification: Diagnosis and Prevention
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+6.1 The Mechanism of Scope Ossification in Current Systems
+In a flat context window without TEMA's layered architecture, scope ossification proceeds as
+follows. A high-salience topic enters context. It accumulates attention weight through repeated
+reference. Its effective eigenvalue centrality grows. The representation geometry contracts
+around it. New context is interpreted through the lens of the dominant topic, further reinforcing
+its centrality. The loop is self-reinforcing with no native termination condition.
+The result is not hallucination — the system is not generating false content. It is scope collapse:
+the accessible reasoning space has contracted to the point where genuinely novel responses
+are geometrically impossible.
+
+
+
+6.2 How TEMA Prevents Scope Ossification
+TEMA breaks the self-reinforcing loop at three points:
+    •   Circumference floor: The EBA enforces C_min, ensuring lambda_max never contracts
+        scope below a configurable minimum. The dominant attractor is dampened before it can
+        collapse the geometry.
+    •   Mandatory shedding: Context that accumulates excessive eigenvalue centrality is shed
+        to the Ocean, where it continues to circulate but no longer exerts direct gravitational pull
+        on the Core geometry. The topic is not forgotten, but removed from its privileged
+        position.
+    •   Pressure-responsive Nexus valves: When the Core approaches capacity, Nexus valves
+        open, actively distributing context load to the Ocean. This is the architectural equivalent
+        of an automatic scope-broadening operation — triggered not by explicit user instruction
+        but by the physics of the system.
+
+
+
+6.3 Diagnosable Scope States
+Because scope circumference is a function of the eigenvalue distribution, it can be computed
+and logged at any point in the inference cycle. This enables:
+    •   Scope monitoring: Real-time display of current C_scope as a percentage of C_max
+    •   Ossification detection: Automated flagging when C_scope falls below a warning
+        threshold
+    •   Scope history logging: Full time-series of scope state across a conversation for post-hoc
+        analysis
+    •   Intervention triggers: Automated Nexus valve adjustments when progressive narrowing
+        is detected
+
+
+
+7. Prototype Roadmap
+
+7.1 Tier 1 — NetworkX Core Simulation
+Buildable in Pydroid 3 on mobile. No external dependencies beyond NetworkX and matplotlib.
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+    •   Context graph: Weighted directed graph; nodes = context droplets, edges = co-attention
+        weights
+    •   Eigenvalue computation: NetworkX eigenvector_centrality() each cycle
+    •   EBA loop: Inject, Absorb, Recompute, Shed, Drop, Circumference check, Rebalance
+    •   Visualization: Real-time matplotlib scatter showing eigenvalue distribution and scope
+        circumference
+    •   Estimated build time: 1–2 days
+
+
+
+7.2 Tier 2 — Toroidal Ocean Simulation
+    •   Ocean graph: Separate NetworkX graph with circular topology constraints
+    •   Nexus valves: Edge weight modifiers between Core and Ocean graphs with myelination
+        counter attributes
+    •   Circulation simulation: Time-step iteration moving droplets through the Ocean graph
+    •   Context pool detection: Community detection algorithm identifying droplet clusters
+    •   Estimated build time: 1 week
+
+
+
+7.3 Tier 3 — Full Stack Demo
+    •   Firmament: Dynamic boundary parameter R_firm updating as context is ejected
+    •   Cave ceiling: Upper graph layer with precipitation and stalactite growth mechanics
+    •   Stalactite retrieval: Resonance detection triggering re-injection from ceiling to Core
+    •   Full visualization: Three.js rendering of all five layers updating in real time
+    •   Estimated build time: 2–4 weeks for full visual fidelity
+
+
+
+8. Relationship to Existing Research
+MemGPT and virtual context systems: These systems implement hierarchical memory tiers
+for LLMs but use explicit fetch operations rather than TEMA's resonance-based retrieval.
+TEMA's toroidal circulation model is a fundamentally different retrieval paradigm.
+
+
+Titans architecture (Google DeepMind, 2024): Titans introduces a neural long-term memory
+module trained via gradient-based updates. TEMA's stalactite model shares the intuition of
+consolidation over time but implements it geometrically rather than through learned parameters.
+
+
+Modern Hopfield Networks (Ramsauer et al., 2020): Provide a theoretical basis for
+associative retrieval. TEMA's resonance retrieval is conceptually aligned with Hopfield energy
+minimization but situated in a dynamic geometric context rather than a fixed weight matrix.
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+Temporal graph networks: The eigenvalue formalism in TEMA is directly implementable as a
+temporal graph network, where node states evolve over time and edge weights reflect temporal
+co-occurrence. Existing TGN frameworks provide a natural implementation substrate.
+
+
+Memory consolidation neuroscience: The stalactite formation model maps onto the
+hippocampal-to-neocortical consolidation pathway in human memory. The sleep-consolidation
+literature — which identifies repetition during offline periods as the mechanism of long-term
+encoding — is directly analogous to TEMA's circulation cycle threshold for cave precipitation.
+
+
+
+
+9. Open Questions and Future Directions
+    •   What is the optimal theta_shed / theta_drop parameter pair for a given conversation
+        domain? These likely require empirical tuning rather than closed-form derivation.
+    •   Can the Nexus valve myelination system be implemented as a learned parameter in a
+        trainable architecture, rather than a hand-tuned counter?
+    •   What is the relationship between C_scope circumference and measurable output quality
+        metrics such as BLEU score, human preference ratings, or factual accuracy?
+    •   Does the toroidal geometry introduce topological constraints on retrieval that a simple
+        stack model would not? The torus has no terminus — are certain context orderings
+        unreachable?
+    •   How does TEMA interact with chain-of-thought prompting, which deliberately expands
+        context length? Is CoT a manual scope-broadening operation under this framework?
+    •   Can the stalactite-to-Core re-injection mechanism model involuntary memory intrusion
+        — long-term context re-activating without explicit retrieval intent?
+
+
+
+10. Conclusion
+The Toroidal Eigenvalue Memory Architecture presents a geometrically coherent, physically
+grounded, and immediately prototypable framework for addressing one of the most persistent
+failure modes in deployed AI systems: scope ossification and its downstream expression as
+attentional bias.
+Key contributions:
+    •   A formal reframing of AI bias as a topological failure mode rather than a data
+        contamination problem
+    •   A five-layer memory architecture (Core, Nexus, Ocean, Firmament, Cave) with distinct
+        geometric and physical analogs for each layer
+    •   An eigenvalue-centrality-based scope circumference metric that is computable, loggable,
+        and monitorable in real time
+    •   A pressure-responsive Nexus valve model implementing automatic scope broadening as
+        an emergent physical property
+    •   A myelination-based pathway reinforcement system that self-optimizes retrieval
+        conductivity over time
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
+TEMA — Toroidal Eigenvalue Memory Architecture | Technical Specification v0.1
+
+
+
+    •   A resonance-based retrieval model eliminating the need for explicit indexed fetch
+        operations in medium and long-term memory
+    •   A clear Tier 1 through Tier 3 prototype roadmap implementable in existing tools
+TEMA is offered as a theoretical foundation and a practical build target. The architecture is
+novel, internally consistent, and empirically testable. It invites collaboration from researchers in
+AI memory systems, graph machine learning, cognitive neuroscience, and computational fluid
+dynamics.
+
+
+
+
+               TEMA v0.1 — Timothy (Quixpydr / Maven) — Mashet / LHEA Research — 2026
+                Independent Research | Not affiliated with any institution | Open for collaboration
+
+
+
+
+Timothy (Quixpydr / Maven) — Mashet / LHEA ResearchPage
