@@ -2,6 +2,10 @@
 
 Scope: full current `mayig/indus-valley-script-corpus` `main` corpus directory.
 
+Upstream commit: ad2f1e218a34b8c33c57de0d6cb8d99272765bbb
+Workflow run: 37786304065
+Validation: nonempty corpus, zero parse errors, consistent occurrence/position/adjacency totals.
+
 - JSON files: 179
 - Parsed files: 179
 - Parse errors: 0
