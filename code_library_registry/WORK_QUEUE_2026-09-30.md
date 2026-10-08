@@ -113,3 +113,13 @@ code_library_registry/reviews/ contains dated branch snapshots, changed-module a
 - MOD-0003 application review added a prospective ownership/kind snapshot boundary for MOD-0007.
 - Echo's outbound license remains unresolved; no compatibility or submission clearance is asserted.
 - Resume at repository ordinal 36. See `reviews/MOD-0007_DISCOVERY_BATCH_2026-10-07.md`, `reviews/INVENTORY_DELTA_2026-10-07.md` and `reviews/PROGRESS_2026-10-07.md`.
+
+## Checkpoint — 2026-10-08
+
+- All 30 current branch heads were re-pinned; three new branches and three advanced branches were classified by executable/source/data/evidence status.
+- MOD-0008 (`timezone-schedule-decision`) was preserved, generalized, validated and frozen before discovery at `bf1964722b609a1e7a50f22b1dcfbb23df18a781`.
+- Preserved-source characterization passed 3/3 assertions; the generalized suite passed 9/9 tests, including DST and fail-closed timestamp cases.
+- External discovery reviewed repositories 36–40; one conditional APScheduler proposal was prepared and not submitted; cumulative progress is 40/1,000.
+- Generated crawler license metadata remains unverified; Echo's outbound license remains unresolved, so no compatibility or submission clearance is asserted.
+- MOD-0003 application review added structured schedule-state persistence while preserving the distinction between storage and a concurrency lock.
+- Resume at repository ordinal 41. See `reviews/MOD-0008_DISCOVERY_BATCH_2026-10-08.md`, `reviews/INVENTORY_DELTA_2026-10-08.md` and `reviews/PROGRESS_2026-10-08.md`.

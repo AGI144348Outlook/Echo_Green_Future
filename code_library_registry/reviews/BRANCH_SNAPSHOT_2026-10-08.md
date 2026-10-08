@@ -1,0 +1,34 @@
+# Branch snapshot — 2026-10-08
+
+| Branch | Head |
+|---|---|
+| algebra | `ad8efcea9a5a5d6aa38497360bb7cc7b58a6aef0` |
+| autonomous-agency | `2846a6e72607a56332426861763299f5fc5b7d79` |
+| bridge-experiment | `b20f0b0cf7755a692217e910609a7fa9223ab4ed` |
+| chat-archive-pyodide-workbench | `2d129db69d48f66effd7d47732c03cd394f44755` |
+| chatgpt-conversation-archive | `1b029f5cb2fa02ce80f1aec41ac31c3f1de7f9f2` |
+| code-library-registry | `75c3056c840f09582244b44a72e43de18e163ef3` before today's CLR commits |
+| code-library-registry-ivs | `d8806792ed0c8a5643b0ec3056c87b4e4188df50` |
+| dev-suite | `9f61d305676d1c6cf856697e97b7bb6340c53673` |
+| dev-suite-algorithms | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-codices | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-datasets | `f1949f701f352f46ce32ea6bb5324c6d8202114e` |
+| dev-suite-indices | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-integration-staging | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-logics | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-matrices | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| dev-suite-registries | `03978f7eec1950e3a587fb29dea199227d61428a` |
+| echo-recess-experiment | `3128906f922ffc1a6371d01aaae66e7c8bd0b758` |
+| genesis-documentary | `f888091f6d81c60a61e5ca9bbba14d8d28a18093` |
+| geosensory-crawler-experiment | `26bc60916fa65f8e24f213ce8f3f9ad047540059` |
+| ksm-recess-wholesale | `82810112a959dc094dcf40238419cffca6863670` |
+| library-source-transcriptions | `8857df3ae32cf1af05ef8e4375075078bf977992` |
+| license-update-2026-09-21 | `4b35ff085b54b869fb4f41351064d3b2a07b0154` |
+| main | `7518a587e4eb6ce1f0cd8a3da312860071b88d18` |
+| mashet-parallel-pipeline-test | `6934351582ac778896d709441f392ceb00695eb9` |
+| notebook-0.4-as-is | `9dd4c07e80edd406ec4a0a0644d01e1d8c8af493` |
+| protocol-graft-prune-test | `8cf2a98f2542db93b84b698ec9b465cc5ae192fd` |
+| pwa-hosting-environment | `70642cf4a2b20b580b8497e7102f27bba689b6a2` |
+| resh-lattice-agency | `2c7616485dc670745433e8647d9467d7fc3b732b` |
+| stress-test-002-clean | `44a8fa60be51ecfecbe000a0d93a91287cf0c329` |
+| widgeting-experiment | `cddcfe2866aee79da1d0115201454d62333a45ce` |
