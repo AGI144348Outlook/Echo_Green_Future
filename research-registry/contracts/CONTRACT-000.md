@@ -127,6 +127,12 @@ No branch, file, or Library source holds privileged status by declaration. What 
 - When two sources overlap, neither silently wins. Both specifics are kept and linked; a general entry may sit above them, but it cites them rather than replacing them.
 - The same holds between participants in `library-shared`: no contribution is canon because of who made it.
 
+## 14. Schedule gate (authored by Timothy, 2026-10-08)
+
+**Inventory and Population do not begin until schedules are set and trigger the participants to do so.**
+
+No participant starts inventorying or populating any layer (Library, Mirroring Main, or Mirroring Branches) by its own initiative or within a live conversation. Work under Sections 3 through 6 begins only when a scheduled run triggers it. Inert listings already made under Section 10 are not inventory or population and remain as they are.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
