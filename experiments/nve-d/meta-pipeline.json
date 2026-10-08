@@ -1,0 +1,83 @@
+{
+  "version": "nve-d-dual-pipeline-v0.1",
+  "authority": "experimental_candidate",
+  "source": {
+    "repo": "AGI144348Outlook/Mashet-Echo-Drive",
+    "path": "Mashet Symbology.txt"
+  },
+  "stages": [
+    {
+      "id": "feedback",
+      "english": "Feedback loops",
+      "mashet": "⧟ → Ψ → ⨈",
+      "basis": [
+        "⧟ Feedback Loop Node",
+        "Ψ Feedback / Adjustment",
+        "⨈ Feedback Integrator"
+      ],
+      "provisional": true
+    },
+    {
+      "id": "queue",
+      "english": "Que / Queue",
+      "mashet": "⧗ ⊕ ⧱",
+      "basis": [
+        "⧗ Temporal Progression",
+        "⊕ Composition",
+        "⧱ Iterative Node"
+      ],
+      "provisional": true,
+      "note": "No explicit queue operator in source legend; proposed composite."
+    },
+    {
+      "id": "audit",
+      "english": "Audits",
+      "mashet": "⌖ ⧠ ⧰",
+      "basis": [
+        "⌖ Constraints / Stability",
+        "⧠ Constraint Node",
+        "⧰ Residual / Correction"
+      ],
+      "provisional": true,
+      "note": "Audit is an inferred composite, not a source-defined operator."
+    },
+    {
+      "id": "gap",
+      "english": "Gaps → Que",
+      "mashet": "⧧ ⧝ ⧰ → ⧗ ⊕ ⧱",
+      "basis": [
+        "⧧ Uncertainty Node",
+        "⧝ Divergence / Split",
+        "⧰ Residual / Correction"
+      ],
+      "provisional": true,
+      "note": "Gap identification and routing are candidate behavior."
+    },
+    {
+      "id": "review",
+      "english": "Review",
+      "mashet": "⧛ ⤓ ⧩",
+      "basis": [
+        "⧛ Mirror / Reflection",
+        "⤓ Selection / Adaptation",
+        "⧩ Selection Gate"
+      ],
+      "provisional": true,
+      "note": "Review and keep/discard criteria are candidate behavior."
+    }
+  ],
+  "cycle": [
+    "feedback",
+    "queue",
+    "audit",
+    "gap",
+    "review",
+    "feedback"
+  ],
+  "policy": {
+    "source_mapping_is_not_semantic_proof": true,
+    "all_rules_editable": true,
+    "promotion": "manual_only",
+    "audit_log_append_only": true
+  }
+}
