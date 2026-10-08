@@ -1,0 +1,218 @@
+{
+  "protocol": "NVE-C",
+  "status": "completed_for_first_legend_only",
+  "declared_total": 96,
+  "observed_total": 93,
+  "unique_glyphs": 81,
+  "category_counts": {
+    "A": 12,
+    "B": 12,
+    "C": 12,
+    "D": 20,
+    "E": 20,
+    "F": 17
+  },
+  "gaps": [
+    {
+      "category": "A",
+      "expected": 12,
+      "observed": 12,
+      "missing": 0
+    },
+    {
+      "category": "B",
+      "expected": 12,
+      "observed": 12,
+      "missing": 0
+    },
+    {
+      "category": "C",
+      "expected": 12,
+      "observed": 12,
+      "missing": 0
+    },
+    {
+      "category": "D",
+      "expected": 24,
+      "observed": 20,
+      "missing": 4
+    },
+    {
+      "category": "E",
+      "expected": 20,
+      "observed": 20,
+      "missing": 0
+    },
+    {
+      "category": "F",
+      "expected": 16,
+      "observed": 17,
+      "missing": 0
+    }
+  ],
+  "collisions": [
+    {
+      "glyph": "⬡",
+      "entries": [
+        {
+          "id": "MASHET-A-01",
+          "concept": "Anchor / Origin"
+        },
+        {
+          "id": "MASHET-D-16",
+          "concept": "Point Container"
+        }
+      ]
+    },
+    {
+      "glyph": "↺",
+      "entries": [
+        {
+          "id": "MASHET-A-04",
+          "concept": "Feedback / Loop"
+        },
+        {
+          "id": "MASHET-E-17",
+          "concept": "Adaptation"
+        }
+      ]
+    },
+    {
+      "glyph": "⬢",
+      "entries": [
+        {
+          "id": "MASHET-A-05",
+          "concept": "Unified State"
+        },
+        {
+          "id": "MASHET-F-03",
+          "concept": "Envelope VE"
+        }
+      ]
+    },
+    {
+      "glyph": "≋",
+      "entries": [
+        {
+          "id": "MASHET-A-10",
+          "concept": "Noise / Randomness"
+        },
+        {
+          "id": "MASHET-E-15",
+          "concept": "Perturbation"
+        }
+      ]
+    },
+    {
+      "glyph": "⌖",
+      "entries": [
+        {
+          "id": "MASHET-A-11",
+          "concept": "Constraint / Stability"
+        },
+        {
+          "id": "MASHET-E-14",
+          "concept": "Constraint"
+        }
+      ]
+    },
+    {
+      "glyph": "⚖",
+      "entries": [
+        {
+          "id": "MASHET-A-12",
+          "concept": "Energy / Fitness"
+        },
+        {
+          "id": "MASHET-E-10",
+          "concept": "Fitness Function"
+        }
+      ]
+    },
+    {
+      "glyph": "⤓",
+      "entries": [
+        {
+          "id": "MASHET-B-01",
+          "concept": "Adaptation / Selection"
+        },
+        {
+          "id": "MASHET-E-16",
+          "concept": "Selection"
+        }
+      ]
+    },
+    {
+      "glyph": "⏳",
+      "entries": [
+        {
+          "id": "MASHET-B-02",
+          "concept": "Delay / Lag"
+        },
+        {
+          "id": "MASHET-D-10",
+          "concept": "Temporal / Chronos"
+        }
+      ]
+    },
+    {
+      "glyph": "⊞",
+      "entries": [
+        {
+          "id": "MASHET-B-11",
+          "concept": "Softmax / Weighting"
+        },
+        {
+          "id": "MASHET-E-09",
+          "concept": "Softmax Adjustment"
+        }
+      ]
+    },
+    {
+      "glyph": "▸",
+      "entries": [
+        {
+          "id": "MASHET-C-06",
+          "concept": "Subprojection"
+        },
+        {
+          "id": "MASHET-E-04",
+          "concept": "Discrete Update"
+        }
+      ]
+    },
+    {
+      "glyph": "⬢⧖",
+      "entries": [
+        {
+          "id": "MASHET-C-10",
+          "concept": "Emergent Cluster"
+        },
+        {
+          "id": "MASHET-F-05",
+          "concept": "Lattice / Network"
+        }
+      ]
+    },
+    {
+      "glyph": "▢",
+      "entries": [
+        {
+          "id": "MASHET-D-18",
+          "concept": "Inert Placeholder"
+        },
+        {
+          "id": "MASHET-F-09",
+          "concept": "Inert Instance"
+        }
+      ]
+    }
+  ],
+  "agreement": "Every informed candidate has a matching glyph in the blind structural observation; this is input consistency, not independent semantic corroboration.",
+  "limitations": [
+    "Blind pass was isolated from concept labels but retained source-provided category and position metadata.",
+    "The source includes other alternative legends not reconciled in this run.",
+    "No glyph semantics inferred by blind pass; no entries promoted to Registry 0.",
+    "This is a deterministic extraction and comparison, not execution of the existing full Registry Former."
+  ]
+}
