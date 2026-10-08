@@ -1,0 +1,13 @@
+/* NVE-D symbolic kernel: deterministic, non-numeric structural interpreter.
+   Source: AGI144348Outlook/Mashet-Echo-Drive / AGI Mashet Engines.txt
+   Source rules: lines 179-211. Interpretation choices marked EXPERIMENTAL.
+   Does not claim to execute the original kernel's unspecified functional semantics. */
+(function(global){"use strict";
+const GRAMMAR={"⟳":"dynamics","⇢":"external_input","∫":"memory","⧖":"network","⚖":"fitness","≋":"noise","⊕":"compose","⌖":"stability","☉":"state"};
+const DEFAULT="☉ₖ = ⊕ { ⟳ , ⇢ , ∫ , ⧖ , ⚖ , ≋ }";
+function tokenize(text){const normalized=String(text).replace(/[{}(),]/g," ").replace(/☉ₖ|☉₀/g," ☉ ").replace(/⇢◇/g," ⇢ ").replace(/∫↺/g," ∫ ");return [...normalized.matchAll(/[⟳⇢∫⧖⚖≋⊕⌖☉]|[^\s=]+/gu)].map(m=>m[0]);}
+function inspect(text){const tokens=tokenize(text),recognized=tokens.filter(t=>GRAMMAR[t]),unknown=tokens.filter(t=>!GRAMMAR[t]);return {tokens,recognized:recognized.map(glyph=>({glyph,role:GRAMMAR[glyph]})),unknown};}
+function validate(text,context){const found=inspect(text),glyphs=new Set(found.recognized.map(x=>x.glyph)),errors=[],warnings=[];if(!glyphs.has("☉"))errors.push("No state glyph ☉.");if(!glyphs.has("⊕"))errors.push("No multi-input aggregator ⊕.");if(glyphs.has("∫")&&!(context&&context.priorState))errors.push("Memory ∫ requires a prior state.");if(glyphs.has("⇢")&&!(context&&context.externalInput))errors.push("External input ⇢ requires an explicitly external input.");if(glyphs.has("⧖")&&(!context||!Number.isInteger(context.networkNodes)||context.networkNodes<2))errors.push("Coupling ⧖ requires at least two network nodes.");if(found.unknown.length)warnings.push("Uninterpreted tokens preserved: "+found.unknown.join(" "));if(glyphs.has("⚖"))warnings.push("Fitness ⚖ is structurally identified; its computation is not specified.");if(glyphs.has("≋"))warnings.push("Noise ≋ is structurally identified; no random values are generated.");return {valid:errors.length===0,errors,warnings,inspection:found};}
+function step(text,context){const check=validate(text,context);if(!check.valid)return {status:"rejected",...check};const roles=check.inspection.recognized.filter(x=>x.glyph!=="☉"&&x.glyph!=="⊕");const node={type:"☉",operator:"⊕",children:roles.map(x=>({glyph:x.glyph,role:x.role,mode:"symbolic_only"})),context:{priorState:!!context.priorState,externalInput:!!context.externalInput,networkNodes:context.networkNodes},execution:"structural_transition_only"};return {status:"symbolic_candidate",valid:true,ast:node,warnings:check.warnings,registryPromotion:false};}
+global.MashetNveD={DEFAULT,GRAMMAR,tokenize,inspect,validate,step};
+})(typeof window!=="undefined"?window:globalThis);
