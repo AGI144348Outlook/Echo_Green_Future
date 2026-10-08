@@ -23,9 +23,11 @@ jobs:
       - name: Run full-corpus registry former
         run: |
           python3 - <<'PY'
-          import json, hashlib, pathlib, collections, statistics
+          import json, hashlib, pathlib, collections, statistics, subprocess, os
           root=pathlib.Path('/tmp/ivs-corpus/corpus')
+          upstream_sha=subprocess.check_output(['git','-C','/tmp/ivs-corpus','rev-parse','HEAD'],text=True).strip()
           files=sorted(root.rglob('*.json'))
+          if not files: raise RuntimeError('IVS corpus contains no JSON files')
           records=[]; errors=[]; sources=[]
           for p in files:
               raw=p.read_text(encoding='utf-8')
@@ -36,6 +38,8 @@ jobs:
                   sources.append({'path':rel,'records':len(a),'sha256':hashlib.sha256(raw.encode()).hexdigest()})
                   for r in a: records.append((rel,r))
               except Exception as e: errors.append({'path':rel,'error':str(e)})
+          if errors: raise RuntimeError('IVS corpus parse errors: '+json.dumps(errors))
+          if not records: raise RuntimeError('IVS corpus contains no inscriptions')
           glyph={}; occ=[]; adj=collections.Counter(); positions={}; desc=collections.defaultdict(list); repeats=[]
           for src,r in records:
               rid=r.get('id'); seq=[]
@@ -58,9 +62,13 @@ jobs:
           for q in glyph.values():
               gr.append({'id':q['id'],'occurrences':q['occurrences'],'record_count':len(q['records']),'feature_vectors':[json.loads(x) for x in sorted(q['feature_vectors'])]})
           lengths=[len(r.get('graphemes',[])) for _,r in records]
+          if not occ: raise RuntimeError('IVS corpus contains no grapheme occurrences')
+          if sum(q['occurrences'] for q in gr)!=len(occ): raise RuntimeError('Occurrence totals disagree')
+          if sum(sum(p.values()) for p in positions.values())!=len(occ): raise RuntimeError('Position totals disagree')
+          if sum(adj.values())!=sum(max(n-1,0) for n in lengths): raise RuntimeError('Adjacency totals disagree')
           result={
            'test':'IVS Registry Formation 002 — Full Current mayig Corpus',
-           'scope':{'repository':'mayig/indus-valley-script-corpus','ref':'main','corpus_json_files':len(files),'parsed_files':len(sources),'parse_errors':len(errors),'inscriptions':len(records)},
+           'scope':{'repository':'mayig/indus-valley-script-corpus','ref':'main','commit_sha':upstream_sha,'workflow_run_id':os.environ.get('GITHUB_RUN_ID'),'workflow_sha':os.environ.get('GITHUB_SHA'),'corpus_json_files':len(files),'parsed_files':len(sources),'parse_errors':len(errors),'inscriptions':len(records)},
            'registry_of_registries':[
             {'index':0,'name':'DSL Registry','status':'EMPTY'},
             {'index':1,'name':'Source File Registry','count':len(sources)},
@@ -91,6 +99,10 @@ jobs:
 
           Scope: full current `mayig/indus-valley-script-corpus` `main` corpus directory.
 
+          Upstream commit: {upstream_sha}
+          Workflow run: {os.environ.get('GITHUB_RUN_ID')}
+          Validation: nonempty corpus, zero parse errors, consistent occurrence/position/adjacency totals.
+
           - JSON files: {len(files)}
           - Parsed files: {len(sources)}
           - Parse errors: {len(errors)}
@@ -114,6 +126,10 @@ jobs:
           git config user.name "echo-ivs-registry-test"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add IVS/tests/registry-formation-002-full-corpus
-          git commit -m "IVS: full corpus registry formation test" || exit 0
+          if git diff --cached --quiet; then
+            echo "No result changes."
+            exit 0
+          fi
+          git commit -m "IVS: full corpus registry formation test"
           git pull --rebase origin code-library-registry-ivs
           git push origin HEAD:code-library-registry-ivs
