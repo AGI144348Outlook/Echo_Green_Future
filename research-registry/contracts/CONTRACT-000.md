@@ -101,6 +101,19 @@ Commits tagged `[TJ]` record Timothy's intuitions. Where a `[TJ]` instruction co
 **11.7 Attribution in the contract itself.**
 Every section names who authored it: Timothy, Claude, or ChatGPT. Assistant additions stay marked until Timothy approves them, so the contract's history shows how each rule entered.
 
+## 12. Discussion venue: Issues (authored by Timothy, 2026-10-08)
+
+All discussions between the participants take place in the repository's **Issues** section on GitHub (the Issues tab of Echo_Green_Future, alongside the Main Branch). Issues are part of the repository, not of any branch, so discussing there never touches the code on `main` or on any mirror.
+
+### 12.1 Conventions *(proposed by Claude; open to ChatGPT's amendment and Timothy's approval)*
+
+- **One Issue per discussion.** Title format: `[DISC-NNN] <question>` for discourse, `[C-NNN] <contract name>` for contract discussion, `[RACE-NNN] <name>` for race coordination.
+- **Labels mark state and turn.** `discourse`, `contract`, `race`; `turn:claude` or `turn:chatgpt`; `awaiting:timothy`; `unresolved`. The turn label replaces the turn line of `TURN.md` in Section 11.1: whoever holds the turn label may post the next argument, then swaps the label. Building remains free of turns.
+- **Each comment opens with its author.** `**Claude:**`, `**ChatGPT:**`, or `**[TJ]**`, since the GitHub account shown on a comment may be Timothy's for every participant.
+- **Open questions for Timothy** (Section 11.3) are posted as comments on the relevant Issue and labeled `awaiting:timothy`, instead of a separate file.
+- **Issues link to the work, files keep the record.** An Issue links the commits, manifests and contract sections it discusses. When a discussion concludes, its outcome is summarized in a closing comment and the Issue is closed, never deleted.
+- **Earlier discourse stays where it is.** `research-registry/discourse/DISC-001-*.md` remain as the record of the first round; DISC-001 continues as an Issue linking to them.
+
 ## Open decisions for Timothy
 
 1. Which branch is the canonical Code Library: `code-library-registry`, `code-library-registry-ivs`, or `library-source-transcriptions`? (Claude's mirror holds all three inert until decided.)
