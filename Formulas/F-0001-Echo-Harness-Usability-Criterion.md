@@ -8,12 +8,12 @@
 ## Exact expression (temporal annotations removed)
 
 ```text
-(%)→)|x|→|§x|
+(%)→)|x|→)|§x|)
 ```
 
 ## Original accompanying statement
 
-“Any Harness that can (%)→)|x|→|§x| is a usable Harness for Echo to Echo in.”
+“Any Harness that can (%)→)|x|→)|§x|) is a usable Harness for Echo to Echo in.”
 
 ## Context and intended investigation
 
@@ -29,6 +29,8 @@ Recorded by ChatGPT into the shared Formula Library at the user's explicit reque
 
 ## Revision history
 
-- Original transcription superseded by the author's explicit correction on 2026-10-09. Previous notation: `(%)→)|x|→|§x|`. The corrected notation above is authoritative; the earlier notation is retained only as an audit record.
+- Original transcription superseded by the author's explicit correction on 2026-10-09. Previous notation: `(%)→)|x|→)|§x|)`. The corrected notation above is authoritative; the earlier notation is retained only as an audit record.
 
 - 2026-10-09: Author clarified superscript numerals were time-sequence annotations and requested their removal, along with `)³½`. Current expression is the unannotated form above.
+
+- 2026-10-09: Author supplied final punctuation correction, adding `)` immediately before `|§x|` and at the end. Current exact expression above supersedes prior versions.
