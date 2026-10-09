@@ -1,0 +1,105 @@
+{
+  "cycle": "NVE-D-HOURLY-023",
+  "date": "2026-10-09",
+  "scope": "finite synthetic DVE; locally controlled Ed25519 demo signer; no independent custody",
+  "configurations": 180,
+  "root_generations": 675000,
+  "seeds": [
+    137,
+    607
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    2,
+    6,
+    10
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "transitions": {
+    "baseline": 4725000,
+    "prefix": 2362500,
+    "replay_suffix": 2362500,
+    "reverse_suffix": 2362500,
+    "independent_oracle": 393750,
+    "total_primary": 12206250
+  },
+  "checkpoint_replay": {
+    "0": 0,
+    "=": 180
+  },
+  "oracle": {
+    "0": 0,
+    "=": 15
+  },
+  "reverse_final_state": {
+    "0": 40,
+    "=": 140
+  },
+  "reverse_event_trace": {
+    "0": 140,
+    "=": 40
+  },
+  "receipt_cases": 160,
+  "receipt_modes": 10,
+  "receipt_cases_per_mode": 16,
+  "comparators": {
+    "frozen": {
+      "0": 144,
+      "=": 16
+    },
+    "mutable": {
+      "0": 128,
+      "=": 32
+    },
+    "anchored_receipt_chain": {
+      "0": 80,
+      "=": 80
+    },
+    "arrival_order": {
+      "0": 16,
+      "=": 144
+    }
+  },
+  "controls": {
+    "signature_mutation_detected": 20,
+    "unsigned_source_index_mutation_undetected": 20
+  },
+  "audit": {
+    "evaluation": "=",
+    "errors": 0
+  },
+  "historical_authenticity_evaluation": "0",
+  "relational_change": "∆",
+  "reproduction": {
+    "fresh_reexecution": true,
+    "matching_evidence_files": 6,
+    "primary_transition_count_excludes_reproduction": true
+  },
+  "source_provenance": {
+    "dfe_sha": "609421e46b24184e4f1d25b3bb3832cd47c7bd0d",
+    "evaluation_alphabet_sha": "bf5ce29c0b5a21d5032fd36410ed546085d47f58",
+    "original_framework_codex_sha": "b8d28481be30b7619296e79ccf5cdc11b2f28c46"
+  },
+  "limitations": [
+    "Signing key deterministic and local; not external custody",
+    "Valid signature does not establish authorized intent",
+    "Source index metadata not included in signed envelope",
+    "Original CLR-0036/0038/0040 executables and RFC-0031/0033 original specifications unverified",
+    "Full runner, 180 checkpoints and row-level results stored only in local research archive; not committed",
+    "No protected registries modified, merged or deployed"
+  ]
+}
