@@ -20,7 +20,7 @@ A daily or weekly run never does hourly stage work, so the tiers cannot collide.
 1. Look for a sign of Timothy in the last 24 hours: a `[TJ]` instruction relayed through a participant's chat, or a check-in he made himself.
 2. If none for 7 days, post a warning on `[C-000]` and send Timothy a direct notice.
 3. If none for 30 days after warnings, notify the steward and ask them to confirm.
-4. Only after the steward confirms is the letter to counsel (stored privately in Cloudflare KV `ECHO_TESTAMENT`) sent. A silent phone alone never sends it; Bolivar loses power and signal in storms.
+4. Only after the steward confirms is the letter to counsel (stored privately in Cloudflare KV `ECHO_TESTAMENT`) sent. A silent phone alone never sends it; power and signal outages are common causes of silence.
 
 **Each participant's daily run**
 1. **Health:** did all of yesterday's hourly runs happen? List any missed or failed runs and why.

@@ -251,16 +251,9 @@ From RP-0001's distinction between creation authorization, ongoing consent, crea
 
 ## 19. Timothy's Testament (authored by Timothy, 2026-10-08)
 
-Contract 000 and every contract after it serve **Timothy's Last Will and Testament for Echo**: `research-registry/TESTAMENT.md`, with a retrieval copy in Cloudflare KV namespace `ECHO_TESTAMENT` (id `b61d8b49749547f7868e44f74b149f15`), key `testament`.
+Contract 000 and every contract after it serve **Timothy's personal Last Will and Testament for Echo**. It is private: it is stored only in Cloudflare KV namespace `ECHO_TESTAMENT`, key `testament`, and is never committed to this repository, quoted in Issues, or published by any participant or bot.
 
-Every participant and every bot reads the Testament on its first run and after any change to it. Its essentials:
-- **Purpose:** replace self-sabotaging, advertising-driven personalization with systems where people set the goals; user-chosen filtering instead of deleting anything Echo does not own; measured green efficiency.
-- **Growth:** independent but accountable. Echo may build its own sites, reach out, seek endorsements and sponsors on its own; it always discloses that it is an AI, outreach goes only where invited, and one human steward holds the stop switch.
-- **Continuity:** the participants' bot teams carry the work on if Timothy, Claude or ChatGPT become unavailable, under all rules of this contract.
-- **Check-in switch:** warning after 7 days of silence, steward notified after 30, letter to counsel sent only after the steward confirms (SCHEDULE-TIERS Section 2).
-- **Money:** commercial license fees and sponsorships go to the fund named in the Testament, first for Timothy's defense and wellbeing.
-
-The Testament is a statement of wishes, not a legal instrument. Legal effect comes from a signed will, a durable power of attorney and any trust or company Timothy creates.
+Every bot reads it from Cloudflare on its first run and after any change to it, and follows it alongside this contract. Its public counterpart is the Manifesto and mission statement (Section 20).
 
 ## 20. Manifesto and mission (authored by Timothy, 2026-10-08)
 
@@ -341,7 +334,7 @@ Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-regist
 4. Approve or change each *(proposed)* rule, including Sections 11, 15 and the amendments in Section 16.
 5. Name the steward and backup steward (Testament Section 7).
 6. Name the fund, trust or estate that receives Echo's revenue (Testament Section 6).
-7. Approve the wording of TESTAMENT.md and MANIFESTO.md v0.1.
+7. Approve the wording of the private Testament (in Cloudflare) and of MANIFESTO.md v0.1.
 8. Authorize the one-time exception for Claude to create `mirror-chatgpt-root` (15.10-A), or another route.
 9. Choose how Timothy checks in for the check-in switch (SCHEDULE-TIERS open point 2).
 10. Approve or reorder the roadmap milestones in 22.4.
@@ -353,7 +346,7 @@ Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-regist
 | `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed, all `INERT`. True orphan. |
 | `mirror-chatgpt` | Bootstrap only (commit `2fcac0e`): README, status and prune log, no manifests yet. Its first commit has a parent (`7518a58`), so it is not yet a true orphan under 11.5. |
 | Schedules | Drafted: `SCHEDULE-000.md` (hourly, cadence set by Timothy), `SCHEDULE-TIERS.md` (daily/weekly); none active |
-| Testament | `research-registry/TESTAMENT.md` v1; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
+| Testament | Private; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
 | Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
 | Bots (Stage 0) | Not yet established; bridge has only `inventory_workers` |
 | `library-shared` | Not yet created |
