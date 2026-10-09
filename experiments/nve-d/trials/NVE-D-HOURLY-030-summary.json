@@ -1,0 +1,129 @@
+{
+  "cycle": "NVE-D-HOURLY-030",
+  "date": "2026-10-09",
+  "status": "completed_local_300s",
+  "scope": "finite synthetic DVE; locally held deterministic HMAC keys; no independent custody",
+  "active_wall_seconds": 300.00278339,
+  "completed_configurations": 65922,
+  "completed_root_generations": 245782500,
+  "completed_node_transitions": 818295000,
+  "changed_state_bits": 13278962834,
+  "checkpoints": [
+    {
+      "minute": 1,
+      "seconds": 60.002046321,
+      "configurations": 14299
+    },
+    {
+      "minute": 2,
+      "seconds": 120.00161979,
+      "configurations": 26925
+    },
+    {
+      "minute": 3,
+      "seconds": 180.004523498,
+      "configurations": 40294
+    },
+    {
+      "minute": 4,
+      "seconds": 240.005042078,
+      "configurations": 52594
+    },
+    {
+      "minute": 5,
+      "seconds": 300.002168243,
+      "configurations": 65922
+    }
+  ],
+  "generation_budgets": {
+    "250": 13230,
+    "1000": 13230,
+    "2500": 13230,
+    "5000": 13230,
+    "10000": 13002
+  },
+  "seeds": [
+    211,
+    809,
+    1597,
+    3011,
+    4447,
+    8123,
+    13007,
+    17389
+  ],
+  "depths": [
+    1,
+    3,
+    6
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh",
+    "bipartite",
+    "tree",
+    "hybrid"
+  ],
+  "comparisons": {
+    "issuer_compromise_synthetic_cases": 13185,
+    "signature_only_rejections": 0,
+    "two_witness_rejections": 13185,
+    "evaluation_two_witness_vs_signature_only": ">",
+    "authorized_transform_synthetic_cases": 4395,
+    "lineage_accepted": 4395,
+    "frozen_root_accepted": 0,
+    "evaluation_lineage_vs_frozen": ">",
+    "all_keys_compromised_synthetic_cases": 4394,
+    "lineage_accepted_unauthorized": 4394
+  },
+  "blind_evidence_gaps": {
+    "revoked_epoch": 4395,
+    "fork_conflict": 4395
+  },
+  "supplemental_outside_budget": {
+    "adjacency_configurations": 360,
+    "root_generations": 1350000,
+    "node_transitions": 4500000,
+    "canonical_evaluations": {
+      "=": 360
+    },
+    "insertion_sensitive_evaluations": {
+      "0": 360
+    }
+  },
+  "audit": {
+    "structural_evaluation": "=",
+    "ledger_rows": 65922,
+    "checkpoint_prefixes": 5,
+    "independent_graph_vectors": 12,
+    "crypto_controls": 96
+  },
+  "DFE": {
+    "step5": ">",
+    "step7": "0",
+    "step8": "="
+  },
+  "sha256": {
+    "full_local_zip": "155046debf186f53299e74f6d032b88d87bebbb4fd2683f9b5c5e6c6e30f1f05",
+    "runner": "0753c0b46a3883616a49fb75d7245570b08f06066ee122f57d556a898db6adf4",
+    "auditor": "1e427a40a9c10025d02e0cb56da1e8726d38ac31a4378f9cdb57df8c7da99b3f",
+    "ledger": "f72ec27aa7dc4b6e588c9a9969c4ca754df794fcaf8ad0fd8076138ae8e6e662"
+  },
+  "provenance": {
+    "historical_codex_files": 7,
+    "ietf_framework_blob": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+    "mod0001_archived_newline_difference": true,
+    "standalone_clr0036_0038_0040_and_rfc0031_0033_not_found_in_bounded_search": true
+  },
+  "limitations": [
+    "Scenario labels leak into freshness for revoked_epoch and fork_conflict; blind audit cannot establish them",
+    "Keys and policy signer are all locally controlled",
+    "Repetitions of authored cases are not independent historical observations",
+    "The full runner, ledger, checkpoint files and auditor are in the local downloadable archive, not this JSON",
+    "No protected registry writes, merges or deployments"
+  ],
+  "protected_registry_changes": false,
+  "merged": false,
+  "deployed": false
+}
