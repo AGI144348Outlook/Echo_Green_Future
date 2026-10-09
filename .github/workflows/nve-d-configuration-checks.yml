@@ -1,0 +1,28 @@
+name: NVE-D configuration lab checks
+on:
+  push:
+    branches: [library-source-transcriptions]
+    paths:
+      - 'experiments/nve-d/configuration_lab.py'
+      - 'experiments/nve-d/test_configuration_lab.py'
+      - '.github/workflows/nve-d-configuration-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        working-directory: experiments/nve-d
+        run: python -m unittest -v test_configuration_lab.py
+      - name: Smoke run (fixture only, not evidence)
+        working-directory: experiments/nve-d
+        run: |
+          python configuration_lab.py --registry-ref "TEST-FIXTURE-NOT-VERIFIED" --budget 25 --seed 21 --output /tmp/nve-d-preparation.json
+          python -c "import json; d=json.load(open('/tmp/nve-d-preparation.json')); assert len(d['arms'])==3; print([(a['arm'],a['tested_new']) for a in d['arms']])"
