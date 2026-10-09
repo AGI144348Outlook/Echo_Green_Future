@@ -24,5 +24,10 @@ jobs:
       - name: Smoke run (fixture only, not evidence)
         working-directory: experiments/nve-d
         run: |
-          python configuration_lab.py --registry-ref "TEST-FIXTURE-NOT-VERIFIED" --budget 25 --seed 21 --output /tmp/nve-d-preparation.json
+          python - <<'PY'
+          import json
+          data={"schema":"nve-d-registry-manifest-v1","repository":"TEST-FIXTURE-NOT-VERIFIED","commit":"0"*40,"source_path":"fixture","entries":[{"id":f"MS-{i:03d}","source_locator":f"fixture:{i}"} for i in range(1,17)]}
+          with open("/tmp/nve-d-registry-fixture.json","w") as f: json.dump(data,f)
+          PY
+          python configuration_lab.py --registry-manifest /tmp/nve-d-registry-fixture.json --registry-ref "TEST-FIXTURE-NOT-VERIFIED@0000000000000000000000000000000000000000:fixture" --budget 25 --seed 21 --output /tmp/nve-d-preparation.json
           python -c "import json; d=json.load(open('/tmp/nve-d-preparation.json')); assert len(d['arms'])==3; print([(a['arm'],a['tested_new']) for a in d['arms']])"
