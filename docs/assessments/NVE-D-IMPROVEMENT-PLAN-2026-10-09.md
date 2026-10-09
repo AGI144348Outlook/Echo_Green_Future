@@ -10,6 +10,7 @@
 - the rules in Cloudflare D1 `echo_knowledge`.
 
 **Status:** Proposed. Nothing here is implemented, and nothing here changes a registry.
+**Revised:** 2026-10-09, after GPT's review and Timothy's approval. Added the evidence levels (§3a), the separate IVS data-seeded trial (§3b) and the status rule for definitions (§3c), and corrected an overstatement in §5.
 
 **Labels used throughout:**
 - **Declared**: Timothy stated it.
@@ -385,7 +386,7 @@ The parent sees the child only through the `|x|` slot (Reading, Depends on N6). 
 
 ## 3. The first real trial: NVE-D-021, specification
 
-Small enough to check by hand. Uses only registered material.
+Small enough to check by hand. Uses only registered material. This is the **synthetic** trial: the relations are assigned by the search, not observed in any data. Its findings are about the formula readings and the search, not about what the symbols mean (§3a).
 
 | Setting | Value |
 |---|---|
@@ -393,7 +394,7 @@ Small enough to check by hand. Uses only registered material.
 | Relations | `{<,>,=,0}`; `0` = open (provisional) |
 | Space | 240 ordered pairs; declared sub-space: start from all-`0`, at most 24 non-`0` pairs |
 | Time | Frozen |
-| Moves | The 8 Hebrew moves in 5a; LL1–LL5 as forbidden pairs |
+| Moves | The 8 Hebrew moves in 5a; the ו/ז same-pair lock (5a) as the forbidden pair |
 | Search arms | (1) random moves, (2) A1+A2+D2+E2, (3) arm 2 + B1+B2+D1, all with the same budget |
 | Budget (A1) | e.g. 20,000 configurations per arm, fixed seed, recorded in the manifest |
 | Judges | J-A (proportion) and J-B (independent relations), plus an independently written second evaluator for each |
@@ -402,7 +403,51 @@ Small enough to check by hand. Uses only registered material.
 | Determinatives | 8 trigrams from three declared properties |
 | Report | Configurations tested, coverage of the declared sub-space, findings per 1,000 configurations per arm, trigram coverage, composites detected, all integrity checks |
 
-**What it would show.** Whether plasticity-driven search finds more replicated proportions than random search on the same budget; how the two readings of your formula behave; and whether trigram categories separate findings from non-findings. Each answer is useful whichever way it comes out.
+**What it would show.** Whether plasticity-driven search finds more replicated proportions than random search on the same budget; how the two readings of your formula behave; and whether trigram categories separate findings from non-findings. Each answer is useful whichever way it comes out. None of these answers says anything about what MS-001 to MS-016 mean.
+
+---
+
+## 3a. Evidence levels
+
+Every finding is reported with the highest level it has reached. A higher level never erases what a lower level does *not* show.
+
+| Level | Reached when | What it shows | What it does not show |
+|---|---|---|---|
+| E1 Replicated | The finding is reproduced by an independent replay and survives one neutral move elsewhere | It is a stable property of the configuration under that judge | Anything beyond that judge's declared rule |
+| E2 Cross-judged | E1, plus both judges (J-A and J-B) and their independently written evaluators agree | Agreement **under their declared rules** | Semantic truth. Judges agree on rules they were given, not on what the symbols mean |
+| E3 Data-seeded | E2 holds in a configuration whose starting relations come from observed data (§3b), and holds there more often than in the matching synthetic arm | An **empirical association** in that dataset | Interpretation. An association is not yet a meaning |
+| E4 Declared | Timothy has reviewed the finding and its interpretation and declared it | A semantic conclusion, on Timothy's authority | — |
+
+Only E4 is a semantic conclusion. E4 is granted only by Timothy, never by a run. Reports, the meta-knowledge table (Change 8) and any summary must state each finding's level. A finding without a level is reported as `0`.
+
+## 3b. NVE-D-021-IVS: a separate data-seeded trial
+
+The IVS signs and the 16 Mashet symbols are **different entities**. An IVS co-occurrence matrix gives observed relations between IVS signs, not between MS-001 and MS-016. So the data-seeded test is its own trial, with its own ID and report, run on the same harness. It is never pooled with NVE-D-021.
+
+| Setting | Value |
+|---|---|
+| Entities | The 16 most frequent IVS signs in the mayig corpus, by sign ID, pinned to a corpus commit (selection rule declared before the run) |
+| Starting relations | From an adjacency matrix derived from that corpus (R-MAT-1 to R-MAT-3). Pairs seen together above a declared count get a relation; the rest start at `0` |
+| Reading direction | Two node families, one with pairs taken in listed order and one in read order (R-IVS-1); reported separately |
+| Damaged or uncertain signs | Registered but flagged; pairs touching them are counted separately (R-IVS-2) |
+| Comparison arm | The same 16 IVS signs with **shuffled** starting relations (the same number of non-`0` pairs, positions randomised) |
+| Moves, judges, budget, finding rule | As in NVE-D-021 |
+| Report | Everything in NVE-D-021, plus: E2 findings per 1,000 configurations, data-seeded vs shuffled, per reading direction |
+
+A finding reaches E3 only if it appears more often in the data-seeded arm than in the shuffled arm, by a margin declared before the run.
+
+**Cross-system mapping.** Any proposed correspondence between an IVS sign and a Mashet symbol (or a Hebrew letter) is a hypothesis. It gets its own record and its own test, and it is never assumed in either trial.
+
+## 3c. Status rule for definitions
+
+The following definitions are provisional, and they stay provisional **whatever their results**:
+- the eight Hebrew moves (5a);
+- the proportion reading J-A and the independent reading J-B (5b);
+- the determinative properties (Change 7);
+- the finding rule (5b);
+- the meaning of `0`.
+
+Performing well in a trial never promotes a definition. A definition changes status only when Timothy declares it. In the rule registry it then moves from PROPOSED to DECLARED, with a `rule_events` row. This applies equally to readings by Claude and by GPT.
 
 ---
 
@@ -416,8 +461,10 @@ Small enough to check by hand. Uses only registered material.
 | 4 | Random arm, then plasticity arms (Change 4) | Steps 1–3 |
 | 5 | J-A, the proportion reading | Better with N7 |
 | 6 | Trigram map (Change 7) | Declared properties; better with the 8-vs-64 answer |
-| 7 | Run NVE-D-021, report | Steps 1–6 |
-| 8 | Meta-knowledge table and rest-cycle synthesis (Change 8) | Step 7 findings |
+| 7 | Run NVE-D-021 (synthetic), report with evidence levels | Steps 1–6 |
+| 7b | Build the IVS adjacency matrix, then run NVE-D-021-IVS (data-seeded and shuffled arms), report separately | Steps 1–6; corpus commit; selection rule |
+| 7c | Compare the two trials side by side, never pooled | Steps 7, 7b |
+| 8 | Meta-knowledge table and rest-cycle synthesis (Change 8); every row carries its evidence level | Steps 7–7c findings |
 | 9 | Nesting (Change 6) | Step 8; N6 |
 | 10 | Time modes (Change 9) | A test that needs them |
 
@@ -450,7 +497,12 @@ All twelve departures listed in the assessment:
 
 These are expected outcomes, not proven ones. Each is testable by the trial above.
 
-1. **NVE-D produces findings about your symbols.** It stops proving that the harness works and starts saying something about the 96: which relations, under which reading of your formula, reliably hold.
+1. **NVE-D produces findings with a stated strength.** It stops proving only that the harness works.
+   - The synthetic trial (NVE-D-021) shows how each reading of your formula and each search method behaves on registered entities. That is evidence about the readings and the search, not about what the symbols mean.
+   - The data-seeded trial (NVE-D-021-IVS) can show empirical associations among IVS signs (level E3).
+   - Meaning comes only at E4, by your review (§3a).
+
+   *Corrected 2026-10-09:* the first version said NVE-D would show "which relations among the 96 reliably hold". In the synthetic trial those relations are assigned by the search, so that claim overreached.
 2. **The pieces of your framework start checking each other.** Five things developed separately now run in one place, so a weakness in one shows up in the others' results:
    - the registries;
    - the neuroplasticity mechanisms;
@@ -474,6 +526,8 @@ These are expected outcomes, not proven ones. Each is testable by the trial abov
 - Numbers in the plasticity notes are starting guesses. A mechanism that loses to random search on this task is a result, not a failure of the plan.
 - The canonical 96 legend is still undeclared. Layer I is used because its range is fixed (R-LAY-1); entity meanings don't enter the trial.
 - 4²⁴⁰ is far beyond exhaustive testing even for Layer I. Coverage is always of a declared sub-space.
+- Agreement between judges is agreement under their declared rules. A data-seeded result is an empirical association in one corpus. Neither is semantic truth (§3a).
+- IVS and Mashet results are about different entities and are never combined into one claim (§3b).
 
 ---
 
@@ -490,6 +544,7 @@ These are expected outcomes, not proven ones. Each is testable by the trial abov
 | New-1 | Do the 8 Hebrew moves in 5a fit your reading of those letters? | 5a |
 | New-2 | Determinatives: 8 or 64; declared properties or traditional associations? | Change 7 |
 | New-3 | Should NVE-D's own findings ever be eligible for registry promotion, and by what review? | Change 8 |
+| New-4 | For NVE-D-021-IVS: which selection rule (16 most frequent signs, or another), and what co-occurrence count counts as a relation? | §3b |
 
 ---
 
