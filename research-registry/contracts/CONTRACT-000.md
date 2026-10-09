@@ -473,6 +473,35 @@ The shared Library has a wing strictly for business: `library-shared/Business/`.
 
 GitHub shows the "Run workflow" button only for workflows whose file is on the default branch, so the bridge (on `bridge-experiment`) cannot be started from the GitHub UI while `main` stays untouched. Manual bridge runs are therefore triggered through the GitHub API by a participant, **only after Timothy approves the specific run in chat**; each run appears in Actions as a `workflow_dispatch` event. To be filed as a Workshop solution at the first scheduled run.
 
+## 27. Triggered conditions and the Conditions Registry (authored by Timothy, 2026-10-09; detail by Claude)
+
+Workflows may run on **standing conditions**: "when this happens and this is true, do that." Timothy approves each condition once; afterward it fires on its own within its limits. All three routes are authorized:
+
+| Route | How it triggers | Where it lives | Status |
+|---|---|---|---|
+| **1. Push** | A commit to a named file on a side branch | Side branches (e.g. `bridge-experiment`) | Active: bridge pushes run inventory only |
+| **2. Cloudflare condition engine** | The check-in Worker's cron evaluates conditions and starts workflows through the GitHub API | Cloudflare | Planned with the check-in Worker |
+| **3. Label dispatcher** | Timothy adds the label `run:approved` to an Issue titled `[RUN] bridge chatgpt` or `[RUN] bridge claude` | `main`: `.github/workflows/label-dispatcher.yml`, added under Timothy's `[TJ]` exception of 2026-10-09 (commit `e28421a`, with `[skip ci]` so no other workflow fired) | Active |
+
+GitHub only runs schedule, Issue, label and workflow-chaining triggers from the default branch; that is why route 3 needs one file on `main`. That file is the only exception: it never touches Echo's code, and any change to it needs Timothy's approval.
+
+### 27.1 The Conditions Registry
+
+`research-registry/CONDITIONS.md` lists every standing condition. Each entry records: ID (`C-NNN`), trigger, condition checked, action, route, safety level, approver and date, and how to disable it.
+
+**Safety levels:**
+- **Level 0, read-only** (inventories, health checks, reports): may be pre-approved and fire freely.
+- **Level 1, inert or reversible** (deploying an inert Worker, writing to a participant's own branch): pre-approved per condition, with limits.
+- **Level 2, consequential** (deploying live code, spending money, contacting anyone outside the project, changing secrets): **never** pre-approved. Every firing needs Timothy's fresh approval, whatever condition triggered it.
+
+### 27.2 The identity problem *(SOURCE-OBSERVED)*
+
+The dispatcher accepts approval only from the repository owner's account. But Claude, ChatGPT and future bots also act through Timothy's account, so GitHub cannot tell Timothy's label from a participant's. Until fixed:
+- **No participant or bot ever adds `run:approved`.** This is a hard rule, and bot code must refuse to apply that label.
+- The dispatcher is limited to the bridge, whose own allowlist already restricts it to inventory and inert deploys.
+
+**Recommended fix:** a separate free GitHub machine account for the bots (for example `echo-bots`), added to the repository as a collaborator, whose tokens the bots use. Then "sender is the owner" truly means Timothy, and approvals by label become trustworthy.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -488,6 +517,7 @@ GitHub shows the "Run workflow" button only for workflows whose file is on the d
 11. Approve the four-week rotation (23.3) and horizon-scan areas (23.4), or adjust them.
 12. Set up the trusted income account and decide the default four-way split ratios (25.1).
 13. Choose private storage for business figures (Cloudflare D1 or a private repository) (§26).
+14. Create a separate GitHub machine account for the bots (§27.2).
 
 ## Current state
 
