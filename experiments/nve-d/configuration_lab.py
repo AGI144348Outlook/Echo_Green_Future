@@ -314,7 +314,9 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--registry-ref", required=True,
                    help="Pinned commit containing verified MS-001..016 IDs")
-    p.add_argument("--registry-manifest", required=True,\n                   help="Locally supplied, source-pinned manifest of MS-001..016")\n    p.add_argument("--budget", type=int, default=100)
+    p.add_argument("--registry-manifest", required=True,
+                   help="Locally supplied, source-pinned manifest of MS-001..016")
+    p.add_argument("--budget", type=int, default=100)
     p.add_argument("--seed", type=int, default=21)
     p.add_argument("--output", default="-")
     args = p.parse_args()
