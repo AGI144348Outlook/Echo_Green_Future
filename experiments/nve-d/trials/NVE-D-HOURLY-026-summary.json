@@ -1,0 +1,121 @@
+{
+  "cycle": "NVE-D-HOURLY-026",
+  "date": "2026-10-09",
+  "status": "completed_local_300s",
+  "experimental_branch": "library-source-transcriptions",
+  "active_wall_seconds": 300.003647,
+  "continuous_process": true,
+  "checkpoint_interval_s": 60,
+  "checkpoint_count": 5,
+  "checkpoint_elapsed_s": [
+    60.000057,
+    120.00199,
+    180.002101,
+    240.001999,
+    300.003313
+  ],
+  "completed_configurations": 67975,
+  "actual_generation_attempts": 254906250,
+  "actual_edge_state_changes": 27799318,
+  "generation_budgets": {
+    "250": 13595,
+    "1000": 13595,
+    "2500": 13595,
+    "5000": 13595,
+    "10000": 13595
+  },
+  "seeds": [
+    211,
+    809,
+    1597,
+    3011
+  ],
+  "nested_depths": [
+    1,
+    3,
+    6
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh",
+    "bipartite",
+    "tree",
+    "hybrid"
+  ],
+  "policies": [
+    "retain",
+    "reset"
+  ],
+  "opaque_source_identifiers": 51,
+  "source_snapshot_sha": "231b277f774f2523ab240dde75200c1a5cd5db50",
+  "heldout_pair_evaluability": {
+    "0": 4205,
+    "=": 63770
+  },
+  "independent_set_oracle": {
+    "=": 90
+  },
+  "checkpoint_integrity": {
+    "=": 5
+  },
+  "mutation_controls": {
+    "0": 30
+  },
+  "mean_heldout_auc_by_authored_topology": {
+    "ring": {
+      "common_neighbors": 0.503506,
+      "degree_product": 0.448208,
+      "degree_contrast": 0.507941,
+      "fixed_hash": 0.49267
+    },
+    "star": {
+      "common_neighbors": 0.486265,
+      "degree_product": 0.558252,
+      "degree_contrast": 0.668648,
+      "fixed_hash": 0.500744
+    },
+    "mesh": {
+      "common_neighbors": 0.538599,
+      "degree_product": 0.438083,
+      "degree_contrast": 0.518752,
+      "fixed_hash": 0.489727
+    },
+    "bipartite": {
+      "common_neighbors": 0.268521,
+      "degree_product": 0.432411,
+      "degree_contrast": 0.524053,
+      "fixed_hash": 0.495206
+    },
+    "tree": {
+      "common_neighbors": 0.464997,
+      "degree_product": 0.466293,
+      "degree_contrast": 0.4941,
+      "fixed_hash": 0.494502
+    },
+    "hybrid": {
+      "common_neighbors": 0.556338,
+      "degree_product": 0.572288,
+      "degree_contrast": 0.638483,
+      "fixed_hash": 0.495162
+    }
+  },
+  "DFE": {
+    "stage5": "=",
+    "stage7": "0",
+    "stage8": "="
+  },
+  "ledger_sha256": "8362556e49b3c0adc57812f4bb1d1f67dc171d204ca5fc36a90f87c4a2b3f2ec",
+  "local_archive_sha256": "e920e79b602f8b827d12f6040704e61d114924f2317a175db21994845bbb657c",
+  "runner_sha256": "f56f86a28ca6759539796ea7c11218c568e3cb991fcf84d70f685996ce41bc32",
+  "auditor_sha256": "3878672f6fa0f9ad1a53d465406482b17398145ad0ef49ec63eebd68736f03ed",
+  "source_finding": "Seven historical codices verified by direct source fetch; original CLR-0036/0038/0040 executable sources and standalone RFC-0031/0033 not independently located; bounded search.",
+  "limitations": [
+    "Read-only frozen 51-rule snapshot, not live Cloudflare D1 or canonical 96-symbol legend",
+    "Authored synthetic graphs, not inferred source semantics",
+    "Same graph-family heldout, not cross-family generalization",
+    "No independent historical custody",
+    "No protected registry writes, merges or deployments",
+    "Full executable runner, auditor and row-level ledger reside in local ZIP; this JSON alone cannot reproduce run"
+  ]
+}
