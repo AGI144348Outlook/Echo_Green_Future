@@ -1,0 +1,869 @@
+<title>Lexicon Registry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+/* Layout: a desk of ruled index cards. Each card line = query (input half) over a matrix (output half). Tabs move between Cards, Dataset, Registry, Widgets and the Console. */
+:root{
+  --desk:#E6ECF2; --paper:#F9FBFD; --ink:#18212C; --muted:#5A6878;
+  --rule:#BCD0E6; --margin:#C2453D; --accent:#2E5C8C; --accent-ink:#FFFFFF;
+  --chip:#E3EBF4; --ok:#2F7D4F; --warn:#A8641A; --err:#B23A33; --hl:#FFF1A8;
+  --noun:#2E5C8C; --verb:#9A4A1F; --adjective:#4F7A2E; --adverb:#7A4F8C;
+  --f-type:"Courier Prime","Courier New",ui-monospace,monospace;
+  --f-ui:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-read:"Newsreader",Georgia,"Times New Roman",serif;
+  --r:6px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --desk:#0E141B; --paper:#16202B; --ink:#E2E8EF; --muted:#93A2B2;
+  --rule:#2A3A4D; --margin:#E2695E; --accent:#82B0DE; --accent-ink:#0E141B;
+  --chip:#1F2C3A; --ok:#62B583; --warn:#D9A050; --err:#EC7A71; --hl:#5A4E14;
+  --noun:#82B0DE; --verb:#E59A6E; --adjective:#9BCB72; --adverb:#C29BDA; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --desk:#0E141B; --paper:#16202B; --ink:#E2E8EF; --muted:#93A2B2;
+  --rule:#2A3A4D; --margin:#E2695E; --accent:#82B0DE; --accent-ink:#0E141B;
+  --chip:#1F2C3A; --ok:#62B583; --warn:#D9A050; --err:#EC7A71; --hl:#5A4E14;
+  --noun:#82B0DE; --verb:#E59A6E; --adjective:#9BCB72; --adverb:#C29BDA; color-scheme:dark}
+html,body{background:var(--desk);color:var(--ink)}
+body{font-family:var(--f-ui);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:0 48px}
+*{box-sizing:border-box}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--desk);padding-block:12px 8px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-type);font-size:1.35rem;margin:0;letter-spacing:.02em;text-wrap:balance}
+.brand h1 b{color:var(--margin)}
+.status{display:flex;gap:6px;flex-wrap:wrap;font-size:.78rem}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:99px;background:var(--chip);color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--muted);display:inline-block}
+.pill.ok i{background:var(--ok)} .pill.warn i{background:var(--warn)} .pill.bad i{background:var(--err)}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs button{border:0;background:none;padding:6px 10px;border-radius:var(--r);color:var(--muted);font-weight:500;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem;white-space:nowrap;cursor:pointer}
+nav.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink);box-shadow:inset 0 -2px 0 var(--margin)}
+.banner{font-size:.85rem;padding:8px 12px;border-radius:var(--r);background:var(--chip);color:var(--muted)}
+.banner.warn{color:var(--warn)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grow{flex:1 1 200px;min-width:0}
+.btn{border:1px solid var(--rule);background:var(--paper);padding:6px 12px;border-radius:var(--r);cursor:pointer;font-weight:500;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.danger{color:var(--err)}
+.btn.small{padding:3px 8px;font-size:.8rem}
+.btn:disabled{opacity:.5;cursor:default}
+.q{font-family:var(--f-type);font-size:.95rem;width:100%;border:1px solid var(--rule);background:var(--paper);border-radius:var(--r);padding:7px 10px}
+.hint{font-size:.8rem;color:var(--muted)}
+.hint code,.mono{font-family:var(--f-type);font-size:.85em}
+section.panel{display:flex;flex-direction:column;gap:14px}
+/* Index card */
+.card{background:var(--paper);border-radius:4px;box-shadow:0 1px 0 var(--rule),0 6px 18px -12px rgba(20,40,70,.35);overflow:hidden}
+.card-head{display:flex;gap:8px;align-items:center;padding:10px 14px 8px;border-bottom:2px solid var(--margin)}
+.card-head input{flex:1;min-width:0;border:0;background:none;font-family:var(--f-type);font-weight:700;font-size:1.05rem;padding:2px 0}
+.card-meta{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.line{border-bottom:1px solid var(--rule);padding:6px 14px 8px;display:flex;flex-direction:column;gap:6px}
+.line-in{display:flex;gap:6px;align-items:center}
+.line-in input{flex:1;min-width:0;border:0;background:none;font-family:var(--f-type);font-size:.95rem;padding:4px 0}
+.src{border:1px solid var(--rule);background:var(--chip);border-radius:4px;font-family:var(--f-type);font-size:.75rem;padding:2px 6px;cursor:pointer;min-width:2.2em}
+.src[data-src="r"]{color:var(--margin);border-color:var(--margin)}
+.card-foot{padding:8px 14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between}
+.empty{padding:22px;text-align:center;color:var(--muted);display:flex;flex-direction:column;gap:10px;align-items:center}
+/* Matrix */
+.matrix{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mx-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.mx-head .dim{font-family:var(--f-type);color:var(--ink)}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;max-height:420px;overflow-y:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th{position:sticky;top:0;background:var(--chip);text-align:left;font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:5px 8px;white-space:nowrap}
+td{padding:5px 8px;border-top:1px solid var(--rule);vertical-align:top;font-variant-numeric:tabular-nums}
+td.w{font-family:var(--f-type);font-weight:700;white-space:nowrap}
+td.def{font-family:var(--f-read);min-width:16em}
+td.reg{box-shadow:inset 3px 0 0 var(--margin)}
+.pos{font-size:.72rem;font-weight:600;letter-spacing:.04em}
+.pos.noun{color:var(--noun)}.pos.verb{color:var(--verb)}.pos.adjective{color:var(--adjective)}.pos.adverb{color:var(--adverb)}
+.err{color:var(--err);font-size:.85rem;font-family:var(--f-type);white-space:pre-wrap}
+.note{font-size:.85rem;color:var(--muted);white-space:pre-wrap}
+.mkw{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px;border:1px dashed var(--rule);border-radius:4px}
+.mkw input,.mkw select{border:1px solid var(--rule);background:var(--paper);border-radius:4px;padding:4px 6px;min-width:0}
+/* Registry index */
+.facets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.facet{background:var(--paper);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.facet h3{margin:0;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{border:1px solid var(--rule);background:var(--chip);border-radius:99px;padding:2px 9px;font-size:.8rem;cursor:pointer;font-variant-numeric:tabular-nums}
+.chip b{font-family:var(--f-type)}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.seg button{border:0;background:var(--paper);padding:5px 12px;cursor:pointer;font-size:.85rem}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+/* Widgets */
+.widgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;align-items:start}
+.wbody{padding:10px 14px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tiles{display:flex;flex-wrap:wrap;gap:6px}
+.tile{font-family:var(--f-type);font-size:.88rem;padding:3px 8px;border-radius:3px;background:var(--chip);border-left:3px solid var(--muted)}
+.tile.noun{border-color:var(--noun)}.tile.verb{border-color:var(--verb)}.tile.adjective{border-color:var(--adjective)}.tile.adverb{border-color:var(--adverb)}
+.bars{display:flex;flex-direction:column;gap:4px;font-size:.82rem}
+.bar{display:grid;grid-template-columns:minmax(4em,9em) 1fr 3.5em;gap:8px;align-items:center}
+.bar span:first-child{font-family:var(--f-type);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .track{height:12px;background:var(--chip);border-radius:2px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent)}
+.bar span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.heat td{text-align:center;font-family:var(--f-type)}
+/* Console */
+.log{background:var(--paper);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-height:220px;max-height:60vh;overflow-y:auto}
+.msg{display:flex;flex-direction:column;gap:4px;min-width:0}
+.msg .who{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.msg.you .body{font-family:var(--f-type);white-space:pre-wrap}
+.msg.claude .body{font-family:var(--f-read);white-space:pre-wrap;font-size:1rem}
+.msg .act{font-size:.78rem;color:var(--muted);font-family:var(--f-type)}
+pre.out{margin:0;font-family:var(--f-type);font-size:.85rem;white-space:pre-wrap;word-break:break-word}
+textarea.q{min-height:5.5em;resize:vertical}
+.ds-list .tbl{max-height:540px}
+/* Notation */
+.nota{font-family:var(--f-type);font-size:1rem;line-height:1.7;word-break:break-word;padding:8px 10px;background:var(--chip);border-radius:4px}
+td .nota{background:none;padding:0;font-size:.88rem;line-height:1.5}
+.b-n{color:var(--noun);font-weight:700}.b-v{color:var(--verb);font-weight:700}.b-a{color:var(--adjective);font-weight:700}.b-r{color:var(--adverb);font-weight:700}
+.b-anc{color:var(--margin);font-weight:700}.b-dir{color:var(--accent);font-weight:700}.b-x{color:var(--muted);font-weight:700}
+.nota sup{font-size:.7em;color:var(--margin);margin-left:1px}
+.pat{font-family:var(--f-type);font-weight:700;white-space:nowrap}
+.ctl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 10px;align-items:center;font-size:.85rem}
+.ctl select,.ctl input{border:1px solid var(--rule);background:var(--paper);border-radius:4px;padding:5px 6px;min-width:0;max-width:100%}
+.ctl label{color:var(--muted)}
+/* Glyphs */
+.glyphs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;align-items:start}
+.gl-head{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:2px solid var(--margin)}
+.gl-head .he{font-size:2rem;line-height:1;font-family:"Times New Roman",serif;min-width:1.2em;text-align:center}
+.gl-head .nm{font-family:var(--f-type);font-weight:700;flex:1}
+.gl-fields{display:grid;grid-template-columns:4.2em minmax(0,1fr);gap:0;font-size:.85rem}
+.gl-fields label{font-family:var(--f-type);color:var(--muted);padding:5px 0 5px 14px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.gl-fields input{border:0;border-bottom:1px solid var(--rule);background:none;padding:5px 14px 5px 4px;min-width:0;font-family:var(--f-type)}
+.gl-fields .ct{grid-column:2;font-size:.72rem;color:var(--muted);padding:0 14px 0 4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Lexicon <b>Registry</b></h1>
+      <div class="status" id="status">
+        <span class="pill" id="st-ds"><i></i>Dataset</span>
+        <span class="pill" id="st-reg"><i></i>Registry</span>
+        <span class="pill" id="st-py"><i></i>Python idle</span>
+        <span class="pill" id="st-ai"><i></i>Claude</span>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="cards" aria-selected="true">Index cards</button>
+      <button role="tab" data-tab="dataset" aria-selected="false">Dataset</button>
+      <button role="tab" data-tab="registry" aria-selected="false">Registry</button>
+      <button role="tab" data-tab="grammar" aria-selected="false">Grammar</button>
+      <button role="tab" data-tab="glyphs" aria-selected="false">Glyphs</button>
+      <button role="tab" data-tab="widgets" aria-selected="false">Widgets</button>
+      <button role="tab" data-tab="console" aria-selected="false">Console</button>
+    </nav>
+  </header>
+  <div class="banner warn" id="saveBanner" hidden></div>
+
+  <!-- CARDS -->
+  <section class="panel" id="p-cards">
+    <div class="row">
+      <button class="btn primary" id="newCard">New index card</button>
+      <span class="hint grow">Each line is <code>type/:value</code>, joined with <code>&amp;</code>. Tap <b>D</b>/<b>R</b> to search the Dataset or the Registry. <a href="#" id="showSyntax">Syntax</a></span>
+    </div>
+    <div class="banner" id="syntax" hidden></div>
+    <div id="cards" style="display:flex;flex-direction:column;gap:16px"></div>
+  </section>
+
+  <!-- DATASET -->
+  <section class="panel" id="p-dataset" hidden>
+    <div class="card"><div class="wbody">
+      <div class="row"><b id="dsName" class="mono"></b><span class="hint grow" id="dsInfo"></span></div>
+      <div class="row">
+        <button class="btn" id="loadFull">Load full WordNet (147,306 words)</button>
+        <button class="btn" id="useStarter">Use starter set</button>
+        <label class="btn" for="importFile">Import a dictionary file</label>
+        <input type="file" id="importFile" accept=".json,.csv,.tsv,.txt,.gz" hidden>
+      </div>
+      <p class="hint" style="margin:0">Words are ordered most general first: shallow WordNet depth and wide hyponym span for nouns and verbs, corpus frequency for adjectives and adverbs. Imports accept JSON (array of <code>{word, pos, def}</code> or a <code>{word: definition}</code> map), CSV/TSV with a header row, or one word per line.</p>
+    </div></div>
+    <div class="row">
+      <input class="q grow" id="dsQ" placeholder="pos/:noun &amp; depth/:<=3" autocomplete="off">
+      <button class="btn" id="dsRun">Filter</button>
+    </div>
+    <div class="row">
+      <button class="btn primary" id="dsAdmitSel" disabled>Admit selected</button>
+      <button class="btn" id="dsAdmitAll" disabled>Admit all matches</button>
+      <span class="hint" id="dsCount"></span>
+    </div>
+    <div class="ds-list" id="dsList"></div>
+    <button class="btn" id="dsMore" hidden>Show 100 more</button>
+  </section>
+
+  <!-- REGISTRY -->
+  <section class="panel" id="p-registry" hidden>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Registry view">
+        <button id="rvIndex" aria-pressed="true">Index (by facet)</button>
+        <button id="rvMatrix" aria-pressed="false">Matrix (by word)</button>
+      </div>
+      <span class="hint grow" id="regInfo"></span>
+    </div>
+    <div id="regIndex"></div>
+    <div id="regMatrix" hidden>
+      <div class="row" style="margin-bottom:10px">
+        <input class="q grow" id="regQ" placeholder="w/:^th" autocomplete="off">
+        <button class="btn" id="regRun">Search</button>
+      </div>
+      <div id="regOut"></div>
+    </div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="panel" id="p-grammar" hidden>
+    <div class="card">
+      <div class="card-head"><b class="mono" style="flex:1">Try a sentence</b><span class="card-meta">Legend v0.1</span></div>
+      <div class="wbody">
+        <input class="q" id="gTry" value="the strong wind carried the leaves across the river" autocomplete="off" spellcheck="false" aria-label="Sentence to tag">
+        <div class="nota" id="gTryOut"></div>
+        <div class="hint" id="gTryPat"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><b class="mono" style="flex:1">Structure scan</b><span class="card-meta">example sentences → patterns</span></div>
+      <div class="wbody">
+        <div class="ctl">
+          <label for="gSrc">Source</label>
+          <select id="gSrc"><option value="d">Dataset</option><option value="r">Registry</option><option value="b">Both</option></select>
+          <label for="gMode">Constraint</label>
+          <select id="gMode"><option value="own">Examples of the top N most general words</option><option value="all">Only sentences whose words are all in the top N or Registry</option><option value="rank">All sentences, ranked by average generality</option></select>
+          <label for="gN">N</label><input id="gN" type="number" min="1" value="500">
+          <label for="gDepth">Recursion depth</label><input id="gDepth" type="number" min="0" max="12" value="6">
+        </div>
+        <div class="row"><button class="btn primary" id="gRun">Scan sentences</button><button class="btn" id="gSave" disabled>Save as Structures registry</button><span class="hint" id="gInfo"></span></div>
+        <div id="gPatterns"></div>
+        <div id="gSentences"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><b class="mono" style="flex:1">Structures registry</b><span class="card-meta" id="gStoredMeta"></span></div>
+      <div class="wbody" id="gStored"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><b class="mono" style="flex:1">Index legend</b><span class="card-meta">evaluate innermost first</span></div>
+      <div class="wbody"><div class="tbl" id="gLegend"></div><div class="hint" id="gPatKey"></div></div>
+    </div>
+  </section>
+
+  <!-- GLYPHS -->
+  <section class="panel" id="p-glyphs" hidden>
+    <p class="hint" style="margin:0">Each glyph holds profile cards with one most general word per grammar component. Only one card per glyph is active at a time. Active cards catch words during tagging, shown as superscripts. Generalization → Specification.</p>
+    <div class="row"><button class="btn" id="glCount">Count catches across the Dataset</button><span class="hint" id="glInfo"></span></div>
+    <div class="glyphs" id="glyphs"></div>
+  </section>
+
+  <!-- WIDGETS -->
+  <section class="panel" id="p-widgets" hidden>
+    <p class="hint" style="margin:0">Widgets are matrices saved from a card line, the Console, or Claude. Widgets built from a query re-run live as the Registry grows.</p>
+    <div class="widgets" id="widgets"></div>
+  </section>
+
+  <!-- CONSOLE -->
+  <section class="panel" id="p-console" hidden>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Console mode">
+        <button id="cmClaude" aria-pressed="true">Ask Claude</button>
+        <button id="cmPy" aria-pressed="false">Python</button>
+      </div>
+      <span class="hint grow" id="cmHint"></span>
+    </div>
+    <div class="log" id="log" aria-live="polite"></div>
+    <textarea class="q" id="cin" placeholder="Build me an index of the registry's verbs grouped by depth, as a bar widget."></textarea>
+    <div class="row"><button class="btn primary" id="csend">Send</button><button class="btn" id="cstop" hidden>Stop</button><button class="btn" id="cclear">Clear</button></div>
+  </section>
+</div>
+
+<script type="application/json" id="starter">/*STARTER*/</script>
+<script>/*GRAMMAR*/</script>
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const fmt=n=>Number(n).toLocaleString();
+
+/* ---------- Dataset ---------- */
+let DS=[], DSW=new Map(), dsName="", dsVer=0;
+function setDataset(rows,name){
+  DS=rows; DSW=new Map(); for(const r of rows) if(!DSW.has(r.w)) DSW.set(r.w,r);
+  dsName=name; dsVer++; refreshStatus(); if(cur==="dataset") runDs(); rerunLiveCards();
+}
+function normRow(o,i){
+  const w=String(o.w??o.word??o.term??o.headword??o.lemma??"").trim().toLowerCase(); if(!w) return null;
+  const d=o.def??o.definition??o.gloss??o.meaning??o.definitions??"";
+  return {w,pos:String(o.pos??o.part_of_speech??o.type??"").toLowerCase(),def:Array.isArray(d)?String(d[0]??""):String(d),
+    depth:o.depth??null,hyper:o.hyper??o.hypernym??"",span:o.span??null,rank:o.rank??i+1};
+}
+async function fetchB64(path){const r=await fetch(path);if(!r.ok)throw new Error("HTTP "+r.status+" for "+path);
+  const bin=atob((await r.text()).trim());const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return u}
+async function gunzipIfNeeded(buf){
+  const b=new Uint8Array(buf);
+  if(b[0]===0x1f&&b[1]===0x8b){const s=new Blob([buf]).stream().pipeThrough(new DecompressionStream("gzip"));return await new Response(s).text()}
+  return new TextDecoder().decode(buf);
+}
+async function loadFull(){
+  const btn=$("#loadFull"); btn.disabled=true; btn.textContent="Loading WordNet…";
+  try{
+    const txt=await gunzipIfNeeded((await fetchB64("data/wordnet-full.b64.txt")).buffer);
+    setDataset(JSON.parse(txt),"WordNet 3.0 · full"); LS.set("lr.ds","full");
+    btn.textContent="WordNet loaded";
+  }catch(e){btn.disabled=false;btn.textContent="Load full WordNet (147,306 words)";$("#dsInfo").textContent="Could not load WordNet: "+e.message}
+}
+$("#loadFull").onclick=loadFull;
+$("#useStarter").onclick=()=>{setDataset(JSON.parse($("#starter").textContent),"Starter · general-first");LS.set("lr.ds","starter");$("#loadFull").disabled=false;$("#loadFull").textContent="Load full WordNet (147,306 words)"};
+$("#importFile").onchange=async e=>{
+  const f=e.target.files[0]; if(!f) return; e.target.value="";
+  try{
+    const txt=await gunzipIfNeeded(await f.arrayBuffer()); const name=f.name.replace(/\.gz$/,""); let rows=[];
+    if(/\.json$/i.test(name)){const j=JSON.parse(txt);
+      if(Array.isArray(j)) rows=j.map((o,i)=>typeof o==="string"?normRow({w:o},i):normRow(o,i));
+      else rows=Object.entries(j).map(([k,v],i)=>normRow(typeof v==="object"&&v?{w:k,...v}:{w:k,def:v},i));
+    }else{
+      const lines=txt.split(/\r?\n/).filter(l=>l.trim()); const sep=/\.tsv$/i.test(name)||lines[0].includes("\t")?"\t":/\.csv$/i.test(name)?",":null;
+      if(sep&&/word|^w\b|term|lemma|headword/i.test(lines[0])){const h=splitRow(lines[0],sep).map(s=>s.trim().toLowerCase());
+        rows=lines.slice(1).map((l,i)=>{const c=splitRow(l,sep),o={};h.forEach((k,j)=>o[k]=c[j]);return normRow(o,i)})}
+      else rows=lines.map((l,i)=>{const [w,...rest]=sep?splitRow(l,sep):[l];return normRow({w,def:rest.join(" ")},i)});
+    }
+    rows=rows.filter(Boolean); if(!rows.length) throw new Error("no words found");
+    setDataset(rows,"Imported · "+f.name);
+  }catch(err){$("#dsInfo").textContent="Import failed: "+err.message+". Check the file format above."}
+};
+function splitRow(l,sep){if(sep!==",")return l.split(sep);const o=[];let c="",q=false;for(const ch of l){if(ch==='"')q=!q;else if(ch===","&&!q){o.push(c);c=""}else c+=ch}o.push(c);return o}
+
+/* ---------- Query language ---------- */
+const TYPES={
+  w:"word matches (regex, case-insensitive): w/:^light",
+  def:"definition matches: def/:energy|force",
+  pos:"part of speech prefix: pos/:noun · pos/:v",
+  hyper:"hypernym (parent) matches: hyper/:act",
+  depth:"WordNet depth: depth/:<=2 · depth/:1-3",
+  rank:"generality rank: rank/:<=200",
+  span:"hyponym span or frequency: span/:>500",
+  len:"word length: len/:4",
+  letter:"starts with: letter/:qu",
+  via:"how a registry entry was admitted: via/:rule",
+  top:"keep the first N rows: top/:25",
+  sort:"order by a field, - for descending: sort/:-span",
+  cols:"choose columns: cols/:w,pos,hyper",
+  src:"search d = dataset or r = registry: src/:r",
+  ex:"example sentence matches: ex/:\\bthe\\b",
+  tag:"tag one sentence in Legend notation: tag/:the wind carried the leaves",
+  py:"run Python, return rows: py/:[r for r in registry if r['span']>100]",
+  ask:"ask Claude for a matrix: ask/:words for motion grouped by speed"
+};
+function rx(v){try{return new RegExp(v,"i")}catch(e){return new RegExp(v.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"i")}}
+function cmpf(v){const m=String(v).trim().match(/^(<=|>=|<|>|=|!=)?\s*(-?\d+)(?:\s*-\s*(\d+))?$/);if(!m)throw new Error("expected a number, range or comparison, got "+v);
+  const a=+m[2];if(m[3]!=null){const b=+m[3];return x=>x!=null&&x>=a&&x<=b}
+  switch(m[1]){case"<=":return x=>x!=null&&x<=a;case">=":return x=>x!=null&&x>=a;case"<":return x=>x!=null&&x<a;case">":return x=>x!=null&&x>a;case"!=":return x=>x!==a;default:return x=>x===a}}
+function parseLine(line){
+  line=line.trim(); const m=line.match(/^(py|ask|tag)\/:([\s\S]*)$/i);
+  if(m) return {special:m[1].toLowerCase(),value:m[2].trim(),clauses:[]};
+  const clauses=line.split(/\s*&\s*(?=[a-z]+\/:)/i).filter(Boolean).map(c=>{const k=c.match(/^([a-z]+)\/:\s*([\s\S]*)$/i);
+    if(!k) throw new Error('"'+c+'" is not type/:value. Known types: '+Object.keys(TYPES).join(", "));
+    const t=k[1].toLowerCase(); if(!TYPES[t]) throw new Error('Unknown type "'+t+'/:". Known types: '+Object.keys(TYPES).join(", "));
+    return {t,v:k[2].trim()}});
+  return {clauses};
+}
+function isLive(line){try{const s=parseLine(line).special;return !s||s==="tag"}catch(e){return false}}
+const ENTRY_COLS=["w","pos","depth","hyper","def"];
+function runFilter(line,srcDefault){
+  const p=parseLine(line);
+  if(p.special==="tag"){const r=G.parse(p.value,6);return {src:"tag",rows:[{pattern:r.pattern,notation:r.notation}],total:1,cols:["pattern","notation"]}}
+  if(p.special) throw new Error(p.special+"/: lines run asynchronously");
+  let src=srcDefault||"d", top=null, sort=null, cols=null; const preds=[];
+  for(const {t,v} of p.clauses){
+    if(t==="src"){src=v.toLowerCase().startsWith("r")?"r":"d";continue}
+    if(t==="top"){top=parseInt(v,10)||null;continue}
+    if(t==="sort"){sort=v;continue}
+    if(t==="cols"){cols=v.split(/[\s,]+/).filter(Boolean);continue}
+    if(t==="w"||t==="def"||t==="hyper"||t==="via"){const re=rx(v);preds.push(r=>re.test(r[t]||""));continue}
+    if(t==="pos"){const s=v.toLowerCase();preds.push(r=>(r.pos||"").startsWith(s));continue}
+    if(t==="ex"){const re=rx(v);preds.push(r=>(r.ex||[]).some(e=>re.test(e)));continue}
+    if(t==="letter"){const s=v.toLowerCase();preds.push(r=>r.w.startsWith(s));continue}
+    if(t==="len"){const f=cmpf(v);preds.push(r=>f(r.w.length));continue}
+    const f=cmpf(v);preds.push(r=>f(r[t]));
+  }
+  const base=src==="r"?regRows():DS; let rows=preds.length?base.filter(r=>preds.every(p=>p(r))):base.slice();
+  if(sort){const d=sort.startsWith("-")?-1:1,k=sort.replace(/^-/,"");rows.sort((a,b)=>{const x=a[k],y=b[k];return (x==null)-(y==null)||(x<y?-d:x>y?d:0)})}
+  const total=rows.length; if(top) rows=rows.slice(0,top);
+  return {src,rows,total,cols:cols||(src==="r"?[...ENTRY_COLS,"via"]:ENTRY_COLS)};
+}
+async function evalLine(line,src,opts={}){
+  const p=parseLine(line);
+  if(p.special==="py"){const r=await runPy(p.value);if(r.error)throw new Error(r.error);const m=toMatrix(r.value);return {...m,src:"py",note:r.stdout}}
+  if(p.special==="ask"){if(opts.noAsk)throw new Error("ask/: cannot be nested");return await askMatrix(p.value,opts)}
+  return runFilter(line,src);
+}
+function toMatrix(v){
+  if(v==null) return {rows:[],total:0,cols:[]};
+  if(Array.isArray(v)){
+    if(!v.length) return {rows:[],total:0,cols:[]};
+    if(v.every(x=>x&&typeof x==="object"&&!Array.isArray(x))){const cols=[];for(const r of v.slice(0,50))for(const k of Object.keys(r))if(!cols.includes(k))cols.push(k);
+      return {rows:v,total:v.length,cols:cols.slice(0,8)}}
+    if(v.every(Array.isArray)){const n=Math.max(...v.map(r=>r.length));const cols=Array.from({length:n},(_,i)=>"c"+i);return {rows:v.map(r=>Object.fromEntries(r.map((x,i)=>["c"+i,x]))),total:v.length,cols}}
+    return {rows:v.map(x=>({value:x})),total:v.length,cols:["value"]};
+  }
+  if(typeof v==="object") return {rows:Object.entries(v).map(([key,value])=>({key,value:typeof value==="object"?JSON.stringify(value):value})),total:Object.keys(v).length,cols:["key","value"]};
+  return {rows:[{value:v}],total:1,cols:["value"]};
+}
+
+/* ---------- Registry (db) ---------- */
+let db=null, user=null, canWrite=true, sample=null;
+const buckets=new Map(); // bucketId -> {word: entry}
+let regVer=0;
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function bucketOf(w){return (w.toLowerCase().replace(/[^a-z0-9]/g,"_")+"__").slice(0,2)+"-"+(hash(w)%8)}
+let regCache=null;
+function regRows(){if(regCache)return regCache;const out=[];for(const m of buckets.values())for(const e of Object.values(m))out.push(e);out.sort((a,b)=>(a.rank??1e9)-(b.rank??1e9));return regCache=out}
+function regHas(w){const m=buckets.get(bucketOf(w));return !!(m&&m[w])}
+function regChanged(){regCache=null;regVer++;refreshStatus();rerunLiveCards();renderWidgets();if(cur==="registry")renderRegistry();if(cur==="dataset")renderDsPage()}
+const chains=new Map(), dirty=new Set();
+function flushBucket(b){
+  if(!db){return}
+  dirty.add(b);
+  const prev=chains.get(b)||Promise.resolve();
+  const next=prev.then(async()=>{
+    if(!dirty.has(b))return; dirty.delete(b);
+    const entries=buckets.get(b)||{}; const ref=db.doc("registry/"+b);
+    try{ if(Object.keys(entries).length) await ref.set({entries,n:Object.keys(entries).length}); else await ref.delete(); }
+    catch(e){showSaveError(e)}
+  });
+  chains.set(b,next); return next;
+}
+function showSaveError(e){const el=$("#saveBanner");el.hidden=false;
+  el.textContent=e&&e.code==="quota_exceeded"?"The Registry is full for this artifact. Remove some entries to admit more.":e&&e.code==="invalid_argument"?"This view can read the Registry but not change it.":"A Registry save failed ("+(e&&e.code||"error")+"). Your change shows here but may not be saved."}
+function compact(r,via){return {w:r.w,pos:r.pos||"",def:String(r.def||"").slice(0,160),depth:r.depth??null,hyper:r.hyper||"",span:r.span??null,rank:r.rank??null,ex:(r.ex||[]).slice(0,2).map(e=>String(e).slice(0,160)),via:via||"manual",at:Date.now()}}
+async function admit(rows,via){
+  if(!canWrite){showSaveError({code:"invalid_argument"});return 0}
+  const touched=new Set(); let n=0;
+  for(const r of rows){ if(!r||!r.w)continue; const b=bucketOf(r.w); const m=buckets.get(b)||{}; if(m[r.w])continue; m[r.w]=compact(r,via); buckets.set(b,m); touched.add(b); n++; }
+  if(n){regChanged(); await Promise.all([...touched].map(flushBucket))}
+  return n;
+}
+async function removeWord(w){const b=bucketOf(w);const m=buckets.get(b);if(!m||!m[w])return;delete m[w];regChanged();await flushBucket(b)}
+
+/* ---------- Cards (db) ---------- */
+let cards=[]; const cardOut=new Map(); // key cardId:lineIdx -> result
+let localMode=false;
+async function saveCard(c){ if(!db){return} try{await db.doc("cards/"+c.id).set({title:c.title,lines:c.lines,order:c.order,at:Date.now()})}catch(e){showSaveError(e)} }
+async function deleteCard(id){cards=cards.filter(c=>c.id!==id);renderCards();if(db)try{await db.doc("cards/"+id).delete()}catch(e){showSaveError(e)}}
+function newId(p){return p+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+
+/* ---------- Widgets (db) ---------- */
+let widgets=[];
+async function saveWidget(w){ if(!w.id)w.id=newId("w"); const i=widgets.findIndex(x=>x.id===w.id); if(i<0)widgets.unshift(w);else widgets[i]=w; renderWidgets();
+  if(db){const {id,...body}=w;try{await db.doc("widgets/"+id).set(body)}catch(e){showSaveError(e)}} return w.id }
+async function deleteWidget(id){widgets=widgets.filter(w=>w.id!==id);renderWidgets();if(db)try{await db.doc("widgets/"+id).delete()}catch(e){showSaveError(e)}}
+
+/* ---------- Matrix rendering ---------- */
+function cell(r,c){const v=r[c];if(v==null)return '<td></td>';
+  if(c==="w")return '<td class="w'+(regHas(String(v))?' reg':'')+'">'+esc(v)+'</td>';
+  if(c==="pos")return '<td><span class="pos '+esc(v)+'">'+esc(v)+'</span></td>';
+  if(c==="def")return '<td class="def">'+esc(v)+'</td>';
+  if(c==="notation")return '<td><div class="nota">'+notaHTML(v)+'</div></td>';
+  if(c==="pattern")return '<td class="pat">'+esc(v)+'</td>';
+  return '<td>'+esc(typeof v==="object"?JSON.stringify(v):v)+'</td>'}
+function tableHTML(rows,cols,limit){return '<div class="tbl"><table><thead><tr>'+cols.map(c=>'<th>'+esc(c)+'</th>').join("")+'</tr></thead><tbody>'+
+  rows.slice(0,limit).map(r=>'<tr>'+cols.map(c=>cell(r,c)).join("")+'</tr>').join("")+'</tbody></table></div>'}
+function renderMatrix(el,res,{line,src,onAdmit=true,onWidget=true}={}){
+  el.innerHTML=""; if(!res)return;
+  if(res.error){el.innerHTML='<div class="err">'+esc(res.error)+'</div>';return}
+  if(res.pending){el.innerHTML='<div class="note">'+esc(res.pending)+'</div>';return}
+  const box=document.createElement("div");box.className="matrix";let limit=25;
+  const draw=()=>{
+    const canAdmit=onAdmit&&res.rows.some(r=>r&&r.w&&DSW.has(r.w)&&!regHas(r.w));
+    box.innerHTML='<div class="mx-head"><span class="dim">'+fmt(res.total)+(res.total!==res.rows.length?' matched · '+fmt(res.rows.length)+' kept':'')+' × '+res.cols.length+'</span><span>'+(res.src==="r"?"from Registry":res.src==="py"?"from Python":res.src==="ai"?"from Claude":res.src==="tag"?"from Grammar":"from Dataset")+'</span>'+
+      (canAdmit?'<button class="btn small" data-a="admit">Admit to Registry</button>':'')+(onWidget?'<button class="btn small" data-a="widget">Make widget</button>':'')+'</div>'+
+      (res.note?'<div class="note">'+esc(res.note)+'</div>':'')+
+      (res.rows.length?tableHTML(res.rows,res.cols,limit):'<div class="note">No rows.</div>')+
+      (res.rows.length>limit?'<button class="btn small" data-a="more">Show '+Math.min(200,res.rows.length-limit)+' more</button>':'');
+  };
+  draw();
+  box.addEventListener("click",async e=>{const a=e.target.dataset.a;if(!a)return;
+    if(a==="more"){limit+=200;draw()}
+    if(a==="admit"){const b=e.target;const cand=res.rows.filter(r=>r&&r.w&&DSW.has(r.w)&&!regHas(r.w));
+      if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to admit "+fmt(cand.length);return}
+      b.disabled=true;b.textContent="Admitting…";const n=await admit(cand.map(r=>DSW.get(r.w)),line?"rule "+line:"matrix");b.textContent="Admitted "+fmt(n)}
+    if(a==="widget"){if(box.querySelector(".mkw"))return;box.appendChild(widgetForm(res,line,src))}
+  });
+  el.appendChild(box);
+}
+function widgetForm(res,line,src){
+  const f=document.createElement("div");f.className="mkw";const id=newId("f");
+  const opts=res.cols.map(c=>'<option>'+esc(c)+'</option>').join("");
+  f.innerHTML='<input id="'+id+'t" placeholder="Widget title" class="grow" value="'+esc(line||"Matrix")+'"><select id="'+id+'k" aria-label="Kind"><option value="table">Table</option><option value="tiles">Word tiles</option><option value="bars">Bars (count by)</option><option value="heat">Heat grid (by × by)</option></select>'+
+    '<select id="'+id+'g" aria-label="Group by">'+opts+'</select><select id="'+id+'g2" aria-label="Second group">'+opts+'</select><button class="btn small primary">Save widget</button>';
+  const g=f.querySelector("#"+id+"g"),g2=f.querySelector("#"+id+"g2");g.value=res.cols.includes("pos")?"pos":res.cols[0];g2.value=res.cols.includes("depth")?"depth":res.cols[1]||res.cols[0];
+  f.querySelector("button").onclick=async()=>{const live=line&&isLive(line);
+    await saveWidget({title:f.querySelector("#"+id+"t").value||"Matrix",kind:f.querySelector("#"+id+"k").value,q:line||"",src:src||res.src||"d",group:g.value,group2:g2.value,live:!!live,cols:res.cols,
+      rows:live?[]:res.rows.slice(0,300),by:"you",at:Date.now()});
+    f.innerHTML='<span class="note">Saved to Widgets.</span>'};
+  return f;
+}
+
+/* ---------- Cards UI ---------- */
+function rerunLiveCards(){for(const c of cards)c.lines.forEach((l,i)=>{if(l.q&&isLive(l.q)){const k=c.id+":"+i;if(cardOut.has(k))cardOut.set(k,safeFilter(l.q,l.src))}});if(cur==="cards")renderCards()}
+function safeFilter(q,src){try{return runFilter(q,src)}catch(e){return {error:e.message}}}
+async function runCardLine(c,i){const l=c.lines[i];const k=c.id+":"+i;if(!l.q.trim()){cardOut.delete(k);renderCards();return}
+  if(isLive(l.q)){cardOut.set(k,safeFilter(l.q,l.src));renderCards();return}
+  cardOut.set(k,{pending:/^ask/i.test(l.q)?"Asking Claude…":"Running Python…"});renderCards();
+  try{const r=await evalLine(l.q,l.src);cardOut.set(k,r)}catch(e){cardOut.set(k,{error:e.message||String(e)})}renderCards()}
+function renderCards(){
+  const root=$("#cards");
+  if(!cards.length){root.innerHTML='<div class="card"><div class="empty"><b class="mono">No index cards yet</b><span>A card holds query lines. Each line searches the Dataset or Registry and shows the matching matrix underneath it.</span><button class="btn primary" data-new>Start a card</button></div></div>';
+    root.querySelector("[data-new]").onclick=()=>$("#newCard").click();return}
+  const focus=document.activeElement&&document.activeElement.id; root.innerHTML="";
+  for(const c of [...cards].sort((a,b)=>a.order-b.order)){
+    const el=document.createElement("article");el.className="card";
+    el.innerHTML='<div class="card-head"><input id="t-'+c.id+'" value="'+esc(c.title)+'" aria-label="Card title"><span class="card-meta">'+c.lines.length+' line'+(c.lines.length===1?'':'s')+'</span></div>';
+    c.lines.forEach((l,i)=>{const ln=document.createElement("div");ln.className="line";
+      ln.innerHTML='<div class="line-in"><button class="src" data-src="'+l.src+'" title="Search the Dataset (D) or Registry (R)">'+(l.src==="r"?"R":"D")+'</button><input id="q-'+c.id+'-'+i+'" value="'+esc(l.q)+'" placeholder="type/:value" autocomplete="off" spellcheck="false"><button class="btn small" data-run>Run</button><button class="btn small danger" data-del aria-label="Remove line">✕</button></div><div class="out"></div>';
+      const inp=ln.querySelector("input");
+      ln.querySelector(".src").onclick=()=>{l.src=l.src==="r"?"d":"r";saveCard(c);runCardLine(c,i)};
+      inp.onkeydown=e=>{if(e.key==="Enter"){l.q=inp.value;saveCard(c);runCardLine(c,i)}};
+      inp.onchange=()=>{if(l.q!==inp.value){l.q=inp.value;saveCard(c)}};
+      ln.querySelector("[data-run]").onclick=()=>{l.q=inp.value;saveCard(c);runCardLine(c,i)};
+      ln.querySelector("[data-del]").onclick=()=>{c.lines.splice(i,1);for(const k of [...cardOut.keys()])if(k.startsWith(c.id+":"))cardOut.delete(k);saveCard(c);renderCards()};
+      const k=c.id+":"+i;if(!cardOut.has(k)&&l.q&&isLive(l.q))cardOut.set(k,safeFilter(l.q,l.src));
+      renderMatrix(ln.querySelector(".out"),cardOut.get(k),{line:l.q,src:l.src});
+      el.appendChild(ln)});
+    const ft=document.createElement("div");ft.className="card-foot";
+    ft.innerHTML='<button class="btn small" data-add>Add line</button><button class="btn small danger" data-rm>Delete card</button>';
+    ft.querySelector("[data-add]").onclick=()=>{c.lines.push({q:"",src:"d"});saveCard(c);renderCards();const n=document.getElementById("q-"+c.id+"-"+(c.lines.length-1));n&&n.focus()};
+    ft.querySelector("[data-rm]").onclick=e=>{const b=e.target;if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to delete";return}deleteCard(c.id)};
+    el.appendChild(ft);
+    el.querySelector(".card-head input").onchange=e=>{c.title=e.target.value;saveCard(c)};
+    root.appendChild(el);
+  }
+  if(focus){const f=document.getElementById(focus);f&&f.focus()}
+}
+$("#newCard").onclick=()=>{const c={id:newId("c"),title:"Index card "+(cards.length+1),lines:[{q:"",src:"d"}],order:Date.now()};cards.push(c);saveCard(c);renderCards();const n=document.getElementById("q-"+c.id+"-0");n&&n.focus()};
+$("#showSyntax").onclick=e=>{e.preventDefault();const s=$("#syntax");s.hidden=!s.hidden;
+  s.innerHTML=Object.entries(TYPES).map(([k,v])=>'<div><code class="mono">'+k+'/:</code> '+esc(v.split(":")[0])+' · <code class="mono">'+esc(v.slice(v.indexOf(":")+1).trim())+'</code></div>').join("")+'<div style="margin-top:6px">Combine clauses with <code class="mono">&amp;</code>: <code class="mono">pos/:verb &amp; depth/:0 &amp; top/:20</code></div>'};
+
+/* ---------- Dataset UI ---------- */
+let dsRes=null, dsShown=100; const dsSel=new Set();
+function runDs(){const q=$("#dsQ").value.trim();try{dsRes=q?runFilter(q,"d"):{rows:DS,total:DS.length,cols:ENTRY_COLS,src:"d"};if(dsRes.src==="r")dsRes=runFilter("src/:d & "+q,"d")}catch(e){dsRes={error:e.message}}dsShown=100;renderDsPage()}
+function renderDsPage(){
+  $("#dsName").textContent=dsName;$("#dsInfo").textContent=fmt(DS.length)+" words";
+  const list=$("#dsList");if(!dsRes){runDs();return}
+  if(dsRes.error){list.innerHTML='<div class="err">'+esc(dsRes.error)+'</div>';$("#dsAdmitAll").disabled=true;return}
+  const rows=dsRes.rows.slice(0,dsShown);
+  list.innerHTML='<div class="tbl"><table><thead><tr><th></th><th>#</th>'+ENTRY_COLS.map(c=>'<th>'+c+'</th>').join("")+'</tr></thead><tbody>'+
+    rows.map(r=>{const reg=regHas(r.w);return '<tr><td>'+(reg?'<span class="pos" title="In Registry" style="color:var(--margin)">●</span>':'<input type="checkbox" data-w="'+esc(r.w)+'"'+(dsSel.has(r.w)?' checked':'')+' aria-label="Select '+esc(r.w)+'">')+'</td><td>'+(r.rank??"")+'</td>'+ENTRY_COLS.map(c=>cell(r,c)).join("")+'</tr>'}).join("")+'</tbody></table></div>';
+  $("#dsMore").hidden=dsRes.rows.length<=dsShown;
+  const open=dsRes.rows.filter(r=>!regHas(r.w)).length;
+  $("#dsCount").textContent=fmt(dsRes.total)+" match · "+fmt(open)+" not yet in Registry";
+  const all=$("#dsAdmitAll");all.disabled=!open;all.dataset.armed="";all.textContent="Admit all "+fmt(open)+" matches";
+  updSel();
+}
+function updSel(){const b=$("#dsAdmitSel");b.disabled=!dsSel.size;b.textContent=dsSel.size?"Admit "+dsSel.size+" selected":"Admit selected"}
+$("#dsList").addEventListener("change",e=>{const w=e.target.dataset.w;if(!w)return;e.target.checked?dsSel.add(w):dsSel.delete(w);updSel()});
+$("#dsRun").onclick=runDs;$("#dsQ").onkeydown=e=>{if(e.key==="Enter")runDs()};
+$("#dsMore").onclick=()=>{dsShown+=100;renderDsPage()};
+$("#dsAdmitSel").onclick=async()=>{const rows=[...dsSel].map(w=>DSW.get(w)).filter(Boolean);dsSel.clear();await admit(rows,"manual");updSel()};
+$("#dsAdmitAll").onclick=async e=>{const b=e.target;if(!dsRes||dsRes.error)return;const rows=dsRes.rows.filter(r=>!regHas(r.w));
+  if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to admit "+fmt(rows.length);return}
+  b.disabled=true;await admit(rows,"rule "+($("#dsQ").value.trim()||"all"))};
+
+/* ---------- Registry UI ---------- */
+let regView="index";
+function renderRegistry(){
+  const rows=regRows();$("#regInfo").textContent=fmt(rows.length)+" entries"+(db?"":" · this session only");
+  if(regView==="matrix"){runReg();return}
+  const el=$("#regIndex");
+  if(!rows.length){el.innerHTML='<div class="card"><div class="empty"><b class="mono">The Registry is empty</b><span>Filter words into it from the Dataset tab, from any card line set to D, or ask Claude in the Console.</span><button class="btn primary" data-go>Open the Dataset</button></div></div>';el.querySelector("[data-go]").onclick=()=>show("dataset");return}
+  const facet=(title,key,fn,qf)=>{const m=new Map();for(const r of rows){const k=fn(r);m.set(k,(m.get(k)||0)+1)}
+    const items=[...m.entries()].sort((a,b)=>typeof a[0]==="number"&&typeof b[0]==="number"?a[0]-b[0]:b[1]-a[1]).slice(0,40);
+    return '<div class="facet"><h3>'+title+'</h3><div class="chips">'+items.map(([k,n])=>'<button class="chip" data-q="'+esc(qf(k))+'"><b>'+esc(k===""||k==null?"—":k)+'</b> '+fmt(n)+'</button>').join("")+'</div></div>'};
+  el.innerHTML='<div class="facets">'+
+    facet("Part of speech","pos",r=>r.pos||"",k=>"pos/:"+k)+
+    facet("Depth (0 = most general)","depth",r=>r.depth??"",k=>k===""?"src/:r":"depth/:"+k)+
+    facet("First letter","letter",r=>r.w[0],k=>"letter/:"+k)+
+    facet("Parent (hypernym)","hyper",r=>r.hyper||"",k=>k?"hyper/:^"+k+"$":"src/:r")+
+    facet("Admitted by","via",r=>r.via||"",k=>"via/:^"+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"$")+
+    '</div>';
+  el.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{$("#regQ").value=b.dataset.q;setRegView("matrix")});
+}
+function runReg(){const q=$("#regQ").value.trim();let res;try{res=runFilter(q?"src/:r & "+q:"src/:r","r")}catch(e){res={error:e.message}}
+  const out=$("#regOut");out.innerHTML="";const wrap=document.createElement("div");out.appendChild(wrap);
+  renderMatrix(wrap,res,{line:q?"src/:r & "+q:"src/:r",src:"r",onAdmit:false});
+  if(res.rows&&res.rows.length){const rm=document.createElement("div");rm.className="row";rm.style.marginTop="8px";
+    rm.innerHTML='<input class="q grow" id="rmWord" placeholder="word to remove" autocomplete="off"><button class="btn danger">Remove from Registry</button>';
+    rm.querySelector("button").onclick=e=>{const w=rm.querySelector("input").value.trim().toLowerCase();if(!regHas(w)){e.target.textContent="Not in Registry";return}
+      if(e.target.dataset.armed!=="1"){e.target.dataset.armed="1";e.target.textContent="Tap again to remove "+w;return}removeWord(w)};
+    out.appendChild(rm)}}
+function setRegView(v){regView=v;$("#rvIndex").setAttribute("aria-pressed",v==="index");$("#rvMatrix").setAttribute("aria-pressed",v==="matrix");$("#regIndex").hidden=v!=="index";$("#regMatrix").hidden=v!=="matrix";renderRegistry()}
+$("#rvIndex").onclick=()=>setRegView("index");$("#rvMatrix").onclick=()=>setRegView("matrix");
+$("#regRun").onclick=runReg;$("#regQ").onkeydown=e=>{if(e.key==="Enter")runReg()};
+
+/* ---------- Widgets UI ---------- */
+function widgetData(w){if(w.live&&w.q){const r=safeFilter(w.q,w.src);if(!r.error)return r}return {rows:w.rows||[],total:(w.rows||[]).length,cols:w.cols||Object.keys((w.rows||[])[0]||{})}}
+function renderWidgets(){
+  if(cur!=="widgets")return; const root=$("#widgets");
+  if(!widgets.length){root.innerHTML='<div class="card"><div class="empty"><b class="mono">No widgets yet</b><span>Run a card line, then tap <b>Make widget</b> under its matrix. Claude can also build widgets from the Console.</span></div></div>';return}
+  root.innerHTML="";
+  for(const w of widgets){const d=widgetData(w);const el=document.createElement("article");el.className="card";
+    el.innerHTML='<div class="card-head"><input value="'+esc(w.title)+'" aria-label="Widget title"><span class="card-meta">'+esc(w.kind)+(w.live?' · live':'')+(w.by==="claude"?' · by Claude':'')+'</span></div><div class="wbody"><div class="hint mono">'+esc(w.q||"snapshot")+' · '+fmt(d.total)+' rows</div><div class="viz"></div><div class="row"><button class="btn small danger" data-rm>Delete widget</button></div></div>';
+    const viz=el.querySelector(".viz");
+    if(w.kind==="tiles"){const col=d.cols.includes("w")?"w":d.cols[0];viz.innerHTML='<div class="tiles">'+d.rows.slice(0,300).map(r=>'<span class="tile '+esc(r.pos||"")+'">'+esc(r[col])+'</span>').join("")+'</div>'}
+    else if(w.kind==="bars"){const g=w.group||d.cols[0];const m=new Map();for(const r of d.rows){const k=r[g]??"—";m.set(k,(m.get(k)||0)+1)}
+      const items=[...m.entries()].sort((a,b)=>b[1]-a[1]).slice(0,30);const max=Math.max(1,...items.map(x=>x[1]));
+      viz.innerHTML='<div class="hint">count by '+esc(g)+'</div><div class="bars">'+items.map(([k,n])=>'<div class="bar"><span title="'+esc(k)+'">'+esc(k)+'</span><span class="track"><span class="fill" style="display:block;width:'+(n/max*100).toFixed(1)+'%"></span></span><span>'+fmt(n)+'</span></div>').join("")+'</div>'}
+    else if(w.kind==="heat"){const a=w.group||d.cols[0],b=w.group2||d.cols[1]||a;const A=[...new Set(d.rows.map(r=>r[a]??"—"))].slice(0,12),B=[...new Set(d.rows.map(r=>r[b]??"—"))].sort((x,y)=>x>y?1:-1).slice(0,12);
+      const cnt=(x,y)=>d.rows.filter(r=>(r[a]??"—")===x&&(r[b]??"—")===y).length;let max=1;const grid=A.map(x=>B.map(y=>{const n=cnt(x,y);max=Math.max(max,n);return n}));
+      viz.innerHTML='<div class="hint">'+esc(a)+' × '+esc(b)+'</div><div class="tbl"><table class="heat"><thead><tr><th></th>'+B.map(y=>'<th>'+esc(y)+'</th>').join("")+'</tr></thead><tbody>'+A.map((x,i)=>'<tr><th>'+esc(x)+'</th>'+grid[i].map(n=>'<td style="background:color-mix(in srgb,var(--accent) '+Math.round(n/max*70)+'%,transparent)">'+(n||"")+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>'}
+    else viz.innerHTML=tableHTML(d.rows,d.cols,60);
+    el.querySelector(".card-head input").onchange=e=>{w.title=e.target.value;saveWidget(w)};
+    el.querySelector("[data-rm]").onclick=e=>{const b=e.target;if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to delete";return}deleteWidget(w.id)};
+    root.appendChild(el)}
+}
+
+/* ---------- Python (Pyodide) ---------- */
+let py=null, pyLoading=null, pyOut=[]; const pySync={ds:-1,reg:-1};
+function setPy(state,cls){const p=$("#st-py");p.className="pill "+(cls||"");p.innerHTML="<i></i>Python "+state}
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=()=>rej(new Error("could not load "+src));document.head.appendChild(s)})}
+async function ensurePy(){
+  if(py)return py; if(pyLoading)return pyLoading;
+  pyLoading=(async()=>{setPy("loading…","warn");
+    try{const base=new URL("pyodide/",location.href).href;await loadScript(base+"pyodide.js");
+      const std=URL.createObjectURL(new Blob([await fetchB64(base+"python_stdlib.b64.txt")],{type:"application/zip"}));
+      const p=await loadPyodide({indexURL:base,stdLibURL:std,stdout:s=>pyOut.push(s),stderr:s=>pyOut.push(s)});
+      p.registerJsModule("lex",{
+        q:(line,src)=>{const r=runFilter(String(line),String(src||"d"));return JSON.stringify(r.rows)},
+        tag:(s,d)=>{const r=G.parse(String(s),d==null?6:Number(d));return JSON.stringify({pattern:r.pattern,notation:r.notation,tokens:r.tokens})},
+        admit:(ws,via)=>{const list=JSON.parse(ws).map(w=>DSW.get(String(w).toLowerCase())).filter(Boolean);admit(list,String(via||"python"));return list.length},
+        widget:(spec)=>{const s=JSON.parse(spec);const m=toMatrix(s.rows);saveWidget({title:s.title||"Python widget",kind:s.kind||"table",q:"",src:"py",group:s.group||m.cols[0],group2:s.group2||m.cols[1],live:false,cols:m.cols,rows:m.rows.slice(0,300),by:"python",at:Date.now()});return "ok"}
+      });
+      p.runPython(`import json, lex
+dataset, registry = [], []
+def q(line, src='d'):
+    """Run a query line such as 'pos/:noun & depth/:<=2'. src='r' searches the Registry."""
+    return json.loads(lex.q(line, src))
+def admit(words, via='python'):
+    """Admit words (strings or row dicts) from the Dataset into the Registry."""
+    if isinstance(words, (str, dict)): words = [words]
+    ws = [w['w'] if isinstance(w, dict) else str(w) for w in words]
+    n = lex.admit(json.dumps(ws), via)
+    return f"admitted {n} of {len(ws)}"
+def tag(sentence, depth=6):
+    """Tag a sentence in Legend v0.1 notation. Returns {pattern, notation, tokens}."""
+    return json.loads(lex.tag(sentence, depth))
+def widget(title, rows, kind='table', group=None, group2=None):
+    """Save rows as a widget. kind: table | tiles | bars | heat."""
+    lex.widget(json.dumps({'title': title, 'rows': rows, 'kind': kind, 'group': group, 'group2': group2}, default=str))
+    return f"widget '{title}' saved"
+`);
+      py=p;setPy("ready","ok");return p;
+    }catch(e){pyLoading=null;setPy("unavailable","bad");throw e}})();
+  return pyLoading;
+}
+async function runPy(code){
+  let p;try{p=await ensurePy()}catch(e){return {error:"Python could not start: "+e.message}}
+  if(pySync.ds!==dsVer){p.globals.set("_j",JSON.stringify(DS));p.runPython("dataset = json.loads(_j); del _j");pySync.ds=dsVer}
+  if(pySync.reg!==regVer){p.globals.set("_j",JSON.stringify(regRows()));p.runPython("registry = json.loads(_j); del _j");pySync.reg=regVer}
+  pyOut=[];
+  try{let v=await p.runPythonAsync(code);
+    if(v&&typeof v==="object"&&v.toJs){const pv=v;try{v=pv.toJs({dict_converter:Object.fromEntries,create_pyproxies:false})}catch(e){v=String(pv)}pv.destroy&&pv.destroy()}
+    return {value:v,stdout:pyOut.join("\n")}}
+  catch(e){return {error:String(e.message||e).split("\n").slice(-6).join("\n"),stdout:pyOut.join("\n")}}
+}
+
+/* ---------- Claude ---------- */
+function stats(){const r=regRows();const by=k=>{const m={};for(const x of r){const v=x[k]??"—";m[v]=(m[v]||0)+1}return m};
+  return "Dataset: "+dsName+" ("+DS.length+" words). Registry: "+r.length+" entries; by pos "+JSON.stringify(by("pos"))+"; by depth "+JSON.stringify(by("depth"))+". Cards: "+cards.length+". Widgets: "+widgets.length+"."}
+const RULES=()=>`You are working inside Timothy's Lexicon Registry, a dictionary workbench. A Dataset (dictionary rows {w,pos,def,depth,hyper,span,rank}, ordered most general first: depth 0 = WordNet root, span = hyponym count or corpus frequency) is filtered into a Registry. The Registry is read two ways: as a Matrix (content-first, by word) and as an Index (lookup-first, by facet). Timothy builds Registries, Matriced Indices and Indexed Matrices, Codices, Logics, Algorithms and Formulas from it.
+Query language (one line, clauses joined by &): ${Object.entries(TYPES).filter(([k])=>k!=="ask").map(([k,v])=>k+"/: "+v).join("; ")}.
+Tools: query runs a line; run_python runs Python with globals dataset, registry (lists of dicts), q(line, src), admit(words, via), widget(title, rows, kind, group, group2); admit adds Dataset words to the Registry; make_widget saves a widget (kind table|tiles|bars|heat; prefer a live query when the matrix is a filter).
+Grammar notation (Legend v0.1, innermost evaluated first): ${G.LEGEND.map(l=>l[0]+" "+l[1]).join("; ")}. Pattern letters: S subject, V operation, Vᵖ passive, O object, C complement, A adverbial, ∃ existential, Q question, ! imperative, ∅ fragment, ⟨⟩ nested clauses. Use tag/: lines (via query) or Python tag() to tag sentences; entries carry example sentences in ex.
+Only admit words or make widgets when Timothy asks for that. Use the tools to look at real data rather than guessing. Keep replies short and plain; say what you ran and what you saved.
+Current state: ${stats()}`;
+function toolset(log){return [
+  {name:"query",description:"Run one query line against the Dataset (scope d) or Registry (scope r). Returns count, columns and up to 40 rows.",
+   inputSchema:{type:"object",properties:{line:{type:"string"},scope:{type:"string",enum:["d","r"]}},required:["line"]},
+   execute:async i=>{const line=String(i.line||"");log("query "+line);const r=await evalLine(line,i.scope==="r"?"r":"d",{noAsk:true});return {count:r.total,columns:r.cols,rows:r.rows.slice(0,40).map(x=>{const o={};for(const c of r.cols)o[c]=typeof x[c]==="string"?x[c].slice(0,90):x[c];return o})}}},
+  {name:"run_python",description:"Run Python (Pyodide) in the page. Returns stdout and the last expression's value (lists of dicts become matrices; first 40 rows returned).",
+   inputSchema:{type:"object",properties:{code:{type:"string"}},required:["code"]},
+   execute:async i=>{log("python "+String(i.code).split("\n")[0].slice(0,80));const r=await runPy(String(i.code||""));if(r.error)throw new Error(r.error);const m=toMatrix(r.value);return {stdout:(r.stdout||"").slice(0,4000),count:m.total,columns:m.cols,rows:m.rows.slice(0,40)}}},
+  {name:"admit",description:"Admit Dataset words into the Registry. Returns how many were admitted and which words were not found in the Dataset.",
+   inputSchema:{type:"object",properties:{words:{type:"array",items:{type:"string"}},via:{type:"string",description:"short label for why, e.g. 'claude: motion verbs'"}},required:["words"]},
+   execute:async i=>{const ws=(i.words||[]).map(w=>String(w).toLowerCase());const found=ws.map(w=>DSW.get(w)).filter(Boolean);const n=await admit(found,"claude"+(i.via?": "+String(i.via).slice(0,60):""));log("admitted "+n);return {admitted:n,missing:ws.filter(w=>!DSW.has(w)).slice(0,50)}}},
+  {name:"make_widget",description:"Save a widget. Give either a query line (live, re-runs as data changes) or explicit rows. kind: table, tiles, bars (count by group), heat (group × group2).",
+   inputSchema:{type:"object",properties:{title:{type:"string"},kind:{type:"string",enum:["table","tiles","bars","heat"]},query:{type:"string"},scope:{type:"string",enum:["d","r"]},rows:{type:"array",items:{type:"object"}},group:{type:"string"},group2:{type:"string"}},required:["title","kind"]},
+   execute:async i=>{let m,live=false,q="",src=i.scope==="r"?"r":"d";
+     if(i.query){q=String(i.query);live=isLive(q);const r=await evalLine(q,src,{noAsk:true});m=r}else m=toMatrix(i.rows||[]);
+     await saveWidget({title:String(i.title),kind:String(i.kind||"table"),q,src,group:i.group||m.cols[0],group2:i.group2||m.cols[1],live,cols:m.cols,rows:live?[]:m.rows.slice(0,300),by:"claude",at:Date.now()});log("widget "+i.title);return {saved:true,rows:m.total}}}
+]}
+function copyFor(code){return {not_granted:"Claude isn't allowed for this page. You can allow it from the artifact's permissions.",sampling_disabled:"Claude isn't available on this account.",rate_limited:"Too many requests right now. Wait a minute, then send again.",session_expired:"Sign in again to use Claude.",refused:"Claude declined that request. Try rephrasing it.",prompt_too_large:"That was too much text for one request. Ask for less.",tools_unavailable:"This view can't run Claude's tools.",invalid_json:"Claude's answer wasn't a matrix. Try again or ask more specifically.",cancelled:"Stopped."}[code]||"Claude couldn't answer ("+(code||"error")+"). Try again."}
+async function askMatrix(request,opts){
+  if(!sample)throw new Error("Claude isn't available in this view.");
+  const prompt=RULES()+"\n\nTimothy wrote this card line: ask/:"+request+"\nUse the tools to inspect the data, then reply with only JSON: {\"title\": string, \"columns\": [string], \"rows\": [object with those columns]}. At most 200 rows. Do not admit words or make widgets.";
+  try{const j=await sample.json(prompt,{tools:toolset(()=>{}).filter(t=>t.name==="query"||t.name==="run_python")});
+    const m=toMatrix(Array.isArray(j)?j:j.rows||[]);if(j&&Array.isArray(j.columns)&&j.columns.length)m.cols=j.columns;return {...m,src:"ai",note:j&&j.title||""}}
+  catch(e){throw new Error(e&&e.code?copyFor(e.code):String(e))}
+}
+
+/* ---------- Console ---------- */
+let cmode="claude", turns=[], ctl=null;
+function addMsg(who,cls,html){const m=document.createElement("div");m.className="msg "+cls;m.innerHTML='<span class="who">'+esc(who)+'</span><div class="body"></div>';const b=m.querySelector(".body");if(html instanceof Node)b.appendChild(html);else b.textContent=html||"";$("#log").appendChild(m);$("#log").scrollTop=1e9;return m}
+function setMode(m){cmode=m;$("#cmClaude").setAttribute("aria-pressed",m==="claude");$("#cmPy").setAttribute("aria-pressed",m==="py");
+  $("#cin").placeholder=m==="py"?"[r for r in registry if r['pos']=='verb']\n# also: q('pos/:noun & depth/:<=2'), admit([...]), widget('Title', rows, kind='bars', group='pos')":"Build me an index of the registry's verbs grouped by depth, as a bar widget.";
+  $("#cmHint").textContent=m==="py"?"Python runs in the page with dataset, registry, q(), admit() and widget(). Ctrl+Enter runs.":(sample?"Claude can query, run Python, admit words and build widgets.":"Claude isn't available in this view.")}
+$("#cmClaude").onclick=()=>setMode("claude");$("#cmPy").onclick=()=>setMode("py");
+$("#cin").onkeydown=e=>{if(e.key==="Enter"&&(e.ctrlKey||e.metaKey)){e.preventDefault();$("#csend").click()}};
+$("#cclear").onclick=()=>{$("#log").innerHTML="";turns=[]};
+$("#cstop").onclick=()=>ctl&&ctl.abort();
+$("#csend").onclick=async()=>{
+  const text=$("#cin").value.trim();if(!text)return;$("#cin").value="";
+  if(cmode==="py"){addMsg("You · Python","you",text);const m=addMsg("Python","py","Running…");const r=await runPy(text);const b=m.querySelector(".body");b.innerHTML="";
+    if(r.stdout){const pre=document.createElement("pre");pre.className="out";pre.textContent=r.stdout;b.appendChild(pre)}
+    if(r.error){const d=document.createElement("div");d.className="err";d.textContent=r.error;b.appendChild(d)}
+    else if(r.value!==undefined&&r.value!==null){if(typeof r.value!=="object"){const pre=document.createElement("pre");pre.className="out";pre.textContent=String(r.value);b.appendChild(pre)}else{const d=document.createElement("div");b.appendChild(d);renderMatrix(d,{...toMatrix(r.value),src:"py"},{line:"",src:"py"})}}
+    else if(!r.stdout)b.textContent="Done.";return}
+  if(!sample){addMsg("Claude","claude","Claude isn't available in this view.");return}
+  addMsg("You","you",text);turns.push({role:"user",content:text});
+  const m=addMsg("Claude","claude","Thinking…");const body=m.querySelector(".body");const acts=document.createElement("div");acts.className="act";m.appendChild(acts);
+  const log=s=>{acts.textContent+=(acts.textContent?" · ":"")+s};
+  ctl=new AbortController();$("#csend").disabled=true;$("#cstop").hidden=false;
+  try{const {text:ans}=await sample([{role:"user",content:RULES()},...turns.slice(-12)],{signal:ctl.signal,tools:toolset(log),onText:({text})=>{body.textContent=text}});
+    body.textContent=ans;turns.push({role:"assistant",content:ans})}
+  catch(e){body.textContent=(e&&e.text)||"";const d=document.createElement("div");d.className="err";d.textContent=copyFor(e&&e.code);m.appendChild(d);turns.pop()}
+  finally{$("#csend").disabled=false;$("#cstop").hidden=true;ctl=null}
+};
+
+/* ---------- Grammar: notation rendering ---------- */
+const LEX=new Map();let lexState="idle";
+G.setLookup(w=>DSW.get(w)||(LEX.has(w)?{poss:LEX.get(w),pos:""}:null));
+let lexP=null;function ensureLex(){return lexP||(lexP=(async()=>{lexState="loading";
+  try{const txt=await gunzipIfNeeded((await fetchB64("data/lexicon.b64.txt")).buffer);
+    for(const line of txt.split("\n")){const k=line.indexOf("\t");if(k>0)LEX.set(line.slice(0,k),line.slice(k+1))}
+    lexState="ready";if(cur==="grammar")tryTag();rerunLiveCards()}catch(e){lexState="failed"}})())}
+const BCLS={"[":"b-n","]":"b-n","(":"b-v",")":"b-v","{":"b-a","}":"b-a","<":"b-r",">":"b-r","|":"b-anc","/":"b-dir","\\":"b-dir","⟨":"b-x","⟩":"b-x"};
+function notaHTML(s){s=String(s??"");let out="";
+  for(let i=0;i<s.length;i++){const ch=s[i];
+    if(ch==="^"){let j=i+1;while(j<s.length&&!/[\s\[\](){}<>|\/\\⟨⟩]/.test(s[j]))j++;out+="<sup>"+esc(s.slice(i+1,j))+"</sup>";i=j-1;continue}
+    out+=BCLS[ch]?'<span class="'+BCLS[ch]+'">'+esc(ch)+'</span>':esc(ch)}
+  return out}
+function tryTag(){const v=$("#gTry").value;const r=G.parse(v,+$("#gDepth").value||6);$("#gTryOut").innerHTML=notaHTML(r.notation)||"&nbsp;";
+  $("#gTryPat").innerHTML='Pattern <span class="pat">'+esc(r.pattern)+'</span>'}
+$("#gTry").oninput=tryTag;
+$("#gLegend").innerHTML='<table><thead><tr><th>Slot</th><th>Role</th><th>Covers</th><th>Order</th></tr></thead><tbody>'+
+  G.LEGEND.map(([s,r,c,o])=>'<tr><td><div class="nota">'+notaHTML(s)+'</div></td><td>'+esc(r)+'</td><td class="def">'+esc(c)+'</td><td>'+esc(o)+'</td></tr>').join("")+'</tbody></table>';
+$("#gPatKey").innerHTML="Pattern letters: "+Object.entries(G.PATTERNS).map(([k,v])=>'<span class="pat">'+esc(k)+'</span> '+esc(v)).join(" · ");
+
+/* ---------- Grammar: structure scan ---------- */
+let scan=null, structures=[];
+const CONTENT=/^(N|V|ADJ|ADV)$/;
+function rankOf(lem){if(regHas(lem))return 0;const e=DSW.get(lem);return e&&e.rank!=null?e.rank:1e6}
+function runScan(){
+  const src=$("#gSrc").value,mode=$("#gMode").value,N=Math.max(1,+$("#gN").value||500),depth=Math.max(0,+$("#gDepth").value||0);
+  const btn=$("#gRun");btn.disabled=true;btn.textContent="Scanning…";
+  setTimeout(()=>{
+    const pool=src==="r"?regRows():src==="b"?[...regRows(),...DS]:DS;const seen=new Set();const sents=[];
+    for(const e of pool){if(mode==="own"&&!(e.rank!=null&&e.rank<=N))continue;
+      for(const s of e.ex||[]){if(seen.has(s))continue;seen.add(s);sents.push({s,w:e.w})}}
+    const rows=[];const cap=60000;
+    for(const x of sents.slice(0,cap)){const p=G.parse(x.s,depth);const content=p.tokens.filter(t=>CONTENT.test(t.k)).map(t=>t.lem||t.w);
+      const ranks=content.map(rankOf);const avg=ranks.length?Math.round(ranks.reduce((a,b)=>a+b,0)/ranks.length):0;
+      if(mode==="all"&&ranks.some(r=>r>N))continue;
+      rows.push({word:x.w,sentence:x.s,pattern:p.pattern,notation:p.notation,generality:avg})}
+    if(mode==="rank")rows.sort((a,b)=>a.generality-b.generality);
+    const agg=new Map();for(const r of rows){const a=agg.get(r.pattern)||{pattern:r.pattern,count:0,notation:r.notation,examples:[]};a.count++;if(a.examples.length<5)a.examples.push({s:r.sentence,n:r.notation});agg.set(r.pattern,a)}
+    const pats=[...agg.values()].sort((a,b)=>b.count-a.count).map(a=>({...a,share:+(a.count/rows.length*100).toFixed(1)}));
+    scan={rows,pats,src,mode,N,depth};
+    $("#gInfo").textContent=fmt(sents.length)+" sentences found · "+fmt(rows.length)+" kept · "+fmt(pats.length)+" patterns";
+    renderMatrix($("#gPatterns"),{rows:pats,total:pats.length,cols:["pattern","count","share","notation"],src:"tag"},{line:"",src:"tag",onAdmit:false});
+    const sv=rows.slice(0,300);
+    $("#gSentences").innerHTML=rows.length?'<div class="hint" style="margin:8px 0 4px">Sentences'+(rows.length>300?" (first 300)":"")+'</div><div class="tbl"><table><thead><tr><th>Word</th><th>Pattern</th><th>Notation</th>'+(mode==="rank"?"<th>Avg rank</th>":"")+'</tr></thead><tbody>'+
+      sv.map(r=>'<tr><td class="w">'+esc(r.word)+'</td><td class="pat">'+esc(r.pattern)+'</td><td><div class="nota">'+notaHTML(r.notation)+'</div><div class="hint">'+esc(r.sentence)+'</div></td>'+(mode==="rank"?'<td>'+fmt(r.generality)+'</td>':'')+'</tr>').join("")+'</tbody></table></div>':'<div class="note">No sentences matched. Raise N, switch the source, or admit words that have example sentences.</div>';
+    $("#gSave").disabled=!pats.length||!canWrite;btn.disabled=false;btn.textContent="Scan sentences";
+  },20);
+}
+$("#gRun").onclick=async()=>{await ensureLex();runScan()};
+$("#gSave").onclick=async e=>{const b=e.target;if(!scan)return;
+  if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to replace the saved registry";return}
+  b.disabled=true;b.textContent="Saving…";const top=scan.pats.slice(0,60);
+  const meta={src:{d:"Dataset",r:"Registry",b:"Both"}[scan.src],constraint:{own:"top "+scan.N+" words' examples",all:"all words within top "+scan.N,rank:"ranked by generality"}[scan.mode],depth:scan.depth,at:Date.now()};
+  if(db){try{for(const s of structures)await db.doc("structures/"+s.id).delete();
+      for(const p of top)await db.doc("structures/p"+hash(p.pattern).toString(36)).set({pattern:p.pattern,count:p.count,share:p.share,examples:p.examples,...meta})}catch(err){showSaveError(err)}}
+  else{structures=top.map(p=>({id:"p"+hash(p.pattern).toString(36),...p,...meta}));renderStructures()}
+  b.dataset.armed="";b.textContent="Saved "+top.length+" patterns";};
+function renderStructures(){const el=$("#gStored");
+  $("#gStoredMeta").textContent=structures.length?fmt(structures.length)+" patterns":"";
+  if(!structures.length){el.innerHTML='<div class="note">Nothing saved yet. Run a scan, then save its patterns here as their own registry.</div>';return}
+  const m=structures[0];
+  el.innerHTML='<div class="hint">'+esc(m.src||"")+' · '+esc(m.constraint||"")+' · depth '+esc(m.depth??"")+'</div><div class="tbl"><table><thead><tr><th>Pattern</th><th>Count</th><th>Share</th><th>Example</th></tr></thead><tbody>'+
+    [...structures].sort((a,b)=>b.count-a.count).map(s=>'<tr><td class="pat">'+esc(s.pattern)+'</td><td>'+fmt(s.count)+'</td><td>'+esc(s.share)+'%</td><td><div class="nota">'+notaHTML(s.examples&&s.examples[0]&&s.examples[0].n||"")+'</div></td></tr>').join("")+'</tbody></table></div>'}
+
+/* ---------- Glyph profile cards ---------- */
+const GLYPHS=[["א","aleph"],["ב","bet"],["ג","gimel"],["ד","dalet"],["ה","he"],["ו","vav"],["ז","zayin"],["ח","chet"],["ט","tet"],["י","yod"],["כ","kaf"],["ל","lamed"],["מ","mem"],["נ","nun"],["ס","samekh"],["ע","ayin"],["פ","pe"],["צ","tsadi"],["ק","qof"],["ר","resh"],["ש","shin"],["ת","tav"]];
+const COMPS=[["state","[•]"],["operation","(•)"],["property","{•}"],["magnitude","<•>"],["anchor","|•|"],["forward","/•/"],["backward","\\•\\"],["question",">•<"],["join","/•\\"],["split","\\•/"],["relation","}•{"],["absence","]•["]];
+const KIND2COMP={N:"state",PRON:"state",V:"operation",AUX:"operation",ADJ:"property",ADV:"magnitude",ANC:"anchor",TIME:"anchor",PF:"forward",INF:"forward",PB:"backward",Q:"question",SUB:"question",AND:"join",OR:"split",REL:"relation",NEG:"absence"};
+const glyphDocs=new Map(); let catchIdx=null, glyphCounts=null;
+function activeCard(name){const d=glyphDocs.get(name);if(!d||!d.cards||!d.cards.length)return null;return d.cards.find(c=>c.id===d.active)||d.cards[0]}
+function buildCatch(){catchIdx={};for(const [he,name] of GLYPHS){const c=activeCard(name);if(!c)continue;
+  for(const [k] of COMPS){const w=String(c.fields&&c.fields[k]||"").trim().toLowerCase();if(!w)continue;(catchIdx[k]=catchIdx[k]||new Map());const m=catchIdx[k];m.set(w,(m.get(w)||"")+he)}}}
+G.setCatch((lem,kind)=>{if(!catchIdx)buildCatch();const comp=KIND2COMP[kind];const m=comp&&catchIdx[comp];if(!m)return "";
+  let g=m.get(lem)||"";if(comp==="state"||comp==="operation"){const e=DSW.get(lem);if(e&&e.up)for(const a of e.up){const x=m.get(a);if(x)g+=x}}
+  return [...new Set(g)].join("")});
+async function saveGlyph(name){const d=glyphDocs.get(name);catchIdx=null;glyphCounts=null;if(db){try{await db.doc("glyphs/"+name).set({cards:d.cards,active:d.active})}catch(e){showSaveError(e)}}tryTag()}
+function countCatches(){const t0=Date.now();glyphCounts={};
+  for(const [he,name] of GLYPHS){const c=activeCard(name);if(!c)continue;const out={};
+    for(const [k] of COMPS){const w=String(c.fields&&c.fields[k]||"").trim().toLowerCase();if(!w)continue;
+      if(k==="state"||k==="operation"){const pos=k==="state"?"noun":"verb";let n=0;for(const r of DS)if(r.pos===pos&&(r.w===w||(r.up&&r.up.includes(w))))n++;out[k]=n}
+      else out[k]=DSW.has(w)?1:0}
+    glyphCounts[name]=out}
+  $("#glInfo").textContent="Counted over "+fmt(DS.length)+" words in "+(Date.now()-t0)+" ms";renderGlyphs()}
+$("#glCount").onclick=countCatches;
+function renderGlyphs(){const root=$("#glyphs");root.innerHTML="";
+  for(const [he,name] of GLYPHS){let d=glyphDocs.get(name);if(!d){d={cards:[{id:"c1",fields:{}}],active:"c1"};glyphDocs.set(name,d)}
+    const c=activeCard(name);const el=document.createElement("article");el.className="card";const ct=glyphCounts&&glyphCounts[name]||{};
+    el.innerHTML='<div class="gl-head"><span class="he" lang="he">'+he+'</span><span class="nm">'+esc(name)+'</span>'+
+      (d.cards.length>1?'<select aria-label="Active card for '+esc(name)+'">'+d.cards.map((x,i)=>'<option value="'+esc(x.id)+'"'+(x.id===c.id?" selected":"")+'>Card '+(i+1)+'</option>').join("")+'</select>':'<span class="card-meta">Card 1</span>')+
+      '<button class="btn small" data-add>New card</button></div><div class="gl-fields">'+
+      COMPS.map(([k,s])=>'<label for="gl-'+name+'-'+k+'">'+esc(s)+'</label><input id="gl-'+name+'-'+k+'" data-k="'+k+'" value="'+esc(c.fields&&c.fields[k]||"")+'" placeholder="'+k+'" autocomplete="off" spellcheck="false">'+(ct[k]!=null?'<span class="ct">catches '+fmt(ct[k])+'</span>':'')).join("")+'</div>';
+    el.querySelectorAll("input[data-k]").forEach(inp=>inp.onchange=()=>{c.fields=c.fields||{};c.fields[inp.dataset.k]=inp.value.trim().toLowerCase();saveGlyph(name)});
+    const sel=el.querySelector("select");if(sel)sel.onchange=()=>{d.active=sel.value;saveGlyph(name);renderGlyphs()};
+    el.querySelector("[data-add]").onclick=()=>{const id="c"+(d.cards.length+1)+Date.now().toString(36).slice(-3);d.cards.push({id,fields:{}});d.active=id;saveGlyph(name);renderGlyphs()};
+    root.appendChild(el)}}
+
+/* ---------- Tabs & status ---------- */
+let cur="cards";
+function show(t){cur=t;for(const b of document.querySelectorAll("#tabs button"))b.setAttribute("aria-selected",b.dataset.tab===t);
+  for(const p of ["cards","dataset","registry","grammar","glyphs","widgets","console"])$("#p-"+p).hidden=p!==t;
+  if(t==="grammar"){ensureLex();tryTag();renderStructures()}if(t==="glyphs")renderGlyphs();
+  if(t==="cards")renderCards();if(t==="dataset")renderDsPage();if(t==="registry")renderRegistry();if(t==="widgets")renderWidgets();LS.set("lr.tab",t)}
+$("#tabs").onclick=e=>{const t=e.target.dataset.tab;if(t)show(t)};
+function refreshStatus(){$("#st-ds").innerHTML="<i></i>"+esc(dsName.split(" · ")[0])+" "+fmt(DS.length);$("#st-ds").className="pill ok";
+  $("#st-reg").innerHTML="<i></i>Registry "+fmt(regRows().length);$("#st-reg").className="pill "+(db?"ok":"warn")}
+
+/* ---------- Boot ---------- */
+setDataset(JSON.parse($("#starter").textContent),"Starter · general-first");
+setMode("claude");refreshStatus();show(["cards","dataset","registry","grammar","glyphs","widgets","console"].includes(LS.get("lr.tab","cards"))?LS.get("lr.tab","cards"):"cards");
+if(LS.get("lr.ds","starter")==="full")loadFull();ensureLex();
+(async()=>{
+  const use=n=>window.claude&&window.claude.use?window.claude.use(n).catch(()=>null):Promise.resolve(null);
+  const [d,u,s]=await Promise.all([use("db"),use("user"),use("sample")]);
+  sample=s;$("#st-ai").className="pill "+(s?"ok":"bad");$("#st-ai").innerHTML="<i></i>Claude "+(s?"ready":"unavailable");setMode(cmode);
+  user=u;if(u&&u.can){try{const c=await u.can("data.write");if(c===false)canWrite=false}catch(e){}}
+  if(!d){const b=$("#saveBanner");b.hidden=false;b.textContent="Saving is off in this view. The Registry, cards and widgets you make here last only until you close the page.";refreshStatus();return}
+  db=d;refreshStatus();
+  if(!canWrite){const b=$("#saveBanner");b.hidden=false;b.textContent="You can view this Registry but not change it.";}
+  db.collection("registry").onSnapshot(snap=>{buckets.clear();for(const doc of snap.docs){const e=doc.data()&&doc.data().entries;if(e)buckets.set(doc.id,{...e})}
+      regChanged()},e=>showSaveError(e));
+  db.collection("cards").onSnapshot(snap=>{const editing=document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#cards");
+      cards=snap.docs.map(x=>({id:x.id,...JSON.parse(JSON.stringify(x.data()))}));if(!editing&&cur==="cards")renderCards()},e=>showSaveError(e));
+  db.collection("structures").onSnapshot(snap=>{structures=snap.docs.map(x=>({id:x.id,...JSON.parse(JSON.stringify(x.data()))}));if(cur==="grammar")renderStructures()},e=>showSaveError(e));
+  db.collection("glyphs").onSnapshot(snap=>{const editing=document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#glyphs");
+      for(const x of snap.docs)glyphDocs.set(x.id,JSON.parse(JSON.stringify(x.data())));catchIdx=null;if(cur==="glyphs"&&!editing)renderGlyphs()},e=>showSaveError(e));
+  db.collection("widgets").onSnapshot(snap=>{widgets=snap.docs.map(x=>({id:x.id,...JSON.parse(JSON.stringify(x.data()))})).sort((a,b)=>(b.at||0)-(a.at||0));renderWidgets()},e=>showSaveError(e));
+})();
+})();
+</script>
