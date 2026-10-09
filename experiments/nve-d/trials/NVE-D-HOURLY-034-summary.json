@@ -1,0 +1,69 @@
+{
+  "cycle": "NVE-D-HOURLY-034",
+  "date": "2026-10-09",
+  "branch": "library-source-transcriptions",
+  "status": "completed_local",
+  "active_seconds": 300.001,
+  "execution_segments": 17,
+  "configurations": 53132,
+  "distinct_parameter_subject_combinations": 44860,
+  "distinct_graph_root_digests": 720,
+  "root_generations": 199020250,
+  "depth_counted_transitions": 663420500,
+  "seeds": 8,
+  "depths": [
+    1,
+    3,
+    6
+  ],
+  "generation_budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh",
+    "bipartite",
+    "tree",
+    "hybrid"
+  ],
+  "scenarios": 24,
+  "checkpoints": [
+    10573,
+    21332,
+    31836,
+    42477,
+    53132
+  ],
+  "checkpoint_evaluation": "=",
+  "oracle_rows": 53132,
+  "oracle_disagreements": 0,
+  "graph_oracle_rows": 120,
+  "recovery_replay_rows": 378,
+  "quorum_vs_claimed_publication": {
+    "0": 0,
+    "<": 0,
+    ">": 15479,
+    "=": 37653
+  },
+  "mode_aware_vs_hardcoded": {
+    "0": 11088,
+    "<": 0,
+    ">": 4421,
+    "=": 37623
+  },
+  "full_local_compromise_evaluation": "0",
+  "DFE": {
+    "step5": ">",
+    "step7": "0",
+    "step8": "="
+  },
+  "limitations": "All signing authorities, observations, timestamps and policy versions locally generated. No independently administered witness or external historical authenticity. Full runner, raw ledger and checkpoints in local package only.",
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
