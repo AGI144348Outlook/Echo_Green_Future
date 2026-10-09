@@ -1,0 +1,100 @@
+{
+  "cycle": "NVE-D-HOURLY-016",
+  "local_date": "2026-10-08 America/Chicago",
+  "configurations": 270,
+  "root_generations": 1012500,
+  "seeds": [
+    41,
+    103,
+    211
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    0,
+    2,
+    5
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "node_transitions": {
+    "baseline": 3375000,
+    "checkpoint_prefix": 1687500,
+    "checkpoint_replay_suffix": 1687500,
+    "reverse_order_suffix": 1687500,
+    "total_executed": 8437500
+  },
+  "checkpoint_equality": {
+    "0": 0,
+    "=": 270
+  },
+  "reverse_node_state": {
+    "0": 15,
+    "=": 255
+  },
+  "reverse_event_trace": {
+    "0": 120,
+    "=": 150
+  },
+  "baseline_messages_sent": 139104,
+  "baseline_messages_delivered": 139104,
+  "real_process_SIGKILL": 60,
+  "fault_outcomes": {
+    "before_witness_commit_safe": {
+      "0": 0,
+      "=": 15
+    },
+    "after_witness_commit_safe": {
+      "0": 0,
+      "=": 15
+    },
+    "after_witness_commit_naive": {
+      "0": 15,
+      "=": 0
+    },
+    "after_ack_commit_safe": {
+      "0": 0,
+      "=": 15
+    }
+  },
+  "conflicting_operation_id": {
+    "safe_rejected": 12,
+    "naive_appended": 12
+  },
+  "audit": {
+    "checkpoints": 270,
+    "sqlite_pairs": 60,
+    "conflict_journals": 12,
+    "structural_evaluation": "=",
+    "independent_transition_oracle": false,
+    "external_witness_custody": false
+  },
+  "execution_note": "First invocation executed and checkpointed all 270 configurations, then timed out during fault work. Resumed invocation reused 270 SHA-verified checkpoints and completed 60 fault subprocesses. No repeated transitions counted.",
+  "source_sha256": {
+    "runner": "aadd40616b3285860f418ad332f4c6ed1e1d087dee62add7ebb1721c06bd625d",
+    "auditor": "92efd53b808e0085ee811f4c15f6a375bc7f9aecdebf583e6218adca938e82ec",
+    "fixture": "b9cd9fb5ba954c5e688ab10ab05ecf663529e7d28a1dcc4b223b8402f4e0012f",
+    "local_artifacts_zip": "4a1f6afbfe317336bdd65948264f7ce4e69b9ac24d7448e7f2e6e0f98fd8a8f1"
+  },
+  "source_scope": "Verified historical Infinite Expanse Testing Framework codices on Mashet-Echo-Drive main and CLR-0036/0038/0040 assessments on code-library-registry; original executable implementations and RFC-0031/0033 not independently retrieved.",
+  "limitations": "DVE synthetic fixture only; no CVE validation, network, third-party witness, authenticated custody, independent transition oracle, or power-failure testing. Full executable and row-level evidence in local artifact package, not this summary.",
+  "evaluation_alphabet": [
+    "<",
+    ">",
+    "=",
+    "0"
+  ],
+  "relational_change": "∆"
+}
