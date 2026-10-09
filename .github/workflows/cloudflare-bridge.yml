@@ -59,6 +59,37 @@ jobs:
           }, indent=2))
           ' <<< "$response"
               ;;
+            deploy_worker)
+              # Inert deployment only. Deployment requires an explicit workflow_dispatch run;
+              # the push trigger never deploys a Worker.
+              if [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+                echo "Deployment requires manual workflow_dispatch authorization."
+                exit 2
+              fi
+              python - <<'PY'
+          import json
+          data=json.load(open("bridge/operation.json"))
+          assert set(data)=={"operation","worker_name"}, "Unexpected operation fields"
+          assert data["worker_name"]=="echo-bot-stage0-inert", "Worker name not approved"
+          PY
+              worker_name="$(python -c 'import json;print(json.load(open("bridge/operation.json"))["worker_name"])')"
+              test -f bridge/worker.mjs
+              echo "Deploying approved inert Worker: $worker_name"
+              curl --fail-with-body --silent --show-error \
+                --request PUT \
+                "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}" \
+                --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                --header "Content-Type: application/javascript" \
+                --header "X-Auth-Email:" \
+                --data-binary @bridge/worker.mjs > /tmp/echo-worker-deploy-response.json
+              python - <<'PY'
+          import json
+          data=json.load(open("/tmp/echo-worker-deploy-response.json"))
+          if not data.get("success"):
+              raise SystemExit("Cloudflare returned unsuccessful deployment")
+          print("Inert Worker script uploaded successfully; no routes or cron configured.")
+          PY
+              ;;
             *)
               echo "Rejected operation: $operation"
               echo "Only explicitly implemented operations may execute."
