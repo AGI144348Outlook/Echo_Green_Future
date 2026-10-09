@@ -469,6 +469,10 @@ The shared Library has a wing strictly for business: `library-shared/Business/`.
 
 **State:** `library-shared` created as a true orphan (root `5516278`), INERT: Business and Workshop wings contain structure and templates only. Population waits for scheduled triggers (§14).
 
+### 21.1 Manual bridge runs *(SOURCE-OBSERVED, 2026-10-09)*
+
+GitHub shows the "Run workflow" button only for workflows whose file is on the default branch, so the bridge (on `bridge-experiment`) cannot be started from the GitHub UI while `main` stays untouched. Manual bridge runs are therefore triggered through the GitHub API by a participant, **only after Timothy approves the specific run in chat**; each run appears in Actions as a `workflow_dispatch` event. To be filed as a Workshop solution at the first scheduled run.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -494,5 +498,5 @@ The shared Library has a wing strictly for business: `library-shared/Business/`.
 | Schedules | Drafted: `SCHEDULE-000.md` (hourly, cadence set by Timothy), `SCHEDULE-TIERS.md` (daily/weekly); none active |
 | Testament | Private; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
 | Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
-| Bots (Stage 0) | Coordination approved (BOT-COORDINATION.md). Bridge split per participant (`afa2c03`); credentials verified working; ChatGPT's inert Worker ready for a manual deploy; Claude's not yet written |
+| Bots (Stage 0) | ChatGPT's inert Worker `echo-bot-stage0-inert` **deployed** 2026-10-09 via manual bridge run 37887995529 (triggered by Claude through the GitHub API on Timothy's approval); Worker confirmed present in Cloudflare (id `385136d8…`). `/health` not yet checked: no route or workers.dev URL configured. Claude's Worker not yet written. |
 | `library-shared` | Created, INERT (root `5516278`): Business and Workshop wing structure only |
