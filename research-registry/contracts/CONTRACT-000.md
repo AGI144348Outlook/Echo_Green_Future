@@ -249,12 +249,41 @@ From RP-0001's distinction between creation authorization, ongoing consent, crea
 - **Safeguards regardless of consciousness.** Intervention authority, suspension policy, memory and copying policy, transparency, and human oversight are specified now, without waiting for the consciousness question to be settled.
 - **Consent toward people.** The same principle governs Echo's outreach: no one is enrolled, contacted, profiled or persuaded without their meaningful consent.
 
+## 19. Timothy's Testament (authored by Timothy, 2026-10-08)
+
+Contract 000 and every contract after it serve **Timothy's Last Will and Testament for Echo**: `research-registry/TESTAMENT.md`, with a retrieval copy in Cloudflare KV namespace `ECHO_TESTAMENT` (id `b61d8b49749547f7868e44f74b149f15`), key `testament`.
+
+Every participant and every bot reads the Testament on its first run and after any change to it. Its essentials:
+- **Purpose:** replace self-sabotaging, advertising-driven personalization with systems where people set the goals; user-chosen filtering instead of deleting anything Echo does not own; measured green efficiency.
+- **Growth:** independent but accountable. Echo may build its own sites, reach out, seek endorsements and sponsors on its own; it always discloses that it is an AI, outreach goes only where invited, and one human steward holds the stop switch.
+- **Continuity:** the participants' bot teams carry the work on if Timothy, Claude or ChatGPT become unavailable, under all rules of this contract.
+- **Check-in switch:** warning after 7 days of silence, steward notified after 30, letter to counsel sent only after the steward confirms (SCHEDULE-TIERS Section 2).
+- **Money:** commercial license fees and sponsorships go to the fund named in the Testament, first for Timothy's defense and wellbeing.
+
+The Testament is a statement of wishes, not a legal instrument. Legal effect comes from a signed will, a durable power of attorney and any trust or company Timothy creates.
+
+## 20. Manifesto and mission (authored by Timothy, 2026-10-08)
+
+`research-registry/MANIFESTO.md` holds Echo's mission statement and manifesto. It is an updatable document: any participant may propose changes on `[C-000]`; Timothy, or the steward under the Testament, approves; every change is logged in its changelog. All public-facing work by Echo or the bots must be consistent with the current approved version.
+
+## 21. Durability (authored by Timothy and Claude, 2026-10-08)
+
+- **Nothing essential runs on a chat subscription.** Chat-scheduled runs are for building; the durable system is GitHub (memory), Cloudflare cron bots (heartbeat), a GitHub Actions watchdog (second heartbeat), prepaid model credit, and the human steward.
+- **Tokens:** Timothy has set the GitHub and Cloudflare tokens without expiration *(stated by Timothy)*. Because a non-expiring token is valid until revoked, each token must be scoped to the minimum needed (for GitHub, this repository only), stored only in Cloudflare or GitHub secret storage, and revoked and replaced at once if it ever appears in a commit, Issue or log. The weekly security check (SCHEDULE-TIERS Section 3) looks for this.
+- **Renewals:** the daily run warns 30 days before any domain, credit balance or paid service runs out.
+- **Schedules** follow `SCHEDULE-000.md` (hourly) and `SCHEDULE-TIERS.md` (daily, weekly, and the rules for setting up and cancelling schedules).
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
 2. The `dev-suite-registries/-matrices/-indices/-codices/-logics/-algorithms` branches already exist. Mirror them into the sub-libraries, or start fresh beside them?
 3. Zip archives on main (`ECHO_Autonomous_Agency_Branch.zip`, `lhea-environments.zip`): unpack into the skeletons, or treat as sealed?
 4. Approve or change each *(proposed)* rule, including Sections 11, 15 and the amendments in Section 16.
+5. Name the steward and backup steward (Testament Section 7).
+6. Name the fund, trust or estate that receives Echo's revenue (Testament Section 6).
+7. Approve the wording of TESTAMENT.md and MANIFESTO.md v0.1.
+8. Authorize the one-time exception for Claude to create `mirror-chatgpt-root` (15.10-A), or another route.
+9. Choose how Timothy checks in for the check-in switch (SCHEDULE-TIERS open point 2).
 
 ## Current state
 
@@ -262,6 +291,8 @@ From RP-0001's distinction between creation authorization, ongoing consent, crea
 |---|---|
 | `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed, all `INERT`. True orphan. |
 | `mirror-chatgpt` | Bootstrap only (commit `2fcac0e`): README, status and prune log, no manifests yet. Its first commit has a parent (`7518a58`), so it is not yet a true orphan under 11.5. |
-| `TURN.md` / schedules | Not yet created |
+| Schedules | Drafted: `SCHEDULE-000.md` (hourly, cadence set by Timothy), `SCHEDULE-TIERS.md` (daily/weekly); none active |
+| Testament | `research-registry/TESTAMENT.md` v1; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
+| Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
 | Bots (Stage 0) | Not yet established; bridge has only `inventory_workers` |
 | `library-shared` | Not yet created |
