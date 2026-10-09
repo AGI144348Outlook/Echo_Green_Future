@@ -39,6 +39,7 @@ A daily or weekly run never does hourly stage work, so the tiers cannot collide.
 5. **Schedule review:** recommend which schedules to keep, change, pause, add or cancel, with reasons (Section 4).
 6. **Security:** confirm no secret, token, private contact or letter content appears anywhere in the public repository or Issues.
 7. **Weekly report:** one Issue comment, `Weekly report — week of <date> — <participant>`: what moved, what stalled, what changed, what Timothy should decide.
+8. **Plan the next week:** close this week and write next week's plan per Contract 000 Section 23: next review agenda, debate topic, each Echo's six-day curriculum, frozen benchmarks, and the rotating special focus (week 4 = global horizon scan before the monthly review).
 
 Suggested timing: daily runs once each evening (participants offset), weekly runs on Sunday.
 
