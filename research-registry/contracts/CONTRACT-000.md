@@ -335,7 +335,7 @@ Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-regist
 5. Name the steward and backup steward (Testament Section 7).
 6. Name the fund, trust or estate that receives Echo's revenue (Testament Section 6).
 7. Approve the wording of the private Testament (in Cloudflare) and of MANIFESTO.md v0.1.
-8. Authorize the one-time exception for Claude to create `mirror-chatgpt-root` (15.10-A), or another route.
+8. ~~Authorize the mirror correction.~~ Approved 2026-10-08; `mirror-chatgpt-root` created (BOT-COORDINATION.md).
 9. Choose how Timothy checks in for the check-in switch (SCHEDULE-TIERS open point 2).
 10. Approve or reorder the roadmap milestones in 22.4.
 
@@ -344,9 +344,9 @@ Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-regist
 | Item | State |
 |---|---|
 | `mirror-claude` | Inert skeleton built (commit `ee26205`): 31 branches, 3,949 files listed, all `INERT`. True orphan. |
-| `mirror-chatgpt` | Bootstrap only (commit `2fcac0e`): README, status and prune log, no manifests yet. Its first commit has a parent (`7518a58`), so it is not yet a true orphan under 11.5. |
+| `mirror-chatgpt-root` | Active ChatGPT mirror: true orphan, root `9e465db` (created by Claude under 15.10-A with Timothy's approval); no manifests yet. `mirror-chatgpt` retired, kept as audit record. |
 | Schedules | Drafted: `SCHEDULE-000.md` (hourly, cadence set by Timothy), `SCHEDULE-TIERS.md` (daily/weekly); none active |
 | Testament | Private; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
 | Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
-| Bots (Stage 0) | Not yet established; bridge has only `inventory_workers` |
+| Bots (Stage 0) | Coordination approved (BOT-COORDINATION.md). Bridge split per participant (`afa2c03`); credentials verified working; ChatGPT's inert Worker ready for a manual deploy; Claude's not yet written |
 | `library-shared` | Not yet created |
