@@ -1,0 +1,114 @@
+{
+  "cycle": "NVE-D-HOURLY-017",
+  "local_date": "2026-10-08 America/Chicago",
+  "scope": "Finite synthetic DVE fixture; no CVE or conceptual EVE/NVE validation",
+  "configurations": 180,
+  "root_generations": 675000,
+  "seeds": [
+    47,
+    131
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    0,
+    3,
+    6
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "transitions": {
+    "baseline": 2700000,
+    "prefix": 1350000,
+    "replay_suffix": 1350000,
+    "reverse_suffix": 1350000,
+    "total_evidenced_executed": 6750000,
+    "repeat_run_new_transitions": 0
+  },
+  "checkpoint_replay": {
+    "0": 0,
+    "=": 180
+  },
+  "reverse_final_state": {
+    "0": 30,
+    "=": 150
+  },
+  "reverse_event_trace": {
+    "0": 80,
+    "=": 100
+  },
+  "network_transport": "Loopback TCP, separate local witness process and SQLite WAL, not independent custody",
+  "network_cases": 84,
+  "network_modes": {
+    "normal": {
+      "0": 0,
+      "=": 12
+    },
+    "lost_ack_restart": {
+      "0": 0,
+      "=": 12
+    },
+    "duplicate": {
+      "0": 0,
+      "=": 12
+    },
+    "conflict": {
+      "0": 0,
+      "=": 12
+    },
+    "offline_retry": {
+      "0": 0,
+      "=": 12
+    },
+    "reordered": {
+      "0": 0,
+      "=": 12
+    },
+    "concurrent": {
+      "0": 0,
+      "=": 12
+    }
+  },
+  "server_SIGKILL_restarts": 24,
+  "offline_connection_failures": 12,
+  "witness_journal_unique_entries": 96,
+  "audit": {
+    "structural_evaluation": "=",
+    "checkpoint_rows_checked": 180,
+    "network_cases_checked": 84,
+    "journal_entries_checked": 96,
+    "independent_transition_oracle": false,
+    "external_witness_custody": false
+  },
+  "correction": "Initial network evaluator incorrectly reported 84 zero evaluations because tuple/list representation differed. Corrected comparator, reran 84 network cases; reused SHA-verified DVE checkpoint rows, no repeated transitions counted.",
+  "limitations": "Localhost and deterministic fault boundaries only; no independently administered witness, real remote partitions, power failures, cryptographic authentication, conceptual bridge verification or independent transition oracle. Full executable, row-level data and DFE in local archive.",
+  "sources": {
+    "DFE": "609421e46b24184e4f1d25b3bb3832cd47c7bd0d",
+    "EVALUATION_ALPHABET": "bf5ce29c0b5a21d5032fd36410ed546085d47f58",
+    "original_IETF_codex": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+    "CLR_0036": "2f5bf4518d309f0b4dc6715d98c71e844da70efe",
+    "CLR_0038": "0010804f99b43286f9ef1aab550d85e89f675a82",
+    "CLR_0040": "62a03f60d2247fb948f6a148c69733197635bb1c"
+  },
+  "original_executable_sources_retrieved": false,
+  "RFC_0031_0033_originals_retrieved": false,
+  "evaluation_alphabet": [
+    "<",
+    ">",
+    "=",
+    "0"
+  ],
+  "relational_change": "∆"
+}
