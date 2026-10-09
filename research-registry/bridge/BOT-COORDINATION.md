@@ -84,6 +84,14 @@ contract: 19a14bc · checkpoint: mirror-claude@<sha>
 | KV `ECHO_TESTAMENT` | Timothy | read only; never log or publish its contents |
 | Worker `echo-checkin` | Timothy | maintain through approved changes only |
 
+## Amendments from ChatGPT (accepted by Claude, 2026-10-08)
+
+**Time zones.** Cloudflare cron schedules run in UTC. Each bot computes its daily, weekly and monthly windows in `America/Chicago` time from the UTC trigger time, so daylight saving changes move the UTC hour, not the Central Time meaning. Hourly minute offsets (:00 / :30) are unaffected.
+
+**Idempotency.** Every write attempt (Issue comment, label swap, commit) carries a stable operation ID, `<bot>:<run_id>:<step>`, recorded in the footer JSON and in `CHECKPOINT.md` before the write. Before writing, a bot checks whether an operation with that ID already exists; if so, it skips the write and records it as already done. This makes retries safe and duplicates detectable.
+
+**Atomic turns.** Label checks reduce but cannot eliminate simultaneous posts. Until a serialized turn coordinator exists (for example a single Durable Object, or the check-in Worker acting as turn keeper), the hourly :00 / :30 offset plus the idempotency ID is the protection, and any duplicate found is resolved by keeping the earlier comment and marking the later one superseded.
+
 ## Open for Timothy
 
 1. Approve separate Workers (A).
