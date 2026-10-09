@@ -5,9 +5,18 @@ on:
     branches:
       - bridge-experiment
     paths:
-      - "bridge/operation.json"
+      - "bridge/ops/*.json"
       - ".github/workflows/cloudflare-bridge.yml"
   workflow_dispatch:
+    inputs:
+      participant:
+        description: "Whose operation file to run (bridge/ops/<participant>.json)"
+        required: true
+        default: chatgpt
+        type: choice
+        options:
+          - chatgpt
+          - claude
 
 permissions:
   contents: read
@@ -19,6 +28,9 @@ jobs:
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      # Push runs are read-only inventory; only a manual run selects a participant.
+      PARTICIPANT: ${{ github.event_name == 'workflow_dispatch' && inputs.participant || 'none' }}
+      EVENT_NAME: ${{ github.event_name }}
     steps:
       - name: Checkout bridge definition
         uses: actions/checkout@v4
@@ -40,7 +52,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          operation="$(python -c 'import json; print(json.load(open("bridge/operation.json"))["operation"])')"
+          # Each participant owns one operation file (BOT-COORDINATION.md, section C).
+          case "$PARTICIPANT" in
+            chatgpt|claude) op_file="bridge/ops/${PARTICIPANT}.json" ;;
+            none) op_file="" ;;
+            *) echo "Rejected participant: $PARTICIPANT"; exit 2 ;;
+          esac
+          if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+            # A push never executes a participant's operation; it only inventories.
+            operation="inventory_workers"
+          else
+            test -f "$op_file"
+            operation="$(OP_FILE="$op_file" python -c 'import json,os; print(json.load(open(os.environ["OP_FILE"]))["operation"])')"
+          fi
+          echo "Participant: $PARTICIPANT  Operation: $operation"
 
           case "$operation" in
             inventory_workers)
@@ -66,21 +91,37 @@ jobs:
                 echo "Deployment requires manual workflow_dispatch authorization."
                 exit 2
               fi
-              python - <<'PY'
-          import json
-          data=json.load(open("bridge/operation.json"))
-          assert set(data)=={"operation","worker_name"}, "Unexpected operation fields"
-          assert data["worker_name"]=="echo-bot-stage0-inert", "Worker name not approved"
+              # Each participant may deploy only Workers under its own name prefix,
+              # from its own source file.
+              if ! deploy_vars="$(OP_FILE="$op_file" python - <<'PY'
+          import json, os, re, shlex
+          p = os.environ["PARTICIPANT"]
+          data = json.load(open(os.environ["OP_FILE"]))
+          assert set(data) == {"operation", "worker_name"}, "Unexpected operation fields"
+          name = data["worker_name"]
+          assert re.fullmatch(r"[a-z0-9-]{1,63}", name), "Invalid Worker name"
+          allowed = {
+              "chatgpt": name == "echo-bot-stage0-inert" or name.startswith("echo-bot-chatgpt"),
+              "claude": name.startswith("echo-bot-claude"),
+          }
+          assert allowed[p], f"Worker name not allowed for participant {p}"
+          source = {"chatgpt": "bridge/worker.mjs", "claude": "bridge/claude/worker.mjs"}[p]
+          print(f"worker_name={shlex.quote(name)}")
+          print(f"worker_source={shlex.quote(source)}")
           PY
-              worker_name="$(python -c 'import json;print(json.load(open("bridge/operation.json"))["worker_name"])')"
-              test -f bridge/worker.mjs
+              )"; then
+                echo "Rejected deployment: operation file failed validation for participant $PARTICIPANT."
+                exit 2
+              fi
+              eval "$deploy_vars"
+              test -f "$worker_source" || { echo "Rejected deployment: source $worker_source does not exist."; exit 2; }
               echo "Deploying approved inert Worker: $worker_name"
               curl --fail-with-body --silent --show-error \
                 --request PUT \
                 "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}" \
                 --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
                 --form 'metadata={"main_module":"worker.mjs","compatibility_date":"2026-10-01"};type=application/json' \
-                --form 'worker.mjs=@bridge/worker.mjs;type=application/javascript+module' \
+                --form "worker.mjs=@${worker_source};type=application/javascript+module" \
                 > /tmp/echo-worker-deploy-response.json
               python - <<'PY'
           import json
