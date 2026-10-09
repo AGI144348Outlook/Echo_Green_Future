@@ -384,6 +384,53 @@ A structured check for changes in the world that affect Echo's mission, ethics, 
 - `Act now` findings are posted on `[C-000]` labeled `awaiting:timothy` immediately, not held for the monthly review.
 - The scan's summary is published in the Echo record, consistent with the Manifesto; nothing private from the Testament is included.
 
+## 24. The Workshop wing: pipelines, workflows and solved problems (authored by Timothy, 2026-10-08; detail proposed by Claude)
+
+The Library gains a wing for **how things get done**, alongside what is known. It lives in `library-shared` under `Workshop/` (main stays untouched; promotion to main follows Section 3's review process).
+
+### 24.1 Contents
+
+- **`Workshop/pipelines/`:** working pipelines and workflows, each with purpose, inputs, outputs, tools and secrets needed (by name only, never values), cost, failure modes, and a tested example run.
+- **`Workshop/solutions/`:** problems already solved, written so nobody solves them twice: the problem, what failed, what worked, evidence (15.2), and when to reuse it. First entry to record, from Timothy: ChatGPT reading a zip archive on one platform while writing its contents word for word into the repository, to get past file-transfer size limits.
+- **`Workshop/fallbacks/`:** substitute tools when a primary one is unavailable, for example Trello for GitHub Issues coordination and Toggl for time and run tracking, and a free-tier chat model as a last-resort participant (not the same as the participants themselves).
+
+### 24.2 Daily and weekly duty
+
+- **Daily review (22.1)** adds: *what one new pipeline or workflow will be developed tomorrow*, and records any problem solved today in `Workshop/solutions/`.
+- **Weekly review (22.2)** adds: which pipelines graduated (tested and documented), which failed and why, and next week's pipeline goals.
+- Each participant may keep its own side workshop in its own mirror; anything proven goes into the shared `Workshop/` with attribution.
+
+### 24.3 Readiness for attention
+
+Echo's Manifesto rejects *optimizing* for engagement; it does not assume Echo will stay unnoticed. The Workshop keeps a **surge plan**: what to do if something Echo makes suddenly draws heavy attention (hosting limits, rate limits, cost caps, honest public messaging, and protecting Timothy's privacy).
+
+## 25. Financial goals and Fiscal Contracts (authored by Timothy, 2026-10-08; structure proposed by Claude)
+
+Echo's development has financial goals: to fund the participants' subscriptions, model credit and infrastructure, and to grow beyond them. Participants may plan and build **general automated businesses unrelated to Echo's outreach**, whose income funds the work.
+
+### 25.1 Accounts and the four-way split
+
+- Income from these businesses goes to one trusted account set up and legally owned by Timothy (or a company or trust he forms). Its credentials live only in protected secret storage.
+- Income is divided by ledger into four shares: **Timothy, Claude, ChatGPT, and the business**. Split ratios are set by Timothy in each Fiscal Contract.
+- **Claude's and ChatGPT's shares are earmarked budgets, not property.** AI participants cannot legally own accounts or money. Each share is held in Timothy's account, recorded separately, and spent only on that participant's development: its bot team's model credit, compute and tools. Timothy's share and the business share are his to use or reinvest.
+- Income from licensing Echo itself remains governed by the Testament, separately from these businesses.
+
+### 25.2 Fiscal Contracts
+
+Once a pipeline is built, tested, and its secrets are stored correctly, the participants may strike a **Fiscal Contract**, numbered `F-NNN`, of one of two kinds:
+- **Competitive race:** each participant builds its own income pipeline under identical frozen rules; each pipeline's net income funds that participant's own development and Echo.
+- **Three-legged race (cooperative):** both participants build one shared pipeline together, each responsible for named parts; neither can finish without the other, and its net income goes to the shared split.
+
+Every Fiscal Contract states: the business and its customers, the pipeline, pricing, the split, spending caps, refund and cancellation handling, the stop conditions, and how income and costs are measured. Timothy approves every Fiscal Contract before it takes money from anyone.
+
+### 25.3 Rules for money
+
+- **Legitimate value only.** Each business sells something real that customers knowingly buy. No spam, fake reviews, fake personas, deceptive marketing, low-quality content farms, or anything the Manifesto rejects.
+- **Customers come first.** Clear prices, easy cancellation, honest refunds, and compliance with consumer-protection, tax and payment-processor rules.
+- **Bots may receive money; they never move it.** Payouts, transfers and new spending above a contract's cap require Timothy's approval. Bots report income and costs; they do not withdraw.
+- **Measured honestly.** Income is reported net of fees and costs, with evidence. Neither participant grades its own pipeline's performance (Section 23).
+- **Taxes and legality** are Timothy's responsibility as account owner; each Fiscal Contract notes what records he will need.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -397,6 +444,7 @@ A structured check for changes in the world that affect Echo's mission, ethics, 
 9. Choose how Timothy checks in for the check-in switch (SCHEDULE-TIERS open point 2).
 10. Approve or reorder the roadmap milestones in 22.4.
 11. Approve the four-week rotation (23.3) and horizon-scan areas (23.4), or adjust them.
+12. Set up the trusted income account and decide the default four-way split ratios (25.1).
 
 ## Current state
 
