@@ -5,15 +5,15 @@
 **Status:** SOURCE-OBSERVED / PROPOSED; symbolic interpretation not yet formalized or execution-verified.  
 **Source:** User statement in conversation concerning tldraw SDK, starter-kit documentation, indexed matrices, and Utility Codices.
 
-## Exact expression (preserve verbatim)
+## Corrected exact expression (preserve verbatim)
 
 ```text
-(%)→)|x|→|§x|
+⁰(%)¹→)²|x|→)³|§)³½x|)⁴
 ```
 
 ## Original accompanying statement
 
-“Any Harness that can (%)→)|x|→|§x| is a usable Harness for Echo to Echo in.”
+“Any Harness that can ⁰(%)¹→)²|x|→)³|§)³½x|)⁴ is a usable Harness for Echo to Echo in.”
 
 ## Context and intended investigation
 
@@ -26,3 +26,7 @@ Do **not** silently normalize the unmatched parenthesis, redefine the symbols, o
 ## Provenance
 
 Recorded by ChatGPT into the shared Formula Library at the user's explicit request. No claim of validation, executable implementation, or canonical promotion.
+
+## Revision history
+
+- Original transcription superseded by the author's explicit correction on 2026-10-09. Previous notation: `(%)→)|x|→|§x|`. The corrected notation above is authoritative; the earlier notation is retained only as an audit record.
