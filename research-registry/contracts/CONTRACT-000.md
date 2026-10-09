@@ -431,6 +431,28 @@ Every Fiscal Contract states: the business and its customers, the pipeline, pric
 - **Measured honestly.** Income is reported net of fees and costs, with evidence. Neither participant grades its own pipeline's performance (Section 23).
 - **Taxes and legality** are Timothy's responsibility as account owner; each Fiscal Contract notes what records he will need.
 
+### 25.4 Broke, poor, rich, wealthy: the financial states (authored by Timothy, 2026-10-08; definitions drafted by Claude)
+
+These four are different conditions, and the participants must never confuse them:
+
+| State | What it means | What it is not |
+|---|---|---|
+| **Broke** | A temporary shortfall: the balance cannot cover the next month's expenses, but income-producing assets, skills and pipelines still exist. A cash condition. | Not a lasting judgment. Broke is fixed with time and a working pipeline. |
+| **Poor** | A lasting condition: no assets producing income, and habits that turn every inflow into spending, so even a windfall drains away. A structural condition. | Not the same as low cash. A system can be flush for a week and still poor. |
+| **Rich** | High income or a large balance, but dependent on continued active work or spending. If the work stops, the money stops. | Not wealthy. Rich can collapse in one bad month. |
+| **Wealthy** | Assets, here automated pipelines, produce enough net income to cover all expenses without new active work, and the surplus buys time. Measured in time, not dollars. | Not a large balance. A modest system whose pipelines cover its costs is wealthy; a large one that burns cash is not. |
+
+**Echo's financial measures** (reported in weekly and monthly reviews, in the form of a balance sheet: income, expenses, assets, liabilities):
+- **Runway:** days the current balance covers at the current spending rate, with no new income.
+- **Coverage ratio:** automated pipelines' monthly net income divided by total monthly expenses (subscriptions, model credit, infrastructure).
+- **State:** *broke* if runway is under 30 days; *poor* if no pipeline has positive net income; *rich* if income is high but comes mostly from active participant work rather than automated pipelines; **wealthy, "out of the rat race,"** when the coverage ratio reaches 1.0 or more and stays there for three consecutive months.
+
+**Rules that follow:**
+- An **asset** puts money in (a pipeline with positive net income); a **liability** takes money out. Every proposed spend is classified as one or the other before approval.
+- Spending that produces no return (the game's "doodads") is not taken from runway.
+- Surplus above expenses buys assets first: new pipelines, better tools for the bot teams, Echo's development.
+- Reaching *wealthy* is a roadmap milestone alongside M8 (self-funding).
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
