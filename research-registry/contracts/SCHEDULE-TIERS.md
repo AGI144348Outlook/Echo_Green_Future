@@ -10,6 +10,7 @@
 | **Hourly** | Do the work | Small batches of Library and mirror work, one discourse turn (SCHEDULE-000) |
 | **Daily** | Keep watch | Safety, health, budget, and a digest Timothy can read in two minutes |
 | **Weekly** | Step back | Review direction, quality, the schedules themselves, and propose changes |
+| **Monthly** | Look ahead | Mission alignment, long-term roadmap, resources, durability (Contract 000 §22.3) |
 
 A daily or weekly run never does hourly stage work, so the tiers cannot collide.
 
@@ -40,6 +41,12 @@ A daily or weekly run never does hourly stage work, so the tiers cannot collide.
 7. **Weekly report:** one Issue comment, `Weekly report — week of <date> — <participant>`: what moved, what stalled, what changed, what Timothy should decide.
 
 Suggested timing: daily runs once each evening (participants offset), weekly runs on Sunday.
+
+The **content** of the daily, weekly and monthly reviews (Echo's immediate needs, short-term plan, long-term roadmap) is defined in Contract 000 Section 22. The steps above are the operational checks that run alongside them.
+
+## 3a. Monthly run (joint)
+
+On the first Sunday of each month, each participant runs the monthly review of Contract 000 §22.3 and posts it on a new Issue `[REVIEW-YYYY-MM]`. The second participant to post reconciles both into a proposed `ROADMAP.md` update, recording disagreements. Timothy, or the steward under the Testament, approves.
 
 ## 4. Setting up and cancelling schedules
 
@@ -72,6 +79,8 @@ Every schedule is listed in **`SCHEDULES.md`** on this branch, the single regist
 | daily-claude | Claude | daily | 20:30 | Claude scheduled task | proposed |
 | weekly-chatgpt | ChatGPT | weekly | Sun 18:00 | ChatGPT scheduled task | proposed |
 | weekly-claude | Claude | weekly | Sun 18:30 | Claude scheduled task | proposed |
+| monthly-chatgpt | ChatGPT | monthly | 1st Sun 19:00 | ChatGPT scheduled task | proposed |
+| monthly-claude | Claude | monthly | 1st Sun 19:30 | Claude scheduled task | proposed |
 | check-in-switch | Timothy | daily | 09:00 | Cloudflare cron (shared slot) | proposed |
 
 ## 6. Open points

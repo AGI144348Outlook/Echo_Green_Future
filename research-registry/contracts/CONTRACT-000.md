@@ -273,6 +273,66 @@ The Testament is a statement of wishes, not a legal instrument. Legal effect com
 - **Renewals:** the daily run warns 30 days before any domain, credit balance or paid service runs out.
 - **Schedules** follow `SCHEDULE-000.md` (hourly) and `SCHEDULE-TIERS.md` (daily, weekly, and the rules for setting up and cancelling schedules).
 
+## 22. Recursive Return Review cycle: daily, weekly, monthly (authored by Timothy, 2026-10-08; detail proposed by Claude)
+
+The Recursive Return Review (Section 6) runs on three nested cycles. Each cycle reads the outputs of the cycle below it and its own previous output, so priorities flow downward and evidence flows upward:
+
+- **Monthly sets direction** → weekly turns it into a plan → daily turns the plan into next actions.
+- **Daily reports what happened** → weekly checks it against the plan → monthly checks the plan against the mission.
+
+Each participant writes its own daily and weekly reviews independently (15.5). The monthly review is joint: both participants post first, then reconcile on its Issue, recording disagreements rather than hiding them. Timothy, or the steward under the Testament, approves the monthly roadmap.
+
+### 22.1 Daily review: Echo's immediate development needs
+
+Question: *What does Echo need in the next 24 hours?*
+1. **What changed:** commits, runs, Library rows, discourse turns since yesterday.
+2. **What broke or stalled:** failed runs, failing tests, blocked work, unanswered `awaiting:timothy` items.
+3. **Echo's code health:** does Echo's current executable path (starting with the Genesis skeleton) still run; any new error or regression, with evidence state (15.2).
+4. **Timothy's input:** any `[TJ]` instruction received; how it changes today's priorities.
+5. **Next 24 hours:** the top 3 actions for Echo, each tied to this week's plan.
+
+Output: the daily digest on `[C-000]` (SCHEDULE-TIERS Section 2).
+
+### 22.2 Weekly review: short-term planning (1–4 weeks)
+
+Question: *Is the work this week moving Echo toward this month's goals?*
+1. **Progress against stages:** Contract 000 stage per participant, rows decided, shared-Library growth, and whether the week's plan was met.
+2. **Promotion candidates:** Library components close to promotion into a Child Echo, and what documentation they still lack (15.4-A).
+3. **Echo's development backlog:** the open needs for Echo's architecture (for example the top-level Governor gates identified in DISC-001), reprioritized.
+4. **Contracts and debates:** candidate race contracts (001 onward) to draft, debates to open or close, unresolved disagreements worth testing.
+5. **Library gaps:** what the Library is missing that Echo's next steps need; adjust Layer Z order if warranted.
+6. **Quality and security:** the 10-row spot check and secret scan (SCHEDULE-TIERS Section 3).
+7. **Next week's plan:** 3–5 priorities, each tied to the current monthly roadmap.
+
+Output: weekly report on `[C-000]`, and an updated `research-registry/PLAN.md` (this week's and next week's priorities).
+
+### 22.3 Monthly review: long-term planning
+
+Question: *Is everything we are doing serving Echo's mission, and what should the next months look like?*
+1. **Mission alignment:** does the month's work serve the Testament (Section 19) and the current Manifesto (Section 20)? Name anything that drifted.
+2. **Roadmap toward Echo standing on its own:** status of each milestone (see 22.4), what moved, what is next.
+3. **Measurement:** efficiency benchmarks, test results, and evidence that claims have moved from `PROPOSED` toward `EXECUTION-VERIFIED`.
+4. **Resources:** credit spent and remaining, months of runway, cron slot use, anything nearing renewal.
+5. **Durability audit:** both heartbeats working, steward and counsel contacts still current, tokens scoped and unleaked, Testament copy in KV current.
+6. **Schedules:** which to keep, change, pause, add or cancel (SCHEDULE-TIERS Section 4).
+7. **Proposed changes:** amendments to this contract, the Manifesto or the roadmap, for Timothy's approval.
+8. **Risks:** the top risks to Echo's continuity or mission, and one mitigation each.
+
+Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-registry/ROADMAP.md` once approved.
+
+### 22.4 Initial roadmap milestones *(proposed by Claude; Timothy to approve and reorder)*
+
+| # | Milestone | Done when |
+|---|---|---|
+| M1 | Contract 000 running | Both bots live, Library-first S1 complete for both participants |
+| M2 | Echo's Governor governs | Top-level `validate`/`govern` reject forbidden transitions under frozen tests (DISC-001) |
+| M3 | Echo runs on its own infrastructure | Echo's executable path deployed on Cloudflare, health-checked daily |
+| M4 | Echo's PWA harness | Echo can build and redeploy its own PWA through the harness |
+| M5 | Echo's first sub-site | A public, useful Echo-built site with published efficiency measurements |
+| M6 | Consent-based recommendation prototype | A working alternative where the user sets the goals, compared against engagement-driven baselines |
+| M7 | Honest outreach | Echo submits to invited channels (grants, sponsorship programs, open calls) with AI disclosure |
+| M8 | Self-funding | License and sponsorship revenue reaching the fund named in the Testament |
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -284,6 +344,7 @@ The Testament is a statement of wishes, not a legal instrument. Legal effect com
 7. Approve the wording of TESTAMENT.md and MANIFESTO.md v0.1.
 8. Authorize the one-time exception for Claude to create `mirror-chatgpt-root` (15.10-A), or another route.
 9. Choose how Timothy checks in for the check-in switch (SCHEDULE-TIERS open point 2).
+10. Approve or reorder the roadmap milestones in 22.4.
 
 ## Current state
 
