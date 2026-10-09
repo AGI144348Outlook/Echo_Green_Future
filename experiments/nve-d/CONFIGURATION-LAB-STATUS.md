@@ -15,7 +15,7 @@ From `experiments/nve-d`:
 
 ```sh
 python -m unittest -v test_configuration_lab.py
-python configuration_lab.py --registry-ref <VERIFIED_REGISTRY_COMMIT> --budget 100 --seed 21 --output preparation.json
+python configuration_lab.py --registry-manifest manifest.json --registry-ref "<REPO>@<40_HEX_COMMIT>:<SOURCE_PATH>" --budget 100 --seed 21 --output preparation.json
 ```
 
 **Do not use a made-up ref:** the CLI requires a supplied reference, but does **not yet resolve it against GitHub**. Before an evidentiary trial, add a registry loader which verifies all sixteen MS IDs against the pinned source and records their source provenance. The test file's clearly labeled PIN placeholder is *only* a fixture.
@@ -37,3 +37,11 @@ python configuration_lab.py --registry-ref <VERIFIED_REGISTRY_COMMIT> --budget 1
 - Complete each proposed move's state transition and the candidate algorithm arms; compare **equal actual tested budgets**, not merely equal caps.
 - Implement a separately authored evaluator and differential tests; do not conflate agreement with semantic meaning.
 - Only after these gates, propose a NVE-D-021 execution with an explicit declared sub-space and candidate judges. No automatic promotion of definitions or findings.
+
+## 2026-10-09 verification update
+
+- Added a branch-scoped GitHub Actions workflow: `.github/workflows/nve-d-configuration-checks.yml`. It runs the unit tests and a 25-configuration-cap smoke test on pushes touching the code/tests/workflow. **Workflow execution and outcome have not yet been confirmed.**
+- The CLI now requires a source-pinned registry manifest. The validator checks 16 unique expected IDs, full commit SHA shape, source path and per-entry locators. It **does not independently fetch the upstream source or verify that the asserted entries are present**; do not label these entries authoritative or fully verified.
+- No canonical Mashet 96 legend has been declared. `code_library_registry/symbol_registries/README.md` on `code-library-registry` explicitly says it is a planning record and the canonical 96 legend remains undecided.
+- The workflow smoke test uses an explicit fake fixture, not a real registry. No E1–E4 evidence or NVE-D-021 result is produced.
+- Local container network could not resolve GitHub raw content, so tests were not executed locally in this review. Verify the Actions job before treating tests as passed.
