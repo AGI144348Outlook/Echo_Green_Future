@@ -79,9 +79,9 @@ jobs:
                 --request PUT \
                 "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}" \
                 --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                --header "Content-Type: application/javascript" \
-                --header "X-Auth-Email:" \
-                --data-binary @bridge/worker.mjs > /tmp/echo-worker-deploy-response.json
+                --form 'metadata={"main_module":"worker.mjs","compatibility_date":"2026-10-01"};type=application/json' \
+                --form 'worker.mjs=@bridge/worker.mjs;type=application/javascript+module' \
+                > /tmp/echo-worker-deploy-response.json
               python - <<'PY'
           import json
           data=json.load(open("/tmp/echo-worker-deploy-response.json"))
