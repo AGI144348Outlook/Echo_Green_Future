@@ -1,0 +1,116 @@
+{
+  "cycle": "NVE-D-HOURLY-024",
+  "date": "2026-10-09",
+  "scope": "finite synthetic DVE; local deterministic Ed25519 demonstration keys; no external custody",
+  "configurations": 180,
+  "root_generations": 675000,
+  "seeds": [
+    211,
+    809
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    1,
+    4,
+    11
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "transitions": {
+    "baseline": 4275000,
+    "checkpoint_prefix": 2137500,
+    "replay_suffix": 2137500,
+    "reverse_suffix": 2137500,
+    "independent_oracle": 356250,
+    "total_primary": 11043750
+  },
+  "checkpoint_reproduction": {
+    "=": 180
+  },
+  "oracle": {
+    "=": 15
+  },
+  "reverse_final_state": {
+    "0": 30,
+    "=": 150
+  },
+  "reverse_event_history": {
+    "0": 100,
+    "=": 80
+  },
+  "receipt_cases": 168,
+  "receipt_modes": 14,
+  "receipt_cases_per_mode": 12,
+  "comparators": {
+    "legacy_signature": {
+      "0": 12,
+      "=": 156
+    },
+    "bound_signature": {
+      "0": 96,
+      "=": 72
+    },
+    "local_authorization": {
+      "0": 96,
+      "=": 72
+    },
+    "chain": {
+      "0": 12,
+      "=": 156
+    },
+    "frozen": {
+      "0": 144,
+      "=": 24
+    },
+    "combined": {
+      "0": 144,
+      "=": 24
+    }
+  },
+  "controls": {
+    "prior_cycle023_unsigned_source_index_mutation_undetected": 20,
+    "cycle024_independent_signed_source_index_mutation_detected": 20,
+    "cycle024_legacy_signature_still_accepted": 20
+  },
+  "structural_audit": {
+    "evaluation": "=",
+    "errors": 0,
+    "checkpoints_checked": 180,
+    "receipt_cases_checked": 168
+  },
+  "fresh_reproduction": {
+    "matching_files": 6,
+    "primary_transition_count_excludes_reproduction": true
+  },
+  "DFE": {
+    "stage5": "=",
+    "stage7": "0",
+    "stage8": "0"
+  },
+  "source_provenance": {
+    "framework_original_and_transcription_git_blob": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+    "code_library_branch": "code-library-registry",
+    "original_CLR_0036_0038_0040_executables": "not verified",
+    "original_RFC_0031_0033": "not verified"
+  },
+  "limitations": [
+    "Local demonstration key and local policy cannot establish independently authenticated historical truth",
+    "A valid signature is not an authorization decision",
+    "Legitimate updates with stale pins can yield 0",
+    "Full executable archive remains outside GitHub unless separately committed",
+    "No protected registries changed, no merge or deploy"
+  ]
+}
