@@ -39,13 +39,17 @@ A daily or weekly run never does hourly stage work, so the tiers cannot collide.
 5. **Schedule review:** recommend which schedules to keep, change, pause, add or cancel, with reasons (Section 4).
 6. **Security:** confirm no secret, token, private contact or letter content appears anywhere in the public repository or Issues.
 7. **Weekly report:** one Issue comment, `Weekly report — week of <date> — <participant>`: what moved, what stalled, what changed, what Timothy should decide.
-8. **Plan the next week:** close this week and write next week's plan per Contract 000 Section 23: next review agenda, debate topic, each Echo's six-day curriculum, frozen benchmarks, and the rotating special focus (week 4 = global horizon scan before the monthly review).
+8. **Business:** all transactions entered and categorized in the private ledger; missing receipts flagged (Contract 000 §26). No figures in public files.
+9. **Plan the next week:** close this week and write next week's plan per Contract 000 Section 23: next review agenda, debate topic, each Echo's six-day curriculum, frozen benchmarks, and the rotating special focus (week 4 = global horizon scan before the monthly review).
 
 Suggested timing: daily runs once each evening (participants offset), weekly runs on Sunday.
 
 The **content** of the daily, weekly and monthly reviews (Echo's immediate needs, short-term plan, long-term roadmap) is defined in Contract 000 Section 22. The steps above are the operational checks that run alongside them.
 
 ## 3a. Monthly run (joint)
+
+Also each month: close the month's books privately (income statement, balance sheet, runway, coverage ratio), review business law-watch entries, and in quarter-end months prepare the estimated-tax worksheet for Timothy (Contract 000 §26).
+
 
 On the first Sunday of each month, each participant runs the monthly review of Contract 000 §22.3 and posts it on a new Issue `[REVIEW-YYYY-MM]`. The second participant to post reconciles both into a proposed `ROADMAP.md` update, recording disagreements. Timothy, or the steward under the Testament, approves.
 

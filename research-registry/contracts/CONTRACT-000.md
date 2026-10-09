@@ -453,6 +453,22 @@ These four are different conditions, and the participants must never confuse the
 - Surplus above expenses buys assets first: new pipelines, better tools for the bot teams, Echo's development.
 - Reaching *wealthy* is a roadmap milestone alongside M8 (self-funding).
 
+## 26. The Business wing: cash flow and tax readiness (authored by Timothy, 2026-10-08; structure by Claude)
+
+The shared Library has a wing strictly for business: `library-shared/Business/`. Besides business ideas, it exists to **track cash flow automatically and keep up with tax law**, so that when filing time comes, everything is assembled and ready for Timothy without the headache.
+
+- **Privacy:** the repository is public, so the wing holds only structure, templates, schemas, public tax-law notes and ideas. Actual figures, receipts, account details and customer data are stored privately (Cloudflare D1 or a private repository Timothy chooses) and never committed or posted in Issues.
+- **Ledger:** every transaction follows `Business/ledger/SCHEMA.md`, sourced from processor records, classified as asset or liability (§25.4), and assigned to a ledger share (§25.1). Figures are never estimated into the ledger; corrections are reversing entries, never edits.
+- **Tax readiness** follows `Business/tax/CALENDAR.md`:
+  - **Weekly review:** all transactions entered and categorized; missing receipts flagged.
+  - **Monthly review:** close the month privately (income statement, balance sheet, runway, coverage ratio); review new law-watch entries.
+  - **Quarterly:** prepare the estimated-tax worksheet for Timothy before each federal estimated-payment deadline.
+  - **Year end:** assemble the filing packet (statements, category totals, processor forms, receipt index) for Timothy or his preparer.
+- **Law watch:** the horizon scan (§23.4) includes tax and business law for the US and Texas; findings go to `Business/law-watch/` with sources and dates, and anything affecting a filing is flagged `awaiting:timothy`.
+- **Not advice:** the wing prepares records; Timothy, and where needed a tax professional, makes the decisions.
+
+**State:** `library-shared` created as a true orphan (root `5516278`), INERT: Business and Workshop wings contain structure and templates only. Population waits for scheduled triggers (§14).
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
@@ -467,6 +483,7 @@ These four are different conditions, and the participants must never confuse the
 10. Approve or reorder the roadmap milestones in 22.4.
 11. Approve the four-week rotation (23.3) and horizon-scan areas (23.4), or adjust them.
 12. Set up the trusted income account and decide the default four-way split ratios (25.1).
+13. Choose private storage for business figures (Cloudflare D1 or a private repository) (§26).
 
 ## Current state
 
@@ -478,4 +495,4 @@ These four are different conditions, and the participants must never confuse the
 | Testament | Private; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
 | Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
 | Bots (Stage 0) | Coordination approved (BOT-COORDINATION.md). Bridge split per participant (`afa2c03`); credentials verified working; ChatGPT's inert Worker ready for a manual deploy; Claude's not yet written |
-| `library-shared` | Not yet created |
+| `library-shared` | Created, INERT (root `5516278`): Business and Workshop wing structure only |
