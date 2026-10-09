@@ -1,0 +1,5 @@
+# NVE-D Cycle 023 DFE
+Step 5: `0` for external historical authenticity. 180/180 digital replays `=`; 15/15 independent digital-oracle checks `=`. In 160 locally simulated receipt cases, public-key chain evaluation yielded 80 `=` and 80 `0`. Frozen-record comparison yielded 16 `=` and 144 `0`, with ∆ disagreements.
+Step 7: `0` for independently administered custody. A separate structural audit was `=` under its declared checks. Twenty signature mutation controls yielded 20 `0`. Twenty changes to metadata outside the signed record yielded 20 `=`, identifying a provenance-binding gap. Earlier audit contradictions remain preserved.
+Step 8: `0` for the untested revision: include immutable source identity and digest in the signed record, and require independently held evidence for authorization and freshness.
+This is a finite DVE test, not proof of conceptual EVE/NVE virtues. No protected registries changed, no merge, no deployment. Full executable evidence remains in a separate research archive.
