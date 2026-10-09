@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 import random
+import re
 from collections import Counter
 from dataclasses import dataclass, field
 
@@ -280,14 +281,48 @@ def run_arm(*, arm, seed, budget, registry_ref, prior=()):
             "note": "Scaffold only: synthetic proxy is not a finding."}
 
 
+
+def validate_registry_manifest(manifest, *, expected=ENTITIES):
+    """Validate a locally supplied source-pinned registry manifest.
+
+    This verifies structure and provenance shape, NOT canonical authority or
+    authenticity of the claimed upstream commit. Caller must independently
+    verify source bytes against the GitHub commit.
+    """
+    if manifest.get("schema") != "nve-d-registry-manifest-v1":
+        raise ValueError("registry manifest schema mismatch")
+    commit = manifest.get("commit", "")
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError("registry manifest needs a full 40-hex commit")
+    if not manifest.get("repository") or not manifest.get("source_path"):
+        raise ValueError("registry source repository and path required")
+    entries = manifest.get("entries")
+    if not isinstance(entries, list):
+        raise ValueError("registry entries missing")
+    ids = [e.get("id") for e in entries if isinstance(e, dict)]
+    if len(ids) != len(entries) or len(set(ids)) != len(ids):
+        raise ValueError("registry IDs duplicate or malformed")
+    if set(ids) != set(expected):
+        raise ValueError("registry IDs do not match declared trial entity set")
+    if any(not e.get("source_locator") for e in entries):
+        raise ValueError("each registry entry needs source locator")
+    return manifest["repository"] + "@" + commit + ":" + manifest["source_path"]
+
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--registry-ref", required=True,
                    help="Pinned commit containing verified MS-001..016 IDs")
-    p.add_argument("--budget", type=int, default=100)
+    p.add_argument("--registry-manifest", required=True,\n                   help="Locally supplied, source-pinned manifest of MS-001..016")\n    p.add_argument("--budget", type=int, default=100)
     p.add_argument("--seed", type=int, default=21)
     p.add_argument("--output", default="-")
     args = p.parse_args()
+    with open(args.registry_manifest, encoding="utf-8") as f:
+        manifest = json.load(f)
+    pinned_ref = validate_registry_manifest(manifest)
+    if args.registry_ref != pinned_ref:
+        p.error("--registry-ref must match the validated manifest reference")
     output = {"trial": "NVE-D-021-PREPARATION", "status": "PROTOTYPE_NOT_021",
               "registry_ref": args.registry_ref, "arms": [
                   run_arm(arm=arm, seed=args.seed, budget=args.budget,
