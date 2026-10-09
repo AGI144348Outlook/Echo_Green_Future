@@ -1,0 +1,75 @@
+{
+  "cycle": "NVE-D-HOURLY-015",
+  "date": "2026-10-08 America/Chicago",
+  "configurations": 180,
+  "root_generations": 675000,
+  "seeds": [
+    31,
+    97
+  ],
+  "hypotheses": [
+    "additive",
+    "ordered_fold"
+  ],
+  "depths": [
+    1,
+    3,
+    5
+  ],
+  "topologies": [
+    "ring",
+    "star",
+    "mesh"
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "transitions": {
+    "baseline_transitions": 2700000,
+    "prefix_transitions": 1350000,
+    "replay_suffix_transitions": 1350000,
+    "reverse_suffix_transitions": 1350000
+  },
+  "actual_total_node_transitions": 6750000,
+  "checkpoint_equal": 180,
+  "reverse_state_equal": 160,
+  "reverse_trace_equal": 80,
+  "process_kills": 48,
+  "fault_outcomes": {
+    "atomic_before_commit": {
+      "0": 0,
+      "=": 12
+    },
+    "atomic_after_commit": {
+      "0": 0,
+      "=": 12
+    },
+    "split_without_outbox": {
+      "0": 12,
+      "=": 0
+    },
+    "witness_first": {
+      "0": 12,
+      "=": 0
+    }
+  },
+  "rollback_local_only_detected": 12,
+  "rollback_collusion_accepted": 12,
+  "messages_sent": 123648,
+  "messages_delivered": 123648,
+  "elapsed_seconds": 28.365,
+  "external_witness_custody": false,
+  "real_process_kill": true,
+  "runner_and_raw_data": "Local Cycle 015 package only unless separately committed; structural auditor 180 checkpoints and 60 SQLite pairs; no external attestation",
+  "evaluation_alphabet": [
+    "<",
+    ">",
+    "=",
+    "0"
+  ],
+  "delta_symbol": "∆"
+}
