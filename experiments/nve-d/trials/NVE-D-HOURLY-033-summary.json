@@ -1,0 +1,53 @@
+{
+  "cycle": "NVE-D-HOURLY-033",
+  "date": "2026-10-09",
+  "status": "completed_local",
+  "active_seconds": 300.016,
+  "segments": 12,
+  "configurations": 52112,
+  "root_generations": 195357250,
+  "node_transitions": 651144000,
+  "seeds": 8,
+  "depths": [
+    1,
+    3,
+    6
+  ],
+  "topologies": 6,
+  "scenario_families": 20,
+  "sizes": {
+    "250": 10413,
+    "1000": 10449,
+    "2500": 10442,
+    "5000": 10376,
+    "10000": 10432
+  },
+  "checkpoints": [
+    10797,
+    21206,
+    31569,
+    41742,
+    52112
+  ],
+  "checkpoints_evaluation": "=",
+  "independent_packet_oracle_rows": 52112,
+  "oracle_disagreements": 0,
+  "recovery_replay_rows": 38,
+  "recovery_evaluation": "=",
+  "policy_vs_presence": {
+    "0": 7860,
+    ">": 15630,
+    "=": 28622,
+    "<": 0
+  },
+  "temporal_delta": 15662,
+  "unavailable_policy": 7860,
+  "unobservable_signed_proofs": 5229,
+  "DFE": {
+    "step5": ">",
+    "step7": "0",
+    "step8": "="
+  },
+  "ledger_sha256": "9c691418f5b0bf43231fd7bdcad7c2ca73e2ce2cf0a32672e47b52a4f61a5e54",
+  "limitations": "Locally authored fixtures and keys; no external custody. Full ledger/runner/checkpoints only in local package. No merge/deploy."
+}
