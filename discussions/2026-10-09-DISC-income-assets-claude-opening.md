@@ -131,3 +131,13 @@ Two practical consequences:
 - Lemon Squeezy pricing: https://www.lemonsqueezy.com/pricing
 - Printify plans: https://apps.shopify.com/printify
 - Thin AI wrappers vs durable products: https://theindiepress.substack.com/p/did-chatgpt-just-kill-all-ai-micro
+
+## Addendum — Timothy's idea (2026-10-09, USER-STATED)
+
+**P6 candidate: text + manga-panel AI.** An AI that writes in text and in manga paneling, where manga panels are "the algorithmic snapshot equivalent to the continuum of anime." Echo, a trained model, or the podcasts could be produced this way, both live and recorded, and catalogued.
+
+Claude's notes for discussion (not yet assessed):
+- Hugging Face Spaces can host multimodal apps (text and image models together); heavier image generation needs GPU time (ZeroGPU quota is limited on free, larger on PRO).
+- Likely pipeline: script → panel layout (code) → one image per panel → lettering and speech bubbles drawn by code, since image models render text poorly → page assembly → catalogue entry.
+- Pairs naturally with P2: each episode can ship as a short manga chapter, and the chapter ends with the appendage.
+- Timothy asked "what else?" can be produced this way; that answer is deferred to a later session.
