@@ -1,0 +1,102 @@
+[
+  {
+    "event_id": "NVE-D-059-DFE-5",
+    "cycle_id": "NVE-D-HOURLY-059",
+    "stage": 5,
+    "prior_evaluation_refs": [
+      "NVE-D-057-DFE-5",
+      "NVE-D-058-DFE-5"
+    ],
+    "candidate_ref": "global online learning with whole-history object-block resampling",
+    "reference_ref": "artifact-reset learning under identical held-out object history",
+    "criterion_hypothesis": "lower original-ID raw loss; < lower, > higher, = within 1e-10, 0 unsupported",
+    "evaluation": "0",
+    "evidence_refs": [
+      "NVE-D-HOURLY-059-summary.json",
+      "local ANALYSIS059.json",
+      "ledger sha256 b5d96c138f840319af612a6adf37378a68d1f8797e8b4da8ec492e13cee32b99"
+    ],
+    "assumptions_challenged": [
+      "bootstrap repeats are independent objects",
+      "configuration votes are independent evidence"
+    ],
+    "contradictions": [
+      "new_a directed and positional original favor reset; repeated-block bootstrap favors global",
+      "deduplicating test identities changes 70/360 depth-1 relational states"
+    ],
+    "revision_refs": [
+      "NVE-D-059-DFE-8"
+    ],
+    "unresolved_questions": [
+      "cross-corpus verified object identities",
+      "dependency-preserving uncertainty intervals"
+    ]
+  },
+  {
+    "event_id": "NVE-D-059-DFE-7",
+    "cycle_id": "NVE-D-HOURLY-059",
+    "stage": 7,
+    "prior_evaluation_refs": [
+      "NVE-D-057-DFE-7",
+      "NVE-D-058-DFE-7"
+    ],
+    "candidate_ref": "meta-audit of whole-history bootstrap and auditor assumptions",
+    "reference_ref": "Cycle058 conditional artifact-contribution resampling",
+    "criterion_hypothesis": "object-level evidence independence and raw-loss comparator validity",
+    "evaluation": "0",
+    "evidence_refs": [
+      "NVE-D-HOURLY-059-summary.json",
+      "local VERIFY059.json"
+    ],
+    "assumptions_challenged": [
+      "bootstrap replacement does not cause memorization",
+      "deduplication isolates a unique cause",
+      "finite digital replay proves EVE/NVE virtues",
+      "IETF implies standards endorsement"
+    ],
+    "contradictions": [
+      "bootstrap with duplicate objects favors global in all depth-1 cases; deduplicated histories change 70/360 states"
+    ],
+    "revision_refs": [
+      "NVE-D-059-DFE-8"
+    ],
+    "unresolved_questions": [
+      "independent object catalog crosswalk",
+      "interpretation of 0 remains provisional"
+    ]
+  },
+  {
+    "event_id": "NVE-D-059-DFE-8",
+    "cycle_id": "NVE-D-HOURLY-059",
+    "stage": 8,
+    "prior_evaluation_refs": [
+      "NVE-D-057-DFE-8",
+      "NVE-D-058-DFE-8"
+    ],
+    "candidate_ref": "deduplicated test-history and fixed-model block replay controls",
+    "reference_ref": "block-with-replacement complete online-history replay",
+    "criterion_hypothesis": "finite reproducibility, checkpoint integrity, exact paired implementation comparisons",
+    "evaluation": "=",
+    "evidence_refs": [
+      "local VERIFY059.json",
+      "15 SHA-256 checkpoints",
+      "10 checkpoint-restored records",
+      "3 original-vs-optimized exact full record checks"
+    ],
+    "assumptions_challenged": [
+      "replay demonstrates semantic recognition",
+      "uncheckpointed records may be counted"
+    ],
+    "contradictions": [
+      "five uncheckpointed records discarded after interruption; verified continuation resumed at record 30"
+    ],
+    "revision_refs": [
+      "local runner059.py",
+      "local fast_stream059.py",
+      "local verify059.py"
+    ],
+    "unresolved_questions": [
+      "external physical-object validation and unique held-out object sampling"
+    ]
+  }
+]
