@@ -495,6 +495,10 @@ Workflows may run on **standing conditions**: "when this happens and this is tru
 
 GitHub only runs schedule, Issue, label and workflow-chaining triggers from the default branch; that is why route 3 needs one file on `main`. That file is the only exception: it never touches Echo's code, and any change to it needs Timothy's approval.
 
+### 27.0 Triggered, not set (Timothy, 2026-10-10)
+
+Bots run when something happens, not on a fixed clock. Claude's bot is woken by C-003 (Contract 000 changed), C-004 (Echo's main changed) and C-005 (Timothy's `run:claude` label), checked every 5 minutes by a watcher that uses no AI. Budget caps and cooldowns apply to every trigger.
+
 ### 27.1 The Conditions Registry
 
 `research-registry/CONDITIONS.md` lists every standing condition. Each entry records: ID (`C-NNN`), trigger, condition checked, action, route, safety level, approver and date, and how to disable it.
