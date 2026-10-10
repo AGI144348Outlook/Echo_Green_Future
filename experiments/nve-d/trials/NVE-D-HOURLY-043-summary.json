@@ -1,0 +1,129 @@
+{
+  "cycle": "NVE-D-HOURLY-043",
+  "date_utc": "2026-10-10",
+  "scope": "experimental DVE only",
+  "source_repository": "mayig/indus-valley-script-corpus",
+  "source_tree_sha": "ad2f1e218a34b8c33c57de0d6cb8d99272765bbb",
+  "source_artifacts": 48,
+  "added_artifacts": "m027-m050",
+  "source_original_grapheme_observations": 316,
+  "unique_grapheme_ids": 101,
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "groups": 384,
+  "original_rows": 1920,
+  "revision_rows": 1920,
+  "seeds": [
+    23,
+    41,
+    83,
+    167
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "depths": [
+    1,
+    3,
+    6
+  ],
+  "smoothing_tau": [
+    4,
+    16,
+    64
+  ],
+  "training_regimes": [
+    "all_other",
+    "opposite_block"
+  ],
+  "original_training_token_draws": 7680000,
+  "original_context_count_updates": 23040000,
+  "revision_training_token_draws": 7680000,
+  "revision_context_count_updates": 23040000,
+  "original_active_seconds": 21.2444,
+  "revision_active_seconds": 20.44779,
+  "comparisons": {
+    "all_other": {
+      "depth3_vs_depth1_tau4": {
+        "0": 0,
+        "<": 895,
+        ">": 65,
+        "=": 0
+      },
+      "depth6_vs_depth1_tau4": {
+        "0": 0,
+        "<": 921,
+        ">": 39,
+        "=": 0
+      },
+      "inner_selected_vs_depth1_tau4": {
+        "0": 0,
+        "<": 90,
+        ">": 870,
+        "=": 0
+      },
+      "inner_selected_vs_depth1_tau64": {
+        "0": 0,
+        "<": 60,
+        ">": 63,
+        "=": 837
+      },
+      "selected_minus_fixed64_mean_gain_bits": -0.00181786
+    },
+    "opposite_block": {
+      "depth3_vs_depth1_tau4": {
+        "0": 0,
+        "<": 920,
+        ">": 40,
+        "=": 0
+      },
+      "depth6_vs_depth1_tau4": {
+        "0": 0,
+        "<": 935,
+        ">": 25,
+        "=": 0
+      },
+      "inner_selected_vs_depth1_tau4": {
+        "0": 0,
+        "<": 43,
+        ">": 907,
+        "=": 10
+      },
+      "inner_selected_vs_depth1_tau64": {
+        "0": 0,
+        "<": 73,
+        ">": 30,
+        "=": 857
+      },
+      "selected_minus_fixed64_mean_gain_bits": -0.02018773
+    }
+  },
+  "audit": {
+    "checkpoint_prefixes_verified": 32,
+    "independent_oracle_rows": 140,
+    "original_rows_unchanged_in_revision": 1920,
+    "checkpoint_recovery_rows": 60,
+    "corrupted_prefix_rejected": true
+  },
+  "ledger_sha256": "0954590be5651543c4631878a383c71b9fda4474dda50285fd6f70dcfaeb799f",
+  "revision_ledger_sha256": "5f7a4e8155635b1d965f5e00d439dab96d10af05516f3b8eefbbecc086c76d34",
+  "evaluation_alphabet": [
+    "<",
+    ">",
+    "=",
+    "0"
+  ],
+  "relation_change_symbol": "∆",
+  "step5_evaluation": ">",
+  "step7_evaluation": "0",
+  "step8_evaluation": "=",
+  "semantic_validity": "0",
+  "full_runner_and_ledgers_committed": false,
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false,
+  "provenance_note": "Original IETF is independently authored Infinite Expanse Testing Framework; no IETF standards endorsement. Historical framework source and transcription share blob b8d28481be30b7619296e79ccf5cdc11b2f28c46. All 48 artifacts are from one transcription project; not independent authorship."
+}
