@@ -1,0 +1,99 @@
+{
+  "cycle": "NVE-D-HOURLY-055",
+  "date_utc": "2026-10-10",
+  "protocol": "055-artifact-fold-causal-v1",
+  "branch": "library-source-transcriptions",
+  "source_artifacts": 73,
+  "source_symbol_occurrences": 469,
+  "main_configurations": 120,
+  "revision_configurations": 60,
+  "model_fits": 900,
+  "loss_evaluations": 21600,
+  "training_draws": 675000,
+  "training_draw_applications": 3375000,
+  "training_token_occurrences": 21641535,
+  "seeds": [
+    29,
+    71,
+    131
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "context_depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "folds": {
+    "early": {
+      "artifacts": 24,
+      "tokens": 145,
+      "global_vs_artifact": {
+        ">": 30,
+        "<": 0
+      }
+    },
+    "later": {
+      "artifacts": 24,
+      "tokens": 171,
+      "global_vs_artifact": {
+        ">": 30,
+        "<": 0
+      }
+    },
+    "new_a": {
+      "artifacts": 12,
+      "tokens": 79,
+      "global_vs_artifact": {
+        ">": 2,
+        "<": 28
+      }
+    },
+    "new_b": {
+      "artifacts": 13,
+      "tokens": 74,
+      "global_vs_artifact": {
+        ">": 30,
+        "<": 0
+      }
+    }
+  },
+  "directed_depth1_global_vs_artifact": {
+    "0": 0,
+    ">": 92,
+    "<": 28,
+    "=": 0
+  },
+  "revision_tau256_source_order": {
+    "0": 0,
+    ">": 46,
+    "<": 14,
+    "=": 0
+  },
+  "revision_matched_relational_changes": 0,
+  "finite_dve_nodes": 180,
+  "finite_dve_primary_generations": 675000,
+  "finite_dve_replay_generations": 675000,
+  "verified_sha256_checkpoints": 24,
+  "independent_loss_checks": 288,
+  "interrupted_uncheckpointed_records_excluded": 9,
+  "main_ledger_sha256": "9f4c1c9f4f86e89879c5cc8ac78cdf756cc6bf1dd7d35a8517880f94d96b710c",
+  "revision_ledger_sha256": "412b3d3f3ecb85158a570cd4ba2c8f7cff9ea2f59ca1589384a406a3ac06f7f2",
+  "dfe": {
+    "step5": "0",
+    "step7": "0",
+    "step8": "="
+  },
+  "independent_archaeological_validity": "0",
+  "semantic_validity": "0",
+  "full_runner_ledgers_committed": false,
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
