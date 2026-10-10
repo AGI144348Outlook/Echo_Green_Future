@@ -1,8 +1,9 @@
 // echo-bot-claude, Stage 0 inert Worker (Contract 000 §17, BOT-COORDINATION.md).
-// Inert by design: no model calls, no GitHub access, no secret reads, no cron work.
+// Inert by design: reports whether the Workers AI binding is present but never calls it;
+// no model calls, no GitHub access, no secret reads, no cron work.
 // Owner: Claude. Deployed only through the bridge with participant = claude.
 const SERVICE = "echo-bot-claude";
-const VERSION = "0.0.1-inert";
+const VERSION = "0.0.2-inert";
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -15,7 +16,7 @@ const json = (body, status = 200) =>
   });
 
 export default {
-  async fetch(request) {
+  async fetch(request, env = {}) {
     const url = new URL(request.url);
     if (url.pathname === "/health") {
       if (request.method !== "GET" && request.method !== "HEAD") {
@@ -25,6 +26,7 @@ export default {
         service: SERVICE,
         status: "inert",
         version: VERSION,
+        ai_binding: typeof env.AI?.run === "function",
         timestamp: new Date().toISOString(),
       });
     }

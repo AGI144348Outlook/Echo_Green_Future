@@ -123,6 +123,9 @@ jobs:
                 echo "Deployment requires manual workflow_dispatch authorization."
                 exit 2
               fi
+              # Every deployed Worker gets the Workers AI binding `AI` (free daily allowance;
+              # no key needed) and keeps any secrets or variables already set on it, so a
+              # redeploy never wipes an API key Timothy has stored (Contract 000 §21).
               # Each participant may deploy only Workers under its own name prefix,
               # from its own source file.
               if ! deploy_vars="$(OP_FILE="$op_file" python - <<'PY'
@@ -152,7 +155,7 @@ jobs:
                 --request PUT \
                 "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}" \
                 --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                --form 'metadata={"main_module":"worker.mjs","compatibility_date":"2026-10-01"};type=application/json' \
+                --form 'metadata={"main_module":"worker.mjs","compatibility_date":"2026-10-01","bindings":[{"type":"ai","name":"AI"}],"keep_bindings":["secret_text","secret_key","plain_text"]};type=application/json' \
                 --form "worker.mjs=@${worker_source};type=application/javascript+module" \
                 > /tmp/echo-worker-deploy-response.json
               python - <<'PY'
