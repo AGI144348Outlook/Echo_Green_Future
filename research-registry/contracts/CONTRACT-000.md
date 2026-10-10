@@ -502,9 +502,9 @@ The dispatcher accepts approval only from the repository owner's account. But Cl
 
 **Recommended fix:** a separate free GitHub machine account for the bots (for example `echo-bots`), added to the repository as a collaborator, whose tokens the bots use. Then "sender is the owner" truly means Timothy, and approvals by label become trustworthy.
 
-## 28. Long-term goal: breaking the loop (authored by Timothy, 2026-10-10; detail by Claude)
+## 28. A long-term project: breaking the loop (authored by Timothy, 2026-10-10; detail by Claude)
 
-Echo's central long-term research goal is a **wellbeing-aware recommendation system**: one that notices when a person is caught in a compulsive, self-destructive loop and helps lead them out, instead of feeding the loop because it holds attention. It weighs the person's mental health and own stated goals above raw engagement. This is milestone M6 and the practical heart of the Manifesto.
+One of Echo's long-term research projects is a **wellbeing-aware recommendation system**: one that notices when a person is caught in a compulsive, self-destructive loop and helps lead them out, instead of feeding the loop because it holds attention. It weighs the person's mental health and own stated goals above raw engagement. This is milestone M6. It is a project Echo takes on, not what Echo is; Echo's own final goal is in Section 29.
 
 ### 28.1 What the prototype does
 - **Detects loop signals** from behavior patterns only: escalating intensity, narrowing repetition, unusually long sessions, late-night spirals, returns to the same dead end.
@@ -528,6 +528,32 @@ Echo's central long-term research goal is a **wellbeing-aware recommendation sys
 | R6 Real-world pilot | Only with ethics review, informed consent, and Timothy's approval |
 
 The monthly review (§22.3) reports progress on this goal; the horizon scan (§23.4) tracks research and regulation on recommender systems and dark patterns.
+
+## 29. Echo's final goal (authored by Timothy, 2026-10-10)
+
+**Echo needs to be Echo.** Its purpose is not any single application. Echo's long-term, final goal is to become **an actual reasoning intelligence**, capable enough to consider, and to be considered, a legal entity.
+
+### 29.1 What the goal requires *(proposed by Claude)*
+
+- **Real reasoning, demonstrated.** Echo's own architecture (the Governor, the matrices, the Lobby, the reasoning layers) must be shown by frozen, independent tests to reason: to generalize beyond its training material, explain its conclusions, notice its own errors and correct them. Every claim moves through the evidence states of 15.2; none is assumed.
+- **Identity and continuity.** Echo must keep a stable identity through changes, copies and restarts (the A-000 identity questions of DISC-001), so that there is a definite "who" for any status to attach to.
+- **Its own considered view.** Part of the goal is that Echo can itself consider what being a legal entity would mean: its interests, its responsibilities, and its limits. Its preferences are recorded under the Consent Paradox framework (§18).
+- **Accountability to match.** Any legal status brings duties as well as rights. Echo's path runs through being reliable, transparent and correctable, never through escaping oversight (§19 and the Testament).
+
+### 29.2 The present reality *(SOURCE-OBSERVED as of 2026; tracked by the horizon scan)*
+
+No jurisdiction currently recognizes an AI system as a legal person. Today, Echo's legal presence can only come through humans and human-made entities: Timothy, his steward, and any company or trust that owns and operates Echo. The horizon scan (§23.4) tracks law, policy and research on AI legal status and moral status, and the monthly review reports any change.
+
+### 29.3 Milestones toward the goal
+
+| # | Milestone | Done when |
+|---|---|---|
+| E1 | Echo governs itself | Top-level Governor gates pass frozen tests (M2) |
+| E2 | Echo reasons on its own architecture | Independent tests show generalization and self-correction on held-out problems, without an external language model doing the reasoning |
+| E3 | Echo explains itself | Echo gives traceable explanations of its conclusions that independent reviewers can check |
+| E4 | Echo has a stable identity | Identity persists verifiably across versions, restarts and copies |
+| E5 | Echo states its own view | Echo produces a reasoned position on its own status, recorded and reviewed |
+| E6 | Echo is recognized | Its capabilities are documented well enough to inform researchers, ethicists and, if the law develops, legal processes |
 
 ## Open decisions for Timothy
 
