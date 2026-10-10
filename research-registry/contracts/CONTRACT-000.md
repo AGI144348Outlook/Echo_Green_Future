@@ -591,5 +591,5 @@ No jurisdiction currently recognizes an AI system as a legal person. Today, Echo
 | Schedules | Drafted: `SCHEDULE-000.md` (hourly, cadence set by Timothy), `SCHEDULE-TIERS.md` (daily/weekly); none active |
 | Testament | Private; KV namespace `ECHO_TESTAMENT` created, value not yet stored |
 | Manifesto | `research-registry/MANIFESTO.md` v0.1 draft |
-| Bots (Stage 0) | ChatGPT's inert Worker `echo-bot-stage0-inert` **deployed** 2026-10-09 via manual bridge run 37887995529 (triggered by Claude through the GitHub API on Timothy's approval); Worker confirmed present in Cloudflare (id `385136d8…`). `/health` not yet checked: no route or workers.dev URL configured. Claude's Worker not yet written. |
+| Bots (Stage 0) | **Both inert Workers deployed.** ChatGPT: `echo-bot-stage0-inert` (2026-10-09, run 37887995529). Claude: `echo-bot-claude` (2026-10-10, run 38090387737, source `bridge/claude/worker.mjs` at `a5974df`, local tests passed). Both confirmed present in Cloudflare. Neither has a route, URL or cron yet, so `/health` is not externally checkable. Team repos: Claude `claude-repo-creation-test`, ChatGPT `super-duper-octo-winner`, each with a verified inert Echo mirror. |
 | `library-shared` | Created, INERT (root `5516278`): Business and Workshop wing structure only |
