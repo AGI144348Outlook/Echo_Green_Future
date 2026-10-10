@@ -84,6 +84,38 @@ jobs:
           }, indent=2))
           ' <<< "$response"
               ;;
+            enable_workers_dev)
+              # Explicit per-participant manual authorization only; no deployment or schedules.
+              if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+                echo "workers.dev activation requires manual workflow_dispatch authorization."
+                exit 2
+              fi
+              if ! worker_name="$(OP_FILE="$op_file" python - <<'PY'
+          import json, os
+          p=os.environ["PARTICIPANT"]
+          d=json.load(open(os.environ["OP_FILE"]))
+          assert set(d)=={"operation","worker_name"}, "Unexpected operation fields"
+          expected={"chatgpt":"echo-bot-stage0-inert","claude":"echo-bot-claude"}
+          assert d["worker_name"]==expected[p], "Worker name not authorized for participant"
+          print(d["worker_name"])
+          PY
+              )"; then
+                echo "Rejected workers.dev operation."
+                exit 2
+              fi
+              response="$(curl --fail-with-body --silent --show-error \
+                --request POST \
+                "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}/subdomain" \
+                --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                --header "Content-Type: application/json" \
+                --data '{"enabled":true}')"
+              WORKER_NAME="$worker_name" RESPONSE="$response" python - <<'PY'
+          import json,os
+          d=json.loads(os.environ["RESPONSE"])
+          if not d.get("success"): raise SystemExit("workers.dev enable failed")
+          print("workers.dev enabled for "+os.environ["WORKER_NAME"])
+          PY
+              ;;
             deploy_worker)
               # Inert deployment only. Deployment requires an explicit workflow_dispatch run;
               # the push trigger never deploys a Worker.
