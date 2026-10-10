@@ -1,0 +1,59 @@
+{
+  "cycle": "NVE-D-HOURLY-044",
+  "prior": [
+    "NVE-D-HOURLY-041-summary.json",
+    "NVE-D-HOURLY-042-summary.json",
+    "NVE-D-HOURLY-043-DFE-summary.json"
+  ],
+  "events": [
+    {
+      "event_id": "NVE-D-044-DFE-5",
+      "stage": 5,
+      "evaluation": ">",
+      "candidate": "original-order fixed-tau64 depth1",
+      "reference": "within-artifact shuffled training",
+      "criterion": "greater predictive adequacy (-heldout log2 loss)",
+      "evidence": "NVE-D-HOURLY-044-summary.json; 804 >, 156 < of 960 paired leave-one-out rows",
+      "contradictions": [
+        "deeper contexts frequently underperform depth1",
+        "no semantic inference"
+      ]
+    },
+    {
+      "event_id": "NVE-D-044-DFE-7",
+      "stage": 7,
+      "evaluation": "0",
+      "candidate": "independent semantic generalization",
+      "reference": "single-source structural predictability",
+      "criterion": "independent source provenance and non-leaky family grouping",
+      "evidence": "48 artifacts/316 occurrences from one collection; post-hoc shared-trigram components",
+      "assumptions_challenged": [
+        "repeated seeds count as independent inscriptions",
+        "post-hoc family split proves source independence",
+        "lower raw loss and greater adequacy have same direction"
+      ],
+      "contradictions": [
+        "cycle043 weak baseline advantage vanishes under strong tau64",
+        "component exclusions worsen heldout loss but do not prove leakage"
+      ]
+    },
+    {
+      "event_id": "NVE-D-044-DFE-8",
+      "stage": 8,
+      "evaluation": "=",
+      "candidate": "revised frozen-baseline and component-holdout experiment",
+      "reference": "independent deterministic oracle and SHA256 checkpoint protocol",
+      "criterion": "reproducibility of saved finite experiment",
+      "evidence": "12 checkpoints verified, 360 independent rows/1440 losses, 100 continuation rows; same-length corruption rejected",
+      "unresolved_questions": [
+        "prospective independently sourced corpus",
+        "true EVE/NVE virtue criteria",
+        "meaning of 0 remains provisional"
+      ]
+    }
+  ],
+  "semantic_validity": "0",
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false
+}
