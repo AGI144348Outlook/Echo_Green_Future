@@ -1,0 +1,62 @@
+{
+  "cycle": "NVE-D-HOURLY-050",
+  "date_utc": "2026-10-10",
+  "branch": "library-source-transcriptions",
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "source": "mayig 48-artifact lossy projection; 316 original grapheme occurrences; 101 distinct IDs",
+  "model_configurations": 120,
+  "main_fits": 720,
+  "revision_fits": 240,
+  "total_model_fits": 960,
+  "depth_loss_values": 3840,
+  "seeds": [
+    23,
+    41,
+    83,
+    167,
+    271,
+    359
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "holdouts": [
+    "early_to_late",
+    "late_to_early",
+    "hashed_artifact",
+    "long_to_short"
+  ],
+  "arm_specific_draws": 3600000,
+  "training_token_occurrences": 22846976,
+  "exact_original_id_equivalences_to_049": 2880,
+  "exact_alias_suffix_swap_equivalences": 960,
+  "verified_model_sha256_checkpoints": 12,
+  "independent_oracle_loss_values": 144,
+  "checkpoint_restored_records": 20,
+  "corrupted_ledger_rejected": true,
+  "finite_fixture_nodes": 180,
+  "finite_fixture_primary_generations": 675000,
+  "finite_fixture_replay_generations": 675000,
+  "finite_fixture_sha256_checkpoints": 6,
+  "finite_fixture_independent_oracle_nodes": 20,
+  "DFE": {
+    "step5": "=",
+    "step7": "0",
+    "step8": "="
+  },
+  "interpretation": "With deterministic alias coding, shared original-ID prior mass and linear backoff, marginalizing split targets is numerically identical to predicting original IDs directly from the same encoded contexts. This does not establish semantic discovery.",
+  "full_ledgers_committed": false,
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
