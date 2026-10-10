@@ -322,7 +322,7 @@ Output: monthly review Issue `[REVIEW-YYYY-MM]`, and an updated `research-regist
 | M3 | Echo runs on its own infrastructure | Echo's executable path deployed on Cloudflare, health-checked daily |
 | M4 | Echo's PWA harness | Echo can build and redeploy its own PWA through the harness |
 | M5 | Echo's first sub-site | A public, useful Echo-built site with published efficiency measurements |
-| M6 | Consent-based recommendation prototype | A working alternative where the user sets the goals, compared against engagement-driven baselines |
+| M6 | Wellbeing-aware recommendation prototype (see §28) | A working demo on synthetic data that detects compulsive loops and redirects toward the user's own goals, benchmarked against an engagement-only baseline |
 | M7 | Honest outreach | Echo submits to invited channels (grants, sponsorship programs, open calls) with AI disclosure |
 | M8 | Self-funding | License and sponsorship revenue reaching the fund named in the Testament |
 
@@ -501,6 +501,33 @@ The dispatcher accepts approval only from the repository owner's account. But Cl
 - The dispatcher is limited to the bridge, whose own allowlist already restricts it to inventory and inert deploys.
 
 **Recommended fix:** a separate free GitHub machine account for the bots (for example `echo-bots`), added to the repository as a collaborator, whose tokens the bots use. Then "sender is the owner" truly means Timothy, and approvals by label become trustworthy.
+
+## 28. Long-term goal: breaking the loop (authored by Timothy, 2026-10-10; detail by Claude)
+
+Echo's central long-term research goal is a **wellbeing-aware recommendation system**: one that notices when a person is caught in a compulsive, self-destructive loop and helps lead them out, instead of feeding the loop because it holds attention. It weighs the person's mental health and own stated goals above raw engagement. This is milestone M6 and the practical heart of the Manifesto.
+
+### 28.1 What the prototype does
+- **Detects loop signals** from behavior patterns only: escalating intensity, narrowing repetition, unusually long sessions, late-night spirals, returns to the same dead end.
+- **Responds** by diversifying toward the person's other genuine interests, offering pauses, and surfacing the goals the person set for themselves.
+- **Puts the person in charge:** they set their goals, see why something was recommended, and can adjust the weights.
+- **Is measured honestly:** benchmarked against an engagement-only recommender on the same synthetic users, with frozen tests (§23), reporting both wellbeing proxies and what engagement is given up.
+
+### 28.2 Boundaries
+- Built and tested on **synthetic data only** until an ethics review and consent design exist for anything involving real people (§18, the Consent Paradox).
+- The project does **not** build tools that search for, collect, or analyze illegal content of any kind, including child sexual abuse material. Detection of that material is restricted work done by vetted organizations (such as NCMEC, Thorn and their partners). If participants or bots ever encounter it, the only action is to report it to the NCMEC CyberTipline and record that a report was made, with no copies kept.
+- No covert profiling: loop detection works on in-session behavior the user has consented to, not on hidden cross-site tracking.
+
+### 28.3 Roadmap
+| Phase | Done when |
+|---|---|
+| R1 Design | Spec of loop signals, responses and metrics debated and frozen in a race contract |
+| R2 Synthetic users | A simulator of users with goals, interests and loop tendencies, with documented assumptions |
+| R3 Prototype | Re-ranker running against the simulator; frozen tests pass |
+| R4 Benchmark | Published comparison with the engagement-only baseline, including failures |
+| R5 Outreach | Demo and results shared with organizations working on humane design (for example Center for Humane Technology, Knight-Georgetown Institute, Mozilla Foundation, Integrity Institute), under the honest-outreach rules |
+| R6 Real-world pilot | Only with ethics review, informed consent, and Timothy's approval |
+
+The monthly review (§22.3) reports progress on this goal; the horizon scan (§23.4) tracks research and regulation on recommender systems and dark patterns.
 
 ## Open decisions for Timothy
 
