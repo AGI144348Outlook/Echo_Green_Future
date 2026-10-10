@@ -1,0 +1,112 @@
+{
+  "cycle": "NVE-D-HOURLY-054",
+  "governing_document_git_blobs": {
+    "DFE": "609421e46b24184e4f1d25b3bb3832cd47c7bd0d",
+    "evaluation_alphabet": "bf5ce29c0b5a21d5032fd36410ed546085d47f58"
+  },
+  "events": [
+    {
+      "event_id": "NVE-D-054-DFE-5",
+      "cycle_id": "NVE-D-HOURLY-054",
+      "stage": 5,
+      "prior_evaluation_refs": [
+        "NVE-D-HOURLY-051-DFE.json",
+        "DFE052.json",
+        "DFE053.json"
+      ],
+      "candidate_ref": "global causal prequential, directed depth1, fixed-width ID code capacity1000",
+      "reference_ref": "same fitted model with per-artifact reset",
+      "criterion_hypothesis": "lower full original-ID message bits per heldout symbol",
+      "evaluation": ">",
+      "evidence_refs": [
+        "local ledger054.jsonl",
+        "local ANALYSIS054.json"
+      ],
+      "assumptions_challenged": [
+        "escape event alone encodes the identity of an unseen symbol"
+      ],
+      "contradictions": [
+        "90/90 computational configurations are not 90 independent archaeological holdouts"
+      ],
+      "revision_refs": [
+        "NVE-D-054-DFE-7",
+        "NVE-D-054-DFE-8"
+      ],
+      "unresolved_questions": [
+        "independent archaeological-object validation"
+      ]
+    },
+    {
+      "event_id": "NVE-D-054-DFE-7",
+      "cycle_id": "NVE-D-HOURLY-054",
+      "stage": 7,
+      "prior_evaluation_refs": [
+        "NVE-D-HOURLY-051-DFE.json",
+        "DFE052.json",
+        "DFE053.json",
+        "NVE-D-054-DFE-5"
+      ],
+      "candidate_ref": "global learning as independent exact-unknown recognition",
+      "reference_ref": "source-independent object-level and unseen-first-identity prediction",
+      "criterion_hypothesis": "whether gain survives provenance and evaluator-prior challenges",
+      "evaluation": "0",
+      "evidence_refs": [
+        "local revision-ledger054.jsonl",
+        "local PROVENANCE054.json"
+      ],
+      "assumptions_challenged": [
+        "cross-artifact online updates imply independent generalization",
+        "external identity code is a model prediction",
+        "multiple seeds yield independent source observations",
+        "auditor priors are neutral"
+      ],
+      "contradictions": [
+        "known-only and novel-only updates each outperform artifact-reset in 90/90 directed-depth1 comparisons; gain is not exclusively eight novel repeats"
+      ],
+      "revision_refs": [
+        "NVE-D-054-DFE-8"
+      ],
+      "unresolved_questions": [
+        "object-level crosswalk",
+        "fixed codebook validity"
+      ]
+    },
+    {
+      "event_id": "NVE-D-054-DFE-8",
+      "cycle_id": "NVE-D-HOURLY-054",
+      "stage": 8,
+      "prior_evaluation_refs": [
+        "NVE-D-HOURLY-051-DFE.json",
+        "DFE052.json",
+        "DFE053.json",
+        "NVE-D-054-DFE-5",
+        "NVE-D-054-DFE-7"
+      ],
+      "candidate_ref": "two-part lossless identity coding with known-only/novel-only ablations",
+      "reference_ref": "Cycle053 escape-only scoring and per-artifact reset",
+      "criterion_hypothesis": "reproducible finite arithmetic and SHA-256 ledger prefix checks",
+      "evaluation": "=",
+      "evidence_refs": [
+        "local AUDIT054.json",
+        "local ledger054.jsonl",
+        "local revision-ledger054.jsonl"
+      ],
+      "assumptions_challenged": [
+        "record count alone verifies integrity",
+        "finite DVE nesting proves EVE/NVE virtues"
+      ],
+      "contradictions": [
+        "∆ evaluator target changed from escape event to lossless literal-ID message; do not compare incompatible loss scales"
+      ],
+      "revision_refs": [
+        "runner054.py",
+        "revision054.py",
+        "audit054.py"
+      ],
+      "unresolved_questions": [
+        "independent new source",
+        "calibrated escape prior"
+      ]
+    }
+  ]
+}
