@@ -1,0 +1,94 @@
+{
+  "cycle": "NVE-D-HOURLY-057",
+  "date_utc": "2026-10-10",
+  "protocol": "057-score-history-separation-v1",
+  "branch": "library-source-transcriptions",
+  "source": "mayig/indus-valley-script-corpus",
+  "source_artifacts": 73,
+  "heldout_artifacts": 12,
+  "heldout_observations": 79,
+  "configurations": 30,
+  "seeds": [
+    29,
+    71,
+    131
+  ],
+  "training_budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "orders": [
+    "source",
+    "reverse"
+  ],
+  "depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "model_fits": 90,
+  "training_draws": 112500,
+  "training_draw_applications": 337500,
+  "training_token_occurrences": 2158848,
+  "history_suppression_replays": 1080,
+  "baseline_streams": 180,
+  "finite_dve_nodes": 180,
+  "finite_dve_primary_generations": 675000,
+  "finite_dve_replay_generations": 675000,
+  "baseline_depth1": {
+    "directed": {
+      ">": 2,
+      "<": 28
+    },
+    "lagged": {
+      ">": 28,
+      "<": 2
+    },
+    "position": {
+      ">": 2,
+      "<": 28
+    }
+  },
+  "lagged_depth1_token_changes": {
+    "score_only": 34,
+    "history_only": 35,
+    "both": 67,
+    "denominator": 360
+  },
+  "lagged_depth1_token_joint": {
+    "<": 77,
+    ">": 283
+  },
+  "lagged_depth1_token_score_only": {
+    "<": 52,
+    ">": 308
+  },
+  "lagged_depth1_token_history_only": {
+    "<": 53,
+    ">": 307
+  },
+  "verified_checkpoints": 12,
+  "independent_oracle_checks": 96,
+  "checkpoint_restored_records": 5,
+  "corrupt_ledger_rejected": true,
+  "ledger_sha256": "acef9c79a1446cbd43f1b4e023e9003e4ccfd49630ccb0b0bdd4175311bbf3f9",
+  "fixture_sha256": "38764355220d530c1ae02fe122abb847a9d2e3fb174fb443fc4c60af24e85e3c",
+  "historical_IETF_blob": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+  "RFC_0031_0033_standalone": "0: not located in two bounded current branch trees",
+  "evaluation": {
+    "step5": "0",
+    "step7": "0",
+    "step8": "="
+  },
+  "comparator": "'>' means greater predictive adequacy (lower numeric loss), not greater raw loss; candidate alphabet's worked example uses '<' for lower raw loss",
+  "source_semantics": "0",
+  "cross_source_concordance": "0",
+  "full_runner_ledger_checkpoints_in_local_archive_only": true,
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
