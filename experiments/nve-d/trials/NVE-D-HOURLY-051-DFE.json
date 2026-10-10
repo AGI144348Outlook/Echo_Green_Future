@@ -1,0 +1,105 @@
+[
+  {
+    "cycle_id": "NVE-D-HOURLY-051",
+    "prior_evaluation_refs": [
+      "NVE-D-HOURLY-047-DFE.json",
+      "NVE-D-HOURLY-048-DFE-summary.json",
+      "DFE049.json",
+      "NVE-D-HOURLY-050-DFE.json"
+    ],
+    "event_id": "051-5",
+    "stage": 5,
+    "candidate_ref": "freq_parity original-ID context model, tau64 uniform depth1",
+    "reference_ref": "unsplit original-ID model, same tau/prior/depth",
+    "criterion_hypothesis": "greater predictive adequacy means lower held-out log2 loss on identical original-ID targets",
+    "evaluation": ">",
+    "evidence_refs": [
+      "local ledger051.jsonl",
+      "local SUMMARY051.json"
+    ],
+    "assumptions_challenged": [
+      "Cycle050 equivalence alone establishes broad superiority"
+    ],
+    "contradictions": [
+      "tau4 gives 88 > and 32 <; tau64 gives 102 > and 18 <; tau256 gives 89 > and 31 <"
+    ],
+    "revision_refs": [
+      "051-8"
+    ],
+    "unresolved_questions": [
+      "external object-level provenance",
+      "independent validation"
+    ]
+  },
+  {
+    "cycle_id": "NVE-D-HOURLY-051",
+    "prior_evaluation_refs": [
+      "NVE-D-HOURLY-047-DFE.json",
+      "NVE-D-HOURLY-048-DFE-summary.json",
+      "DFE049.json",
+      "NVE-D-HOURLY-050-DFE.json"
+    ],
+    "event_id": "051-7",
+    "stage": 7,
+    "candidate_ref": "fixed tau64 and token-weighted auditor",
+    "reference_ref": "tau4/tau256 and equal-artifact-weighted auditor",
+    "criterion_hypothesis": "whether conclusions survive alternative smoothing and evaluation weighting",
+    "evaluation": "0",
+    "evidence_refs": [
+      "local ANALYSIS051.json",
+      "local AUDIT051.json"
+    ],
+    "assumptions_challenged": [
+      "tau64 is always a strong baseline",
+      "token weighting is neutral",
+      "multiple seeds are independent source observations",
+      "auditor weighting is self-validating"
+    ],
+    "contradictions": [
+      "tau256 baseline > tau64 in 108/120 depth1 configurations",
+      "293 of 8640 arm-versus-baseline relations change under artifact weighting"
+    ],
+    "revision_refs": [
+      "051-8"
+    ],
+    "unresolved_questions": [
+      "external sign crosswalk",
+      "archaeological-object concordance"
+    ]
+  },
+  {
+    "cycle_id": "NVE-D-HOURLY-051",
+    "prior_evaluation_refs": [
+      "NVE-D-HOURLY-047-DFE.json",
+      "NVE-D-HOURLY-048-DFE-summary.json",
+      "DFE049.json",
+      "NVE-D-HOURLY-050-DFE.json"
+    ],
+    "event_id": "051-8",
+    "stage": 8,
+    "candidate_ref": "equal-artifact evaluator plus independent count oracle",
+    "reference_ref": "token-weighted evaluator and frozen Cycle050 tau64 uniform losses",
+    "criterion_hypothesis": "finite reproduction under documented 1e-10 tolerance, with relation changes retained",
+    "evaluation": "=",
+    "evidence_refs": [
+      "local ledger051.jsonl",
+      "local AUDIT051.json",
+      "local checkpoint_0040.json"
+    ],
+    "assumptions_challenged": [
+      "record count verifies integrity",
+      "oracle validates semantic interpretation"
+    ],
+    "contradictions": [
+      "293 relation changes denoted ∆; 1440 frozen prior losses reproduced ="
+    ],
+    "revision_refs": [
+      "runner051.py",
+      "audit051.py"
+    ],
+    "unresolved_questions": [
+      "semantic validity",
+      "preferred weighting criterion"
+    ]
+  }
+]
