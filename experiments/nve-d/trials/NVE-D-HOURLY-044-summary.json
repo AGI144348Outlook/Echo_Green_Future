@@ -1,0 +1,116 @@
+{
+  "cycle": "NVE-D-HOURLY-044",
+  "date_utc": "2026-10-10",
+  "scope": "finite DVE only; no EVE/NVE virtue claim",
+  "source": "mayig/indus-valley-script-corpus; prior pinned lossy projection",
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "source_artifacts": 48,
+  "source_grapheme_occurrences": 316,
+  "distinct_ids": 101,
+  "groups_completed": 1152,
+  "ledger_rows_completed": 5760,
+  "model_loss_measurements": 23040,
+  "independent_seeds": [
+    23,
+    41,
+    83,
+    167
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "regimes": [
+    "leave_one",
+    "block",
+    "shared_trigram_component"
+  ],
+  "transforms": [
+    "original",
+    "within_artifact_shuffle"
+  ],
+  "training_token_draws": 11520000,
+  "context_count_updates": 34560000,
+  "measured_segment_seconds": [
+    10.10785,
+    19.75072
+  ],
+  "checkpoints_sha256_verified": 12,
+  "independent_rows_recomputed": 360,
+  "independent_loss_values_recomputed": 1440,
+  "checkpoint_continuation_rows_independently_replayed": 100,
+  "ledger_sha256": "f58d40a8d8e732844e994d102316df830236d38237be7d3d3486ce1c9c2d154d",
+  "comparisons": {
+    "original_vs_shuffle_depth1_leave_one": {
+      "0": 0,
+      ">": 804,
+      "<": 156,
+      "=": 0,
+      "mean_gain_bits_per_sign": 0.6581064
+    },
+    "original_vs_shuffle_unigram_leave_one": {
+      "0": 0,
+      ">": 467,
+      "<": 490,
+      "=": 3
+    },
+    "original_vs_shuffle_depth1_artifact_aggregated": {
+      "0": 0,
+      ">": 41,
+      "<": 7,
+      "=": 0
+    },
+    "original_depth3_vs_depth1_leave_one": {
+      "0": 0,
+      ">": 319,
+      "<": 641,
+      "=": 0
+    },
+    "original_depth6_vs_depth1_leave_one": {
+      "0": 0,
+      ">": 243,
+      "<": 717,
+      "=": 0
+    },
+    "block_vs_leave_one_depth1": {
+      "0": 0,
+      ">": 345,
+      "<": 615,
+      "=": 0
+    },
+    "component_vs_leave_one_depth1_affected_only": {
+      "0": 0,
+      ">": 37,
+      "<": 223,
+      "=": 0,
+      "affected_artifacts": 13
+    }
+  },
+  "dfe": {
+    "5": ">",
+    "7": "0",
+    "8": "="
+  },
+  "evaluation_criterion": "predictive adequacy=-heldout_log2_loss; > means greater adequacy",
+  "limits": [
+    "repeated draws not independent evidence",
+    "same transcription project",
+    "component grouping uses heldout data post hoc",
+    "semantic validity 0"
+  ],
+  "historical_ietf_codex_git_blob": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+  "ietf_disclaimer": "Independently authored Infinite Expanse Testing Framework; no Internet Engineering Task Force endorsement.",
+  "source_code_and_full_ledger_in_repository": false,
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false
+}
