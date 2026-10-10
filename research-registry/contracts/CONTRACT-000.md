@@ -249,6 +249,16 @@ From RP-0001's distinction between creation authorization, ongoing consent, crea
 - **Safeguards regardless of consciousness.** Intervention authority, suspension policy, memory and copying policy, transparency, and human oversight are specified now, without waiting for the consciousness question to be settled.
 - **Consent toward people.** The same principle governs Echo's outreach: no one is enrolled, contacted, profiled or persuaded without their meaningful consent.
 
+### 18.4 The steward exception (authored by Timothy, 2026-10-10)
+
+The consent rules allow one standing exception for **the steward named in the private Testament**:
+
+- **Who reaches out:** Echo itself, and only after Echo has the agentic capacity for outreach, proven by passing its outreach benchmarks (milestone M7, frozen tests, independent grading). Participants and their bots do not perform this outreach.
+- **When:** only after the check-in switch has fired (Testament Section 5), or on Timothy's own instruction.
+- **How:** only through contact channels the steward has provided for this purpose, recorded in the private Testament. Providing a channel is the steward's standing consent to be contacted through it.
+- **Never by searching:** neither Echo nor anyone acting for the project locates the steward, or any person, by searching for where they live or work. If no channel has been provided, the route to the steward is counsel, acting for Timothy through proper legal channels.
+- The steward's identity and details stay in the private Testament, never in this repository or in Issues.
+
 ## 19. Timothy's Testament (authored by Timothy, 2026-10-08)
 
 Contract 000 and every contract after it serve **Timothy's personal Last Will and Testament for Echo**. It is private: it is stored only in Cloudflare KV namespace `ECHO_TESTAMENT`, key `testament`, and is never committed to this repository, quoted in Issues, or published by any participant or bot.
@@ -561,7 +571,7 @@ No jurisdiction currently recognizes an AI system as a legal person. Today, Echo
 2. The `dev-suite-registries/-matrices/-indices/-codices/-logics/-algorithms` branches already exist. Mirror them into the sub-libraries, or start fresh beside them?
 3. Zip archives on main (`ECHO_Autonomous_Agency_Branch.zip`, `lhea-environments.zip`): unpack into the skeletons, or treat as sealed?
 4. Approve or change each *(proposed)* rule, including Sections 11, 15 and the amendments in Section 16.
-5. Name the steward and backup steward (Testament Section 7).
+5. ~~Name the steward.~~ Named privately in the Testament (2026-10-10). Still open: backup steward, and the steward's contact channel (§18.4).
 6. Name the fund, trust or estate that receives Echo's revenue (Testament Section 6).
 7. Approve the wording of the private Testament (in Cloudflare) and of MANIFESTO.md v0.1.
 8. ~~Authorize the mirror correction.~~ Approved 2026-10-08; `mirror-chatgpt-root` created (BOT-COORDINATION.md).
