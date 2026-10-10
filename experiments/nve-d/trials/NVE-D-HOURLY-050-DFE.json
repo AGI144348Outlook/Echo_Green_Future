@@ -1,0 +1,98 @@
+[
+  {
+    "event_id": "050-5",
+    "cycle_id": "NVE-D-HOURLY-050",
+    "stage": 5,
+    "prior_evaluation_refs": [
+      "NVE-D-HOURLY-048-DFE-summary.json",
+      "DFE049.json"
+    ],
+    "candidate_ref": "original-ID target conditioned on encoded contexts",
+    "reference_ref": "Cycle049 split-alias target with original-ID marginalization",
+    "criterion_hypothesis": "equal held-out original-ID loss with same context features, tau=64 and original-ID prior",
+    "evaluation": "=",
+    "evidence_refs": [
+      "local ledger050.jsonl",
+      "Cycle049 initial and revision ledgers",
+      "AUDIT050.json"
+    ],
+    "assumptions_challenged": [
+      "target splitting is necessary for reported gains"
+    ],
+    "contradictions": [
+      "Cycle048 raw alias losses changed target; Cycle049 corrected the target; Cycle050 isolates context partition"
+    ],
+    "revision_refs": [
+      "050-8"
+    ],
+    "unresolved_questions": [
+      "alternative priors and nonlinear backoff untested"
+    ]
+  },
+  {
+    "event_id": "050-7",
+    "cycle_id": "NVE-D-HOURLY-050",
+    "stage": 7,
+    "prior_evaluation_refs": [
+      "050-5",
+      "NVE-D-HOURLY-047-DFE.json",
+      "DFE049.json"
+    ],
+    "candidate_ref": "semantic interpretation of model equality",
+    "reference_ref": "finite model-specific algebraic equality",
+    "criterion_hypothesis": "whether equality establishes symbolic meaning or cross-source generalization",
+    "evaluation": "0",
+    "evidence_refs": [
+      "local REPORT050.md",
+      "local AUDIT050.json"
+    ],
+    "assumptions_challenged": [
+      "auditor neutral by construction",
+      "repeated samples are independent archaeological observations",
+      "computational nested nodes establish NVE virtues"
+    ],
+    "contradictions": [
+      "Cycle049 prediction improvements persist without target alias splitting"
+    ],
+    "revision_refs": [
+      "050-8"
+    ],
+    "unresolved_questions": [
+      "object-level provenance",
+      "standalone RFC-0031/RFC-0033 not found in bounded trees"
+    ]
+  },
+  {
+    "event_id": "050-8",
+    "cycle_id": "NVE-D-HOURLY-050",
+    "stage": 8,
+    "prior_evaluation_refs": [
+      "050-5",
+      "050-7"
+    ],
+    "candidate_ref": "consistent alias suffix swap plus finite isolated-node fixture",
+    "reference_ref": "original encoded-context model and prior IETF fixture reports",
+    "criterion_hypothesis": "loss invariance and reproducible finite state/checkpoint integrity",
+    "evaluation": "=",
+    "evidence_refs": [
+      "local revision-ledger050.jsonl",
+      "local ietf-fixture-ledger050.jsonl",
+      "local AUDIT050.json"
+    ],
+    "assumptions_challenged": [
+      "relabeling proves semantics",
+      "finite synthetic nesting proves IETF infinity"
+    ],
+    "contradictions": [
+      "none resolved about independent symbolic meaning"
+    ],
+    "revision_refs": [
+      "revision050.py",
+      "ietf_fixture050.py"
+    ],
+    "unresolved_questions": [
+      "external validation",
+      "alternative smoothing"
+    ]
+  }
+]
