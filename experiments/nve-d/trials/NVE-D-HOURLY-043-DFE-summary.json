@@ -1,0 +1,29 @@
+{
+  "cycle": "NVE-D-HOURLY-043",
+  "steps": [
+    {
+      "stage": 5,
+      "evaluation": ">",
+      "criterion": "lower heldout loss versus fixed depth1 tau4",
+      "evidence": "NVE-D-HOURLY-043-summary.json"
+    },
+    {
+      "stage": 7,
+      "evaluation": "0",
+      "criterion": "whether selected model generally outperforms fixed depth1 tau64",
+      "evidence": "revised comparator results in summary"
+    },
+    {
+      "stage": 8,
+      "evaluation": "=",
+      "criterion": "independent reproducibility of revision",
+      "evidence": "32 checkpoint hashes, 140 independent oracle rows, 60 restored rows"
+    }
+  ],
+  "contradictions": [
+    "selected model improves versus tau4 but not consistently versus tau64",
+    "source records share one upstream transcription project",
+    "more context worsens heldout loss in most cases"
+  ],
+  "protected_registry_mutations": 0
+}
