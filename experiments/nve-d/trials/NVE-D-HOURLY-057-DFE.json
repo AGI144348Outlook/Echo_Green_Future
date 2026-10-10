@@ -1,0 +1,85 @@
+[
+  {
+    "event_id": "NVE-D-057-DFE-5",
+    "cycle_id": "NVE-D-HOURLY-057",
+    "stage": 5,
+    "prior_evaluation_refs": [
+      "NVE-D-055-DFE-5",
+      "NVE-D-056-DFE-5"
+    ],
+    "candidate_ref": "separate scoring and online-update interventions",
+    "reference_ref": "prior joint-removal test",
+    "criterion_hypothesis": "compare predictive adequacy on heldout original IDs",
+    "evaluation": "0",
+    "evidence_refs": [
+      "NVE-D-HOURLY-057-summary.json"
+    ],
+    "assumptions_challenged": [
+      "joint removal isolates one mechanism"
+    ],
+    "contradictions": [
+      "lagged and directed context disagree"
+    ],
+    "revision_refs": [
+      "NVE-D-057-DFE-8"
+    ],
+    "unresolved_questions": [
+      "object-level validation"
+    ]
+  },
+  {
+    "event_id": "NVE-D-057-DFE-7",
+    "cycle_id": "NVE-D-HOURLY-057",
+    "stage": 7,
+    "prior_evaluation_refs": [
+      "NVE-D-056-DFE-7"
+    ],
+    "candidate_ref": "audit of metric orientation and finite replay",
+    "reference_ref": "EVALUATION_ALPHABET.md",
+    "criterion_hypothesis": "auditor must distinguish lower loss from greater adequacy",
+    "evaluation": "0",
+    "evidence_refs": [
+      "NVE-D-HOURLY-057-summary.json"
+    ],
+    "assumptions_challenged": [
+      "evaluation signs are orientation independent"
+    ],
+    "contradictions": [
+      "raw loss and predictive adequacy reverse ordering labels"
+    ],
+    "revision_refs": [
+      "NVE-D-057-DFE-8"
+    ],
+    "unresolved_questions": [
+      "confirm comparator orientation"
+    ]
+  },
+  {
+    "event_id": "NVE-D-057-DFE-8",
+    "cycle_id": "NVE-D-HOURLY-057",
+    "stage": 8,
+    "prior_evaluation_refs": [
+      "NVE-D-056-DFE-8"
+    ],
+    "candidate_ref": "controlled score and history interventions",
+    "reference_ref": "joint removal",
+    "criterion_hypothesis": "finite checkpoint and arithmetic reproducibility",
+    "evaluation": "=",
+    "evidence_refs": [
+      "NVE-D-HOURLY-057-summary.json"
+    ],
+    "assumptions_challenged": [
+      "replay validates semantics"
+    ],
+    "contradictions": [
+      "interventions have distinct measured effects"
+    ],
+    "revision_refs": [
+      "runner057.py",
+      "verify057.py"
+    ],
+    "unresolved_questions": [
+      "external source verification"
+    ]
+  }
+]
