@@ -1,0 +1,98 @@
+{
+  "cycle": "NVE-D-HOURLY-051",
+  "date_utc": "2026-10-10",
+  "branch": "library-source-transcriptions",
+  "protocol": "051-prior-tau-weight-v1",
+  "source": "mayig 48-artifact lossy projection, 316 occurrences, 101 opaque IDs",
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "configurations": 120,
+  "model_count_fits": 480,
+  "heldout_loss_values": 23040,
+  "training_draw_applications": 1800000,
+  "training_token_occurrences": 11423488,
+  "seeds": [
+    23,
+    41,
+    83,
+    167,
+    271,
+    359
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "holdouts": [
+    "early_to_late",
+    "late_to_early",
+    "hashed_artifact",
+    "long_to_short"
+  ],
+  "context_arms": [
+    "baseline",
+    "freq_hash",
+    "freq_parity",
+    "freq_prev"
+  ],
+  "tau": [
+    4,
+    64,
+    256
+  ],
+  "priors": [
+    "uniform",
+    "train_empirical"
+  ],
+  "weightings": [
+    "token",
+    "artifact"
+  ],
+  "checkpoints_sha256_verified": 12,
+  "independent_loss_values": 192,
+  "prior_cycle050_loss_values_reproduced": 1440,
+  "checkpoint_restored_records": 20,
+  "corruption_rejected": true,
+  "comparisons": {
+    "parity_vs_unsplit_depth1_uniform_tau4": {
+      ">": 88,
+      "<": 32
+    },
+    "parity_vs_unsplit_depth1_uniform_tau64": {
+      ">": 102,
+      "<": 18
+    },
+    "parity_vs_unsplit_depth1_uniform_tau256": {
+      ">": 89,
+      "<": 31
+    },
+    "tau256_unsplit_vs_tau64_depth1": {
+      ">": 108,
+      "<": 12
+    },
+    "parity_depth1_tau256_vs_own_unigram": {
+      ">": 84,
+      "<": 36
+    },
+    "token_vs_artifact_relation_changes": 293,
+    "total_weight_comparisons": 8640
+  },
+  "DFE": {
+    "step5": ">",
+    "step7": "0",
+    "step8": "="
+  },
+  "full_code_ledgers_committed": false,
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false,
+  "limits": "Resampling 316 observations is not independent source evidence. Finite DVE results do not establish EVE/NVE virtues or semantic meaning."
+}
