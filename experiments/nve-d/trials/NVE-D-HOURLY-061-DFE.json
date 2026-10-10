@@ -1,0 +1,25 @@
+{
+  "cycle": "NVE-D-HOURLY-061",
+  "prior": [
+    "NVE-D-HOURLY-059",
+    "NVE-D-HOURLY-060"
+  ],
+  "events": [
+    {
+      "stage": 5,
+      "evaluation": "0",
+      "criterion": "Global versus artifact-local raw prediction loss; conflicting relational outcomes."
+    },
+    {
+      "stage": 7,
+      "evaluation": "0",
+      "criterion": "Independence of reused observations and sign concordance is unverified."
+    },
+    {
+      "stage": 8,
+      "evaluation": "=",
+      "criterion": "Finite numerical reproduction: 576 legacy oracle checks and 15 verified checkpoints."
+    }
+  ],
+  "scope": "Experimental only; no protected registry changes or deployment."
+}
