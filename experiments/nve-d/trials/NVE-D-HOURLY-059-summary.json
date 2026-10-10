@@ -1,0 +1,73 @@
+{
+  "cycle": "NVE-D-HOURLY-059",
+  "date_utc": "2026-10-10",
+  "protocol": "059-full-history-block-resampling-v1",
+  "branch": "library-source-transcriptions",
+  "completed_configs": 60,
+  "model_fits": 540,
+  "prediction_loss_measurements": 11520,
+  "complete_test_streams": 2880,
+  "training_draw_applications": 2025000,
+  "training_token_occurrences": 12894573,
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "seeds": [
+    29,
+    71,
+    131
+  ],
+  "depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "relational_families": [
+    "directed",
+    "lagged",
+    "position"
+  ],
+  "finite_dve_nodes": 180,
+  "finite_dve_primary_main_generations": 675000,
+  "finite_dve_primary_control_generations": 675000,
+  "checkpoint_count_verified": 15,
+  "raw_loss_orientation": "< lower, > higher, = within 1e-10, 0 unsupported",
+  "stage5_evaluation": "0",
+  "stage7_evaluation": "0",
+  "stage8_reproducibility_evaluation": "=",
+  "depth1_token_block_to_dedup_changes": 70,
+  "all_depths_and_weights_block_to_dedup_changes": 558,
+  "new_a_original_directed": {
+    "<": 0,
+    ">": 15
+  },
+  "new_a_bootstrap_directed": {
+    "<": 30,
+    ">": 0
+  },
+  "new_a_deduplicated_directed": {
+    "<": 14,
+    ">": 16
+  },
+  "new_a_original_lagged": {
+    "<": 15,
+    ">": 0
+  },
+  "new_a_deduplicated_lagged": {
+    "<": 17,
+    ">": 13
+  },
+  "duplicate_test_positions_mean": 6.4,
+  "ledger_sha256": "b5d96c138f840319af612a6adf37378a68d1f8797e8b4da8ec492e13cee32b99",
+  "scope": "73 artifacts, 469 observations, one digital transcription collection; no independently verified physical-object crosswalk",
+  "finite_computation_not_eve_nve": true,
+  "semantic_validity": "0",
+  "protected_registries_modified": false,
+  "merged_or_deployed": false,
+  "persistence_note": "Full runner, input projection, ledger, checkpoints, independent overlay, verification, report and SHA-256 manifest are preserved in local research archive; not all committed to GitHub."
+}
