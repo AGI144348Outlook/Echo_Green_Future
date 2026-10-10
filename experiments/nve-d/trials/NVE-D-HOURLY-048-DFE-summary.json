@@ -1,0 +1,27 @@
+{
+  "cycle": "NVE-D-HOURLY-048",
+  "events": [
+    {
+      "stage": 5,
+      "evaluation": "=",
+      "criterion": "Bijective renaming leaves 480 paired depth losses exactly equal",
+      "evidence": "local ledger048.jsonl"
+    },
+    {
+      "stage": 7,
+      "evaluation": "0",
+      "criterion": "Raw loss across changed sign alphabets is not comparable",
+      "evidence": "merge creates 91 codes from 101; random split yields 101-105"
+    },
+    {
+      "stage": 8,
+      "evaluation": "=",
+      "criterion": "SHA256 checkpoint and deterministic restart reproduction",
+      "evidence": "18 verified checkpoints, 60 restored records, 3 changed depth3 comparisons (∆)"
+    }
+  ],
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
