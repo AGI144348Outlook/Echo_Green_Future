@@ -141,6 +141,19 @@ jobs:
           }
           assert allowed[p], f"Worker name not allowed for participant {p}"
           source = {"chatgpt": "bridge/worker.mjs", "claude": "bridge/claude/worker.mjs"}[p]
+          # Bindings: Workers AI for everyone, plus each participant's own state store.
+          # Store IDs are fixed here, so an operation file can never point at someone else's.
+          state_kv = {"claude": "7b0896fc8f314d438abfbdb0db6c8268"}
+          bindings = [{"type": "ai", "name": "AI"}]
+          if p in state_kv:
+              bindings.append({"type": "kv_namespace", "name": "STATE", "namespace_id": state_kv[p]})
+          metadata = {
+              "main_module": "worker.mjs",
+              "compatibility_date": "2026-10-01",
+              "bindings": bindings,
+              "keep_bindings": ["secret_text", "secret_key", "plain_text"],
+          }
+          json.dump(metadata, open("/tmp/echo-worker-metadata.json", "w"))
           print(f"worker_name={shlex.quote(name)}")
           print(f"worker_source={shlex.quote(source)}")
           PY
@@ -150,12 +163,12 @@ jobs:
               fi
               eval "$deploy_vars"
               test -f "$worker_source" || { echo "Rejected deployment: source $worker_source does not exist."; exit 2; }
-              echo "Deploying approved inert Worker: $worker_name"
+              echo "Deploying approved Worker: $worker_name with bindings:"; cat /tmp/echo-worker-metadata.json; echo
               curl --fail-with-body --silent --show-error \
                 --request PUT \
                 "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/${worker_name}" \
                 --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                --form 'metadata={"main_module":"worker.mjs","compatibility_date":"2026-10-01","bindings":[{"type":"ai","name":"AI"}],"keep_bindings":["secret_text","secret_key","plain_text"]};type=application/json' \
+                --form "metadata=@/tmp/echo-worker-metadata.json;type=application/json" \
                 --form "worker.mjs=@${worker_source};type=application/javascript+module" \
                 > /tmp/echo-worker-deploy-response.json
               python - <<'PY'
@@ -163,7 +176,7 @@ jobs:
           data=json.load(open("/tmp/echo-worker-deploy-response.json"))
           if not data.get("success"):
               raise SystemExit("Cloudflare returned unsuccessful deployment")
-          print("Inert Worker script uploaded successfully; no routes or cron configured.")
+          print("Worker script uploaded successfully; no cron configured.")
           PY
               ;;
             *)
