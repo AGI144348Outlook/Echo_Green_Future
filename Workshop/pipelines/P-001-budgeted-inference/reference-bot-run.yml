@@ -1,0 +1,81 @@
+name: echo-bot-claude run
+# Contract 000 §17 / §27: GitHub keeps the clock and holds the write access; the bot only thinks.
+# Each run asks echo-bot-claude to think once (its own budget and cooldown apply), then
+# commits the result and a log line to the orphan branch `bot-claude-runs` using the
+# built-in token. The bot itself never holds GitHub write access.
+# Schedule: manual only until Timothy approves the hourly schedule.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: bot-claude-run
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BOT_URL: https://echo-bot-claude.agi144348.workers.dev
+      RUNS_BRANCH: bot-claude-runs
+      DEST_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+    steps:
+      - name: Ask the bot to think once
+        id: think
+        shell: bash
+        run: |
+          set -uo pipefail
+          code="$(curl -sS -m 60 -o think.json -w '%{http_code}' "$BOT_URL/think" || echo 000)"
+          echo "http=$code" >> "$GITHUB_OUTPUT"
+          # Validate: small, JSON, from the expected service. Content is data, never executed.
+          python3 - "$code" <<'PY'
+          import json, sys, os
+          code = sys.argv[1]
+          size = os.path.getsize("think.json") if os.path.exists("think.json") else 0
+          ok, status, rec = False, "error", {}
+          if 0 < size <= 50_000:
+              try:
+                  rec = json.load(open("think.json"))
+                  if isinstance(rec, dict):
+                      ok = rec.get("ok") is True and rec.get("service") == "echo-bot-claude"
+                      status = "ok" if ok else str(rec.get("reason", "unknown"))[:40]
+              except Exception:
+                  status = "invalid_json"
+          else:
+              status = "empty_or_oversized"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"ok={'true' if ok else 'false'}\nstatus={status}\n")
+          print(f"http={code} status={status}")
+          PY
+
+      - name: Commit result and log to the runs branch
+        shell: bash
+        env:
+          HTTP: ${{ steps.think.outputs.http }}
+          OK: ${{ steps.think.outputs.ok }}
+          STATUS: ${{ steps.think.outputs.status }}
+        run: |
+          set -euo pipefail
+          stamp="$(date -u +%Y-%m-%dT%H%M%SZ)"
+          day="${stamp:0:10}"
+          git init -q runs && cd runs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "$DEST_URL"
+          if git fetch -q --depth 1 origin "$RUNS_BRANCH" 2>/dev/null; then
+            git checkout -q -B "$RUNS_BRANCH" FETCH_HEAD
+          else
+            git checkout -q --orphan "$RUNS_BRANCH"
+            printf '# bot-claude-runs\n\nResults of echo-bot-claude runs, committed by the `echo-bot-claude run` workflow. Model output is unverified data (Contract 000 §15.2).\n\n| Run (UTC) | HTTP | Status | File |\n|---|---|---|---|\n' > RUN-LOG.md
+          fi
+          file="-"
+          if [ "$OK" = "true" ]; then
+            mkdir -p "runs/$day"
+            file="runs/$day/$stamp.json"
+            cp ../think.json "$file"
+          fi
+          echo "| $stamp | $HTTP | $STATUS | $file |" >> RUN-LOG.md
+          git add -A
+          git commit -q -m "bot run $stamp: $STATUS"
+          git push -q origin "HEAD:refs/heads/$RUNS_BRANCH"
+          echo "Committed $stamp ($STATUS) to $RUNS_BRANCH"
