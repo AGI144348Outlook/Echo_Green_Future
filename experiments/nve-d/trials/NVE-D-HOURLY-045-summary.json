@@ -1,0 +1,114 @@
+{
+  "cycle": "NVE-D-HOURLY-045",
+  "date_utc": "2026-10-10",
+  "scope": "finite DVE only; EVE/NVE virtues not tested",
+  "source": "mayig/indus-valley-script-corpus pinned lossy projection",
+  "source_tree_sha": "ad2f1e218a34b8c33c57de0d6cb8d99272765bbb",
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "source_artifacts": 48,
+  "source_original_sign_occurrences": 316,
+  "distinct_ids": 101,
+  "groups_completed": 384,
+  "rows_completed": 1920,
+  "independent_seeds": [
+    23,
+    41,
+    83,
+    167
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "context_depths": [
+    1,
+    3,
+    6
+  ],
+  "arms": [
+    "forward",
+    "reverse",
+    "within_artifact_shuffle"
+  ],
+  "holdouts": [
+    "leave_one",
+    "opposite_filename_block"
+  ],
+  "training_draws_total": 11520000,
+  "context_count_updates_total": 34560000,
+  "heldout_loss_values": 38400,
+  "main_checkpoints": 8,
+  "independent_oracle_rows": 155,
+  "independent_loss_values": 3100,
+  "replayed_rows": 80,
+  "same_length_corruption_rejected": true,
+  "interrupted_uncheckpointed_rows_excluded": 64,
+  "comparisons": {
+    "forward_vs_reverse_mismatched_depth1": {
+      "0": 0,
+      ">": 1681,
+      "<": 238,
+      "=": 1
+    },
+    "forward_vs_reverse_matched_depth1": {
+      "0": 0,
+      ">": 1221,
+      "<": 699,
+      "=": 0
+    },
+    "forward_vs_shuffle_mismatched_depth1": {
+      "0": 0,
+      ">": 1572,
+      "<": 343,
+      "=": 5
+    },
+    "forward_vs_symmetric_depth1": {
+      "0": 0,
+      ">": 1289,
+      "<": 631,
+      "=": 0
+    },
+    "depth3_vs_depth1_forward": {
+      "0": 0,
+      ">": 894,
+      "<": 1023,
+      "=": 3
+    },
+    "depth6_vs_depth1_forward": {
+      "0": 0,
+      ">": 911,
+      "<": 1006,
+      "=": 3
+    }
+  },
+  "artifact_aggregate_matched_reversal": {
+    "0": 0,
+    ">": 33,
+    "<": 15,
+    "=": 0
+  },
+  "matched_reversal_mean_loss_delta_bits_per_sign": 0.10156710330676774,
+  "matched_reversal_artifact_bootstrap95": [
+    -0.015182815401371313,
+    0.20890803461728805
+  ],
+  "mismatched_reversal_mean_loss_delta_bits_per_sign": 0.9577594241299277,
+  "dfe": {
+    "5": ">",
+    "7": "0",
+    "8": "="
+  },
+  "semantic_validity": "0",
+  "physical_reading_direction": "0",
+  "source_independence": "0",
+  "ledger_sha256": "6fe69c60e1606b9d87f4606b2c65b6cf61460c9c9f910ef5caba79e41aba6c10",
+  "historical_ietf_codex_git_blob": "b8d28481be30b7619296e79ccf5cdc11b2f28c46",
+  "ietf_disclaimer": "Independently authored Infinite Expanse Testing Framework, not Internet Engineering Task Force endorsement",
+  "runner_and_full_ledger_committed": false,
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false
+}
