@@ -1,0 +1,62 @@
+{
+  "cycle": "NVE-D-HOURLY-045",
+  "prior": [
+    "NVE-D-HOURLY-042-summary.json",
+    "NVE-D-HOURLY-043-DFE-summary.json",
+    "NVE-D-HOURLY-044-summary.json",
+    "NVE-D-HOURLY-044-DFE-summary.json"
+  ],
+  "events": [
+    {
+      "event_id": "NVE-D-045-DFE-5",
+      "stage": 5,
+      "evaluation": ">",
+      "candidate": "forward matched source-array order",
+      "reference": "reversed training, forward heldout (mismatched)",
+      "criterion": "greater predictive adequacy = lower heldout log2 loss",
+      "evidence": "1681 >, 238 <, 1 = of 1920 rows; 43/48 artifact mean comparisons >",
+      "competing_evidence": "matched reversal 1221 >, 699 <; bootstrap 95% includes zero",
+      "assumptions_challenged": [
+        "training/evaluation orientation mismatch",
+        "stored array order is verified physical reading direction"
+      ]
+    },
+    {
+      "event_id": "NVE-D-045-DFE-7",
+      "stage": 7,
+      "evaluation": "0",
+      "candidate": "physical reading direction and independent semantic inference",
+      "reference": "matched reversal plus source convention audit",
+      "criterion": "matched control, artifact-level uncertainty, independent provenance",
+      "evidence": "mean matched forward advantage 0.101567 bits/sign, descriptive artifact bootstrap [-0.015183,0.208908]; source README records left-to-right but describes right-to-left reading",
+      "contradictions": [
+        "Cycle 044 original-versus-shuffled conditional predictive advantage remains",
+        "Cycle 041 deeper contexts often helped historical byte text, but 042-045 mixed or adverse on sparse grapheme IDs"
+      ],
+      "auditor_self_challenges": [
+        "single-project artifact bootstrap not independent archaeology",
+        "source convention is not independently verified physical direction",
+        "separate digital transcription is not necessarily independent archaeological provenance"
+      ]
+    },
+    {
+      "event_id": "NVE-D-045-DFE-8",
+      "stage": 8,
+      "evaluation": "=",
+      "candidate": "matched-orientation frozen-tau64 experimental revision",
+      "reference": "independent probability oracle and hash checkpoint protocol",
+      "criterion": "finite reproducibility and same-length corrupt-prefix rejection",
+      "evidence": "155 independent rows, 3100 loss values, 8 main SHA256 checkpoints, 80 replay rows byte equal; corrupt prefix rejected",
+      "unresolved": [
+        "independent transcription test not run",
+        "physical orientation and semantics remain 0",
+        "EVE/NVE virtue criteria require separate research"
+      ]
+    }
+  ],
+  "source_projection_sha256": "a45de3e7a94d0bf4ca365a840d1dfcfc4031173e6f6cb6386ef0abbc62efb4e6",
+  "full_dfe_in_downloadable_package": true,
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false
+}
