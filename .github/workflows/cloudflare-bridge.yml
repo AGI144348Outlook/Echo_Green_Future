@@ -143,7 +143,7 @@ jobs:
           source = {"chatgpt": "bridge/worker.mjs", "claude": "bridge/claude/worker.mjs"}[p]
           # Bindings: Workers AI for everyone, plus each participant's own state store.
           # Store IDs are fixed here, so an operation file can never point at someone else's.
-          state_kv = {"claude": "7b0896fc8f314d438abfbdb0db6c8268"}
+          state_kv = {"claude": "7b0896fc8f314d438abfbdb0db6c8268", "chatgpt": "3116aea1f9f24d07813dcd566502f902"}
           bindings = [{"type": "ai", "name": "AI"}]
           if p in state_kv:
               bindings.append({"type": "kv_namespace", "name": "STATE", "namespace_id": state_kv[p]})
