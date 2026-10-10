@@ -1,0 +1,267 @@
+{
+  "cycle": "NVE-D-HOURLY-047",
+  "date_utc": "2026-10-10",
+  "source_blob": "6b9c3424e6c6d6f64ca5ac47837bf350248953db",
+  "runner_git_blob": "946aadc29d931e8ed4b085a011cf0c9294401ea9",
+  "original": {
+    "cycle": "NVE-D-HOURLY-047",
+    "source": "ShaktiOSindia/indus-sign-regimes-deposit",
+    "source_blob": "6b9c3424e6c6d6f64ca5ac47837bf350248953db",
+    "original_rows": 5704,
+    "analyzable_rows": 5536,
+    "regimes": [
+      "sequence_group",
+      "site_block",
+      "tablet_block",
+      "direction_block"
+    ],
+    "seeds": [
+      23,
+      41,
+      83,
+      167
+    ],
+    "budgets": [
+      250,
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "depths": [
+      0,
+      1,
+      3,
+      6
+    ],
+    "configurations": 80,
+    "model_evaluations": 560,
+    "training_draws": 160000,
+    "training_tokens": 601502,
+    "comparisons": {
+      "adjacent_vs_unigram": {
+        "0": 0,
+        "<": 0,
+        ">": 80,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        "<": 13,
+        ">": 67,
+        "=": 0
+      },
+      "depth6_vs_adjacent": {
+        "0": 0,
+        "<": 13,
+        ">": 67,
+        "=": 0
+      },
+      "direction_vs_adjacent": {
+        "0": 0,
+        "<": 47,
+        ">": 13,
+        "=": 20
+      },
+      "forward_vs_matched_reverse": {
+        "0": 0,
+        "<": 21,
+        ">": 59,
+        "=": 0
+      },
+      "forward_vs_shuffle": {
+        "0": 0,
+        "<": 0,
+        ">": 80,
+        "=": 0
+      }
+    },
+    "elapsed_ms": 10680,
+    "checkpoints": 4,
+    "checkpoint_hash_kind": "FNV32 diagnostic only; Git blob provides content integrity after commit",
+    "source_semantics": "opaque sign IDs; no cross-corpus ID mapping"
+  },
+  "revision": {
+    "procedure": "test unique exact-sequence weighting; train unchanged",
+    "configurations": 80,
+    "model_evaluations": 560,
+    "comparisons": {
+      "adjacent_vs_unigram": {
+        "0": 0,
+        "<": 0,
+        ">": 80,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        "<": 8,
+        ">": 72,
+        "=": 0
+      },
+      "depth6_vs_adjacent": {
+        "0": 0,
+        "<": 9,
+        ">": 71,
+        "=": 0
+      },
+      "direction_vs_adjacent": {
+        "0": 0,
+        "<": 49,
+        ">": 11,
+        "=": 20
+      },
+      "forward_vs_matched_reverse": {
+        "0": 0,
+        "<": 35,
+        ">": 45,
+        "=": 0
+      },
+      "forward_vs_shuffle": {
+        "0": 0,
+        "<": 0,
+        ">": 80,
+        "=": 0
+      }
+    },
+    "regime_details": {
+      "sequence_group": {
+        "n": 20,
+        "avg_test_tokens": 2520,
+        "depth3": {
+          "0": 0,
+          "<": 0,
+          ">": 20,
+          "=": 0
+        },
+        "depth6": {
+          "0": 0,
+          "<": 0,
+          ">": 20,
+          "=": 0
+        }
+      },
+      "site_block": {
+        "n": 20,
+        "avg_test_tokens": 1515,
+        "depth3": {
+          "0": 0,
+          "<": 0,
+          ">": 20,
+          "=": 0
+        },
+        "depth6": {
+          "0": 0,
+          "<": 0,
+          ">": 20,
+          "=": 0
+        }
+      },
+      "tablet_block": {
+        "n": 20,
+        "avg_test_tokens": 2777,
+        "depth3": {
+          "0": 0,
+          "<": 4,
+          ">": 16,
+          "=": 0
+        },
+        "depth6": {
+          "0": 0,
+          "<": 4,
+          ">": 16,
+          "=": 0
+        }
+      },
+      "direction_block": {
+        "n": 20,
+        "avg_test_tokens": 474,
+        "depth3": {
+          "0": 0,
+          "<": 4,
+          ">": 16,
+          "=": 0
+        },
+        "depth6": {
+          "0": 0,
+          "<": 5,
+          ">": 15,
+          "=": 0
+        }
+      }
+    },
+    "depth3_relational_changes": 5
+  },
+  "original_regime_details": {
+    "sequence_group": {
+      "n": 20,
+      "avg_test_tokens": 3576.25,
+      "depth3": {
+        "0": 0,
+        "<": 0,
+        ">": 20,
+        "=": 0
+      },
+      "depth6": {
+        "0": 0,
+        "<": 0,
+        ">": 20,
+        "=": 0
+      }
+    },
+    "site_block": {
+      "n": 20,
+      "avg_test_tokens": 1828,
+      "depth3": {
+        "0": 0,
+        "<": 0,
+        ">": 20,
+        "=": 0
+      },
+      "depth6": {
+        "0": 0,
+        "<": 0,
+        ">": 20,
+        "=": 0
+      }
+    },
+    "tablet_block": {
+      "n": 20,
+      "avg_test_tokens": 6374,
+      "depth3": {
+        "0": 0,
+        "<": 4,
+        ">": 16,
+        "=": 0
+      },
+      "depth6": {
+        "0": 0,
+        "<": 4,
+        ">": 16,
+        "=": 0
+      }
+    },
+    "direction_block": {
+      "n": 20,
+      "avg_test_tokens": 623,
+      "depth3": {
+        "0": 0,
+        "<": 9,
+        ">": 11,
+        "=": 0
+      },
+      "depth6": {
+        "0": 0,
+        "<": 9,
+        ">": 11,
+        "=": 0
+      }
+    }
+  },
+  "limitations": [
+    "Same digital compilation; deduplication of transcription strings does not establish independent archaeological objects.",
+    "The original removed_overlap field combines excluded metadata categories with exact-overlap removal in direction_block; do not interpret as pure overlap.",
+    "Depth differences from Cycle 046 cannot be attributed to one cause without exact runner-level replay.",
+    "FNV32 checkpoints in Shakti runner are diagnostic, not cryptographic or durable; original/revision ledgers not committed.",
+    "No sign-system crosswalk verified."
+  ]
+}
