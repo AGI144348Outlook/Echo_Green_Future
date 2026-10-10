@@ -1,0 +1,100 @@
+[
+  {
+    "event_id": "047-5",
+    "cycle_id": "NVE-D-HOURLY-047",
+    "stage": 5,
+    "prior_evaluation_refs": [
+      "NVE-D-HOURLY-041",
+      "NVE-D-HOURLY-042",
+      "NVE-D-HOURLY-043",
+      "NVE-D-HOURLY-046"
+    ],
+    "candidate_ref": "Shakti depth3 vs adjacent; mayig adjacent vs unigram",
+    "reference_ref": "Shakti adjacent; mayig unigram",
+    "criterion_hypothesis": "greater predictive adequacy = lower heldout log2 loss within each corpus",
+    "evaluation": "0",
+    "evidence_refs": [
+      "047-shakti-summary",
+      "047-mayig-local-ledger"
+    ],
+    "assumptions_challenged": [
+      "different corpora and evaluators are not directly ordered"
+    ],
+    "contradictions": [
+      "Shakti depth3 > adjacent in 67/80; Cycle046 depth3 < adjacent in 78/80",
+      "mayig adjacent < unigram in 455/640; Shakti adjacent > unigram in 80/80"
+    ],
+    "revision_refs": [
+      "047-8"
+    ],
+    "unresolved_questions": [
+      "why model/partition effects differ"
+    ]
+  },
+  {
+    "event_id": "047-7",
+    "cycle_id": "NVE-D-HOURLY-047",
+    "stage": 7,
+    "prior_evaluation_refs": [
+      "047-5",
+      "NVE-D-HOURLY-045",
+      "NVE-D-HOURLY-046"
+    ],
+    "candidate_ref": "auditor cross-corpus independence claim",
+    "reference_ref": "source-object provenance and verified sign crosswalk",
+    "criterion_hypothesis": "archaeological object identity and sign-system correspondence independently authenticated",
+    "evaluation": "0",
+    "evidence_refs": [
+      "Shakti corpus Git blob 6b9c3424e6c6d6f64ca5ac47837bf350248953db",
+      "mayig tree ad2f1e218a34b8c33c57de0d6cb8d99272765bbb"
+    ],
+    "assumptions_challenged": [
+      "different digital repositories imply independent archaeological objects",
+      "same sign ID notation across datasets implies equivalence",
+      "metadata-block exclusion proves object independence",
+      "FNV32 is cryptographic checkpointing"
+    ],
+    "contradictions": [
+      "direction_block removed_overlap counts excluded direction categories, not only duplicate sequences"
+    ],
+    "revision_refs": [
+      "047-8"
+    ],
+    "unresolved_questions": [
+      "M-1 vs M-1A object concordance unverified",
+      "standalone RFC-0031 and RFC-0033 not found"
+    ]
+  },
+  {
+    "event_id": "047-8",
+    "cycle_id": "NVE-D-HOURLY-047",
+    "stage": 8,
+    "prior_evaluation_refs": [
+      "047-5",
+      "047-7"
+    ],
+    "candidate_ref": "unique-test-sequence Shakti revision and durable mayig replay",
+    "reference_ref": "original Shakti test weighting and mayig ledger",
+    "criterion_hypothesis": "SHA256 checkpoint verification and byte-identical recovery for local pilot",
+    "evaluation": "=",
+    "evidence_refs": [
+      "14/14 local mayig SHA256 checkpoint prefixes",
+      "11/11 independent unigram/bigram oracle rows",
+      "12/12 replayed records"
+    ],
+    "assumptions_challenged": [
+      "deduplicated strings prove independent objects"
+    ],
+    "contradictions": [
+      "Shakti depth3 comparison changes on five of 80 records under unique-test-sequence weighting (∆)"
+    ],
+    "revision_refs": [
+      "047-mayig-local-runner",
+      "047-shakti-summary"
+    ],
+    "unresolved_questions": [
+      "Shakti revised ledger not persisted",
+      "full Shakti independent oracle outstanding"
+    ]
+  }
+]
