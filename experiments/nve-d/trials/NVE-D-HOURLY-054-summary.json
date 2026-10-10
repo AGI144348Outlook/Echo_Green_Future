@@ -1,0 +1,99 @@
+{
+  "cycle": "NVE-D-HOURLY-054",
+  "date_utc": "2026-10-10",
+  "branch": "library-source-transcriptions",
+  "protocol": "054-causal-two-part-code-v1",
+  "main_configurations": 90,
+  "revision_configurations": 90,
+  "model_fits": 900,
+  "loss_values": 36000,
+  "training_draw_applications": 3375000,
+  "training_token_occurrences": 22221120,
+  "seeds": [
+    23,
+    41,
+    83,
+    167,
+    271,
+    359
+  ],
+  "budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "prediction_depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "heldout_artifacts": 25,
+  "heldout_occurrences": 153,
+  "known_occurrences": 121,
+  "unknown_occurrences": 32,
+  "distinct_unknown_identifiers": 24,
+  "global_first": 24,
+  "global_repeat": 8,
+  "artifact_first": 32,
+  "artifact_repeat": 0,
+  "model_families": [
+    "unigram",
+    "directed",
+    "lagged",
+    "unordered",
+    "position"
+  ],
+  "modes": [
+    "frozen",
+    "artifact",
+    "global",
+    "known_only",
+    "novel_only"
+  ],
+  "external_id_codebook_capacities": [
+    1000,
+    10000
+  ],
+  "directed_depth1_global_vs_artifact_1000": {
+    "0": 0,
+    "<": 0,
+    ">": 90,
+    "=": 0
+  },
+  "directed_depth1_global_vs_known_only_1000": {
+    "0": 0,
+    "<": 0,
+    ">": 90,
+    "=": 0
+  },
+  "directed_depth1_global_vs_novel_only_1000": {
+    "0": 0,
+    "<": 0,
+    ">": 90,
+    "=": 0
+  },
+  "main_ledger_sha256": "2315fd8a3e719a122ddd85a0e1df6ab0eb9fdf9458812f5797db8043440c3c58",
+  "revision_ledger_sha256": "0453d0791d25c9b247fb4d1f09b223b563bbd88f528ce413393f7b16bbf954ec",
+  "finite_dve_nodes": 180,
+  "finite_dve_primary_generations": 675000,
+  "finite_dve_replay_generations": 675000,
+  "verified_sha256_checkpoints": 24,
+  "independent_arithmetic_checks": 144,
+  "checkpoint_replayed_records": 20,
+  "analytic_codebook_shift_checks": 5400,
+  "source_independence": "0",
+  "semantic_validity": "0",
+  "dfe": {
+    "step5": ">",
+    "step7": "0",
+    "step8": "="
+  },
+  "limits": "Same 25 artifacts across seeds/budgets; external fixed-width code is evaluator-provided, not exact unknown-ID recognition; no archaeological crosswalk; finite DVE fixture does not establish EVE/NVE virtues.",
+  "full_executable_and_ledgers_committed": false,
+  "protected_registries_modified": false,
+  "merged": false,
+  "deployed": false
+}
