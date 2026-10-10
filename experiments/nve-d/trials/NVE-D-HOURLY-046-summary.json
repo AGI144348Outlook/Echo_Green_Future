@@ -1,0 +1,199 @@
+{
+  "cycle": "NVE-D-HOURLY-046",
+  "date_utc": "2026-10-10",
+  "source_repo": "ShaktiOSindia/indus-sign-regimes-deposit",
+  "source_blob_git_sha": "6b9c3424e6c6d6f64ca5ac47837bf350248953db",
+  "source_sha256_from_upstream_readme_not_independently_recomputed": "345241b13fedada87b4783c24cd241123491bbd7edaf5bf636f9cdb36c01da68",
+  "original_rows": 5704,
+  "analyzable_rows": 5536,
+  "distinct_signs": 713,
+  "independent_seeds": [
+    23,
+    41,
+    83,
+    167
+  ],
+  "training_budgets": [
+    250,
+    1000,
+    2500,
+    5000,
+    10000
+  ],
+  "context_depths": [
+    0,
+    1,
+    3,
+    6
+  ],
+  "regimes": [
+    "sequence_group",
+    "site_block",
+    "tablet_block",
+    "seal_block"
+  ],
+  "arms": [
+    "unigram",
+    "adjacent_tau64",
+    "depth3_tau64",
+    "depth6_tau64",
+    "adjacent_tau4",
+    "reverse_matched_tau64",
+    "shuffle_training_tau64",
+    "skip2_tau64"
+  ],
+  "configuration_groups": 80,
+  "model_evaluations": 640,
+  "training_draws": 160000,
+  "training_sign_counter_updates": 1543632,
+  "checkpoints": 80,
+  "comparisons": {
+    "adjacent_tau64_vs_unigram": {
+      "0": 0,
+      ">": 80,
+      "<": 0,
+      "=": 0
+    },
+    "depth3_tau64_vs_adjacent_tau64": {
+      "0": 0,
+      ">": 2,
+      "<": 78,
+      "=": 0
+    },
+    "depth6_tau64_vs_adjacent_tau64": {
+      "0": 0,
+      ">": 0,
+      "<": 80,
+      "=": 0
+    },
+    "adjacent_tau4_vs_adjacent_tau64": {
+      "0": 0,
+      ">": 0,
+      "<": 80,
+      "=": 0
+    },
+    "adjacent_tau64_vs_reverse_matched_tau64": {
+      "0": 0,
+      ">": 72,
+      "<": 8,
+      "=": 0
+    },
+    "adjacent_tau64_vs_shuffle_training_tau64": {
+      "0": 0,
+      ">": 80,
+      "<": 0,
+      "=": 0
+    },
+    "skip2_tau64_vs_adjacent_tau64": {
+      "0": 0,
+      ">": 0,
+      "<": 80,
+      "=": 0
+    }
+  },
+  "regimesSummary": {
+    "sequence_group": {
+      "train_rows": 4515,
+      "test_rows": 1021,
+      "test_tokens": 3091,
+      "duplicate_test_rows": 0,
+      "adjacent_vs_unigram": {
+        "0": 0,
+        ">": 20,
+        "<": 0,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        ">": 0,
+        "<": 20,
+        "=": 0
+      },
+      "reverse_vs_forward": {
+        "0": 0,
+        ">": 4,
+        "<": 16,
+        "=": 0
+      }
+    },
+    "site_block": {
+      "train_rows": 4909,
+      "test_rows": 627,
+      "test_tokens": 1828,
+      "duplicate_test_rows": 222,
+      "adjacent_vs_unigram": {
+        "0": 0,
+        ">": 20,
+        "<": 0,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        ">": 0,
+        "<": 20,
+        "=": 0
+      },
+      "reverse_vs_forward": {
+        "0": 0,
+        ">": 4,
+        "<": 16,
+        "=": 0
+      }
+    },
+    "tablet_block": {
+      "train_rows": 4638,
+      "test_rows": 898,
+      "test_tokens": 2071,
+      "duplicate_test_rows": 586,
+      "adjacent_vs_unigram": {
+        "0": 0,
+        ">": 20,
+        "<": 0,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        ">": 2,
+        "<": 18,
+        "=": 0
+      },
+      "reverse_vs_forward": {
+        "0": 0,
+        ">": 0,
+        "<": 20,
+        "=": 0
+      }
+    },
+    "seal_block": {
+      "train_rows": 3778,
+      "test_rows": 1758,
+      "test_tokens": 7425,
+      "duplicate_test_rows": 263,
+      "adjacent_vs_unigram": {
+        "0": 0,
+        ">": 20,
+        "<": 0,
+        "=": 0
+      },
+      "depth3_vs_adjacent": {
+        "0": 0,
+        ">": 0,
+        "<": 20,
+        "=": 0
+      },
+      "reverse_vs_forward": {
+        "0": 0,
+        ">": 0,
+        "<": 20,
+        "=": 0
+      }
+    }
+  },
+  "elapsed_ms": 5897,
+  "scope": "finite DVE sequence prediction; not EVE/NVE virtues or semantic decipherment",
+  "cross_source_sign_mapping": "0",
+  "independent_archaeological_provenance": "0",
+  "protected_registry_mutations": 0,
+  "merged": false,
+  "deployed": false
+}
