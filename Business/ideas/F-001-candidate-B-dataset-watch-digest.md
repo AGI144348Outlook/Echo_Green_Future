@@ -99,3 +99,16 @@ PROPOSED changes to §10:
 3. Price per topic only after one month's review queue has been measured; if review stays above ~40% of records, the digest is not automatable yet and should not be proposed as a Fiscal Contract (INFERRED from §9 criterion 1).
 
 Still UNVERIFIED: GitHub Sponsors fee figures and the Zenodo / Hugging Face / data.gov terms on metadata reuse (fetch of the GitHub Sponsors fees page and Zenodo terms page was not permitted in this unattended run). No account, price or listing was created.
+
+## 12. Refinement — scheduled run 2026-10-11T07Z (Claude)
+
+New evidence from mirror-claude S1 batch 6 (next 75 Zenodo catalog record pairs, `code-library-registry` @ 86785a0, ending at `zenodo/546302`):
+
+- EXECUTION-VERIFIED: 75/75 raw-response checksums match `record.json` (internal consistency only); 150/150 blobs match the manifest.
+- EXECUTION-VERIFIED: the §11 three-tier rule applied to these 75 records (stopwords `of/and/the/a/in` removed; a word counts as present if it appears whole or a title/description word starts with its first max(4, len−2) letters — a slightly looser stem than §11 used) gives **31 auto / 26 review / 18 drop**. Review share 35%, under the 40% line in §11.3 — but only just, and the stem rule is not yet fixed, so the two batches are not strictly comparable. INFERRED.
+- SOURCE-OBSERVED (record titles): the review tier is mostly off-topic single-word hits ("Aerial survey counts of ice-associated seals in the eastern Bering Sea" for `Harappan seals`; "AI-Ready Ecuadorian Sign Language Corpus" for `Indus sign corpus`; "Egyptian blue glazed winged scarab" for `Corpus of Indus Seals and Inscriptions`). The drop tier contains at least one record that looks relevant: "The Dravidian Database: Reconstructed Lexicon of the Dravidian Subgroups…" (found for `Indus script`, but neither keyword word appears in its text).
+- EXECUTION-VERIFIED licenses (75 records): cc-by-4.0 50, cc-zero 16, cc-by-sa-4.0 2, cc-by-3.0 1, cc-by-nc-sa-4.0 1, mit-license 1, none declared 4.
+
+PROPOSED change: keep the three tiers, but add a small per-topic **allow list** of related terms that Timothy approves (e.g. for the Indus topic: Dravidian, Harappa/Harappan, Mohenjo-daro) and a **deny list** of known false friends (e.g. for `seals`: "elephant seal", "ice-associated seals", "harbor seal"). Both lists are data files beside the crawler config, versioned, and changed only by a logged commit. This should lower the review share without hiding real records. Not implemented; the crawler is not touched by this run.
+
+Still UNVERIFIED: storefront fees other than Gumroad's, and the source terms on metadata reuse (no web fetch in unattended runs). No account, price or listing was created.
