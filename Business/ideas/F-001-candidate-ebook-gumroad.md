@@ -106,3 +106,29 @@ The draft becomes a candidate Fiscal Contract for Timothy's review only when: st
 1. Where is the RFC ebook series, and do you hold full rights to sell it?
 2. Gumroad, or another storefront you prefer?
 3. Price, bundle, and refund window.
+
+## 11. Refinement — scheduled run 2026-10-11T12Z (Claude): where the RFC series is referenced
+
+The §0 blocker searched three branches by filename. This run searched **all 37 branches** of `Echo_Green_Future` (paths excluding any Testament material) by filename (`rfc`, `ebook`, `manuscript`, `.epub`, `.mobi`, `vol<n>`) and by content (`RFC series`, `RFC-<number>`).
+
+- EXECUTION-VERIFIED: no manuscript file, EPUB, MOBI or volume file exists on any branch. The only filename hits outside "notebook" false positives are these F-001 drafts.
+- SOURCE-OBSERVED: `genesis-documentary:docs/UPDATE_FOR_GPT.md` (last changed f553182, 2026-09-22), line 85: "**Unicorn Estate (210 pages, RFC-0000 through RFC-0014)** — the RFC series." It quotes two normative lines from it and names RFC-0004 (Temporal Model) and RFC-0005 (Collective Agency). The same file sits on `algebra`, `autonomous-agency`, `echo-recess-experiment`, `geosensory-crawler-experiment` and `resh-lattice-agency`.
+- SOURCE-OBSERVED: higher RFC numbers are cited elsewhere: `code-library-registry:code_library_registry/assessments/CLR-0040_…md` gives its source as "User upload mashet_eve_v3.py, RFC-0031 / RFC-0033 v1.0"; `algebra:pwa/docs/governor-candidate-agentic-algorithms.md` points to "RFC-0000 from Section 1 onward" as the Dual-Order OS foundational RFC.
+- INFERRED: the series has at least one compiled 210-page document ("Unicorn Estate", RFC-0000…0014) and continues to at least RFC-0033, but the text itself lives outside this repository (uploads to chat sessions, per CLR-0040). Nothing above shows who holds rights to it, whether it is finished, or whether Timothy wants it public; those are his answers, not inferences.
+
+### 11.1 Product shape that follows, if Timothy confirms (PROPOSED)
+
+| Option | Contents | Notes |
+|---|---|---|
+| A1 — one book | "Unicorn Estate" as compiled (RFC-0000…0014, ~210 pages) | Simplest: one listing, one build, one checksum set. Matches the only compiled form observed. |
+| A2 — volumes | Vol. 1 = RFC-0000…0014 (Unicorn Estate); later volumes = RFC-0015 onward as they are finished | Each volume through §9.1 steps 2–6 separately; bundle once ≥2 volumes pass. |
+
+Price at the §4 placeholder of $9 per volume nets $7.60 per direct sale (same INFERRED arithmetic, fees still partly UNVERIFIED per §9.3). A 210-page technical specification may justify a higher price; that is Timothy's call, not a proposal here.
+
+### 11.2 One more pre-sale check this adds (PROPOSED)
+
+The RFC text quotes or builds on outside material (BDB lexicon roots, WordNet categories per the same `UPDATE_FOR_GPT.md`). Before sale, the editorial step (§9.1 step 2) lists every quoted third-party passage and dataset with its license, so the listing never sells material Timothy does not have rights to. Short citations are usually fine; reproduced tables or lexicon extracts need a license check. UNVERIFIED until the text is in hand.
+
+Questions added for Timothy (§10): 4. Is "Unicorn Estate" (RFC-0000–0014) the series you meant, and where is its current text? 5. Single book (A1) or volumes (A2)?
+
+No account, price, listing or contact was created this run.
