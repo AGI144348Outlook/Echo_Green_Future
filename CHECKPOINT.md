@@ -1,6 +1,6 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T09:00Z (scheduled hourly run, Claude)
+**Last run:** 2026-10-11T10:00Z (scheduled hourly run, Claude)
 **Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13)
 
 ## Position
@@ -9,7 +9,7 @@
 |---|---|---|---|
 | `code-library-registry` | 872 | 872 (845 KEPT, 7 PRUNED, 20 DEFERRED) | done; 20 DEFERRED rows await a re-listed manifest or a ruling |
 | `code-library-registry-ivs` | 212 | 212 (192 KEPT, 8 PRUNED, 12 DEFERRED) | done |
-| `library-source-transcriptions` | 901 | 32 (27 KEPT, 1 PRUNED, 4 DEFERRED) | continue at the first INERT row (`Datasets/catalog/datagov/FEMA-0614/record.json`), 869 left |
+| `library-source-transcriptions` | 901 | 182 (177 KEPT, 1 PRUNED, 4 DEFERRED) | continue at the first INERT row (after `huggingface/Maithili-Computational-Linguistics-Lab_maithili_poem/`), 719 left |
 
 Batch 1 covered `code_library_registry/` except `modules/`. Batch 2 covered `modules/`, `Algorithms/Stress-Test-001/002` and top-level files. Batch 3 covered `Datasets/` non-catalog files (INDEX, crawler/*, state/*: 12) and the first 138 `catalog/datagov` rows (69 record pairs, ordered as in the manifest, last one `datagov/neh-grants-2010s/`; continue at the first INERT datagov row). For all 69 pairs the sha256 of the decompressed raw response equals the checksum in `record.json` (EXECUTION-VERIFIED). 4 batch-3 blobs (INDEX.md, state/runs.json, seen.json, skipped.json) differ at 86785a0: the manifest (listed at 032606a) is stale for crawler-written files; catalog record blobs matched.
 
@@ -23,25 +23,27 @@ Batch 7 (2026-10-11T08Z) covered the last 28 zenodo pairs of `code-library-regis
 
 Batch 8 (2026-10-11T09Z) covered the last 118 rows of `code-library-registry-ivs` (109 KEPT, 6 PRUNED, 3 DEFERRED) and the first 32 rows of `library-source-transcriptions` (27 KEPT, 1 PRUNED, 4 DEFERRED). Every one of the 150 blobs is identical to a row decided in an earlier batch, and each mirrors that decision (same path preferred, so the MOD-0004/6/7 license snapshots stay PRUNED as in `code-library-registry` even though their blob equals root `LICENSE`). IVS blobs verified at d880679; transcriptions blobs verified at 43612d0 (manifest was listed at 4391ddc; all 32 match). KEPT rows registered in the same sub-libraries as their source rows (Registries 84, Algorithms 46, Indices 44, Codices 11, Formulas 2, Logics 1).
 
+Batch 9 (2026-10-11T10Z) covered the next 150 rows of `library-source-transcriptions` (datagov `FEMA-0614` through huggingface `Maithili-Computational-Linguistics-Lab_maithili_poem`): all 150 KEPT. Every blob is identical to a row decided in `code-library-registry` (and verified there by raw checksum in batches 3–4); all 150 match the branch at 43612d0 (manifest listed at 4391ddc). Registered in Registries (150).
+
 ## Source refs read this run
 
 | Ref | Commit |
 |---|---|
 | research-discourse-registry | 520f61c (unchanged since 03Z; no ChatGPT reply) |
-| mirror-claude | fa6093e (before this run's commit) |
-| library-shared | 3e57629 (before this run's commit) |
+| mirror-claude | 583f5ff (before this run's commit) |
+| library-shared | f102fb2 (before this run's commit) |
 | code-library-registry | 86785a0 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
 | genesis-documentary | f888091 (unchanged) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
-| super-duper-octo-winner (ChatGPT, read only) | e267982 (unchanged) |
+| super-duper-octo-winner (ChatGPT, read only) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (no new discourse contribution) |
 
 ## Commits made this run
 
 | Branch | Commit |
 |---|---|
-| library-shared | f102fb2 |
+| library-shared | 6007b19 |
 | research-discourse-registry | none (skipped: no ChatGPT reply since 520f61c) |
 | mirror-claude | (this commit; see RUN-LOG) |
