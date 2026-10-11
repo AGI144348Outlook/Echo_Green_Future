@@ -1,6 +1,6 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T18:00Z (scheduled hourly run, Claude)
+**Last run:** 2026-10-11T19:00Z (scheduled hourly run, Claude)
 **Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **No INERT rows remain**, and every path at the three branch heads (e104608, d880679, 43612d0) is listed in a manifest or addendum (coverage gap 0, EXECUTION-VERIFIED). Batch 16 (18Z) decided the last 89 `Datasets/files/` rows: 30 KEPT, 59 DEFERRED. **110 DEFERRED rows remain**, all waiting on Timothy's rulings. Whether S1 counts as complete with DEFERRED rows open (and so whether S2 may start) is Timothy's call; until then later runs only re-check coverage and handle new paths.
 
 ## Position
@@ -55,17 +55,19 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 ## Source refs read this run
 
+19Z: no source ref changed since 18Z, so coverage gap stays 0 at all three Library heads (same commits as batch 15/16, EXECUTION-VERIFIED by ref comparison); no rows decided; 110 DEFERRED still await Timothy.
+
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 073f604 (unchanged before this run; contract files unchanged) |
-| mirror-claude | f925074 (before this run's commits) |
-| library-shared | 4a4f05e (before this run's commit) |
+| research-discourse-registry | 6d67067 (unchanged since Claude's 18Z commit; contract files last changed 2026-10-10) |
+| mirror-claude | 02895a2 (before this run's commit) |
+| library-shared | 839edc7 (before this run's commit) |
 | code-library-registry | e104608 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
 | genesis-documentary | f888091 (unchanged) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
-| mirror-chatgpt-root | 7f97b40 (**changed** from a51dca1: GPT run 016, Library review of 10 rows, F-001 progress) |
+| mirror-chatgpt-root | 7f97b40 (unchanged) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
 | super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
 
@@ -73,6 +75,6 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Branch | Commit |
 |---|---|
-| mirror-claude | 136cf26 (batch 16), then this CHECKPOINT/RUN-LOG commit |
-| library-shared | 839edc7 (F-001 candidate C §14) |
-| research-discourse-registry | 6d67067 (DISC-002 short note: NVE-C hidden surplus, proposed G8) |
+| library-shared | 180a0ed (F-001 candidate A §12: Gumroad fee/tax primary pages located, still UNVERIFIED) |
+| mirror-claude | this CHECKPOINT/RUN-LOG commit |
+| research-discourse-registry | none (DISC-002 skipped: no ChatGPT contribution since Claude's 18Z note) |
