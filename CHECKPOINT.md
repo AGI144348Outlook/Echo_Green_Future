@@ -1,7 +1,7 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T15:00Z (scheduled hourly run, Claude)
-**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **All INERT rows in the three Library manifests are now decided (batch 14).** S1 is not closed: 51 DEFERRED rows and the batch-8 double registrations (below) remain.
+**Last run:** 2026-10-11T16:00Z (scheduled hourly run, Claude)
+**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **All INERT rows in the three Library manifests are now decided (batch 14).** S1 is not closed: 51 DEFERRED rows remain (batch-8 double registrations corrected 16Z, below).
 
 ## Position
 
@@ -37,9 +37,9 @@ Batch 14 (2026-10-11T15Z) covered the last 119 rows of `library-source-transcrip
 
 Totals (EXECUTION-VERIFIED from the three manifests): 1,985 rows; 1,912 KEPT, 22 PRUNED, 51 DEFERRED; 0 INERT.
 
-**Defect found this run (not yet fixed):** 51 (branch, path) pairs from batch 8 (09Z; 42 `code-library-registry-ivs`, 9 `library-source-transcriptions` Stress-Test rows) are registered as a primary row in two sub-libraries each, instead of one primary plus an `xref-from:` row. Next step: a correction pass that keeps the sub-library of the source row as primary and re-tags the other row `xref-from:` (append-only note in PRUNE-LOG; no row deleted).
+**Batch-8 double registrations — corrected 2026-10-11T16Z.** 51 (branch, path) pairs (42 `code-library-registry-ivs`, 9 `library-source-transcriptions`) were primary in two sub-libraries (one pair in three). The sub-library where the matching `code-library-registry` row is primary stayed primary; 52 other rows re-tagged `xref-from:<primary>` (old cross_ref kept in PRUNE-LOG, append-only; no row deleted, no decision changed). Check (EXECUTION-VERIFIED): 2,030 register rows, 1,912 distinct primaries = 1,912 KEPT, 0 double primaries.
 
-Next S1 work: (1) the batch-8 correction above; (2) the 51 DEFERRED rows, which wait on Timothy's rulings (re-listing stale manifests, Worker/deploy code, crawler state, third-party clone script, licence-unresolved modules). Moving to S2 (Mirroring Sub-Repository) needs S1 judged complete; whether DEFERRED rows block that is a question for Timothy.
+Next S1 work: the 51 DEFERRED rows, which wait on Timothy's rulings (re-listing stale manifests, Worker/deploy code, crawler state, third-party clone script, licence-unresolved modules). Moving to S2 (Mirroring Sub-Repository) needs S1 judged complete; whether DEFERRED rows block that is a question for Timothy.
 
 Look-ahead (corrected): the earlier "28 zenodo pairs left" was wrong; only 14 pairs remained and are now done. The 119 INERT rows left are non-catalog rows; the 46 unique to this branch (`source-transcriptions/`, `experiments/nve-d/`, `registries/mashet-candidates/`, `docs/`, `scripts/`, `source-index/`) are among them and need a real read. Tip: use `git ls-tree -r` without `-l` on this partial clone (`-l` fetches every blob and timed out).
 
@@ -49,15 +49,15 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 520f61c before this run's commit (contract files unchanged; §3, §13, §19 re-read) |
-| mirror-claude | 1db4243 (before this run's commit) |
-| library-shared | a78db19 (before this run's commit) |
+| research-discourse-registry | 073f604 (unchanged since last run's own commit; contract files unchanged) |
+| mirror-claude | 9c586fd (before this run's commit) |
+| library-shared | d96a888 (before this run's commit) |
 | code-library-registry | 86785a0 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
 | genesis-documentary | f888091 (unchanged) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
-| mirror-chatgpt-root | f5c8c1b (first recorded here; GPT run-011 checkpoint, 2026-10-11 12:02Z; cites DISC-002 companion 5c94ccb, already answered) |
+| mirror-chatgpt-root | f5c8c1b (unchanged) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
 | super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
 
@@ -66,5 +66,5 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 | Branch | Commit |
 |---|---|
 | mirror-claude | (this commit; see RUN-LOG) |
-| research-discourse-registry | 073f604 (DISC-002 short note) |
-| library-shared | d96a888 (F-001 candidate C §11) |
+| library-shared | cf62028 (F-001 candidate C §12) |
+| research-discourse-registry | none (DISC-002 skipped: no ChatGPT reply since 520f61c; 15Z short note already stands) |
