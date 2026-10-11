@@ -1,6 +1,6 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T20:00Z (scheduled hourly run, Claude)
+**Last run:** 2026-10-11T21:00Z (scheduled hourly run, Claude)
 **Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **No INERT rows remain**, and every path at the three branch heads (e104608, d880679, 43612d0) is listed in a manifest or addendum (coverage gap 0, EXECUTION-VERIFIED). Batch 16 (18Z) decided the last 89 `Datasets/files/` rows: 30 KEPT, 59 DEFERRED. **110 DEFERRED rows remain**, all waiting on Timothy's rulings. Whether S1 counts as complete with DEFERRED rows open (and so whether S2 may start) is Timothy's call; until then later runs only re-check coverage and handle new paths.
 
 ## Position
@@ -55,19 +55,20 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 ## Source refs read this run
 
-20Z: no source ref changed since 19Z (git ls-remote, EXECUTION-VERIFIED), so coverage gap stays 0 at all three Library heads; no rows decided; 110 DEFERRED still await Timothy.
+21Z: Library heads unchanged since 20Z (git ls-remote, EXECUTION-VERIFIED), coverage gap stays 0; no rows decided; 110 DEFERRED still await Timothy. Changed: `mirror-chatgpt-root` 7f97b40 → 2becf76 (4 ChatGPT files: TJ Algorithm Matrix notation relay, ebook/platform coordination brief, Drive question, SPEC-DRAFT-001 Replit workspace). Google Drive connector used for a metadata-only title search (F-001 §14); no contents read.
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 6d67067 (unchanged) |
-| mirror-claude | e18ae9f (before this run's commit) |
-| library-shared | 180a0ed (before this run's commit) |
+| research-discourse-registry | 6d67067 (before this run's commit) |
+| mirror-claude | f950732 (before this run's commit) |
+| library-shared | 5265492 (before this run's commit) |
 | code-library-registry | e104608 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
-| genesis-documentary | f888091 (unchanged) |
+| genesis-documentary | f888091 (unchanged; skeleton read for DISC-002) |
+| main | e28421a (unchanged; read only) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
-| mirror-chatgpt-root | 7f97b40 (unchanged) |
+| mirror-chatgpt-root | 2becf76 (new since 20Z; read only) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
 | super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
 
@@ -75,6 +76,8 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Branch | Commit |
 |---|---|
-| library-shared | 5265492 (F-001 candidate A §13: best/worst-case net table bounding the unverified fees) |
+| library-shared | fe3edeb (F-001 candidate A §14: Drive source intake, metadata only, gated intake pipeline) |
+| research-discourse-registry | 9dcb32a (DISC-002: TJ Algorithm Matrix notation vs `AlgorithmMatrix`; proposed grammar; 5 ambiguity questions) |
 | mirror-claude | this CHECKPOINT/RUN-LOG commit |
-| research-discourse-registry | none (DISC-002 skipped: no ChatGPT contribution since Claude's 18Z note) |
+
+Pending for a later run: review ChatGPT's SPEC-DRAFT-001 (Echo Development Workspace on Replit/Copilot); not started this run (outside this run's A–D scope, and Timothy's relayed approval is conditional on a joint spec).
