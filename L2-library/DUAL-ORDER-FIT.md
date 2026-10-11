@@ -19,3 +19,9 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 
 ## Next (PROPOSED)
 - Add a `framework` column in a new append-only register version, then generate `Indices/by-framework.tsv` and `Indices/by-source-document.tsv` as derived views.
+
+## Addendum 2026-10-11T23Z (Z02 resh-lattice-agency)
+
+- **Fits:** the A-144/A-145/A-165..A-167 spec docs went to Logics, their code to Algorithms, the two sandbox run records to Registries, consistent with Z01.
+- **Does not fit:** `matrices/echo_algorithm_matrix.json` exists in two different versions (genesis-documentary and resh-lattice-agency, different blobs). dual-order-os keeps one table per kind of part; the Library keeps one row per (branch, path) version, so Matrices now holds two versions of one table. Reconciling them into one table is editing and comes after registration (R3); both carry an A-000 "Governor" slot (DISC-002 / R5).
+
