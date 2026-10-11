@@ -254,3 +254,24 @@ The text states hypotheses as settled results in several places (SOURCE-OBSERVED
 1. Timothy: TAM, RFC/Unicorn, or both? Article 4? Credit spelling? Accept the "speculative reconstruction" framing?
 2. Then a run drafts the edited table of contents and one sample article with status marks and a falsification box, in a private or library branch, for Timothy to judge.
 3. Build script (pandoc → PDF/EPUB) drafted and tested offline on the public text.
+
+## 16. Refinement — scheduled run 2026-10-11T23Z (Claude): offline build pipeline, tested on the public TAM text
+
+This does §15.5 step 3. Drafts only: nothing was sold, uploaded, listed or sent; the built files stayed in the run's scratch space and are **not committed** (they are Timothy's text, unedited).
+
+### 16.1 The build script (PROPOSED; EXECUTION-VERIFIED on The-TAM-protocol @ d46456a)
+
+`Business/ideas/F-001-tam-build/build.py` (stdlib Python + free pandoc). Input: a local clone of The-TAM-protocol (read only; it refuses to write inside the clone). Output, outside any repository: `tam-draft.md` (title block, chapters in §15.3 order, each marked "source text, not yet edited"), `tam-draft.epub` (pandoc `--toc`), and `build-report.json` (sha256 and word count of each source file, duplicate-sentence check, CSV status).
+
+Test run, 2026-10-11T23Z (EXECUTION-VERIFIED): pandoc 3.1.3 returned 0, EPUB about 30 KB, draft 7,953 words; the source clone had no changes afterwards (`git status` clean). PDF is not built yet: it needs a LaTeX engine or an HTML-to-PDF step, both free; left for a later run.
+
+### 16.2 What the build found (new evidence for the editorial pass)
+
+- **The dataset "tables" are not tables.** Dataset A and Dataset B lost their column separators when copied from NotebookLM (SOURCE-OBSERVED: columns are separated only by single spaces, and some cells contain spaces). They cannot be turned into CSV automatically; the script says so and shows them as preformatted text. A hand pass is needed to rebuild the columns, which also settles §15.1's "run the provided .csv data" line.
+- **Two Dataset A deviations do not match their own numbers** (EXECUTION-VERIFIED arithmetic, base 13.7 g × units): Silver Droplet 3.42 g at 0.25 U is **−0.146 %**, not the stated −0.03 %; Small Scrap 1.71 g at 0.125 U is **−0.146 %**, not "<0.01 %". The other four rows match to rounding (−0.015, +0.029, +0.073, +0.146 %). The status-mark pass (§15.2) should correct or flag these two; this is the kind of check a buyer could do in a minute.
+- **Duplicate check depends on the sentence rule.** With "sentences of 8+ words", 21 of Article 6's 22 and 6 of Article 10's 7 long sentences appear verbatim in *Collective information* (EXECUTION-VERIFIED). §15.1's "all 22 / all 7" used a different split; the conclusion (Articles 6 and 10 are covered by *Collective information*) holds, but one sentence each is unique and must be kept when merging.
+- **Word counts** differ by a few words from §15.1 (README 338 vs 336, Collective 5,483 vs 5,466): whitespace-split vs §15.1's method. Immaterial for sizing.
+
+### 16.3 Still open (unchanged; in RUN-LOG "awaiting Timothy")
+
+TAM, RFC/Unicorn, or both; Article 4; credit spelling; the "speculative reconstruction" framing. Next run on F-001 (if Timothy has not answered): a hand-rebuilt CSV for Dataset A and B, and a PDF step, both tested offline.
