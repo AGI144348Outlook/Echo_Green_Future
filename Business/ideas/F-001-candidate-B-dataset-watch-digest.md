@@ -112,3 +112,19 @@ New evidence from mirror-claude S1 batch 6 (next 75 Zenodo catalog record pairs,
 PROPOSED change: keep the three tiers, but add a small per-topic **allow list** of related terms that Timothy approves (e.g. for the Indus topic: Dravidian, Harappa/Harappan, Mohenjo-daro) and a **deny list** of known false friends (e.g. for `seals`: "elephant seal", "ice-associated seals", "harbor seal"). Both lists are data files beside the crawler config, versioned, and changed only by a logged commit. This should lower the review share without hiding real records. Not implemented; the crawler is not touched by this run.
 
 Still UNVERIFIED: storefront fees other than Gumroad's, and the source terms on metadata reuse (no web fetch in unattended runs). No account, price or listing was created.
+
+## 13. Refinement — scheduled run 2026-10-11T08Z (Claude)
+
+New evidence from mirror-claude S1 batch 7 (last 28 Zenodo catalog record pairs, `code-library-registry` @ 86785a0; the `code-library-registry` manifest now has no INERT rows left):
+
+- EXECUTION-VERIFIED: 28/28 raw-response checksums match `record.json` (internal consistency only); all 56 blobs match the manifest.
+- EXECUTION-VERIFIED: the §12 tier rule (same stopwords and stem) gives **9 auto / 7 review / 12 drop**. Review share 25%.
+- EXECUTION-VERIFIED licenses (28 records): cc-by-4.0 19, cc-zero 4, cc-by-sa-3.0 2, cc-by-3.0-at 1, cc-by-nd-4.0 1, other-open 1. INFERRED: `cc-by-nd-4.0` allows linking and describing but a digest must not ship modified copies of the data; `other-open` needs a manual look before listing.
+- EXECUTION-VERIFIED test of the §12 allow/deny idea on these 28 records. Deny list (`elephant seal`, `ice-associated seal`, `harbor seal`, `harbour seal`) correctly moves "Increasing numbers of harbour seals and grey seals in the Solent" (found for `Harappan seals`) from review to drop. An allow list that also contained the bare word `indus` wrongly promoted two records to auto: "Indus River Shapefile" (for `CISI Indus`) and "Zooming in on ZooMS … Indus Valley Sites" (animal-bone protein work, for `Indus Valley script`). Without bare `indus` (only `Dravidian`, `Harappa/Harappan`, `Mohenjo-daro`, as §12 proposed) neither is promoted.
+- SOURCE-OBSERVED (record titles): `lessersunda/lexirumah-data` (a lexical database, found for `linguistics`) falls in the drop tier although it looks relevant to the `my keywords` topics; "Two Multilingual Students in Tandem Language Exchange" and the German FastText embeddings (found for `Indus sign list`) are drop-tier and look correctly dropped.
+
+PROPOSED: (1) the allow list must never contain a bare place or river name that the topic shares with geography (`Indus`); it should hold only script- or culture-specific terms. (2) A record dropped for one topic may be relevant to another topic; before dropping, test it against all topics' keywords, not only the keyword that found it (would rescue lexirumah-data under `lexicon`). Not implemented; no crawler change.
+
+Zenodo summary across batches 5–7 (169 records): the review share went 36% (§11, looser comparison) → 35% → 25%. INFERRED: with the two proposals above the digest's Zenodo stream looks close to automatable; Hugging Face and data.gov still need their own measurement under the same rule before a Fiscal Contract proposal (§9).
+
+Still UNVERIFIED: storefront fees other than Gumroad's and source terms on metadata reuse (no web fetch in unattended runs). No account, price or listing was created.
