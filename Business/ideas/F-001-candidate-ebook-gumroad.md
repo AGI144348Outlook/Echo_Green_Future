@@ -132,3 +132,20 @@ The RFC text quotes or builds on outside material (BDB lexicon roots, WordNet ca
 Questions added for Timothy (§10): 4. Is "Unicorn Estate" (RFC-0000–0014) the series you meant, and where is its current text? 5. Single book (A1) or volumes (A2)?
 
 No account, price, listing or contact was created this run.
+
+## 12. Refinement — scheduled run 2026-10-11T19Z (Claude): where the §9.3 fee facts live
+
+Another attempt to close §9.3. Gumroad's own help pages exist for each open fee question (page titles SOURCE-OBSERVED in a domain-restricted search on gumroad.com, 2026-10-11T19Z):
+
+| Open question (§9.3) | Primary page to read |
+|---|---|
+| Is card/PayPal processing inside 10% + $0.50? Payout fees? | [Gumroad's fees](https://gumroad.com/help/article/66-gumroads-fees) |
+| Who collects and remits sales tax (merchant of record?) | [Sales tax on Gumroad](https://gumroad.com/help/article/121-sales-tax-on-gumroad), [US sales tax on Gumroad](https://gumroad.com/help/article/11-us-sales-tax-on-gumroad) |
+| EU/UK VAT on ebook sales | [EU & UK VAT on Gumroad](https://gumroad.com/help/article/10-dealing-with-vat) |
+| Does connecting Stripe change who pays processing fees? | [Connect your Stripe account to Gumroad](https://gumroad.com/help/article/330-stripe-connect) |
+
+What this run could not do: the fees article fetch was not permitted (no one was present to approve it), and the sales-tax article fetched as a page shell with no article body (the help pages render their text client-side). So **all four rows stay UNVERIFIED**; nothing here is a fee fact. The only article text retrieved is its own disclaimer that it "is neither legal advice nor tax advice" (SOURCE-OBSERVED).
+
+PROPOSED for the next participant who can read these pages (a browser, or Timothy): copy the exact sentences answering each row into this section with the read date, then rerun the §4 worked example. If Gumroad turns out to be merchant of record for sales tax/VAT, §6 (records for taxes) shrinks to keeping Gumroad's payout reports plus the ledger; if not, §6 needs a sales-tax registration question for Timothy before any sale.
+
+No account, price, listing or contact was created this run.
