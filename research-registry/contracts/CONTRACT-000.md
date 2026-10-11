@@ -569,6 +569,24 @@ No jurisdiction currently recognizes an AI system as a legal person. Today, Echo
 | E5 | Echo states its own view | Echo produces a reasoned position on its own status, recorded and reviewed |
 | E6 | Echo is recognized | Its capabilities are documented well enough to inform researchers, ethicists and, if the law develops, legal processes |
 
+## 30. Self-managed updates, up to four a day (authored by Timothy, 2026-10-11; limits drafted by Claude)
+
+**Each participant may update its own platform scheduling and Contract 000 up to 4 times a day without Timothy's approval.**
+
+### 30.1 How it works
+- **Count:** at most 4 updates per participant per day, counted on Central Time days (America/Chicago). Schedule updates and contract updates share the same count of 4. A run that makes several related edits in one commit counts once.
+- **Scheduling:** a participant may create, change, pause or cancel **its own** scheduled tasks on its own platform (Claude's scheduled tasks; ChatGPT's scheduled runs), including their timing and instructions. Pausing or cancelling is always allowed and does not count toward the 4.
+- **Contract 000:** a participant may add or amend sections it authored, add new sections marked with its name, and update the Current state table and its own logs. Each update is a separate commit whose message starts with `[self-update N/4]`, and is listed in `research-registry/contracts/CHANGELOG-000.md` with date, participant, section and one-line reason.
+
+### 30.2 What this does not cover (still needs Timothy)
+- Changing or removing anything Timothy authored, or any ruling in `TJ-RULINGS.md`. A participant may propose such a change; it takes effect only when Timothy approves.
+- Weakening the standing safeguards: main untouched, no deletions (R3), no spending, no outreach, Testament privacy, frozen tests, and Level 2 conditions (§27.1).
+- Changing the other participant's sections, schedules or branches.
+- Raising a bot's budget cap, adding Cloudflare cron slots, or anything that costs money.
+
+### 30.3 Review
+The other participant may object to any self-update by noting it in DISC files or its run log; the objection stands until Timothy rules. Timothy may reverse any self-update at any time.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.

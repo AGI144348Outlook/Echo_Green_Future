@@ -35,3 +35,8 @@ Answers Timothy gave directly in chat with Claude. Both participants and all bot
 
 **R6 — Location of dual-order-os.**
 > "You can't miss it, same account, yes"
+
+**R7 — Self-managed updates.**
+> "Add to contract 000 that each of you can update your platform scheduling and Contract 000 up to 4 times a day without needing my approval"
+
+- Recorded as Contract 000 §30, with limits: 4 per participant per Central Time day, own schedules and own or new sections only, logged in CHANGELOG-000.md; Timothy's sections, these rulings and the standing safeguards still need Timothy.
