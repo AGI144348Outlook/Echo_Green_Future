@@ -198,3 +198,59 @@ No file titled "TAM" was found by title search (a full-text search was not run t
 6. **Release gate.** Timothy approves the files, price (§13) and storefront; only then a Fiscal Contract and an account.
 
 Open: is "Unicorn Estate" (RFC-0000–0014) the whole product, or should RFC-0031/0033 material be a second volume? No account, price, listing or contact was created this run.
+
+## 15. Refinement — scheduled run 2026-10-11T22Z (Claude): the TAM Protocol source, measured (R1)
+
+Timothy ruled (TJ-RULINGS R1, 2026-10-11): the material is his, there is no master file, and the working source is the public repository `AGI144348Outlook/The-TAM-protocol`. That settles §10's rights/manuscript question for the TAM shape; whether F-001 is the TAM articles, the Unicorn Estate / RFC material, or both is still open (asked in RUN-LOG). This section sizes the TAM shape from the repository itself. Drafts only: no account, listing, payment or contact.
+
+### 15.1 What the source holds (The-TAM-protocol @ d46456a, 2026-01-18; EXECUTION-VERIFIED word counts)
+
+| File | Words | Content |
+|---|---|---|
+| README.md | 336 | project abstract ("Invariant Registry v1.0.0-Alpha") |
+| Article 1 Hacksilber | 335 | #1 The Metric Shock |
+| Article 2 Water Weight Computes | 462 | #2 The Water-Weight Computer (clepsydra) |
+| The Color Dyed and Dental Records | 495 | #3 The Chemistry of the Registry |
+| Article 5 | 527 | #5 The Azores Anomaly |
+| Article 6 | 499 | #6 The Zenith Bottleneck (all 22 long sentences also in *Collective information*) |
+| Article 10 | 131 | #10 The AI Index (all 7 long sentences also in *Collective information*) |
+| Collective information | 5,466 | Articles 6–10 plus connective notes (geodetic grid, etc.) |
+| Dataset A / Dataset B | 87 / 103 | weight tables (Eshtemoa inventory; 1:2:4…160 ratio table) |
+| URLs to stored NotebookLM infographics | 7 | 3 Google Drive links (not opened) |
+
+- Total 8,448 words; about **7,800 distinct** once the Article 6 and 10 duplicates are removed (INFERRED from the sentence-overlap check). That is a ~30-page short ebook as is.
+- **Article 4 is missing** (numbering runs 1, 2, 3, 5, 6–10). Ask Timothy whether it exists elsewhere.
+- **SOURCE-OBSERVED:** the README invites readers to "run the provided .csv data", but the repository has no CSV; the datasets are two short Markdown tables. A buyer-facing edition should either ship the tables as CSV or drop that line.
+
+### 15.2 The one editorial condition that makes it sellable honestly
+
+The text states hypotheses as settled results in several places (SOURCE-OBSERVED: "proves" in Articles 6 and 10, "99.9% accuracy" in Article 10, ">95% correlation" in the README), with no citations or data behind those numbers. Selling it with those lines unchanged would describe the product as something it is not. Proposal (PROPOSED; Timothy's call, since it is his text):
+
+- Present the book as **a speculative reconstruction / research notebook**, which is what it is and is a real genre with buyers.
+- Keep every claim, but mark its status inline with the project's own evidence states (claimed / inferred / proposed test), and add one short "What would falsify this" box per article. That turns the weakness into the book's distinctive feature and matches how Echo already treats evidence (§15.2).
+- Keep the numbers only where a source can be cited; otherwise phrase them as predictions to test.
+- I am not a lawyer; the point is ordinary honest-description practice, not legal advice.
+
+### 15.3 Product shape (PROPOSED)
+
+- **Title shape:** *The TAM Protocol — A Speculative Reconstruction of the 13.7 g Invariant* (working title; Timothy chooses).
+- **Contents:** introduction (from README), Articles 1–3, 5–10 in order, Datasets A and B as appendices (plus CSV files), a short glossary (Jar/U, Fish, strokes, clepsydra, Metonic cycle), the falsification boxes, and the NotebookLM infographics if Timothy exports them as images he owns.
+- **Length after editing:** about 10–12k words (INFERRED: 7.8k source + apparatus), roughly 40–50 PDF pages.
+- **Formats:** PDF + EPUB, built from Markdown with a free tool (pandoc), reproducible from a repository folder.
+- **Credit line:** pending Timothy's exact spelling (asked 21Z).
+
+### 15.4 Customer, price, delivery, refunds, records (carried from §9–§14, adjusted for length)
+
+- **Customer:** readers of ancient metrology, Indus-script and alternative-history writing; reached through Timothy's own channels only (no outreach by either AI).
+- **Price:** the length argues for the low end of §13's table: **$7** (or pay-what-you-want, $5 minimum). §13's worst case at $5–$7 is still above 75% net on direct sales but the fee facts stay UNVERIFIED (§12–§13). A bundle with the RFC material, if Timothy chooses "both", could sit at $12+ where §13 keeps ≥80% even in the worst case.
+- **Delivery:** platform file delivery (Gumroad or equivalent); no self-hosted payment code.
+- **Refunds:** unchanged from §9 (simple no-questions window, stated on the page).
+- **Tax records:** unchanged from §9/§26: one CSV export per month from the platform into the Business wing ledger; the platform's own tax handling is UNVERIFIED (§12).
+- **Free-tier stack:** GitHub (source + build), pandoc (build), platform's free tier (sale). No spend.
+- **AI-assistance disclosure:** the text was assembled from NotebookLM sessions (R1). Some marketplaces ask authors to disclose AI-generated content; check the chosen platform's current rule before listing (UNVERIFIED, not checked this run).
+
+### 15.5 Next steps (for later runs; none needs money or contact)
+
+1. Timothy: TAM, RFC/Unicorn, or both? Article 4? Credit spelling? Accept the "speculative reconstruction" framing?
+2. Then a run drafts the edited table of contents and one sample article with status marks and a falsification box, in a private or library branch, for Timothy to judge.
+3. Build script (pandoc → PDF/EPUB) drafted and tested offline on the public text.
