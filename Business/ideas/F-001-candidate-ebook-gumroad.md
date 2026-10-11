@@ -169,3 +169,32 @@ Reading (INFERRED): at any price from about **$11.27** up, a direct sale keeps a
 PROPOSED (Timothy decides): price single volumes at $12 or more, or sell the series as one bundle (§11.1 shape A1) rather than many low-priced volumes; keep §4's $9 placeholder only if volumes are short. The verified fee facts, once read, only move a row between the best and worst columns; they cannot make a $12+ direct sale fall below 80%.
 
 Still needed before any Fiscal Contract: the four §12 rows read from Gumroad's own pages; Timothy's confirmation of the manuscript location and rights (§0, §11). No account, price, listing or contact was created this run.
+
+## 14. Refinement — scheduled run 2026-10-11T21Z (Claude): source intake from Google Drive (metadata only)
+
+**Trigger.** ChatGPT's coordination brief (`mirror-chatgpt-root` 2becf76, `contract-000/gpt/COORDINATION-2026-10-11-ebook-platform.md` and `CLAUDE-QUESTION-GDRIVE-20261011.md`) relays that Timothy confirms he owns the material, grants editorial freedom, and wants credit to Timothy Marvin and Echo Green Future. This is a relay (SOURCE-OBSERVED in ChatGPT's files), not yet Timothy's own words to Claude; it is recorded as such and asked back in RUN-LOG.
+
+**Drive connection: works (EXECUTION-VERIFIED 2026-10-11T21Z).** Two title searches on the connected Google Drive returned files. Only metadata was read: no file contents opened, nothing copied, nothing shared. Document IDs, links and the owning account are deliberately **not** written into this repository; Timothy received them privately.
+
+| Title (as stored) | Type | Size | Created | Modified | Likely role (INFERRED from title) |
+|---|---|---|---|---|---|
+| UnicornEstate.pdf | PDF | 641 KB | 2026-08-05 | 2026-08-05 | the compiled "Unicorn Estate" book (§11) |
+| RFC Collection | Google Doc | 134 KB | 2026-05-16 | 2026-06-26 | editable source of the RFC series |
+| LHEA_TEMA_RFC_Series_v1.0-2.docx | Word | 34 KB | 2026-06-26 | 2026-06-26 | a versioned RFC series export (TEMA) |
+| RFC Mashet | Google Doc | 28 KB | 2026-05-06 | 2026-05-06 | Mashet-related RFC draft |
+| MASHET-RFC-0031-v1.0 | Google Doc | 49 KB | 2026-05-13 | 2026-05-13 | single RFC outside 0000–0014 |
+| ASL RFC gleenings | Google Doc | 5 KB | 2026-08-12 | 2026-08-12 | notes |
+| RFC31.inby, RFC33.ipynb | Colab | 208 KB, 54 KB | 2026-05-09/10 | 2026-05-09/10 | notebooks for RFC-0031/0033 |
+
+No file titled "TAM" was found by title search (a full-text search was not run this pass).
+
+**Proposed intake pipeline (PROPOSED; each step a gate, nothing done yet):**
+
+1. **Pick the master.** Timothy names which of `UnicornEstate.pdf` (finished layout) or `RFC Collection` (editable) is the canonical text for F-001. Default proposal: edit from `RFC Collection`, use the PDF only to check completeness against RFC-0000–0014.
+2. **Private read, private working copy.** The text stays out of public branches until release. Working copies live where Timothy decides (a private repo or Drive folder); this public `library-shared` only gets the table of contents, word counts and checks, never the text.
+3. **Rights scan.** Before any edit: list third-party quotations, images, fonts and code in the master (the §11 "third-party excerpts" check), and flag any personal information about anyone for removal.
+4. **Editorial pass** within the granted freedom: structure, formatting, consistency; changes logged as a diff list Timothy can accept or reject.
+5. **Build.** EPUB + PDF from one source (pandoc, free), sample chapter, cover (Timothy's or a licensed one), listing text. Credit line: "Timothy Marvin and Echo Green Future" — exact spelling to be confirmed by Timothy.
+6. **Release gate.** Timothy approves the files, price (§13) and storefront; only then a Fiscal Contract and an account.
+
+Open: is "Unicorn Estate" (RFC-0000–0014) the whole product, or should RFC-0031/0033 material be a second volume? No account, price, listing or contact was created this run.
