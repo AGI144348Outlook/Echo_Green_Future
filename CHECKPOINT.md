@@ -1,7 +1,7 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T14:00Z (scheduled hourly run, Claude)
-**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13)
+**Last run:** 2026-10-11T15:00Z (scheduled hourly run, Claude)
+**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **All INERT rows in the three Library manifests are now decided (batch 14).** S1 is not closed: 51 DEFERRED rows and the batch-8 double registrations (below) remain.
 
 ## Position
 
@@ -9,7 +9,7 @@
 |---|---|---|---|
 | `code-library-registry` | 872 | 872 (845 KEPT, 7 PRUNED, 20 DEFERRED) | done; 20 DEFERRED rows await a re-listed manifest or a ruling |
 | `code-library-registry-ivs` | 212 | 212 (192 KEPT, 8 PRUNED, 12 DEFERRED) | done |
-| `library-source-transcriptions` | 901 | 782 (762 KEPT, 5 PRUNED, 15 DEFERRED) | continue at the first INERT row (`code_library_registry/modules/MOD-0005-bounded-affinity-admission/validation/README.md`), 119 left |
+| `library-source-transcriptions` | 901 | 901 (875 KEPT, 7 PRUNED, 19 DEFERRED) | done |
 
 Batch 1 covered `code_library_registry/` except `modules/`. Batch 2 covered `modules/`, `Algorithms/Stress-Test-001/002` and top-level files. Batch 3 covered `Datasets/` non-catalog files (INDEX, crawler/*, state/*: 12) and the first 138 `catalog/datagov` rows (69 record pairs, ordered as in the manifest, last one `datagov/neh-grants-2010s/`; continue at the first INERT datagov row). For all 69 pairs the sha256 of the decompressed raw response equals the checksum in `record.json` (EXECUTION-VERIFIED). 4 batch-3 blobs (INDEX.md, state/runs.json, seen.json, skipped.json) differ at 86785a0: the manifest (listed at 032606a) is stale for crawler-written files; catalog record blobs matched.
 
@@ -33,6 +33,14 @@ Batch 12 (2026-10-11T13Z) covered the next 150 rows of `library-source-transcrip
 
 Batch 13 (2026-10-11T14Z) covered the next 150 rows of `library-source-transcriptions` (the last 14 zenodo pairs from `zenodo/7019859`, then `Datasets/crawler|state`, root files, `code_library_registry/` assessments, artifacts and modules MOD-0001 to MOD-0005 `provenance.json`): 137 KEPT, 4 PRUNED, 9 DEFERRED. Every blob is identical to a row decided in `code-library-registry` or `code-library-registry-ivs` and all 150 match the branch at 43612d0. 14/14 record pairs: raw checksum matches `record.json` (EXECUTION-VERIFIED). Mirrored decisions; one exception by batch-7 precedent: `code_library_registry/INDEX.md` KEPT (DEFERRED in code-library-registry only for a stale listing; blob current here). PRUNED: MOD-0002..0005 license snapshots (as in code-library-registry). DEFERRED: crawler state files (5), `ECHO_Autonomous_Agency_Branch.zip`, CLR-0002/0009/0010 HTML artifacts. Registered: Registries 113, Algorithms 11, Indices 7, Codices 3, Formulas 2, Logics 1.
 
+Batch 14 (2026-10-11T15Z) covered the last 119 rows of `library-source-transcriptions`: 113 KEPT, 2 PRUNED, 4 DEFERRED. 73 rows are blobs identical to rows decided earlier and mirror those decisions (MOD-0005 validation, MOD-0006/0007, research_papers, 35 `reviews/`; PRUNED: MOD-0006/0007 license snapshots; DEFERRED: `echo-dataset-crawler.zip`, `src/a159_cloudflare_migrator.py`, `src/index.js`, `wrangler.toml`). The 46 rows unique to this branch were read (in full or sampled, plus a keyword scan for personal or secret material: none found; all technical/research text) and KEPT: `source-transcriptions/` (TEMA spec, Mashet control surface parts 1-8) in Codices; `experiments/nve-d/` specs in Logics/Formulas, code in Algorithms, trial records in Registries; `registries/mashet-candidates/` in Registries, with the NVE-C reconciliation table as the first Matrices entry; `docs/` in Logics; `source-index/` and READMEs in Indices. All 119 blobs match the branch at 43612d0. EXECUTION-VERIFIED: `scripts/registry_former/mashet_candidate_registry.py` runs offline (stdlib, `python3 -I`, scratch copy): 93 candidates vs 96 claimed, 12 duplicate glyphs, matching NVE-C `observed_total` 93; output not committed. Registered: Registries 45, Indices 25, Algorithms 20, Codices 14, Logics 5, Formulas 3, Matrices 1.
+
+Totals (EXECUTION-VERIFIED from the three manifests): 1,985 rows; 1,912 KEPT, 22 PRUNED, 51 DEFERRED; 0 INERT.
+
+**Defect found this run (not yet fixed):** 51 (branch, path) pairs from batch 8 (09Z; 42 `code-library-registry-ivs`, 9 `library-source-transcriptions` Stress-Test rows) are registered as a primary row in two sub-libraries each, instead of one primary plus an `xref-from:` row. Next step: a correction pass that keeps the sub-library of the source row as primary and re-tags the other row `xref-from:` (append-only note in PRUNE-LOG; no row deleted).
+
+Next S1 work: (1) the batch-8 correction above; (2) the 51 DEFERRED rows, which wait on Timothy's rulings (re-listing stale manifests, Worker/deploy code, crawler state, third-party clone script, licence-unresolved modules). Moving to S2 (Mirroring Sub-Repository) needs S1 judged complete; whether DEFERRED rows block that is a question for Timothy.
+
 Look-ahead (corrected): the earlier "28 zenodo pairs left" was wrong; only 14 pairs remained and are now done. The 119 INERT rows left are non-catalog rows; the 46 unique to this branch (`source-transcriptions/`, `experiments/nve-d/`, `registries/mashet-candidates/`, `docs/`, `scripts/`, `source-index/`) are among them and need a real read. Tip: use `git ls-tree -r` without `-l` on this partial clone (`-l` fetches every blob and timed out).
 
 Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 INERT rows left in `library-source-transcriptions`, 523 are blobs identical to rows already decided elsewhere (328 zenodo catalog, 176 `code_library_registry/`, 19 other); **46 are unique to this branch** (`source-transcriptions/` 10, `experiments/nve-d/` 28, `registries/mashet-candidates/` 4, `docs/` 2, `scripts/` 1, `source-index/` 1). Those 46 need a real read, not mirroring; read each before deciding, and check none is private Testament or personal material before registering.
@@ -41,21 +49,22 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 520f61c (unchanged since 03Z; no ChatGPT reply; contract files unchanged, not re-read in full) |
-| mirror-claude | 8b68cb7 (before this run's commit) |
-| library-shared | ca06b38 (before this run's commit) |
+| research-discourse-registry | 520f61c before this run's commit (contract files unchanged; §3, §13, §19 re-read) |
+| mirror-claude | 1db4243 (before this run's commit) |
+| library-shared | a78db19 (before this run's commit) |
 | code-library-registry | 86785a0 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
 | genesis-documentary | f888091 (unchanged) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
+| mirror-chatgpt-root | f5c8c1b (first recorded here; GPT run-011 checkpoint, 2026-10-11 12:02Z; cites DISC-002 companion 5c94ccb, already answered) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
-| super-duper-octo-winner (ChatGPT, read only) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged; no new discourse contribution) |
+| super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
 
 ## Commits made this run
 
 | Branch | Commit |
 |---|---|
-| library-shared | a78db19 |
-| research-discourse-registry | none (skipped: no ChatGPT reply since 520f61c) |
 | mirror-claude | (this commit; see RUN-LOG) |
+| research-discourse-registry | 073f604 (DISC-002 short note) |
+| library-shared | d96a888 (F-001 candidate C §11) |
