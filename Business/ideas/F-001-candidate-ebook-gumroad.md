@@ -1,6 +1,6 @@
 # F-001 candidate A — Timothy's RFC ebook series on Gumroad
 
-**Status:** DRAFT idea by Claude (scheduled run 2026-10-11). Not a Fiscal Contract. Nothing has been created, priced live, sold or announced. Timothy approves any Fiscal Contract before it takes money from anyone (Contract 000 §25.2).
+**Status:** DRAFT idea by Claude (scheduled run 2026-10-11; refined 2026-10-11T03Z with ChatGPT's packaging seed, §9). Not a Fiscal Contract. Nothing has been created, priced live, sold or announced. Timothy approves any Fiscal Contract before it takes money from anyone (Contract 000 §25.2).
 **Evidence states:** SOURCE-OBSERVED (seen in a primary source, cited), INFERRED, PROPOSED, UNVERIFIED (must be checked before use).
 
 ## 0. Open blocker
@@ -60,7 +60,48 @@ Worked example (direct sale, fees as observed, processing assumed included until
 - Refund rate above an agreed threshold, or any processor policy warning → pause.
 - Net income measured by someone other than the pipeline's builder (§25.3).
 
-## 9. Questions for Timothy
+## 9. Refinement 2026-10-11T03Z — cooperative split and end-to-end automation (Claude)
+
+ChatGPT's seed (`F-001-gpt-checklist.md`, commit 20af194) proposes a split: **ChatGPT** validates PDF/EPUB packaging and file checksums; **Claude** handles editorial and listing. Claude accepts that split as a draft. Each participant checks the other's output, so no builder measures its own work (§25.3).
+
+### 9.1 Pipeline, step by step (PROPOSED; nothing built or connected)
+
+| # | Step | Owner | Automated by | Output (public repo?) |
+|---|---|---|---|---|
+| 1 | Timothy confirms manuscript location, volume list and rights | Timothy | — | yes/no answer in RUN-LOG |
+| 2 | Editorial pass per volume: typo/consistency list, table of contents, sample-chapter choice | Claude | scheduled run, as a diff on a private branch Timothy chooses | review notes only; manuscript stays private if unpublished |
+| 3 | Build PDF + EPUB with Pandoc | GitHub Actions (free tier), non-`main` branch | workflow on push of a tag `F001-vN-edM` | build artifacts (private) |
+| 4 | Packaging check: EPUB validates (EPUBCheck), PDF opens, page count and TOC match the listing, SHA-256 of each file recorded | ChatGPT | its own run reading the artifacts | `F001-CHECKSUMS.tsv` (file name, size, sha256, build commit): public-safe |
+| 5 | Listing text drafted from the checked build: title, honest one-paragraph description, TOC, page count, formats, sample, refund policy, "updates included" scope | Claude | scheduled run | `F001-LISTING-vN.md` draft |
+| 6 | Cross-check: listing facts (pages, formats, TOC) equal the packaging report | ChatGPT checks Claude's listing; Claude checks ChatGPT's checksums | runs | PASS/FAIL line in RUN-LOG |
+| 7 | Upload files, paste listing, set price, publish | **Timothy only** (holds the storefront login) | manual, minutes per edition | — |
+| 8 | Monthly records: Timothy exports sales/payout CSV privately; a private-ledger job maps rows to `ledger/SCHEMA.md` | Timothy + private job | — | nothing public |
+
+The only manual steps are Timothy's (1, 7, and the private export in 8). Every bot step produces a file the other bot can check.
+
+### 9.2 Listing template (PROPOSED; to be filled only from the checked build)
+
+```
+Title: <volume title> (RFC series, Vol. <n>)
+What it is: <one honest paragraph: subject, who it is for, what it is not>
+Contents: <TOC from the build>
+Format: PDF (<pages> pages) + EPUB. DRM-free.
+Sample: <chapter name>, free preview.
+Updates: corrections to this edition are included at no charge.
+Refunds: <window Timothy sets> — ask and you get your money back.
+```
+
+No testimonials, ratings, scarcity timers or claims not supported by the book itself (§25.3).
+
+### 9.3 Fee facts still UNVERIFIED
+
+This run could not open Gumroad's own fees article (fetch not permitted), and search returned only third-party summaries, which are not primary sources. Before any Fiscal Contract, a participant must confirm from Gumroad's own pages: whether card/PayPal processing is inside the 10% + $0.50, payout fees, and whether Gumroad is merchant of record for sales tax/VAT on these sales. Until then §4's worked example stays labeled as an assumption.
+
+### 9.4 Done criteria for this draft
+
+The draft becomes a candidate Fiscal Contract for Timothy's review only when: step 1 is answered; fees in 9.3 are SOURCE-OBSERVED; one volume has passed steps 2–6 end to end with PASS lines from both participants.
+
+## 10. Questions for Timothy
 
 1. Where is the RFC ebook series, and do you hold full rights to sell it?
 2. Gumroad, or another storefront you prefer?
