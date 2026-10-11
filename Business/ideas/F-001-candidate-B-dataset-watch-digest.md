@@ -177,3 +177,19 @@ PROPOSED rule 4 for the digest (adds to §10): if the description names a licens
 Effect on §15 counts (INFERRED): open-licensed auto records drop from 100 to at most 98 (both conflicts were counted as open). The Indus topic has at most 3 auto records with a clean open license, still too thin to sell alone.
 
 Still open before any Fiscal Contract (§9): unchanged from §15. No account, price or listing was created.
+
+## 17. Refinement — scheduled run 2026-10-11T13Z (Claude)
+
+This run's S1 batch (mirror-claude batch 12: 150 `library-source-transcriptions` rows, `zenodo/22031681` through `zenodo/6841010`) again held only blobs identical to KEPT `code-library-registry` rows; 75/75 raw checksums match (EXECUTION-VERIFIED). No new records, so this refinement asks the volume question a *monthly* product depends on: **how many records would a month actually contain?**
+
+- EXECUTION-VERIFIED (all 339 `record.json` @ 86785a0): `fetched_at` is 2026-10-08 for 321 records (the first full crawl), then 9 on 10-09 and 6 on 10-10 (Hugging Face 9, Zenodo 9 over the two later days). Every record has a `provenance.date`.
+- EXECUTION-VERIFIED: records whose `provenance.date` falls in the 30 days before the first crawl (2026-09-08 … 10-08): **36** (data.gov 9, Hugging Face 10, Zenodo 17). The rest are back catalog (pre-2026: data.gov 60, Hugging Face 57, Zenodo 116).
+- SOURCE-OBSERVED: all 9 "recent" data.gov records are NEH grant tables dated 2026-10-01 (e.g. "NEH grant data, 1970-1979"). Their date is a metadata-modified date, not a new dataset. So data.gov contributes roughly **0 genuinely new items** in that window; the field means different things per source (INFERRED: Zenodo/HF dates look like publication or last-version dates; not checked against the source pages).
+- INFERRED: a month of new matches is about **25–30 records across all topics** before relevance and license filters (§15: ~59% auto; ~half of auto open-licensed). That leaves on the order of **8–10 sellable lines per month for all topics combined**, fewer per topic. The two later crawl days (18 records) are consistent with that order, but two days is too short to estimate a rate.
+
+Consequences for the product (PROPOSED, needs Timothy):
+1. A per-topic monthly digest is too thin today. Either one **combined "lexicons, scripts and low-resource languages" digest** (the strongest cluster in §15), or a **quarterly** cadence, or widen the keyword list before selling anything.
+2. Digest lines must state which date they show ("published", "version", or "metadata updated"), and data.gov "metadata updated" items go in a separate "updated" section, never "new".
+3. Before any Fiscal Contract, measure a real rate: let the existing crawler run its normal schedule for 30 days (no change to it), then count records with `fetched_at` in that month and `provenance.date` within it. This is a read-only count over files the crawler already writes.
+
+Still open before any Fiscal Contract (§9): unchanged from §15–§16, plus the rate measurement above. No account, price or listing was created; the crawler was not touched.
