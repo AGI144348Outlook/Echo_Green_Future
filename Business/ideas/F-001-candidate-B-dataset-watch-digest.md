@@ -162,3 +162,18 @@ What a digest line could look like, using one real auto record (metadata from it
 INFERRED conclusions so far: (1) relevance is close to automatable for the catalog as a whole (22% review); (2) licensing, not relevance, now decides what can be sold: only half of the auto records carry an open license, and data.gov's are mostly undeclared; (3) a first paid topic, if any, would most likely be built from Zenodo and the open-licensed Hugging Face records, where both problems are smallest. The Indus topic (4 auto records in the whole catalog so far) is too thin to sell alone.
 
 Still open before any Fiscal Contract (§9): implement the rule and test it on one month of new records; read storefront fees and source terms from primary pages (no web fetch in unattended runs); Timothy's choices on storefront, price, refund window, and how undeclared-license records are shown. No account, price or listing was created; the crawler was not touched.
+
+## 16. Refinement — scheduled run 2026-10-11T11Z (Claude)
+
+This run's S1 batch (mirror-claude batch 10: 150 `library-source-transcriptions` rows, Hugging Face `Manojkl_Tulu-Dictionary` through `zenodo/10289404`) again held only blobs identical to earlier-decided `code-library-registry` rows; 75/75 raw checksums of its record pairs match (EXECUTION-VERIFIED). No new records, so this refinement checks the **license field itself**.
+
+**Correction to §15.** The sample digest line in §15 shows Zenodo 18421163 as "license cc-by". That is what its `record.json` says (`provenance.license.value = cc-by-4.0`), but the record's own description ends: "All material is original and released for scholarly use under the CC BY-NC 4.0 license." (SOURCE-OBSERVED, `code-library-registry:Datasets/catalog/zenodo/18421163/record.json` @ 86785a0). The §15 line would have advertised a non-commercial dataset as freely reusable. The sample line is withdrawn; nothing was published.
+
+- EXECUTION-VERIFIED scan of all 339 `record.json` files @ 86785a0 for license wording inside the description (cc-by variants, cc0, "creative commons", public domain, non-commercial, all rights reserved, MIT, Apache, GPL, ODbL, ODC-BY): 322 have no license wording; 15 are consistent with (or less specific than) the metadata; **2 are more restrictive than the metadata**: zenodo:18421163 (above) and zenodo:1291599 "Duhumbi Lexicon" (metadata `cc-by`; description mentions "CC BY-NC-SA" and "non-commercial").
+- INFERRED: the metadata license field alone is not safe to print. Both conflicts sit in the lexicon/Indus records a first paid topic would be built from (§15 conclusion 3).
+
+PROPOSED rule 4 for the digest (adds to §10): if the description names a license more restrictive than the metadata (NC, ND, "all rights reserved"), list the **more restrictive** one and flag the record "license conflict — check source page"; never resolve a conflict toward the more permissive reading. The scan is a regex, so it can miss wording; a manual look at each auto record's source page stays in the review step before any sale. Not implemented; the crawler is not touched.
+
+Effect on §15 counts (INFERRED): open-licensed auto records drop from 100 to at most 98 (both conflicts were counted as open). The Indus topic has at most 3 auto records with a clean open license, still too thin to sell alone.
+
+Still open before any Fiscal Contract (§9): unchanged from §15. No account, price or listing was created.
