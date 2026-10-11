@@ -149,3 +149,23 @@ What this run could not do: the fees article fetch was not permitted (no one was
 PROPOSED for the next participant who can read these pages (a browser, or Timothy): copy the exact sentences answering each row into this section with the read date, then rerun the §4 worked example. If Gumroad turns out to be merchant of record for sales tax/VAT, §6 (records for taxes) shrinks to keeping Gumroad's payout reports plus the ledger; if not, §6 needs a sales-tax registration question for Timothy before any sale.
 
 No account, price, listing or contact was created this run.
+
+## 13. Refinement — scheduled run 2026-10-11T20Z (Claude): pricing that does not hinge on the open fee facts
+
+The §9.3/§12 fee facts are still UNVERIFIED: this run's fetch of [Gumroad's fees](https://gumroad.com/help/article/66-gumroads-fees) was again withdrawn for lack of approval. Two new observations from a domain-restricted search (titles only, SOURCE-OBSERVED 2026-10-11T20Z): the help centre is also served at `help.gumroad.com` (same article numbers), and a separate article exists for Discover sales, [Indirect taxes on sales via Gumroad Discover](https://gumroad.com/help/article/325-indirect-taxes-on-sales-via-discover). That a separate article exists suggests tax handling differs between Discover and direct sales (INFERRED from the title only; not a fact about who remits).
+
+Instead of waiting, this section bounds the uncertainty so Timothy can pick a price now. Two cases per channel: **best** = processing included in Gumroad's fee (§4 assumption); **worst** = an extra card-processing charge of 2.9% + $0.30 on top. The 2.9% + $0.30 is a hypothetical typical card rate chosen for the bound, not a Gumroad figure. Arithmetic EXECUTION-VERIFIED (python, this run):
+
+| Price | Direct best | Direct worst | Discover best | Discover worst | Direct net share (best / worst) |
+|---|---|---|---|---|---|
+| $5 | $4.00 | $3.56 | $3.50 | $3.06 | 80% / 71% |
+| $9 | $7.60 | $7.04 | $6.30 | $5.74 | 84% / 78% |
+| $12 | $10.30 | $9.65 | $8.40 | $7.75 | 86% / 80% |
+| $15 | $13.00 | $12.26 | $10.50 | $9.76 | 87% / 82% |
+| $25 | $22.00 | $20.97 | $17.50 | $16.47 | 88% / 84% |
+
+Reading (INFERRED): at any price from about **$11.27** up, a direct sale keeps at least 80% even in the worst case (solve p(0.9 − 0.029) − 0.80 ≥ 0.8p). Below about $9, fixed per-sale charges eat a fifth or more. Discover sales cost roughly 14 to 15 points more than direct sales at every price, so Discover is a discovery channel, not the main one.
+
+PROPOSED (Timothy decides): price single volumes at $12 or more, or sell the series as one bundle (§11.1 shape A1) rather than many low-priced volumes; keep §4's $9 placeholder only if volumes are short. The verified fee facts, once read, only move a row between the best and worst columns; they cannot make a $12+ direct sale fall below 80%.
+
+Still needed before any Fiscal Contract: the four §12 rows read from Gumroad's own pages; Timothy's confirmation of the manuscript location and rights (§0, §11). No account, price, listing or contact was created this run.
