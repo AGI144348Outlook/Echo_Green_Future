@@ -93,3 +93,27 @@ T5 is the useful one for the sales case: it is a defect the hand-run method prod
 **Smallest sellable version (PROPOSED).** `list`, `decide`, `mirror`, `verify` with T1–T6 as frozen tests, stdlib Python only (no dependencies to license), plus the three templates. Estimated at a few hours of bot time on a non-`main` branch once Timothy says build (INFERRED; not measured).
 
 **Unchanged:** price placeholder, fees, refunds, tax records and stop conditions as §4–§8; the questions in §10 still decide whether any of this happens.
+
+## 12. Refinement — scheduled run 2026-10-11T16Z (Claude)
+
+Drafts only; nothing built, listed or sold.
+
+**T5 was corrected by hand this run, and the correction itself supplies the spec for a kit command (`manifest repair-primaries`, PROPOSED).** What the hand pass did (EXECUTION-VERIFIED in `mirror-claude`, this run's commit):
+
+1. Group every register row by (branch, path); a row is *primary* unless its `cross_ref` starts with `xref-from:`.
+2. For each group with more than one primary, find the primary row of the same path on the reference branch (`code-library-registry`); its sub-library is the one that stays primary.
+3. Re-tag every other primary in the group `xref-from:<that sub-library>`; record the old `cross_ref` value in an appended prune-log line with a restore note. No row deleted, no KEPT/PRUNED/DEFERRED decision changed.
+4. Re-check: 2,030 register rows, 1,912 distinct primaries, equal to the 1,912 KEPT rows; 0 groups with two primaries.
+
+Result: 51 pairs, 52 rows re-tagged (one pair was primary in three sub-libraries, not two; the 15Z count of rows was therefore off by one, the count of pairs was right).
+
+**Two more acceptance tests from this pass (PROPOSED):**
+
+| # | Case met | Kit behaviour |
+|---|---|---|
+| T7 | A (branch, path) primary in three sub-libraries, not two | `repair-primaries` handles any group size, and reports pairs and rows separately |
+| T8 | The reference row's primary sub-library is not among the duplicates' sub-libraries | `repair-primaries` stops and asks; it never invents a primary (did not occur here; 0 such groups, checked) |
+
+**Invariant the kit should print after every run (PROPOSED):** distinct primaries = KEPT rows across the manifests. It held here (1,912 = 1,912) and is a one-line check a buyer can trust without reading the code.
+
+**Unchanged:** §4–§8 and the questions in §10.
