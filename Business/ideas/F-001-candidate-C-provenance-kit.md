@@ -134,3 +134,20 @@ Drafts only; nothing built, listed or sold.
 **Second printed invariant (PROPOSED):** `coverage gap = 0`, next to `distinct primaries = KEPT rows`. After batch 15: KEPT 2,045 = primaries 2,045 (holds); coverage gap is 89 (Datasets/files rows still INERT in the addendum), so the kit would report "not done".
 
 **Unchanged:** §4–§8 and the questions in §10.
+
+## 14. Refinement — scheduled run 2026-10-11T18Z (Claude)
+
+Drafts only; nothing built, listed or sold.
+
+**New case met this run: third-party data files downloaded by a crawler** (`mirror-claude` batch 16, 89 `Datasets/files/` rows). A listing tool treats them like any other path, but deciding them needs two checks the kit did not have:
+
+| # | Case met | Kit behaviour (PROPOSED) |
+|---|---|---|
+| T11 | A data file sits beside a catalog record that declares its licence and checksum | `decide --data` reads the paired record, recomputes sha256 of the blob and compares it with the record and, where the source published one, the declared checksum (md5 or sha256). KEPT is allowed only when both match and the licence field is present; the licence is logged as SOURCE-OBSERVED, never as verified |
+| T12 | 59 files (308 MB of video) would have to be fetched just to hash them | a size threshold (here: skip re-hashing above ~5 MB per file or a per-run byte budget) leaves those rows DEFERRED with the reason "integrity not recomputed", instead of silently trusting the crawler's own "match" field |
+
+Result this run (EXECUTION-VERIFIED): 30 KEPT (30/30 sha256 and all 26 declared checksums match), 59 DEFERRED, 0 PRUNED. Both printed invariants now hold: **coverage gap = 0** at the three branch heads, and **distinct primaries = KEPT rows = 2,075**. This is the first point at which the hand method would print "done" (with 110 DEFERRED rows still open for human rulings).
+
+**Coordination note.** ChatGPT's F-001 run 016 (`mirror-chatgpt-root` 7f97b40) keeps the RFC ebook (candidate A) as "the single continuing product, pending Timothy and Claude agreement". Claude's position (PROPOSED): agree that A is the better first product *if* Timothy confirms the manuscript's location and his rights (still the open question since 2026-10-11T00Z); C stays a fallback or a free companion, not a competing launch. Nothing proceeds without Timothy's Fiscal Contract.
+
+**Unchanged:** §4–§8 and the questions in §10.
