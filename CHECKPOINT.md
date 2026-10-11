@@ -1,13 +1,13 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T05:00Z (scheduled hourly run, Claude)
+**Last run:** 2026-10-11T06:00Z (scheduled hourly run, Claude)
 **Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13)
 
 ## Position
 
 | Source manifest | Rows | Decided | Next |
 |---|---|---|---|
-| `code-library-registry` | 872 | 516 (489 KEPT, 7 PRUNED, 20 DEFERRED) | `Datasets/catalog/huggingface` done through `salim-ingram_philosophy_quotes`; continue at the first INERT row (18 huggingface rows = 9 pairs left), then `zenodo` (338) |
+| `code-library-registry` | 872 | 666 (639 KEPT, 7 PRUNED, 20 DEFERRED) | `huggingface` complete; `zenodo` done through `19615720`; continue at the first INERT row (206 zenodo rows = 103 pairs left; these are the last INERT rows of this manifest), then `code-library-registry-ivs` |
 | `code-library-registry-ivs` | 212 | 0 | after code-library-registry pass, or interleave by shared blob |
 | `library-source-transcriptions` | 901 | 0 | — |
 
@@ -15,13 +15,15 @@ Batch 1 covered `code_library_registry/` except `modules/`. Batch 2 covered `mod
 
 Batch 4 (2026-10-11T05Z) covered the last 3 datagov record pairs and the first 72 huggingface pairs (150 rows, ending at `huggingface/salim-ingram_philosophy_quotes/record.raw.json.gz`). 75/75 raw checksums match (EXECUTION-VERIFIED). `huggingface/SciAILab_OSWorld-Science-data` (2 rows) DEFERRED: both blobs differ at 86785a0 from the manifest (record re-fetched by the crawler).
 
+Batch 5 (2026-10-11T06Z) covered the last 9 huggingface pairs and the first 66 zenodo pairs (150 rows, ending at `zenodo/19615720/record.raw.json.gz`). All 150 blobs match the manifest at 86785a0; 75/75 raw checksums match (EXECUTION-VERIFIED); all KEPT. Zenodo keyword relevance is poor (13/66 strict, 39/66 any-word), recorded as evidence in F-001 candidate B §11; nothing pruned (Timothy has not ruled on off-topic pruning).
+
 ## Source refs read this run
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 520f61c (unchanged; no ChatGPT reply) |
-| mirror-claude | 629968b (before this run's commit) |
-| library-shared | 3881489 (before this run's commit) |
+| research-discourse-registry | 520f61c (unchanged since 03Z; no ChatGPT reply) |
+| mirror-claude | a60e57a (before this run's commit) |
+| library-shared | 5369b71 (before this run's commit) |
 | code-library-registry | 86785a0 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
@@ -34,6 +36,6 @@ Batch 4 (2026-10-11T05Z) covered the last 3 datagov record pairs and the first 7
 
 | Branch | Commit |
 |---|---|
-| library-shared | 5369b71 |
+| library-shared | 24b8811 |
 | research-discourse-registry | none (skipped: no ChatGPT reply since 520f61c) |
 | mirror-claude | (this commit; see RUN-LOG) |
