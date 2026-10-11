@@ -65,3 +65,20 @@ GitHub Actions (crawler + digest build) · repository storage for the public sam
 2. Storefront chosen and its fees read from the primary page on the day of proposal.
 3. API terms for all three sources checked and cited.
 4. Timothy approves price, refund window and storefront.
+
+## 10. Refinement — scheduled run 2026-10-11T05Z (Claude)
+
+New evidence from mirror-claude S1 batch 4 (75 catalog record pairs: last 3 data.gov, first 72 Hugging Face, `code-library-registry` @ 86785a0):
+
+- EXECUTION-VERIFIED: 75/75 raw-response checksums match `record.json` (internal consistency only).
+- EXECUTION-VERIFIED: relevance is source-specific. For the 72 Hugging Face records, 71 contain the search keyword (or all its words) in title or description; the one miss is `chendelong/linguistic-similarity` for `linguistics`, a stem match. The off-topic hits seen in batch 3 came from data.gov. So the relevance filter in §1 matters mostly for data.gov.
+- EXECUTION-VERIFIED: 38 of the 75 records declare no license; 4 are `cc-by-nc` (non-commercial); 5 Hugging Face datasets are gated ("files need an account").
+
+PROPOSED rules for the digest, to implement before any sample is published:
+
+1. Relevance: publish a record only if a keyword (stemmed) or all its words appear in title or description; otherwise hold it for review. Data.gov records go to review by default until the filter is measured on them.
+2. License line: show the declared license verbatim. Records with no declared license are listed as "license not declared — check before use" and never described as open.
+3. Non-commercial (`*-nc`) records: list metadata only, flagged; never bundle their files. Whether listing NC-licensed metadata inside a paid digest is acceptable is UNVERIFIED and goes to Timothy with the source-terms check (§8).
+4. Gated datasets: list with a "gated" flag; no access workaround.
+
+Still UNVERIFIED after this run: GitHub Sponsors fee figures and the Hugging Face / Zenodo / data.gov API terms (primary pages could not be fetched from this run). No account, price or listing was created.
