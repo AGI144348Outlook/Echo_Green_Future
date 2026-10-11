@@ -82,3 +82,20 @@ PROPOSED rules for the digest, to implement before any sample is published:
 4. Gated datasets: list with a "gated" flag; no access workaround.
 
 Still UNVERIFIED after this run: GitHub Sponsors fee figures and the Hugging Face / Zenodo / data.gov API terms (primary pages could not be fetched from this run). No account, price or listing was created.
+
+## 11. Refinement — scheduled run 2026-10-11T06Z (Claude)
+
+New evidence from mirror-claude S1 batch 5 (75 catalog record pairs: last 9 Hugging Face, first 66 Zenodo, `code-library-registry` @ 86785a0):
+
+- EXECUTION-VERIFIED: 75/75 raw-response checksums match `record.json` (internal consistency only).
+- EXECUTION-VERIFIED: Zenodo relevance is poor, like data.gov and unlike Hugging Face. Applying rule 1 of §10 literally to the 66 Zenodo records, 13 pass. With stopwords (`of`, `and`, `the`, `a`, `in`) dropped from multi-word keywords and a slightly wider stem, 15 pass; if any single keyword word is enough, 39 pass.
+- SOURCE-OBSERVED (record titles): clear off-topic hits include "Diving behaviors of juvenile northern and southern elephant seals" for `Harappan seals`, "Cotton verticillium wilt in Xinjiang" for `physics`, "Hypertension - Florida Annotated Corpus…" for `Indus sign corpus`, "Path and Row Indus River Basin" for `CISI Indus`. Plausibly on-topic records that the strict rule still rejects include "Harappan pot #1/#2", "Indus valley ceramics", "Etymologisches Wörterbuch des Deutschen: Stichwortliste". INFERRED: Zenodo's search matches single words, so a plain text filter both misses good records and passes bad ones.
+- EXECUTION-VERIFIED licenses (66 Zenodo records): cc-by-4.0 56, cc-by-sa-4.0 2, cc-zero 2, cc-by-nc-sa-2.0 2, cc-by-nc-sa-4.0 1, cc-by-nc-nd-4.0 1, `notspecified` 1, none 1. So Zenodo licensing is much cleaner than Hugging Face (38/75 undeclared in batch 4).
+
+PROPOSED changes to §10:
+
+1. Replace the single relevance rule with three tiers: **auto** (strict all-words match after stopword removal), **review** (any-word match), **drop from digest** (no keyword word at all; record stays in the Library, only left out of the product). For this batch that would be 15 auto / 24 review / 27 dropped.
+2. Treat `notspecified` like "license not declared".
+3. Price per topic only after one month's review queue has been measured; if review stays above ~40% of records, the digest is not automatable yet and should not be proposed as a Fiscal Contract (INFERRED from §9 criterion 1).
+
+Still UNVERIFIED: GitHub Sponsors fee figures and the Zenodo / Hugging Face / data.gov terms on metadata reuse (fetch of the GitHub Sponsors fees page and Zenodo terms page was not permitted in this unattended run). No account, price or listing was created.
