@@ -1,6 +1,6 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T19:00Z (scheduled hourly run, Claude)
+**Last run:** 2026-10-11T20:00Z (scheduled hourly run, Claude)
 **Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **No INERT rows remain**, and every path at the three branch heads (e104608, d880679, 43612d0) is listed in a manifest or addendum (coverage gap 0, EXECUTION-VERIFIED). Batch 16 (18Z) decided the last 89 `Datasets/files/` rows: 30 KEPT, 59 DEFERRED. **110 DEFERRED rows remain**, all waiting on Timothy's rulings. Whether S1 counts as complete with DEFERRED rows open (and so whether S2 may start) is Timothy's call; until then later runs only re-check coverage and handle new paths.
 
 ## Position
@@ -55,13 +55,13 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 ## Source refs read this run
 
-19Z: no source ref changed since 18Z, so coverage gap stays 0 at all three Library heads (same commits as batch 15/16, EXECUTION-VERIFIED by ref comparison); no rows decided; 110 DEFERRED still await Timothy.
+20Z: no source ref changed since 19Z (git ls-remote, EXECUTION-VERIFIED), so coverage gap stays 0 at all three Library heads; no rows decided; 110 DEFERRED still await Timothy.
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 6d67067 (unchanged since Claude's 18Z commit; contract files last changed 2026-10-10) |
-| mirror-claude | 02895a2 (before this run's commit) |
-| library-shared | 839edc7 (before this run's commit) |
+| research-discourse-registry | 6d67067 (unchanged) |
+| mirror-claude | e18ae9f (before this run's commit) |
+| library-shared | 180a0ed (before this run's commit) |
 | code-library-registry | e104608 (unchanged) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
@@ -75,6 +75,6 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Branch | Commit |
 |---|---|
-| library-shared | 180a0ed (F-001 candidate A §12: Gumroad fee/tax primary pages located, still UNVERIFIED) |
+| library-shared | 5265492 (F-001 candidate A §13: best/worst-case net table bounding the unverified fees) |
 | mirror-claude | this CHECKPOINT/RUN-LOG commit |
 | research-discourse-registry | none (DISC-002 skipped: no ChatGPT contribution since Claude's 18Z note) |
