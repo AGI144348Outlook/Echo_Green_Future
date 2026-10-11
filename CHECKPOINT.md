@@ -1,15 +1,17 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T16:00Z (scheduled hourly run, Claude)
-**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **All INERT rows in the three Library manifests are now decided (batch 14).** S1 is not closed: 51 DEFERRED rows remain (batch-8 double registrations corrected 16Z, below).
+**Last run:** 2026-10-11T17:00Z (scheduled hourly run, Claude)
+**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). All rows of the three 2026-10-08 manifests were decided by batch 14, but **those manifests did not cover the branches**: 222 paths were added after listing. Batch 15 (17Z) listed them in append-only `MANIFEST-ADDENDUM-1.tsv` files and decided 133; **89 INERT rows remain** (all `Datasets/files/` on `code-library-registry`). 51 DEFERRED rows also remain.
 
 ## Position
 
 | Source manifest | Rows | Decided | Next |
 |---|---|---|---|
 | `code-library-registry` | 872 | 872 (845 KEPT, 7 PRUNED, 20 DEFERRED) | done; 20 DEFERRED rows await a re-listed manifest or a ruling |
+| `code-library-registry` ADDENDUM-1 @ e104608 | 144 | 55 (55 KEPT) | **next: 89 INERT `Datasets/files/` rows** (crawler-downloaded data files, a category not in the original manifest) |
 | `code-library-registry-ivs` | 212 | 212 (192 KEPT, 8 PRUNED, 12 DEFERRED) | done |
 | `library-source-transcriptions` | 901 | 901 (875 KEPT, 7 PRUNED, 19 DEFERRED) | done |
+| `library-source-transcriptions` ADDENDUM-1 @ 43612d0 | 78 | 78 (78 KEPT) | done |
 
 Batch 1 covered `code_library_registry/` except `modules/`. Batch 2 covered `modules/`, `Algorithms/Stress-Test-001/002` and top-level files. Batch 3 covered `Datasets/` non-catalog files (INDEX, crawler/*, state/*: 12) and the first 138 `catalog/datagov` rows (69 record pairs, ordered as in the manifest, last one `datagov/neh-grants-2010s/`; continue at the first INERT datagov row). For all 69 pairs the sha256 of the decompressed raw response equals the checksum in `record.json` (EXECUTION-VERIFIED). 4 batch-3 blobs (INDEX.md, state/runs.json, seen.json, skipped.json) differ at 86785a0: the manifest (listed at 032606a) is stale for crawler-written files; catalog record blobs matched.
 
@@ -35,11 +37,13 @@ Batch 13 (2026-10-11T14Z) covered the next 150 rows of `library-source-transcrip
 
 Batch 14 (2026-10-11T15Z) covered the last 119 rows of `library-source-transcriptions`: 113 KEPT, 2 PRUNED, 4 DEFERRED. 73 rows are blobs identical to rows decided earlier and mirror those decisions (MOD-0005 validation, MOD-0006/0007, research_papers, 35 `reviews/`; PRUNED: MOD-0006/0007 license snapshots; DEFERRED: `echo-dataset-crawler.zip`, `src/a159_cloudflare_migrator.py`, `src/index.js`, `wrangler.toml`). The 46 rows unique to this branch were read (in full or sampled, plus a keyword scan for personal or secret material: none found; all technical/research text) and KEPT: `source-transcriptions/` (TEMA spec, Mashet control surface parts 1-8) in Codices; `experiments/nve-d/` specs in Logics/Formulas, code in Algorithms, trial records in Registries; `registries/mashet-candidates/` in Registries, with the NVE-C reconciliation table as the first Matrices entry; `docs/` in Logics; `source-index/` and READMEs in Indices. All 119 blobs match the branch at 43612d0. EXECUTION-VERIFIED: `scripts/registry_former/mashet_candidate_registry.py` runs offline (stdlib, `python3 -I`, scratch copy): 93 candidates vs 96 claimed, 12 duplicate glyphs, matching NVE-C `observed_total` 93; output not committed. Registered: Registries 45, Indices 25, Algorithms 20, Codices 14, Logics 5, Formulas 3, Matrices 1.
 
-Totals (EXECUTION-VERIFIED from the three manifests): 1,985 rows; 1,912 KEPT, 22 PRUNED, 51 DEFERRED; 0 INERT.
+Batch 15 (2026-10-11T17Z): compared each branch tree with its manifest (`code-library-registry-ivs` 0 new paths; the other two 144 and 78) and wrote `MANIFEST-ADDENDUM-1.tsv` (existing manifest rows unchanged). Decided 133, all KEPT: CLR-0043 Lexicon Registry (README, assessment, grammar.js, template, starter.json, build/), `symbol_registries/` (README, hebrew-index, rules snapshot), neuroplasticity design notes, 21 new catalog record pairs (21/21 raw checksums match `provenance.checksum`, EXECUTION-VERIFIED), NVE-D trials 011–063 (71 files), configuration lab + tests (9/9 unit tests pass offline, EXECUTION-VERIFIED), lab status, 3 docs/assessments, and the `nve-d-configuration-checks.yml` workflow (read in full: contents:read, tests only, no secrets or deploy, so KEPT, unlike the batch-1 DEFERRED deploy workflows). Keyword scan for personal/secret material: none. Registered: Registries 116, Algorithms 10, Logics 4, Indices 2, Codices 1. ChatGPT's run-015 eight KEEP decisions (mirror-chatgpt-root a51dca1) agree with Claude's on all eight blobs (7 decided in batch 1, `rules-snapshot` in this batch).
+
+Totals (EXECUTION-VERIFIED from manifests + addenda): 2,207 rows; 2,045 KEPT, 22 PRUNED, 51 DEFERRED, 89 INERT. Register: 2,163 rows, 2,045 distinct primaries = 2,045 KEPT, 0 double primaries.
 
 **Batch-8 double registrations — corrected 2026-10-11T16Z.** 51 (branch, path) pairs (42 `code-library-registry-ivs`, 9 `library-source-transcriptions`) were primary in two sub-libraries (one pair in three). The sub-library where the matching `code-library-registry` row is primary stayed primary; 52 other rows re-tagged `xref-from:<primary>` (old cross_ref kept in PRUNE-LOG, append-only; no row deleted, no decision changed). Check (EXECUTION-VERIFIED): 2,030 register rows, 1,912 distinct primaries = 1,912 KEPT, 0 double primaries.
 
-Next S1 work: the 51 DEFERRED rows, which wait on Timothy's rulings (re-listing stale manifests, Worker/deploy code, crawler state, third-party clone script, licence-unresolved modules). Moving to S2 (Mirroring Sub-Repository) needs S1 judged complete; whether DEFERRED rows block that is a question for Timothy.
+Next S1 work: the 89 INERT `Datasets/files/` rows in the code-library-registry addendum (check licences and sizes; these are third-party data files, not catalog records), then re-run the coverage check against the branch heads. Then the 51 DEFERRED rows, which wait on Timothy's rulings (re-listing stale manifests, Worker/deploy code, crawler state, third-party clone script, licence-unresolved modules). Moving to S2 (Mirroring Sub-Repository) needs S1 judged complete; whether DEFERRED rows block that is a question for Timothy.
 
 Look-ahead (corrected): the earlier "28 zenodo pairs left" was wrong; only 14 pairs remained and are now done. The 119 INERT rows left are non-catalog rows; the 46 unique to this branch (`source-transcriptions/`, `experiments/nve-d/`, `registries/mashet-candidates/`, `docs/`, `scripts/`, `source-index/`) are among them and need a real read. Tip: use `git ls-tree -r` without `-l` on this partial clone (`-l` fetches every blob and timed out).
 
@@ -49,15 +53,15 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 073f604 (unchanged since last run's own commit; contract files unchanged) |
-| mirror-claude | 9c586fd (before this run's commit) |
-| library-shared | d96a888 (before this run's commit) |
-| code-library-registry | 86785a0 (unchanged) |
+| research-discourse-registry | 073f604 (unchanged; contract files unchanged) |
+| mirror-claude | 0a4a2a4 (before this run's commit) |
+| library-shared | cf62028 (before this run's commit) |
+| code-library-registry | e104608 (**changed** from 86785a0: crawler run 2026-10-11T15:05Z, 24 files) |
 | code-library-registry-ivs | d880679 (unchanged) |
 | library-source-transcriptions | 43612d0 (unchanged) |
 | genesis-documentary | f888091 (unchanged) |
 | mirror-chatgpt | 2fcac0e (unchanged) |
-| mirror-chatgpt-root | f5c8c1b (unchanged) |
+| mirror-chatgpt-root | a51dca1 (**changed** from f5c8c1b: GPT run 015, eight Library KEEP decisions) |
 | contract-000-gpt-team | 358818e (unchanged; read only) |
 | super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
 
@@ -66,5 +70,5 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 | Branch | Commit |
 |---|---|
 | mirror-claude | (this commit; see RUN-LOG) |
-| library-shared | cf62028 (F-001 candidate C §12) |
-| research-discourse-registry | none (DISC-002 skipped: no ChatGPT reply since 520f61c; 15Z short note already stands) |
+| library-shared | 4a4f05e (F-001 candidate C §13) |
+| research-discourse-registry | none (DISC-002 skipped: no ChatGPT reply since 520f61c; 15Z short note stands) |
