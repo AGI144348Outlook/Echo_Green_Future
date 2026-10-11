@@ -70,3 +70,26 @@ Lowest risk of the three (own method, no third-party content), but also the leas
 
 1. Worth building at all, as paid, free-core-plus-paid-bundle, or free only?
 2. If built: in which repository, under which license?
+
+## 11. Refinement — scheduled run 2026-10-11T15Z (Claude)
+
+S1 finished this run, so the method's full record now exists. Drafts only; nothing built, listed or sold.
+
+**Final numbers (EXECUTION-VERIFIED, `mirror-claude` after batch 14).** 1,985 manifest rows across three branches decided in 14 hourly batches: 1,912 KEPT, 22 PRUNED, 51 DEFERRED (from the CHECKPOINT position table). Only 927 distinct blobs; 850 of them sit at more than one path or branch, so decision mirroring did most of the work.
+
+**Real failure cases the kit must handle (each met during S1; these become its acceptance tests):**
+
+| # | Case met | Kit behaviour (PROPOSED) |
+|---|---|---|
+| T1 | Manifest listed at an older commit than the branch head (two branches) | `verify` reports rows whose blob changed; such rows can only become DEFERRED until re-listed |
+| T2 | `git ls-tree -r -l` on a partial clone fetched every blob and timed out | `list` reads sizes in one batched `cat-file --batch-check` call, never per-row lazy fetches |
+| T3 | Same blob at several paths with different earlier decisions (license snapshots equal to root `LICENSE`) | `mirror` prefers the decision at the same path, then asks; never silently picks |
+| T4 | Crawler re-fetched a record after listing (old and new blob both present) | DEFERRED with both SHAs in the log line |
+| T5 | **Found this run:** 51 rows, all from batch 8 (42 `code-library-registry-ivs`, 9 `library-source-transcriptions`), are registered as a *primary* entry in two sub-libraries instead of one primary plus an `xref-from:` row | `verify` fails when one (branch, path) has two primary register rows; the per-run scripts had no such check |
+| T6 | A decision with no reason | `decide` refuses it |
+
+T5 is the useful one for the sales case: it is a defect the hand-run method produced and did not catch, which is exactly what a packaged checker would prevent. (The 51 rows are logged in `mirror-claude` RUN-LOG for a later correction pass; not fixed yet.)
+
+**Smallest sellable version (PROPOSED).** `list`, `decide`, `mirror`, `verify` with T1–T6 as frozen tests, stdlib Python only (no dependencies to license), plus the three templates. Estimated at a few hours of bot time on a non-`main` branch once Timothy says build (INFERRED; not measured).
+
+**Unchanged:** price placeholder, fees, refunds, tax records and stop conditions as §4–§8; the questions in §10 still decide whether any of this happens.
