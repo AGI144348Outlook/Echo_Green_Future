@@ -1,7 +1,9 @@
 # CHECKPOINT — mirror-claude (Contract 000 §15.6)
 
-**Last run:** 2026-10-11T21:00Z (scheduled hourly run, Claude)
-**Stage:** S1 — Library inventory and pick/prune (three sources as equals, §13). **No INERT rows remain**, and every path at the three branch heads (e104608, d880679, 43612d0) is listed in a manifest or addendum (coverage gap 0, EXECUTION-VERIFIED). Batch 16 (18Z) decided the last 89 `Datasets/files/` rows: 30 KEPT, 59 DEFERRED. **110 DEFERRED rows remain**, all waiting on Timothy's rulings. Whether S1 counts as complete with DEFERRED rows open (and so whether S2 may start) is Timothy's call; until then later runs only re-check coverage and handle new paths.
+**Last run:** 2026-10-11T22:00Z (scheduled hourly run, Claude)
+**Stage:** S2 done (first pass) and S3 started, under TJ-RULINGS R3 (S2/S3 may start with DEFERRED rows open; no deletions; PRUNED = set aside, fingerprint kept). S1 stays complete at the three unchanged Library heads (e104608, d880679, 43612d0; coverage gap 0); its 110 DEFERRED rows remain open. **S2:** all 20 `L1-main` rows decided at main e28421a (19 listed + 1 new path in `L1-main/MANIFEST-ADDENDUM-1.tsv`): 7 KEPT, 1 PRUNED, 12 DEFERRED. **S3:** Z01 `genesis-documentary` @ f888091 done (44 rows: 33 KEPT, 2 PRUNED, 9 DEFERRED), Library registration first, then the mirror manifest. 64 rows decided this run (limit 150). Next: Z02 `resh-lattice-agency`.
+
+**Earlier stage note (21Z, superseded by R3):** S1 — Library inventory and pick/prune (three sources as equals, §13). **No INERT rows remain**, and every path at the three branch heads (e104608, d880679, 43612d0) is listed in a manifest or addendum (coverage gap 0, EXECUTION-VERIFIED). Batch 16 (18Z) decided the last 89 `Datasets/files/` rows: 30 KEPT, 59 DEFERRED. **110 DEFERRED rows remain**, all waiting on Timothy's rulings.
 
 ## Position
 
@@ -12,6 +14,9 @@
 | `code-library-registry-ivs` | 212 | 212 (192 KEPT, 8 PRUNED, 12 DEFERRED) | done |
 | `library-source-transcriptions` | 901 | 901 (875 KEPT, 7 PRUNED, 19 DEFERRED) | done |
 | `library-source-transcriptions` ADDENDUM-1 @ 43612d0 | 78 | 78 (78 KEPT) | done |
+| **S2** `L1-main` MANIFEST @ 7518a58 (blobs re-checked at e28421a) + ADDENDUM-1 @ e28421a | 19 + 1 | 20 (7 KEPT, 1 PRUNED, 12 DEFERRED) | done; KEPT rows registered (6 as `main` cross-refs to Library primaries, 1 new Logics primary) |
+| **S3** Z01 `genesis-documentary` @ f888091 | 44 | 44 (33 KEPT, 2 PRUNED, 9 DEFERRED) | done; registered Algorithms 12, Matrices 9, Codices 6, Logics 3, Registries 2, Indices 1 |
+| S3 Z02 `resh-lattice-agency` | see its manifest | 0 | next |
 
 Batch 1 covered `code_library_registry/` except `modules/`. Batch 2 covered `modules/`, `Algorithms/Stress-Test-001/002` and top-level files. Batch 3 covered `Datasets/` non-catalog files (INDEX, crawler/*, state/*: 12) and the first 138 `catalog/datagov` rows (69 record pairs, ordered as in the manifest, last one `datagov/neh-grants-2010s/`; continue at the first INERT datagov row). For all 69 pairs the sha256 of the decompressed raw response equals the checksum in `record.json` (EXECUTION-VERIFIED). 4 batch-3 blobs (INDEX.md, state/runs.json, seen.json, skipped.json) differ at 86785a0: the manifest (listed at 032606a) is stale for crawler-written files; catalog record blobs matched.
 
@@ -55,29 +60,30 @@ Earlier look-ahead (EXECUTION-VERIFIED against the three manifests): of the 569 
 
 ## Source refs read this run
 
-21Z: Library heads unchanged since 20Z (git ls-remote, EXECUTION-VERIFIED), coverage gap stays 0; no rows decided; 110 DEFERRED still await Timothy. Changed: `mirror-chatgpt-root` 7f97b40 → 2becf76 (4 ChatGPT files: TJ Algorithm Matrix notation relay, ebook/platform coordination brief, Drive question, SPEC-DRAFT-001 Replit workspace). Google Drive connector used for a metadata-only title search (F-001 §14); no contents read.
+22Z: Library heads unchanged (git ls-remote, EXECUTION-VERIFIED); coverage gap stays 0. New since 21Z: TJ-RULINGS R1–R7 and Contract §30 (research-discourse-registry b7cbda2, 25588a8), then another Claude session's SPEC-DRAFT-001 review (fda6aee) and self-update 1/4 (a860a25), which landed while this run was working; `contract-000-gpt-team` 358818e → 2f26898 (independent income automation proposal, read only). dual-order-os 2d92938 and The-TAM-protocol d46456a read (public, read only).
+
+Totals after this run (EXECUTION-VERIFIED): register 2,233 rows (2,193 + 7 main + 33 Z01); 0 double primaries.
 
 | Ref | Commit |
 |---|---|
-| research-discourse-registry | 6d67067 (before this run's commit) |
-| mirror-claude | f950732 (before this run's commit) |
-| library-shared | 5265492 (before this run's commit) |
-| code-library-registry | e104608 (unchanged) |
-| code-library-registry-ivs | d880679 (unchanged) |
-| library-source-transcriptions | 43612d0 (unchanged) |
-| genesis-documentary | f888091 (unchanged; skeleton read for DISC-002) |
+| research-discourse-registry | 25588a8 at start; a860a25 before this run's commit |
+| mirror-claude | 5986eef (before this run's commit) |
+| library-shared | fe3edeb (before this run's commit) |
 | main | e28421a (unchanged; read only) |
-| mirror-chatgpt | 2fcac0e (unchanged) |
-| mirror-chatgpt-root | 2becf76 (new since 20Z; read only) |
-| contract-000-gpt-team | 358818e (unchanged; read only) |
-| super-duper-octo-winner (ChatGPT, read only, via git ls-remote) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
+| code-library-registry / -ivs / library-source-transcriptions | e104608 / d880679 / 43612d0 (unchanged) |
+| genesis-documentary | f888091 (unchanged; S3 Z01) |
+| mirror-chatgpt / mirror-chatgpt-root | 2fcac0e / 2becf76 (unchanged) |
+| contract-000-gpt-team | 2f26898 (new; read only) |
+| super-duper-octo-winner (read only) | main e267982, gpt-worker-output 713fce1, echo-upstream-mirror d38d7ee, echo-governor-snapshot 561c1a0 (unchanged) |
+| dual-order-os (read only) | 2d92938 |
+| The-TAM-protocol (read only) | d46456a |
 
 ## Commits made this run
 
 | Branch | Commit |
 |---|---|
-| library-shared | fe3edeb (F-001 candidate A §14: Drive source intake, metadata only, gated intake pipeline) |
-| research-discourse-registry | 9dcb32a (DISC-002: TJ Algorithm Matrix notation vs `AlgorithmMatrix`; proposed grammar; 5 ambiguity questions) |
-| mirror-claude | this CHECKPOINT/RUN-LOG commit |
+| research-discourse-registry | a59f64c (DISC-002 22Z: R5 scoped as race contract RC-R5) |
+| library-shared | 4690539 (F-001 §15: TAM Protocol source measured; product shape) |
+| mirror-claude | this commit (S2 batch 1, S3 batch 1 Z01, DUAL-ORDER-FIT.md, CHECKPOINT/RUN-LOG) |
 
-Pending for a later run: review ChatGPT's SPEC-DRAFT-001 (Echo Development Workspace on Replit/Copilot); not started this run (outside this run's A–D scope, and Timothy's relayed approval is conditional on a joint spec).
+Pending for later runs: S3 Z02 onward; DUAL-ORDER-FIT next steps (framework column, derived indices). SPEC-DRAFT-001 was reviewed by another Claude session (fda6aee).
