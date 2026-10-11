@@ -1,0 +1,18 @@
+# Contract-000 GPT Library review — run 016 (2026-10-11)
+
+Source-specific decisions, not a claim of semantic validation. Sources pinned to `library-source-transcriptions@43612d0b2b171f0001f2fad17ec9474d20c292c7` and `code-library-registry@e104608aa6eda5dfb5b308fabefbb85b6a69b61f`. No source content deleted. Each KEEP is a historical or design reference only; executable promotion requires separate tests and rights review.
+
+| Source branch/path | Git blob SHA | Decision | Evidence and reason |
+|---|---|---|---|
+| library-source-transcriptions/source-index/mashet-symbolic-kernel.md | 6bb40ccaa5d1de02a45c2ace19c208c9925e2dad | KEEP | URL-indexed source reference; explicitly says no kernel interpreter/execution validated. External target not independently fetched this run. |
+| library-source-transcriptions/scripts/registry_former/mashet_candidate_registry.py | 6c4d48545d58f4ee058add1dc3d267e3ce2737b2 | DEFER | Offline candidate extractor inspected; not executed against complete transcript in this run. Its hardcoded provenance path and category range overflow require validation before promoting generated output. |
+| library-source-transcriptions/registries/mashet-candidates/README.md | 6bd73aae61517d2cd7b7a7747b55ef6e8661e1dc | KEEP | Documents candidate-only status and warns that alternative legends exist. Not executable evidence. |
+| library-source-transcriptions/registries/mashet-candidates/parallel-test/nve_a_structural.json | 54a024d4922b9acb987b25ba85b988a521add1b0 | KEEP | 93 glyph observations; independently counted 81 unique glyph strings. Blind pass retains position metadata, so not blind to all structure. |
+| library-source-transcriptions/registries/mashet-candidates/parallel-test/nve_b_informed.json | d742891c88efa1b3651f84f5a6e18efe1967bddb | KEEP | 93 labeled candidates, 81 unique glyph strings; labels are proposals, not established semantics. |
+| library-source-transcriptions/registries/mashet-candidates/parallel-test/nve_c_reconciliation.json | 6f9615409543c131b9d4f1438f09ed5974e37b63 | KEEP | 93/81 counts and 12 collision groups independently match A/B. CAUTION: F contains 17 vs declared 16, but gaps report says missing=0; 4 missing D and 1 surplus F explain net shortfall of 3. Repair report before promotion. |
+| code-library-registry/code_library_registry/research_papers/mathematical_frameworks/RP-0003_ASSESSMENT.md | e91679007fe326514173e8efba408b872931effc | KEEP | Historical mathematical critique explicitly identifies incorrect eigenvalue/stability and memory-decay claims; not proof of Structural Intelligence. |
+| code-library-registry/code_library_registry/research_papers/architecture_strategy/RP-0002_SPATIAL_AI_CARTESIAN_GRID.md | f093f81630a5ed8080b534f506e2ea066eb61f01 | KEEP | Historical EVE/NVE spatial architecture proposal with coordinate transforms and templates; not demonstrated AI cognition. |
+| code-library-registry/code_library_registry/research_papers/architecture_strategy/RP-0003_STRUCTURAL_INTELLIGENCE.md | 99138fb8e41d3601a006c0c02686855f2eba48d9 | KEEP | Research critique separates collective dynamics from intelligence and flags wave aliasing; retain with limits. |
+| code-library-registry/code_library_registry/design_notes/neuroplasticity-candidate-algorithms.md | 102ae61004db144adb4ab8e3728733bc064a532e | KEEP | Proposed resource envelopes and analogical mechanisms, explicitly not implemented; preserve alternatives and avoid biological equivalence claims. |
+
+**Batch totals:** 9 KEEP / 1 DEFER / 0 PRUNE, 10 source-specific entries. Independent cross-file checks: NVE-A=93, NVE-B=93, NVE-C=93; 81 unique; 12 collision groups; category counts A12/B12/C12/D20/E20/F17. The declared 96 slots are not 96 observed distinct entries. No Layer Z population or deletion.
