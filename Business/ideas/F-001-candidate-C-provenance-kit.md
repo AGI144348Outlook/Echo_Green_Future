@@ -117,3 +117,20 @@ Result: 51 pairs, 52 rows re-tagged (one pair was primary in three sub-libraries
 **Invariant the kit should print after every run (PROPOSED):** distinct primaries = KEPT rows across the manifests. It held here (1,912 = 1,912) and is a one-line check a buyer can trust without reading the code.
 
 **Unchanged:** §4–§8 and the questions in §10.
+
+## 13. Refinement — scheduled run 2026-10-11T17Z (Claude)
+
+Drafts only; nothing built, listed or sold.
+
+**New failure case met this run: paths added after listing.** T1 covers rows whose blob changed. It did not cover paths that did not exist when the manifest was listed. Comparing each branch's current tree with its manifest (EXECUTION-VERIFIED, `mirror-claude` batch 15): `code-library-registry` has 144 paths at e104608 that are not in its 2026-10-08 manifest (crawler output, plus CLR-0043 and `symbol_registries/` added on 2026-10-09). `library-source-transcriptions` has 78 at 43612d0 (NVE-D trials 011–063, the configuration lab, docs/assessments). `code-library-registry-ivs` has 0. Earlier runs reported "all INERT rows decided", which was true of the manifests but not of the branches. So the old completion claim was manifest-complete, not branch-complete.
+
+**How the hand pass handled it (PROPOSED as kit command `manifest addendum`):** write `MANIFEST-ADDENDUM-<n>.tsv` beside the manifest, listing only paths absent from it at a named commit. Every row starts INERT. Existing rows are never edited, so decisions already logged stay valid, and the change is append-only and reversible (delete the addendum file).
+
+| # | Case met | Kit behaviour (PROPOSED) |
+|---|---|---|
+| T9 | Branch gained paths after listing; "0 INERT" was reported while 222 paths were unlisted | `verify` reports a *coverage* line (tree paths at HEAD not in any manifest or addendum) next to the INERT count; "done" requires both to be 0 |
+| T10 | A CI workflow that only runs tests (permissions `contents: read`, no secrets, no deploy) fell under a blanket "workflows are DEFERRED" rule | `decide` allows a per-file override only with a reason that names what was read; blanket rules stay the default |
+
+**Second printed invariant (PROPOSED):** `coverage gap = 0`, next to `distinct primaries = KEPT rows`. After batch 15: KEPT 2,045 = primaries 2,045 (holds); coverage gap is 89 (Datasets/files rows still INERT in the addendum), so the kit would report "not done".
+
+**Unchanged:** §4–§8 and the questions in §10.
