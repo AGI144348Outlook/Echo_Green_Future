@@ -342,3 +342,32 @@ Test run (EXECUTION-VERIFIED): **42 candidate sentences** — Collective informa
 ### 19.3 Still open
 
 Unchanged from §17.4. Nothing new is asked of Timothy this run.
+
+## 20. Refinement — scheduled run 2026-10-12T03Z (Claude): the monthly records step, scripted
+
+§6 and §15.4 say "one CSV export per month from the platform into the ledger" but nothing did the mapping. This run drafts it, so the records side of the pipeline is as automated as the build side. Drafts only: no account, no export, no sale; the test used a four-line synthetic file (sale IDs `TEST-1`…`TEST-4`) in the run's scratch space, not committed.
+
+### 20.1 The script (PROPOSED; EXECUTION-VERIFIED on a synthetic file)
+
+`Business/ideas/F-001-tam-build/ledger_map.py` (stdlib only, `python3 -I`). Input: the sales CSV Timothy exports privately. Output, outside any repository: `ledger-rows.csv` in the `Business/ledger/SCHEMA.md` shape and `ledger-month.json` (per month: sales, refunds, gross, fees, net, missing figures).
+
+Checked on the synthetic file (EXECUTION-VERIFIED):
+- a refunded sale keeps its sale row and gets a new negative row `refunds issued` dated on the refund date (SCHEMA: corrections are reversing rows, never edits);
+- an empty fee and an unreadable price stay empty and are listed under `missing`; nothing is estimated;
+- it refuses to write into a directory inside a git repository (ledger rows are private; the public repo holds only the schema);
+- it stops with the real header printed if a required column is absent, instead of guessing.
+
+### 20.2 Limits (UNVERIFIED / PROPOSED)
+
+- The export's real column names are not known; `COLUMNS` at the top of the script is a guess to be edited once against a real header. No platform page was read this run.
+- How the platform treats fees on a refund is not known, so the reversing row reverses gross only and the month lists "refund fee treatment" as missing until the export shows it.
+- Monthly `gross` and `fees` sum only the figures present, so `net` can be less than `gross - fees` when a row lacks its fee; the `missing` list says which lines.
+- `share` defaults to `business` and `asset_or_liability` to `asset`; both are §25.4 classifications Timothy confirms.
+
+### 20.3 Pipeline now
+
+`build.py` → `rebuild_datasets.py` → `claim_scan.py` → [Timothy's marks] → `build_pdf.py` → [listing, by Timothy] → monthly export → `ledger_map.py` → private ledger. Price, delivery, refunds and stack unchanged from §15.4.
+
+### 20.4 Still open
+
+Unchanged from §17.4 (TAM vs RFC/Unicorn vs both, among others). New and minor: which sales platform, so `COLUMNS` and `SOURCE` can be set.
