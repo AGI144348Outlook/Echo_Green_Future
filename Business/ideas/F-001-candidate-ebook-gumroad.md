@@ -446,3 +446,36 @@ Checked (EXECUTION-VERIFIED):
 ### 22.4 Still open
 
 Unchanged from §21.4 (TAM vs RFC/Unicorn vs both; Article 4; credit spelling; framing; platform).
+
+## 23. Refinement — scheduled run 2026-10-12T06Z (Claude): the EPUB, checked
+
+Drafts only: no account, no page, no upload, no contact. Built from The-TAM-protocol d46456a (public, read only) into the run's scratch space; nothing built is committed.
+
+### 23.1 Correction to §22.2
+
+§22.2 said "No EPUB step exists yet in the pipeline." That was wrong: `build.py` (§16) already writes `tam-draft.epub` whenever pandoc is installed. This run built it (29,974 bytes, pandoc exit 0, EXECUTION-VERIFIED). The §22.2 line is left as written (append-only); this section supersedes it.
+
+### 23.2 The check (PROPOSED; EXECUTION-VERIFIED)
+
+`Business/ideas/F-001-tam-build/epub_check.py` (stdlib only, `python3 -I`): `epub_check.py <out-dir> [file.epub]`. Checks what makes readers or stores reject a file: `mimetype` first and stored uncompressed; `container.xml` → existing OPF; `dc:title`, `dc:language`, `dc:identifier` present and the title not a placeholder; every manifest item and spine entry resolves; an EPUB 3 nav document; every XHTML/XML file parses; no remote `http(s)` resources. Writes `epub-report.json`, exits 1 on any FAIL. It never edits the EPUB.
+
+- The real build at d46456a: 13 PASS, 0 FAIL (EPUB 3, 12 manifest items, 10 spine items; title "The TAM Protocol: A Speculative Reconstruction (review draft)", language `en`).
+- A synthetic broken copy (deflated `mimetype`, one chapter removed, a remote image injected): exit 1 with 4 FAILs (mimetype compression, missing manifest item, malformed XHTML, remote resource).
+
+### 23.3 Finding: the EPUB is not reproducible (EXECUTION-VERIFIED)
+
+Two builds from the same source give the same `tam-draft.md` (sha256 prefix c6a27a9e6df46070 both times) but different EPUB bytes, because pandoc writes a new random `dc:identifier` (`urn:uuid:…`) each run. For a sold book this matters: the identifier is how readers and stores tell an update from a new book, and the monthly records (§20) fingerprint what was sold. PROPOSED fix for a later run, not applied: pass a fixed identifier (`--metadata identifier=urn:uuid:<one UUID chosen once and recorded>`) and set `SOURCE_DATE_EPOCH` so timestamps are stable; then re-run two builds and compare sha256.
+
+### 23.4 Limits (UNVERIFIED)
+
+- This is not epubcheck (the reference validator, Java) and not the store's own validator; passing it means only that these structural faults are absent.
+- The title still carries "(review draft)" by design until Timothy's editorial pass; `listing_check.py` (§22) and this check would both need the final title.
+- Cover image: none is built yet; most stores want one. A candidate for a later run (Timothy's choice of image).
+
+### 23.5 Pipeline now
+
+`build.py` (MD + EPUB) → `epub_check.py` → `rebuild_datasets.py` → `claim_scan.py` → [Timothy's marks] → `build_pdf.py` → `listing_check.py` → [listing, by Timothy] → monthly export → `ledger_map.py` → private ledger.
+
+### 23.6 Still open
+
+Unchanged from §21.4 (TAM vs RFC/Unicorn vs both; Article 4; credit spelling; framing; platform). New, small: whether Timothy wants one fixed book identifier now (§23.3), or a store-issued ISBN later.
