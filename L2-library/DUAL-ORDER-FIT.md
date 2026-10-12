@@ -42,3 +42,8 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 
 - **Does not fit (again, larger):** every one of the 148 current Z04 rows read so far is a byte-identical copy of a row already registered from algebra, genesis-documentary, resh-lattice-agency or main. dual-order-os would hold one matrix entry per object and point to it from each branch's index; the Library keeps one primary row per (branch, path), so 123 new primaries are cross-references in practice (`cross_ref=<branch>:<path>`). A derived "by-blob" index (blob → all branch paths) would be the dual-order-os shape; proposed, not built (registration before editing, R3).
 - **Fits:** the two machine-appended session logs that changed after listing stay out of the register until re-listed, so the content side never points at a blob that is no longer at the head.
+
+## Addendum 2026-10-12T03Z (Z04 autonomous-agency, rows 151–242)
+
+- **Confirms the 02Z note:** all 92 remaining rows are byte-identical to rows registered earlier (by preferred reference: algebra 63, genesis-documentary 20, resh-lattice-agency 7, main 2), so Z04 adds no new content to the Library: 240 of its 242 listed rows mirror earlier blobs; the other 2 are the stale session logs. Z04 is the clearest case for the proposed by-blob index (dual-order-os: one matrix object, many index pointers). Still proposed, not built.
+- **Fits:** `matrices/echo_*.json` (9) went to Matrices and `src/`, `tests/`, `pwa/` code to Algorithms, as on the earlier branches, so the sub-library of a blob does not depend on which branch it was read from.
