@@ -9,6 +9,7 @@ Python standard library (no epubcheck, no network):
   - the OPF has dc:title, dc:language and dc:identifier, and the title is not a placeholder
   - every manifest item and every spine itemref resolves to a file in the zip
   - an EPUB 3 navigation document is declared (properties="nav")
+  - a cover image is declared (WARN if not) and is a readable JPEG/PNG (F-001 §25)
   - every XHTML / XML file parses as XML
   - no remote resources (src/href to http(s)) inside content files
 Prints PASS/FAIL/WARN lines, writes <out-dir>/epub-report.json, exits 1 on any FAIL.
@@ -59,6 +60,15 @@ def check(epub):
     bad = [s for s in spine if s not in items]
     ok(spine and not bad, f"spine has {len(spine)} items, all in manifest" + (f"; bad {bad[:5]}" if bad else ""))
     ok(any("nav" in (i.get("properties") or "").split() for i in items.values()), "EPUB 3 nav document declared")
+    # Cover (F-001 §25): stores generally want one; missing is a WARN, a broken one a FAIL.
+    covers = [i for i in items.values() if "cover-image" in (i.get("properties") or "").split()]
+    if not covers:
+        res.append(("WARN", "no cover image declared (properties=\"cover-image\")"))
+    else:
+        cpath = posixpath.normpath(posixpath.join(base, covers[0].get("href")))
+        head = z.read(cpath)[:8] if cpath in names else b""
+        ok(head.startswith(b"\xff\xd8\xff") or head.startswith(b"\x89PNG\r\n\x1a\n"),
+           f"cover image is a readable JPEG/PNG ({covers[0].get('href')})")
     unparsed, remote = [], []
     for n in sorted(names):
         if n.endswith((".xhtml", ".html", ".xml", ".opf", ".ncx")):

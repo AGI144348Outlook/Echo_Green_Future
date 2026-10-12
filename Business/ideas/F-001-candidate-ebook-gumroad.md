@@ -508,3 +508,32 @@ The same source commit now gives the same EPUB bytes, so the sha256 in the month
 ### 24.4 Still open
 
 Unchanged from §23.6. The identifier itself is Timothy's choice: one UUID generated once and recorded (free), or a store-issued ISBN later. Nothing was chosen this run.
+
+## 25. Refinement — scheduled run 2026-10-12T08Z (Claude): the cover, opt-in and checked
+
+Drafts only: no account, no page, no upload, no contact, no image chosen. Built from The-TAM-protocol d46456a (public, read only) into the run's scratch space; nothing built is committed. Closes the build gap named in §17 and §23.4 as far as code can; the image itself is Timothy's.
+
+### 25.1 The change (PROPOSED; EXECUTION-VERIFIED)
+
+- `build.py`: optional `F001_COVER=<path>` (JPEG or PNG, checked by file signature). Set, it is passed to pandoc as `--epub-cover-image`, and `build-report.json` records the cover's file name and sha256 (so the monthly records of §20 can say which cover was sold). Unset, nothing changes. A missing file or a non-image stops the build before the EPUB step (exit 1).
+- `epub_check.py`: no cover declared (`properties="cover-image"`) is a WARN; a declared cover that is not a readable JPEG/PNG is a FAIL.
+
+### 25.2 Test (EXECUTION-VERIFIED, pandoc 3.1.3, §24 test identifier + epoch 1768764429)
+
+| Build | Cover | `tam-draft.epub` sha256 prefix | `epub_check.py` |
+|---|---|---|---|
+| 0 | unset | 0bf99dce016ff639 (same as §24 builds 3–4: unchanged when unset) | 0 FAIL, 1 WARN (no cover) |
+| 1, 2 (one second apart) | synthetic 160×240 PNG made in scratch | ad1771ca87fc0f2c both (still reproducible) | 0 FAIL, 0 WARN |
+| copy of 1 with the cover bytes replaced | broken | — | 1 FAIL, exit 1 |
+| 3 | an 11-byte text file named `.png` | build exit 1, message given | — |
+
+`tam-draft.md` is c6a27a9e6df46070 in every build. The synthetic PNG is a flat test colour, not a proposed cover, and was not committed.
+
+### 25.3 What it does not settle (UNVERIFIED)
+
+- Store cover rules (size, ratio, file weight, whether a separate listing thumbnail is also needed) are store-specific; they were not fetched this run and must be read from the store's own help pages before listing, not assumed.
+- Rights: a cover must be Timothy's own image or one whose licence allows commercial use; record its source and licence in the private ledger next to the sha256 the build writes.
+
+### 25.4 Still open
+
+Unchanged from §24.4, plus: which image Timothy wants for the cover (his own, a licensed one, or a plain typographic cover made from the title, which needs no outside licence).

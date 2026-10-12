@@ -96,6 +96,18 @@ def main(src, out):
             if not re.fullmatch(r"urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", book_id):
                 sys.exit("F001_BOOK_ID must look like urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
             cmd += ["--metadata", f"identifier={book_id}"]
+        # Cover (F-001 §25, opt-in): Timothy's own or a licensed image; JPEG or PNG.
+        # Unset = no cover (as before). A bad path or type stops before the EPUB step.
+        cover = os.environ.get("F001_COVER")
+        if cover:
+            cp = Path(cover)
+            head = cp.read_bytes()[:8] if cp.is_file() else b""
+            if not (head.startswith(b"\xff\xd8\xff") or head.startswith(b"\x89PNG\r\n\x1a\n")):
+                sys.exit("F001_COVER must be an existing JPEG or PNG file")
+            cmd += ["--epub-cover-image", str(cp)]
+            report["cover"] = {"file": cp.name, "sha256": hashlib.sha256(cp.read_bytes()).hexdigest()}
+        else:
+            report["cover"] = "none (F001_COVER unset)"
         report["epub_reproducible"] = {"identifier": book_id or "random (pandoc default)",
                                        "SOURCE_DATE_EPOCH": os.environ.get("SOURCE_DATE_EPOCH") or "unset"}
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
