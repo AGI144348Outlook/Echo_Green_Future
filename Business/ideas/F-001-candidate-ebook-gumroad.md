@@ -371,3 +371,48 @@ Checked on the synthetic file (EXECUTION-VERIFIED):
 ### 20.4 Still open
 
 Unchanged from §17.4 (TAM vs RFC/Unicorn vs both, among others). New and minor: which sales platform, so `COLUMNS` and `SOURCE` can be set.
+
+## 21. Refinement — scheduled run 2026-10-12T04Z (Claude): the listing page, drafted against the source
+
+The pipeline in §20.3 has one step with nothing drafted yet: "[listing, by Timothy]". This run drafts the text of that page, so the only work left at listing time is pasting it and choosing a price. Drafts only: no account, no page, no upload, no contact. Every factual line on the page points to where it comes from, so that the description matches the product (§25.3).
+
+### 21.1 Listing text (PROPOSED; placeholders in [brackets] are Timothy's to fill)
+
+> **The TAM Protocol — A Speculative Reconstruction of the 13.7 g Invariant** [working title]
+>
+> A research notebook by [credit line]. It follows one idea through ancient weights, water clocks, dyes, island geography and star timing: that a 13.7-gram unit sits under many ancient measuring systems. The book is speculative. Each claim is marked as *claimed*, *inferred* or *a test to run*, and each article ends with a short "What would falsify this" box.
+>
+> **What you get:** one PDF and one EPUB, about [N] pages; [9] articles; two data appendices (weight tables), also included as CSV files; a short glossary.
+>
+> **What this is not:** it is not peer-reviewed, and it does not prove its thesis. Numbers are kept only where a source is cited; the rest are written as predictions you can check.
+>
+> **How it was written:** assembled by the author from his own research sessions with an AI notebook tool (NotebookLM), then edited. [Keep or adjust to the platform's disclosure rule.]
+>
+> **Refunds:** if it is not what you expected, ask within 30 days for a full refund. No questions asked.
+>
+> **Price:** [$7] [or pay what you want, minimum $5].
+
+### 21.2 Where each line comes from
+
+| Listing line | Source | State |
+|---|---|---|
+| 13.7 g unit as the thesis | The-TAM-protocol README and Articles (§15.1) | SOURCE-OBSERVED |
+| Topics (weights, clepsydra, dyes, Azores, zenith timing) | Article titles #1, #2, #3, #5, #6 (§15.1) | SOURCE-OBSERVED |
+| "[9] articles" | Articles 1–3 and 5–10, with Article 4 missing (§15.1) | SOURCE-OBSERVED; becomes 10 if Article 4 turns up |
+| "two data appendices, also as CSV" | Dataset A/B rebuilt as CSV, 14/14 rows (§17) | EXECUTION-VERIFIED on the public text |
+| "[N] pages" | wkhtmltopdf gave 13 pages for the unedited text (§18); edited length ~40–50 pages (§15.3) | fill from the real build; never from the estimate |
+| claim marks + falsification boxes | §15.2 framing, §19 worksheet | PROPOSED; true only once Timothy's editorial pass is done |
+| "not peer-reviewed, does not prove" | §15.2 ("proves", "99.9 %", ">95 %" have no data behind them) | SOURCE-OBSERVED |
+| NotebookLM origin | TJ-RULINGS R1 | Timothy's own words |
+| 30-day refund | §5 / §15.4 | PROPOSED, Timothy decides |
+
+### 21.3 Rules the page keeps (PROPOSED)
+
+- The page lists nothing the files do not contain: no infographics unless Timothy exports them as images he owns (§15.3), and no "updates included" unless he means to issue them.
+- The page count, word count and file list come from the final build output, copied in at listing time.
+- No testimonials, ratings or "bestseller" wording; reviews only from real buyers, through the platform's own system.
+- If the editorial pass (claim marks) is not done, the page must drop the "Each claim is marked" sentence. Otherwise it describes a book that does not exist.
+
+### 21.4 Still open
+
+Unchanged: TAM vs RFC/Unicorn vs both; Article 4; credit spelling; the "speculative reconstruction" framing; the platform (which sets the disclosure rule, fees and the export columns in §20). The platform's current AI-disclosure rule and fees were not checked this run (UNVERIFIED).
