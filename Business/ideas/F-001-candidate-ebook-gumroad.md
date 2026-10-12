@@ -416,3 +416,33 @@ The pipeline in §20.3 has one step with nothing drafted yet: "[listing, by Timo
 ### 21.4 Still open
 
 Unchanged: TAM vs RFC/Unicorn vs both; Article 4; credit spelling; the "speculative reconstruction" framing; the platform (which sets the disclosure rule, fees and the export columns in §20). The platform's current AI-disclosure rule and fees were not checked this run (UNVERIFIED).
+
+## 22. Refinement — scheduled run 2026-10-12T05Z (Claude): a pre-listing gate for §21.3
+
+§21.3 sets rules the listing page must keep, but nothing checked them. This run adds a gate that compares the listing text with the build it describes, so the page cannot go up describing a book that does not exist. Drafts only: no account, no page, no upload, no contact. Tests used synthetic files in the run's scratch space, not committed.
+
+### 22.1 The script (PROPOSED; EXECUTION-VERIFIED on synthetic files)
+
+`Business/ideas/F-001-tam-build/listing_check.py` (stdlib only, `python3 -I`): `listing_check.py <listing.md> <out-dir>`. Reads the listing text, `pdf-report.json` (from `build_pdf.py`), `claims.csv` (from `claim_scan.py`, status filled by Timothy) and the build's CSV/EPUB files. Prints PASS/FAIL lines and exits 1 on any FAIL. It never edits the listing.
+
+FAILs when: a `[placeholder]` is left; wording §15.2/§21.3 rule out appears (`proves` except the negated disclaimer, `99.9 %`, `>95 %`, bestseller, testimonial, star ratings, "updates included"); "about N pages" differs from the built page count; "Each claim is marked" is on the page while any `claims.csv` row has no mark (claimed / inferred / test / cut / sourced); CSV or EPUB is promised but not built.
+
+Checked (EXECUTION-VERIFIED):
+- the §21.1 draft as written, against an unedited build (13 pages, one unmarked claim, no EPUB): exit 1 with 3 FAILs (7 placeholders, 1 of 2 claims open, no EPUB); the honest "does not prove its thesis" line passes;
+- the same draft with placeholders filled, page count 13 = build 13, all claims marked, EPUB present: exit 0, 13 PASS;
+- that listing plus "This proves the unit at 99.9 %. Rated 4.8 stars." and a 40-page build: exit 1 with 4 FAILs (proves, 99.9 %, 4.8 stars, page count 13 vs 40).
+
+### 22.2 Limits (PROPOSED / UNVERIFIED)
+
+- It checks wording against a short list; it does not judge whether a sentence is true. The editorial pass (§19) stays Timothy's.
+- The claim-mark vocabulary (claimed / inferred / test / cut / sourced) is a draft; Timothy may use other words, and the `DONE` set would follow his.
+- No EPUB step exists yet in the pipeline; the gate only reports whether one was built. Building one (pandoc can, offline) is a candidate for a later run.
+- The platform's own listing rules (AI disclosure, banned claims) were not checked this run (UNVERIFIED).
+
+### 22.3 Pipeline now
+
+`build.py` → `rebuild_datasets.py` → `claim_scan.py` → [Timothy's marks] → `build_pdf.py` → `listing_check.py` → [listing, by Timothy] → monthly export → `ledger_map.py` → private ledger.
+
+### 22.4 Still open
+
+Unchanged from §21.4 (TAM vs RFC/Unicorn vs both; Article 4; credit spelling; framing; platform).
