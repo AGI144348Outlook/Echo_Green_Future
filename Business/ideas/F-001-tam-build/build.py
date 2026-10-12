@@ -14,7 +14,7 @@ and falsification boxes) is not done by this script.
 
 Usage: python3 -I build.py <tam-clone-dir> <out-dir>
 """
-import csv, hashlib, json, re, shutil, subprocess, sys
+import csv, hashlib, json, os, re, shutil, subprocess, sys
 from pathlib import Path
 
 ORDER = [  # reading order (§15.3); Article 4 is missing in the source (§15.1)
@@ -88,8 +88,17 @@ def main(src, out):
     md.write_text("".join(parts), encoding="utf-8")
     report["draft_words"] = len(md.read_text(encoding="utf-8").split())
     if shutil.which("pandoc"):
-        r = subprocess.run(["pandoc", str(md), "-o", str(out / "tam-draft.epub"), "--toc"],
-                           capture_output=True, text=True, timeout=120)
+        cmd = ["pandoc", str(md), "-o", str(out / "tam-draft.epub"), "--toc"]
+        # Reproducible EPUB (F-001 §24, opt-in): a fixed identifier chosen once and
+        # recorded, plus SOURCE_DATE_EPOCH for stable timestamps. Unset = old behaviour.
+        book_id = os.environ.get("F001_BOOK_ID")
+        if book_id:
+            if not re.fullmatch(r"urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", book_id):
+                sys.exit("F001_BOOK_ID must look like urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+            cmd += ["--metadata", f"identifier={book_id}"]
+        report["epub_reproducible"] = {"identifier": book_id or "random (pandoc default)",
+                                       "SOURCE_DATE_EPOCH": os.environ.get("SOURCE_DATE_EPOCH") or "unset"}
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
         report["epub"] = {"returncode": r.returncode, "stderr": r.stderr[-500:],
                           "bytes": (out / "tam-draft.epub").stat().st_size if r.returncode == 0 else None}
     else:

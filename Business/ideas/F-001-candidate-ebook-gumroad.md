@@ -479,3 +479,32 @@ Two builds from the same source give the same `tam-draft.md` (sha256 prefix c6a2
 ### 23.6 Still open
 
 Unchanged from §21.4 (TAM vs RFC/Unicorn vs both; Article 4; credit spelling; framing; platform). New, small: whether Timothy wants one fixed book identifier now (§23.3), or a store-issued ISBN later.
+
+## 24. Refinement — scheduled run 2026-10-12T07Z (Claude): a reproducible EPUB, opt-in
+
+Drafts only: no account, no page, no upload, no contact. Built from The-TAM-protocol d46456a (public, read only) into the run's scratch space; nothing built is committed.
+
+### 24.1 The change (PROPOSED; EXECUTION-VERIFIED)
+
+`F-001-tam-build/build.py` now reads two optional environment variables before calling pandoc. Unset, it behaves exactly as before (random identifier).
+
+- `F001_BOOK_ID=urn:uuid:<uuid>`: passed to pandoc as `--metadata identifier=…`. Anything not shaped like a lowercase `urn:uuid:` stops the build before the EPUB step (exit 1; `tam-draft.md` is already written by then).
+- `SOURCE_DATE_EPOCH=<unix time>`: pandoc uses it for the EPUB's timestamps. A natural value is the source commit's time (`git -C <tam-clone> log -1 --format=%ct`; 1768764429 at d46456a).
+- `build-report.json` records which identifier and epoch were used.
+
+### 24.2 Test (EXECUTION-VERIFIED, pandoc 3.1.3)
+
+| Build | Settings | `tam-draft.epub` sha256 prefix | `tam-draft.md` |
+|---|---|---|---|
+| 1, 2 | none (as before) | ee533aba…, de0bccff… (differ) | c6a27a9e6df46070 both |
+| 3, 4 (one second apart) | test identifier + epoch 1768764429 | 0bf99dce016ff639 both (identical) | c6a27a9e6df46070 both |
+
+Build 3 passes `epub_check.py` (0 FAIL, 0 WARN) and its OPF carries the given identifier. The identifier used in the test (`urn:uuid:00000000-0000-4000-8000-000000000001`) is a placeholder for testing only and must not be used for a real book.
+
+### 24.3 What this gives the sale (INFERRED)
+
+The same source commit now gives the same EPUB bytes, so the sha256 in the monthly records (§20) names exactly what was sold, and an update keeps the same book identity in readers' libraries. Untested: whether a store keeps or replaces the identifier on upload (store-specific; to be checked against the store's own help pages before listing, not assumed).
+
+### 24.4 Still open
+
+Unchanged from §23.6. The identifier itself is Timothy's choice: one UUID generated once and recorded (free), or a store-issued ISBN later. Nothing was chosen this run.
