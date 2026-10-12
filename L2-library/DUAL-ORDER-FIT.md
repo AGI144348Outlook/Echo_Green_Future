@@ -60,3 +60,9 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 ## Addendum 2026-10-12T06Z (Z10 dev-suite-logics, Z11 dev-suite-algorithms)
 
 - **Six branches, one tree:** Z06–Z11 all point at 03978f7 (`git rev-parse`, EXECUTION-VERIFIED). Z10 and Z11 add 78 register rows (same split as Z09: Algorithms 23, Registries 9, Indices 3, Codices 2, Matrices 1, Logics 1 per branch) and no new content. In dual-order-os terms the 03978f7 tree is one set of matrix objects now reached through six branch-name index pointers; the register carries all six (R3: everything stays as a dataset) but a by-blob index (proposed 02Z, still not built) would show them as one object with six names. Z12 `dev-suite-datasets` (f1949f7) is the first branch since Z05 with new blobs (8 of 59 rows), so it needs a real read next run.
+
+## Addendum 2026-10-12T07Z (Z12 dev-suite-datasets, Z13 dev-suite-integration-staging)
+
+- **Index side fits well:** Z12's `directory/index.html` is a lookup-first list (`ENVIRONMENTS`) pointing to each environment, and each environment links back to `/directory/`. That is the dual-order-os Index/Matrix pair in small: the Directory is the Index, each environment (here only Datasets) is a Matrix object that stands alone. Filed: Directory, README and the root redirect to Indices; `datasets/index.html` (raw data stored unaltered with per-field provenance and sha256 verify) and `_headers` to Registries.
+- **Does not fit:** per-environment browser storage (IndexedDB `lhea-env-<name>`) lives outside the repository, so its records cannot be registered here; only the shell that creates them can. Recorded, nothing built.
+- **Seventh pointer:** Z13 `dev-suite-integration-staging` is the 03978f7 tree again (seven branch names, one tree). Same split as Z09–Z11. By-blob index still proposed, not built.
