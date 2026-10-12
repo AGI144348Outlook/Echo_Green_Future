@@ -1,0 +1,956 @@
+{
+ "corpus": {
+  "source": "CISI digitisation (Carlson, MIT licence), Mohenjo-daro M-1–M-199",
+  "texts": 179,
+  "tokens": 984,
+  "illegible": 19,
+  "sign_types": 181,
+  "hapax": 77,
+  "mean_len": 5.6,
+  "max_len": 13,
+  "reference": {
+   "icit_texts": 5644,
+   "icit_signs": 709,
+   "icit_occurrences": 19831,
+   "mahadevan_signs": 419,
+   "right_to_left_share": "≈87% of texts with known direction",
+   "note": "Fuls 2022, Corpus of Indus Inscriptions"
+  }
+ },
+ "replay": [
+  {
+   "when": "12 Jan 2025, 21:18",
+   "prompt": "If there's only 400–600 symbols, how many finite combinations are there? Let's try it.",
+   "answer": "With 709 signs (Wells/Fuls list) the possible strings grow as 709ⁿ: about 5.0×10⁵ pairs, 3.6×10⁸ triples and 9.0×10¹⁹ seven-sign strings. Brute force over that space is not a method. What can be counted is what actually occurs. In the 179 seals in hand, these are the distinct sequences of each length:",
+   "data": {
+    "possible": {
+     "2": "5.03e+05",
+     "3": "3.56e+08",
+     "5": "1.79e+14",
+     "7": "9.01e+19"
+    },
+    "observed_distinct": {
+     "1": 181,
+     "2": 536,
+     "3": 569,
+     "4": 454,
+     "5": 321,
+     "6": 202,
+     "7": 114
+    }
+   }
+  }
+ ],
+ "eve": {
+  "rays": [
+   {
+    "name": "Old Indus Valley",
+    "purpose": "the seals themselves, in reading order",
+    "r": 7.4838,
+    "theta": 1.5708,
+    "phi": -1.5181,
+    "u": [
+     0.0527,
+     -0.9986,
+     0.0
+    ]
+   },
+   {
+    "name": "Present-day Indus Valley",
+    "purpose": "modern languages of the region — no data loaded",
+    "r": 0.0,
+    "theta": 1.5092,
+    "phi": -1.6382,
+    "u": [
+     -0.0672,
+     -0.9958,
+     0.0616
+    ]
+   },
+   {
+    "name": "Lexicon",
+    "purpose": "signs on the core surface, 2–7-sign strings on the inner walls",
+    "r": 7.4998,
+    "theta": 1.6883,
+    "phi": -1.5604,
+    "u": [
+     0.0103,
+     -0.9931,
+     -0.1172
+    ]
+   },
+   {
+    "name": "Artifact Repository",
+    "purpose": "CISI files nested inside the Lexicon core",
+    "r": 9.9425,
+    "theta": 1.4602,
+    "phi": -1.4855,
+    "u": [
+     0.0846,
+     -0.9903,
+     0.1104
+    ]
+   },
+   {
+    "name": "Comparative",
+    "purpose": "Zipf slope and entropy against shuffled text",
+    "r": 20.5707,
+    "theta": 1.5983,
+    "phi": -1.7267,
+    "u": [
+     -0.1552,
+     -0.9875,
+     -0.0275
+    ]
+   },
+   {
+    "name": "Gyroscopic Core",
+    "purpose": "plug-and-play fill-in-the-blank",
+    "r": 1.61,
+    "theta": 1.6644,
+    "phi": -1.4227,
+    "u": [
+     0.1469,
+     -0.9847,
+     -0.0935
+    ]
+   },
+   {
+    "name": "Abacus",
+    "purpose": "stroke signs and their neighbours",
+    "r": 3.0,
+    "theta": 1.3871,
+    "phi": -1.6208,
+    "u": [
+     -0.0491,
+     -0.9819,
+     0.1827
+    ]
+   },
+   {
+    "name": "Classifiers",
+    "purpose": "initial and terminal sign classes",
+    "r": 6,
+    "theta": 1.752,
+    "phi": -1.6661,
+    "u": [
+     -0.0936,
+     -0.9792,
+     -0.1802
+    ]
+   },
+   {
+    "name": "This:That::That:This",
+    "purpose": "signs that share contexts",
+    "r": 8.8968,
+    "theta": 1.4966,
+    "phi": -1.3659,
+    "u": [
+     0.2029,
+     -0.9764,
+     0.0741
+    ]
+   },
+   {
+    "name": "Reverse-engineering IETF",
+    "purpose": "present day → past; needs language data not in hand",
+    "r": 0.0,
+    "theta": 1.4836,
+    "phi": -1.7842,
+    "u": [
+     -0.2109,
+     -0.9736,
+     0.0871
+    ]
+   },
+   {
+    "name": "Dream Engine",
+    "purpose": "samples new seals from the learned model",
+    "r": 10.9658,
+    "theta": 1.7897,
+    "phi": -1.4665,
+    "u": [
+     0.1016,
+     -0.9708,
+     -0.2172
+    ]
+   }
+  ],
+  "lexicon_walls": {
+   "wall-2": 9.069,
+   "wall-3": 9.155,
+   "wall-4": 8.83,
+   "wall-5": 8.331,
+   "wall-6": 7.665,
+   "wall-7": 6.845
+  },
+  "min_separation_deg": 6.61,
+  "S": {
+   "S": [
+    1.418609,
+    -187.04866,
+    -6.879389
+   ],
+   "magnitude": 187.1805,
+   "geometric_factor": 2.0,
+   "C_t": [
+    0.283722,
+    -37.409732,
+    -1.375878
+   ],
+   "share": {
+    "Old Indus Valley": 0.0998,
+    "Present-day Indus Valley": 0.0,
+    "Lexicon": 0.0998,
+    "Artifact Repository": 0.131,
+    "Comparative": 0.2711,
+    "Gyroscopic Core": 0.0213,
+    "Abacus": 0.039,
+    "Classifiers": 0.0789,
+    "This:That::That:This": 0.1158,
+    "Reverse-engineering IETF": 0.0,
+    "Dream Engine": 0.1434
+   }
+  },
+  "S_equal_weights": {
+   "S": [
+    0.057412,
+    -27.079861,
+    -0.299037
+   ],
+   "magnitude": 27.081573,
+   "geometric_factor": 2.0,
+   "C_t": [
+    0.011482,
+    -5.415972,
+    -0.059807
+   ],
+   "share": {
+    "Old Indus Valley": 0.0922,
+    "Present-day Indus Valley": 0.0918,
+    "Lexicon": 0.0918,
+    "Artifact Repository": 0.0913,
+    "Comparative": 0.0912,
+    "Gyroscopic Core": 0.091,
+    "Abacus": 0.0904,
+    "Classifiers": 0.0906,
+    "This:That::That:This": 0.0901,
+    "Reverse-engineering IETF": 0.0897,
+    "Dream Engine": 0.0899
+   }
+  },
+  "note": "With every r_i equal, rays spread evenly over the sphere nearly cancel, so |S| is small. S only grows in a direction when the NVEs pointing that way carry more evidence. S is therefore a weighted resultant: it says which rays dominate, not how much was decoded.",
+  "k_ge_1": "Σ k^n diverges for |k| ≥ 1 — S is infinite unless the series is cut off (pass n_terms)."
+ },
+ "lexicon": {
+  "top_signs": [
+   [
+    "P324",
+    99,
+    "Classic jar symbol with two horizontal handles at the top of"
+   ],
+   [
+    "P122",
+    76,
+    "Two adjacent half-height simple vertical strokes"
+   ],
+   [
+    "P385",
+    35,
+    "Diamond or leaf shape with a small diamond attached to the t"
+   ],
+   [
+    "P086",
+    35,
+    "Simple tree with branches at the top"
+   ],
+   [
+    "P050",
+    32,
+    "Fish with no other decoration"
+   ],
+   [
+    "P145",
+    27,
+    "Two adjacent full-height vertical strokes"
+   ],
+   [
+    "P230",
+    23,
+    "The 'pincer' motif. Right-pointing isocoles triangle on left"
+   ],
+   [
+    "P120",
+    22,
+    "A single small vertical line, then another vertical line wit"
+   ],
+   [
+    "P062",
+    21,
+    "Fish with extra whiskers on cheeks"
+   ],
+   [
+    "P060",
+    20,
+    "Fish with a caret shaped hat"
+   ],
+   [
+    "P316",
+    19,
+    "U with a long vertical stroke inserted into the gap of U"
+   ],
+   [
+    "P217",
+    18,
+    "Isocolese triangle on top of vertical line (arrow? spear?)"
+   ],
+   [
+    "P378",
+    17,
+    "Wheel with 6 spokes with even angles"
+   ],
+   [
+    "P364",
+    17,
+    "Leaf with tree at bottom"
+   ],
+   [
+    "P058",
+    15,
+    "Fish with a horizontal line through body"
+   ]
+  ],
+  "walls": {
+   "2": [
+    [
+     [
+      "P385",
+      "P122"
+     ],
+     29
+    ],
+    [
+     [
+      "P316",
+      "P147"
+     ],
+     10
+    ],
+    [
+     [
+      "P332",
+      "P324"
+     ],
+     10
+    ],
+    [
+     [
+      "P060",
+      "P062"
+     ],
+     9
+    ],
+    [
+     [
+      "P122",
+      "P364"
+     ],
+     9
+    ]
+   ],
+   "3": [
+    [
+     [
+      "P122",
+      "P145",
+      "P050"
+     ],
+     5
+    ],
+    [
+     [
+      "P316",
+      "P147",
+      "P217"
+     ],
+     5
+    ],
+    [
+     [
+      "P276",
+      "P086",
+      "P324"
+     ],
+     4
+    ],
+    [
+     [
+      "P122",
+      "P060",
+      "P062"
+     ],
+     4
+    ],
+    [
+     [
+      "P385",
+      "P122",
+      "P062"
+     ],
+     3
+    ]
+   ],
+   "4": [
+    [
+     [
+      "P122",
+      "P056",
+      "P316",
+      "P147"
+     ],
+     2
+    ],
+    [
+     [
+      "P058",
+      "P276",
+      "P086",
+      "P324"
+     ],
+     2
+    ],
+    [
+     [
+      "P221",
+      "P050",
+      "P122",
+      "P364"
+     ],
+     2
+    ],
+    [
+     [
+      "P385",
+      "P122",
+      "P123",
+      "P086"
+     ],
+     2
+    ],
+    [
+     [
+      "P145",
+      "P270",
+      "P035",
+      "P086"
+     ],
+     2
+    ]
+   ]
+  }
+ },
+ "entropy": {
+  "H_unigram": 6.269,
+  "H_conditional": 2.289,
+  "H_conditional_shuffled": 3.022,
+  "shuffled_sd": 0.036,
+  "z": 20.6
+ },
+ "fill_in_blank": {
+  "trials": 980,
+  "top1": 0.262,
+  "top5": 0.467,
+  "freq_top1": 0.101,
+  "freq_top5": 0.282
+ },
+ "position": {
+  "terminal": [
+   [
+    "P013",
+    {
+     "n": 9,
+     "initial": 0,
+     "terminal": 9,
+     "desc": "Person with two arms and two legs, "
+    }
+   ],
+   [
+    "P004",
+    {
+     "n": 6,
+     "initial": 0,
+     "terminal": 6,
+     "desc": "Person carrying two burdens, jar handles for a head"
+    }
+   ],
+   [
+    "P301",
+    {
+     "n": 6,
+     "initial": 0,
+     "terminal": 5,
+     "desc": "Small box with horizontal hatching, vertical lines coming fr"
+    }
+   ],
+   [
+    "P324",
+    {
+     "n": 99,
+     "initial": 1,
+     "terminal": 77,
+     "desc": "Classic jar symbol with two horizontal handles at the top of"
+    }
+   ],
+   [
+    "P217",
+    {
+     "n": 18,
+     "initial": 2,
+     "terminal": 14,
+     "desc": "Isocolese triangle on top of vertical line (arrow? spear?)"
+    }
+   ],
+   [
+    "P086",
+    {
+     "n": 35,
+     "initial": 1,
+     "terminal": 19,
+     "desc": "Simple tree with branches at the top"
+    }
+   ]
+  ],
+  "initial": [
+   [
+    "P385",
+    {
+     "n": 35,
+     "initial": 29,
+     "terminal": 0,
+     "desc": "Diamond or leaf shape with a small diamond attached to the t"
+    }
+   ],
+   [
+    "P256",
+    {
+     "n": 12,
+     "initial": 9,
+     "terminal": 0,
+     "desc": "An X but drawn in outline"
+    }
+   ],
+   [
+    "P076",
+    {
+     "n": 6,
+     "initial": 4,
+     "terminal": 0,
+     "desc": "Squashed spider, with right two legs slightly more away from"
+    }
+   ],
+   [
+    "P378",
+    {
+     "n": 17,
+     "initial": 10,
+     "terminal": 2,
+     "desc": "Wheel with 6 spokes with even angles"
+    }
+   ],
+   [
+    "P011",
+    {
+     "n": 10,
+     "initial": 5,
+     "terminal": 0,
+     "desc": "Person with round breasts and one raised arm"
+    }
+   ],
+   [
+    "P123",
+    {
+     "n": 13,
+     "initial": 5,
+     "terminal": 0,
+     "desc": "Three adjacent half-height simple vertical strokes"
+    }
+   ]
+  ]
+ },
+ "abacus": {
+  "stroke_signs": [
+   [
+    "P122",
+    76,
+    "Two adjacent half-height simple vertical strokes"
+   ],
+   [
+    "P145",
+    27,
+    "Two adjacent full-height vertical strokes"
+   ],
+   [
+    "P120",
+    22,
+    "A single small vertical line, then another vertical line wit"
+   ],
+   [
+    "P147",
+    14,
+    "Three adjacent full-height vertical strokes"
+   ],
+   [
+    "P123",
+    13,
+    "Three adjacent half-height simple vertical strokes"
+   ],
+   [
+    "P124",
+    4,
+    "Four adjacent half-height simple vertical strokes"
+   ],
+   [
+    "P151",
+    2,
+    "Five adjacent simple tall vertical strokes"
+   ]
+  ],
+  "read_after": [
+   [
+    "P050",
+    11,
+    "Fish with no other decoration"
+   ],
+   [
+    "P364",
+    10,
+    "Leaf with tree at bottom"
+   ],
+   [
+    "P060",
+    8,
+    "Fish with a caret shaped hat"
+   ],
+   [
+    "P058",
+    6,
+    "Fish with a horizontal line through body"
+   ],
+   [
+    "P086",
+    6,
+    "Simple tree with branches at the top"
+   ],
+   [
+    "P056",
+    5,
+    "Fish with a small vertical stroke in the body"
+   ]
+  ],
+  "read_before": [
+   [
+    "P385",
+    29,
+    "Diamond or leaf shape with a small diamond attached to the t"
+   ],
+   [
+    "P316",
+    11,
+    "U with a long vertical stroke inserted into the gap of U"
+   ],
+   [
+    "P256",
+    8,
+    "An X but drawn in outline"
+   ],
+   [
+    "P378",
+    8,
+    "Wheel with 6 spokes with even angles"
+   ],
+   [
+    "P050",
+    6,
+    "Fish with no other decoration"
+   ],
+   [
+    "P086",
+    6,
+    "Simple tree with branches at the top"
+   ]
+  ]
+ },
+ "analogy": [
+  [
+   0.89,
+   "P385",
+   "P378",
+   "Diamond or leaf shape with a small diamond attached to the t",
+   "Wheel with 6 spokes with even angles"
+  ],
+  [
+   0.831,
+   "P324",
+   "P217",
+   "Classic jar symbol with two horizontal handles at the top of",
+   "Isocolese triangle on top of vertical line (arrow? spear?)"
+  ],
+  [
+   0.813,
+   "P324",
+   "P086",
+   "Classic jar symbol with two horizontal handles at the top of",
+   "Simple tree with branches at the top"
+  ],
+  [
+   0.793,
+   "P145",
+   "P092",
+   "Two adjacent full-height vertical strokes",
+   "Pitchfork with tines"
+  ],
+  [
+   0.79,
+   "P324",
+   "P004",
+   "Classic jar symbol with two horizontal handles at the top of",
+   "Person carrying two burdens, jar handles for a head"
+  ],
+  [
+   0.783,
+   "P086",
+   "P004",
+   "Simple tree with branches at the top",
+   "Person carrying two burdens, jar handles for a head"
+  ],
+  [
+   0.774,
+   "P175",
+   "P332",
+   "Right parenthesis drawn in outline",
+   "U with decorated branching at top"
+  ],
+  [
+   0.754,
+   "P324",
+   "P301",
+   "Classic jar symbol with two horizontal handles at the top of",
+   "Small box with horizontal hatching, vertical lines coming fr"
+  ]
+ ],
+ "metas": {
+  "resamples": 500,
+  "stable_pairs": [
+   [
+    [
+     "P385",
+     "P122"
+    ],
+    1.0,
+    "Diamond or leaf shape with a small diamond attached to the t",
+    "Two adjacent half-height simple vertical strokes"
+   ],
+   [
+    [
+     "P316",
+     "P147"
+    ],
+    0.808,
+    "U with a long vertical stroke inserted into the gap of U",
+    "Three adjacent full-height vertical strokes"
+   ],
+   [
+    [
+     "P332",
+     "P324"
+    ],
+    0.816,
+    "U with decorated branching at top",
+    "Classic jar symbol with two horizontal handles at the top of"
+   ],
+   [
+    [
+     "P060",
+     "P062"
+    ],
+    0.756,
+    "Fish with a caret shaped hat",
+    "Fish with extra whiskers on cheeks"
+   ],
+   [
+    [
+     "P122",
+     "P364"
+    ],
+    0.718,
+    "Two adjacent half-height simple vertical strokes",
+    "Leaf with tree at bottom"
+   ],
+   [
+    [
+     "P324",
+     "P013"
+    ],
+    0.736,
+    "Classic jar symbol with two horizontal handles at the top of",
+    "Person with two arms and two legs, "
+   ],
+   [
+    [
+     "P145",
+     "P050"
+    ],
+    0.604,
+    "Two adjacent full-height vertical strokes",
+    "Fish with no other decoration"
+   ],
+   [
+    [
+     "P256",
+     "P120"
+    ],
+    0.468,
+    "An X but drawn in outline",
+    "A single small vertical line, then another vertical line wit"
+   ],
+   [
+    [
+     "P122",
+     "P145"
+    ],
+    0.442,
+    "Two adjacent half-height simple vertical strokes",
+    "Two adjacent full-height vertical strokes"
+   ],
+   [
+    [
+     "P050",
+     "P217"
+    ],
+    0.262,
+    "Fish with no other decoration",
+    "Isocolese triangle on top of vertical line (arrow? spear?)"
+   ]
+  ]
+ },
+ "dream": {
+  "n": 2000,
+  "mean_len": 5.43,
+  "real_mean_len": 5.6,
+  "copies_of_real": 171,
+  "jar_terminal_dream": 0.408,
+  "jar_terminal_real": 0.43,
+  "samples": [
+   [
+    "P156",
+    "P120",
+    "P154",
+    "P122",
+    "P364",
+    "P086"
+   ],
+   [
+    "P342",
+    "P324"
+   ],
+   [
+    "P047",
+    "P260",
+    "P160",
+    "P110",
+    "P301"
+   ],
+   [
+    "P276",
+    "P086",
+    "P122",
+    "P142",
+    "P364",
+    "P060",
+    "P062",
+    "P316",
+    "P147",
+    "P147",
+    "P268",
+    "P268",
+    "P221",
+    "P283"
+   ],
+   [
+    "P265",
+    "P182",
+    "P386",
+    "P202",
+    "P121",
+    "P058",
+    "P217"
+   ]
+  ]
+ },
+ "gpt_lexicon_check": {
+  "entries": 419,
+  "checked": 294,
+  "same_category": 17,
+  "rate": 0.058,
+  "chance_rate": 0.068,
+  "chance_p95": 0.085,
+  "examples": [
+   {
+    "M": "M015",
+    "real": "Person carrying two burdens, jar handles for a head",
+    "lexicon": "Bird"
+   },
+   {
+    "M": "M059",
+    "real": "Fish with no other decoration",
+    "lexicon": "Elephant Leadinghasti-rāja"
+   },
+   {
+    "M": "M065",
+    "real": "Fish with a caret shaped hat",
+    "lexicon": "Chariot with Riderratha-senā"
+   },
+   {
+    "M": "M067",
+    "real": "Fish with extra whiskers on cheeks",
+    "lexicon": "Circle of Soldiers cakra-vyūha"
+   },
+   {
+    "M": "M087",
+    "real": "Two adjacent full-height vertical strokes",
+    "lexicon": "Lunar Cycle Representation"
+   },
+   {
+    "M": "M099",
+    "real": "Two adjacent half-height simple vertical strokes",
+    "lexicon": "Spiral Ladder"
+   },
+   {
+    "M": "M161",
+    "real": "Singly, symetrically bifurcated tall vertical stroke",
+    "lexicon": "Sacrificial Altar"
+   },
+   {
+    "M": "M216",
+    "real": "Left-pointing isocoles triangle on right, right-pointing iso",
+    "lexicon": "Seven-Pointed Star"
+   },
+   {
+    "M": "M267",
+    "real": "Diamond or leaf shape with a small diamond attached to the t",
+    "lexicon": "Spiral Symbol"
+   },
+   {
+    "M": "M336",
+    "real": "U with a long vertical stroke inserted into the gap of U",
+    "lexicon": "Underground Aqueduct"
+   },
+   {
+    "M": "M342",
+    "real": "Classic jar symbol with two horizontal handles at the top of",
+    "lexicon": "Sun Disk with Markings"
+   }
+  ]
+ },
+ "zipf_slope": -1.092
+}
