@@ -321,3 +321,24 @@ The PDF has a table of contents (Introduction, Articles 1, 2, 3, 5, 6–10, Appe
 ### 18.3 Still open
 
 Unchanged from §17.4. Nothing new is asked of Timothy this run.
+
+## 19. Refinement — scheduled run 2026-10-12T02Z (Claude): claim worksheet for the editorial pass
+
+§15.2's editorial condition (mark each strong claim as claimed / inferred / proposed test) is the last build gap that does not need a new decision to *prepare*; it needs one to *apply*. This run automates the preparation. Drafts only: nothing sold, listed, uploaded or sent; the worksheet stayed in the run's scratch space and is **not committed** (it quotes Timothy's sentences). The-TAM-protocol stays read only (clone at d46456a, `git status` clean after the run, EXECUTION-VERIFIED).
+
+### 19.1 The script (PROPOSED; EXECUTION-VERIFIED on The-TAM-protocol @ d46456a)
+
+`Business/ideas/F-001-tam-build/claim_scan.py` (stdlib only). Four fixed trigger patterns (certainty words such as "proves"/"confirms", percentages, accuracy/correlation words, absolutes such as "only"/"exactly") flag candidate sentences into `claims.csv` with an empty `status` column for Timothy (or an editor he chooses) to fill. It finds candidates only; it does not rate, rewrite or delete anything.
+
+Test run (EXECUTION-VERIFIED): **42 candidate sentences** — Collective information 23, Article 10 4, Articles 2/3/5/6 3 each, Article 1 2, README 1. By trigger: absolutes 20, accuracy/correlation 13, certainty 12, percentages 2 (a sentence can carry several).
+
+### 19.2 What it means for the product (INFERRED / PROPOSED)
+
+- The editorial pass is small: about 35 distinct sentences once the Article 6/10 duplicates inside *Collective information* (§16.2) are counted once — roughly an hour of reading with the CSV open, not a rewrite.
+- The 12 certainty-word sentences are the ones §15.2 is about; the 20 "absolute" hits include ordinary uses and will mostly be marked "no change".
+- With this, the chain is `build.py` → `rebuild_datasets.py` → `claim_scan.py` (worksheet) → [Timothy's marks] → `build_pdf.py`. Applying the marks into the text is a later script that reads the filled CSV; it is not written until Timothy accepts the §15.2 framing.
+- Price, delivery, refunds, records and stack unchanged from §15.4.
+
+### 19.3 Still open
+
+Unchanged from §17.4. Nothing new is asked of Timothy this run.
