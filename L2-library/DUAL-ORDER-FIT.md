@@ -47,3 +47,8 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 
 - **Confirms the 02Z note:** all 92 remaining rows are byte-identical to rows registered earlier (by preferred reference: algebra 63, genesis-documentary 20, resh-lattice-agency 7, main 2), so Z04 adds no new content to the Library: 240 of its 242 listed rows mirror earlier blobs; the other 2 are the stale session logs. Z04 is the clearest case for the proposed by-blob index (dual-order-os: one matrix object, many index pointers). Still proposed, not built.
 - **Fits:** `matrices/echo_*.json` (9) went to Matrices and `src/`, `tests/`, `pwa/` code to Algorithms, as on the earlier branches, so the sub-library of a blob does not depend on which branch it was read from.
+
+## Addendum 2026-10-12T04Z (Z05 dev-suite, Z06 dev-suite-registries, Z07 dev-suite-matrices)
+
+- **Branch-name vs content (does not fit as named):** `dev-suite-registries` and `dev-suite-matrices` (and, by `git ls-remote`, `-indices`, `-codices`, `-logics`, `-algorithms`, `-integration-staging`) all point at the same commit 03978f7, so the branch names are lookup labels (Index side), not content partitions (Matrix side). Their files were filed by content: e.g. `registries.json` to Registries and `echo_matrices.json.gz.b64` to Matrices on both branches. In dual-order-os terms this is seven index pointers onto one matrix object, the case the by-blob index proposed at 02Z would make explicit. Still proposed, not built.
+- **Archives:** zip archives whose members are only partly listed elsewhere (dev-suite-branch.zip, echo-notebook-0.4.1.zip, echo-notebook-pwa.zip) have no natural slot in the Matrix/Index pair; they were DEFERRED until their members' branches are read, rather than filed whole.
