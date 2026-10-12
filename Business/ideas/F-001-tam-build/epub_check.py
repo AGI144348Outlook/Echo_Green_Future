@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""F-001 candidate A, TAM shape: offline EPUB structure check (PROPOSED; Contract 000 §24-§25).
+"""F-001 candidate A, TAM shape: offline EPUB structure check (PROPOSED; Contract 000 §24-§25; F-001 §23-§26).
 
 Checks the EPUB that build.py writes (<out-dir>/tam-draft.epub) for the
 structural faults that make stores or readers reject a file, using only the
@@ -10,6 +10,8 @@ Python standard library (no epubcheck, no network):
   - every manifest item and every spine itemref resolves to a file in the zip
   - an EPUB 3 navigation document is declared (properties="nav")
   - a cover image is declared (WARN if not) and is a readable JPEG/PNG (F-001 §25)
+  - accessibility metadata (schema:accessMode, accessibilityFeature, accessibilityHazard,
+    accessibilitySummary) is declared, and every <img> has an alt attribute (WARN if not; F-001 §26)
   - every XHTML / XML file parses as XML
   - no remote resources (src/href to http(s)) inside content files
 Prints PASS/FAIL/WARN lines, writes <out-dir>/epub-report.json, exits 1 on any FAIL.
@@ -69,6 +71,17 @@ def check(epub):
         head = z.read(cpath)[:8] if cpath in names else b""
         ok(head.startswith(b"\xff\xd8\xff") or head.startswith(b"\x89PNG\r\n\x1a\n"),
            f"cover image is a readable JPEG/PNG ({covers[0].get('href')})")
+    # Accessibility (F-001 §26): EPUB Accessibility 1.1 discovery metadata; WARN only.
+    props = {m.get("property") for m in opf.findall(".//opf:metadata/opf:meta", NS)}
+    a11y = ("schema:accessMode", "schema:accessibilityFeature", "schema:accessibilityHazard", "schema:accessibilitySummary")
+    lacking = [p for p in a11y if p not in props]
+    res.append(("WARN" if lacking else "PASS", "accessibility metadata declared" + (f"; missing {lacking}" if lacking else "")))
+    noalt = []
+    for n in sorted(names):
+        if n.endswith((".xhtml", ".html")):
+            for m in re.finditer(rb"<img\b[^>]*>", z.read(n)):
+                if not re.search(rb"\balt\s*=", m.group(0)): noalt.append(n)
+    res.append(("WARN" if noalt else "PASS", "every <img> has an alt attribute" + (f"; not in {sorted(set(noalt))[:5]}" if noalt else "")))
     unparsed, remote = [], []
     for n in sorted(names):
         if n.endswith((".xhtml", ".html", ".xml", ".opf", ".ncx")):
@@ -79,6 +92,7 @@ def check(epub):
     ok(not unparsed, "all XHTML/XML parse" + (f"; {unparsed[:3]}" if unparsed else ""))
     ok(not remote, "no remote resources in content" + (f"; {remote[:5]}" if remote else ""))
     info = {"opf": opf_path, "version": opf.get("version"), "metadata": meta,
+            "accessibility_missing": lacking, "img_without_alt": len(noalt),
             "manifest_items": len(items), "spine_items": len(spine), "zip_entries": len(names)}
     return res, info
 

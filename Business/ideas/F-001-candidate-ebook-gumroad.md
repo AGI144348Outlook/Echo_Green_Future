@@ -537,3 +537,46 @@ Drafts only: no account, no page, no upload, no contact, no image chosen. Built 
 ### 25.4 Still open
 
 Unchanged from §24.4, plus: which image Timothy wants for the cover (his own, a licensed one, or a plain typographic cover made from the title, which needs no outside licence).
+
+## 26. Refinement — scheduled run 2026-10-12T09Z (Claude): accessibility metadata, opt-in and checked
+
+Drafts only: no account, no page, no upload, no contact. Built from The-TAM-protocol d46456a (public, read only) into the run's scratch space; nothing built is committed. Purpose: a store or library buyer (and, for sales into the EU, the European Accessibility Act regime that applies to e-books; scope for a small seller is UNVERIFIED and must be read from primary sources, not assumed) looks for EPUB Accessibility discovery metadata. The draft had none.
+
+### 26.1 Finding (EXECUTION-VERIFIED, pandoc 3.1.3)
+
+`pandoc --epub-metadata=<file>` with `<meta property="schema:accessMode">…</meta>` lines writes **none** of them into the OPF (0 `schema:` entries in `content.opf`). The metadata cannot be added through pandoc's own option in this version.
+
+### 26.2 The change (PROPOSED; EXECUTION-VERIFIED)
+
+- `build.py`: optional `F001_A11Y=<file>` holding only `<meta property="schema:…">…</meta>` elements (anything else, or unparsable XML, stops the build, exit 1). After pandoc succeeds, the lines are inserted into the OPF before `</metadata>`; every zip entry keeps its order, compression and timestamp, so `mimetype` stays first and stored and §24 reproducibility holds. `build-report.json` records the file name, its sha256 and the properties declared. Unset, nothing changes.
+- `epub_check.py`: WARN if any of `schema:accessMode`, `schema:accessibilityFeature`, `schema:accessibilityHazard`, `schema:accessibilitySummary` is missing; WARN for any `<img>` without an `alt` attribute. WARN only: these are not structural faults.
+
+### 26.3 Test (EXECUTION-VERIFIED; §24 test identifier, epoch 1768764429)
+
+| Build | `F001_A11Y` | `tam-draft.epub` sha256 prefix | `epub_check.py` |
+|---|---|---|---|
+| 0 | unset | 0bf99dce016ff639 (same as §24/§25 unset builds: unchanged) | 0 FAIL, 2 WARN (no cover; no accessibility metadata) |
+| 1, 2 (one second apart) | synthetic test file (5 lines, summary marked "TEST ONLY") | 79892a4693c853ad both (still reproducible) | 0 FAIL, 1 WARN (no cover) |
+| 3 | a file with a `dc:title` meta | build exit 1, message given | — |
+
+`tam-draft.md` is c6a27a9e6df46070 in every build; `mimetype` is entry 1, stored. Synthetic EPUBs checked separately: an `<img>` with no `alt` gives the WARN; pandoc's `![text](f.png)` images carry alt and pass.
+
+### 26.4 What the editor must write (PROPOSED shape; content is Timothy's call)
+
+```xml
+<meta property="schema:accessMode">textual</meta>
+<meta property="schema:accessibilityFeature">structuralNavigation</meta>
+<meta property="schema:accessibilityFeature">tableOfContents</meta>
+<meta property="schema:accessibilityHazard">none</meta>
+<meta property="schema:accessibilitySummary">…one or two true sentences about this book…</meta>
+```
+
+Each line must be true of the final file (add `visual` and `alternativeText` only if images with real alt text are included). The summary is a claim made to buyers, so it belongs with the editorial sign-off, not the script. A full conformance claim (`dcterms:conformsTo`, WCAG level) is not proposed: it needs an actual audit (Ace by DAISY is free) that no run has done (UNVERIFIED).
+
+### 26.5 Pipeline now
+
+`build.py` (MD + EPUB; opt-in id/epoch, cover, accessibility metadata) → `epub_check.py` → `rebuild_datasets.py` → `claim_scan.py` → [Timothy's marks] → `build_pdf.py` → `listing_check.py` → [listing, by Timothy] → monthly export → `ledger_map.py`.
+
+### 26.6 Still open
+
+Unchanged from §25.4. No new question: the accessibility summary is written at editorial sign-off with the other marks.

@@ -5,7 +5,8 @@ Reads a local clone of AGI144348Outlook/The-TAM-protocol (read-only) and writes,
 into an output directory OUTSIDE any repository:
   tam-draft.md     ordered manuscript (title block, articles, appendices)
   dataset-a.csv, dataset-b.csv   the two tables as CSV, only if they are delimited tables
-  tam-draft.epub   if pandoc is installed (pandoc is free software)
+  tam-draft.epub   if pandoc is installed (pandoc is free software); optional
+                   F001_BOOK_ID/SOURCE_DATE_EPOCH (§24), F001_COVER (§25), F001_A11Y (§26)
   build-report.json  word counts, duplicate-sentence check, file fingerprints
 
 It never edits the source, sells, uploads or contacts anything. The output is a
@@ -14,7 +15,8 @@ and falsification boxes) is not done by this script.
 
 Usage: python3 -I build.py <tam-clone-dir> <out-dir>
 """
-import csv, hashlib, json, os, re, shutil, subprocess, sys
+import csv, hashlib, json, os, re, shutil, subprocess, sys, zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ORDER = [  # reading order (§15.3); Article 4 is missing in the source (§15.1)
@@ -110,7 +112,35 @@ def main(src, out):
             report["cover"] = "none (F001_COVER unset)"
         report["epub_reproducible"] = {"identifier": book_id or "random (pandoc default)",
                                        "SOURCE_DATE_EPOCH": os.environ.get("SOURCE_DATE_EPOCH") or "unset"}
+        # Accessibility metadata (F-001 §26, opt-in): pandoc 3.1.3 drops schema:* <meta>
+        # given via --epub-metadata, so a file of such lines (written truthfully by the
+        # editor, e.g. a11y-metadata.xml) is inserted into the OPF after pandoc runs.
+        # Entry order, compression and timestamps are kept, so §24 reproducibility holds.
+        a11y = os.environ.get("F001_A11Y")
+        a11y_xml = None
+        if a11y:
+            ap = Path(a11y)
+            try:
+                a11y_xml = ap.read_text(encoding="utf-8").strip()
+                els = list(ET.fromstring(f"<m>{a11y_xml}</m>"))
+            except (OSError, ET.ParseError):
+                sys.exit("F001_A11Y must be a readable file of <meta property=\"schema:...\">...</meta> lines")
+            if not els or any(e.tag != "meta" or not (e.get("property") or "").startswith("schema:") for e in els):
+                sys.exit("F001_A11Y may only hold <meta property=\"schema:...\"> elements")
+            report["accessibility_metadata"] = {"file": ap.name, "sha256": hashlib.sha256(ap.read_bytes()).hexdigest(),
+                                                "properties": sorted({e.get("property") for e in els})}
+        else:
+            report["accessibility_metadata"] = "none (F001_A11Y unset)"
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        if r.returncode == 0 and a11y_xml:
+            ep = out / "tam-draft.epub"; tmp = out / "tam-draft.epub.tmp"
+            with zipfile.ZipFile(ep) as src, zipfile.ZipFile(tmp, "w") as dst:
+                for info in src.infolist():
+                    data = src.read(info.filename)
+                    if info.filename.endswith(".opf"):
+                        data = data.replace(b"</metadata>", a11y_xml.encode("utf-8") + b"\n</metadata>", 1)
+                    dst.writestr(info, data)
+            tmp.replace(ep)
         report["epub"] = {"returncode": r.returncode, "stderr": r.stderr[-500:],
                           "bytes": (out / "tam-draft.epub").stat().st_size if r.returncode == 0 else None}
     else:
