@@ -275,3 +275,26 @@ Test run, 2026-10-11T23Z (EXECUTION-VERIFIED): pandoc 3.1.3 returned 0, EPUB abo
 ### 16.3 Still open (unchanged; in RUN-LOG "awaiting Timothy")
 
 TAM, RFC/Unicorn, or both; Article 4; credit spelling; the "speculative reconstruction" framing. Next run on F-001 (if Timothy has not answered): a hand-rebuilt CSV for Dataset A and B, and a PDF step, both tested offline.
+
+## 17. Refinement — scheduled run 2026-10-12T00Z (Claude): Dataset A and B rebuilt as CSV, offline
+
+This does the CSV half of §16.3's next step. Drafts only: nothing sold, listed, uploaded or sent; the CSV files stayed in the run's scratch space and are **not committed** (they are Timothy's data, and editing starts only after he rules on §15.2). The-TAM-protocol stays read only (clone `git status` clean after the run).
+
+### 17.1 The script (PROPOSED; EXECUTION-VERIFIED on The-TAM-protocol @ d46456a)
+
+`Business/ideas/F-001-tam-build/rebuild_datasets.py` (stdlib only). One fixed regular expression per table rebuilds the lost columns; any line that does not match is reported as rejected instead of guessed. Stated values are copied as stated; recomputed values (13.7 g × units) sit in separate columns, so the script never "corrects" Timothy's numbers. Test run: Dataset A 6/6 rows parsed, Dataset B 8/8, 0 rejected (EXECUTION-VERIFIED). This settles §15.1's "run the provided .csv data" line: the edition can ship these two CSVs once Timothy approves the columns.
+
+### 17.2 What the rebuild found (EXECUTION-VERIFIED arithmetic; interpretation INFERRED)
+
+- **The two −0.146 % rows (§16.2) are a rounding artefact, not a measurement.** Dataset B lists 1/8 U as 1.71 g and 1/4 U as 3.42 g; 13.7 × 0.125 = 1.7125 and 13.7 × 0.25 = 3.425. So 1.71 and 3.42 are the exact values cut to two decimals, and Dataset A's "Small Scrap 1.71 g" and "Silver Droplet 3.42 g" equal those cut values. The stated "<0.01 %" and "−0.03 %" are true against the cut table value and false against 13.7 × units (−0.146 %). An honest edition states which reference it uses. (INFERRED: how the numbers were produced; the arithmetic itself is verified.)
+- **Dataset B is internally exact above 1/4 U** (6.85, 13.70, 27.40, 68.50, 137.00: 0.000 %), and every ratio equals 16 × units (8/8). The 1/16 U row (0.85 g vs 0.856 g, −0.73 %) is the largest gap in either table.
+- **One naming conflict:** Dataset A calls 1/8 U the *Gerah*; Dataset B calls 1/16 U the "Trace/Gerah Base". The edition's glossary (§15.3) needs one meaning; Timothy's call.
+- **Dataset A's "Calculated Deviation" for the other four rows matches to rounding** (−0.015, +0.029, +0.073, +0.146 % vs stated −0.01, +0.03, +0.07, +0.14).
+
+### 17.3 Product consequence (PROPOSED)
+
+The appendix becomes a selling point that matches §15.2: each table ships as CSV with "stated" and "recomputed" columns side by side, and a two-line note explaining the two-decimal rounding. A reader can check every number in a spreadsheet in a minute. Price, delivery, refunds, records and stack are unchanged from §15.4.
+
+### 17.4 Still open
+
+Unchanged from §16.3 (TAM / RFC-Unicorn / both; Article 4; credit spelling; the framing), plus: which reference the deviations should use (13.7 × units, or the two-decimal table value), and which unit *Gerah* names. Next F-001 step for a later run: the PDF build step, tested offline.
