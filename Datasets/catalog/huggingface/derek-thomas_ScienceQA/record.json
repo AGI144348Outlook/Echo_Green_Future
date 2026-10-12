@@ -1,0 +1,134 @@
+{
+ "id": "huggingface:derek-thomas/ScienceQA",
+ "title": "derek-thomas/ScienceQA",
+ "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\tDataset Card Creation Guide\n\t\n\n\n\t\n\t\t\n\t\tDataset Summary\n\t\n\nLearn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering\n\n\t\n\t\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nMulti-modal Multiple Choice\n\n\t\n\t\t\n\t\tLanguages\n\t\n\nEnglish\n\n\t\n\t\t\n\t\tDataset Structure\n\t\n\n\n\t\n\t\t\n\t\tData Instances\n\t\n\nExplore more samples here.\n{'image': Image,\n 'question': 'Which of these states is farthest north?',\n 'choices': ['West Virginia', 'Louisiana', 'Arizona', 'Oklahoma'],\n 'answer': 0… See the full description on the dataset page: https://huggingface.co/datasets/derek-thomas/ScienceQA.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/derek-thomas/ScienceQA",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "f18b0a70359ebfb41f658fd564208d0355b013f4",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2023-02-25T04:23:01.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-sa-4.0",
+   "normalized": "cc-by-sa",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:e7cfb0af7d248c2b61ebf356e39700a09eae49c1e158934217fc235562bf4ed7",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-12T11:08:56+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/.gitattributes",
+   "declared_size": 2265,
+   "declared_checksum": null,
+   "format": null,
+   "stored": "files/huggingface/derek-thomas_ScienceQA/gitattributes",
+   "bytes": 2265,
+   "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458",
+   "checksum_check": "no checksum published by source",
+   "provenance_checksum_status": "unverified"
+  },
+  {
+   "name": ".gitignore",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/.gitignore",
+   "declared_size": 38,
+   "declared_checksum": null,
+   "format": null,
+   "stored": "files/huggingface/derek-thomas_ScienceQA/gitignore",
+   "bytes": 38,
+   "sha256": "2107d61de9ee2319e15bf3dfc9ea4291f5c4b35af7f1749b6b40e8a68db122f8",
+   "checksum_check": "no checksum published by source",
+   "provenance_checksum_status": "unverified"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/README.md",
+   "declared_size": 10308,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/test-00000-of-00001-f0e719df791966ff.parquet",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/data/test-00000-of-00001-f0e719df791966ff.parquet",
+   "declared_size": 122386007,
+   "declared_checksum": "sha256:235e92d1f30155266df76bc9f28fc6e4fcb6bec2c6a8c7d67f9086ea6b392a84",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/train-00000-of-00001-1028f23e353fbe3e.parquet",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/data/train-00000-of-00001-1028f23e353fbe3e.parquet",
+   "declared_size": 377460993,
+   "declared_checksum": "sha256:62c90a28e3fb1bc0ad7bbcab1ac62b483ae6758291a655944d8f494bf6445745",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/validation-00000-of-00001-6c7328ff6c84284c.parquet",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/data/validation-00000-of-00001-6c7328ff6c84284c.parquet",
+   "declared_size": 126235086,
+   "declared_checksum": "sha256:e66b5215ce71e748ade4ee629bc14fbf86762071d355a4fcd831581cc04d72d8",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "tutorial/ScienceQA.py",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/tutorial/ScienceQA.py",
+   "declared_size": 5401,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "tutorial/create_dataset.ipynb",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/tutorial/create_dataset.ipynb",
+   "declared_size": 392442,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "tutorial/download.sh",
+   "url": "https://huggingface.co/datasets/derek-thomas/ScienceQA/resolve/f18b0a70359ebfb41f658fd564208d0355b013f4/tutorial/download.sh",
+   "declared_size": 684,
+   "declared_checksum": null,
+   "format": null,
+   "stored": "files/huggingface/derek-thomas_ScienceQA/tutorial_download.sh",
+   "bytes": 684,
+   "sha256": "621b0720f17935e64992d6ce86621ade6678056b165c52ace28d0453de0b4d17",
+   "checksum_check": "no checksum published by source",
+   "provenance_checksum_status": "unverified"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

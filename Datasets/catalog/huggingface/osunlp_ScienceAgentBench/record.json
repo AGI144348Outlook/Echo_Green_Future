@@ -1,0 +1,80 @@
+{
+ "id": "huggingface:osunlp/ScienceAgentBench",
+ "title": "osunlp/ScienceAgentBench",
+ "url": "https://huggingface.co/datasets/osunlp/ScienceAgentBench",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\tScienceAgentBench\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tUpdate 04/30/2026: To mitigate false negatives in evaluation, we have released a verified version of ScienceAgentBench. Please load our benchmark using the following code going forward and make sure you follow the latest instructions in our github repository:\n\t\n\nfrom datasets import load_dataset\nds = load_dataset(\"osunlp/ScienceAgentBench\", split=\"verified\")\n\nThe advancements of language language models (LLMs) have piqued growing interest in developing… See the full description on the dataset page: https://huggingface.co/datasets/osunlp/ScienceAgentBench.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/osunlp/ScienceAgentBench",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "9c6e96c9e74572e979b0930ee735041cef528cb7",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-05-01T15:07:13.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:7f484a56f4b2777b26c0ab431c71098a6023e71d975e39407444a517b2cdc552",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-12T11:09:05+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/osunlp/ScienceAgentBench/resolve/9c6e96c9e74572e979b0930ee735041cef528cb7/.gitattributes",
+   "declared_size": 2419,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/osunlp/ScienceAgentBench/resolve/9c6e96c9e74572e979b0930ee735041cef528cb7/README.md",
+   "declared_size": 5705,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "ScienceAgentBench.csv",
+   "url": "https://huggingface.co/datasets/osunlp/ScienceAgentBench/resolve/9c6e96c9e74572e979b0930ee735041cef528cb7/ScienceAgentBench.csv",
+   "declared_size": 278626,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/verified-00000-of-00001.parquet",
+   "url": "https://huggingface.co/datasets/osunlp/ScienceAgentBench/resolve/9c6e96c9e74572e979b0930ee735041cef528cb7/data/verified-00000-of-00001.parquet",
+   "declared_size": 129086,
+   "declared_checksum": "sha256:c6f937863a220bd1762a00c20a0f79cc8dfca900b819bdb552150310731ae147",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
