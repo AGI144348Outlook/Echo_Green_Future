@@ -25,3 +25,9 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 - **Fits:** the A-144/A-145/A-165..A-167 spec docs went to Logics, their code to Algorithms, the two sandbox run records to Registries, consistent with Z01.
 - **Does not fit:** `matrices/echo_algorithm_matrix.json` exists in two different versions (genesis-documentary and resh-lattice-agency, different blobs). dual-order-os keeps one table per kind of part; the Library keeps one row per (branch, path) version, so Matrices now holds two versions of one table. Reconciling them into one table is editing and comes after registration (R3); both carry an A-000 "Governor" slot (DISC-002 / R5).
 
+
+## Addendum 2026-10-12T00Z (Z03 algebra, rows 1–148)
+
+- **Fits:** glyph cards (22 per copy) went to Codices with the glyph INDEX.md in Indices, matching dual-order-os's split of content-first entries (Matrix side) from lookup-first entries (Index side); `glyph_algorithm_index.json` and `tsadi_interrogative_index.json` went to Indices for the same reason.
+- **Does not fit:** the same 23 glyph files sit at two paths on one branch (`ECHO_AutonomousAgency/docs/glyphs/` and `ECHO_GlyphRegistry/`, identical blobs, plus a zip of the second set). dual-order-os would hold one entry and point to it from the index; the Library keeps one primary row per (branch, path), so the card text is registered twice with `identical_blob_in=algebra` linking them. Collapsing them is editing and comes after registration (R3).
+- A third version of `echo_algorithm_matrix.json` (`ECHO_AutonomousAgency/matrices/`, 13,024 bytes, also with an `A-000` key) is now in Matrices beside the genesis-documentary and resh-lattice-agency versions; relevant to RC-R5 (R5).
