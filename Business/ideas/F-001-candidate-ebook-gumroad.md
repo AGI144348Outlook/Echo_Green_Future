@@ -298,3 +298,26 @@ The appendix becomes a selling point that matches §15.2: each table ships as CS
 ### 17.4 Still open
 
 Unchanged from §16.3 (TAM / RFC-Unicorn / both; Article 4; credit spelling; the framing), plus: which reference the deviations should use (13.7 × units, or the two-decimal table value), and which unit *Gerah* names. Next F-001 step for a later run: the PDF build step, tested offline.
+
+## 18. Refinement — scheduled run 2026-10-12T01Z (Claude): the PDF step, tested offline
+
+This does the PDF half of §16.3's next step. Drafts only: nothing sold, listed, uploaded or sent; the PDF stayed in the run's scratch space and is **not committed** (Timothy's text, unedited). The-TAM-protocol stays read only (clone at d46456a, `git status` clean after the run).
+
+### 18.1 The script (PROPOSED; EXECUTION-VERIFIED on The-TAM-protocol @ d46456a)
+
+`Business/ideas/F-001-tam-build/build_pdf.py` (stdlib + pandoc). It reads `tam-draft.md` written by `build.py` and tries two free PDF engines in order, keeping a record of every attempt in `pdf-report.json`:
+
+1. **XeLaTeX** — failed here: the LaTeX install lacks `lmodern.sty` (EXECUTION-VERIFIED). Typographically better when a full TeX Live is present.
+2. **wkhtmltopdf** — succeeded: 13 pages, 121,269 bytes (pdfinfo and the script agree on 13 pages, EXECUTION-VERIFIED). Gotcha found and fixed: wkhtmltopdf refuses mixed margin units ("all margin units must be the same"), so all four margins are set in mm.
+
+The PDF has a table of contents (Introduction, Articles 1, 2, 3, 5, 6–10, Appendices A and B) and carries the six "Status: source text, not yet edited" banners from `build.py`, so a reviewer cannot mistake it for the edited edition.
+
+### 18.2 What this settles for the product (PROPOSED)
+
+- **Deliverables per sale:** EPUB (§16) + PDF (this section) + two CSVs (§17), all built offline from one command chain (`build.py` → `rebuild_datasets.py` → `build_pdf.py`) on free software. That matches the §15.4 shape at the $7 price without any paid tool.
+- **Size:** the full bundle is under 200 KB, well inside any storefront's file limit; no large media (R4).
+- **Remaining build gap:** a cover image and the §15.2 editorial pass (status marks, falsification boxes). Both need Timothy's text decisions first.
+
+### 18.3 Still open
+
+Unchanged from §17.4. Nothing new is asked of Timothy this run.
