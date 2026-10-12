@@ -56,3 +56,7 @@ Timothy's ruling R2 (2026-10-11): `AGI144348Outlook/dual-order-os` is the intend
 ## Addendum 2026-10-12T05Z (Z08 dev-suite-indices, Z09 dev-suite-codices)
 
 - **Confirms the 04Z branch-name note:** both branches are the 03978f7 tree again, so Z08 and Z09 add 78 register rows but no new content; each row mirrors Z07. A branch named `-indices` and one named `-codices` received the same sub-library split (Algorithms 23, Registries 9, Indices 3, Codices 2, Matrices 1, Logics 1 per branch), because filing follows content, not the branch label. In dual-order-os terms these are two more index pointers onto the same matrix objects; the by-blob index (proposed 02Z) is still proposed, not built.
+
+## Addendum 2026-10-12T06Z (Z10 dev-suite-logics, Z11 dev-suite-algorithms)
+
+- **Six branches, one tree:** Z06–Z11 all point at 03978f7 (`git rev-parse`, EXECUTION-VERIFIED). Z10 and Z11 add 78 register rows (same split as Z09: Algorithms 23, Registries 9, Indices 3, Codices 2, Matrices 1, Logics 1 per branch) and no new content. In dual-order-os terms the 03978f7 tree is one set of matrix objects now reached through six branch-name index pointers; the register carries all six (R3: everything stays as a dataset) but a by-blob index (proposed 02Z, still not built) would show them as one object with six names. Z12 `dev-suite-datasets` (f1949f7) is the first branch since Z05 with new blobs (8 of 59 rows), so it needs a real read next run.
