@@ -1,0 +1,4346 @@
+{
+ "id": "huggingface:junaidaslam/gojri-english-dictionary",
+ "title": "junaidaslam/gojri-english-dictionary",
+ "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tGojri-English dictionary text corpus\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tDataset summary\n\t\n\nDigitized text of the printed Gojri-English Dictionary compiled by Dr. Javaid Rahi. The dataset covers 474 body pages (pages 25 to 498) and includes 11,767 dictionary entry lines. Each line contains Gojri headwords in Perso-Arabic (Nastaliq) script, Latin transliterations, part-of-speech tags, and English definitions.\n\n\t\n\t\t\n\t\n\t\n\t\tAuthor and source credits\n\t\n\n\nOriginal author and compiler: Dr. Javaid Rahi\nSource… See the full description on the dataset page: https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary.",
+ "found_by_keywords": [
+  "dictionary"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "f0a01989b3cc615ae5692c5966e8ff7367afbf75",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-13T09:10:30.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-nc-4.0",
+   "normalized": "cc-by-nc",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'dictionary'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:eb88b71b3961eba8955cd7d3bea2a984e7ef57a858b507ab06b02f89e14448be",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-13T09:34:47+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/README.md",
+   "declared_size": 3056,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "gojri_english_dictionary_pages.csv",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/gojri_english_dictionary_pages.csv",
+   "declared_size": 785471,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "gojri_english_dictionary_pages.jsonl",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/gojri_english_dictionary_pages.jsonl",
+   "declared_size": 823744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0025.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0025.txt",
+   "declared_size": 1559,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0026.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0026.txt",
+   "declared_size": 1786,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0027.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0027.txt",
+   "declared_size": 1590,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0028.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0028.txt",
+   "declared_size": 1750,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0029.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0029.txt",
+   "declared_size": 1753,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0030.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0030.txt",
+   "declared_size": 1800,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0031.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0031.txt",
+   "declared_size": 1769,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0032.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0032.txt",
+   "declared_size": 1813,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0033.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0033.txt",
+   "declared_size": 1568,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0034.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0034.txt",
+   "declared_size": 1693,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0035.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0035.txt",
+   "declared_size": 1801,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0036.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0036.txt",
+   "declared_size": 1750,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0037.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0037.txt",
+   "declared_size": 1777,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0038.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0038.txt",
+   "declared_size": 1751,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0039.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0039.txt",
+   "declared_size": 1769,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0040.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0040.txt",
+   "declared_size": 1689,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0041.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0041.txt",
+   "declared_size": 1748,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0042.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0042.txt",
+   "declared_size": 1624,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0043.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0043.txt",
+   "declared_size": 1799,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0044.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0044.txt",
+   "declared_size": 1667,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0045.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0045.txt",
+   "declared_size": 1822,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0046.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0046.txt",
+   "declared_size": 1850,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0047.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0047.txt",
+   "declared_size": 1800,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0048.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0048.txt",
+   "declared_size": 1759,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0049.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0049.txt",
+   "declared_size": 1735,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0050.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0050.txt",
+   "declared_size": 1743,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0051.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0051.txt",
+   "declared_size": 1614,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0052.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0052.txt",
+   "declared_size": 1682,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0053.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0053.txt",
+   "declared_size": 1841,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0054.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0054.txt",
+   "declared_size": 1689,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0055.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0055.txt",
+   "declared_size": 1648,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0056.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0056.txt",
+   "declared_size": 1702,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0057.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0057.txt",
+   "declared_size": 1768,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0058.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0058.txt",
+   "declared_size": 1065,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0059.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0059.txt",
+   "declared_size": 1458,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0060.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0060.txt",
+   "declared_size": 1668,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0061.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0061.txt",
+   "declared_size": 1612,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0062.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0062.txt",
+   "declared_size": 1643,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0063.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0063.txt",
+   "declared_size": 1697,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0064.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0064.txt",
+   "declared_size": 1632,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0065.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0065.txt",
+   "declared_size": 1706,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0066.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0066.txt",
+   "declared_size": 1673,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0067.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0067.txt",
+   "declared_size": 1688,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0068.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0068.txt",
+   "declared_size": 1660,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0069.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0069.txt",
+   "declared_size": 1696,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0070.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0070.txt",
+   "declared_size": 1665,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0071.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0071.txt",
+   "declared_size": 1624,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0072.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0072.txt",
+   "declared_size": 1710,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0073.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0073.txt",
+   "declared_size": 1775,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0074.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0074.txt",
+   "declared_size": 1601,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0075.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0075.txt",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0076.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0076.txt",
+   "declared_size": 1833,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0077.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0077.txt",
+   "declared_size": 1668,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0078.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0078.txt",
+   "declared_size": 1681,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0079.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0079.txt",
+   "declared_size": 1747,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0080.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0080.txt",
+   "declared_size": 1628,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0081.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0081.txt",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0082.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0082.txt",
+   "declared_size": 1670,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0083.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0083.txt",
+   "declared_size": 1769,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0084.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0084.txt",
+   "declared_size": 1616,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0085.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0085.txt",
+   "declared_size": 1592,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0086.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0086.txt",
+   "declared_size": 1694,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0087.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0087.txt",
+   "declared_size": 1541,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0088.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0088.txt",
+   "declared_size": 1679,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0089.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0089.txt",
+   "declared_size": 1623,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0090.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0090.txt",
+   "declared_size": 1725,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0091.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0091.txt",
+   "declared_size": 1738,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0092.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0092.txt",
+   "declared_size": 1707,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0093.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0093.txt",
+   "declared_size": 2005,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0094.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0094.txt",
+   "declared_size": 1821,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0095.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0095.txt",
+   "declared_size": 1782,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0096.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0096.txt",
+   "declared_size": 1508,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0097.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0097.txt",
+   "declared_size": 1612,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0098.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0098.txt",
+   "declared_size": 1683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0099.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0099.txt",
+   "declared_size": 1703,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0100.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0100.txt",
+   "declared_size": 1523,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0101.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0101.txt",
+   "declared_size": 1609,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0102.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0102.txt",
+   "declared_size": 1632,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0103.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0103.txt",
+   "declared_size": 1633,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0104.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0104.txt",
+   "declared_size": 1610,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0105.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0105.txt",
+   "declared_size": 1762,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0106.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0106.txt",
+   "declared_size": 1637,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0107.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0107.txt",
+   "declared_size": 1643,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0108.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0108.txt",
+   "declared_size": 1648,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0109.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0109.txt",
+   "declared_size": 1675,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0110.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0110.txt",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0111.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0111.txt",
+   "declared_size": 1778,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0112.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0112.txt",
+   "declared_size": 1634,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0113.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0113.txt",
+   "declared_size": 1645,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0114.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0114.txt",
+   "declared_size": 1679,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0115.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0115.txt",
+   "declared_size": 1656,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0116.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0116.txt",
+   "declared_size": 1693,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0117.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0117.txt",
+   "declared_size": 1607,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0118.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0118.txt",
+   "declared_size": 1663,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0119.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0119.txt",
+   "declared_size": 1759,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0120.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0120.txt",
+   "declared_size": 1663,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0121.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0121.txt",
+   "declared_size": 1628,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0122.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0122.txt",
+   "declared_size": 1805,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0123.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0123.txt",
+   "declared_size": 1585,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0124.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0124.txt",
+   "declared_size": 1713,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0125.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0125.txt",
+   "declared_size": 1583,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0126.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0126.txt",
+   "declared_size": 1505,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0127.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0127.txt",
+   "declared_size": 1791,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0128.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0128.txt",
+   "declared_size": 1761,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0129.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0129.txt",
+   "declared_size": 1764,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0130.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0130.txt",
+   "declared_size": 1822,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0131.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0131.txt",
+   "declared_size": 1677,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0132.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0132.txt",
+   "declared_size": 1571,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0133.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0133.txt",
+   "declared_size": 1431,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0134.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0134.txt",
+   "declared_size": 1653,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0135.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0135.txt",
+   "declared_size": 1624,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0136.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0136.txt",
+   "declared_size": 1729,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0137.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0137.txt",
+   "declared_size": 1649,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0138.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0138.txt",
+   "declared_size": 1681,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0139.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0139.txt",
+   "declared_size": 1754,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0140.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0140.txt",
+   "declared_size": 1798,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0141.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0141.txt",
+   "declared_size": 1735,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0142.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0142.txt",
+   "declared_size": 1653,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0143.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0143.txt",
+   "declared_size": 1592,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0144.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0144.txt",
+   "declared_size": 1752,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0145.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0145.txt",
+   "declared_size": 1770,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0146.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0146.txt",
+   "declared_size": 1830,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0147.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0147.txt",
+   "declared_size": 1709,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0148.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0148.txt",
+   "declared_size": 1689,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0149.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0149.txt",
+   "declared_size": 1755,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0150.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0150.txt",
+   "declared_size": 1611,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0151.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0151.txt",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0152.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0152.txt",
+   "declared_size": 1779,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0153.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0153.txt",
+   "declared_size": 1596,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0154.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0154.txt",
+   "declared_size": 1789,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0155.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0155.txt",
+   "declared_size": 1659,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0156.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0156.txt",
+   "declared_size": 1529,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0157.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0157.txt",
+   "declared_size": 1691,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0158.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0158.txt",
+   "declared_size": 1676,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0159.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0159.txt",
+   "declared_size": 1771,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0160.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0160.txt",
+   "declared_size": 1414,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0161.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0161.txt",
+   "declared_size": 1620,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0162.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0162.txt",
+   "declared_size": 1618,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0163.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0163.txt",
+   "declared_size": 1558,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0164.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0164.txt",
+   "declared_size": 1573,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0165.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0165.txt",
+   "declared_size": 1587,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0166.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0166.txt",
+   "declared_size": 1611,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0167.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0167.txt",
+   "declared_size": 1642,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0168.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0168.txt",
+   "declared_size": 1555,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0169.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0169.txt",
+   "declared_size": 1622,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0170.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0170.txt",
+   "declared_size": 1733,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0171.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0171.txt",
+   "declared_size": 1448,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0172.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0172.txt",
+   "declared_size": 1377,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0173.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0173.txt",
+   "declared_size": 982,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0174.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0174.txt",
+   "declared_size": 1411,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0175.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0175.txt",
+   "declared_size": 1676,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0176.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0176.txt",
+   "declared_size": 1605,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0177.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0177.txt",
+   "declared_size": 1737,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0178.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0178.txt",
+   "declared_size": 1613,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0179.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0179.txt",
+   "declared_size": 1711,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0180.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0180.txt",
+   "declared_size": 1634,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0181.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0181.txt",
+   "declared_size": 1716,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0182.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0182.txt",
+   "declared_size": 1694,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0183.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0183.txt",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0184.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0184.txt",
+   "declared_size": 1626,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0185.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0185.txt",
+   "declared_size": 1667,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0186.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0186.txt",
+   "declared_size": 1593,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0187.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0187.txt",
+   "declared_size": 1579,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0188.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0188.txt",
+   "declared_size": 1735,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0189.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0189.txt",
+   "declared_size": 1701,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0190.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0190.txt",
+   "declared_size": 1751,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0191.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0191.txt",
+   "declared_size": 1656,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0192.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0192.txt",
+   "declared_size": 1575,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0193.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0193.txt",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0194.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0194.txt",
+   "declared_size": 1791,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0195.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0195.txt",
+   "declared_size": 1761,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0196.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0196.txt",
+   "declared_size": 1748,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0197.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0197.txt",
+   "declared_size": 1523,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0198.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0198.txt",
+   "declared_size": 1599,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0199.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0199.txt",
+   "declared_size": 1741,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0200.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0200.txt",
+   "declared_size": 1631,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0201.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0201.txt",
+   "declared_size": 1689,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0202.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0202.txt",
+   "declared_size": 1687,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0203.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0203.txt",
+   "declared_size": 1628,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0204.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0204.txt",
+   "declared_size": 1646,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0205.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0205.txt",
+   "declared_size": 1597,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0206.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0206.txt",
+   "declared_size": 1683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0207.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0207.txt",
+   "declared_size": 1638,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0208.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0208.txt",
+   "declared_size": 1686,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0209.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0209.txt",
+   "declared_size": 1713,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0210.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0210.txt",
+   "declared_size": 1625,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0211.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0211.txt",
+   "declared_size": 1584,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0212.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0212.txt",
+   "declared_size": 1552,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0213.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0213.txt",
+   "declared_size": 1781,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0214.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0214.txt",
+   "declared_size": 1685,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0215.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0215.txt",
+   "declared_size": 1658,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0216.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0216.txt",
+   "declared_size": 1642,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0217.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0217.txt",
+   "declared_size": 1491,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0218.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0218.txt",
+   "declared_size": 1684,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0219.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0219.txt",
+   "declared_size": 1729,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0220.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0220.txt",
+   "declared_size": 1600,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0221.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0221.txt",
+   "declared_size": 1783,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0222.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0222.txt",
+   "declared_size": 1765,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0223.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0223.txt",
+   "declared_size": 1744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0224.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0224.txt",
+   "declared_size": 1707,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0225.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0225.txt",
+   "declared_size": 1454,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0226.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0226.txt",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0227.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0227.txt",
+   "declared_size": 1646,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0228.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0228.txt",
+   "declared_size": 1525,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0229.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0229.txt",
+   "declared_size": 1522,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0230.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0230.txt",
+   "declared_size": 1654,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0231.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0231.txt",
+   "declared_size": 1469,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0232.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0232.txt",
+   "declared_size": 1767,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0233.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0233.txt",
+   "declared_size": 1715,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0234.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0234.txt",
+   "declared_size": 1748,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0235.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0235.txt",
+   "declared_size": 1704,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0236.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0236.txt",
+   "declared_size": 1700,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0237.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0237.txt",
+   "declared_size": 1940,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0238.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0238.txt",
+   "declared_size": 1847,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0239.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0239.txt",
+   "declared_size": 1287,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0240.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0240.txt",
+   "declared_size": 1676,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0241.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0241.txt",
+   "declared_size": 1795,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0242.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0242.txt",
+   "declared_size": 1737,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0243.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0243.txt",
+   "declared_size": 1751,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0244.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0244.txt",
+   "declared_size": 1758,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0245.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0245.txt",
+   "declared_size": 1757,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0246.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0246.txt",
+   "declared_size": 1779,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0247.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0247.txt",
+   "declared_size": 1802,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0248.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0248.txt",
+   "declared_size": 1799,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0249.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0249.txt",
+   "declared_size": 1738,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0250.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0250.txt",
+   "declared_size": 1750,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0251.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0251.txt",
+   "declared_size": 1794,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0252.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0252.txt",
+   "declared_size": 1696,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0253.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0253.txt",
+   "declared_size": 1678,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0254.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0254.txt",
+   "declared_size": 1714,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0255.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0255.txt",
+   "declared_size": 1839,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0256.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0256.txt",
+   "declared_size": 1528,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0257.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0257.txt",
+   "declared_size": 1749,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0258.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0258.txt",
+   "declared_size": 1708,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0259.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0259.txt",
+   "declared_size": 1673,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0260.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0260.txt",
+   "declared_size": 1641,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0261.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0261.txt",
+   "declared_size": 1505,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0262.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0262.txt",
+   "declared_size": 1494,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0263.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0263.txt",
+   "declared_size": 1756,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0264.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0264.txt",
+   "declared_size": 1741,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0265.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0265.txt",
+   "declared_size": 1748,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0266.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0266.txt",
+   "declared_size": 1622,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0267.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0267.txt",
+   "declared_size": 1581,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0268.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0268.txt",
+   "declared_size": 1718,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0269.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0269.txt",
+   "declared_size": 1494,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0270.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0270.txt",
+   "declared_size": 1447,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0271.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0271.txt",
+   "declared_size": 1428,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0272.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0272.txt",
+   "declared_size": 1331,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0273.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0273.txt",
+   "declared_size": 1153,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0274.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0274.txt",
+   "declared_size": 770,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0275.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0275.txt",
+   "declared_size": 1515,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0276.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0276.txt",
+   "declared_size": 1600,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0277.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0277.txt",
+   "declared_size": 1616,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0278.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0278.txt",
+   "declared_size": 1700,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0279.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0279.txt",
+   "declared_size": 1690,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0280.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0280.txt",
+   "declared_size": 1733,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0281.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0281.txt",
+   "declared_size": 1783,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0282.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0282.txt",
+   "declared_size": 1816,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0283.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0283.txt",
+   "declared_size": 1797,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0284.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0284.txt",
+   "declared_size": 1782,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0285.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0285.txt",
+   "declared_size": 1758,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0286.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0286.txt",
+   "declared_size": 1580,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0287.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0287.txt",
+   "declared_size": 1539,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0288.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0288.txt",
+   "declared_size": 1573,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0289.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0289.txt",
+   "declared_size": 1573,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0290.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0290.txt",
+   "declared_size": 1188,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0291.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0291.txt",
+   "declared_size": 1271,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0292.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0292.txt",
+   "declared_size": 1466,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0293.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0293.txt",
+   "declared_size": 1461,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0294.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0294.txt",
+   "declared_size": 1338,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0295.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0295.txt",
+   "declared_size": 1445,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0296.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0296.txt",
+   "declared_size": 1825,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0297.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0297.txt",
+   "declared_size": 1771,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0298.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0298.txt",
+   "declared_size": 1696,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0299.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0299.txt",
+   "declared_size": 1739,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0300.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0300.txt",
+   "declared_size": 1637,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0301.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0301.txt",
+   "declared_size": 1595,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0302.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0302.txt",
+   "declared_size": 1823,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0303.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0303.txt",
+   "declared_size": 1773,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0304.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0304.txt",
+   "declared_size": 1782,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0305.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0305.txt",
+   "declared_size": 1791,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0306.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0306.txt",
+   "declared_size": 1707,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0307.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0307.txt",
+   "declared_size": 1732,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0308.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0308.txt",
+   "declared_size": 1757,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0309.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0309.txt",
+   "declared_size": 1719,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0310.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0310.txt",
+   "declared_size": 1663,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0311.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0311.txt",
+   "declared_size": 1652,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0312.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0312.txt",
+   "declared_size": 1753,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0313.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0313.txt",
+   "declared_size": 1784,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0314.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0314.txt",
+   "declared_size": 1684,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0315.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0315.txt",
+   "declared_size": 1713,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0316.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0316.txt",
+   "declared_size": 1876,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0317.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0317.txt",
+   "declared_size": 1675,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0318.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0318.txt",
+   "declared_size": 1806,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0319.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0319.txt",
+   "declared_size": 1732,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0320.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0320.txt",
+   "declared_size": 1757,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0321.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0321.txt",
+   "declared_size": 1750,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0322.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0322.txt",
+   "declared_size": 1833,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0323.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0323.txt",
+   "declared_size": 1692,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0324.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0324.txt",
+   "declared_size": 1774,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0325.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0325.txt",
+   "declared_size": 1747,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0326.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0326.txt",
+   "declared_size": 1652,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0327.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0327.txt",
+   "declared_size": 1554,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0328.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0328.txt",
+   "declared_size": 1705,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0329.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0329.txt",
+   "declared_size": 1713,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0330.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0330.txt",
+   "declared_size": 1739,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0331.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0331.txt",
+   "declared_size": 1705,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0332.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0332.txt",
+   "declared_size": 1629,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0333.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0333.txt",
+   "declared_size": 1673,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0334.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0334.txt",
+   "declared_size": 1646,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0335.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0335.txt",
+   "declared_size": 1648,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0336.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0336.txt",
+   "declared_size": 1835,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0337.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0337.txt",
+   "declared_size": 1447,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0338.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0338.txt",
+   "declared_size": 1170,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0339.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0339.txt",
+   "declared_size": 1476,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0340.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0340.txt",
+   "declared_size": 1406,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0341.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0341.txt",
+   "declared_size": 683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0342.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0342.txt",
+   "declared_size": 1538,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0343.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0343.txt",
+   "declared_size": 1732,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0344.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0344.txt",
+   "declared_size": 1749,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0345.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0345.txt",
+   "declared_size": 1766,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0346.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0346.txt",
+   "declared_size": 1547,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0347.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0347.txt",
+   "declared_size": 1702,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0348.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0348.txt",
+   "declared_size": 1611,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0349.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0349.txt",
+   "declared_size": 1425,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0350.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0350.txt",
+   "declared_size": 1746,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0351.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0351.txt",
+   "declared_size": 1507,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0352.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0352.txt",
+   "declared_size": 1475,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0353.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0353.txt",
+   "declared_size": 1396,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0354.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0354.txt",
+   "declared_size": 1548,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0355.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0355.txt",
+   "declared_size": 1487,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0356.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0356.txt",
+   "declared_size": 1515,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0357.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0357.txt",
+   "declared_size": 1749,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0358.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0358.txt",
+   "declared_size": 1715,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0359.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0359.txt",
+   "declared_size": 1710,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0360.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0360.txt",
+   "declared_size": 1650,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0361.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0361.txt",
+   "declared_size": 1572,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0362.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0362.txt",
+   "declared_size": 1501,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0363.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0363.txt",
+   "declared_size": 1751,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0364.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0364.txt",
+   "declared_size": 1834,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0365.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0365.txt",
+   "declared_size": 1711,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0366.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0366.txt",
+   "declared_size": 1684,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0367.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0367.txt",
+   "declared_size": 1693,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0368.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0368.txt",
+   "declared_size": 1653,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0369.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0369.txt",
+   "declared_size": 1576,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0370.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0370.txt",
+   "declared_size": 1662,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0371.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0371.txt",
+   "declared_size": 1631,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0372.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0372.txt",
+   "declared_size": 1640,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0373.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0373.txt",
+   "declared_size": 1683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0374.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0374.txt",
+   "declared_size": 1724,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0375.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0375.txt",
+   "declared_size": 1716,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0376.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0376.txt",
+   "declared_size": 1742,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0377.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0377.txt",
+   "declared_size": 1708,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0378.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0378.txt",
+   "declared_size": 1679,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0379.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0379.txt",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0380.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0380.txt",
+   "declared_size": 1699,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0381.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0381.txt",
+   "declared_size": 1658,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0382.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0382.txt",
+   "declared_size": 1636,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0383.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0383.txt",
+   "declared_size": 1647,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0384.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0384.txt",
+   "declared_size": 1641,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0385.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0385.txt",
+   "declared_size": 1712,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0386.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0386.txt",
+   "declared_size": 1650,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0387.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0387.txt",
+   "declared_size": 1578,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0388.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0388.txt",
+   "declared_size": 1652,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0389.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0389.txt",
+   "declared_size": 1635,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0390.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0390.txt",
+   "declared_size": 1579,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0391.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0391.txt",
+   "declared_size": 1734,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0392.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0392.txt",
+   "declared_size": 1724,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0393.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0393.txt",
+   "declared_size": 1797,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0394.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0394.txt",
+   "declared_size": 1686,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0395.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0395.txt",
+   "declared_size": 1708,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0396.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0396.txt",
+   "declared_size": 1549,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0397.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0397.txt",
+   "declared_size": 1447,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0398.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0398.txt",
+   "declared_size": 1493,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0399.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0399.txt",
+   "declared_size": 1679,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0400.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0400.txt",
+   "declared_size": 1665,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0401.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0401.txt",
+   "declared_size": 1642,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0402.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0402.txt",
+   "declared_size": 1721,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0403.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0403.txt",
+   "declared_size": 1735,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0404.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0404.txt",
+   "declared_size": 1657,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0405.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0405.txt",
+   "declared_size": 1543,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0406.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0406.txt",
+   "declared_size": 1743,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0407.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0407.txt",
+   "declared_size": 1705,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0408.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0408.txt",
+   "declared_size": 1741,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0409.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0409.txt",
+   "declared_size": 1681,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0410.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0410.txt",
+   "declared_size": 1616,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0411.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0411.txt",
+   "declared_size": 1659,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0412.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0412.txt",
+   "declared_size": 1442,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0413.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0413.txt",
+   "declared_size": 1657,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0414.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0414.txt",
+   "declared_size": 1705,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0415.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0415.txt",
+   "declared_size": 1604,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0416.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0416.txt",
+   "declared_size": 1483,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0417.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0417.txt",
+   "declared_size": 1380,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0418.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0418.txt",
+   "declared_size": 1518,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0419.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0419.txt",
+   "declared_size": 1364,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0420.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0420.txt",
+   "declared_size": 1767,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0421.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0421.txt",
+   "declared_size": 1743,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0422.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0422.txt",
+   "declared_size": 1711,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0423.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0423.txt",
+   "declared_size": 1720,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0424.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0424.txt",
+   "declared_size": 1676,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0425.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0425.txt",
+   "declared_size": 1650,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0426.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0426.txt",
+   "declared_size": 1721,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0427.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0427.txt",
+   "declared_size": 1732,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0428.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0428.txt",
+   "declared_size": 1683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0429.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0429.txt",
+   "declared_size": 1706,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0430.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0430.txt",
+   "declared_size": 1830,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0431.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0431.txt",
+   "declared_size": 1543,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0432.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0432.txt",
+   "declared_size": 1451,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0433.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0433.txt",
+   "declared_size": 1456,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0434.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0434.txt",
+   "declared_size": 1562,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0435.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0435.txt",
+   "declared_size": 1729,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0436.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0436.txt",
+   "declared_size": 1615,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0437.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0437.txt",
+   "declared_size": 1663,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0438.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0438.txt",
+   "declared_size": 1692,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0439.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0439.txt",
+   "declared_size": 1694,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0440.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0440.txt",
+   "declared_size": 1663,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0441.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0441.txt",
+   "declared_size": 1737,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0442.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0442.txt",
+   "declared_size": 1768,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0443.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0443.txt",
+   "declared_size": 1641,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0444.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0444.txt",
+   "declared_size": 1629,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0445.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0445.txt",
+   "declared_size": 1721,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0446.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0446.txt",
+   "declared_size": 1803,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0447.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0447.txt",
+   "declared_size": 1759,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0448.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0448.txt",
+   "declared_size": 1639,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0449.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0449.txt",
+   "declared_size": 1716,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0450.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0450.txt",
+   "declared_size": 1719,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0451.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0451.txt",
+   "declared_size": 1766,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0452.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0452.txt",
+   "declared_size": 1697,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0453.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0453.txt",
+   "declared_size": 1839,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0454.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0454.txt",
+   "declared_size": 1637,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0455.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0455.txt",
+   "declared_size": 1609,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0456.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0456.txt",
+   "declared_size": 1568,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0457.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0457.txt",
+   "declared_size": 1721,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0458.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0458.txt",
+   "declared_size": 1737,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0459.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0459.txt",
+   "declared_size": 1683,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0460.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0460.txt",
+   "declared_size": 1636,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0461.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0461.txt",
+   "declared_size": 1778,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0462.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0462.txt",
+   "declared_size": 1731,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0463.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0463.txt",
+   "declared_size": 1657,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0464.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0464.txt",
+   "declared_size": 1642,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0465.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0465.txt",
+   "declared_size": 1462,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0466.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0466.txt",
+   "declared_size": 1731,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0467.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0467.txt",
+   "declared_size": 1743,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0468.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0468.txt",
+   "declared_size": 1690,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0469.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0469.txt",
+   "declared_size": 1710,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0470.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0470.txt",
+   "declared_size": 1768,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0471.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0471.txt",
+   "declared_size": 1774,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0472.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0472.txt",
+   "declared_size": 1724,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0473.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0473.txt",
+   "declared_size": 1810,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0474.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0474.txt",
+   "declared_size": 1795,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0475.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0475.txt",
+   "declared_size": 1643,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0476.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0476.txt",
+   "declared_size": 1736,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0477.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0477.txt",
+   "declared_size": 1671,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0478.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0478.txt",
+   "declared_size": 1538,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0479.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0479.txt",
+   "declared_size": 1488,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0480.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0480.txt",
+   "declared_size": 1455,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0481.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0481.txt",
+   "declared_size": 1481,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0482.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0482.txt",
+   "declared_size": 1746,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0483.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0483.txt",
+   "declared_size": 1815,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0484.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0484.txt",
+   "declared_size": 1722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0485.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0485.txt",
+   "declared_size": 1425,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0486.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0486.txt",
+   "declared_size": 1518,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0487.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0487.txt",
+   "declared_size": 1731,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0488.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0488.txt",
+   "declared_size": 1708,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0489.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0489.txt",
+   "declared_size": 1706,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0490.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0490.txt",
+   "declared_size": 1801,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0491.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0491.txt",
+   "declared_size": 1753,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0492.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0492.txt",
+   "declared_size": 1812,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0493.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0493.txt",
+   "declared_size": 1731,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0494.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0494.txt",
+   "declared_size": 1667,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0495.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0495.txt",
+   "declared_size": 1522,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0496.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0496.txt",
+   "declared_size": 1421,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0497.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0497.txt",
+   "declared_size": 1611,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "pages/page-0498.txt",
+   "url": "https://huggingface.co/datasets/junaidaslam/gojri-english-dictionary/resolve/f0a01989b3cc615ae5692c5966e8ff7367afbf75/pages/page-0498.txt",
+   "declared_size": 1262,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

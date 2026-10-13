@@ -1,0 +1,674 @@
+{
+ "id": "huggingface:spiderpilot89/zero-trust-physics-companions",
+ "title": "spiderpilot89/zero-trust-physics-companions",
+ "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tCompanions\n\t\n\nSomeone measured a real thing and published what they found. A companion sits beside their data.\nWhat does a model built from your published data say about the runs it never saw?\nEach config here is a companion to one open dataset or report. It names the people who made the measurements and links to their work. Then it holds, run by run, what a model built from part of that work predicts for the runs that were held back from it, and every prediction comes with its… See the full description on the dataset page: https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions.",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "e80e475222dff7db270e41d6b278c0efc263092b",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-13T05:03:53.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:72de2c8c367202cb7c432dc75d270587eaf78c4805873667b7442d275baef0f8",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-13T09:36:16+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/.gitattributes",
+   "declared_size": 2931,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "CREDITS.md",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/CREDITS.md",
+   "declared_size": 105334,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "LICENSES.md",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/LICENSES.md",
+   "declared_size": 851,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/README.md",
+   "declared_size": 157768,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/apc-propeller.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/apc-propeller.jsonl",
+   "declared_size": 649377,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/apc-propeller.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/apc-propeller.parquet",
+   "declared_size": 259582,
+   "declared_checksum": "sha256:1d1d9052846a2ef62b40cc2660979b1eeefee168f69cdb359eb6e6b458da89ff",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/argon-gas.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/argon-gas.jsonl",
+   "declared_size": 74118,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/argon-gas.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/argon-gas.parquet",
+   "declared_size": 32024,
+   "declared_checksum": "sha256:29605066ea8608f3de8e075ad6c0d9def3ff1953b31986c04b0a9462b803120a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/armaly-step.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/armaly-step.jsonl",
+   "declared_size": 460079,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/armaly-step.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/armaly-step.parquet",
+   "declared_size": 92060,
+   "declared_checksum": "sha256:dc52f09f152059a6757ef5266490bbfef4e0267a8f09f70d9ba6e3144de2578d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/bam-s355-steel.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/bam-s355-steel.jsonl",
+   "declared_size": 25012,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/bam-s355-steel.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/bam-s355-steel.parquet",
+   "declared_size": 32121,
+   "declared_checksum": "sha256:9d9a5ec1eb7490c4c0fcc78e4d8b8245ad400d3ad2edf69048a666051acb15cd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/cmsx6-creep.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/cmsx6-creep.jsonl",
+   "declared_size": 7068244,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/cmsx6-creep.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/cmsx6-creep.parquet",
+   "declared_size": 1168180,
+   "declared_checksum": "sha256:5fc12cfc1a7ae164fb03aa21932c260cc1c679723ee74ce7d571c75763dee9bb",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/curiosity-generator.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/curiosity-generator.jsonl",
+   "declared_size": 332536,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/curiosity-generator.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/curiosity-generator.parquet",
+   "declared_size": 94821,
+   "declared_checksum": "sha256:8f24ab3ea7bfb5450a4107822a2afbe4fb9bf727269a4969ab3c523843cb2b01",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/darmstadt-accumulator.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/darmstadt-accumulator.jsonl",
+   "declared_size": 68497911,
+   "declared_checksum": "sha256:72debb8b84bc6e381220d0e92e53c3a5f874f3f3b0ed42ced262e54522777256",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/darmstadt-accumulator.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/darmstadt-accumulator.parquet",
+   "declared_size": 14046830,
+   "declared_checksum": "sha256:4573756217c249870f7f587154cb366348e65bc5e792a92aab8f968cf893c101",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/eth-cantilever.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/eth-cantilever.jsonl",
+   "declared_size": 2306954,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/eth-cantilever.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/eth-cantilever.parquet",
+   "declared_size": 700652,
+   "declared_checksum": "sha256:b2b95b27e35b92c85a84d06d9bb6a7ba1b7e63745f2e5603847db25930cd843a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/fingertip-on-glass.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/fingertip-on-glass.jsonl",
+   "declared_size": 70960,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/fingertip-on-glass.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/fingertip-on-glass.parquet",
+   "declared_size": 33325,
+   "declared_checksum": "sha256:a6d4f51c23a4d9d5832e9c2628be927175b95eaed3f2745794ec14c94954a744",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/gothenburg-microwave-link.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/gothenburg-microwave-link.jsonl",
+   "declared_size": 853641,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/gothenburg-microwave-link.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/gothenburg-microwave-link.parquet",
+   "declared_size": 109392,
+   "declared_checksum": "sha256:35e285afde50d613b21b0a6b4e0497188080466e8fc4523f783e4851a801420b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/great-britain-grid.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/great-britain-grid.jsonl",
+   "declared_size": 155837,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/great-britain-grid.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/great-britain-grid.parquet",
+   "declared_size": 53599,
+   "declared_checksum": "sha256:1eef3819619c4d9899e11bd4eae75ad2b1b6e62b320908cd79f35de50c513b67",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/insight-capsule.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/insight-capsule.jsonl",
+   "declared_size": 1069223,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/insight-capsule.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/insight-capsule.parquet",
+   "declared_size": 351220,
+   "declared_checksum": "sha256:6f3651540dba7c9287d79f95e1bad9c1aad66448bf8ab033aa8b10d8c1479a59",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/jet-dte1.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/jet-dte1.jsonl",
+   "declared_size": 303284,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/jet-dte1.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/jet-dte1.parquet",
+   "declared_size": 81353,
+   "declared_checksum": "sha256:9237a0cb426c3882c0713ce23ef1ef7b399b54fbeece73746fa594cdfeb062a9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/knorr-seawater.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/knorr-seawater.jsonl",
+   "declared_size": 44390511,
+   "declared_checksum": "sha256:00f856937483764b6cc109748fae41aacd13b8a45b760e624ef9d23f059a07be",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/knorr-seawater.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/knorr-seawater.parquet",
+   "declared_size": 16057242,
+   "declared_checksum": "sha256:756ec21191a99e8b2e27843de3a5665c8b7da815134ea1407400443de1f52ec6",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/lageos.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/lageos.jsonl",
+   "declared_size": 19305745,
+   "declared_checksum": "sha256:503b79c267af372e12b9789dfbfba8c9f6054946a287ae7348760c151e737858",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/lageos.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/lageos.parquet",
+   "declared_size": 5913953,
+   "declared_checksum": "sha256:d338339ff4f11fcb2b9af75442d138ad16413cec4b838bf7dbb527aa4a11c8db",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/lhd-proton-boron.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/lhd-proton-boron.jsonl",
+   "declared_size": 105335,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/lhd-proton-boron.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/lhd-proton-boron.parquet",
+   "declared_size": 66021,
+   "declared_checksum": "sha256:2fde7157fbbb661f324f308f1597052aff7bb0cf655c972e5774273838d7b644",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/panasonic-18650pf.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/panasonic-18650pf.jsonl",
+   "declared_size": 744246,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/panasonic-18650pf.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/panasonic-18650pf.parquet",
+   "declared_size": 104804,
+   "declared_checksum": "sha256:e91766a884e40d7e50d9f4b771c998dab2ed7df4f01d86cb23438115d6a7b295",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/pica-heat-shield.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/pica-heat-shield.jsonl",
+   "declared_size": 257496,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/pica-heat-shield.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/pica-heat-shield.parquet",
+   "declared_size": 63809,
+   "declared_checksum": "sha256:d14c4904526d787df9b6bb04c23e9b8ead167d396c24d8dcb84bcfb8cd225993",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/princeton-superpipe.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/princeton-superpipe.jsonl",
+   "declared_size": 458193,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/princeton-superpipe.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/princeton-superpipe.parquet",
+   "declared_size": 151057,
+   "declared_checksum": "sha256:fd33f4557fab5864de7add912458e3f31858843e358de11fc33037e0cf6f72ad",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/ryugu-crater.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/ryugu-crater.jsonl",
+   "declared_size": 389206,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/ryugu-crater.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/ryugu-crater.parquet",
+   "declared_size": 132433,
+   "declared_checksum": "sha256:a7226c59cb290fd5fd6878384f638c4b27a7e6ed708c95a7e413163191be599e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/sheffield-journal-bearing.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/sheffield-journal-bearing.jsonl",
+   "declared_size": 68444,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/sheffield-journal-bearing.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/sheffield-journal-bearing.parquet",
+   "declared_size": 31565,
+   "declared_checksum": "sha256:cedb4eff247b58aa5e05c4a4b0200b9584a0f5d434bf957804d83f32a44a1f22",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/solar-system.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/solar-system.jsonl",
+   "declared_size": 11213992,
+   "declared_checksum": "sha256:bed3229e4747f454b52c98fe85221a0e9b1814705ea042b68ec02dd044e4a1a8",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/solar-system.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/solar-system.parquet",
+   "declared_size": 3851258,
+   "declared_checksum": "sha256:0ca38a0cce57cf4c03ee70d1e2cdfcca385db3a78e5da139608dfc98653a0f4d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii-c-core.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii-c-core.jsonl",
+   "declared_size": 769479,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii-c-core.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii-c-core.parquet",
+   "declared_size": 171748,
+   "declared_checksum": "sha256:0359d98d2db9dcdc52dd21e5e8e3ee946c7e48c2b7a173780fb2020e02eee22d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii-three-temperatures.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii-three-temperatures.jsonl",
+   "declared_size": 263713,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii-three-temperatures.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii-three-temperatures.parquet",
+   "declared_size": 71950,
+   "declared_checksum": "sha256:fa81fbd61a886ce214788f162b8e2274cf4385876da4a039f8b1483b3fefb9f8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii.jsonl",
+   "declared_size": 5375014,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spert-iii.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/spert-iii.parquet",
+   "declared_size": 1783870,
+   "declared_checksum": "sha256:64e5920e17a39794cf978ba9dec6a66a1e2338aa1a78a680598b9cf1469cc457",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/stardust.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/stardust.jsonl",
+   "declared_size": 2694424,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/stardust.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/stardust.parquet",
+   "declared_size": 832609,
+   "declared_checksum": "sha256:59fda5c9482dc2655846c1f0148347d697d9ecd56415487100806f193a25edce",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/tesla-2170-m80.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tesla-2170-m80.jsonl",
+   "declared_size": 180305438,
+   "declared_checksum": "sha256:b4fb48abb916ad0c1559eb9287c6eebe5e132fd374a1841ca3f8b93b7a7e8cd0",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/tesla-2170-m80.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tesla-2170-m80.parquet",
+   "declared_size": 24847795,
+   "declared_checksum": "sha256:82418ead0a7f634e94d12182d75a1cb1600a2463f99d4558a00f598265a16666",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/tesla-2170-two-cells.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tesla-2170-two-cells.jsonl",
+   "declared_size": 396679639,
+   "declared_checksum": "sha256:501c0ac6ed5f93ba52d21314b727795094f12c8de7a4f21c489b0945023f6a64",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/tesla-2170-two-cells.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tesla-2170-two-cells.parquet",
+   "declared_size": 53567592,
+   "declared_checksum": "sha256:4f64164b05637ef4278499ff959b7fcd66fbecbe2e6acee2dc0bac80c9955508",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/tokamak-dt-jet-tftr.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tokamak-dt-jet-tftr.jsonl",
+   "declared_size": 1469497,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/tokamak-dt-jet-tftr.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tokamak-dt-jet-tftr.parquet",
+   "declared_size": 610323,
+   "declared_checksum": "sha256:2ef8764f1fbef67133984d3bda927b6b4b56144e3745a32954c06081e075be54",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/trichoderma-fed-batch.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/trichoderma-fed-batch.jsonl",
+   "declared_size": 40491,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/trichoderma-fed-batch.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/trichoderma-fed-batch.parquet",
+   "declared_size": 26248,
+   "declared_checksum": "sha256:9f9ae7f71edfa3eb8ec781b78a95e1b34601118b10a503b536e6ccf2cefe2007",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/tyre-on-ice.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tyre-on-ice.jsonl",
+   "declared_size": 944975,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/tyre-on-ice.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/tyre-on-ice.parquet",
+   "declared_size": 202076,
+   "declared_checksum": "sha256:46239941bc094d4415a8b298b8d45c1d69b7ef68c9a2d5c58e5b1ed7a8243463",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/webb.jsonl",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/webb.jsonl",
+   "declared_size": 36419283,
+   "declared_checksum": "sha256:918e00c7daa57e5c45465e17d1e072b8fe40cca5079912a7d5597fc25f24a6cf",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/webb.parquet",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/data/webb.parquet",
+   "declared_size": 6850572,
+   "declared_checksum": "sha256:8de17948967b82d3c4b39e0d0d100d0c4890bb56d4cdba18cc1c5e9151814152",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "replay.py",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/replay.py",
+   "declared_size": 5497,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "verify_rows.py",
+   "url": "https://huggingface.co/datasets/spiderpilot89/zero-trust-physics-companions/resolve/e80e475222dff7db270e41d6b278c0efc263092b/verify_rows.py",
+   "declared_size": 22256,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
