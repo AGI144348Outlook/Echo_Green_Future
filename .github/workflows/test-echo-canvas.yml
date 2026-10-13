@@ -19,6 +19,8 @@ jobs:
         run: PYTHONPATH=. python -m unittest discover -s tests -p 'test_echo_canvas_bridge.py' -v
       - name: Test 002 overlay and KSM Recess adapter
         run: PYTHONPATH=. python -m unittest discover -s tests -p 'test_integration_002.py' -v
+      - name: Test 003 glyph card reindexing against actual AlgorithmMatrix
+        run: PYTHONPATH=. python -m unittest discover -s tests -p 'test_glyph_cards_003.py' -v
       - name: Check JavaScript syntax
         run: |
           node --check app.js
