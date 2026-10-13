@@ -1,0 +1,23 @@
+name: Echo A-000 Canvas Experiment Tests
+on:
+  push:
+    branches: [experiment-echo-graphql-canvas-000]
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch pinned Genesis Documentary Governor
+        run: |
+          curl --fail --location --retry 3 --output echo_governor_skeleton.py https://raw.githubusercontent.com/AGI144348Outlook/Echo_Green_Future/f888091f6d81c60a61e5ca9bbba14d8d28a18093/src/echo_governor_skeleton.py
+          python -m py_compile echo_governor_skeleton.py echo_canvas_bridge.py
+      - name: Exercise real AlgorithmMatrix bridge
+        run: PYTHONPATH=. python -m unittest discover -s tests -p 'test_echo_canvas_bridge.py' -v
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check echo_canvas_experiment.js
