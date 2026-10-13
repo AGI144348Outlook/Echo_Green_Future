@@ -21,3 +21,11 @@ jobs:
         run: |
           node --check app.js
           node --check echo_canvas_experiment.js
+      - name: Install headless Chromium test tools
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run Pyodide browser end-to-end test
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/echo-http.log 2>&1 &
+          node tests/browser_echo_canvas.cjs
