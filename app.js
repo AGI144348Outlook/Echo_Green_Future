@@ -4,7 +4,7 @@ const canvas=document.querySelector('#grid'),ctx=canvas.getContext('2d');
 function grid(){const d=devicePixelRatio||1,w=innerWidth,h=innerHeight;canvas.width=w*d;canvas.height=h*d;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);ctx.strokeStyle='#e8e8e8';ctx.lineWidth=1;for(let x=0;x<w;x+=24){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}for(let y=0;y<h;y+=24){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}}
 addEventListener('resize',grid);grid();
 let pyodide, dirHandle=null;
-(async()=>{try{pyodide=await loadPyodide();statusEl.textContent='Pyodide: ready';log('Python substrate ready.')}catch(e){statusEl.textContent='Pyodide: unavailable';log(String(e))}})();
+(async()=>{try{pyodide=await loadPyodide();window.echoPyodide=pyodide;statusEl.textContent='Pyodide: ready';log('Python substrate ready.')}catch(e){statusEl.textContent='Pyodide: unavailable';log(String(e))}})();
 async function chooseDir(){if(!window.showDirectoryPicker){log('Directory picker is not supported here; extraction can still be inspected in-browser.');return null}dirHandle=await showDirectoryPicker({mode:'readwrite'});log('Workspace: '+dirHandle.name);return dirHandle}
 document.querySelector('#chooseDir').onclick=()=>chooseDir().catch(e=>log(e.message));
 document.querySelector('#clearLog').onclick=()=>logEl.textContent='Ready.';
