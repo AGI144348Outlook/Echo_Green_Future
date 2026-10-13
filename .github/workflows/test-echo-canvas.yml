@@ -33,3 +33,13 @@ jobs:
         run: |
           python -m http.server 8765 --bind 127.0.0.1 >/tmp/echo-http.log 2>&1 &
           node tests/browser_echo_canvas.cjs
+
+      - name: Browser Test 007 Fractal LVT Canvas
+        run: node tests/browser_fractal_lvt_007.cjs
+      - name: Upload Canvas screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canvas-fractal-lvt-007
+          path: canvas_browser_007.png
+          if-no-files-found: ignore
