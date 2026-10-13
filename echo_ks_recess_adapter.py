@@ -30,7 +30,12 @@ class RecessCanvas:
             for field in fields:
                 if field in operation:
                     self.nodes[key][field] = operation[field]
-        elif op in ("ALIGN", "CONTAIN"):
+        elif op == "CONTAIN":
+            child, parent = operation["id"], operation["parent"]
+            if child not in self.nodes or parent not in self.nodes:
+                raise ValueError("containment endpoints must be presented")
+            self.relations.append(dict(operation))
+        elif op == "ALIGN":
             a, b = operation["a"], operation["b"]
             if a not in self.nodes or b not in self.nodes:
                 raise ValueError("relation endpoints must be presented")
