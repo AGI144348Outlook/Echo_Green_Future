@@ -1,0 +1,107 @@
+{
+ "id": "huggingface:anke01/uyghur-dictionary-dataset",
+ "title": "anke01/uyghur-dictionary-dataset",
+ "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\t维吾尔语多语言词典数据集\n\t\n\n维吾尔语-汉语-英语多语言词典数据集，适用于大型语言模型(LLM)微调训练。\n\n\t\n\t\t\n\t\t数据集统计\n\t\n\n\n\t\n\t\t\n数据集\n条目数\n大小\n语言方向\n\n\n\t\t\nug-cn.jsonl\n3,079,016\n456 MB\n维吾尔语 ⟷ 汉语\n\n\nug-en.jsonl\n685,836\n108 MB\n维吾尔语 ⟷ 英语\n\n\nen-ug.jsonl\n705,534\n112 MB\n英语 ⟷ 维吾尔语\n\n\nug-ug.jsonl\n139,920\n46 MB\n维吾尔语释义\n\n\ncn-cn.jsonl\n127,646\n39 MB\n汉语释义\n\n\n\t\n\n总计: 4,737,952 条（双向）/ 约 236 万唯一对\n\n\t\n\t\t\n\t\n\t\n\t\t数据格式\n\t\n\n{\n  \"instruction\": \"请翻译以下维吾尔语词汇\",\n  \"input\": \"مەركىزى\",\n  \"output\": \"中心的，中央的\"\n}\n\n字段说明：\n\ninstruction: 任务指令\ninput: 输入文本\noutput: 输出文本\n\n\n\t\n\t\t\n\t\t使用示例… See the full description on the dataset page: https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset.",
+ "found_by_keywords": [
+  "dictionary"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "14355b6ea141ca46620da6ef483a03fb6baa0dd6",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-03-01T08:57:15.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "apache-2.0",
+   "normalized": "apache-2.0",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'dictionary'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:e0afd474e9d0b9e14dcfc0d121df587c4c017f19225dd8a3dd74cbd5a644736a",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-14T13:52:48+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/.gitattributes",
+   "declared_size": 2744,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/README.md",
+   "declared_size": 1775,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "cn-cn.jsonl",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/cn-cn.jsonl",
+   "declared_size": 40864310,
+   "declared_checksum": "sha256:dabd41e0ab3f556f8ed5ff04a31b9c699ac9919ed8f2a87c84e5ee575dfe2bd7",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "en-ug.jsonl",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/en-ug.jsonl",
+   "declared_size": 116412346,
+   "declared_checksum": "sha256:260f5cb4393e98a76eca9c9d1e27788a47f267750fdf72afac55c557dd6d88c0",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ug-cn.jsonl",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/ug-cn.jsonl",
+   "declared_size": 477797338,
+   "declared_checksum": "sha256:3e06b7f73830df0626a73347dc56c375b46e0d303f8738e063f51c4c5a766724",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ug-en.jsonl",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/ug-en.jsonl",
+   "declared_size": 112359824,
+   "declared_checksum": "sha256:c565ce059579e570dbbff520c5f0d5387b2d05f2db2a833bdf062905af5961e5",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ug-ug.jsonl",
+   "url": "https://huggingface.co/datasets/anke01/uyghur-dictionary-dataset/resolve/14355b6ea141ca46620da6ef483a03fb6baa0dd6/ug-ug.jsonl",
+   "declared_size": 47845004,
+   "declared_checksum": "sha256:1dcff85889752c2a05d2d8021bbf29b967f81ea0722a6e6bc53b1ca884b6fd5d",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
