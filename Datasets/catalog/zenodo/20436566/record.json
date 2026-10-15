@@ -1,0 +1,62 @@
+{
+ "id": "zenodo:20436566",
+ "title": "Raw microscopy data accompanying \"Applying coherent Raman microscopy to biological phenotyping\"",
+ "url": "https://zenodo.org/records/20436566",
+ "doi": "10.5281/zenodo.20436566",
+ "description": "<h2>Description</h2>\n<p>This deposition contains the raw microscopy images underlying the Arcadia Science pub <em>\"Applying coherent Raman microscopy to biological phenotyping.\"</em> The study compares coherent Raman microscopy (CRM) against conventional confocal fluorescence imaging for label-free phenotyping of the unicellular alga <em>Chlorella vulgaris</em>, using two strains:</p>\n<ul>\n<li>\n<p><strong>Wild type (</strong><code>EV_CTL</code><strong>)</strong> &mdash; the parent strain (211/11p) stably expressing Cas9 and carrying an empty vector; used as the control.</p>\n</li>\n<li>\n<p><strong>ADA1 knockout (</strong><code>ADA_mut</code><strong> / </strong><code>ADAKO</code><strong>)</strong> &mdash; a mutant in which a <em>C. vulgaris</em> ortholog of human ADA1 (<a href=\"https://www.uniprot.org/uniprotkb?query=KAI3436177.1\">UniProt KAI3436177.1</a>) was knocked out by targeting the first exon with <em>S. pyogenes</em> Cas9. A frameshift was confirmed by Sanger sequencing. ADA1 is a lipid-metabolism gene, and the mutant was expected to show elevated lipid content detectable by CRS.</p>\n</li>\n</ul>\n<p>Analysis code, figure-generation notebooks, and the committed processed outputs (per-cell CSV tables and per-FOV spectra) live in the companion GitHub repository: <a href=\"https://github.com/Arcadia-Science/chlorella-crs-phenotyping\">https://github.com/Arcadia-Science/chlorella-crs-phenotyping</a>.</p>\n<h2>Content</h2>\n<p>Two archives, each holding raw, instrument-native image files. Only raw data are deposited here; processed/derived tables are version-controlled in the GitHub repository.</p>\n<table>\n<tbody>\n<tr>\n<th>\n<p>Archive</p>\n</th>\n<th>\n<p>Contents</p>\n</th>\n<th>\n<p>Format</p>\n</th>\n</tr>\n<tr>\n<td>\n<p><code>fluorescence.zip</code></p>\n</td>\n<td>\n<p>Spinning-disk confocal fluorescence acquisitions (Nikon CSU-W1)</p>\n</td>\n<td>\n<p>Nikon ND2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><code>raman.zip</code></p>\n</td>\n<td>\n<p>Hyperspectral coherent Raman scattering acquisitions",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/20436566",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 4,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-05-29T21:08:49.677716+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:fe4cad8f412776191abd6f599d933949fccaa5cd0fce6906f136beccbc5a061c",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-15T13:33:43+00:00",
+ "files": [
+  {
+   "name": "raman.zip",
+   "url": "https://zenodo.org/api/records/20436566/files/raman.zip/content",
+   "declared_size": 9690992279,
+   "declared_checksum": "md5:a82633e36caa0c185f1312f4a381c4f8",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "fluorescence.zip",
+   "url": "https://zenodo.org/api/records/20436566/files/fluorescence.zip/content",
+   "declared_size": 12676476585,
+   "declared_checksum": "md5:4cb44f127803fb90d748a411ee087bad",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
