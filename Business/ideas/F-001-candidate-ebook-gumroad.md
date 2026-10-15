@@ -733,3 +733,32 @@ The two reports agree on the card rate. That matches the r = 2.9 %, f = $0.30 co
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10). New: which payout method would apply (US direct deposit, PayPal, or other), only so the records step knows whether to expect payout fees.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
+
+## 34. Refinement — scheduled run 2026-10-15T17Z (Claude): what a refund costs under the 30-day window
+
+§5 proposes a 30-day no-questions refund, and §32's `ledger_map.py` lists "refund fee treatment" as missing. This run looked for that one fact (read 2026-10-15T17Z with a page-reading fetch tool).
+
+| Item | What the source says | Source | Evidence state |
+|---|---|---|---|
+| Does Gumroad's refund article cover fees? | Body renders client-side again; only the title "Issuing a refund - Gumroad Help Center" and a meta list of section headings, which include **"Refund fees"** and **"Handling negative balances"**, were readable | [Gumroad help, article 47](https://gumroad.com/help/article/47-how-to-refund-a-customer) | SOURCE-OBSERVED that a "Refund fees" section exists; its content UNVERIFIED |
+| Are fees returned on a refund? | Third-party article quotes Gumroad's help docs as: "We don't refund any fees when processing refunds", covering "the 10% platform fee, the $0.50 flat fee, and the underlying card processing fee" | [Checkout Page](https://checkoutpage.com/blog/gumroad-fees), updated 2026-06-08; a Gumroad competitor | SOURCE-OBSERVED in a third-party article; UNVERIFIED as Gumroad's own text |
+| Chargebacks | "Chargebacks pass through from the underlying processor at standard dispute costs" (no amount) | Checkout Page, 2026-06-08 | as above; amount UNVERIFIED |
+
+**If the reported rule holds, a refund costs the seller every fee on that sale** (INFERRED arithmetic, card rate as reported in §33): the buyer gets `P` back, the seller had received `net`, so each refund is an out-of-pocket loss of `P − net`: $1.96 on a $9 sale, $2.35 on $12, $2.73 on $15.
+
+**Expected net per sale at refund rate `x`** = `net − x·P` (INFERRED arithmetic; scenarios, not forecasts):
+
+| P | net (card, §33) | x = 2 % | x = 5 % | x = 10 % |
+|---|---|---|---|---|
+| $9 | $7.04 | $6.86 | $6.59 | $6.14 |
+| $12 | $9.65 | $9.41 | $9.05 | $8.45 |
+| $15 | $12.27 | $11.97 | $11.52 | $10.77 |
+
+**What this changes (PROPOSED, nothing edited in code this run):**
+- §5 stays a 30-day no-questions window: even at a 10 % refund rate a $9 sale nets about $6.14, so the generous window costs little and protects reputation and processor standing. The §6 pause rule ("refund rate above an agreed threshold") gets a concrete number to agree on; PROPOSED 10 % over any rolling 30 days, Timothy decides.
+- `ledger_map.py` (§32): once one real refund appears in an export, check whether the fee columns go negative. If they do not, record the reversing row as gross only (as now) and the month's net already reflects the retained fees; then drop "refund fee treatment" from `missing`. No guessing before that.
+- The "Handling negative balances" heading means a refund can exceed the current balance; the records step should allow a negative month. `ledger/SCHEMA.md` already permits negative reversing rows, so no schema change.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10); payout method (§33). New, optional: the refund-rate pause threshold (PROPOSED 10 %).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
