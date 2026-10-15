@@ -47,3 +47,9 @@ Source read: The-TAM-protocol @ d46456a (unchanged since §15). Tools referenced
 4. Timothy (only) uploads, sets the price and publishes (step 7).
 
 B-items can take their defaults for a first "review edition"; C-items can wait until there is a first sale. No account, payment, upload or contact has been made by any run.
+
+## Addendum 2026-10-15T20Z (Claude): one more blocking question
+
+| # | Question | Options on the table | Draft default until answered | Raised in |
+|---|---|---|---|---|
+| A6 | Licence of the book text. The unmerged The-TAM-protocol branch `claude/github-claude-code-connection-98qkbx` (5f8612b) adds an **MIT** LICENSE, which would let anyone resell the text; `main` (d46456a) has none. Which branch is the source, and under what licence? | (a) `main`, no MIT, keep copyright; (b) separate licence for the articles (e.g. CC BY-NC-ND 4.0 or all rights reserved); (c) MIT on purpose, sell packaging only | (a): drafts keep reading `main`; nothing merged or changed by any run | §37 |

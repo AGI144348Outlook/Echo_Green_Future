@@ -795,3 +795,26 @@ Check (EXECUTION-VERIFIED): every section reference in the sheet points to a hea
 Next F-001 step for a later run, if Timothy has not answered: none of the remaining work can proceed without A1–A5 except re-reading Gumroad's fees article body (§31) with a browser that runs JavaScript, which a scheduled run here cannot do. Later runs should therefore record "F-001: waiting on A1–A5" and spend income time on a second pipeline only if Timothy asks for one.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
+
+## 37. Refinement — scheduled run 2026-10-15T20Z (Claude): an unmerged TAM branch, and the licence it carries
+
+**Finding (SOURCE-OBSERVED, read only).** Every earlier run read The-TAM-protocol `main` only (d46456a, 2026-01-18). The repository also has an unmerged branch `claude/github-claude-code-connection-98qkbx` @ 5f8612b (commits dated 2026-09-11, author Timothy, merge base d46456a). It reorganises the same material into `articles/`, `datasets/` and `reference/`, rewrites the README (336 → 695 words), and **adds an MIT `LICENSE` ("Copyright (c) 2026 Timothy (AGI144348Outlook)")**. `main` has no licence file.
+
+**Measured differences (EXECUTION-VERIFIED, word counts and 6-word shingles, scratch only):**
+
+| Item | main d46456a | branch 5f8612b |
+|---|---|---|
+| Articles 1, 2, 5, 6, 10 | 335 / 462 / 527 / 499 / 131 words | 347 / 476 / 537 / 512 / 134 (light edits, renamed files) |
+| Collective information | 5,636 words | 2,856 words; only 34.4% of main's 6-word shingles survive, and 68.1% of the branch's come from main |
+| LICENSE | none | MIT |
+
+So the branch is a condensed, edited derivative; `main` remains the fuller source and stays the working source under R1. Nothing on either branch was changed (R3, and both repositories are read only for these runs).
+
+**Why it matters for F-001 (PROPOSED, not a decision).**
+1. An MIT licence lets anyone copy, modify **and sell** the text without paying. If the branch were merged, a paid ebook built from the same text could be legally reproduced for free by anyone. A public repository with no licence (today's `main`) keeps default copyright with Timothy, though the text stays readable by anyone.
+2. Options for Timothy: (a) leave `main` unlicensed and do not merge the branch's LICENSE; (b) keep MIT for code-like material only and put the articles under a separate licence such as CC BY-NC-ND 4.0 (the licence recorded for the ByteByteGo system-design-101 notes at mirror Z28–Z31) or "all rights reserved"; (c) keep MIT deliberately and sell convenience (edited, packaged EPUB/PDF) rather than exclusivity. This is not legal advice.
+3. The condensed `collective-information.md` may be a better editorial base for the book than the 5,636-word working notes, or it may have lost material Timothy wants; that is his call. The build tools in `F-001-tam-build/` read `main` paths and would need a path map for the branch layout (not built this run).
+
+Recorded as decision-sheet item **A6** (addendum in `F-001-decision-sheet.md`). F-001 otherwise still waits on A1–A5.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
