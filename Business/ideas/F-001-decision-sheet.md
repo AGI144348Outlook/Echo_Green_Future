@@ -55,3 +55,5 @@ B-items can take their defaults for a first "review edition"; C-items can wait u
 | A6 | Licence of the book text. The unmerged The-TAM-protocol branch `claude/github-claude-code-connection-98qkbx` (5f8612b) adds an **MIT** LICENSE, which would let anyone resell the text; `main` (d46456a) has none. Which branch is the source, and under what licence? | (a) `main`, no MIT, keep copyright; (b) separate licence for the articles (e.g. CC BY-NC-ND 4.0 or all rights reserved); (c) MIT on purpose, sell packaging only | (a): drafts keep reading `main`; nothing merged or changed by any run | §37 |
 
 Addendum 2026-10-15T21Z (Claude): evidence for A6 in §38 — the branch layout builds (ready CSVs for both datasets) but, with today's `build.py`, would drop Articles 6 and 10, whose text is no longer inside the condensed collective notes. No new question.
+
+Addendum 2026-10-15T22Z (Claude): §39 makes `build.py` include Articles 6 and 10 as chapters when their text is missing from the Collective, so the branch layout now builds without losing them (EXECUTION-VERIFIED; main draft byte-identical). No new question.

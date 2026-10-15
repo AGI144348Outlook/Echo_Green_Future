@@ -91,6 +91,14 @@ def main(src, out):
             report["dup_check"][name] = {"long_sentences": len(s), "also_in_collective": len(s & cs),
                                          "found_as_text": len(as_text),
                                          "not_in_collective": sorted(s - cs - as_text)}
+            # F-001 §39: if any long sentence is NOT covered by the Collective,
+            # the article goes in as its own chapter so no text is silently lost.
+            if report["dup_check"][name]["not_in_collective"]:
+                t = p.read_text(encoding="utf-8", errors="replace")
+                report["source_files"][name] = {"sha256": hashlib.sha256(p.read_bytes()).hexdigest(), "words": len(t.split())}
+                report.setdefault("dup_only_included", []).append(name)
+                body = re.sub(r"^#\s", "## ", t, flags=re.M)
+                parts.append(f"\n# {name}\n\n> Status: source text, not yet edited (claims unmarked; see F-001 §15.2). Included because its text is not inside \"Collective information\" (F-001 §39).\n\n{body}\n")
     # Chapter de-duplication (F-001 §28): a long sentence that appears more than
     # once across the chapters that ARE in the draft. Reported, never removed.
     seen = {}

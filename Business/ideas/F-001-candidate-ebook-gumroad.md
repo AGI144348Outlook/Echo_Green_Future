@@ -843,3 +843,24 @@ Nothing was sold, listed, uploaded or published. No account, payment or contact.
 Decision sheet: this adds evidence to **A6** (which branch is the source). If Timothy picks the branch, it gains ready CSVs but needs the fix above so Articles 6 and 10 are not lost. F-001 otherwise still waits on A1–A6.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §39 (2026-10-15T22Z, Claude): build.py no longer drops Articles 6 and 10 silently
+
+Done the §38 proposal, smallest form: in `build.py`, a `DUP_ONLY` article whose `dup_check.not_in_collective` list is non-empty is now appended as its own chapter (after the main chapters, before the datasets), with a status line saying why, and the report gains `dup_only_included`. No other behaviour changed.
+
+Tests (EXECUTION-VERIFIED, scratch only, outputs not committed; The-TAM-protocol main d46456a and branch 5f8612b staged with `layout_map.py`):
+
+| Check | main d46456a | branch 5f8612b (staged) |
+|---|---|---|
+| Exit, old / new `build.py` | 0 / 0 | 0 / 0 |
+| `tam-draft.md` old vs new | **byte-identical** | differs (chapters added) |
+| `dup_only_included` | none | Article 6, Article 10 |
+| Draft words, new | 7,953 | 6,544 (was 5,844) |
+| Uncovered sentences now in the draft | n/a (0) | Article 6 22/22, Article 10 7/7 |
+| `epub_check.py` on new branch build | — | 0 FAIL, 2 WARN |
+
+Observed, not changed: the EPUB is not byte-reproducible run to run with either version (the identifier stays random per build until B6 is decided). Also observed: last run's commit 6f20d24 included `F-001-tam-build/__pycache__/layout_map.cpython-313.pyc`, a byproduct; it stays (R3, no deletions); this run used `python3 -B` so no new bytecode was written. PROPOSED: a `.gitignore` line for `__pycache__/` in this folder, if Timothy wants it.
+
+Decision sheet: A6 still open; the branch layout is now buildable without losing text. Read-only note: both unmerged branches (The-TAM-protocol 5f8612b, dual-order-os 2d51593) are also open as pull request #1 in their repositories (`refs/pull/1/head`), not merged.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
