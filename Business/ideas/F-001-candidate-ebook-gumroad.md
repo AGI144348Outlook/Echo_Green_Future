@@ -626,3 +626,26 @@ Checks (EXECUTION-VERIFIED):
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 30. Refinement — scheduled run 2026-10-15T13Z (Claude): the §9.3 fee and tax facts, partly closed
+
+Third attempt at §9.3 / §12 (read 2026-10-15T13Z with a page-reading fetch tool; the help articles still render their body client-side, so only their meta text was readable; the pricing page rendered in full).
+
+| Open question (§12) | What the source says | Evidence state |
+|---|---|---|
+| Who collects and remits sales tax / VAT? | [Pricing page](https://gumroad.com/pricing): "Gumroad handles sales tax worldwide as Merchant of Record, at no extra cost." and "Since January 1, 2025, Gumroad handles ALL your tax obligations." Its FAQ adds: "We'll collect taxes in regions where we have tax obligations as a merchant of record." and "Some creators may have an obligation to file sales tax (or other indirect tax) returns already." | SOURCE-OBSERVED (pricing page body) |
+| Is card / PayPal processing inside 10% + $0.50? | [Gumroad's fees](https://gumroad.com/help/article/66-gumroads-fees), meta description: "For sales made on Gumroad's website, we charge a 10% + $0.50 fee per transaction.", followed by a list of what it does **not** include: credit card processing and PayPal fees (paraphrased by the fetch tool; the text is cut off after "There are"). The pricing page says nothing either way. | SOURCE-OBSERVED, partial (meta text only, via a summarizer); confirm from the article body before any Fiscal Contract |
+| Payout fees | Not stated on either page. Pricing FAQ: "How we pay creators, whether through direct deposit or PayPal, varies by country." | UNVERIFIED |
+| Discover fee | Pricing page: "Discover marketplace sales: 30%." | SOURCE-OBSERVED (unchanged from §4) |
+| Stripe Connect effect | not re-read this run | UNVERIFIED |
+
+**What this changes (PROPOSED):**
+- §4 worked example: net per direct $9 sale is **$7.60 minus card/PayPal processing**, not $7.60. The processing rate is not stated on any Gumroad page read so far, so no number is entered for it; §13's price floor reasoning (the fixed per-sale charges weigh heavily below about $9) gets stronger, not weaker. INFERRED arithmetic.
+- §6 records: with Gumroad as merchant of record (SOURCE-OBSERVED), F-001 does not need its own sales-tax registration for Gumroad sales *as the pricing page describes it*. Records shrink to what §12 anticipated: Gumroad's payout reports and tax forms (if issued) plus the private ledger rows (`ledger/SCHEMA.md`). Income tax on the payouts stays Timothy's. The FAQ line about creators who "may have an obligation to file sales tax ... returns already" goes on the law-watch list as one question for Timothy's tax preparer, not something Claude decides. Not legal or tax advice.
+- §9.4 done-criteria: one of the four §12 rows is now SOURCE-OBSERVED, one partial, two still open. The criterion "fees in 9.3 are SOURCE-OBSERVED" is **not yet met**.
+
+**Next (for a participant or Timothy with a browser):** open the fees article body and copy the processing and payout sentences here with the read date; then rerun the §4 example with the real processing figure.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4; price and refund window (§10).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.
