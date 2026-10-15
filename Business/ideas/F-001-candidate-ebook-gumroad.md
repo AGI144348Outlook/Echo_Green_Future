@@ -595,3 +595,20 @@ Unchanged from §25.4. No new question: the accessibility summary is written at 
 - Chapter de-duplication (Article 6 inside the Collective; Article 10 lines repeated): not yet checked by Claude against The-TAM-protocol; next run.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 28. Refinement — scheduled run 2026-10-15T11Z (Claude): chapter de-duplication, checked
+
+The open item from §27, run against a fresh read-only clone of The-TAM-protocol @ `d46456a` (EXECUTION-VERIFIED unless marked):
+
+- **Article 10 is fully inside *Collective information*: 7 of 7 long sentences, not 6 of 7.** The one "unique" sentence in the old report differed only by a zero-width space (U+200B) before `Subtitle:` in the Collective (line 320). The §16 note "one sentence each is unique and must be kept when merging" is corrected for Article 10.
+- **Article 6 is fully inside the Collective as text: 21 of 22 by sentence, and the 22nd is found as text.** It is the same passage (`They ensure that the 13.7g Breath …` + `The Closing Bracket … The Registry is Clear.`), split differently because in the Collective it shares line 195 with a KO-HEN-VA quote. So leaving Articles 6 and 10 out of the draft loses no long sentence. They stay in the source repository as they are (R1, R3); nothing is deleted.
+- **No repeats inside the draft:** across the six chapters that are in the draft (README, Articles 1, 2, the Chemistry chapter, Article 5, Collective), 0 long sentences and 0 lines of 4+ words occur twice. The "Article 10 lines repeated" concern is about Article 10 vs the Collective, and is covered above.
+- **Limit (SOURCE-OBSERVED):** the sentence rule splits only at `.`, `!`, `?`. A heading line without end punctuation is joined to the next sentence, so a repeated sentence right after a heading can be missed. The line check above covers that case for this source; the script does not run it.
+
+**Change (this commit), `build.py`:** sentences are compared after removing zero-width characters and collapsing whitespace. `build-report.json` now has, per left-out chapter, `found_as_text` and `not_in_collective` (the sentence text itself, so nothing is lost if a chapter stays out), and a new `draft_repeats` block (count, extra copies, which chapters). It reports and never removes. Checks:
+- Synthetic case in scratch (EXECUTION-VERIFIED): a U+200B-prefixed shared line matches; a unique Article 6 line is listed; a sentence in both README and Article 1 is reported as 1 repeat, 1 extra copy, `Article 1 Hacksilber + README.md`.
+- Real source: `tam-draft.md` and the reproducible EPUB (§24 settings) are **byte-identical** to the pre-change build. Only the report changed. `epub_check.py`: 0 FAIL, 2 WARN (the same unset cover/accessibility warnings as before).
+
+**For Timothy (editorial, not decided here):** the draft's Chapter "6-10. Collected notes" already carries all of Articles 6 and 10. The remaining choice is presentational: keep the Collective as one chapter, or split it at its `Article #N` headings into chapters 6–10 so the table of contents matches the article numbering. Article 4 is still missing in the source (§15.1).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.

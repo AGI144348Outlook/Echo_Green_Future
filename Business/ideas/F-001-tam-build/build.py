@@ -7,7 +7,7 @@ into an output directory OUTSIDE any repository:
   dataset-a.csv, dataset-b.csv   the two tables as CSV, only if they are delimited tables
   tam-draft.epub   if pandoc is installed (pandoc is free software); optional
                    F001_BOOK_ID/SOURCE_DATE_EPOCH (§24), F001_COVER (§25), F001_A11Y (§26)
-  build-report.json  word counts, duplicate-sentence check, file fingerprints
+  build-report.json  word counts, duplicate-sentence and chapter-repeat checks (§28), file fingerprints
 
 It never edits the source, sells, uploads or contacts anything. The output is a
 review draft for Timothy, not a product: the editorial pass (§15.2 status marks
@@ -33,8 +33,19 @@ DATASETS = [("Appendix A", "Dataset A: The Eshtemoa Inventory (Forensic Weight D
 TITLE = "The TAM Protocol: A Speculative Reconstruction (review draft)"
 
 
+ZERO_WIDTH = dict.fromkeys(map(ord, "\u200b\u200c\u200d\u2060\ufeff"))
+
+
+def sentence_list(text):
+    """Sentences of 8+ words, in order. Zero-width characters are removed and
+    whitespace collapsed first (F-001 §28): the source uses U+200B before some
+    lines, which made otherwise identical sentences compare unequal."""
+    text = text.translate(ZERO_WIDTH)
+    return [" ".join(s.split()) for s in re.split(r"(?<=[.!?])\s+", text) if len(s.split()) >= 8]
+
+
 def sentences(text):
-    return {s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if len(s.split()) >= 8}
+    return set(sentence_list(text))
 
 
 def md_table_to_rows(text):
@@ -71,7 +82,27 @@ def main(src, out):
         p = src / name
         if p.exists():
             s = sentences(p.read_text(encoding="utf-8", errors="replace"))
-            report["dup_check"][name] = {"long_sentences": len(s), "also_in_collective": len(s & cs)}
+            # not_in_collective lists the text itself, so nothing is lost if the
+            # chapter stays out of the draft (R3: no deletions)
+            # a sentence the splitter cut differently (line breaks) still counts as
+            # covered when its normalized text occurs inside the Collective
+            flat = " ".join(collective.translate(ZERO_WIDTH).split())
+            as_text = {x for x in s - cs if x in flat}
+            report["dup_check"][name] = {"long_sentences": len(s), "also_in_collective": len(s & cs),
+                                         "found_as_text": len(as_text),
+                                         "not_in_collective": sorted(s - cs - as_text)}
+    # Chapter de-duplication (F-001 §28): a long sentence that appears more than
+    # once across the chapters that ARE in the draft. Reported, never removed.
+    seen = {}
+    for heading, name in ORDER:
+        p = src / name
+        if p.exists():
+            for s in sentence_list(p.read_text(encoding="utf-8", errors="replace")):
+                seen.setdefault(s, []).append(name)
+    repeats = {s: v for s, v in seen.items() if len(v) > 1}
+    report["draft_repeats"] = {"repeated_sentences": len(repeats),
+                               "extra_copies": sum(len(v) - 1 for v in repeats.values()),
+                               "where": sorted({" + ".join(sorted(set(v))) for v in repeats.values()})}
     for heading, name, csvname in DATASETS:
         p = src / name
         if not p.exists():
