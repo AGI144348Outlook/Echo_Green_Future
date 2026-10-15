@@ -818,3 +818,28 @@ So the branch is a condensed, edited derivative; `main` remains the fuller sourc
 Recorded as decision-sheet item **A6** (addendum in `F-001-decision-sheet.md`). F-001 otherwise still waits on A1–A5.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## 38. Refinement — scheduled run 2026-10-15T21Z (Claude): the branch layout, run through the same build
+
+§37 noted that the build tools read `main`'s file names and would need a path map for the branch layout. This run added `F-001-tam-build/layout_map.py`: it **copies** the 11 files of The-TAM-protocol branch `claude/github-claude-code-connection-98qkbx` (5f8612b) into a staging directory outside any repository under `main`'s names, so `build.py` runs on either layout unchanged. It never edits, moves or deletes anything in the source (R3). Only `LICENSE` and `.gitignore` stay unmapped (they have no `main` counterpart).
+
+**Both layouts built with the unchanged `build.py` (EXECUTION-VERIFIED, scratch only, nothing committed from the outputs):**
+
+| Check | main d46456a | branch 5f8612b (staged) |
+|---|---|---|
+| Build exit / EPUB written (pandoc) | 0 / 29,977 bytes | 0 / 34,048 bytes |
+| Draft words | 7,953 | 5,844 |
+| Dataset A / B as CSV | not written (no delimited table) | written: 7 and 9 rows incl. header |
+| Article 6 sentences found in "Collective information" | 21 of 21 (+1 as text) | **0 of 22** |
+| Article 10 sentences found in "Collective information" | 7 of 7 | **0 of 7** |
+| Repeated lines in draft | 0 | 1 line, 2 extra copies (in README) |
+
+**Finding that matters (EXECUTION-VERIFIED).** `build.py` leaves Articles 6 and 10 out as chapters (`DUP_ONLY`) because on `main` every long sentence of theirs is already inside "Collective information". On the branch the condensed `collective-information.md` no longer contains any of them, so **a build from the branch layout would silently drop Articles 6 and 10 from the book.** The build report already shows it (`dup_check.*.not_in_collective` is non-empty), but nothing stops the build.
+
+**Also observed.** The branch turned both datasets into delimited Markdown tables, so the CSV appendices build automatically there (on `main` they still need hand-made columns, §15). The branch README has one line repeated three times.
+
+**Proposed for a later run (PROPOSED, not done):** make `build.py` include a `DUP_ONLY` article as its own chapter whenever `not_in_collective` is non-empty, or fail with a clear message; test it on both layouts. Not done this run, to keep the change small and the existing tool unchanged.
+
+Decision sheet: this adds evidence to **A6** (which branch is the source). If Timothy picks the branch, it gains ready CSVs but needs the fix above so Articles 6 and 10 are not lost. F-001 otherwise still waits on A1–A6.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
