@@ -4484,3 +4484,15 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 - 2026-10-15 | code-library-registry | Datasets/catalog/zenodo/10358853/record.raw.json.gz | 2fb7246eb0bddc46cbf9af9cb43cb7d793efda4d | KEPT | raw checksum matches record.json (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
 - 2026-10-15 | code-library-registry | Datasets/catalog/zenodo/20436566/record.json | a3533255d81ee20aa387caaa318ef407ead646a2 | KEPT | raw checksum matches record.json (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
 - 2026-10-15 | code-library-registry | Datasets/catalog/zenodo/20436566/record.raw.json.gz | 8e0a2a7d2565fcaece577856075e4764242c6f1e | KEPT | raw checksum matches record.json (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
+
+## Run 2026-10-15T16:00Z — S3 upkeep: Z04 `autonomous-agency` ADDENDUM-1 @ a527f3b (2) and Z19 `bridge-experiment` ADDENDUM-2 @ fa9d151 (1)
+
+Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
+
+Library registration first, then the mirror addenda. Head coverage re-checked on all 27 Layer Z branches: only these 3 (blob, path) pairs at head were unlisted (EXECUTION-VERIFIED); every other branch head equals its listed tree.
+
+- 2026-10-15 | autonomous-agency | ECHO_AutonomousAgency/sandbox/recess_session_log.json | 7ab5f7e871720a2e2284b1e9c4ca5e1ee6b228d1 | KEPT | re-listed head blob of the stale-listing DEFERRED row (e719331); generated session record, parses as JSON (EXECUTION-VERIFIED), keyword scan: no personal or secret material; same decision as the generated logs KEPT in Z03 and Z17 | registered: Registries | restore: set row back to INERT; source untouched
+- 2026-10-15 | autonomous-agency | ECHO_AutonomousAgency/sandbox/school_day_log.json | f0454ba1b403c8c6f1a3db561c8c5f46e64f9d3c | KEPT | re-listed head blob of the stale-listing DEFERRED row (d718501); generated School Day record, parses as JSON (EXECUTION-VERIFIED), keyword scan: no personal or secret material | registered: Registries | restore: set row back to INERT; source untouched
+- 2026-10-15 | bridge-experiment | .github/workflows/cloudflare-bridge.yml | a2956b425607f159b3d9fb7722da85f270192799 | DEFERRED | head blob of the bridge deploy workflow (push + workflow_dispatch; uses Cloudflare secrets; Worker deploy only on manual dispatch, SOURCE-OBSERVED); Worker/deploy items stay DEFERRED as in Z19 (deploy needs Timothy) | - | restore: decide on a later pass; source untouched
+
+The two earlier DEFERRED rows (e719331, d718501) stay as they are (append-only).
