@@ -682,3 +682,20 @@ The table below shows **scenarios only**, not Gumroad's rates. The r/f pairs are
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4; price and refund window (§10).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 32. Refinement — scheduled run 2026-10-15T15Z (Claude): processing fees in the records step
+
+§31 proposed keeping processing apart from the platform fee in the records. `Business/ledger/SCHEMA.md` already defines `fees` as "processor, platform and payout fees", so the schema is **not** changed. Only the mapper `F-001-tam-build/ledger_map.py` is, and only additively:
+
+- New optional column mapping `processing_fee` → `"Processing Fee"` (the header name is a placeholder, UNVERIFIED; edit it to match a real export).
+- If the export has that column, each row's `fees` = platform fee + processing fee. If either cell is empty, `fees` and `net` stay empty and the line is listed under `missing`. Nothing is estimated.
+- The monthly summary gains a `processing_fees` total, so processing can be reconciled against payout reports separately.
+- If the column is absent, the output is byte-identical to before (EXECUTION-VERIFIED: same synthetic export through the old and new script, `diff` empty).
+
+Tested on two synthetic exports in a scratch folder outside the repository (EXECUTION-VERIFIED): one $9 sale with fee 1.40 + processing 0.56 gives net 7.04, which matches the §31 scenario r=2.9%, f=$0.30. A missing processing cell leaves that sale's fees/net empty and listed as missing. A refund still reverses gross only. The fees in these tests are **made-up inputs**, not Gumroad's rates.
+
+§9.4 is unchanged: the processing rate and payout fee are still UNVERIFIED, so the criterion is not met.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.

@@ -33,6 +33,8 @@ COLUMNS = {
     "sale_id": "Sale ID",
     "gross": "Price",               # amount paid by the buyer, before fees
     "fees": "Fees",                 # platform + processing fees, if the export has them
+    "processing_fee": "Processing Fee",  # optional, F-001 §32: card/PayPal processing when the
+                                         # export lists it apart from "Fees" (header UNVERIFIED)
     "refunded": "Refunded",         # "true"/"yes"/"1" when refunded
     "refund_date": "Refund Date",   # optional; falls back to the sale date if absent
 }
@@ -74,16 +76,25 @@ def main(src, out_dir, run_id):
         has = {k: COLUMNS[k] in header for k in COLUMNS}
         rows, month = [], defaultdict(lambda: {"sales": 0, "refunds": 0, "gross": Decimal(0),
                                                "fees": Decimal(0), "net": Decimal(0),
+                                               "processing_fees": Decimal(0),
                                                "missing": []})
         for n, r in enumerate(reader, start=2):
             d, sid = day(r[COLUMNS["date"]]), r[COLUMNS["sale_id"]].strip()
             g = amount(r[COLUMNS["gross"]])
             fee = amount(r[COLUMNS["fees"]]) if has["fees"] else None
+            proc = None
+            if has["processing_fee"]:
+                # SCHEMA.md `fees` = processor + platform + payout, so a separate
+                # processing column is added in; if its cell is empty the total is
+                # unknown and stays empty (never guessed).
+                proc = amount(r[COLUMNS["processing_fee"]])
+                fee = (fee + proc) if (fee is not None and proc is not None) else None
             key = d[:7] if d else "unknown-month"
             m = month[key]
             if d is None: m["missing"].append(f"line {n}: date")
             if g is None: m["missing"].append(f"line {n}: gross")
             if fee is None: m["missing"].append(f"line {n}: fees")
+            if proc is not None: m["processing_fees"] += proc
             net = (g - fee) if (g is not None and fee is not None) else None
             base = {"fiscal_contract": "F-001", "asset_or_liability": "asset",
                     "share": "business", "source": SOURCE, "receipt_ref": "",
@@ -111,7 +122,8 @@ def main(src, out_dir, run_id):
                     rm["gross"] -= g; rm["net"] -= g
     with open(out / "ledger-rows.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=OUT_FIELDS); w.writeheader(); w.writerows(rows)
-    summary = {k: {**v, "gross": str(v["gross"]), "fees": str(v["fees"]), "net": str(v["net"])}
+    summary = {k: {**v, "gross": str(v["gross"]), "fees": str(v["fees"]), "net": str(v["net"]),
+                  "processing_fees": str(v["processing_fees"])}
                for k, v in sorted(month.items())}
     (out / "ledger-month.json").write_text(json.dumps({"source_file": Path(src).name,
                                                        "columns_used": {k: COLUMNS[k] for k in COLUMNS if has[k]},
