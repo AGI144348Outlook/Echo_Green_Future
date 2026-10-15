@@ -785,3 +785,13 @@ Calendar months, not the rolling 30 days §34 described: simpler to audit agains
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10); payout method (§33); the refund-rate pause threshold (PROPOSED 10 %) and, new, a minimum monthly sales count before the flag counts (PROPOSED 20).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
+
+## 36. Refinement — scheduled run 2026-10-15T19Z (Claude): one decision sheet for Timothy
+
+Thirty-five refinements have left Timothy's open questions spread over many sections, each repeating a slightly different "still open" list. This run gathered them into `Business/ideas/F-001-decision-sheet.md`: 15 questions in four groups (A: blocking, 5; B: before the first build is final, 6; C: records and operations, 4; D/E: what is done and the shortest path to a first listing). Each row names the options already proposed, the placeholder the drafts use meanwhile, and the section where it was raised. Nothing new is decided; defaults are placeholders for drafts, not decisions.
+
+Check (EXECUTION-VERIFIED): every section reference in the sheet points to a heading that exists in this file (script check, 0 missing). The-TAM-protocol head is still d46456a.
+
+Next F-001 step for a later run, if Timothy has not answered: none of the remaining work can proceed without A1–A5 except re-reading Gumroad's fees article body (§31) with a browser that runs JavaScript, which a scheduled run here cannot do. Later runs should therefore record "F-001: waiting on A1–A5" and spend income time on a second pipeline only if Timothy asks for one.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
