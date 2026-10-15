@@ -7,7 +7,7 @@ into an output directory OUTSIDE any repository:
   dataset-a.csv, dataset-b.csv   the two tables as CSV, only if they are delimited tables
   tam-draft.epub   if pandoc is installed (pandoc is free software); optional
                    F001_BOOK_ID/SOURCE_DATE_EPOCH (§24), F001_COVER (§25), F001_A11Y (§26)
-  build-report.json  word counts, duplicate-sentence and chapter-repeat checks (§28), file fingerprints
+  build-report.json  word counts, duplicate-sentence and chapter-repeat checks (§28, line check §29), file fingerprints
 
 It never edits the source, sells, uploads or contacts anything. The output is a
 review draft for Timothy, not a product: the editorial pass (§15.2 status marks
@@ -100,9 +100,26 @@ def main(src, out):
             for s in sentence_list(p.read_text(encoding="utf-8", errors="replace")):
                 seen.setdefault(s, []).append(name)
     repeats = {s: v for s, v in seen.items() if len(v) > 1}
+    # Line check (F-001 §29): the sentence rule splits only at . ! ? so a sentence
+    # right after a heading without end punctuation is joined to it and a repeat
+    # can be missed. Lines of 4+ words are compared too, after removing markdown
+    # markers (#, >, -, *, list numbers) and zero-width characters. Reported only.
+    line_seen = {}
+    for heading, name in ORDER:
+        p = src / name
+        if p.exists():
+            for ln in p.read_text(encoding="utf-8", errors="replace").translate(ZERO_WIDTH).splitlines():
+                ln = re.sub(r"^\s*(?:#+|>|[-*+]|\d+[.)])\s*", "", ln)
+                ln = " ".join(ln.split())
+                if len(ln.split()) >= 4:
+                    line_seen.setdefault(ln, []).append(name)
+    line_repeats = {s: v for s, v in line_seen.items() if len(v) > 1}
     report["draft_repeats"] = {"repeated_sentences": len(repeats),
                                "extra_copies": sum(len(v) - 1 for v in repeats.values()),
-                               "where": sorted({" + ".join(sorted(set(v))) for v in repeats.values()})}
+                               "where": sorted({" + ".join(sorted(set(v))) for v in repeats.values()}),
+                               "repeated_lines": len(line_repeats),
+                               "extra_line_copies": sum(len(v) - 1 for v in line_repeats.values()),
+                               "line_where": sorted({" + ".join(sorted(set(v))) for v in line_repeats.values()})}
     for heading, name, csvname in DATASETS:
         p = src / name
         if not p.exists():

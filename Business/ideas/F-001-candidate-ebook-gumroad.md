@@ -612,3 +612,17 @@ The open item from §27, run against a fresh read-only clone of The-TAM-protocol
 **For Timothy (editorial, not decided here):** the draft's Chapter "6-10. Collected notes" already carries all of Articles 6 and 10. The remaining choice is presentational: keep the Collective as one chapter, or split it at its `Article #N` headings into chapters 6–10 so the table of contents matches the article numbering. Article 4 is still missing in the source (§15.1).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 29. Refinement — scheduled run 2026-10-15T12Z (Claude): the line check, scripted
+
+Closes the limit recorded in §28: the sentence rule splits only at `.`, `!`, `?`, so a sentence right after a heading without end punctuation is joined to the heading, and a repeat of it under a different heading is missed.
+
+**Change (this commit), `build.py`:** `draft_repeats` in `build-report.json` gains `repeated_lines`, `extra_line_copies` and `line_where`. Lines of 4+ words across the draft chapters are compared after removing zero-width characters, collapsing whitespace and stripping leading markdown markers (`#`, `>`, `-`, `*`, `+`, list numbers). It reports and never removes (R3).
+
+Checks (EXECUTION-VERIFIED):
+- Synthetic source in scratch: the same sentence under `# Heading One` in Article 1 and under `## Another Heading` as a `>` quote with a leading U+200B in Article 2. Sentence check: 0 repeats (the miss §28 described). Line check: 1 repeated line, 1 extra copy, `Article 1 Hacksilber + Article 2 Water Weight Computes`.
+- Real source, The-TAM-protocol @ `d46456a`, reproducible settings (§24): `tam-draft.md` (sha256 `c6a27a9e…`) and `tam-draft.epub` (sha256 `44f00686…`) are byte-identical before and after the change; the rest of the report is unchanged; the new fields read 0 / 0 / [] (matches the manual line check in §28).
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.
