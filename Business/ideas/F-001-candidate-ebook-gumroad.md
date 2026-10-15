@@ -699,3 +699,37 @@ Tested on two synthetic exports in a scratch folder outside the repository (EXEC
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 33. Refinement — scheduled run 2026-10-15T16Z (Claude): third-party fee reports, kept apart from Gumroad's own terms
+
+Gumroad's help articles still render client-side (§30–§31), so this run took the other route: two third-party articles that report the missing figures, read 2026-10-15T16Z with a page-reading fetch tool. **Neither is Gumroad.** Their figures are recorded as *reported by a third party*. They do not close any §12 row, and §9.4 stays **not met**.
+
+| Item | Third-party report (verbatim where quoted) | Source, date | Evidence state |
+|---|---|---|---|
+| Card processing rate | "Stripe charges 2.9% plus $0.30 per successful domestic card transaction." (attributed to Stripe's published US rates, not to a Gumroad page) | [Checkout Page](https://checkoutpage.com/blog/gumroad-fees), updated 2026-06-08; a competitor of Gumroad | SOURCE-OBSERVED in a third-party article; UNVERIFIED as Gumroad's term |
+| Card processing rate (second report) | "2.9% + $0.30 USD per transaction." | [Wise blog](https://wise.com/us/blog/gumroad-fees), 2024-09-11 (over a year old) | as above; older |
+| PayPal processing | "PayPal and Venmo cost 3.49% plus $0.49." (attributed to PayPal's published rates, "verified in June 2026") | Checkout Page, 2026-06-08 | as above |
+| Payout, US bank | "US direct deposit is free." | Checkout Page, 2026-06-08 | as above |
+| Payout, PayPal / international | PayPal "charges its own receiving fees (typically 2% to 3%) plus any FX spread"; a second currency conversion at payout "typically carries a spread of roughly 1% to 2%" | Checkout Page, 2026-06-08 | as above |
+
+The two reports agree on the card rate. That matches the r = 2.9 %, f = $0.30 column already in §31's scenario table, so that column is now a *reported* rate rather than a purely illustrative one. It is still not Gumroad's own statement.
+
+**Net per direct sale under the reported rates (INFERRED arithmetic, `q` = 0 for US direct deposit as reported):**
+
+| P | after Gumroad 10% + $0.50 | card, 2.9% + $0.30 | PayPal, 3.49% + $0.49 |
+|---|---|---|---|
+| $9 | $7.60 | $7.04 | $6.80 |
+| $12 | $10.30 | $9.65 | $9.39 |
+| $15 | $13.00 | $12.27 | $11.99 |
+
+**What this changes (PROPOSED):**
+- §4: show the net as a range that depends on payment method: $9 → about $6.80–$7.04 *if the reported rates apply*. Keep the formula from §31 as the stated value until Gumroad's own text is read.
+- §13 price floor: PayPal's reported fixed charge ($0.49) plus Gumroad's $0.50 takes 11 % of a $9 sale. That strengthens the case for $12 or a bundle. Price stays Timothy's call (§10).
+- Records: a non-US payout path would add PayPal receiving fees and an FX spread. `ledger_map.py` (§32) already takes processing as a separate input and never estimates it. Payout fees would need the same treatment *only if* Timothy is paid outside US direct deposit. That is a question, not a change.
+- §9.4 done-criteria: unchanged. Rate and payout rows need Gumroad's own text (help-article body or a real payout report).
+
+**Next:** someone with a JavaScript-capable browser copies the processing and payout sentences from Gumroad's fees and "Getting paid" articles. Or, after launch, the first real payout report replaces every figure above.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10). New: which payout method would apply (US direct deposit, PayPal, or other), only so the records step knows whether to expect payout fees.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
