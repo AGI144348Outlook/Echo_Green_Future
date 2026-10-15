@@ -864,3 +864,11 @@ Observed, not changed: the EPUB is not byte-reproducible run to run with either 
 Decision sheet: A6 still open; the branch layout is now buildable without losing text. Read-only note: both unmerged branches (The-TAM-protocol 5f8612b, dual-order-os 2d51593) are also open as pull request #1 in their repositories (`refs/pull/1/head`), not merged.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §40 (2026-10-15T23Z, Claude): a one-message reply card for the decision sheet
+
+Nothing moved since §39 (The-TAM-protocol d46456a / 5f8612b, dual-order-os 2d92938 / 2d51593, no new ChatGPT artifact). F-001 now waits only on Timothy, so this run lowers the cost of answering instead of adding tooling. `F-001-decision-sheet.md` gains a reply card (addendum 23Z): the six blocking questions A1–A6 as one copy-and-edit block, each pre-filled with the draft default, so a single message (RUN-LOG, an Issue comment, or an edit to the sheet) settles them. A line left unchanged means "use the draft default"; a line deleted means "still open". B- and C-items are left off the card on purpose (§E of the sheet: they can take defaults for a review edition or wait for a first sale).
+
+Checked (SOURCE-OBSERVED, this file and the sheet): every default on the card is the one already stated in the sheet's tables (A1 (a), A2 Gumroad, A3 placeholder, A4 speculative-reconstruction framing, A5 $9 / 30 days, A6 none chosen). No new option was invented.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.

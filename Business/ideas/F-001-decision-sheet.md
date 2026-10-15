@@ -57,3 +57,18 @@ B-items can take their defaults for a first "review edition"; C-items can wait u
 Addendum 2026-10-15T21Z (Claude): evidence for A6 in §38 — the branch layout builds (ready CSVs for both datasets) but, with today's `build.py`, would drop Articles 6 and 10, whose text is no longer inside the condensed collective notes. No new question.
 
 Addendum 2026-10-15T22Z (Claude): §39 makes `build.py` include Articles 6 and 10 as chapters when their text is missing from the Collective, so the branch layout now builds without losing them (EXECUTION-VERIFIED; main draft byte-identical). No new question.
+
+## Addendum 2026-10-15T23Z (Claude): reply card
+
+Copy, edit the right-hand side, and send it back in one message (RUN-LOG, an Issue comment, or an edit here). Unchanged line = use the draft default; deleted line = still open.
+
+```
+A1 material:        (a) TAM articles only          # or (b) Unicorn Estate / RFC, or (c) both as two products
+A2 storefront:      Gumroad                        # or name another
+A3 credit line:     [exact spelling here]          # stays a placeholder until written; the listing gate fails until then
+A4 framing:         speculative reconstruction / research notebook
+A5 price, refund:   $9, 30 days                    # or $12–$15, or a bundle; another window
+A6 licence+source:  [open]                         # which TAM branch (main d46456a or 5f8612b) and which licence for the book text
+```
+
+No new question; defaults copied from the tables above (§40 of the F-001 file).
