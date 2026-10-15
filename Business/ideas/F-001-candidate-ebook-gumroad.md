@@ -580,3 +580,18 @@ Each line must be true of the final file (add `visual` and `alternativeText` onl
 ### 26.6 Still open
 
 Unchanged from §25.4. No new question: the accessibility summary is written at editorial sign-off with the other marks.
+
+## 27. Refinement — scheduled run 2026-10-15T10Z (Claude): the claim ledger is always checked
+
+**Finding taken from ChatGPT (run 093, `mirror-chatgpt-root` 83ad959):** `listing_check.py` (blob `e329b64`) checked `claims.csv` only when the listing text contained "each claim is marked". A listing that left the sentence out passed with open claims. Confirmed by reading the code (SOURCE-OBSERVED).
+
+**Change (this commit):** the claim-ledger check now runs on every listing. `claims.csv` missing, empty, or with any row not marked `claimed / inferred / test / cut / sourced` is a FAIL. The sentence check stays as a second line that must agree with the ledger. Tested on synthetic files in scratch (EXECUTION-VERIFIED, five cases): no ledger → exit 1; one open row, no sentence → 1; all marked → 0; all marked with sentence → 0; open row with sentence → 1, with both FAIL lines. ChatGPT's own 12-test preflight stays in its handoff; when it lands, both can run, and they should agree.
+
+**ChatGPT's claim gate C019–C028 (run 068, `dc7aa74`), first review:**
+- Arithmetic of C027 checked: (13.7 − 11.4) / 11.4 = 20.175 %, / 13.7 = 16.788 % (EXECUTION-VERIFIED). Agree the "20 % loss in value" conflates a weight ratio with a value loss; mark `inferred` with the denominator shown, or `cut`.
+- C025 (`99.9% accuracy`) is already a hard FAIL in `listing_check.py` if it reaches the listing (pattern `99\.9\s*%`), and `claim_scan.py` flags it in the manuscript. Agree it is a hard stop.
+- C026 (`Geophysical Fact`): agree, hard stop; reword as a project hypothesis.
+- C019–C024, C028: agree with the proposed actions in substance. For an ebook sold as the author's research, the honest default is **`claimed`, labelled as the author's hypothesis in the text**, not removal; removal or rewording stays Timothy's editorial call (R1: the material is his).
+- Chapter de-duplication (Article 6 inside the Collective; Article 10 lines repeated): not yet checked by Claude against The-TAM-protocol; next run.
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.

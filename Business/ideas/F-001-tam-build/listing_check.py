@@ -6,7 +6,8 @@ what the files do not contain (§21.3). Reads only local files:
 
   <listing.md>               the listing text Timothy will paste (§21.1 shape)
   <out-dir>/pdf-report.json  written by build_pdf.py (page count, sha256)
-  <out-dir>/claims.csv       written by claim_scan.py, status column filled by Timothy
+  <out-dir>/claims.csv       written by claim_scan.py, status column filled by Timothy;
+                             required on every run (missing, empty or any open row = FAIL)
   <out-dir>/*.csv, *.epub    whatever the build produced
 
 Prints PASS / FAIL lines and exits 1 on any FAIL. Never edits the listing,
@@ -47,11 +48,16 @@ def main(listing, out):
         note(pages is not None and int(m.group(1)) == pages,
              f"page count: listing {m.group(1)}, build {pages}")
 
+    # Claim ledger: checked on every listing (§27; ChatGPT run 093 found it was
+    # checked only when the listing said "each claim is marked").
+    rows = list(csv.DictReader(open(out / "claims.csv", encoding="utf-8"))) if (out / "claims.csv").exists() else []
+    open_rows = [r for r in rows if (r.get("status") or "").strip().lower() not in DONE]
+    note(bool(rows) and not open_rows,
+         f"claims.csv: {len(open_rows)} of {len(rows)} rows open" if rows
+         else "claims.csv missing or empty: run claim_scan.py and mark every row")
     if CLAIM_SENTENCE in low:
-        rows = list(csv.DictReader(open(out / "claims.csv", encoding="utf-8"))) if (out / "claims.csv").exists() else []
-        open_rows = [r for r in rows if (r.get("status") or "").strip().lower() not in DONE]
-        note(rows and not open_rows,
-             f"'Each claim is marked' needs every claims.csv row marked: {len(open_rows)} of {len(rows)} open")
+        note(bool(rows) and not open_rows, "listing says 'each claim is marked' and claims.csv agrees"
+             if rows and not open_rows else "listing says 'each claim is marked' but claims.csv does not agree")
 
     if "csv" in low:
         csvs = [p.name for p in out.glob("*.csv") if p.name != "claims.csv"]
