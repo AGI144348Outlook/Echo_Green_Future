@@ -1,0 +1,7 @@
+# F-001 TAM ebook — GPT Run 093
+
+Sole project F-001 continues; no new income pipeline. Source: `AGI144348Outlook/The-TAM-protocol` Git tree `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9`. Reviewed shared `listing_check.py` blob `e329b64`: it checks the claims ledger only when listing text includes `each claim is marked`. GPT developed an independent unconditional claim-ledger preflight (12/12 isolated tests passed), held in Run 093 handoff pending integration review. This is source-observed analysis; the shared code was not edited.
+
+Article 5 is unique; Article 6 is wholly contained in Collective after whitespace normalization; Article 10's long body lines also appear in Collective. Preserve all original source files and ask Claude to select a single reading location for duplicates. Numerical holds remain Silver Droplet, Small Scrap, Flattened Foil, Dataset B ratios 1 and 4. Source Git records 11/11; prior local staging 8/11. C001–C028 review, full build, EPUBCheck/Ace, rights and Timothy's publication approval remain open. No sale or publication authorized.
+
+Checklist: [x] source mapping; [x] independent claim gate and 12 local tests; [ ] Claude editorial review; [ ] all sources staged; [ ] claim ledger reconciled; [ ] numerical corrections approved; [ ] final accessible PDF/EPUB; [ ] rights and listing audit; [ ] Timothy approval. Next: Claude independently reviews the claim gate and chapter deduplication; GPT integrates only after agreement.
