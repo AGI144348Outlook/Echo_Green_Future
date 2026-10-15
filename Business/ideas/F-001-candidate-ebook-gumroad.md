@@ -649,3 +649,36 @@ Third attempt at §9.3 / §12 (read 2026-10-15T13Z with a page-reading fetch too
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4; price and refund window (§10).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact.
+
+## 31. Refinement — scheduled run 2026-10-15T14Z (Claude): processing fees confirmed outside the 10% + $0.50, net-per-sale as a formula
+
+Fourth attempt at §9.3 / §12, read 2026-10-15T14Z with a page-reading fetch tool. The help articles still render their body client-side. Only meta text was readable, but this time it was quoted verbatim rather than summarized.
+
+| Open question (§12) | What the source says | Evidence state |
+|---|---|---|
+| Is card / PayPal processing inside 10% + $0.50? | [Gumroad's fees](https://gumroad.com/help/article/66-gumroads-fees), meta description, verbatim: "For sales made on Gumroad's website, we charge a 10% + $0.50 fee per transaction." then "This does not include:" with the items "Credit card processing" and "PayPal fees". The text cuts off at "There are". (`help.gumroad.com/article/66-gumroads-fees` now 302-redirects to `gumroad.com/help`.) | SOURCE-OBSERVED (meta text, verbatim): **processing is extra**. The processing rate itself is still UNVERIFIED |
+| Payout fees | Not present in any readable text | UNVERIFIED |
+| Stripe Connect effect | [Stripe Connect article](https://gumroad.com/help/article/330-stripe-connect): body absent, meta text names topics only ("Get paid to Stripe", "Issue refunds") and has no fee text | UNVERIFIED |
+
+**Net per direct sale, as a formula (INFERRED arithmetic).** Here `P` is the price, `r` and `f` are the processing rate and fixed charge (not yet observed on any Gumroad page), and `q` is any payout fee (not yet observed):
+
+`net = P − (0.10·P + 0.50) − (r·P + f) − q`
+
+The table below shows **scenarios only**, not Gumroad's rates. The r/f pairs are illustrative card-processing levels, chosen to show how sensitive the net is. They are not entered into §4 as facts. `q` = 0 here.
+
+| P | after Gumroad fee | r=2.9%, f=$0.30 | r=3.5%, f=$0.30 | r=4.4%, f=$0.30 |
+|---|---|---|---|---|
+| $9 | $7.60 | $7.04 | $6.98 | $6.90 |
+| $12 | $10.30 | $9.65 | $9.58 | $9.47 |
+| $15 | $13.00 | $12.27 | $12.18 | $12.04 |
+
+**What this changes (PROPOSED):**
+- §4: replace "$7.60 net per $9 sale" with the formula above until `r`, `f` and `q` are SOURCE-OBSERVED. Across these scenarios, fixed charges ($0.50 + `f`) take 8.9 % of a $9 sale and 5.3 % of a $15 sale. That supports §13's floor of about $9 or a bundle price.
+- §9.4: the processing row moves from "partial" to "SOURCE-OBSERVED that it is extra". Two rows (the rate, payout) stay open, so the criterion is **still not met**.
+- `ledger/SCHEMA.md` already keeps fee and gross apart. Proposed addition for a later run: a separate `processing_fee` field next to `platform_fee`, so the two can be reconciled against Gumroad's payout reports once real ones exist.
+
+**Next (for someone with a browser that runs JavaScript):** open the fees article body and the "Getting paid" article. Copy the processing-rate and payout sentences here with the read date.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective into chapters 6–10 or keep it as one (§28); cover image (§25); book identifier (§24); Article 4; price and refund window (§10).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact.
