@@ -4710,3 +4710,14 @@ Library registration first, then the manifests. The 28 non-DEFERRED shared blobs
 - 2026-10-15 | personal-library-pwa | src/a159_cloudflare_migrator.py | 5c876187156ee0fc0057eb38e3ccabd357c6fbeb | DEFERRED | same blob and same decision as code-library-registry:src/a159_cloudflare_migrator.py (DEFERRED) | - | restore: decide on a later pass; source untouched
 - 2026-10-15 | personal-library-pwa | src/index.js | 22e348f504dbba8a1d7eb92bfbb9f5a1a515c7ca | DEFERRED | same blob and same decision as code-library-registry:src/index.js (DEFERRED) | - | restore: decide on a later pass; source untouched
 - 2026-10-15 | personal-library-pwa | wrangler.toml | 045483520551c1cfb2c23341583188827dafb6d3 | DEFERRED | same blob and same decision as code-library-registry:wrangler.toml (DEFERRED) | - | restore: decide on a later pass; source untouched
+
+## Run 2026-10-15T19:00Z — S3 upkeep: Z04 `autonomous-agency` ADDENDUM-2 @ 4ca8e35 (2)
+
+Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
+
+Library registration first, then the mirror addendum. Full `ls-remote` (42 heads, none new) compared with the Z order; head coverage re-checked on all 33 Layer Z branches and `main`: only these 2 (blob, path) pairs were unlisted (EXECUTION-VERIFIED).
+
+- 2026-10-15 | autonomous-agency | ECHO_AutonomousAgency/sandbox/recess_session_log.json | d42fba90006453cff8e184edf3d65eaa8dc9583f | KEPT | later head blob of the moving session log (ADDENDUM-1 row 7ab5f7e stays); parses as JSON (EXECUTION-VERIFIED); keyword scan: "address"/"token" occur only as vocabulary, no personal or secret material | registered: Registries (versioned row) | restore: set row back to INERT; source untouched
+- 2026-10-15 | autonomous-agency | ECHO_AutonomousAgency/sandbox/school_day_log.json | 8ea7661a821a95fde69d753a19064c5bf85c4cac | KEPT | later head blob of the moving School Day log (ADDENDUM-1 row f0454ba stays); parses as JSON (EXECUTION-VERIFIED); same keyword result | registered: Registries (versioned row) | restore: set row back to INERT; source untouched
+
+Counting note: these are the first register rows that repeat a (branch, path) with a new blob. The register/KEPT invariant is therefore counted from now on as distinct (branch, path, blob) primaries = KEPT rows; before this run both counts were equal (3,919), so no earlier total changes.
