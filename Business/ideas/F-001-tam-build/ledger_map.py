@@ -20,7 +20,14 @@ required column is missing, rather than guessing.
 It never reads the network, never sells, uploads or contacts anything, and must not be
 pointed at a path inside a public repository for its output.
 
-Usage: python3 -I ledger_map.py <export.csv> <out-dir> <run-id>
+Usage: python3 -I ledger_map.py <export.csv> <out-dir> <run-id> [--refund-threshold=R]
+
+Optional (F-001 §35): with --refund-threshold=R (0 < R < 1, e.g. 0.10), each month in
+ledger-month.json also gets "refund_rate" (refunds dated that month / sales dated that
+month, as a decimal string, or null when the month has no sales), "pause_flag" (true
+when refund_rate > R, the §6 pause rule; the decision to pause stays Timothy's) and
+"negative_month" (true when that month's net is below zero, which a refund can cause).
+Calendar months, not a rolling 30 days. Without the option the output is unchanged.
 """
 import csv, json, sys
 from collections import defaultdict
@@ -61,7 +68,18 @@ def day(text):
     return t if len(t) == 10 and t[4] == "-" and t[7] == "-" else None
 
 
-def main(src, out_dir, run_id):
+def threshold(arg):
+    """Parse --refund-threshold=R; exits on anything but a decimal strictly between 0 and 1."""
+    if not arg.startswith("--refund-threshold="):
+        sys.exit(f"unknown option {arg!r}; expected --refund-threshold=R")
+    t = amount(arg.split("=", 1)[1])
+    if t is None or not (0 < t < 1):
+        sys.exit("--refund-threshold must be a decimal strictly between 0 and 1, e.g. 0.10")
+    return t
+
+
+def main(src, out_dir, run_id, option=None):
+    limit = threshold(option) if option is not None else None
     out = Path(out_dir)
     if (out / ".git").exists() or any((p / ".git").exists() for p in out.resolve().parents):
         sys.exit("refusing: output directory is inside a git repository (ledger rows are private)")
@@ -125,6 +143,14 @@ def main(src, out_dir, run_id):
     summary = {k: {**v, "gross": str(v["gross"]), "fees": str(v["fees"]), "net": str(v["net"]),
                   "processing_fees": str(v["processing_fees"])}
                for k, v in sorted(month.items())}
+    if limit is not None:
+        for k, v in sorted(month.items()):
+            rate = (Decimal(v["refunds"]) / Decimal(v["sales"])).quantize(Decimal("0.0001")) \
+                if v["sales"] else None
+            summary[k]["refund_rate"] = str(rate) if rate is not None else None
+            # A month with refunds but no sales has no rate; flag it so it is looked at.
+            summary[k]["pause_flag"] = (rate > limit) if rate is not None else v["refunds"] > 0
+            summary[k]["negative_month"] = v["net"] < 0
     (out / "ledger-month.json").write_text(json.dumps({"source_file": Path(src).name,
                                                        "columns_used": {k: COLUMNS[k] for k in COLUMNS if has[k]},
                                                        "months": summary}, indent=2))
@@ -132,6 +158,6 @@ def main(src, out_dir, run_id):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) not in (4, 5):
         sys.exit(__doc__)
     main(*sys.argv[1:])

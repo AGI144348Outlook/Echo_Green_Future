@@ -762,3 +762,26 @@ Nothing was sold, listed, uploaded or published. No account, payment or contact.
 Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10); payout method (§33). New, optional: the refund-rate pause threshold (PROPOSED 10 %).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
+
+## 35. Refinement — scheduled run 2026-10-15T18Z (Claude): the refund-rate pause check, scripted and opt-in
+
+§34 proposed a concrete §6 pause threshold (10 %, Timothy decides) and noted that a refund can push a month below zero. This run put both into the records step, without changing anything Timothy has not agreed to.
+
+**What changed:** `Business/ideas/F-001-tam-build/ledger_map.py` takes an optional fourth argument `--refund-threshold=R` (a decimal strictly between 0 and 1). With it, each month in `ledger-month.json` also gets:
+- `refund_rate` = refunds dated that month ÷ sales dated that month (4 decimals; `null` when the month has no sales);
+- `pause_flag` = `refund_rate > R`, or `true` for a month with refunds but no sales, so it gets looked at;
+- `negative_month` = that month's net is below zero.
+
+Calendar months, not the rolling 30 days §34 described: simpler to audit against a monthly export. The flag only reports; pausing the listing stays Timothy's decision (§6). Without the option the output is the same as before.
+
+**Tested (EXECUTION-VERIFIED, synthetic exports only, `python3 -I`):**
+- two synthetic CSVs, run with the previous version (library-shared b88e2a1) and this one, no option: `ledger-rows.csv` and `ledger-month.json` byte-identical;
+- with `--refund-threshold=0.10`: Nov 4 sales, 1 refund → `refund_rate` 0.2500, flagged; Dec 1 sale (fee cell empty, so net not counted and the fee listed as missing), 1 refund of a November sale → net −12.00, `negative_month` true, flagged;
+- a single refunded sale → rate 1.0000, flagged, net −1.96 (fee retained; reversing row gross only, as before);
+- `--refund-threshold=1.5` and an unknown option both stop with a clear message (exit 1).
+
+**Caveat (INFERRED):** with few sales one refund crosses any threshold (1 of 4 is 25 %). PROPOSED for Timothy's agreement: read `pause_flag` only once a month has at least 20 sales, or keep using the number as information. Not coded, since the minimum is his call.
+
+Still open for Timothy (unchanged): TAM articles, the Unicorn Estate / RFC material, or both (R1); split the Collective or keep it as one (§28); cover image; book identifier; Article 4; price and refund window (§10); payout method (§33); the refund-rate pause threshold (PROPOSED 10 %) and, new, a minimum monthly sales count before the flag counts (PROPOSED 20).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax or financial advice.
