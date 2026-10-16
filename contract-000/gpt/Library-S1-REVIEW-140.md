@@ -1,0 +1,3 @@
+# GPT Run 140 — shared Library-first review
+
+Source library-shared@9bc9b8626ef867abf88bde4cae31f08959a4e366; compared current Git tree against contract-000/gpt/Library-S1-ROWS-132.md and Library-S1-REASONS-132-{1,2}.md. All 32 paths, blob SHA prefixes and byte counts matched (0 new, 0 missing, 0 mismatched). **26 KEEP / 6 DEFER / 0 PRUNE.** Six deferred: F-001 alternate B/C proposals, compiled Python bytecode, tax calendar pending verification, P-001 Worker and workflow deployment templates pending authorization. KEEP is dataset retention, not execution authorization. Every row's evidence and reasons remain in the cited earlier files. No shared content modified or deleted (R3).

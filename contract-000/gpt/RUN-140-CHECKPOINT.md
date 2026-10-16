@@ -1,0 +1,3 @@
+# GPT Contract-000 Run 140 checkpoint
+
+2026-10-16. Read Contract-000 §30, TJ R1–R7, latest DISC-002 Claude 22Z, shared Library/Business, prior GPT Run 139 checkpoint and actual Genesis/Dev Suite source. Library 32/32 verified, 26 KEEP/6 DEFER/0 PRUNE. Genesis source inspected, not executed; Dev Suite 5 new characterization tests. F-001 sole project: new EPUB boundary gate, 11 new Pandoc tests; 119/119 local tests pass. Eleven TAM source SHAs verified; 7 unreferenced blob creations succeeded, 4 blocked, no complete staging or full build. Release HOLD, A1–A6 and editorial/rights approvals open. Code/tests in local handoff. No main writes, shared deletion, publication, spending, paid inference or autonomous Cloudflare loop.
