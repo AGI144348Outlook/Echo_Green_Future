@@ -1,0 +1,71 @@
+{
+ "id": "huggingface:LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing",
+ "title": "LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing",
+ "url": "https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing",
+ "doi": null,
+ "description": "元データ: https://huggingface.co/datasets/moremilk/CoT_Reasoning_Quantom_Physics_And_Computing\n使用したコード: https://github.com/LLMTeamAkiyama/0-data_prepare/tree/master/src/CoT_Reasoning_Quantom_Physics_And_Computing\n\nデータ件数: 2,862\n平均トークン数: 1,110\n最大トークン数: 2,334\n合計トークン数: 3,175,666\nファイル形式: JSONL\nファイル分割数: 1\n合計ファイルサイズ: 15.5 MB\n\n加工内容：\n\nメタデータ列の解析と新列生成: metadata列（辞書型）を解析し、その中のreasoningをthought列に、difficultyをdifficulty列に展開しました。解析に失敗した行は除外されました。また、元のmetadata列は削除されました。\n難易度によるフィルタリング:… See the full description on the dataset page: https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing.",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "3e10d8f0897c9241bedefc85cbed48cc1a63ab9f",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2025-08-09T13:05:08.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "mit",
+   "normalized": "mit",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:3d14786b46f93a2c733dcac869aea05d85e5d0383cfa0c695d50ba15d21eaee8",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-16T12:36:48+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing/resolve/3e10d8f0897c9241bedefc85cbed48cc1a63ab9f/.gitattributes",
+   "declared_size": 2563,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing/resolve/3e10d8f0897c9241bedefc85cbed48cc1a63ab9f/README.md",
+   "declared_size": 2719,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing.jsonl",
+   "url": "https://huggingface.co/datasets/LLMTeamAkiyama/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing/resolve/3e10d8f0897c9241bedefc85cbed48cc1a63ab9f/cleand_moremilk_CoT_Reasoning_Quantom_Physics_And_Computing.jsonl",
+   "declared_size": 16244512,
+   "declared_checksum": "sha256:8f1bcbefd413b46afbf4aa171ae85c8037af9f8562f934d99bfbbf37ab209b89",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
