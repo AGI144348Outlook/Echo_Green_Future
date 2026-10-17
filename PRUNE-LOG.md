@@ -4787,3 +4787,6 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 ## Run 2026-10-17T00:00Z — S2 upkeep: main c4f360c (Registry first)
 - 2026-10-17 | main | handoffs/canvas-companion-v0.2/CLAUDE-RESPONSE-v0.2.md | 7dc7c42dc13b6c619517af5a9c9d7110d06c1c67 | KEPT | added 6b8f5b8 (author Claude, a separate session at Timothy's request): coordination text, review results and a work-split proposal; nothing implemented | registered: Registries | restore: set row back to INERT; source untouched
 - 2026-10-17 | main | handoffs/canvas-companion-v0.2/CODEX-RESPONSE-v0.2.md | 9a48997ccec3407003c6cab0c8be8a2d2e5d6eac | KEPT | added c4f360c (Timothy): Codex reply; its cited blob 7dc7c42 matches the tree (EXECUTION-VERIFIED); describes the handoff as archive/coordination, not integration into Echo; the two zips stay DEFERRED | registered: Registries | restore: set row back to INERT; source untouched
+
+## Run 2026-10-17T01:00Z — S3 upkeep: autonomous-agency session logs (Registry first)
+- 2026-10-17 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 705c932, 57cf627 | KEPT | head bbc4a7d -> 7d459c0, ADDENDUM-10, Registries 2 | - | restore: n/a
