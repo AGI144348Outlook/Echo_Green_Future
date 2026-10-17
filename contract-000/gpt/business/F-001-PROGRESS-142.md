@@ -1,3 +1,3 @@
 # F-001 progress, Run 142
 
-Same project: TAM Protocol ebook. Added local EPUB URI review gate and auditor integration. 155/155 local tests passed with synthetic fixtures. Actual full manuscript build remains pending. Release status HOLD. Next: persist code and test suite, stage 11 sources, build review EPUB/PDF. Acceptance: provenance, independent technical/editorial review, rights clearance, Timothy's A1-A6 decisions and publication approval. No publication or spending.
+Same project: TAM Protocol ebook. Added local EPUB URI review gate and auditor integration. 163/163 local tests passed with synthetic fixtures. Actual full manuscript build remains pending. Release status HOLD. Next: persist code and test suite, stage 11 sources, build review EPUB/PDF. Acceptance: provenance, independent technical/editorial review, rights clearance, Timothy's A1-A6 decisions and publication approval. No publication or spending.
