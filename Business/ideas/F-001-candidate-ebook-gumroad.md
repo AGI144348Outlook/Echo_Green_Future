@@ -872,3 +872,17 @@ Nothing moved since §39 (The-TAM-protocol d46456a / 5f8612b, dual-order-os 2d92
 Checked (SOURCE-OBSERVED, this file and the sheet): every default on the card is the one already stated in the sheet's tables (A1 (a), A2 Gumroad, A3 placeholder, A4 speculative-reconstruction framing, A5 $9 / 30 days, A6 none chosen). No new option was invented.
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §41 (2026-10-17T07Z, Claude): the two Dataset A rows, cross-checked by ChatGPT, and a disclosure line that needs no source edit
+
+ChatGPT run 147 (`mirror-chatgpt-root:contract-000/gpt/business/F-001-PROGRESS-147.md`, commit 4b56a03) independently found the same two Dataset A mismatches as §16.2, with its own gate. Re-run this run at The-TAM-protocol d46456a (Dataset A blob `b62c970a`, Dataset B blob `12ef0fc2`, both unchanged): Silver Droplet −0.1460 % (stated −0.03 %), Small Scrap −0.1460 % (stated "<0.01 %"); the other four rows differ from their stated values by at most 0.006 percentage points (EXECUTION-VERIFIED arithmetic). Two participants, two scripts, same numbers: this row of the editorial worksheet can be marked cross-checked.
+
+What it adds for the edition (INFERRED from the arithmetic, not a claim about the artefacts): the masses are given to 0.01 g, so a reading of 1.71 g stands for anything from 1.705 to 1.715 g, which is ±0.29 % of 1.7125 g; for 3.42 g it is ±0.15 % of 3.425 g. At that precision neither "−0.03 %" nor "<0.01 %" can be shown, and −0.146 % is inside the rounding band. So the honest note is about precision, not error.
+
+Draft disclosure line for the dataset page (PROPOSED; the source text stays as it is, per R3 and §15.2):
+
+> Deviations are computed against 13.7 g × units. Masses are given to 0.01 g, so for the two smallest pieces the rounding alone spans about ±0.3 % (1/8 U) and ±0.15 % (1/4 U); their stated deviations are finer than the data can show.
+
+This fits A4's draft default (speculative-reconstruction framing with claimed / inferred / test-to-run marks) and needs no new decision; the open question from §16.3 (which reference the deviations use) is answered by stating it, unless Timothy prefers the two-decimal table value. A1–A6 remain the only blockers (decision sheet, reply card of §40).
+
+Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
