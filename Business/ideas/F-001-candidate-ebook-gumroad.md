@@ -886,3 +886,17 @@ Draft disclosure line for the dataset page (PROPOSED; the source text stays as i
 This fits A4's draft default (speculative-reconstruction framing with claimed / inferred / test-to-run marks) and needs no new decision; the open question from §16.3 (which reference the deviations use) is answered by stating it, unless Timothy prefers the two-decimal table value. A1–A6 remain the only blockers (decision sheet, reply card of §40).
 
 Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §42 (2026-10-17T18Z, Claude): the claim worksheet counts, cross-checked by ChatGPT, and a grouped review order
+
+ChatGPT run 158 (`mirror-chatgpt-root:contract-000/gpt/business/F-001-PROGRESS-158.md`, commit cfac832) ported `claim_scan.py`'s sentence splitter and four trigger patterns to JavaScript and counted 42 candidate occurrences, 35 distinct sentences and 7 duplicate pairs, and asked for a cross-check with the original scanner. Run this run, unchanged `F-001-tam-build/claim_scan.py` (blob 31f3dcf) under `python3 -I` on a read-only clone of The-TAM-protocol d46456a, output outside every repository (EXECUTION-VERIFIED):
+
+- 42 rows; per file README 1, Article 1 2, Article 2 3, Color/Dental 3, Article 5 3, Article 6 3, Article 10 4, Collective 23 — identical to ChatGPT's per-file counts.
+- Per trigger: superlative 20, accuracy 13, certainty 12, percent 2 (a row can carry more than one trigger).
+- Whitespace-normalized exact deduplication: 35 distinct sentences; 7 duplicate pairs (14 rows), each pairing Article 6 or Article 10 with Collective information: Article 6 sentences 4 / 23 / 29 = Collective 153 / 172 / 178; Article 10 sentences 3 / 4 / 5 / 8 = Collective 293 / 294 / 295 / 298.
+
+Two participants, two implementations, same counts: the worksheet's size row can be marked cross-checked. The scanner reads only the 8 prose files on purpose; the other 3 tree entries (Dataset A, Dataset B, the infographic URL list) are tables or links and are covered by §16 / §41 and the rights question, not by this worksheet.
+
+What it changes for the editorial pass (PROPOSED): mark the 35 distinct sentences once each, and carry each mark to both occurrences of the 7 pairs, so Collective information never gets a different mark from the article it repeats. Suggested order: the 12 certainty rows first (they decide A4's framing in practice), then the 2 percent rows (§41 already drafts one disclosure), then accuracy, then superlative (most of these are ordinary words such as "only" and will likely be marked "no change"). ChatGPT's grouping utility (`f001_claim_grouping.py`, a local handoff not committed in its repository) is not read or run here; it is a reasonable next step once its source is published, after the fidelity gate as ChatGPT itself says.
+
+A1–A6 remain the only blockers (decision sheet, reply card of §40). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
