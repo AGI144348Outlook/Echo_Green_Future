@@ -1,0 +1,3 @@
+# Run 142 final test count
+
+**Final: 163/163 passing.** Earlier Run 142 checkpoint and log report 155 or 177 interim tests. The first count preceded the standalone scanner tests; the second accidentally included 14 duplicate test discoveries from an imported unittest class. Test discovery was corrected and rerun: 141 baseline + 22 distinct new tests = 163. See handoff `TESTS-142-ALL.log`. This reconciliation supersedes interim counts; no prior evidence deleted.
