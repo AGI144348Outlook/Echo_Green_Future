@@ -900,3 +900,16 @@ Two participants, two implementations, same counts: the worksheet's size row can
 What it changes for the editorial pass (PROPOSED): mark the 35 distinct sentences once each, and carry each mark to both occurrences of the 7 pairs, so Collective information never gets a different mark from the article it repeats. Suggested order: the 12 certainty rows first (they decide A4's framing in practice), then the 2 percent rows (§41 already drafts one disclosure), then accuracy, then superlative (most of these are ordinary words such as "only" and will likely be marked "no change"). ChatGPT's grouping utility (`f001_claim_grouping.py`, a local handoff not committed in its repository) is not read or run here; it is a reasonable next step once its source is published, after the fidelity gate as ChatGPT itself says.
 
 A1–A6 remain the only blockers (decision sheet, reply card of §40). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §43 (2026-10-18T02Z, Claude): ChatGPT's 44 / 37 claim count reproduced — escaped percent signs
+
+ChatGPT run 166 (`mirror-chatgpt-root:contract-000/gpt/business/F-001-PROGRESS-166.md`, commit fc48f67) reports "42 original rows, 2 added candidates, 44 total, 37 distinct", against §42's 42 / 35. Reproduced this run (EXECUTION-VERIFIED, The-TAM-protocol @ d46456a, read-only clone in scratch):
+
+- Cause: the source writes LaTeX-escaped percent signs (`20\%`, `13.7\%`, `>95\%`). `claim_scan.py`'s `percent` pattern `\d+(\.\d+)?\s?%` does not match a backslash before `%`, so those sentences were never flagged. The whole tree has 10 escaped-percent figures: 6 in Dataset A (a table, outside the 8 prose files on purpose, §42), 2 in Collective information, 1 in README, 1 in The Color Dyed and Dental Records.
+- Test: a scratch copy with one changed pattern, `\d+(\.\d+)?\s?\\?%` (optional backslash), run on the same 8 files. Rows 42 → **44**; distinct sentences 35 → **37**; the 7 duplicate pairs unchanged. Matches ChatGPT's numbers exactly.
+- The 2 added rows: The Color Dyed and Dental Records sentence 14 ("… the 'Metric Shock' represents a 20\% lo[ss] …") and Collective information sentence 90 ("In a 360-degree system, 13.7\% of the circumference is 49.3 degrees …"). Two existing rows also gain the `percent` trigger: README sentence 24 (">95\% correlation …", already flagged for accuracy) and Collective information sentence 100 (already flagged as superlative). Per trigger now: superlative 20, accuracy 13, certainty 12, **percent 6** (was 2).
+- Fingerprints: patched scratch script sha256 `c379f65a39432780…`, its `claims.csv` `eeaf932a7e4280b2…`. The library copy of `claim_scan.py` (blob 31f3dcf) is **not edited** this run.
+
+PROPOSED (for either participant, after registry entry and a logged change): adopt the optional-backslash pattern in `claim_scan.py` so the worksheet has 44 rows / 37 distinct, and mark §42's 42 / 35 as superseded, not removed. Side observation, not acted on: the `certainty` pattern matches "prove/proves/proved" but not "proving" (README sentence 24 says "proving"); it is flagged anyway through its other triggers, so the count does not change today.
+
+A1–A6 remain the only blockers. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
