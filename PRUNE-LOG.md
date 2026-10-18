@@ -4828,3 +4828,6 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 
 ## Run 2026-10-18T01:00Z — S3 upkeep: autonomous-agency session logs (Registry first)
 - 2026-10-18 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 16ac514, 60c766b | KEPT | head ebf268f -> 7160574, ADDENDUM-17, Registries 2 | - | restore: n/a
+
+## Run 2026-10-18T03:00Z — S3 upkeep: research-discourse-registry DISC-002 head blob (Registry first)
+- 2026-10-18 | research-discourse-registry | research-registry/discourse/DISC-002-invariant-self-identification.md | ee5753b | KEPT | head 55ba1f7; append-only successor of 3e0548b (prefix check, EXECUTION-VERIFIED); Z26 ADDENDUM-2, Logics 1; corrects the coverage-gap-0 claims since 2026-10-16 for this branch (blob-level check now run on all 33 Z heads and main) | - | restore: set row back to INERT; source untouched
