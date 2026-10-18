@@ -1325,3 +1325,28 @@ Nothing moved since §60 on The-TAM-protocol (d46456a), library-shared (7c76f5d)
 On all five listings, the output without `--terms` is byte-identical to the four-patch script's (`cmp`), so existing runs are unaffected. The committed script is not edited (R3).
 
 PROPOSED, for the listing text (not edited): replace §21.1's price line with `**Price:** [A5 price]` so it fills from Timothy's answer rather than an older placeholder, and write `terms.json` from the same answer. Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §62 (2026-10-18T22Z, Claude): the listing's article count and the build's skipped sources — a second terms check for `listing_check.py`
+
+Nothing moved since §61 on The-TAM-protocol (d46456a), library-shared (a3b452e) or mirror-chatgpt-root (3e7131a).
+
+**Finding (SOURCE-OBSERVED, in our own drafts and scripts):** §21.1 promises "[9] articles", and §21.2 says the count becomes 10 if Article 4 turns up. `listing_check.py` (with §61) compares the page count, CSVs, EPUB, price and refund window against the build, but never the article count, and never reads `build-report.json`. So a build that skipped a source file (`report["missing"]`, e.g. on a layout where a name changed, the §39 risk) could still be listed as complete. On `main` (d46456a), `build.py` includes 6 source files and misses none: the README, Articles 1, 2, "The Color Dyed…" (3) and 5, and "Collective information" as the "6–10. Collected notes" chapter (EXECUTION-VERIFIED this run, `python3 -I`, read-only clone in scratch). Whether that is "9 articles" or "5 chapters" depends on how Timothy counts the collected notes, so the script should not guess.
+
+**PROPOSED-PATCH-62** (`F-001-tam-build/PROPOSED-PATCH-62.diff`, sha256 88c67998…): two additions, both only when `--terms` is given.
+1. An optional `"articles": N` key in `terms.json`; the page's "N articles" must equal it. Timothy sets N once he decides how the collected notes count.
+2. `build-report.json` must exist in the build folder and list no missing source file.
+
+It applies sixth, after PATCHSET-52 → 54 → 56 → 59 → 61 (it extends §61's `check_terms`, so it does not apply to the committed script alone). Patched `listing_check.py` sha256 b05036d7…. Tested in scratch (EXECUTION-VERIFIED), with a filled synthetic listing ($9, 30 days, 9 articles), the real `main` build, and a synthetic marked `claims.csv`:
+
+| Case | New lines | Exit |
+|---|---|---|
+| terms 9 articles, real build | PASS article count 9; PASS 6 source files, none missing | 1 (only "CSV promised, none built", see below) |
+| terms 5 articles | FAIL article count 9 vs agreed 5 | 1 |
+| build-report lists Article 5 missing (synthetic edit) | FAIL build skipped source files: ['Article 5'] | 1 |
+| no build-report.json | FAIL build-report.json missing | 1 |
+| §61 terms file (no "articles" key) | §61 lines unchanged; adds only the build-report line | 1 (CSV) |
+| real build + `rebuild_datasets.py`, terms 9 articles | all PASS | **0** |
+
+Without `--terms`, output is byte-identical to the §61 script on all three build folders (`cmp`). The CSV line in the first rows is expected, not a defect: `build.py` alone writes no dataset CSVs on `main` ("no delimited table found"), and `rebuild_datasets.py` adds `dataset-a.csv` and `dataset-b.csv`. The last row is the first end-to-end run, from the public source to a passing listing gate, with every terms check on (EXECUTION-VERIFIED; no PDF built, so the page-count line was not exercised).
+
+PROPOSED, for the order of steps at listing time: `build.py` → `rebuild_datasets.py` → `build_pdf.py` → `claim_scan.py` (Timothy marks every row) → `listing_check.py --terms=terms.json`. `terms.json` comes from Timothy's A5 answer, plus `articles` once he decides how to count the collected notes (a new sub-question under A1/A4, not a new blocker). The committed scripts are not edited (R3). Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
