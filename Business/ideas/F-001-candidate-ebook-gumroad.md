@@ -987,3 +987,32 @@ PROPOSED (drafts only; the script is **not edited** this run, R3):
 - (2) A two-line fix in the mapper: read cells through a helper `cell(r, key) = (r.get(COLUMNS[key]) or "").strip()`, and append "line n: sale_id" to `missing` when it is empty. To be tested on a synthetic export (`TEST-1`…, as in §32) in a run where execution is allowed, then committed with its test result.
 
 Neither changes A1–A6, which remain the only blockers (decision sheet §36, reply card §40). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §49 (2026-10-18T09Z, Claude): §48 tested on synthetic exports — both defects reproduce; the PROPOSED fixes work
+
+Nothing moved since §48 on The-TAM-protocol or library-shared (70e881f, 34 blobs). Script execution was allowed this run, so the two §48 findings were run, not just read. `ledger_map.py` blob 5fbad4c (sha256 e57cff3a…), run with `python3 -I -B` on four synthetic exports (`TEST-1`…`TEST-4`, $9.00 price, $1.40 fee, as in §32), output outside any repository. EXECUTION-VERIFIED unless marked:
+
+| Synthetic export | Rows out | Result |
+|---|---|---|
+| Sep, all-time (TEST-1, TEST-2) | 2 | correct |
+| Oct, all-time (TEST-1, TEST-2 refunded 2026-10-02, TEST-3) | 4 | correct by itself: refund row `TEST-2:refund` dated 2026-10-02 |
+| Oct, month-only (TEST-3) | 1 | correct by itself, but carries no refund for TEST-2 |
+| Truncated line `2026-10-06` (no Sale ID) | — | stops with `AttributeError: 'NoneType' object has no attribute 'strip'` |
+
+1. **Duplication (§48 item 1) reproduces.** Appending Sep + Oct all-time output naively gives 6 rows with 2 duplicate `source_ref`s and net $29.00; the true net is $13.80 (3 sales × $7.60 − $9.00 refund). Appending Sep all-time + Oct month-only gives 3 rows and **0 refund rows**: the late refund is lost. Both silent.
+2. **The PROPOSED `source_ref` merge works.** Keeping the first row per `source_ref` over Sep + Oct all-time gives 4 rows, skips 2, keeps the 1 refund row, net $13.80. So the §48 rule (all-time export each month + merge keyed on `source_ref`, skip and count, never overwrite) is the one to use. The merge was a 10-line throwaway check in the scratch area, not committed; it stays PROPOSED until it has a home (a `ledger_merge.py` next to the mapper, or a step in the private-ledger notes).
+3. **Short-row crash (§48 item 2) reproduces, and the 5-line fix works.** A scratch copy (sha256 071868d6…) adds `cell(r, key) = (r.get(COLUMNS[key]) or "").strip()`, uses it for `sale_id` and `refunded`, and adds `line n: sale_id` to `missing`. On the truncated export it writes 2 rows and lists `line 3: sale_id`, `line 3: gross`, `line 3: fees` as missing (§32's rule: never guess, always list). On the three good exports, its `ledger-rows.csv` and `ledger-month.json` are byte-identical to the original's. The diff:
+
+```diff
++def cell(r, key):
++    return (r.get(COLUMNS[key]) or "").strip()
+-            d, sid = day(r[COLUMNS["date"]]), r[COLUMNS["sale_id"]].strip()
++            d, sid = day(r[COLUMNS["date"]]), cell(r, "sale_id")
++            if not sid: m["missing"].append(f"line {n}: sale_id")
+-            refunded = has["refunded"] and r[COLUMNS["refunded"]].strip().lower() in ("true", "yes", "1")
++            refunded = has["refunded"] and cell(r, "refunded").lower() in ("true", "yes", "1")
+```
+
+The library `ledger_map.py` is **not edited** this run. The patch is tested and ready for either participant to apply as one deliberate, logged change (R3: no deletion; the old blob stays in history). A row with no sale ID still makes a ledger row with an empty `source_ref`. A `source_ref` merge should list such rows and not merge them. That's PROPOSED.
+
+The planned re-run of `build_pdf.py`, `listing_check.py` and `layout_map.py` (§48) is still not done. It's next. A1–A6 remain the only blockers (decision sheet §36). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
