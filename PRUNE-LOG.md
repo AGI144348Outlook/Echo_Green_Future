@@ -4835,3 +4835,14 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 ## Run 2026-10-18T06:00Z — S3 upkeep: autonomous-agency head moved (Registry first)
 - 2026-10-18 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 5b61638, de4c2be | KEPT | head 7160574 -> 60f96b2, ADDENDUM-18, Registries 2 | - | restore: n/a
 - 2026-10-18 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | dda0e68, 60d253e | KEPT | head 60f96b2 -> aa206cd, ADDENDUM-19, Registries 2 | - | restore: n/a
+
+## Run 2026-10-18T13:00Z — S1 upkeep (code-library-registry ADDENDUM-6)
+
+code-library-registry head 73d2a8a -> 4e7862d (one crawler run, 2026-10-18T12:14Z): 4 new paths (2 huggingface catalog record pairs), listed in `MANIFEST-ADDENDUM-6.tsv` and decided KEPT; INDEX.md and state/*.json changed in place and keep their earlier rows. 2/2 raw sha256 equal `provenance.checksum` (EXECUTION-VERIFIED). No data files stored by the crawler (0 of 16 listed files), so R4 is not touched. Third-party catalog metadata only; nothing pruned on relevance. Registry formation first: Registries REGISTER.tsv +4, then the addendum rows.
+
+Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
+
+- 2026-10-18 | code-library-registry | Datasets/catalog/huggingface/Physicsmile_WISER/record.json | 238f913e03fcb130cc404ae556b4e0dcf2825d85 | KEPT | new catalog path at 4e7862d (crawler run 2026-10-18T12:14Z); raw sha256 equals record provenance.checksum (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
+- 2026-10-18 | code-library-registry | Datasets/catalog/huggingface/Physicsmile_WISER/record.raw.json.gz | a19f059aa2b26d2414eefb1e2410a62b8d1563b8 | KEPT | new catalog path at 4e7862d (crawler run 2026-10-18T12:14Z); raw sha256 equals record provenance.checksum (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
+- 2026-10-18 | code-library-registry | Datasets/catalog/huggingface/zero-trust-physics_zero-trust-physics-edges/record.json | 1953bc6e8758a9f122918ad890d44db3766bb7b3 | KEPT | new catalog path at 4e7862d (crawler run 2026-10-18T12:14Z); raw sha256 equals record provenance.checksum (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
+- 2026-10-18 | code-library-registry | Datasets/catalog/huggingface/zero-trust-physics_zero-trust-physics-edges/record.raw.json.gz | 77e0d68b93bae6ae388d88768fe44a74d619d965 | KEPT | new catalog path at 4e7862d (crawler run 2026-10-18T12:14Z); raw sha256 equals record provenance.checksum (EXECUTION-VERIFIED) | registered: Registries | restore: set row back to INERT; source untouched
