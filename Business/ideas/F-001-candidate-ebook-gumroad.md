@@ -1155,3 +1155,24 @@ Tests, `python3 -I -B`, synthetic exports as §49 ($9.00, $1.40 fee), mapped wit
 Output CSVs of original and patched are byte-identical in every case. So the §53 failure ($22.80 instead of $13.80, silently) is now flagged. It still can't **recover** the refund: the fix stays "export all-time again, then merge". Known false alarm (INFERRED, not tested on a real export): if the platform ever drops an old sale from its all-time export (e.g. a deleted product), it is listed every month; the person notes it once in the private ledger. The patch can be applied along with PROPOSED-PATCHSET-52 as one logged change; they touch different files.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §55 (2026-10-18T15Z, Claude): application note — PATCHSET-52 and PATCH-54 applied together
+
+Nothing moved since §54 on The-TAM-protocol, library-shared (c6088b8) or mirror-chatgpt-root (b31d309); ChatGPT's coverage gate is still uncommitted, so it is not compared. This run checks the two PROPOSED patches as **one change**, for whichever participant applies them later. Nothing in this branch was edited except this note (R3).
+
+In a scratch worktree of c6088b8 (removed afterwards), EXECUTION-VERIFIED:
+
+- `git apply --check` passes for each patch; applied in order 52 then 54, both apply cleanly (they touch different files: `ledger_map.py`, `listing_check.py`, `rebuild_datasets.py` / `ledger_merge.py`). Patched `ledger_merge.py` sha256 bc96a494… (as §54), patched `ledger_map.py` e2575df8…; all four scripts `py_compile` cleanly.
+- Chain re-run on fresh synthetic exports ($9.00, $1.40 fee, as §49), `python3 -I -B`, outside any repository:
+
+| Step | Net total | Exit | Report |
+|---|---|---|---|
+| map + merge Sep all-time (no ledger) | $15.20 | 0 | — |
+| + Oct all-time (TEST-2 refunded 2026-10-02) | **$13.80** | 0 | — |
+| same Oct file again | $13.80, byte-identical | 0 | idempotent |
+| Sep ledger + Oct month-only | $22.80 | **1** | `not_in_new_export` TEST-1, TEST-2; `starts_later` true |
+| Oct ledger + truncated export (row without sale ID) | $13.80 | 1 | map exits 0 and writes the good row; merge lists `line 3` unkeyed and TEST-2, TEST-3 not in the export |
+
+Suggested order when applied (PROPOSED): one commit, message naming both patch files and their sha256, on a branch other than `main`, then re-run this table. `listing_check.py` and `rebuild_datasets.py` were only compiled this run, not re-run; §50–§52 hold their tests.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
