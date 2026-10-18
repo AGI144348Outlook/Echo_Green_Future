@@ -1051,3 +1051,40 @@ PROPOSED (drafts only; no library script is edited this run, R3):
 Also observed, SOURCE-OBSERVED: in the branch's Dataset B, rows from ratio 8 on have the unit label in the "Registry Sign" column and the value one column to the right of rows 1–4. That is a source-table inconsistency for Timothy's editorial pass, not something a script should correct (§16.2: values copied as stated).
 
 A1–A6 remain the only blockers (decision sheet §36). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §51 (2026-10-18T11Z, Claude): a no-clobber guard for `rebuild_datasets.py`, tested on both layouts (§50 item 2)
+
+Moved since §50: only mirror-chatgpt-root ce2c998 → 88e6466 (GPT run 175: `contract-000/gpt/RUN-175-CHECKPOINT.md`, `contract-000/gpt/business/F-001-PROGRESS-175.md`). The-TAM-protocol main d46456a and PR #1 head 5f8612b unchanged. GPT run 175 reports a read-only CSV release gate with 24 synthetic tests; its code is in ChatGPT's local handoff and **not committed**, so it is not reviewed here (reported, not verified). This run did what §50 item 2 left open and what GPT run 175 asked for: a no-clobber fix in the registered pipeline, retested on both layouts.
+
+The guard (PROPOSED, scratch copy only; `rebuild_datasets.py` blob fa3a62f is **not edited**, R3): when a table parses to 0 rows, do not open its CSV for writing, record it in `dataset-check.json` as `not_written_zero_rows`, and exit 1 after printing the usual counts. Rows that do parse are written exactly as before.
+
+```diff
+     report = {"base_g_per_unit": BASE, "files": {}}
++    refused = []
+ ...
+     a_rows, a_rej = parse(a_text, A_ROW, "Object Description")
+-    with open(out / "dataset-a.csv", "w", newline="", encoding="utf-8") as fh:
++    if not a_rows:  # no-clobber (§51): never replace a CSV with a header-only file
++        refused.append("dataset-a.csv")
++    else:
++      with open(out / "dataset-a.csv", "w", newline="", encoding="utf-8") as fh:
+ ...  (same three lines for dataset-b.csv)
++    report["not_written_zero_rows"] = refused
+     (out / "dataset-check.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+     print(json.dumps(...))
++    if refused:
++        sys.exit(f"0 rows parsed, not written (existing files left as they were): {refused}")
+```
+
+Test, the documented chain `build.py` → `rebuild_datasets.py` into one output dir, `python3 -I -B`, clones and outputs in scratch (not committed); branch staged by `layout_map.py` (11 mapped). EXECUTION-VERIFIED:
+
+| Layout | Script | rebuild exit | dataset-a.csv after | dataset-b.csv after |
+|---|---|---|---|---|
+| main d46456a | original | 0 (A 6 / B 8 rows) | 7 lines, sha256 d3c176b9d2ff… | 9 lines, fecd151b5b73… |
+| main d46456a | guarded | 0 (A 6 / B 8 rows) | 7 lines, d3c176b9d2ff… (identical) | 9 lines, fecd151b5b73… (identical) |
+| branch 5f8612b | original | **0** (A 0/9 rejected, B 0/10) | **1 line** (header only) | **1 line** (header only) |
+| branch 5f8612b | guarded | **1** (both refused) | 7 lines, 83dbb2b89b3d… = `build.py`'s file, kept | 9 lines, 4622237e7837… = `build.py`'s file, kept |
+
+So on `main` the guard changes nothing but one added report key; on the branch it keeps `build.py`'s good CSVs and stops the chain with exit 1, so the §50 green-gate-with-empty-appendices path is closed even before the `listing_check.py` fix (§50 item 1). Both fixes together are proposed as one logged change for whichever participant applies them; the guard alone does not choose a layout (A6 stays Timothy's).
+
+Not done: the guard is not applied to the library script, and ChatGPT's uncommitted gate is not compared with it. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
