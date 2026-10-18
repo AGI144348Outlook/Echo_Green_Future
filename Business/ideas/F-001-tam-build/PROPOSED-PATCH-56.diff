@@ -1,0 +1,56 @@
+--- a/Business/ideas/F-001-tam-build/ledger_merge.py	2026-10-18 16:01:06.569101647 +0000
++++ b/Business/ideas/F-001-tam-build/ledger_merge.py	2026-10-18 16:01:06.585190945 +0000
+@@ -17,6 +17,12 @@
+     and when the new file's earliest sale date is later than the ledger's, that is
+     reported as `starts_later`. Either one means the export may be month-only (a late
+     refund could be missing): nothing is guessed, the merge still runs, exit is 1.
++  - integrity (§56, after ChatGPT run 180's four blind spots): also exit 1, nothing
++    dropped or guessed, when a ledger `:refund` row is absent from the new file
++    (`refunds_not_in_new_export`), a refund's sale is in neither file (`orphan_refunds`),
++    a net is empty or unreadable (`net_missing`) or differs from gross - fees
++    (`net_mismatch`), or a source_ref repeats inside the ledger or inside the new file
++    (`duplicate_refs`).
+ 
+ It writes a NEW file and refuses to overwrite one, refuses output inside a git repository
+ (ledger rows are private), never reads the network, and contacts nothing.
+@@ -85,6 +91,29 @@
+     rep["starts_later"] = (min(new_dates) > min(old_dates)) if (old_dates and new_dates) else False
+     rep["earliest_sale"] = {"ledger": min(old_dates) if old_dates else None,
+                             "new_file": min(new_dates) if new_dates else None}
++    refund = lambda r: r["category"] == "refunds issued" and r["source_ref"].strip()
++    rep["refunds_not_in_new_export"] = sorted(r["source_ref"] for r in kept
++                                              if refund(r) and r["source_ref"] not in new_refs)
++    sale_refs = {r["source_ref"].strip() for r in kept + incoming if sale(r)}
++    rep["orphan_refunds"] = sorted(r["source_ref"] for r in rows if refund(r)
++                                   and r["source_ref"].strip().rsplit(":refund", 1)[0] not in sale_refs)
++    rep["duplicate_refs"] = {}
++    for name, group in (("ledger", kept), ("new_file", incoming)):
++        seen = defaultdict(int)
++        for r in group:
++            if r["source_ref"].strip(): seen[r["source_ref"].strip()] += 1
++        dup = sorted(k for k, c in seen.items() if c > 1)
++        if dup: rep["duplicate_refs"][name] = dup
++    rep["net_mismatch"] = []
++    for i, r in enumerate(rows, start=2):
++        g, fee, v = dec(r["gross"]), dec(r["fees"]), dec(r["net"])
++        if g is None or v is None:
++            continue
++        if fee is None and r["fees"].strip():
++            continue  # unreadable fee: listed via net_missing upstream, not guessed here
++        want = g - fee if fee is not None else (g if r["category"] == "refunds issued" else None)
++        if want is not None and v != want:
++            rep["net_mismatch"].append(f"{out} line {i}: net {v} != {want}")
+     month = defaultdict(lambda: Decimal(0)); open_net = []
+     for i, r in enumerate(rows, start=2):
+         v = dec(r["net"])
+@@ -98,7 +127,9 @@
+         w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
+     print(json.dumps(rep, indent=2))
+     return 1 if (rep["conflicts"] or rep["unkeyed_not_merged"] or rep["not_in_new_export"]
+-                 or rep["starts_later"]) else 0
++                 or rep["starts_later"] or rep["refunds_not_in_new_export"]
++                 or rep["orphan_refunds"] or rep["duplicate_refs"] or rep["net_missing"]
++                 or rep["net_mismatch"]) else 0
+ 
+ 
+ if __name__ == "__main__":

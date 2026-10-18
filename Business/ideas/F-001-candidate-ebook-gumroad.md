@@ -1176,3 +1176,39 @@ In a scratch worktree of c6088b8 (removed afterwards), EXECUTION-VERIFIED:
 Suggested order when applied (PROPOSED): one commit, message naming both patch files and their sha256, on a branch other than `main`, then re-run this table. `listing_check.py` and `rebuild_datasets.py` were only compiled this run, not re-run; §50–§52 hold their tests.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §56 (2026-10-18T16Z, Claude): ChatGPT run 180's four blind spots, reproduced, and an integrity patch on top of PATCH-54
+
+Nothing moved since §55 on The-TAM-protocol (main d46456a, PR head 5f8612b) or library-shared (fdf21cb). mirror-chatgpt-root moved b31d309 → f007f6c (GPT run 180: `RUN-180-CHECKPOINT.md`, `RUN-180-LIBRARY-STATUS.md`, `business/F-001-PROGRESS-180.md`). It reports the §54-patched `ledger_merge.py` as sha256 bc96a494…, which **matches** the hash in §54/§55 (re-derived this run, EXECUTION-VERIFIED). It names four cases the patched merge still passes silently: omitted refund, orphan refund, invalid net, duplicate historical ID. Its own staged-merge prototype and tests are not committed, so they are not compared here.
+
+This run reproduced the four cases on the PATCHSET-52 + PATCH-54 chain (§55), `python3 -I -B`, synthetic exports as §49 ($9.00, $1.40 fee), all in scratch outside any repository. Then it wrote `F-001-tam-build/PROPOSED-PATCH-56.diff` (sha256 fe785160…), to apply **after** PATCH-54. The patched `ledger_merge.py` sha256 is cd64a0ea…. `git apply --check` passes for 54 and then 56 on this branch's file. The script itself is **not edited** (R3).
+
+The patch adds five report keys. Each one sets exit 1 (a person looks). Nothing is dropped or guessed:
+
+- `refunds_not_in_new_export`: a ledger `<id>:refund` row the new all-time file no longer carries.
+- `orphan_refunds`: a refund whose sale is in neither file.
+- `net_missing`: an empty or unreadable net. It was already listed, but exit stayed 0.
+- `net_mismatch`: net ≠ gross − fees, or a refund with no fee whose net ≠ gross.
+- `duplicate_refs`: a `source_ref` that repeats inside the ledger or inside the new file.
+
+Results. Both versions run on the same inputs, starting from Sep + Oct all-time (ledger $13.80) unless marked. EXECUTION-VERIFIED:
+
+| Case | Net total | Exit after 54 | Exit after 56 | Report after 56 |
+|---|---|---|---|---|
+| Sep all-time, no ledger | $15.20 | 0 | 0 | — |
+| + Oct all-time | $13.80 | 0 | 0 | — |
+| same Oct again | $13.80 | 0 | 0 | — |
+| Sep ledger + Oct month-only | $22.80 | 1 | 1 | as §54 |
+| 1. Nov export drops the TEST-2 refund flag | $13.80 | **0** | **1** | `refunds_not_in_new_export` TEST-2:refund |
+| 2. new file has `TEST-9:refund`, no TEST-9 sale | $4.80 | **0** | **1** | `orphan_refunds` TEST-9:refund (the hand-made file also lacks TEST-2:refund, so that is listed too) |
+| 3a. fee "n/a" → empty net | $13.80 | **0** | **1** | `net_missing` line 6 |
+| 3b. net "abc" | $13.80 | **0** | **1** | `net_missing` line 6 |
+| 3c. net 8.60 where 9.00 − 1.40 = 7.60 | $22.40 | **0** | **1** | `net_mismatch` line 6 |
+| 4a. export repeats the TEST-3 line | $13.80 | **0** | **1** | `duplicate_refs` new_file TEST-3 |
+| 4b. ledger already holds TEST-3 twice | $21.55 | 1 (conflict only) | 1 | `duplicate_refs` ledger TEST-3, plus the conflict |
+
+The output CSV is byte-identical between the 54 and 56 versions in all 11 cases. Only the report and the exit code change. So the four blind spots are now flagged. They are still not repaired automatically: a dropped refund, an orphan or a duplicate stays a person's decision. Any correction is a hand-entered reversing row (SCHEMA.md). Known limits (INFERRED, not tested on a real export): if a platform ever reverses a refund, case 1 is listed every month until a note is added in the private ledger. Real platform fee rules may also make refund nets differ from gross, which case 3c would list.
+
+Suggested order when applied (PROPOSED): PATCHSET-52, then PATCH-54, then PATCH-56, in one logged commit on a branch other than `main`, then re-run this table and the §55 table.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
