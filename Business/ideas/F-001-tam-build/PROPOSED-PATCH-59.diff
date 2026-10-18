@@ -1,0 +1,49 @@
+--- a/Business/ideas/F-001-tam-build/year_close.py
++++ b/Business/ideas/F-001-tam-build/year_close.py
+@@ -21,6 +21,11 @@
+   --form-gross=AMOUNT    a gross figure read by Timothy from a platform tax form for
+                          --year; the difference from sales_gross is printed. Exit 1 when it
+                          is not zero, so the year is not closed silently. Requires --year.
++  --export-date=YYYY-MM-DD   (§59) the day the LAST all-time export merged into the
++                         ledger was taken. With --year, exit 1 when it is on or before
++                         Dec 31 of that year: a refund dated after the export is not in
++                         the ledger yet, and the sales gross (and so a 1099-K check)
++                         cannot show it. Without it, --year prints a NOTE only.
+ 
+ Exit 0 when nothing is flagged; exit 1 when any row lacks a figure or a date, any
+ source_ref repeats, or --form-gross differs. It reads local files only, writes nothing,
+@@ -45,7 +50,7 @@
+ 
+ 
+ def main(argv):
+-    files, year, form_gross = [], None, None
++    files, year, form_gross, export_date = [], None, None, None
+     for a in argv:
+         if a.startswith("--year="):
+             year = a.split("=", 1)[1]
+@@ -55,6 +60,11 @@
+             form_gross = amount(a.split("=", 1)[1])
+             if form_gross is None:
+                 sys.exit("--form-gross must be an amount, e.g. 1234.56")
++        elif a.startswith("--export-date="):
++            export_date = a.split("=", 1)[1]
++            if not (len(export_date) == 10 and export_date[4] == export_date[7] == "-"
++                    and export_date.replace("-", "").isdigit()):
++                sys.exit("--export-date must be YYYY-MM-DD")
+         elif a.startswith("--"):
+             sys.exit(f"unknown option {a!r}")
+         else:
+@@ -113,6 +123,13 @@
+             if diff != 0:
+                 print("  FLAG form and ledger differ; find the cause before the year is closed")
+                 flagged = True
++    if year and export_date is None:
++        print(f"  NOTE give --export-date: a refund dated after the last merged export "
++              f"is missing until a later export is merged")
++    elif year and export_date <= f"{year}-12-31":
++        print(f"  FLAG last export taken {export_date}, not after {year}-12-31: refunds "
++              f"dated after it are not in the ledger; merge a later all-time export first")
++        flagged = True
+     if year and year not in years:
+         print(f"{year}: no dated rows"); flagged = flagged or form_gross is not None
+     if undated:

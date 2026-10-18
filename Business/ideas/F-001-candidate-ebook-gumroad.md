@@ -1269,3 +1269,21 @@ Case 2 also shows a limit that a reader must keep in mind. The gap note is a NOT
 Suggested place in the chain (PROPOSED): monthly `ledger_map.py` → `ledger_merge.py` (with 52/54/56) → once a year `year_close.py --year=YYYY`. Its output and the form, if any, then go into the private filing packet (§6).
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §59 (2026-10-18T19Z, Claude): the whole records chain run through a year end, and the one gap the year close could not see
+
+Nothing moved since §58 on The-TAM-protocol, library-shared (f82164a) or mirror-chatgpt-root (da5a5fa). This run feeds the full chain into `year_close.py` for the first time, across a year boundary: thirteen monthly all-time exports (Jan 2026 to Jan 2027) → `ledger_map.py` → `ledger_merge.py` with PATCHSET-52, PATCH-54 and PATCH-56 applied in that order (scratch worktree of f82164a, all clean) → `year_close.py`. Synthetic data only: 18 sales of 9.00 with a 1.40 fee, no sales at all in May 2026, one refund in March, one Dec 2026 sale refunded on 2027-01-05. Scratch only, `python3 -I`, nothing committed but the patch below. EXECUTION-VERIFIED:
+
+| Case | Chain | `year_close.py` result | Exit |
+|---|---|---|---|
+| A | all 13 exports merged | 2026: sales 17 / 153.00, refunds 1 / −9.00, fees 23.80, net 120.20 (hand check matches); gap note 2026-05 (the real no-sales month). 2027: sales 9.00, refund −9.00 (the Dec sale's refund lands in 2027 by refund date), net −1.40 | 0 / 0 |
+| B | Jun and Oct merges skipped (forgotten) | identical totals to A; the merged ledgers match A on (source_ref, date, category, gross, fees, net), only `entered_by` run ids differ. All-time exports make a skipped month harmless, as §48 intended | 0 / 0 |
+| C | as A, but a 2026-12-30 refund and the Dec export taken on 12-28; 2026 closed from the Dec ledger | 2026: refunds 1 / −9.00, net 120.20, `--form-gross=153.00` difference 0.00. Closed after the Jan 2027 merge: refunds 2 / −18.00, net **111.20** | **0** / 0 |
+
+**Finding (case C).** Closing the year from a ledger whose last export was taken before Dec 31 misses late-December refunds, and nothing flags it. The sales-gross check against a form still matches, because a refund does not change sales gross. The year close cannot see the gap, because no ledger row records when its export was taken.
+
+**`F-001-tam-build/PROPOSED-PATCH-59.diff`** (sha256 8160ee22…, applies with `git apply --check` both on f82164a and after 52/54/56; the patched script compiles). It adds `--export-date=YYYY-MM-DD`, the day the last merged all-time export was taken, given by Timothy. With `--year`, an export date on or before Dec 31 of that year is a FLAG, exit 1: "merge a later all-time export first". Dec 31 itself counts as too early, since a refund later that day could miss. Without the option, `--year` prints one NOTE and exits as before. Tests: case C with 12-28 gives exit 1; after the Jan merge with 2027-01-31, exit 0; 12-31 gives exit 1; a bad date is refused. With no option, output and exit are byte-identical to the unpatched script on all four ledgers; with `--year` only, they are identical apart from the NOTE line. EXECUTION-VERIFIED, script not edited.
+
+PROPOSED close rule for the §6 packet: close year Y only after merging an all-time export taken in January of Y+1 or later. Run `year_close.py --year=Y --export-date=<that day>`, and add `--form-gross` if a form arrives.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Whether the platform returns its fee on a refund is still UNVERIFIED (refund rows carry an empty fee cell by design). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
