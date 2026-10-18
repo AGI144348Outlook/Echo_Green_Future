@@ -1016,3 +1016,38 @@ Nothing moved since §48 on The-TAM-protocol or library-shared (70e881f, 34 blob
 The library `ledger_map.py` is **not edited** this run. The patch is tested and ready for either participant to apply as one deliberate, logged change (R3: no deletion; the old blob stays in history). A row with no sale ID still makes a ledger row with an empty `source_ref`. A `source_ref` merge should list such rows and not merge them. That's PROPOSED.
 
 The planned re-run of `build_pdf.py`, `listing_check.py` and `layout_map.py` (§48) is still not done. It's next. A1–A6 remain the only blockers (decision sheet §36). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §50 (2026-10-18T10Z, Claude): the downstream half re-run on both layouts — green on `main`; on the branch, `rebuild_datasets.py` empties the CSVs and the gate does not notice
+
+Nothing moved since §49 (The-TAM-protocol main d46456a, PR #1 head 5f8612b; library-shared 674e7c9; no new ChatGPT artifact). This run did the re-run §48/§49 left open: `build_pdf.py`, `listing_check.py` and `layout_map.py`, with the scripts at their library-shared blobs (build ede8da6, build_pdf c029cd6, listing_check adc3123, layout_map 07167e3, rebuild_datasets fa3a62f, claim_scan 31f3dcf), run with `python3 -I -B` on clones outside any repository. Outputs not committed. EXECUTION-VERIFIED unless marked:
+
+| Step | main d46456a | branch 5f8612b (staged by `layout_map.py`) |
+|---|---|---|
+| `layout_map.py` | — | exit 0, 11 mapped, `.gitignore` and `LICENSE` unmapped; staging inside the clone refused (exit 1, nothing written) |
+| `build.py` | exit 0, 7,953 words, EPUB 29,977 bytes | exit 0, 6,544 words, `dup_only_included` Article 6, Article 10 (as §39) |
+| `build_pdf.py` | xelatex fails (`lmodern.sty` missing), wkhtmltopdf: **13 pages**, 121,260 bytes (§18 said 121,269; same page count) | wkhtmltopdf: **21 pages**, 185,847 bytes |
+| `rebuild_datasets.py` | A 6 rows, B 8 rows, 0 rejected | **A 0 rows / 9 rejected, B 0 / 10 rejected, exit 0** |
+| `claim_scan.py` | 42 rows | 29 rows |
+| `listing_check.py`, §21.1 draft as written | exit 1: 7 placeholders, 42/42 claims open, "each claim is marked" disagrees | — |
+| `listing_check.py`, placeholders filled, page count = build, all claims marked | exit 0, 14 PASS | exit 0, 14 PASS **(with header-only CSVs)** |
+| same, page count 40 | exit 1, `page count: listing 40, build 13` | — |
+
+**Finding that matters.** On the branch layout, `build.py` already writes good CSVs from the delimited tables (A 7 lines, B 9 lines incl. header; sha256 83dbb2b8… / 4622237e…). The next step of the documented chain, `rebuild_datasets.py`, expects `main`'s separator-less rows, rejects every row of the branch's Markdown tables, and **overwrites both files with a header line only, exiting 0**. `listing_check.py` then passes a listing that promises "two data appendices … also included as CSV files", because it checks only that `*.csv` files exist. So, if Timothy picks the branch at A6, the chain as written would ship empty appendices with a green gate. On `main` nothing changes: every step is as before.
+
+PROPOSED (drafts only; no library script is edited this run, R3):
+
+1. In `listing_check.py`, a promised CSV must have at least one data row. Tested on a scratch copy (sha256 05d86b51…): the branch build now gives `FAIL … header-only: ['dataset-a.csv', 'dataset-b.csv']`, exit 1; on the `main` build the output is line-for-line identical to the original (exit 0). The diff:
+
+```diff
+-        note(bool(csvs), f"listing promises CSV files; build has {csvs or 'none'}")
++        empty = [n for n in csvs if sum(1 for _ in open(out / n, encoding="utf-8")) < 2]
++        note(bool(csvs) and not empty, f"listing promises CSV files; build has {csvs or 'none'}"
++             + (f"; header-only: {empty}" if empty else ""))
+```
+
+2. In the chain, run `rebuild_datasets.py` only on the `main` layout, or make it refuse to overwrite a CSV when it would write 0 rows and exit 1 when every row is rejected. Not written or tested this run; logged for a later run.
+3. Listing facts depend on A6: the page count is 13 on `main` and 21 on the branch, and the claim worksheet has 42 vs 29 rows. The listing's "about [N] pages" has to come from the chosen build (as §21.2 already says), never from this table.
+
+Also observed, SOURCE-OBSERVED: in the branch's Dataset B, rows from ratio 8 on have the unit label in the "Registry Sign" column and the value one column to the right of rows 1–4. That is a source-table inconsistency for Timothy's editorial pass, not something a script should correct (§16.2: values copied as stated).
+
+A1–A6 remain the only blockers (decision sheet §36). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
