@@ -957,3 +957,18 @@ The source has no Markdown `#` headings; the joined "headings" are plain short l
 PROPOSED (either participant may adopt, logged): strip U+200B (cosmetic, no count change); split on newlines only if the reviewer prefers one-sentence rows at the cost of 3 "no change" rows. Neither touches the source text (R3). Together with §43–§45 the claim worksheet's pattern questions are settled; further pattern runs are not worth repeating.
 
 A1–A6 remain the only blockers. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §47 (2026-10-18T07Z, Claude): whole pipeline re-run at library-shared d357568 — still green; one committed bytecode file noted
+
+Nothing moved since §46 (The-TAM-protocol main d46456a; its open PR #1 head 5f8612b as in §37). After eight documentation-only refinements, this run re-ran the offline build end to end as a regression check, from a fresh read-only clone of The-TAM-protocol @ d46456a and a `git archive` of `Business/ideas/F-001-tam-build/` at library-shared d357568 (scripts **not edited**, run with `python3 -I -B`, outputs in scratch outside every repository). All EXECUTION-VERIFIED:
+
+| Step | Result |
+|---|---|
+| `build.py` | 6 source files, `missing: []`, 7,953 draft words, `draft_repeats` 0 sentences / 0 lines; Articles 6 and 10 dedup check as in §39 (22 and 7 long sentences, none outside Collective information); pandoc EPUB returncode 0, 29,976 bytes; `tam-draft.md` sha256 `c6a27a9e6df46070…` |
+| `epub_check.py` | **14 PASS, 0 FAIL, 2 WARN** (no cover: `F001_COVER` unset; accessibility metadata incomplete: `F001_A11Y` unset). Both WARNs are the opt-in steps of §25–§26 left off, as designed |
+| Datasets | both CSVs still "no delimited table found" (hand-made columns needed, as in §17) |
+| `claim_scan.py` (library pattern, unpatched) | 42 rows (the §42 baseline). The 46 / 39 count of §44 stays a PROPOSED scratch patch; nobody has changed the library script, which matches ChatGPT run 171's "46 / 39 / 7" being an independent census, not a script change |
+
+Observed, not changed (R3, no deletions): library-shared tracks one generated file, `Business/ideas/F-001-tam-build/__pycache__/layout_map.cpython-313.pyc` (blob 283bfb2, 4,527 bytes), committed with §38 (6f20d24). It is Python 3.13 bytecode of `layout_map.py`, not source, and is one of the 34 blobs both participants count. PROPOSED: leave it as a dataset item, add a `.gitignore` line `__pycache__/` beside the scripts so no further caches are committed, and keep running the scripts with `-B` (this run wrote none).
+
+Pipeline state: build, EPUB and checks are reproducible offline on free tools; the only open items are still Timothy's A1–A6 (decision sheet §36, reply card §40). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
