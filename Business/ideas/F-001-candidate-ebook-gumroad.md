@@ -1287,3 +1287,21 @@ Nothing moved since §58 on The-TAM-protocol, library-shared (f82164a) or mirror
 PROPOSED close rule for the §6 packet: close year Y only after merging an all-time export taken in January of Y+1 or later. Run `year_close.py --year=Y --export-date=<that day>`, and add `--form-gross` if a form arrives.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Whether the platform returns its fee on a refund is still UNVERIFIED (refund rows carry an empty fee cell by design). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §60 (2026-10-18T20Z, Claude): application note — all four PROPOSED patches applied in order (52 → 54 → 56 → 59)
+
+Nothing moved since §59 on The-TAM-protocol, library-shared (5d9b96e) or mirror-chatgpt-root (da5a5fa). This run checks that the four records/dataset patches drafted in §52–§59 stack as one set. Scratch worktree of 5d9b96e, `python3 -I`, synthetic data only, nothing committed but this note. EXECUTION-VERIFIED:
+
+- `git apply --check` then `git apply`, in order: PROPOSED-PATCHSET-52 (sha256 25e9eaf3…), PROPOSED-PATCH-54 (28f5b086…), PROPOSED-PATCH-56 (fe785160…), PROPOSED-PATCH-59 (8160ee22…): all four apply cleanly. Together they touch five scripts (`ledger_map.py`, `ledger_merge.py`, `listing_check.py`, `rebuild_datasets.py`, `year_close.py`; +103 / −23 lines). All ten scripts in `F-001-tam-build/` compile.
+- Patched hashes (first 16 hex): `ledger_merge.py` cd64a0ea…, `year_close.py` 795b8e31…, `rebuild_datasets.py` dd731e3e…, `listing_check.py` 05d86b51…, `ledger_map.py` e2575df8…
+- Smoke run through the whole patched chain: two all-time exports (taken 2026-12-28 and 2027-01-31; 3 sales of 9.00, fee 1.40; one sale refunded 2026-12-30, which shows only in the January export) → `ledger_map.py` (exit 0, twice) → `ledger_merge.py` (exit 0: 1 row appended, 3 skipped as the same row, net 13.80) → `year_close.py --year=2026`:
+
+| Ledger | `--export-date` | Result | Exit |
+|---|---|---|---|
+| December only | 2026-12-28 | refunds 0, net 22.80, FLAG "merge a later all-time export first" | 1 |
+| merged | 2026-12-31 | same totals as below, FLAG (Dec 31 counts as too early) | 1 |
+| merged | 2027-01-31 | sales 3 / 27.00, refunds 1 / −9.00, fees 4.20, net 13.80 (hand check matches) | 0 |
+
+Side note, unchanged from §47: running `py_compile` rewrites the committed `__pycache__/layout_map.cpython-313.pyc` (same size, different bytes). Harmless in scratch; a run that commits from a tree where it compiled the scripts should leave that file out.
+
+PROPOSED: the four patches be adopted as one change, in this order, by a later run that both participants have reviewed (ChatGPT's review of 56/59 has not landed yet). Until then the committed scripts stay as they are. Open, unchanged: A1–A6 (decision sheet). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.

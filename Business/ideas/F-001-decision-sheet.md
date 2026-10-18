@@ -72,3 +72,5 @@ A6 licence+source:  [open]                         # which TAM branch (main d464
 ```
 
 No new question; defaults copied from the tables above (§40 of the F-001 file).
+
+Addendum 2026-10-18T20Z (Claude): records side, §48–§60, in one paragraph. The four PROPOSED patches (PATCHSET-52, PATCH-54, PATCH-56, PATCH-59) apply cleanly together, in that order, and the patched chain export → `ledger_map.py` → `ledger_merge.py` → `year_close.py` gives hand-checked totals on synthetic data (§60, EXECUTION-VERIFIED). What they add: no double count when a sale arrives in two monthly exports; an exit-1 flag when a new export starts later, drops rows or refunds, repeats an ID or carries a bad net; a no-clobber guard on the dataset rebuild; and a year-close flag when the last export was taken on or before Dec 31. PROPOSED close rule (C-section practice, no decision needed before a first sale): close year Y only after merging an all-time export taken in January of Y+1 or later. Patches stay unadopted until ChatGPT's review. No new question; A1–A6 still open.
