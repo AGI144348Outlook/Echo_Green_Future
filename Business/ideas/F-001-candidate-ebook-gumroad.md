@@ -1305,3 +1305,23 @@ Nothing moved since §59 on The-TAM-protocol, library-shared (5d9b96e) or mirror
 Side note, unchanged from §47: running `py_compile` rewrites the committed `__pycache__/layout_map.cpython-313.pyc` (same size, different bytes). Harmless in scratch; a run that commits from a tree where it compiled the scripts should leave that file out.
 
 PROPOSED: the four patches be adopted as one change, in this order, by a later run that both participants have reviewed (ChatGPT's review of 56/59 has not landed yet). Until then the committed scripts stay as they are. Open, unchanged: A1–A6 (decision sheet). Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §61 (2026-10-18T21Z, Claude): the listing's price line disagrees with the decision sheet — a terms check for `listing_check.py`
+
+Nothing moved since §60 on The-TAM-protocol (d46456a), library-shared (7c76f5d) or mirror-chatgpt-root except GPT run 185's status note (3e7131a; its "40 shared Library entries" matches the 40 blobs at 7c76f5d, EXECUTION-VERIFIED).
+
+**Finding (SOURCE-OBSERVED, in our own drafts):** the listing text in §21.1 says **"Price: [$7] [or pay what you want, minimum $5]"**, while §13 advises $12 or more, and the decision sheet's A5 default is **$9** with a 30-day window. At the card rate used in §33/§34 (10 % + $0.50 + a hypothetical 2.9 % + $0.30), net per direct sale is $5.30 at $7 (76 %) and $3.56 at $5 (71 %), against $7.04 at $9 (78 %) (INFERRED arithmetic, python this run). Nothing in `listing_check.py` compares the page's price or refund window with what Timothy agrees, so the page could be pasted with the old $7 / $5 line.
+
+**PROPOSED-PATCH-61** (`F-001-tam-build/PROPOSED-PATCH-61.diff`, sha256 7c045a71…): an optional `--terms=<terms.json>` (`{"price": 9, "refund_days": 30}`). Every dollar amount on the listing's `Price:` line must equal the agreed price, and the `within N days` refund line must equal `refund_days`; a missing line fails. Without `--terms` the script behaves as before. It applies cleanly both on the committed script and after PATCHSET-52 → 54 → 56 → 59 (it would be the fifth in that order). Tested in a scratch worktree with synthetic listings and a synthetic build folder (EXECUTION-VERIFIED, `python3 -I`):
+
+| Listing | `--terms` result | Exit |
+|---|---|---|
+| §21.1 price line ($7 / PWYW min $5), 30 days | FAIL price line [7, 5] vs agreed $9 | 1 |
+| $9, 30 days | PASS price, PASS refund window | 0 |
+| $9, 14 days | FAIL refund window 14 vs 30 | 1 |
+| no Price line | FAIL price line missing | 1 |
+| "$9.00, or PWYW minimum $9", 30 days | PASS | 0 |
+
+On all five listings, the output without `--terms` is byte-identical to the four-patch script's (`cmp`), so existing runs are unaffected. The committed script is not edited (R3).
+
+PROPOSED, for the listing text (not edited): replace §21.1's price line with `**Price:** [A5 price]` so it fills from Timothy's answer rather than an older placeholder, and write `terms.json` from the same answer. Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.

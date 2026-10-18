@@ -1,0 +1,59 @@
+diff --git a/Business/ideas/F-001-tam-build/listing_check.py b/Business/ideas/F-001-tam-build/listing_check.py
+index e80149f..fd5725c 100644
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -13,7 +13,12 @@ what the files do not contain (§21.3). Reads only local files:
+ Prints PASS / FAIL lines and exits 1 on any FAIL. Never edits the listing,
+ never uploads, never contacts anyone.
+ 
+-Usage: python3 -I listing_check.py <listing.md> <out-dir>
++Usage: python3 -I listing_check.py <listing.md> <out-dir> [--terms=<terms.json>]
++
++--terms (optional, §61): a JSON file with the agreed "price" (dollars) and
++"refund_days"; every dollar amount on the listing's "Price:" line must equal
++the price, and the "within N days" refund line must equal refund_days.
++Without --terms the output is unchanged.
+ """
+ import csv, json, re, sys
+ from pathlib import Path
+@@ -26,7 +31,19 @@ CLAIM_SENTENCE = "each claim is marked"
+ DONE = {"claimed", "inferred", "test", "cut", "sourced"}  # statuses that count as marked
+ 
+ 
+-def main(listing, out):
++def check_terms(low, terms, note):
++    """§61: the listing's price and refund lines must match the agreed terms."""
++    price, days = float(terms["price"]), int(terms["refund_days"])
++    line = next((l for l in low.splitlines() if "price:" in l), None)
++    amounts = [float(a) for a in re.findall(r"\$\s*(\d+(?:\.\d{1,2})?)", line or "")]
++    note(bool(amounts) and all(a == price for a in amounts),
++         f"price line {amounts or 'missing'} vs agreed ${price:g}")
++    m = re.search(r"within\s+(\d+)\s+days", low)
++    note(m is not None and int(m.group(1)) == days,
++         f"refund window {m.group(1) if m else 'missing'} days vs agreed {days}")
++
++
++def main(listing, out, terms=None):
+     text = Path(listing).read_text(encoding="utf-8")
+     low, out = text.lower(), Path(out)
+     fails, passes = [], []
+@@ -67,12 +84,17 @@ def main(listing, out):
+     if "epub" in low:
+         note(any(out.glob("*.epub")), "listing promises an EPUB; build has " + ("one" if any(out.glob("*.epub")) else "none"))
+ 
++    if terms is not None:
++        check_terms(low, json.loads(Path(terms).read_text(encoding="utf-8")), note)
++
+     for p in passes: print("PASS", p)
+     for f in fails: print("FAIL", f)
+     sys.exit(1 if fails else 0)
+ 
+ 
+ if __name__ == "__main__":
+-    if len(sys.argv) != 3:
++    opts = [a for a in sys.argv[1:] if a.startswith("--terms=")]
++    args = [a for a in sys.argv[1:] if not a.startswith("--terms=")]
++    if len(args) != 2 or len(opts) > 1:
+         sys.exit(__doc__)
+-    main(sys.argv[1], sys.argv[2])
++    main(args[0], args[1], opts[0].split("=", 1)[1] if opts else None)
