@@ -1134,3 +1134,24 @@ Tests, `python3 -I -B`, synthetic exports as §49 ($9.00, $1.40 fee), mapped wit
 So the merge fixes the double count (§49 item 1, first half) and is idempotent, but it **cannot recover a refund the export never carried**: the month-only case still gives $22.80 instead of $13.80, silently. The rule stays: export ALL-TIME each month, map, then merge. A merge cannot detect a month-only export by itself (PROPOSED for a later run: compare the earliest sale date in the new file with the ledger's, and warn when the new file starts later). Corrections to a conflicting row stay a deliberate, hand-entered reversing row (SCHEMA.md), never an overwrite.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §54 (2026-10-18T14Z, Claude): a coverage warning for `ledger_merge.py`, so a month-only export is no longer silent
+
+Nothing moved since §53 on The-TAM-protocol or library-shared (b35f1ec). mirror-chatgpt-root moved to b31d309 (GPT run 178: a 36-blob Library review of this branch; all 36 path / blob-prefix / byte rows re-checked against b35f1ec and match). ChatGPT's "pre-merge relative-coverage gate" is in its local handoff and not committed, so it is not compared here. This run does the check §53 left open, as a **patch file**, `F-001-tam-build/PROPOSED-PATCH-54.diff` (42 lines, sha256 28f5b086bb11…); `ledger_merge.py` itself is **not edited** (R3). `git apply --check` passes at b35f1ec.
+
+The patch adds a coverage check after the merge: every `product sales` `source_ref` already in the ledger must appear in the new file (an all-time export carries all past sales), else it is listed under `not_in_new_export`; and `starts_later` is true when the new file's earliest sale date is later than the ledger's. Either one sets exit 1 (a person looks). The merge itself, its output file and its totals are unchanged: nothing is guessed or dropped.
+
+Tests, `python3 -I -B`, synthetic exports as §49 ($9.00, $1.40 fee), mapped with `ledger_map.py` blob 5fbad4c, all in scratch outside any repository. Original `ledger_merge.py` (sha256 5c793bc7…) vs patched copy (bc96a494…). EXECUTION-VERIFIED:
+
+| Merge | Net total | Original exit | Patched exit | Patched report |
+|---|---|---|---|---|
+| no ledger + Sep all-time | $15.20 | 0 | 0 | `not_in_new_export` [], `starts_later` false |
+| + Oct all-time (late refund of TEST-2) | $13.80 | 0 | 0 | [], false |
+| same Oct file again | $13.80 | 0 | 0 | [], false |
+| Sep ledger + Oct **month-only** | $22.80 (refund missing) | **0** | **1** | `['TEST-1','TEST-2']`, true (2026-10-05 > 2026-09-03) |
+| Sep ledger + export missing TEST-2 only | $22.80 | **0** | **1** | `['TEST-2']`, false |
+| Sep ledger + header-only export | $15.20 | 0 | 1 | `['TEST-1','TEST-2']` |
+
+Output CSVs of original and patched are byte-identical in every case. So the §53 failure ($22.80 instead of $13.80, silently) is now flagged. It still can't **recover** the refund: the fix stays "export all-time again, then merge". Known false alarm (INFERRED, not tested on a real export): if the platform ever drops an old sale from its all-time export (e.g. a deleted product), it is listed every month; the person notes it once in the private ledger. The patch can be applied along with PROPOSED-PATCHSET-52 as one logged change; they touch different files.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.

@@ -1,0 +1,42 @@
+--- a/Business/ideas/F-001-tam-build/ledger_merge.py	2026-10-18 14:01:05.479073126 +0000
++++ b/Business/ideas/F-001-tam-build/ledger_merge.py	2026-10-18 14:01:05.480538741 +0000
+@@ -11,7 +11,12 @@
+   - a new row with an EMPTY source_ref is not merged: it is listed for a person to look at
+     (ledger_map.py lists the same line as "missing sale_id");
+   - a skipped row whose figures differ from the kept row is listed as a conflict
+-    (the ledger keeps the first figures; a correction is a new reversing row, by hand).
++    (the ledger keeps the first figures; a correction is a new reversing row, by hand);
++  - coverage (§54): an all-time export must carry every sale already in the ledger. Each
++    ledger sale `source_ref` absent from the new file is listed under `not_in_new_export`,
++    and when the new file's earliest sale date is later than the ledger's, that is
++    reported as `starts_later`. Either one means the export may be month-only (a late
++    refund could be missing): nothing is guessed, the merge still runs, exit is 1.
+ 
+ It writes a NEW file and refuses to overwrite one, refuses output inside a git repository
+ (ledger rows are private), never reads the network, and contacts nothing.
+@@ -71,6 +76,15 @@
+                 rep["skipped_same"] += 1
+         else:
+             by_ref[ref] = r; rows.append(r); rep["appended"] += 1
++    sale = lambda r: r["category"] == "product sales" and r["source_ref"].strip()
++    new_refs = {r["source_ref"].strip() for r in incoming}
++    old_dates = [r["date"] for r in kept if sale(r) and r["date"]]
++    new_dates = [r["date"] for r in incoming if sale(r) and r["date"]]
++    rep["not_in_new_export"] = sorted(r["source_ref"] for r in kept
++                                      if sale(r) and r["source_ref"] not in new_refs)
++    rep["starts_later"] = (min(new_dates) > min(old_dates)) if (old_dates and new_dates) else False
++    rep["earliest_sale"] = {"ledger": min(old_dates) if old_dates else None,
++                            "new_file": min(new_dates) if new_dates else None}
+     month = defaultdict(lambda: Decimal(0)); open_net = []
+     for i, r in enumerate(rows, start=2):
+         v = dec(r["net"])
+@@ -83,7 +97,8 @@
+     with open(o, "x", newline="") as f:
+         w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
+     print(json.dumps(rep, indent=2))
+-    return 1 if (rep["conflicts"] or rep["unkeyed_not_merged"]) else 0
++    return 1 if (rep["conflicts"] or rep["unkeyed_not_merged"] or rep["not_in_new_export"]
++                 or rep["starts_later"]) else 0
+ 
+ 
+ if __name__ == "__main__":
