@@ -1350,3 +1350,35 @@ It applies sixth, after PATCHSET-52 → 54 → 56 → 59 → 61 (it extends §61
 Without `--terms`, output is byte-identical to the §61 script on all three build folders (`cmp`). The CSV line in the first rows is expected, not a defect: `build.py` alone writes no dataset CSVs on `main` ("no delimited table found"), and `rebuild_datasets.py` adds `dataset-a.csv` and `dataset-b.csv`. The last row is the first end-to-end run, from the public source to a passing listing gate, with every terms check on (EXECUTION-VERIFIED; no PDF built, so the page-count line was not exercised).
 
 PROPOSED, for the order of steps at listing time: `build.py` → `rebuild_datasets.py` → `build_pdf.py` → `claim_scan.py` (Timothy marks every row) → `listing_check.py --terms=terms.json`. `terms.json` comes from Timothy's A5 answer, plus `articles` once he decides how to count the collected notes (a new sub-question under A1/A4, not a new blocker). The committed scripts are not edited (R3). Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §63 (2026-10-18T23Z, Claude): shape (b) read for structure — "Unicorn Estate" is a printed conversation with three RFC numberings, not a manuscript
+
+Nothing moved since §62 on The-TAM-protocol (d46456a), library-shared (745fd69) or mirror-chatgpt-root (3e7131a). This run took the §62 "next" candidate: what A1(b) would actually sell. R1 lets runs draft both shapes; ChatGPT's 2026-10-11 question (`contract-000/gpt/CLAUDE-QUESTION-GDRIVE-20261011.md`) asked for exactly this check.
+
+**What was read.** `UnicornEstate.pdf` from Timothy's Google Drive (the §14 table row; 640,786 bytes, sha256 77f0cf45…3f90a), downloaded to a scratch folder and read **for structure only**: page count, headings, RFC numbers and titles, and where conversation-turn markers fall. No prose is quoted here and the file is not committed to any branch (it is unpublished; R1 makes it Timothy's to sell, not ours to publish). All facts below are EXECUTION-VERIFIED with `pdfinfo` / `pdftotext -layout` and a heading scan, unless marked.
+
+**Findings.**
+1. 210 letter pages, ~27,700 words. Producer "Skia/PDF m131", creator "Chromium", created 2026-07-29: a browser print, not an export from a word processor.
+2. It is a printed conversation. A user-turn marker appears on pages 25, 58 and 205; second-person commentary addressed to the author ("your system / framework") appears on pages 29, 57, 114, 120 and 127. INFERRED: much of the text is assistant-drafted around Timothy's prompts, so the human-authored share is unknown.
+3. Only RFC-0001, -0002 and -0003 have full sections headed "(Draft 0.1)" (pages 7, 12, 19). From page 66 on, sections are headed differently ("RFC-0004 — Temporal Cognition and Collective Agency" p. 66; RFC-0009…0014 p. 144–145; RFC-0015 p. 187).
+4. **At least three incompatible numberings** of the series sit inside the one file:
+
+| RFC | Roadmap p. 5–6 | Sections p. 66–187 | Roadmap p. 202–203 |
+|---|---|---|---|
+| 0000 | Repository Index and Specification Roadmap | — | Vision and Design Philosophy |
+| 0004 | Hebrew Symbolic Execution | Temporal Cognition and Collective Agency | Indus Icon Agents |
+| 0005 | Indus Agent Architecture | — | Jurisdictions and Runtime |
+| 0010 | Distributed Runtime Architecture | Hebrew Grammar and Symbolic Syntax | Collective Symbol Construction |
+| 0013 | Security, Identity, and Trust | Cloudflare Runtime Reference Implementation | Hebrew Execution Calculus |
+| 0014 | Future Research Directions | GitHub Repository Constitution and Versioned World Building | Symbolic Hyperlattice |
+| 0015–0016 | (none) | Processional Growth and Constitutional Expansion | Constitutional Growth / Evolution |
+
+   Mid-file lists on pp. 42 and 85 give still other orders (RFC-0004 "Temporal Model" on both; RFC-0005 "Collective Agency" on p. 42, "Causality and Symbolic Events" on p. 85), and p. 73 heads a section "RFC-0005 Hebrew Symbolic Execution". So "RFC-0000 through RFC-0014" (`genesis-documentary:docs/UPDATE_FOR_GPT.md` l. 85, §11) names a range, not a fixed table of contents.
+
+**What this means for A1(b) (PROPOSED).**
+- Shape (b) cannot be listed as-is. Before any build it needs: (i) one canonical numbering chosen by Timothy (the p. 202–203 roadmap is the latest in the file and the only one reaching 0016); (ii) an extraction pass that keeps Timothy's own text and the RFC bodies and drops conversation scaffolding; (iii) a disclosure decision, since the bodies are largely assistant-drafted (INFERRED, finding 2) — this is the same AI-disclosure question §21 left open for the platform, but sharper here.
+- Effort, rough (INFERRED): (a) TAM is ~1 build step from listable (§62 gate passes end to end); (b) is an editing project of unknown length. That supports keeping the decision sheet's A1 default at (a), with (b) as a later second product (option c) once an edited RFC text exists.
+- The existing `build.py` → … → `listing_check.py` chain would serve (b) unchanged once the edited text is in Markdown in a repository (R3: registered first, then edited). No script change proposed.
+- `RFC Collection` (Google Doc, editable, last edited 2026-06-26 per §14) was not opened this run; it may be the cleaner source. Next F-001 step for (b), if Timothy wants it: read its headings only and compare its numbering with the three above.
+
+New question for Timothy (under A1): if (b) goes ahead, which numbering is canonical, and is `RFC Collection` or the PDF the text to edit from? Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
