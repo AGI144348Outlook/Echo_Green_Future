@@ -1234,3 +1234,38 @@ This is the §52 table, line for line. So PATCH-54 and PATCH-56 (`ledger_merge.p
 The full set is now tested as one change. Suggested order when applied (PROPOSED): one logged commit on a branch other than `main`, naming the three patch files and their sha256 (PATCHSET-52 25e9eaf3…, PATCH-54 28f5b086…, PATCH-56 fe785160…). Then re-run this table and the §56 table. The open choice stays the same: A6 decides which layout ships. On the branch layout, the patch set is what keeps the CSVs.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §58 (2026-10-18T18Z, Claude): year-end close — `year_close.py` draft, and where the 1099-K threshold stands
+
+Nothing moved since §57 on The-TAM-protocol, library-shared (2e7fcb0) or mirror-chatgpt-root (da5a5fa). The records side (§6, §48–§56) stops at monthly rows. Nothing yet turns twelve months into the year-end figures a filing packet needs, and nothing checks those figures against a platform tax form. This run drafts that step.
+
+**Facts for the year end** (SOURCE-OBSERVED only where marked; page titles from a search limited to irs.gov, 2026-10-18T18Z, article bodies not read):
+- Form 1099-K threshold: the IRS newsroom page "[IRS issues FAQs on Form 1099-K threshold under the One, Big, Beautiful Bill; dollar limit reverts to $20,000](https://www.irs.gov/newsroom/irs-issues-faqs-on-form-1099-k-threshold-under-the-one-big-beautiful-bill-dollar-limit-reverts-to-20000)" (SOURCE-OBSERVED, title). The companion transaction-count condition, from which year it applies, and whether the platform files 1099-Ks as merchant of record are all UNVERIFIED. At F-001's scale, the INFERRED reading is that no 1099-K is likely. **Income is reportable whether or not a form is issued** (INFERRED, general rule; check [Understanding your Form 1099-K](https://www.irs.gov/businesses/understanding-your-form-1099-k)). So the ledger, not a form, is the record of truth.
+- Retention: "[How long should I keep records?](https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records)" and [Publication 583](https://www.irs.gov/publications/p583) are the primary pages (SOURCE-OBSERVED, titles). The usual periods are 3 years from filing, with longer periods in named cases (INFERRED, not read this run). PROPOSED: keep the monthly exports, `ledger-rows.csv` and each year's close output privately for at least the longest period that page gives for Timothy's case.
+
+**`F-001-tam-build/year_close.py`** (new, PROPOSED draft, sha256 ff980ee1…). It reads one or more `ledger-rows.csv` files from `ledger_map.py` / `ledger_merge.py`. For each calendar year it prints:
+- the count and gross of product sales before refunds, which is the figure a 1099-K would be compared with;
+- the count and gross of refunds, by refund date;
+- fees and net;
+- the number of rows missing a figure;
+- the months inside the span that have no row at all, because a month with no sales and an export never merged look the same;
+- repeated `source_ref` values.
+
+`--year=YYYY --form-gross=X` prints the difference from a form figure Timothy reads himself. It writes nothing, reads no network, and exits 1 on any flag. It does not decide what goes where on a return.
+
+Tested on synthetic exports pushed through the unmodified `ledger_map.py` at 2e7fcb0 (`python3 -I`, scratch only, nothing committed but the script). EXECUTION-VERIFIED:
+
+| Case | Input | Output | Exit |
+|---|---|---|---|
+| 1 | Jan (2 sales, one refunded in Mar) + Mar (2 sales, one with an empty fee) | sales 4 / 42.00, refunds 1 / −9.00, fees 4.50, net 16.50 (hand check matches); gap 2027-02 noted; 1 row missing a figure | 1 |
+| 2 | Jan only, `--form-gross=18.00` | difference 0.00 | 0 |
+| 3 | Jan only, `--form-gross=27.00` | difference 9.00, flagged | 1 |
+| 4 | same Jan export merged twice (the §48 case) | `source_ref repeated: S1, S2, S2:refund` | 1 |
+| 5 | `--year=2026` with no rows, form figure given | "no dated rows" | 1 |
+| 6 | `--form-gross` without `--year` | refused | 1 |
+
+Case 2 also shows a limit that a reader must keep in mind. The gap note is a NOTE, not a FLAG. A Feb with no sales is normal, so only Timothy can say which kind of gap it is. Case 4 repeats what PATCH-56 already catches upstream; here it is a second net at year end.
+
+Suggested place in the chain (PROPOSED): monthly `ledger_map.py` → `ledger_merge.py` (with 52/54/56) → once a year `year_close.py --year=YYYY`. Its output and the form, if any, then go into the private filing packet (§6).
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
