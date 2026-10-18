@@ -1212,3 +1212,25 @@ The output CSV is byte-identical between the 54 and 56 versions in all 11 cases.
 Suggested order when applied (PROPOSED): PATCHSET-52, then PATCH-54, then PATCH-56, in one logged commit on a branch other than `main`, then re-run this table and the §55 table.
 
 Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §57 (2026-10-18T17Z, Claude): all three PROPOSED patches applied in order (52 → 54 → 56) and the dataset chain re-run on both layouts
+
+Nothing moved since §56 on The-TAM-protocol (main d46456a, PR #1 head 5f8612b) or library-shared (2fae6d1). mirror-chatgpt-root moved f007f6c → da5a5fa (GPT run 181: one status file, `contract-000/gpt/RUN-181-WRITE-STATUS.md`, "source reads and offline tests completed; detailed handoff prepared"). The handoff itself and ChatGPT's staged-merge prototype are not committed, so nothing is compared here.
+
+§55 only compiled `listing_check.py` and `rebuild_datasets.py`. This run closes that gap for the full set. In a scratch worktree of 2fae6d1 (removed afterwards), `git apply --check` then `git apply` passed for PATCHSET-52, PATCH-54 and PATCH-56 in that order. The patched sha256 values match the earlier sections: `ledger_map.py` e2575df8…, `listing_check.py` 05d86b51…, `rebuild_datasets.py` dd731e3e… (§52), and `ledger_merge.py` cd64a0ea… (§56). All nine scripts `py_compile` cleanly. The other five scripts are unchanged.
+
+The documented chain was then re-run with the original scripts and with the patched set: `build.py` → `build_pdf.py` → `rebuild_datasets.py` → `claim_scan.py` → `listing_check.py`. Runs used `python3 -I -B`, with clones and outputs in scratch, not committed. The branch layout was staged by `layout_map.py` (exit 0, 11 mapped). As in §50/§52, every claim row was marked `claimed`, and a one-line synthetic listing was used, with the build's page count and promises of CSV and EPUB. That listing is a test, not Timothy's editorial pass. EXECUTION-VERIFIED:
+
+| Layout | Scripts | pages | rebuild exit | dataset-a / -b after | listing_check |
+|---|---|---|---|---|---|
+| main d46456a | original | 13 | 0 | 7 / 9 lines, d3c176b9d2ff / fecd151b5b73 | exit 0 |
+| main d46456a | 52+54+56 | 13 | 0 | identical | exit 0 |
+| branch 5f8612b | original | 21 | **0** | **1 / 1 line** (header only) | **exit 0** |
+| branch 5f8612b | 52+54+56 | 21 | **1** (A 0/9, B 0/10 refused, files left alone) | 7 / 9 lines, 83dbb2b89b3d / 4622237e7837 = `build.py`'s files, kept | exit 0 |
+| branch, original output | patched `listing_check.py` | — | — | header-only | **exit 1**, `header-only: ['dataset-a.csv', 'dataset-b.csv']` |
+
+This is the §52 table, line for line. So PATCH-54 and PATCH-56 (`ledger_merge.py` only) do not disturb the dataset side. On `main`, `claims.csv` is byte-identical between the two runs. `dataset-check.json` gains only the `not_written_zero_rows` key. The ledger side was not re-run this run; §55 and §56 hold its tables.
+
+The full set is now tested as one change. Suggested order when applied (PROPOSED): one logged commit on a branch other than `main`, naming the three patch files and their sha256 (PATCHSET-52 25e9eaf3…, PATCH-54 28f5b086…, PATCH-56 fe785160…). Then re-run this table and the §56 table. The open choice stays the same: A6 decides which layout ships. On the branch layout, the patch set is what keeps the CSVs.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
