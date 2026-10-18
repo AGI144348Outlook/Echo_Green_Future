@@ -1114,3 +1114,23 @@ On `main` the patch set changes outputs only by one added report key (`"not_writ
 `ledger_map.py`, on the §49 synthetic exports (`TEST-1`…`TEST-3`, $9.00, $1.40 fee). Original vs patched: good export, both exit 0, outputs byte-identical. Truncated line (`2026-10-06`, no sale ID): original stops with `AttributeError`. Patched exits 0, writes the 2 good rows and lists `line 3: sale_id`, `line 3: gross`, `line 3: fees` as missing (§32: never guess, always list).
 
 Not in the patch set, still PROPOSED: the `source_ref` merge step for the private ledger (§49 item 2; it needs a home first), and a `.gitignore` for the committed `__pycache__/layout_map.cpython-313.pyc` (§47; not deleted, R3). A1–A6 remain the only blockers (decision sheet §36); A6 (which layout) is still Timothy's, and the patch set does not choose one. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §53 (2026-10-18T13Z, Claude): the `source_ref` merge gets a home — `ledger_merge.py` draft, tested on the §49 exports
+
+Nothing moved since §52 on The-TAM-protocol (main d46456a, PR #1 head 5f8612b), library-shared 39bff64 or mirror-chatgpt-root 88e6466. This run gives §49 item 2 its home: a new file `F-001-tam-build/ledger_merge.py` (sha256 5c793bc7…, PROPOSED; no existing script edited, R3). It merges `ledger_map.py` output into a running private ledger keyed on `source_ref`: existing rows are kept unchanged; a new row with a known `source_ref` is skipped and counted, or listed as a conflict if date, category, gross, fees or net differ; a new `source_ref` (e.g. a late `<id>:refund`) is appended; a row with an empty `source_ref` is not merged but listed. It writes a new file only (refuses to overwrite), refuses output inside a git repository, and exits 1 when anything needs a person.
+
+Tests, `python3 -I -B`, synthetic exports as §49 ($9.00, $1.40 fee), mapped with `ledger_map.py` (patched copy from PROPOSED-PATCHSET-52 for the truncated export), all outside any repository. EXECUTION-VERIFIED:
+
+| Test | Appended / skipped | Net total | Exit |
+|---|---|---|---|
+| no ledger + Sep all-time | 2 / 0 | $15.20 | 0 |
+| + Oct all-time (TEST-2 refunded 2026-10-02, TEST-3) | 2 / 2 | **$13.80** (Sep 15.20, Oct −1.40), the §49 true net | 0 |
+| same Oct file merged again | 0 / 4, output byte-identical | $13.80 | 0 |
+| Sep + Oct **month-only** | 1 / 0 | $22.80: the late refund is still missing | 0 |
+| + truncated export (row without sale ID) | 0 / 1, `line 3` listed unkeyed, not merged | $13.80 | 1 |
+| + TEST-1 re-exported with fee $1.25 | 0 / 0, conflict `TEST-1: fees, net`, first figures kept | $13.80 | 1 |
+| output path exists / inside a git worktree / raw platform CSV as input | refused, nothing written | — | 1 |
+
+So the merge fixes the double count (§49 item 1, first half) and is idempotent, but it **cannot recover a refund the export never carried**: the month-only case still gives $22.80 instead of $13.80, silently. The rule stays: export ALL-TIME each month, map, then merge. A merge cannot detect a month-only export by itself (PROPOSED for a later run: compare the earliest sale date in the new file with the ledger's, and warn when the new file starts later). Corrections to a conflicting row stay a deliberate, hand-entered reversing row (SCHEMA.md), never an overwrite.
+
+Open, unchanged: A1–A6 (decision sheet §36); A6 (which TAM layout) is Timothy's. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
