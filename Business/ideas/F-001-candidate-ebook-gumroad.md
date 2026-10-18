@@ -1088,3 +1088,29 @@ Test, the documented chain `build.py` → `rebuild_datasets.py` into one output 
 So on `main` the guard changes nothing but one added report key; on the branch it keeps `build.py`'s good CSVs and stops the chain with exit 1, so the §50 green-gate-with-empty-appendices path is closed even before the `listing_check.py` fix (§50 item 1). Both fixes together are proposed as one logged change for whichever participant applies them; the guard alone does not choose a layout (A6 stays Timothy's).
 
 Not done: the guard is not applied to the library script, and ChatGPT's uncommitted gate is not compared with it. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.
+
+## §52 (2026-10-18T12Z, Claude): the three tested fixes of §49–§51 as one patch set, re-run together on both layouts
+
+Nothing moved since §51 (The-TAM-protocol main d46456a, PR #1 head 5f8612b; library-shared 2251eb8; mirror-chatgpt-root 88e6466, so ChatGPT's dataset gate is still uncommitted and not compared). §49–§51 each tested one fix alone. This run put all three into **one patch file**, `F-001-tam-build/PROPOSED-PATCHSET-52.diff` (117 lines, sha256 25e9eaf33af3ddee…), so whichever participant takes them up can apply them as the single deliberate, logged change §49 and §51 asked for. The patch is a new file; **no library script is edited** (R3).
+
+| File | Library blob (base) | Patched copy sha256 | Change |
+|---|---|---|---|
+| `rebuild_datasets.py` | fa3a62f | dd731e3e4528… | §51 no-clobber guard (0 rows → file left alone, `not_written_zero_rows`, exit 1) |
+| `listing_check.py` | adc3123 | 05d86b5126e4… (= §50's tested copy) | §50: a promised CSV must have a data row |
+| `ledger_map.py` | 5fbad4c | e2575df8702e… | §49: `cell()` helper; empty sale ID listed as `line n: sale_id` |
+
+`git apply --check` passes against library-shared 2251eb8, and applying it to an export of that tree gives files byte-identical to the copies tested below. The documented chain (`build.py` → `build_pdf.py` → `rebuild_datasets.py` → `claim_scan.py` → `listing_check.py`, `python3 -I -B`, clones and outputs in scratch, not committed) was run with the original scripts and with all three fixes together. Branch layout staged by `layout_map.py` (exit 0). For the listing check, every claim row was marked `claimed` and a short filled listing with the build's page count was used, as in §50 (a synthetic editorial pass, not Timothy's). EXECUTION-VERIFIED:
+
+| Layout | Scripts | pages | rebuild exit | dataset-a / -b after | listing_check |
+|---|---|---|---|---|---|
+| main d46456a | original | 13 | 0 (A 6, B 8) | 7 / 9 lines, d3c176b9d2ff / fecd151b5b73 | exit 0 |
+| main d46456a | patch set | 13 | 0 (A 6, B 8) | identical | exit 0 |
+| branch 5f8612b | original | 21 | **0** (A 0/9, B 0/10) | **1 / 1 line** (header only) | **exit 0** |
+| branch 5f8612b | patch set | 21 | **1** (both refused) | 7 / 9 lines, 83dbb2b89b3d / 4622237e7837 = `build.py`'s files, kept | exit 0 (the CSVs now have data) |
+| branch, original build | patched `listing_check.py` only | — | — | header-only | **exit 1**, `header-only: ['dataset-a.csv', 'dataset-b.csv']` |
+
+On `main` the patch set changes outputs only by one added report key (`"not_written_zero_rows": []` in `dataset-check.json`). The two EPUBs differ between any two builds only in pandoc's random `urn:uuid` and build time in `content.opf` / `toc.ncx` (`build.py` is not patched; reproducible EPUB stays opt-in, §24). The two guards overlap on purpose: the rebuild guard keeps good files, and the listing guard still fails if any route produces header-only CSVs.
+
+`ledger_map.py`, on the §49 synthetic exports (`TEST-1`…`TEST-3`, $9.00, $1.40 fee). Original vs patched: good export, both exit 0, outputs byte-identical. Truncated line (`2026-10-06`, no sale ID): original stops with `AttributeError`. Patched exits 0, writes the 2 good rows and lists `line 3: sale_id`, `line 3: gross`, `line 3: fees` as missing (§32: never guess, always list).
+
+Not in the patch set, still PROPOSED: the `source_ref` merge step for the private ledger (§49 item 2; it needs a home first), and a `.gitignore` for the committed `__pycache__/layout_map.cpython-313.pyc` (§47; not deleted, R3). A1–A6 remain the only blockers (decision sheet §36); A6 (which layout) is still Timothy's, and the patch set does not choose one. Nothing was sold, listed, uploaded or published. No account, payment or contact. Not tax, legal or financial advice.

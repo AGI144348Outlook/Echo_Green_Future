@@ -1,0 +1,117 @@
+--- a/Business/ideas/F-001-tam-build/ledger_map.py
++++ b/Business/ideas/F-001-tam-build/ledger_map.py
+@@ -78,6 +78,10 @@
+     return t
+ 
+ 
++def cell(r, key):
++    return (r.get(COLUMNS[key]) or "").strip()
++
++
+ def main(src, out_dir, run_id, option=None):
+     limit = threshold(option) if option is not None else None
+     out = Path(out_dir)
+@@ -97,7 +101,7 @@
+                                                "processing_fees": Decimal(0),
+                                                "missing": []})
+         for n, r in enumerate(reader, start=2):
+-            d, sid = day(r[COLUMNS["date"]]), r[COLUMNS["sale_id"]].strip()
++            d, sid = day(r[COLUMNS["date"]]), cell(r, "sale_id")
+             g = amount(r[COLUMNS["gross"]])
+             fee = amount(r[COLUMNS["fees"]]) if has["fees"] else None
+             proc = None
+@@ -109,6 +113,7 @@
+                 fee = (fee + proc) if (fee is not None and proc is not None) else None
+             key = d[:7] if d else "unknown-month"
+             m = month[key]
++            if not sid: m["missing"].append(f"line {n}: sale_id")
+             if d is None: m["missing"].append(f"line {n}: date")
+             if g is None: m["missing"].append(f"line {n}: gross")
+             if fee is None: m["missing"].append(f"line {n}: fees")
+@@ -123,7 +128,7 @@
+             m["sales"] += 1
+             for k, v in (("gross", g), ("fees", fee), ("net", net)):
+                 if v is not None: m[k] += v
+-            refunded = has["refunded"] and r[COLUMNS["refunded"]].strip().lower() in ("true", "yes", "1")
++            refunded = has["refunded"] and cell(r, "refunded").lower() in ("true", "yes", "1")
+             if refunded:
+                 rd = day(r[COLUMNS["refund_date"]]) if has["refund_date"] else None
+                 rkey = (rd or d or "unknown-month")[:7] if (rd or d) else "unknown-month"
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -61,7 +61,9 @@
+ 
+     if "csv" in low:
+         csvs = [p.name for p in out.glob("*.csv") if p.name != "claims.csv"]
+-        note(bool(csvs), f"listing promises CSV files; build has {csvs or 'none'}")
++        empty = [n for n in csvs if sum(1 for _ in open(out / n, encoding="utf-8")) < 2]
++        note(bool(csvs) and not empty, f"listing promises CSV files; build has {csvs or 'none'}"
++             + (f"; header-only: {empty}" if empty else ""))
+     if "epub" in low:
+         note(any(out.glob("*.epub")), "listing promises an EPUB; build has " + ("one" if any(out.glob("*.epub")) else "none"))
+ 
+--- a/Business/ideas/F-001-tam-build/rebuild_datasets.py
++++ b/Business/ideas/F-001-tam-build/rebuild_datasets.py
+@@ -56,35 +56,45 @@
+         sys.exit("refusing to write inside the source clone")
+     out.mkdir(parents=True, exist_ok=True)
+     report = {"base_g_per_unit": BASE, "files": {}}
++    refused = []  # no-clobber (§51/§52): never replace a CSV with a header-only file
+ 
+     a_text = (src / A_FILE).read_text(encoding="utf-8")
+     a_rows, a_rej = parse(a_text, A_ROW, "Object Description")
+-    with open(out / "dataset-a.csv", "w", newline="", encoding="utf-8") as fh:
+-        w = csv.writer(fh)
+-        w.writerow(["object", "measured_g", "units", "registry_sign", "stated_deviation_pct", "term",
+-                    "expected_g", "recomputed_deviation_pct", "stated_matches_recomputed"])
+-        for r in a_rows:
+-            u = float(r["units"]); exp = BASE * u; rec = pct(float(r["mass"]), exp)
+-            stated = r["dev"]
+-            ok = (abs(rec) < 0.01) if stated.startswith("<") else abs(float(stated) - rec) <= 0.01
+-            w.writerow([r["object"], r["mass"], r["units"], r["sign"], stated, r["term"], round(exp, 4), rec, ok])
++    if not a_rows:
++        refused.append("dataset-a.csv")
++    else:
++        with open(out / "dataset-a.csv", "w", newline="", encoding="utf-8") as fh:
++            w = csv.writer(fh)
++            w.writerow(["object", "measured_g", "units", "registry_sign", "stated_deviation_pct", "term",
++                        "expected_g", "recomputed_deviation_pct", "stated_matches_recomputed"])
++            for r in a_rows:
++                u = float(r["units"]); exp = BASE * u; rec = pct(float(r["mass"]), exp)
++                stated = r["dev"]
++                ok = (abs(rec) < 0.01) if stated.startswith("<") else abs(float(stated) - rec) <= 0.01
++                w.writerow([r["object"], r["mass"], r["units"], r["sign"], stated, r["term"], round(exp, 4), rec, ok])
+     report["files"]["A"] = {"sha256": hashlib.sha256(a_text.encode()).hexdigest(),
+                             "rows": len(a_rows), "rejected": a_rej}
+ 
+     b_text = (src / B_FILE).read_text(encoding="utf-8")
+     b_rows, b_rej = parse(b_text, B_ROW, "Ratio Mass")
+-    with open(out / "dataset-b.csv", "w", newline="", encoding="utf-8") as fh:
+-        w = csv.writer(fh)
+-        w.writerow(["ratio", "mass_g", "registry_sign", "units", "relation_to_dataset_a",
+-                    "expected_g_from_units", "deviation_pct", "ratio_over_16_equals_units"])
+-        for r in b_rows:
+-            u = units_value(r["units"]); exp = BASE * u
+-            w.writerow([r["ratio"], r["mass"], r["sign"], r["units"], r["relation"], round(exp, 4),
+-                        pct(float(r["mass"]), exp), abs(int(r["ratio"]) / 16 - u) < 1e-9])
++    if not b_rows:
++        refused.append("dataset-b.csv")
++    else:
++        with open(out / "dataset-b.csv", "w", newline="", encoding="utf-8") as fh:
++            w = csv.writer(fh)
++            w.writerow(["ratio", "mass_g", "registry_sign", "units", "relation_to_dataset_a",
++                        "expected_g_from_units", "deviation_pct", "ratio_over_16_equals_units"])
++            for r in b_rows:
++                u = units_value(r["units"]); exp = BASE * u
++                w.writerow([r["ratio"], r["mass"], r["sign"], r["units"], r["relation"], round(exp, 4),
++                            pct(float(r["mass"]), exp), abs(int(r["ratio"]) / 16 - u) < 1e-9])
+     report["files"]["B"] = {"sha256": hashlib.sha256(b_text.encode()).hexdigest(),
+                             "rows": len(b_rows), "rejected": b_rej}
++    report["not_written_zero_rows"] = refused
+     (out / "dataset-check.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+     print(json.dumps({k: {"rows": v["rows"], "rejected": len(v["rejected"])} for k, v in report["files"].items()}))
++    if refused:
++        sys.exit(f"0 rows parsed, not written (existing files left as they were): {refused}")
+ 
+ 
+ if __name__ == "__main__":
