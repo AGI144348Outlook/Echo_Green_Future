@@ -1,0 +1,50 @@
+diff --git a/Business/ideas/F-001-tam-build/listing_check.py b/Business/ideas/F-001-tam-build/listing_check.py
+index 002186e..be679e0 100644
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -28,6 +28,10 @@ sha256 equals pdf-report.json's "sha256", or equals pdf-fix.json's "dst_sha256"
+ where that record's "src_sha256" equals pdf-report.json's "sha256" (written by
+ PROPOSED-pdf_fix.py). A stale or unrelated PDF in the folder is a FAIL, so the
+ page count checked above is the count of the file actually delivered.
++Also with --terms (§74): every delivered *.epub must be the EPUB epub_check.py
++checked, i.e. its sha256 equals epub-report.json's "sha256", that report has no
++FAIL result, and its "bytes" equals build-report.json's epub "bytes" (so the
++checked file is the one build.py wrote). A stale or unrelated EPUB is a FAIL.
+ Without --terms the output is unchanged.
+ """
+ import csv, json, re, sys, zipfile, zlib
+@@ -109,6 +113,26 @@ def check_pdf_identity(out, note):
+              f"{f.name}: sha256 {h[:12]} matches neither pdf-report.json nor a pdf-fix.json of it")
+ 
+ 
++def check_epub_identity(out, note):
++    """§74: with --terms, a delivered EPUB must be the one build.py wrote and epub_check.py passed."""
++    import hashlib
++    rp, bp = out / "epub-report.json", out / "build-report.json"
++    rep = json.loads(rp.read_text(encoding="utf-8")) if rp.exists() else {}
++    built = json.loads(bp.read_text(encoding="utf-8")).get("epub") if bp.exists() else None
++    built_bytes = built.get("bytes") if isinstance(built, dict) else None
++    failed = [r for r in rep.get("results", []) if r.get("level") == "FAIL"]
++    for f in sorted(out.glob("*.epub")):
++        h = hashlib.sha256(f.read_bytes()).hexdigest()
++        if h != rep.get("sha256"):
++            note(False, f"{f.name}: sha256 {h[:12]} is not the EPUB in epub-report.json")
++        elif failed or not rep.get("results"):
++            note(False, f"{f.name}: epub-report.json has {len(failed)} FAIL (or no results)")
++        elif rep.get("bytes") != built_bytes:
++            note(False, f"{f.name}: {rep.get('bytes')} bytes, build-report.json says {built_bytes}")
++        else:
++            note(True, f"{f.name}: sha256 {h[:12]} is the checked build EPUB ({built_bytes} bytes)")
++
++
+ def main(listing, out, terms=None):
+     text = Path(listing).read_text(encoding="utf-8")
+     low, out = text.lower(), Path(out)
+@@ -155,6 +179,7 @@ def main(listing, out, terms=None):
+         check_build_report(out, note)
+         check_local_paths(out, note)
+         check_pdf_identity(out, note)
++        check_epub_identity(out, note)
+ 
+     for p in passes: print("PASS", p)
+     for f in fails: print("FAIL", f)
