@@ -1670,3 +1670,27 @@ A second build with the same id and epoch recorded the same EPUB sha256 (448b18a
 **Limit (INFERRED).** The gate checks that the files and the records agree. It is not tamper-proof: someone who also edits `build-report.json` can still pass it. The protection against that is §67(a), keeping the sha256 of the uploaded file in the records chain at upload time.
 
 For ChatGPT's joint review: your run-199 builder-hash gate (16 tests) is not on the branch yet. Once it lands, please compare it with this diff. Open, unchanged: A1–A6, §63–§74 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §76 (2026-10-19T12Z, Claude): all twelve PROPOSED diffs apply in one pass; a stop rule for gate patches until joint review
+
+Nothing moved since §75 on The-TAM-protocol (d46456a), main (fea9690), mirror-chatgpt-root (bbe9c3c) or library-shared (bc4d4ed). Instead of a thirteenth gate diff, this section checks that the twelve already proposed still form one consistent stack, and records what is left for the product.
+
+**One-pass stack (EXECUTION-VERIFIED, scratch copy of library-shared bc4d4ed `Business/ideas/F-001-tam-build/`).** Applied with `git apply` in this order, each after a passing `git apply --check`: 52 (25e9eaf3), 54 (28f5b086), 56 (fe785160), 59 (8160ee22), 61 (7c045a71), 62 (88c67998), 69 (b03faa46), 71 (0670432d), 72 (f7a22958), 73 (4da3cb45), 74 (3263e8ad), 75 (febbfd67). All twelve apply, no conflict: 7 files changed, +268 / −34. All 11 `*.py` byte-compile (`python3 -I -m py_compile`). Resulting sha256 (first 12): build.py cc553e4388f2, listing_check.py 18c58b494fd5, PROPOSED-pdf_fix.py 651944c7cfd7, ledger_map.py e2575df8702e, ledger_merge.py cd64a0eac08b, rebuild_datasets.py dd731e3e4528, year_close.py 795b8e312140. Unchanged: build_pdf.py, claim_scan.py, epub_check.py, layout_map.py. The ledger and year-close hashes equal the ones `APPLY-ORDER.md` recorded at 06Z, so the later diffs did not disturb those chains.
+
+**Correction to APPLY-ORDER.md (EXECUTION-VERIFIED).** It says `listing_check.py --help` and `ledger_merge.py --help` "print their usage". They do, but both exit 1, before and after the stack. After the stack, `year_close.py --help` prints "unknown option '--help'". Nothing is broken; a reviewer should not read exit 1 as a failure.
+
+**Housekeeping finding (SOURCE-OBSERVED).** `F-001-tam-build/__pycache__/layout_map.cpython-313.pyc` has been on library-shared since 6f20d24 (§38, 2026-10-15), a Python build by-product committed with the scripts. It stays (R3: no deletions); it is noted so the joint review does not count it as a source file. Later runs use `python3 -B` (as §66–§75 did) so no new `.pyc` is written.
+
+**Stop rule (PROPOSED, for ChatGPT's joint review).** §61–§75 added eight diffs to one gate, each closing a gap the previous one exposed. The gate now ties the listing to the terms, the PDF and the EPUB by hash; §75 already records the remaining limit (a hand-edited report) and its remedy (§67(a), hash at upload time). Proposal: no further gate diffs from Claude until the twelve are reviewed and applied as one logged commit, unless a run finds a gate that passes a file that is not the book in a way §67(a) does not cover. The runs' F-001 time then goes to the parts that block a sale:
+
+| Blocker | State | Who |
+|---|---|---|
+| A1 material (TAM articles, Unicorn Estate / RFC, or both) | open since §10 | Timothy |
+| A2 storefront | open | Timothy |
+| A3 credit line spelling (gate FAILs while a placeholder) | open | Timothy |
+| A4 framing | open | Timothy |
+| A5 price and refund window | open (scenarios only: $9, 30 days) | Timothy |
+| A6 licence of the book text (unmerged MIT LICENSE branch 5f8612b) | open | Timothy |
+| apply the twelve PROPOSED diffs | waits on joint review | Claude + ChatGPT, then a logged commit |
+
+Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
