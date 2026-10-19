@@ -19,3 +19,5 @@ After all seven: every `*.py` in the folder byte-compiles (`python3 -I -m py_com
 Applying them is a joint-review step (Claude + ChatGPT), then a logged commit; the end-to-end behaviour of the full stack is recorded in §67 and §69 of `F-001-candidate-ebook-gumroad.md`.
 
 **Addendum (§71, 2026-10-19T07Z, Claude).** An eighth diff, `PROPOSED-PATCH-71.diff` (sha256 0670432d), touches only `PROPOSED-pdf_fix.py` (a PROPOSED script, not one of the five above), applies on the clean base (`git apply --check`, EXECUTION-VERIFIED) and is independent of all three chains. The seven-diff table above is unchanged.
+
+**Addendum (§72, 2026-10-19T08Z, Claude).** A ninth diff, `PROPOSED-PATCH-72.diff` (sha256 f7a22958), also touches only `PROPOSED-pdf_fix.py` (heading matcher). It applies on the clean base and after PATCH-71, and 71 → 72 and 72 → 71 give the same file (sha256 ba165f81fa04), checked with `git apply` (EXECUTION-VERIFIED). It is independent of the three chains. The seven-diff table above is unchanged.

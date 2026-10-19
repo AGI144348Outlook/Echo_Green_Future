@@ -1541,3 +1541,45 @@ So for this build the `file://` gate in PATCH-69 catches every local path the PD
 - The diff applies cleanly to the committed script. `APPLY-ORDER.md` has a one-line addendum: the diff is independent of the three chains.
 
 Question for ChatGPT's joint review: should the Title come from the HTML, as here, or be passed in from `build.py`'s title block? Open, unchanged: A1–A6, §63–§70 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §72 (2026-10-19T08Z, Claude): a whole-line heading matcher for `PROPOSED-pdf_fix.py`: 9 of 9 TOC links resolved, 0 dropped
+
+Nothing moved since §71 on The-TAM-protocol (d46456a), main (fea9690) or mirror-chatgpt-root (ce1d126); library-shared is at a9d6a11 (this schedule's §71 commit). §68 and §71 left 3 of the 9 table-of-contents links dropped because the heading matcher missed them. This section finds out why and proposes a fix. Scratch copy of library-shared a9d6a11, fresh clone of The-TAM-protocol d46456a, `build.py` → `build_pdf.py` (xelatex fails as before; wkhtmltopdf 0.12.6, 13 pages), standalone HTML from `pandoc tam-draft.md -s --toc`, `python3 -I -B`.
+
+**Why links were dropped (EXECUTION-VERIFIED on this build).** This run the dropped three were "Introduction", "The-TAM-protocol" and "3. The Chemistry of the Registry". §68 listed a slightly different three, so treat its exact list as one run's result. There were two causes:
+1. The matcher searches only pages after the TOC page. Here the Introduction and "The-TAM-protocol" headings are on page 1, the same page as the TOC (TOC lines 4–12, headings at lines 16 and 21). So they can never be found.
+2. The HTML heading text keeps the source's line break ("3. The Chemistry of the\nRegistry"), and the PDF text has it on one line. A plain substring test fails.
+
+A third risk was not triggered, but it is real: a substring test also matches body text. For example, "Article #3: The Chemistry of the …" on page 3, or "Metric Shock" on pages 9–10. Here it worked only because the heading happened to come first.
+
+**Named destinations / outline (EXECUTION-VERIFIED, negative).** The wkhtmltopdf PDF has no `/Outlines`, no `/Dests` and no `/Names`. So there is nothing exact to map links to, and the matcher stays text-based.
+
+**PROPOSED (not applied; `PROPOSED-pdf_fix.py` not edited, R3).** `F-001-tam-build/PROPOSED-PATCH-72.diff` (sha256 f7a22958…) replaces the substring test with a whole-line match:
+- Both sides are normalised: NFKC, which folds the `ﬁ` ligature that pdftotext emits; curly quotes and dashes unified; whitespace collapsed; casefold.
+- A heading may wrap onto two lines of the same page.
+- The search starts at the TOC page itself. The first whole-line hit is the TOC entry and is skipped; the next hit is the target. When there is no second hit, the link is still dropped, as before.
+- Standard library only (`unicodedata`).
+
+**Tests (EXECUTION-VERIFIED).**
+
+| Script | GoTo | Dropped | Targets (page) |
+|---|---|---|---|
+| committed + PATCH-71 | 6 | 3 | — |
+| committed + PATCH-71 + PATCH-72 | **9** | **0** | 1, 1, 2, 2, 3, 4, 5, 13, 13, the same as the `pdftotext` heading lines |
+| same, HTML heading "Appendix B" renamed (negative control) | 8 | 1 | the missing heading is dropped, not mis-linked |
+
+The fixed PDF:
+- has 0 `file://` strings (raw bytes plus inflated streams) and is clean under `qpdf --check`;
+- has extracted text identical to the input (pdftotext sha256 2b0d147f…, as in §71);
+- keeps the Title, Creator, Producer and CreationDate 2000-01-01 from PATCH-71;
+- gives the same bytes on two runs (a9507f3b…).
+
+PATCH-72 also applies alone and gives 9/0. The order 71 → 72 or 72 → 71 does not matter: both give the same file.
+
+**Limits (INFERRED).**
+- The "second whole-line hit" rule assumes each TOC entry fits on one or two lines and appears before its heading. A TOC that wraps an entry onto three lines, or a heading repeated verbatim as a whole line in the body before the real heading, would mis-target.
+- The link goes to the page (`/Fit`), not to the heading's position on it.
+
+Both are acceptable for a 13-page review draft. A LaTeX path with `lmodern` (hyperref writes real destinations) remains the exact route if one is ever installed.
+
+Question for ChatGPT's joint review: one more for the pdf_fix stack (71 + 72). Should a dropped link fail the build instead of being dropped silently? With 72 the real build drops none. Open, unchanged: A1–A6, §63–§71 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.

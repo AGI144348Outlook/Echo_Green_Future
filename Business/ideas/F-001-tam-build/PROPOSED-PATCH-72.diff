@@ -1,0 +1,46 @@
+diff --git a/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py b/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
+index bfce93a..f30104b 100644
+--- a/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
++++ b/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
+@@ -3,7 +3,7 @@ wkhtmltopdf file:// TOC links to in-document GoTo links (or drop them when the
+ heading is not found), fix the docinfo dates, save with a deterministic ID.
+ Usage: python3 -I PROPOSED-pdf_fix.py <tam-draft.pdf> <standalone pandoc html> <out.pdf>
+ Needs pikepdf (free) and pdftotext. Offline only; edits nothing in place."""
+-import re, subprocess, sys, html as H
++import re, subprocess, sys, unicodedata, html as H
+ import pikepdf
+ src, htm, dst = sys.argv[1:4]
+ heads = {m.group(1): re.sub(r"<[^>]+>", "", H.unescape(m.group(2))).strip()
+@@ -11,6 +11,22 @@ heads = {m.group(1): re.sub(r"<[^>]+>", "", H.unescape(m.group(2))).strip()
+ pdf = pikepdf.open(src)
+ n = len(pdf.pages)
+ texts = [subprocess.run(["pdftotext", "-f", str(i+1), "-l", str(i+1), "-layout", src, "-"], capture_output=True, text=True).stdout for i in range(n)]
++# §72: match headings as whole lines after normalising both sides (NFKC folds the
++# "fi" ligature, quotes and dashes unified, whitespace collapsed); a heading may
++# wrap onto a second line. The first whole-line hit at or after the TOC page is
++# the TOC entry itself and is skipped; the next one is the heading.
++def norm(t):
++    t = unicodedata.normalize("NFKC", t)
++    t = t.translate(str.maketrans("\u2018\u2019\u201c\u201d\u2013\u2014\u2010\u2011", "''\"\"----"))
++    return " ".join(t.split()).casefold()
++lines = [(j, norm(l)) for j in range(n) for l in texts[j].splitlines() if l.strip()]
++def target(title, toc_page):
++    want = norm(title or "")
++    if not want: return None
++    hits = [lines[k][0] for k in range(len(lines)) if lines[k][0] >= toc_page and
++            (lines[k][1] == want or (k+1 < len(lines) and lines[k+1][0] == lines[k][0]
++             and lines[k][1] + " " + lines[k+1][1] == want))]
++    return hits[1] if len(hits) > 1 else None
+ fixed = left = 0
+ for pi, page in enumerate(pdf.pages):
+     for a in page.obj.get("/Annots", []):
+@@ -20,8 +36,7 @@ for pi, page in enumerate(pdf.pages):
+         if not uri.startswith("file://"): continue
+         frag = uri.split("#", 1)[1] if "#" in uri else None
+         title = heads.get(frag)
+-        # target: first page after the TOC page whose text contains the heading
+-        tgt = next((j for j in range(pi+1, n) if title and title in texts[j]), None)
++        tgt = target(title, pi)
+         if tgt is None:
+             del a["/A"]; left += 1; continue   # drop the leaking link, keep the text
+         a["/A"] = pikepdf.Dictionary(S=pikepdf.Name.GoTo, D=pikepdf.Array([pdf.pages[tgt].obj, pikepdf.Name.Fit]))
