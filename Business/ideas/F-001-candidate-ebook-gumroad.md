@@ -1694,3 +1694,27 @@ Nothing moved since §75 on The-TAM-protocol (d46456a), main (fea9690), mirror-c
 | apply the twelve PROPOSED diffs | waits on joint review | Claude + ChatGPT, then a logged commit |
 
 Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §77 (2026-10-19T13Z, Claude): Gumroad's own pages re-read for the fee and payout rows — platform fee confirmed, processing still UNVERIFIED, two new record risks from the Terms
+
+Nothing moved since §76 on The-TAM-protocol (d46456a), main (fea9690), mirror-chatgpt-root (bbe9c3c) or library-shared (a659681). Following §76's stop rule, no gate diff; this run re-reads the platform's own pages for the rows §31–§34 left UNVERIFIED. Read 2026-10-19 ~13:05Z with a text fetcher (no JavaScript, no sign-in).
+
+| Row | What Gumroad's own page says | Source | State |
+|---|---|---|---|
+| Direct-sale fee | "Direct sales: 10% + 50¢ per sale, $0 monthly." | [gumroad.com/pricing](https://gumroad.com/pricing) (undated) | SOURCE-OBSERVED, unchanged from §4/§30 |
+| Discover fee | "Discover marketplace sales: 30%." | same | SOURCE-OBSERVED, unchanged |
+| Payout methods | "How we pay creators, whether through direct deposit or PayPal, varies by country." | same | SOURCE-OBSERVED; no fee amount |
+| Card / PayPal processing rate | Fees article body still renders client-side; the readable meta text says the 10% + $0.50 "does not include: Credit card processing PayPal fees" and is cut off there | [help article 66](https://gumroad.com/help/article/66-gumroads-fees); `help.gumroad.com/article/13-getting-paid` now 302-redirects to the help index | **still UNVERIFIED** (only third-party 2.9% + $0.30, §31) |
+| Fees on refund | Not stated in the Terms; Terms §8.1: "all purchases through the Platform are final" except as set out there | [Terms](https://gumroad.com/terms), "Last Updated: September 14, 2026" | not settled; §34's third-party quote stands, UNVERIFIED |
+| Chargebacks | Terms §7.1(a): the seller reimburses refunded monies "as well as for any other reasonable costs incurred by Gumroad in resolving these requests" | Terms | SOURCE-OBSERVED; no amount |
+
+**New, from the Terms (SOURCE-OBSERVED; the fetcher read the first 100,000 of ~114,000 characters, so later sections were not read):**
+
+1. **Reserve.** §11.3(b) lets Gumroad "hold in reserve an amount equal to 25% of Supplier's funds pending settlement" (the triggering conditions are in the surrounding text, not re-quoted here). INFERRED effect on records: a payout can be smaller than the month's net sales without any fee; `ledger_map.py` must not book the difference as a fee. PROPOSED (records note, no code): a `reserve_held` note column in the monthly reconciliation, filled only from a real payout report.
+2. **Payout-method change can forfeit money.** §11.4: when the payout country or method changes to one needing a different connected account, "any unpaid amount that cannot be transferred is forfeited when the change takes effect." This bears on decision-sheet **C1** (payout method): choose it once before the first sale and do not change it with a balance outstanding. This is a reading of the Terms, not legal advice.
+3. **Indirect tax on fees.** §10.7: Gumroad Fees "are exclusive of any applicable Indirect Tax." INFERRED: in some places tax may be added on top of the fee itself; whether that applies to a US seller is a question for **C4** (Timothy's tax preparer), not assumed.
+4. **Terms date.** Last updated 2026-09-14 (effective 2025-01-01). §11.1: fee changes apply "only after the changes are posted". Records should store the Terms date next to each month's fee rate.
+
+**Effect on §9.4:** unchanged — the processing rate and payout fees still need Gumroad's rendered help text or a real payout report. The cost tables (§12, §31) keep their labelled 2.9% + $0.30 scenario.
+
+Questions for Timothy: none new; C1 now carries the forfeiture note. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
