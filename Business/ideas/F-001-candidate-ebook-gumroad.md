@@ -1382,3 +1382,26 @@ Nothing moved since §62 on The-TAM-protocol (d46456a), library-shared (745fd69)
 - `RFC Collection` (Google Doc, editable, last edited 2026-06-26 per §14) was not opened this run; it may be the cleaner source. Next F-001 step for (b), if Timothy wants it: read its headings only and compare its numbering with the three above.
 
 New question for Timothy (under A1): if (b) goes ahead, which numbering is canonical, and is `RFC Collection` or the PDF the text to edit from? Open, unchanged: A1–A6. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §64 (2026-10-19T00Z, Claude): `RFC Collection` read for structure — a different series (MASHET RFC 23–46), not the Unicorn Estate RFC-0000…0016 text
+
+Nothing moved since §63 on library-shared (6e21237) or main (fea9690); mirror-chatgpt-root moved to 3777f75 (GPT run 188, status files only). This run took the §63 "next" step: `RFC Collection`'s headings, compared with the three numberings in the §63 table.
+
+**What was read.** The Google Doc `RFC Collection` (the §14 row; created 2026-05-16, last modified 2026-06-26), fetched as plain text into a scratch folder (223,151 characters, 13,325 lines, ~19,500 words) and scanned in full **for structure only**: top-level headings, the first non-blank line under each, every RFC number it mentions, and conversation markers. No prose is quoted and nothing from it is committed. Facts below are EXECUTION-VERIFIED (heading and regex scan over 100% of the text) unless marked.
+
+**Findings.**
+1. 11 top-level sections, numbered **23, 31, 32, 33, 34, 36, 40, 41, 44, 45, 46** (titled ones: 31 "Kabbalah Dependency Graph" (sic in the doc), 34 "Gamma", 36 "Trigonometries", 40 "Ontological Differentiation Framework (ODF)", 44 "Taxonomic Field Classifiers (TFC)", 45 "Stratified Semantic Mountains (SSM)", 46 "Recursive Harmonic Ontology (RHO)"). Numbers 24–30, 35, 37–39 and 42–43 are mentioned or absent but have no section of their own.
+2. Five sections (23, 31, 32, 33, 34) open with an IETF-style "MASHET WORKING GROUP" header block with an author byline; 31 is labelled `MASHET-RFC-0031`. The doc cites RFC 2119 (keyword conventions) three times.
+3. **No RFC number from 0 to 22 appears anywhere in the doc.** The lowest is 23. So it shares no number with any of the three Unicorn Estate numberings in §63 (0000–0016).
+4. Sections 36 and 45 open with second-person commentary addressed to the author, and the doc contains 2 more such markers. INFERRED: it is partly assistant-drafted, like the PDF (§63 finding 2).
+
+**Corrections to earlier sections (append-only, the old text stays).**
+- §14 row "RFC Collection — editable source of the RFC series" is wrong for the series that §11/§63 mean. It is the editable source of a **separate MASHET RFC series (23–46)**.
+- §14 step 1's default proposal ("edit from `RFC Collection`") does not hold for shape (b) as §63 defines it. `RFC Collection` cannot supply the RFC-0000…0016 text.
+
+**What this means (PROPOSED).**
+- A1(b) "Unicorn Estate / RFC" now names two distinct bodies of work: (b1) the Unicorn Estate RFC-0000…0016 series, whose only source found so far is the PDF (three numberings, §63); (b2) the MASHET RFC 23–46 series in `RFC Collection` (one consistent numbering, IETF-style headers, gaps). (b2) is structurally closer to editable: one numbering and real section headers. Both still need an extraction and disclosure pass (§63 (ii)/(iii)).
+- Two other §14 rows may hold the missing pieces and were **not opened**: `LHEA_TEMA_RFC_Series_v1.0-2.docx` (34 KB) and `RFC Mashet` (28 KB). Next step for (b), if Timothy wants it: headings only of those two, to see whether either carries RFC-0000…0022 or the gaps in 23–46.
+- The A1 default stays (a) TAM: §62's gate passes end to end; (b1) and (b2) are both editing projects (INFERRED). No script change proposed; the existing chain serves either once an edited Markdown text is registered (R3).
+
+New question for Timothy (under A1): does "Unicorn Estate / RFC" mean the RFC-0000…0016 series (PDF), the MASHET 23–46 series (`RFC Collection`), or both as one book? Open, unchanged: A1–A6 and §63's numbering question. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
