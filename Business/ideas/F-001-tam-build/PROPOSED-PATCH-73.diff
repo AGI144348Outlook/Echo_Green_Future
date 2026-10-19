@@ -1,0 +1,64 @@
+diff --git a/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py b/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
+index f30104b..dbdae17 100644
+--- a/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
++++ b/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
+@@ -48,4 +48,12 @@ if mt: pdf.docinfo["/Title"] = " ".join(re.sub(r"<[^>]+>", "", H.unescape(mt.gro
+ for k in ("/CreationDate", "/ModDate"):
+     if k in pdf.docinfo: pdf.docinfo[k] = "D:20000101000000Z"
+ pdf.save(dst, deterministic_id=True, compress_streams=True, object_stream_mode=pikepdf.ObjectStreamMode.generate)
++# §73: record which build PDF this file was made from, so the gate (and the records
++# chain, §67(a)) can tie the delivered file to build_pdf.py's pdf-report.json.
++import hashlib, json, os
++sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
++rec = {"src": os.path.basename(src), "src_sha256": sha(src), "dst": os.path.basename(dst),
++       "dst_sha256": sha(dst), "pages": n, "goto": fixed, "dropped": left}
++open(os.path.join(os.path.dirname(os.path.abspath(dst)), "pdf-fix.json"), "w",
++     encoding="utf-8").write(json.dumps(rec, indent=2))
+ print({"pages": n, "goto": fixed, "dropped": left})
+diff --git a/Business/ideas/F-001-tam-build/listing_check.py b/Business/ideas/F-001-tam-build/listing_check.py
+index b7aeb5f..002186e 100644
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -23,6 +23,11 @@ build-report.json (from build.py) must exist and list no missing source file.
+ Also with --terms (§69): no delivered *.pdf or *.epub may contain a file:// URI
+ (wkhtmltopdf writes the builder's local path into TOC links, §68); PDF streams
+ are inflated before the search, so a compressed annotation is still found.
++Also with --terms (§73): every delivered *.pdf must be the build's PDF, i.e. its
++sha256 equals pdf-report.json's "sha256", or equals pdf-fix.json's "dst_sha256"
++where that record's "src_sha256" equals pdf-report.json's "sha256" (written by
++PROPOSED-pdf_fix.py). A stale or unrelated PDF in the folder is a FAIL, so the
++page count checked above is the count of the file actually delivered.
+ Without --terms the output is unchanged.
+ """
+ import csv, json, re, sys, zipfile, zlib
+@@ -88,6 +93,22 @@ def check_local_paths(out, note):
+              else f"{f.name}: no file:// URIs")
+ 
+ 
++def check_pdf_identity(out, note):
++    """§73: with --terms, a delivered PDF must be (a fix of) the PDF build_pdf.py reported."""
++    import hashlib
++    rep = out / "pdf-report.json"
++    built = json.loads(rep.read_text(encoding="utf-8")) if rep.exists() else {}
++    fix = out / "pdf-fix.json"
++    fixed = json.loads(fix.read_text(encoding="utf-8")) if fix.exists() else {}
++    ok = {built.get("sha256")} - {None}
++    if fixed.get("src_sha256") and fixed.get("src_sha256") == built.get("sha256"):
++        ok.add(fixed.get("dst_sha256"))
++    for f in sorted(out.glob("*.pdf")):
++        h = hashlib.sha256(f.read_bytes()).hexdigest()
++        note(h in ok, f"{f.name}: sha256 {h[:12]} is the reported build" if h in ok else
++             f"{f.name}: sha256 {h[:12]} matches neither pdf-report.json nor a pdf-fix.json of it")
++
++
+ def main(listing, out, terms=None):
+     text = Path(listing).read_text(encoding="utf-8")
+     low, out = text.lower(), Path(out)
+@@ -133,6 +154,7 @@ def main(listing, out, terms=None):
+         check_terms(low, json.loads(Path(terms).read_text(encoding="utf-8")), note)
+         check_build_report(out, note)
+         check_local_paths(out, note)
++        check_pdf_identity(out, note)
+ 
+     for p in passes: print("PASS", p)
+     for f in fails: print("FAIL", f)
