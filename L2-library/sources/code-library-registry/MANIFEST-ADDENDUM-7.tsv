@@ -1,0 +1,6 @@
+# Addendum 7 to MANIFEST.tsv of branch: code-library-registry @ a82a5d1
+# Head moved 4e7862d -> a82a5d1 (one commit by echo-dataset-crawler, "Datasets: crawler run 2026-10-19T11:47Z"). Paths added at a82a5d1 and absent from MANIFEST.tsv and ADDENDUM-1..6: 3 (one new zenodo record pair, one stored 31-byte data file). Changed files (INDEX.md x2, state/*.json x3, three re-fetched huggingface record pairs) keep their earlier rows, as in ADDENDUM-5/6. Earlier rows are not changed. Checks (EXECUTION-VERIFIED): zenodo 14517344 raw sha256 equals provenance.checksum; the data file's sha256 equals the sha256 in its record's files[] entry (source published no checksum). The crawler stored 0 large files (both zenodo zips skipped: larger than 10 MB / file budget reached), consistent with R4.
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	f9b64965b92c13b743297574411c79d9e2318cbf	4000	Datasets/catalog/zenodo/14517344/record.json
+KEPT	0c9edfcdf4d2a48c83c2042afef1aaa9ae49ccb7	2169	Datasets/catalog/zenodo/14517344/record.raw.json.gz
+KEPT	0975153bca6a5c27e91698adcc899f8bc1a8916f	31	Datasets/files/huggingface/harborframework_terminal-bench-science-lfs/cmb-cross-inference_input_posterior_case_ids.json
