@@ -1,0 +1,57 @@
+diff --git a/Business/ideas/F-001-tam-build/listing_check.py b/Business/ideas/F-001-tam-build/listing_check.py
+index 67bc2ee..b7aeb5f 100644
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -20,9 +20,12 @@ Usage: python3 -I listing_check.py <listing.md> <out-dir> [--terms=<terms.json>]
+ the price, and the "within N days" refund line must equal refund_days.
+ Optional "articles" (§62): the "N articles" line must equal it. With --terms,
+ build-report.json (from build.py) must exist and list no missing source file.
++Also with --terms (§69): no delivered *.pdf or *.epub may contain a file:// URI
++(wkhtmltopdf writes the builder's local path into TOC links, §68); PDF streams
++are inflated before the search, so a compressed annotation is still found.
+ Without --terms the output is unchanged.
+ """
+-import csv, json, re, sys
++import csv, json, re, sys, zipfile, zlib
+ from pathlib import Path
+ 
+ FORBIDDEN = [  # wording §15.2 / §21.3 rule out (case-insensitive)
+@@ -61,6 +64,30 @@ def check_build_report(out, note):
+          else f"build included {len(r.get('source_files', {}))} source files, none missing")
+ 
+ 
++def leaks(data):
++    """§69: count file:// URIs in raw bytes plus every Flate stream that inflates."""
++    found = data.count(b"file://")
++    for m in re.finditer(rb"stream\r?\n", data):
++        try:
++            found += zlib.decompressobj().decompress(data[m.end():m.end() + 4_000_000]).count(b"file://")
++        except zlib.error:
++            pass
++    return found
++
++
++def check_local_paths(out, note):
++    """§69: with --terms, a file that carries the builder's local path must not be listed."""
++    files = sorted(out.glob("*.pdf")) + sorted(out.glob("*.epub"))
++    for f in files:
++        if f.suffix == ".epub":
++            with zipfile.ZipFile(f) as z:
++                n = sum(z.read(i).count(b"file://") for i in z.namelist())
++        else:
++            n = leaks(f.read_bytes())
++        note(n == 0, f"{f.name}: {n} file:// URI(s) (local build path; run PROPOSED-pdf_fix.py)" if n
++             else f"{f.name}: no file:// URIs")
++
++
+ def main(listing, out, terms=None):
+     text = Path(listing).read_text(encoding="utf-8")
+     low, out = text.lower(), Path(out)
+@@ -105,6 +132,7 @@ def main(listing, out, terms=None):
+     if terms is not None:
+         check_terms(low, json.loads(Path(terms).read_text(encoding="utf-8")), note)
+         check_build_report(out, note)
++        check_local_paths(out, note)
+ 
+     for p in passes: print("PASS", p)
+     for f in fails: print("FAIL", f)

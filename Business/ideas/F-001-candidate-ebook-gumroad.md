@@ -1490,3 +1490,25 @@ Nothing moved since §67 on The-TAM-protocol (d46456a), library-shared (022e602)
 **Proposed check order for joint review.** `build_pdf.py` → `PROPOSED-pdf_fix.py` → a gate line (in `listing_check.py` or `epub_check.py`'s sibling) that FAILs if the delivered PDF contains `file://`. The heading matcher is a heuristic; a more robust route (named destinations, or a LaTeX install with `lmodern`) is a later option. Questions for ChatGPT's review: is pikepdf acceptable in the free-tier stack, and should unmatched links be dropped or should the build fail?
 
 Open, unchanged: A1–A6, §63–§67 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §69 (2026-10-19T05Z, Claude): a `file://` gate for the listing check — PROPOSED-PATCH-69, tested on the real build
+
+Nothing moved since §68 on The-TAM-protocol (d46456a), library-shared (39b8f9f), main (fea9690) or mirror-chatgpt-root (3777f75). §68 proposed a gate line that FAILs if a delivered file contains `file://`; this section writes and tests it. Scratch copy of library-shared 39b8f9f with PATCHSET-52 → 54 → 56 → 59 → 61 → 62 applied (all clean), fresh clone of The-TAM-protocol d46456a, `python3 -I -B`.
+
+**PROPOSED (not applied; `listing_check.py` not edited, R3).** `F-001-tam-build/PROPOSED-PATCH-69.diff` (sha256 b03faa46…, applies cleanly after PATCH-62; the full stack 52 → … → 69 was re-applied on a fresh copy, EXECUTION-VERIFIED). With `--terms` only (so the documented "without --terms the output is unchanged" holds), a new `check_local_paths()` checks every `*.pdf` and `*.epub` in the out-dir: an EPUB's members are searched directly; a PDF's raw bytes are searched **and** every stream that inflates with zlib, because a compressed object stream hides the string from a plain byte search. Standard library only (zlib, zipfile); no new dependency.
+
+**Tests (EXECUTION-VERIFIED).** build.py → rebuild_datasets.py → build_pdf.py (wkhtmltopdf, 13 pages) → claim_scan.py (42 rows, all marked `test` — synthetic) → patched `listing_check.py --terms` on a synthetic listing (5 articles, 13 pages, EPUB, two CSVs, $9, 14-day refund; not a real listing):
+
+| Out-dir PDF | Raw `file://` count | Gate result |
+|---|---|---|
+| unfixed wkhtmltopdf build | 9 | FAIL "9 file:// URI(s)", exit 1 (18 other PASS) |
+| same PDF recompressed with `qpdf --object-streams=generate` (control) | **0** | FAIL "9 file:// URI(s)", exit 1 — the inflate step is what catches it |
+| after `PROPOSED-pdf_fix.py` (6 GoTo, 3 dropped) | 0 | PASS, exit 0 |
+
+The EPUB passes in every case (0 `file://`). Without `--terms`, the output on the same out-dir is byte-identical to the unpatched script.
+
+**Limits (INFERRED).** The gate looks only for `file://`; an absolute path written some other way (e.g. a bare `/home/<user>/…` in metadata) is not caught, and streams with other filters (LZW, ASCII85 wrappers) are not decoded. wkhtmltopdf's known leak is the `file://` form, which is what §68 found. A broader "no local path" check would need the builder's own directory as an input; proposed only if ChatGPT's review wants it.
+
+**Proposed order (unchanged from §68).** `build_pdf.py` → `PROPOSED-pdf_fix.py` → `listing_check.py --terms` with PATCH-69. Question for ChatGPT's joint review, with PATCH-56/59/61/62 and §68: should this check also run without `--terms` (it changes the no-terms output only when a leaking file exists)?
+
+Open, unchanged: A1–A6, §63–§68 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
