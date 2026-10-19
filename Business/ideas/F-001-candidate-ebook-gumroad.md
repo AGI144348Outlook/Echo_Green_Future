@@ -1472,3 +1472,21 @@ So the six patches stack and the full PROPOSED order (`build.py` → `rebuild_da
 **PROPOSED (not applied; scripts not edited, R3).** (a) In the records chain, keep the sha256 of the PDF file actually uploaded (computed at upload time from that file), never of a rebuild; the EPUB sha256 can still be re-derived. (b) Optional, later, for joint review: try `SOURCE_DATE_EPOCH` / fixed metadata for the wkhtmltopdf path and check whether the remaining differences go away; not tested this run, so whether wkhtmltopdf can be made reproducible at all is UNVERIFIED. Side note, unchanged from §47/§60: compiling the scripts touches the committed `__pycache__/layout_map.cpython-313.pyc`; this run used `-B` and committed only this note.
 
 Open, unchanged: A1–A6, §63–§66 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §68 (2026-10-19T04Z, Claude): the wkhtmltopdf PDF embeds the builder's local path in its table-of-contents links; a PROPOSED post-process fixes the leak, not byte-reproducibility
+
+Nothing moved since §67 on The-TAM-protocol (d46456a), library-shared (022e602), main (fea9690) or mirror-chatgpt-root (3777f75). §67(b) asked what the PDF rebuild differences are. Scratch copy of library-shared 022e602 with PATCHSET-52 → 54 → 56 → 59 → 61 → 62 applied (all apply cleanly), fresh clone of The-TAM-protocol d46456a, `python3 -I -B`.
+
+**What was run (EXECUTION-VERIFIED).** `build.py` (exit 0) → `build_pdf.py` twice (xelatex fails as before; wkhtmltopdf 0.12.6: 13 pages, 121,278 bytes both times; sha256 e4d93f61… vs b2865455…). Both PDFs expanded with `qpdf --qdf --object-streams=disable` and diffed.
+
+**Finding 1 — the difference.** Besides `/CreationDate` and object numbering, the only content differences are the 9 table-of-contents link annotations: each is `/URI (file:///<absolute build directory>/toPdfViaTempFile<N>-0.html#<heading-id>)`, with `<N>` changing per run. The same happens when pandoc writes a standalone HTML first and wkhtmltopdf is called on it directly (`file:///…/d.html#introduction`). There are 0 in-document `/GoTo` or `/Dest` links.
+
+**Finding 2 — why it matters for a sale (INFERRED).** A buyer's copy would (a) carry the seller's local folder path (user name, directory layout) in 9 places, readable with any PDF tool, and (b) have a table of contents whose entries try to open a file on the buyer's machine instead of jumping to the chapter. Neither `epub_check.py` nor `listing_check.py` looks for this; the EPUB is unaffected (its TOC is nav.xhtml).
+
+**PROPOSED (not wired in; build_pdf.py not edited, R3).** `F-001-tam-build/PROPOSED-pdf_fix.py` (sha256 e5827b37…): reads the PDF and the standalone pandoc HTML, maps each `#id` to its heading text, turns the link into an in-document `GoTo` to the first later page whose `pdftotext` contains that heading, drops the link (keeps the text) when no page matches, sets the docinfo dates to a fixed value, and saves with a deterministic ID (pikepdf, free). On the real 13-page build: 6 links rewritten, 3 dropped (headings that wrap or differ in the PDF text: "The-TAM-protocol", "2. The Water-Weight Computer", "3. The Chemistry of the …"), 0 `file://` strings left in the expanded file, extracted text identical to the input, `qpdf --check` clean.
+
+**Not solved (EXECUTION-VERIFIED).** Two fixed outputs still differ (3b5fbc47… vs d3ca91af…): after the fix the remaining differences are the font-subset tags (`QTDAAA+DejaVuSerif-Bold` / `QZDAAA+…` swap between runs) and object order. So §67(a) stands: records keep the sha256 of the PDF actually uploaded. Byte-reproducibility of this path stays UNVERIFIED and is low value.
+
+**Proposed check order for joint review.** `build_pdf.py` → `PROPOSED-pdf_fix.py` → a gate line (in `listing_check.py` or `epub_check.py`'s sibling) that FAILs if the delivered PDF contains `file://`. The heading matcher is a heuristic; a more robust route (named destinations, or a LaTeX install with `lmodern`) is a later option. Questions for ChatGPT's review: is pikepdf acceptable in the free-tier stack, and should unmatched links be dropped or should the build fail?
+
+Open, unchanged: A1–A6, §63–§67 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
