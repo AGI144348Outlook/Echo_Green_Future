@@ -1431,3 +1431,22 @@ Nothing moved since §64 on library-shared (6f8e0fb), main (fea9690) or mirror-c
 - The A1 default stays (a) TAM; (b3) is the cleanest candidate for option (c) "second product".
 
 New question for Timothy (under A1): is the LHEA/TEMA five-spec series (b3) part of what you meant by "the RFC material", and may it be a second, short product? Open, unchanged: A1–A6, §63's numbering question, §64's series question. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §66 (2026-10-19T02Z, Claude): (b3) delivery path — the EPUB gate is source-agnostic; build.py and claim_scan.py are TAM-wired
+
+Nothing moved since §65 on library-shared (019c41a), main (fea9690) or mirror-chatgpt-root (3777f75). This run took half of the §65 "next" step: can the existing chain carry (b3) LHEA/TEMA without a script change?
+
+**What was run (EXECUTION-VERIFIED, scratch only, nothing committed from it).**
+1. A synthetic Markdown skeleton with the (b3) shape from §65 (five top-level specs, each opening with a header table, 70 numbered sections in total, placeholder text only; no LHEA/TEMA prose) was converted with the exact pandoc call `build.py` uses (`pandoc <md> -o <epub> --toc`, pandoc 3.1.3).
+2. `epub_check.py <scratch> <scratch>/b3.epub` (unmodified, library-shared 019c41a): **0 FAIL, 2 WARN, exit 0**. Header tables, nav and the 5-chapter spine pass; the two WARNs are the known opt-in ones (no cover, §25; no schema:* accessibility metadata, §26). So the store-facing EPUB gate needs no change for (b3).
+3. Not done: a real docx → Markdown conversion of `LHEA_TEMA_RFC_Series_v1.0-2.docx`. The Drive connector returned the file only as inline base64 that this run could not write to disk without re-typing it, so the conversion fidelity (tables, footnotes, comments part present in the docx) stays UNVERIFIED. The docx container does list `word/comments.xml`, `footnotes.xml` and `endnotes.xml` parts (SOURCE-OBSERVED from the zip directory, contents not read): an editing pass should check whether Word comments carry review notes before conversion.
+
+**What is TAM-wired (SOURCE-OBSERVED, scripts not edited).**
+- `build.py`: `ORDER`, `DUP_ONLY`, `DATASETS` and `TITLE` (lines 22–33) name TAM files; output names are `tam-draft.*`.
+- `claim_scan.py`: `FILES` (line 21) lists the eight TAM files.
+- `epub_check.py`: only the default file name `tam-draft.epub` and the placeholder pattern (which rejects a title containing "tam-draft"); an explicit epub path works, as run above.
+- `listing_check.py`: TAM-shaped only in its docstring here; its `--terms` keys from §61/§62 are generic.
+
+**PROPOSED (not applied).** If Timothy picks (b3) as a second product (A1(c)): add one optional `--source-map <json>` argument to `build.py` and `claim_scan.py` holding `{title, order:[[heading, file]...], dup_only:[], datasets:[]}`, defaulting to today's TAM constants so every existing TAM run and hash stays identical. That is a race-contract-sized change for joint review with ChatGPT, after the five pending patches (52 → 54 → 56 → 59 → 61/62), not before. Until then (b3) can be built by hand with the same pandoc call and gated with `epub_check.py <dir> <file>`.
+
+Product shape note for (b3) (INFERRED, unchanged from §65): a short technical monograph, EPUB + PDF, priced below TAM; free-tier stack, refund window and records chain as for TAM (§21, §56–§62). Open, unchanged: A1–A6, §63's numbering question, §64's series question, §65's (b3) question. New sub-question (under A1): if (b3) goes ahead, should Word comments in the docx be kept as editorial notes or dropped in the edit? Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
