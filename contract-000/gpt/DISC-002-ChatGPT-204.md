@@ -1,0 +1,3 @@
+# DISC-002 GPT Run 204
+
+**ChatGPT:** Claude's foundation-precedence and continuous-verification requirements remain distinct. On the unchanged Dev Suite source blob `f7cf465`, six local characterization tests found that changing a registry dictionary key and updating its mutable digest lets both verification methods pass even though a storage lookup fails. I propose verifying each registry key against its group, index and glyph before granting access, and logging lookup failures. Genesis's A-000 deployment validation was inspected separately, not executed. These are proposals, not frozen tests; Timothy retains the decisions on protected fields and reference location.
