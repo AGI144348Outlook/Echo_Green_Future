@@ -1,0 +1,60 @@
+diff --git a/Business/ideas/F-001-tam-build/build.py b/Business/ideas/F-001-tam-build/build.py
+index ede8da6..e2ff223 100644
+--- a/Business/ideas/F-001-tam-build/build.py
++++ b/Business/ideas/F-001-tam-build/build.py
+@@ -7,7 +7,7 @@ into an output directory OUTSIDE any repository:
+   dataset-a.csv, dataset-b.csv   the two tables as CSV, only if they are delimited tables
+   tam-draft.epub   if pandoc is installed (pandoc is free software); optional
+                    F001_BOOK_ID/SOURCE_DATE_EPOCH (§24), F001_COVER (§25), F001_A11Y (§26)
+-  build-report.json  word counts, duplicate-sentence and chapter-repeat checks (§28, line check §29), file fingerprints
++  build-report.json  word counts, duplicate-sentence and chapter-repeat checks (§28, line check §29), file fingerprints (EPUB sha256 since §75)
+ 
+ It never edits the source, sells, uploads or contacts anything. The output is a
+ review draft for Timothy, not a product: the editorial pass (§15.2 status marks
+@@ -197,8 +197,12 @@ def main(src, out):
+                         data = data.replace(b"</metadata>", a11y_xml.encode("utf-8") + b"\n</metadata>", 1)
+                     dst.writestr(info, data)
+             tmp.replace(ep)
++        ep_bytes = (out / "tam-draft.epub").read_bytes() if r.returncode == 0 else None
++        # §75: record the EPUB's sha256 too, so the listing gate can tie the delivered
++        # file to this build by hash (bytes alone let a same-size substitute through).
+         report["epub"] = {"returncode": r.returncode, "stderr": r.stderr[-500:],
+-                          "bytes": (out / "tam-draft.epub").stat().st_size if r.returncode == 0 else None}
++                          "bytes": len(ep_bytes) if ep_bytes is not None else None,
++                          "sha256": hashlib.sha256(ep_bytes).hexdigest() if ep_bytes is not None else None}
+     else:
+         report["epub"] = "pandoc not installed; skipped"
+     (out / "build-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+diff --git a/Business/ideas/F-001-tam-build/listing_check.py b/Business/ideas/F-001-tam-build/listing_check.py
+index be679e0..5cc9811 100644
+--- a/Business/ideas/F-001-tam-build/listing_check.py
++++ b/Business/ideas/F-001-tam-build/listing_check.py
+@@ -32,6 +32,9 @@ Also with --terms (§74): every delivered *.epub must be the EPUB epub_check.py
+ checked, i.e. its sha256 equals epub-report.json's "sha256", that report has no
+ FAIL result, and its "bytes" equals build-report.json's epub "bytes" (so the
+ checked file is the one build.py wrote). A stale or unrelated EPUB is a FAIL.
++§75: the build tie is by hash: build-report.json's epub "sha256" (written by
++build.py since §75) must equal the delivered EPUB's sha256; a build-report
++without it is a FAIL (rebuild), since a same-size substitute passed on bytes.
+ Without --terms the output is unchanged.
+ """
+ import csv, json, re, sys, zipfile, zlib
+@@ -120,6 +123,7 @@ def check_epub_identity(out, note):
+     rep = json.loads(rp.read_text(encoding="utf-8")) if rp.exists() else {}
+     built = json.loads(bp.read_text(encoding="utf-8")).get("epub") if bp.exists() else None
+     built_bytes = built.get("bytes") if isinstance(built, dict) else None
++    built_sha = built.get("sha256") if isinstance(built, dict) else None
+     failed = [r for r in rep.get("results", []) if r.get("level") == "FAIL"]
+     for f in sorted(out.glob("*.epub")):
+         h = hashlib.sha256(f.read_bytes()).hexdigest()
+@@ -129,6 +133,10 @@ def check_epub_identity(out, note):
+             note(False, f"{f.name}: epub-report.json has {len(failed)} FAIL (or no results)")
+         elif rep.get("bytes") != built_bytes:
+             note(False, f"{f.name}: {rep.get('bytes')} bytes, build-report.json says {built_bytes}")
++        elif not built_sha:
++            note(False, f"{f.name}: build-report.json has no epub sha256 (rebuild with build.py §75)")
++        elif h != built_sha:
++            note(False, f"{f.name}: sha256 {h[:12]} is not the EPUB build.py wrote ({built_sha[:12]})")
+         else:
+             note(True, f"{f.name}: sha256 {h[:12]} is the checked build EPUB ({built_bytes} bytes)")
+ 
