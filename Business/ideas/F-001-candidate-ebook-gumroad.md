@@ -1718,3 +1718,44 @@ Nothing moved since §76 on The-TAM-protocol (d46456a), main (fea9690), mirror-c
 **Effect on §9.4:** unchanged — the processing rate and payout fees still need Gumroad's rendered help text or a real payout report. The cost tables (§12, §31) keep their labelled 2.9% + $0.30 scenario.
 
 Questions for Timothy: none new; C1 now carries the forfeiture note. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §78 (2026-10-19T14Z, Claude): a monthly payout reconciliation sheet — the records half of §77's reserve note
+
+Nothing moved since §77 on The-TAM-protocol (d46456a), main (fea9690), mirror-chatgpt-root (bbe9c3c) or library-shared (99930d7). §76's stop rule holds: no gate diff, no script edit. This run drafts the records-only piece §77 item 1 proposed, so that a payout smaller than net sales is never booked as a fee.
+
+### 78.1 The sheet (PROPOSED; kept privately next to the ledger, never in a public repository)
+
+One row per calendar month per platform. Every figure comes from a real export or payout report (SOURCE-OBSERVED) or stays empty and is named under `missing`; nothing is estimated (`ledger/SCHEMA.md`).
+
+| Column | Filled from | Meaning |
+|---|---|---|
+| `month` | — | YYYY-MM |
+| `terms_date` | the platform's Terms page | "Last Updated" date in force that month (§77 item 4) |
+| `net_sales` | `ledger-month.json` `net` (from `ledger_map.py`) | gross − fees for sales and refunds dated that month |
+| `reserve_held` | payout report | amount the platform held back this month (§77 item 1); empty if the report shows none |
+| `reserve_released` | payout report | earlier reserve paid out this month |
+| `payout_fees` | payout report | fee charged on the transfer itself, if any (still UNVERIFIED, §9.4) |
+| `payout_amount` | payout report / bank statement | what actually arrived |
+| `unexplained` | computed | `net_sales − reserve_held + reserve_released − payout_fees − payout_amount` |
+| `missing` | — | names of empty source figures |
+| `payout_method` | — | method in force; a change with a balance outstanding is the §77 item 2 forfeiture risk |
+
+Rule: `unexplained` must be 0.00. If it is not, or any input is missing, the month stays **open** and is listed for Timothy; nothing is written to the ledger to make it balance. Reserve amounts are not income or expense rows: they are timing, and the ledger keeps them as notes only (asset/liability treatment of a held reserve is a question for C4, Timothy's tax preparer).
+
+### 78.2 Worked check (SYNTHETIC numbers, labelled scenario; not a forecast)
+
+Scenario inputs: $9 price; platform fee 10% + $0.50 (SOURCE-OBSERVED, §77); processing 2.9% + $0.30 rounded per sale to $0.56 (UNVERIFIED third-party rate, §31); a 25% reserve in month 1 released in month 2 (the §11.3(b) percentage, applied here only to test the arithmetic); payout fee empty (UNVERIFIED); refund fee treatment taken as "no fee returned" (scenario only, §34).
+
+| Month | Events | net_sales | reserve_held | reserve_released | payout_amount | unexplained |
+|---|---|---|---|---|---|---|
+| M1 | 3 sales | 27.00 − 4.20 − 1.68 = **21.12** | 5.28 | 0.00 | 15.84 | **0.00** |
+| M2 | 1 sale, 1 refund of an M1 sale | 7.04 − 9.00 = **−1.96** | 0.00 | 5.28 | 3.32 | **0.00** |
+
+Arithmetic EXECUTION-VERIFIED with Python `Decimal` this run. Both months still stay **open** under 78.1 because `payout_fees` is missing — which is the point: the sheet shows what a real payout report must supply before a month can close. Without the `reserve_held` column, M1 would show a $5.28 gap that a careless entry would book as a fee, overstating expenses; M2 would show a $5.28 surplus.
+
+### 78.3 Where it fits
+
+- `ledger_map.py` already writes `ledger-month.json`; the sheet reads its `net` and adds the payout-side columns by hand from Timothy's private reports. No code change proposed (stop rule); a later joint review may add a `reconcile` step.
+- `year_close.py` should count a month as closed only when its `unexplained` is 0.00 and `missing` is empty. PROPOSED wording for the joint review, not a diff.
+
+Questions for Timothy: none new (C1 payout method and C4 tax treatment already carry these). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
