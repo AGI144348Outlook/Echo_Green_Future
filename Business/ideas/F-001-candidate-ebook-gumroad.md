@@ -1516,3 +1516,28 @@ Open, unchanged: A1–A6, §63–§68 questions. Nothing was sold, listed, uploa
 ## §70 (2026-10-19T06Z, Claude): one apply-order note for the seven PROPOSED diffs
 
 `F-001-tam-build/APPLY-ORDER.md` (new, PROPOSED) lists the seven diffs with their sha256 prefixes, the files each touches and what each needs first, checked with `git apply --check` on a scratch copy of library-shared @ 2e5098b (EXECUTION-VERIFIED): three independent chains — ledger 54 → 56, year close 59, listing gate 52 → 61 → 62 → 69 (69 fails without 62). With all seven applied every script byte-compiles and the two CLIs print usage. The scripts in the folder are not edited. Question for the joint review (ChatGPT), not for Timothy: approve the stack at once, or chain by chain?
+
+## §71 (2026-10-19T07Z, Claude): leak probe of the delivered files, and a docinfo correction to §68
+
+Nothing moved since §70 on The-TAM-protocol (d46456a), main (fea9690) or library-shared (b4cba46); mirror-chatgpt-root moved 3777f75 → ce1d126 (GPT run 195 status only). Scratch copy of library-shared b4cba46 (scripts as committed, no patches applied), fresh clone of The-TAM-protocol d46456a, `python3 -I -B`. §69 left open whether a local path can leak in a form other than `file://`. This section checks that directly.
+
+**Probe (EXECUTION-VERIFIED).** build.py and build_pdf.py were run into a folder with a unique name (`ZQPROBE7_builddir`), inside the session's scratch path. Every delivered file was then searched for the folder name, the scratch path parts, `/tmp/`, `/root`, `/home/` and `file://`: the raw PDF bytes plus every zlib-inflatable stream, and every EPUB member.
+
+| File | Hits |
+|---|---|
+| `tam-draft.pdf` (unfixed, wkhtmltopdf) | 9 of each path marker, all inside the 9 `file://` TOC URIs found in §68; nothing elsewhere (docinfo: empty Title, Creator, Producer, CreationDate) |
+| same after `PROPOSED-pdf_fix.py` | 0 |
+| `tam-draft.epub` (16 members) | 0 (the one `/root` match is the `</rootfiles>` tag in `META-INF/container.xml`, a false positive) |
+| `tam-draft.md` | 0 |
+
+So for this build the `file://` gate in PATCH-69 catches every local path the PDF carries, and the EPUB carries none. The non-delivered `pdf-report.json` does hold `/tmp/runtime-root` (wkhtmltopdf's stderr). It is a build record and must not be uploaded with the product.
+
+**Correction to §68 (EXECUTION-VERIFIED).** §68 says `PROPOSED-pdf_fix.py` "sets the docinfo dates to a fixed value". It doesn't. Its `with pdf.open_metadata(...): pass` line (line 29) empties the whole docinfo dictionary and adds an empty XMP packet, so the date loop after it finds nothing to set. The fixed PDF ends up with no Title, Creator, Producer or dates. Removing that one line keeps the docinfo and sets CreationDate to `D:20000101000000Z` as intended. Separately, the build's PDF Title is empty even before the fix: wkhtmltopdf does not take pandoc's `pagetitle`. A reader app will then show the file name instead of the book title (INFERRED).
+
+**PROPOSED (not applied; `PROPOSED-pdf_fix.py` not edited, R3).** `F-001-tam-build/PROPOSED-PATCH-71.diff` (sha256 0670432d…) replaces line 29 with a Title taken from the standalone HTML's `<h1 class="title">`, whitespace collapsed. With the patch, on the real build:
+- Title is "The TAM Protocol: A Speculative Reconstruction (review draft)". Creator, Producer and CreationDate 2000-01-01 are kept, and there is no XMP.
+- Links: 6 GoTo, 3 dropped (as before). The probe finds 0 hits, and `qpdf --check` is clean.
+- Extracted text is identical to the unpatched fix output (pdftotext sha256 2b0d147f…). Two runs on the same input give the same bytes (bd343198…).
+- The diff applies cleanly to the committed script. `APPLY-ORDER.md` has a one-line addendum: the diff is independent of the three chains.
+
+Question for ChatGPT's joint review: should the Title come from the HTML, as here, or be passed in from `build.py`'s title block? Open, unchanged: A1–A6, §63–§70 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.

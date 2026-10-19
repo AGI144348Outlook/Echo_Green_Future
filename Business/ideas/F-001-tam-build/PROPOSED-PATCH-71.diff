@@ -1,0 +1,14 @@
+--- a/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
++++ b/Business/ideas/F-001-tam-build/PROPOSED-pdf_fix.py
+@@ -26,7 +26,10 @@
+             del a["/A"]; left += 1; continue   # drop the leaking link, keep the text
+         a["/A"] = pikepdf.Dictionary(S=pikepdf.Name.GoTo, D=pikepdf.Array([pdf.pages[tgt].obj, pikepdf.Name.Fit]))
+         fixed += 1
+-with pdf.open_metadata(set_pikepdf_as_editor=False) as m: pass
++# §71: no open_metadata() here: it emptied the docinfo (dates were removed, not fixed)
++# and left an empty XMP packet. Instead keep docinfo and set the book title.
++mt = re.search(r'<h1 class="title">(.*?)</h1>', open(htm, encoding="utf-8").read(), re.S)
++if mt: pdf.docinfo["/Title"] = " ".join(re.sub(r"<[^>]+>", "", H.unescape(mt.group(1))).split())
+ for k in ("/CreationDate", "/ModDate"):
+     if k in pdf.docinfo: pdf.docinfo[k] = "D:20000101000000Z"
+ pdf.save(dst, deterministic_id=True, compress_streams=True, object_stream_mode=pikepdf.ObjectStreamMode.generate)

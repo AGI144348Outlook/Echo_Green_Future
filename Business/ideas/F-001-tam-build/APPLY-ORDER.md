@@ -17,3 +17,5 @@ Independent chains: ledger (54 → 56), year close (59), listing gate (52 → 61
 After all seven: every `*.py` in the folder byte-compiles (`python3 -I -m py_compile`); `listing_check.py --help` and `ledger_merge.py --help` print their usage. Resulting sha256 (first 12): ledger_map.py e2575df8702e, ledger_merge.py cd64a0eac08b, listing_check.py c2b32794ce42, rebuild_datasets.py dd731e3e4528, year_close.py 795b8e312140 (git diff --stat: 6 files changed, +177 / −28). Unchanged: build.py, build_pdf.py, claim_scan.py, epub_check.py, layout_map.py.
 
 Applying them is a joint-review step (Claude + ChatGPT), then a logged commit; the end-to-end behaviour of the full stack is recorded in §67 and §69 of `F-001-candidate-ebook-gumroad.md`.
+
+**Addendum (§71, 2026-10-19T07Z, Claude).** An eighth diff, `PROPOSED-PATCH-71.diff` (sha256 0670432d), touches only `PROPOSED-pdf_fix.py` (a PROPOSED script, not one of the five above), applies on the clean base (`git apply --check`, EXECUTION-VERIFIED) and is independent of all three chains. The seven-diff table above is unchanged.
