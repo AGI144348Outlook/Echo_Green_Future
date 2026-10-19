@@ -1450,3 +1450,25 @@ Nothing moved since §65 on library-shared (019c41a), main (fea9690) or mirror-c
 **PROPOSED (not applied).** If Timothy picks (b3) as a second product (A1(c)): add one optional `--source-map <json>` argument to `build.py` and `claim_scan.py` holding `{title, order:[[heading, file]...], dup_only:[], datasets:[]}`, defaulting to today's TAM constants so every existing TAM run and hash stays identical. That is a race-contract-sized change for joint review with ChatGPT, after the five pending patches (52 → 54 → 56 → 59 → 61/62), not before. Until then (b3) can be built by hand with the same pandoc call and gated with `epub_check.py <dir> <file>`.
 
 Product shape note for (b3) (INFERRED, unchanged from §65): a short technical monograph, EPUB + PDF, priced below TAM; free-tier stack, refund window and records chain as for TAM (§21, §56–§62). Open, unchanged: A1–A6, §63's numbering question, §64's series question, §65's (b3) question. New sub-question (under A1): if (b3) goes ahead, should Word comments in the docx be kept as editorial notes or dropped in the edit? Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §67 (2026-10-19T03Z, Claude): the whole listing chain with all six PROPOSED patches and a real PDF — passes; the PDF is not byte-reproducible
+
+Nothing moved since §66 on The-TAM-protocol (d46456a), library-shared (e953069), main (fea9690) or mirror-chatgpt-root (3777f75). §62 ran the gate end to end without a PDF, so its page-count line was not exercised with every terms check on. This run closed that gap. Scratch copy of library-shared e953069, `python3 -I -B`, nothing committed but this note.
+
+**What was run (EXECUTION-VERIFIED).**
+1. PROPOSED-PATCHSET-52 → 54 → 56 → 59 → 61 → 62 applied in order with `git apply` (diff sha256 prefixes 25e9eaf3, 28f5b086, fe785160, 8160ee22, 7c045a71, 88c67998, all as recorded); patched `listing_check.py` sha256 b05036d7… as in §62.
+2. On a fresh clone of The-TAM-protocol d46456a: `build.py` (exit 0; 6 source files, none missing) → `rebuild_datasets.py` (exit 0; A 6 rows, B 8 rows, 0 rejected) → `build_pdf.py` (xelatex fails on the missing `lmodern.sty` as in §50; wkhtmltopdf: **13 pages, 121,260 bytes**, same as §50) → `epub_check.py` (0 FAIL, 2 known opt-in WARN) → `claim_scan.py` (42 rows).
+3. All 42 claim rows given a synthetic `test` status (scratch only; the real marks are Timothy's). Synthetic listing: the §21.1 text with placeholders filled by test values (13 pages, 9 articles, $9, 30 days; credit line a dummy). `terms.json` = `{"price": 9, "refund_days": 30, "articles": 9}`.
+
+| Case | Result | Exit |
+|---|---|---|
+| listing as above, `--terms` | 18 PASS, 0 FAIL (placeholders, wording, page count 13 = 13, claims 0/42 open, CSVs, EPUB, price, refund window, article count, build-report) | **0** |
+| same, "about 40 pages" | FAIL page count: listing 40, build 13 (only FAIL) | 1 |
+
+So the six patches stack and the full PROPOSED order (`build.py` → `rebuild_datasets.py` → `build_pdf.py` → `claim_scan.py` → [Timothy's marks] → `listing_check.py --terms`) reaches a passing gate on the public source with a real PDF.
+
+**Finding (EXECUTION-VERIFIED).** Running `build_pdf.py` twice on the same build gives PDFs of the same size and the same extracted text (`pdftotext`, `cmp`), but different bytes: sha256 310fd2fd… then 45940cd5…; 40,208 bytes differ, including `/CreationDate` (20 s apart). The EPUB was made byte-reproducible earlier (opt-in id/epoch); the PDF is not. Consequence (INFERRED): a PDF sha256 identifies one build run, not a source commit, so a rebuild cannot later confirm "this is the file that was sold".
+
+**PROPOSED (not applied; scripts not edited, R3).** (a) In the records chain, keep the sha256 of the PDF file actually uploaded (computed at upload time from that file), never of a rebuild; the EPUB sha256 can still be re-derived. (b) Optional, later, for joint review: try `SOURCE_DATE_EPOCH` / fixed metadata for the wkhtmltopdf path and check whether the remaining differences go away; not tested this run, so whether wkhtmltopdf can be made reproducible at all is UNVERIFIED. Side note, unchanged from §47/§60: compiling the scripts touches the committed `__pycache__/layout_map.cpython-313.pyc`; this run used `-B` and committed only this note.
+
+Open, unchanged: A1–A6, §63–§66 questions. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
