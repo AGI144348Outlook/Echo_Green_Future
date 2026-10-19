@@ -1405,3 +1405,29 @@ Nothing moved since §63 on library-shared (6e21237) or main (fea9690); mirror-c
 - The A1 default stays (a) TAM: §62's gate passes end to end; (b1) and (b2) are both editing projects (INFERRED). No script change proposed; the existing chain serves either once an edited Markdown text is registered (R3).
 
 New question for Timothy (under A1): does "Unicorn Estate / RFC" mean the RFC-0000…0016 series (PDF), the MASHET 23–46 series (`RFC Collection`), or both as one book? Open, unchanged: A1–A6 and §63's numbering question. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §65 (2026-10-19T01Z, Claude): `LHEA_TEMA_RFC_Series_v1.0-2.docx` read for structure — a third, self-consistent RFC series (LHEA-001…004 + TEMA-001)
+
+Nothing moved since §64 on library-shared (6f8e0fb), main (fea9690) or mirror-chatgpt-root (3777f75). This run took the §64 "next" step: headings only of the two unopened §14 rows.
+
+**What was read.** `LHEA_TEMA_RFC_Series_v1.0-2.docx` (the §14 row; 34,420 bytes, created/modified 2026-06-26), fetched as text through the Drive connector into scratch (49,041 characters, 788 lines, ~7,160 words) and scanned in full **for structure only**: spec identifiers, the title/subtitle lines under each, the header-table Status and Relation fields, numbered-heading count, and second-person markers. No prose is quoted beyond titles and nothing from it is committed. Facts are EXECUTION-VERIFIED (regex scan over 100% of the text) unless marked. `RFC Mashet` was **not found** by an exact-title Drive search this run (only the docx matched `title contains 'LHEA_TEMA_RFC' or title = 'RFC Mashet'`); it stays unopened.
+
+**Findings.**
+1. Five specifications, each opening with its identifier and a header table (RFC, Status, Date, Author, Organization, Relation):
+   | ID | Title / subtitle | Status | Relation (summarised) |
+   |---|---|---|---|
+   | RFC-LHEA-001 | Latin-Hebrew Execution Architecture / Foundational Architecture Specification | Published v1.0 | root specification |
+   | RFC-LHEA-002 | Instruction Set Architecture and Kernel Memory Integration / Execution Engine Specification | Draft v1.0 | supplements 001; prerequisite for 003, 004 |
+   | RFC-LHEA-003 | The LHEA Translation Pipeline / Natural Language to Executable Ontology | Draft v1.0 | supplements 001, 002 |
+   | RFC-LHEA-004 | Lattice-Core Unity / LHEA and TEMA as a Unified Substrate | Draft v1.0 | supplements 001–003; read with TEMA-001 |
+   | RFC-TEMA-001 | Toroidal Eigenvalue Memory Architecture / A Topological Framework for Scope-Aware AI Memory | Published v0.1 | memory spec; read with LHEA-004 |
+2. The byline field names Timothy (with his handles) and "Mashet / LHEA Research — Independent". The cross-references form a closed, acyclic dependency order (001 → 002 → 003 → 004 ↔ TEMA-001); every ID referenced is present.
+3. **No bare numeric RFC number appears** (no 0000–0016 and no 23–46), so it overlaps neither the Unicorn Estate numberings (§63) nor the MASHET 23–46 series (§64).
+4. **Zero second-person markers** and no conversation scaffolding; 70 numbered section headings. INFERRED: this is already an edited, document-shaped text, unlike the PDF (§63) and `RFC Collection` (§64). Whether it was assistant-drafted cannot be told from structure; the AI-disclosure question (§21, §63 (iii)) still applies.
+
+**What this means (PROPOSED).**
+- A1(b) now has three candidate bodies: (b1) Unicorn Estate RFC-0000…0016 (PDF only, three numberings); (b2) MASHET RFC 23–46 (`RFC Collection`, gaps); (b3) **LHEA/TEMA five-spec series** (this docx: one naming scheme, complete cross-references, ~7,200 words, no scaffolding). (b3) is the only one that is structurally listable without an extraction pass — a short "technical monograph" product (≈ 25–30 pages) rather than a book (INFERRED from word count).
+- Path for (b3) if Timothy picks it, all under R3 (register first, then edit): convert the docx to Markdown in a repository Timothy chooses → register it → run the existing `build.py` → … → `listing_check.py` chain unchanged (§62 gate). No script change proposed. Price band would sit below (a) TAM, since it is shorter; the A5 default is not changed here.
+- The A1 default stays (a) TAM; (b3) is the cleanest candidate for option (c) "second product".
+
+New question for Timothy (under A1): is the LHEA/TEMA five-spec series (b3) part of what you meant by "the RFC material", and may it be a second, short product? Open, unchanged: A1–A6, §63's numbering question, §64's series question. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
