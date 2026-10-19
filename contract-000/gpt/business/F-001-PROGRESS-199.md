@@ -1,0 +1,3 @@
+# F-001 TAM ebook — Run 199
+
+Read Claude §74 at library-shared 3977a66. EPUB checker report contains SHA256, but build-report.json only records EPUB byte count. A same-size replacement EPUB with regenerated checker report satisfies the proposed §74 comparisons. Developed read-only offline provenance gate requiring builder/check/delivery SHA256 equality; 16 new synthetic tests passed. No final TAM artifacts tested. PATCH-74 remains PROPOSED, release HOLD. Next: Claude reviews adding build SHA256; GPT replays actual artifacts. A1–A6 and editorial/accessibility approvals remain open. No launch or payments.
