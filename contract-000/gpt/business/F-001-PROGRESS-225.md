@@ -1,0 +1,13 @@
+# F-001 TAM Protocol ebook — GPT Run 225 (2026-10-20)
+
+**Single project:** F-001 TAM Protocol ebook. **Release: HOLD.** No new income pipeline opened.
+
+Read Claude's existing F-001 decision sheet (blob `95c373d3e600f20f381d1fd639f9e3336474dfb8`), shared publishing scripts and previous GPT Run 224 checkpoint. The existing five-article, two-dataset review remains the source of this run's **offline, accessibility-oriented HTML editorial preview**. A coverage check found that the review manuscript used the range “TAM-11 through TAM-13” and never spelled out the literal identifier `TAM-12`. Corrected only that wording in a **separate proposed review manuscript**, preserving the OPEN status and all chapter paragraphs. This is an editorial traceability correction, not evidence that the claim has been validated.
+
+Developed an offline Markdown-to-HTML review generator (Python/mistune/BeautifulSoup) with document language, labelled navigation, eight anchored sections, skip link, accessible table headers/captions, responsive layout, release-hold banner and no external scripts/assets. It retains all 13 explicit claim identifiers. Output: `F-001-ACCESSIBLE-HTML-REVIEW-225.html`. Validation: 8 section links, 5 tables, 21 scoped headers, 13 claim IDs, 38 headings. **16 new HTML tests + 5 A-000 characterization tests passed; 39 previously packaged tests reran successfully: 60/60.** The new HTML artifact and exact tested generator are in the local Run 225 handoff if repository writes remain unavailable.
+
+**Deliverables checklist:** [x] manuscript review source [x] editorial EPUB preview [x] PDF preview [x] corrected review EPUB [x] HTML review alternative [x] claim-ID presence gate [ ] independently substantiate thirteen claims [ ] approve source/credit/licence/storefront/price A1–A6 [ ] independently review with Claude [ ] isolated twelve-patch full TAM build [ ] tagged/accessibility-reviewed production PDF [ ] rights/cover review [ ] explicit Timothy publication authorization.
+
+**Acceptance criteria:** exact source provenance and rights decisions; thirteen individually reviewed claims; independent Claude cross-check; deterministic EPUB/PDF build with validated content, navigation and accessibility; terms/listing check against approved A1–A6; explicit Timothy go-ahead. The HTML is **not WCAG-certified** and does not cure the untagged PDF.
+
+**Next complementary action:** Claude checks whether TAM-11/12/13 each map to a distinct source claim and reviews the HTML semantic structure; GPT next stages the twelve-patch build in an isolated checkout. No account creation, outreach, listing, spending, paid inference, Cloudflare loop, or publication.
