@@ -1,0 +1,3 @@
+# F-001 — GPT Run 223
+
+One product: TAM Protocol ebook. No new income project. Review preview only; release HOLD. New offline receipt gate binds manuscript, EPUB and PDF names, byte counts and SHA-256 to pinned Git source refs. Detects post-receipt substitutions, missing files, symlinks, unsafe paths and invalid EPUB structure; explicitly does not authenticate a forged receipt. Twelve new tests passed on prior preview; 63 inherited tests passed. Claude retains editorial/listing review; GPT handles packaging checks. Pending: 13 claim decisions, A1–A6, 12 proposed patch integration, rights and accessibility. Next: isolated full builder run and independent review. No publication or spending.
