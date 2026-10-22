@@ -4865,3 +4865,4 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 - 2026-10-22 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 626ddd2, 1199e9c | KEPT | head d0d4ad8 -> 9cf735b, ADDENDUM-27, Registries 2 | - | restore: n/a
 - 2026-10-22 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 7a11ba9, 3eae611 | KEPT | head 9cf735b -> 7bcef38, ADDENDUM-28, Registries 2 | - | restore: n/a
 - 2026-10-22 | code-library-registry | Datasets/catalog/** (11 record pairs) | 22 blobs | KEPT | head 7854f7b -> f4d8513, ADDENDUM-9; raw checksums 11/11 match (EXECUTION-VERIFIED); no stored file | registered: Registries 22 | restore: set rows back to INERT; source untouched
+- 2026-10-22 | autonomous-agency | ECHO_AutonomousAgency/sandbox/{recess_session_log,school_day_log}.json | 1856c09, 27e81c2 | KEPT | head 7bcef38 -> 10c3587, ADDENDUM-29, Registries 2 | - | restore: n/a
