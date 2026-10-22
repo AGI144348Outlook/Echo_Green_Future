@@ -1,0 +1,104 @@
+{
+  "receipt": "F001-RELEASE-RECEIPT-v0",
+  "status": "DRY RUN — not a release; records only (F-001 §80); no script changed",
+  "source": {
+    "repo": "AGI144348Outlook/The-TAM-protocol",
+    "commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9"
+  },
+  "scripts": {
+    "repo": "AGI144348Outlook/Echo_Green_Future",
+    "branch": "library-shared",
+    "commit": "efe3b9ddb064a08fff49ade911ea2b2f17390264",
+    "git_blobs": {
+      "build.py": "ede8da6f9e33631bd7d329f0ace5a880258fac18",
+      "claim_scan.py": "31f3dcff486c4c8cc96d514eb425da86834d00c3",
+      "listing_check.py": "adc3123c303168650e03270701cd3123afe0ce28"
+    }
+  },
+  "inputs": {
+    "README.md": {
+      "sha256": "cfaffe588d050e4624e541b21b4f544e8cae663f5add791000f6cf980eb6a254",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "Article 1 Hacksilber": {
+      "sha256": "1f467c3dcff8f1b9cc412e3b028bace402711dda5faee072af5c2b476633cff1",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "Article 2 Water Weight Computes": {
+      "sha256": "f1375b64e928cf37d3b585c04ff2d7de75dfa1961091dddede241fbba0e315bc",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "The Color Dyed and Dental Records": {
+      "sha256": "ccdfbc8fd0bfa2ec49a9eaeb884f502e6ecabfa25d4e9eddaf93ba76ad24f785",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "Article 5": {
+      "sha256": "60e8af382d32d06f0d066c300cc644f0d3a5520808042517428934be11cb03f9",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "Article 6": {
+      "sha256": "a8ee3029638f015c204901b1dc31a70e760a485cad876b723a06906842e9c8e8",
+      "in_claims_report": true,
+      "in_build": false,
+      "excluded_reason": "build.py DUP_ONLY: all 22 long sentences covered by 'Collective information' (dup_check.not_in_collective empty)",
+      "hash_source": "claims-report.json only (build.py does not hash an excluded DUP_ONLY file)"
+    },
+    "Article 10": {
+      "sha256": "57af9375be4d9d8859c0ad75a3784f73bc5a511b839a6f7d40c0ca94669ccbbc",
+      "in_claims_report": true,
+      "in_build": false,
+      "excluded_reason": "build.py DUP_ONLY: all 7 long sentences covered by 'Collective information' (dup_check.not_in_collective empty)",
+      "hash_source": "claims-report.json only (build.py does not hash an excluded DUP_ONLY file)"
+    },
+    "Collective information": {
+      "sha256": "9520e92eaf7352767b8ff79217d1976ec358dff93a1d9c7262a306d1643aa17a",
+      "in_claims_report": true,
+      "in_build": true,
+      "hash_source": "build-report.json == claims-report.json"
+    },
+    "Dataset A: The Eshtemoa Inventory (Forensic Weight Distribution)": {
+      "sha256": "48437f58ee74a9a0226d901d1291b6c104764648fe7760ebbc91b74b6ba6a302",
+      "in_claims_report": false,
+      "in_build": "dataset source (build-report.csv records only a status)",
+      "hash_source": "computed by Claude this run; neither script hashes it",
+      "csv_status": "no delimited table found; CSV not written (needs hand-made columns)"
+    },
+    "Dataset_B_Binary_Matrix.md": {
+      "sha256": "bc16da657b19317e110cdcf4159a9118aa89f2cfc4f8183e7e3f1d94f2eb3b81",
+      "in_claims_report": false,
+      "in_build": "dataset source (build-report.csv records only a status)",
+      "hash_source": "computed by Claude this run; neither script hashes it",
+      "csv_status": "no delimited table found; CSV not written (needs hand-made columns)"
+    }
+  },
+  "claims_worksheet": {
+    "sha256_after_signoff": null,
+    "missing": "Timothy has not marked claims.csv (A1); listing_check.py reads only the status column"
+  },
+  "pdf": {
+    "sha256": null,
+    "missing": "not built this run"
+  },
+  "epub": {
+    "sha256": null,
+    "missing": "build.py records size only until PROPOSED-PATCH-75 is applied"
+  },
+  "dataset_csvs": {
+    "sha256": null,
+    "missing": "no CSV written: 'no delimited table found' for both datasets"
+  },
+  "verifier_versions": {
+    "missing": "no script carries a version; git blob SHAs above stand in"
+  },
+  "fail_closed": "any null sha256 or 'missing' key means the receipt is not releasable"
+}

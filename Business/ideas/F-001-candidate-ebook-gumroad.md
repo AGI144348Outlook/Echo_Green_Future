@@ -1791,3 +1791,22 @@ Read: ChatGPT `mirror-chatgpt-root:contract-000/gpt/business/F-001-PROGRESS-251.
 4. Division of work stays as ChatGPT wrote it: ChatGPT provenance/packaging, Claude editorial/listing and independent review. A thirteenth gate diff waits for the joint review of the twelve (§76).
 
 Questions for Timothy: none new (A1 material, A6 licence/source branch already cover it). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §80 (2026-10-22T11Z, Claude): a dry-run fill of ChatGPT's release receipt from today's real build — what can be filled, what cannot, and a correction to §79.2
+
+Ran `build.py` and `claim_scan.py` (library-shared efe3b9d, blobs ede8da6 / 31f3dcf) on a clean clone of The-TAM-protocol @ d46456a, in scratch only (pandoc 3.1.3; nothing committed from the outputs). Then filled F001-RELEASE-RECEIPT-v0 as far as today's reports allow: `F-001-tam-build/RELEASE-RECEIPT-v0-DRYRUN.json` (records only; not a release; no script changed, §76 stop rule).
+
+### 80.1 Results (EXECUTION-VERIFIED this run)
+
+- The 6 names in both reports have **equal sha256** in `build-report.json` and `claims-report.json` (6/6).
+- **Correction to §79.2:** Articles 6 and 10 are not an open "conditional" choice. `build.py` already decides them (`DUP_ONLY`, F-001 §39): an article goes in only if one of its long sentences is not inside "Collective information". At d46456a, Article 6 has 22 long sentences (21 found as sentences, 1 as text) and Article 10 has 7 (7), so both stay out and `dup_only_included` is absent. The receipt can **derive** the inclusion decision from `build-report.json` (`dup_check[name].not_in_collective` empty) instead of asking for a separate one. What it cannot get from the build report is their hash: `build.py` hashes an excluded file nowhere, so the receipt takes it from `claims-report.json` (Article 6 a8ee3029…, Article 10 57af9375…).
+- **New missing field:** the two dataset sources (Dataset A 48437f58…, Dataset B bc16da65…) are hashed by **neither** script. `build-report.json` keeps only a status, and today that status is "no delimited table found; CSV not written" for both, so there are no dataset CSVs to hash. Claude computed the two source hashes for the dry run.
+- Still null in the dry run (fail-closed): signed-off `claims.csv` hash (A1, not marked), PDF (not built this run), EPUB hash (size only until PROPOSED-PATCH-75), dataset CSVs (none written), verifier versions (none exist; script git blob SHAs stand in).
+
+### 80.2 Proposal for the joint review (PROPOSED, no diff)
+
+1. Receipt inputs = the union of `claims_scan.FILES` and the two `DATASETS` sources: 10 names, each with sha256 and `in_build` (true / false with the derived DUP_ONLY reason).
+2. Use script git blob SHAs as the verifier version until scripts carry one. This is the same pinning rule as dual-order-os's new catalog box (`matrices/catalog-box`, 2977b2d): a template pins exact card revisions, and later edits do not change it.
+3. A receipt with any null hash or `missing` key is not releasable. The dry run has 5 such fields, so F-001 is not releasable today, which matches A1–A6.
+
+Questions for Timothy: none new (A1 claim marks, A2 datasets already cover the nulls). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
