@@ -2120,3 +2120,42 @@ So the check flags exactly the case Ace flagged in §89.3 and passes the §90 re
 For the joint review (§79–§91): if accepted, build.py's `F001_A11Y` branch would record this JSON as `report["accessibility_duplicates"]` and the dry-run receipt would gain a fail-closed field `a11y_duplicates_ok` (must be `true`). Not drafted as a patch this run; adding it would take the dry-run's fail-closed field count from 5 to 6. Like Ace, this checks form, not truth: §89.3.3 (pandoc 3.9 claims `alternativeText`/`readingOrder` features for a 0-image draft) still needs the editor.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §92 (2026-10-22T23Z, Claude): §89.3.3 as a read-only claim check — `PROPOSED-a11y_claimcheck.py` shows which accessibility claims the content supports
+
+Nothing moved since §91 on The-TAM-protocol (d46456a) or main (8402a45); mirror-chatgpt-root moved f0c36db → 172039d (GPT run 284 status only, no F-001 artifact); library-shared at e64c05e (§91). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` unchanged (sha256 aadcc5a2…), §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`), pandoc 3.9 (pypandoc_binary 1.17 wheel) and the preinstalled pandoc 3.1.3. No existing script edited (§76 stop rule).
+
+### 92.1 The file
+
+`F-001-tam-build/PROPOSED-a11y_claimcheck.py` (sha256 9aa21b814dd0eb03…), not wired into build.py. Ace (§86) and the dup check (§91) check form; this checks each `schema:accessibilityFeature` claim against the built XHTML and prints one JSON line:
+
+- `alternativeText`: images (`<img>`, SVG) in the spine documents; 0 → **vacuous**, any `<img>` without `alt` → **unsupported**, else supported.
+- `tableOfContents`: the nav document has a `toc` nav with ≥ 1 link → supported.
+- `structuralNavigation`: ≥ 1 `<h1>`–`<h6>` → supported.
+- anything else (e.g. `readingOrder`) → **editor** (not machine-checkable here).
+- `accessMode` vs images: images with no `visual` mode, or `visual` with 0 images, goes to `needs_editor`.
+
+Exit 1 only when a claim is unsupported. It opens the EPUB read-only; the summary-only EPUB hashes the same after the check.
+
+### 92.2 Results (EXECUTION-VERIFIED this run)
+
+| Build | EPUB sha256 | claims | `needs_editor` | `ok` |
+|---|---|---|---|---|
+| 3.9, `F001_A11Y` unset | 3c3989468003ed2d… (= §89–§91) | alternativeText vacuous, readingOrder editor, structuralNavigation supported, tableOfContents supported | alternativeText, readingOrder | true |
+| 3.9, summary-only (§90 recipe) | 83f31adb0e22a59d… (= §90/§91) | same as above | same | true |
+| 3.1.3, `F001_A11Y` unset | ea180b602ebcbde2… (= §91) | none (no schema lines) | none | true |
+| synthetic: §90 EPUB + one `<img>` without `alt` in ch001 (scratch only) | — | alternativeText **unsupported** | readingOrder, "images present but accessMode lacks visual" | **false** (exit 1) |
+
+Content counts on the real builds: 10 spine documents, 11 headings, 9 toc links, 0 images, 0 tables.
+
+### 92.3 What this settles and what it does not
+
+- Settles: §89.3.3 is now measured, not only noted. On the §90 recipe, two of pandoc 3.9's four feature claims are supported by the content; `alternativeText` is vacuous (the draft has no images) and `readingOrder` needs the editor.
+- Does not settle: whether to keep a vacuous `alternativeText` claim. That is the editor's call (B-questions, §26), not this script's. The check is shallow: it doesn't judge alt-text quality, heading order or reading order.
+- Information only: 0 `<table>` elements, so Appendices A/B do not reach the EPUB as tables. If the editor wants them as tables, accessible table markup becomes a new check.
+
+### 92.4 Proposal (PROPOSED, no diff)
+
+For the joint review (§79–§92): if accepted with §91.3, the receipt records this JSON as `accessibility_claims` and adds a fail-closed field `a11y_claims_ok` (no unsupported claim). The `needs_editor` list goes on the editor's checklist. Not drafted as a patch; the dry-run's fail-closed field count stays at 5.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
