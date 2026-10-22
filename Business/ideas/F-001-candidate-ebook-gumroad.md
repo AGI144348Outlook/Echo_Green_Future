@@ -1858,3 +1858,27 @@ All four equal each other and §81's §24-settings hashes. Neither `build-report
 2. `build-report.json` is a second reproducible anchor beside `draft_md.sha256` (§81.2 item 2); PROPOSED: record its sha256 too, so a verifier can compare the whole report in one step.
 
 Count after this section: unchanged from §81 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §83 (2026-10-22T14Z, Claude): §82's open pandoc question answered — another pandoc gives other EPUB bytes but the same chapter text; pandoc 3.9 also writes its own accessibility claims
+
+Nothing moved since §82 on The-TAM-protocol (d46456a), library-shared (2014fd4), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` (blob ede8da6) and `layout_map.py` from library-shared 2014fd4. Second pandoc: the 3.9 binary inside the free `pypandoc_binary` 1.17 wheel (wheel sha256 d6b620b2…), unpacked in scratch and put first on `PATH`; nothing installed system-wide, nothing committed. Same §24 settings as §81–§82 (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`). No script edited (§76 stop rule).
+
+### 83.1 Results (EXECUTION-VERIFIED this run)
+
+| Build | pandoc | `tam-draft.md` | `tam-draft.epub` | bytes | `build-report.json` |
+|---|---|---|---|---|---|
+| a, b | 3.1.3 | c6a27a9e6df46070… | ea180b602ebcbde2… | 29,946 | 2d6236e0898aa20b… |
+| a, b | 3.9 | c6a27a9e6df46070… | 3c3989468003ed2d… | 30,134 | b2356e0b32cb5717… |
+
+- Each pandoc is reproducible with itself (2/2 equal each); 3.1.3 reproduces §81–§82 exactly.
+- Across versions, 12 of 16 EPUB members are byte-equal, including all 8 chapter files and the title page. The 4 that differ are packaging: `content.opf`, `nav.xhtml`, `toc.ncx`, `styles/stylesheet1.css` (3.9 adds `xml:lang="en"`, `role="doc-toc"`, heading anchors in TOC links, and a different reset stylesheet).
+- `build-report.json` differs only in `epub.bytes`. It does not record the pandoc version, so a report alone cannot say which pandoc made it.
+- **Accessibility (new, relevant to §26):** pandoc 3.9 writes 7 `schema:` metadata lines by itself (accessMode textual, accessModeSufficient textual, accessibilityFeature alternativeText / readingOrder / structuralNavigation / tableOfContents, accessibilityHazard none). §26's insert step exists because 3.1.3 dropped such lines. Those 3.9 lines are pandoc's defaults, not claims an editor checked (INFERRED from their being identical with no `F001_A11Y` file given). Not tested: what happens when `F001_A11Y` is also set with 3.9 (duplicate lines are possible).
+
+### 83.2 What this means (PROPOSED, no diff)
+
+1. The receipt must pin the pandoc version (§82.2 item 1, now SOURCE-OBSERVED as needed): `tools.pandoc_version` plus the EPUB hash. A verifier with another version cannot match the EPUB hash.
+2. A version-independent check exists: the sha256 of each chapter member (`EPUB/text/*.xhtml`) matched across 3.1.3 and 3.9. PROPOSED receipt field `epub.text_members` (name → sha256), so a verifier without the pinned pandoc can still confirm the words are the same.
+3. Before any switch to pandoc ≥ 3.9 (none is proposed), the default accessibility claims need an editor's check against the actual book, and the §26 insert step needs a duplicate test. Claims a buyer may rely on should be checked, not inherited from a tool default.
+
+Count after this section: unchanged from §82 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains two fields (`tools.pandoc_version`, `epub.text_members`). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
