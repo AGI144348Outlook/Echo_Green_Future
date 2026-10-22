@@ -1958,3 +1958,41 @@ What Ace adds beyond EPUBCheck (§85, 0 errors):
 3. Receipt field `tools.ace`: version and the serious/moderate counts. Proposed release rule: 0 serious; moderate listed, not hidden. As with §85, a clean Ace run checks the presence and shape of claims, not their truth.
 
 Count after this section: unchanged from §85 (5 fail-closed fields in the dry-run file); the receipt proposal gains `tools.ace`. Questions for Timothy: none new (B6 identifier, cover and summary text, and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §87 (2026-10-22T18Z, Claude): §86.2's mechanical fix tried in scratch — two attribute insertions clear Ace's serious finding and the nav role finding, EPUBCheck stays clean, and the EPUB stays reproducible
+
+Nothing moved since §86 on The-TAM-protocol (d46456a), library-shared (4b64542) or main (8402a45). mirror-chatgpt-root moved to f0c36db (GPT run 278; its Library part 4 lists 7 library-shared paths, all 7 blob SHAs equal library-shared 4b64542, EXECUTION-VERIFIED). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` and `layout_map.py` from library-shared 4b64542, pandoc 3.1.3, §24 settings (TEST-ONLY book id `urn:uuid:00000000-0000-4000-8000-000000000000`, `SOURCE_DATE_EPOCH=1768764429`), `F001_A11Y` = the §86 test file (sha256 9e8c4908…, same bytes). Tools: EPUBCheck 5.1.0 (release zip), Ace by DAISY 1.3.6 via `ace-puppeteer` with the preinstalled Chromium, both in scratch. No script in this branch edited (§76 stop rule); nothing committed but this note.
+
+### 87.1 Results (EXECUTION-VERIFIED this run)
+
+| EPUB | sha256 | EPUBCheck 5.1.0 | Ace 1.3.6 serious | Ace moderate |
+|---|---|---|---|---|
+| build.py output | 4a0ef2ca4997af60… (= §86 row 2) | 0 / 0 / 0 | 1: `epub-lang` | 3: `epub-type-has-matching-role`, `metadata-accessibilitysummary`, `metadata-accessmodesufficient` |
+| same, post-processed (below), twice | ec1c0642f6903fc2… both times | 0 / 0 / 0 | **0** | 2: `metadata-accessibilitysummary`, `metadata-accessmodesufficient` |
+
+- The post-process changed exactly 2 of the zip members (`EPUB/content.opf`, `EPUB/nav.xhtml`); member order is unchanged, `mimetype` is still first and stored, timestamps are copied from the input. Two runs on the same input give the same bytes, so §81–§82 reproducibility holds through the step.
+- Result: `<package xml:lang="en" …>` (value taken from `dc:language`, not hard-coded) and `<nav epub:type="toc" role="doc-toc" id="toc">`. The landmarks nav is left alone (Ace did not flag it).
+- Both remaining findings are metadata only an editor can supply truthfully: the summary is Timothy's text (§26), and `accessModeSufficient` is §86.2 item 2.
+
+### 87.2 The candidate step (PROPOSED; scratch code shown, not added as a file)
+
+```python
+# in: built EPUB, out: new EPUB; copies every member in order with its ZipInfo
+for info in zin.infolist():
+    data = zin.read(info.filename)
+    if info.filename.endswith(".opf"):   # add xml:lang from dc:language to <package>
+        lang = re.search(r"<dc:language>([^<]+)</dc:language>", t).group(1)
+        t = t.replace("<package ", '<package xml:lang="%s" ' % lang, 1)  # only if absent
+    elif info.filename.endswith("nav.xhtml"):  # toc nav gets its ARIA role
+        t = re.sub(r'<nav epub:type="toc"(?![^>]*role=)', '<nav epub:type="toc" role="doc-toc"', t, count=1)
+    zi = ZipInfo(info.filename, date_time=info.date_time); zi.compress_type = info.compress_type
+    zout.writestr(zi, data)
+```
+
+It belongs in the same place as the `F001_A11Y` insert (after pandoc, inside build.py), as a candidate diff for the joint review once the §76 stop rule lifts; `build-report.json` would record that it ran. With pandoc 3.9 (§83) both attributes may already be present; the "only if absent" guards make the step a no-op then (INFERRED, not run with 3.9 this time).
+
+### 87.3 Receipt
+
+`tools.ace` (§86.2) can now be given a target that is reachable without Timothy: 0 serious after this step; the 2 moderate metadata findings stay listed until he supplies the summary and confirms `accessModeSufficient`. A clean Ace run checks the presence and shape of claims, not their truth (as §85–§86).
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
