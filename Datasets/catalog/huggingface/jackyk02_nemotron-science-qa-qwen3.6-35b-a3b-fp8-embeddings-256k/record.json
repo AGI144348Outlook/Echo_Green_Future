@@ -1,0 +1,152 @@
+{
+ "id": "huggingface:jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k",
+ "title": "jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k",
+ "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tScience QA (OpenScienceReasoning-2, Nemotron-RL-Science), state/action embeddings with hard negatives: Qwen3.6-35B-A3B-FP8, 256k context\n\t\n\nTwo NVIDIA science releases as (state, action) embedding pairs from\nQwen/Qwen3.6-35B-A3B-FP8, for post-training contrastive (CLM)\nheads on graduate-level science option choice (GPQA / MMLU-Pro / HLE style) and verified open answers; a\nmultiple-choice item carries its rejected options as hard negatives:\n\nnvidia/OpenScienceReasoning-2 (revision… See the full description on the dataset page: https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "d4e81cd9b6f2314964ceb4d0cd5d115507835985",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-22T00:52:15.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:b8d181c8bfaba9bba0d05d3b64fca19b7d2be0d78bc91bb9543646261e702e16",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-22T13:56:28+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/.gitattributes",
+   "declared_size": 2614,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/README.md",
+   "declared_size": 5139,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/action_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/train/action_embeddings.pt",
+   "declared_size": 6096025251,
+   "declared_checksum": "sha256:a8aa51ff07cd1e7d7101beb109f42c5980413ac74aaee3ebf43de8ae36d3d752",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/metadata.json",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/train/metadata.json",
+   "declared_size": 783648395,
+   "declared_checksum": "sha256:e204a547287cb1630ea93b5ec027ec5e00bed22713913aed6fea882fd31ce77a",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/neg_counts.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/train/neg_counts.pt",
+   "declared_size": 11907838,
+   "declared_checksum": "sha256:d45117d49118a2a5e77672f4e69954c501f5de4e3d14a71bc519f66dfe4ab676",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/neg_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/train/neg_embeddings.pt",
+   "declared_size": 152400590478,
+   "declared_checksum": "sha256:f9e5642adbc463a7264d99a8b8b626ac6ad99b162639313d51ce5e2f9f312d77",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/state_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/train/state_embeddings.pt",
+   "declared_size": 6096025244,
+   "declared_checksum": "sha256:b6915812a42368c12ed7962200e3be038e862c3e875abba22fe549e246489acb",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val/action_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/val/action_embeddings.pt",
+   "declared_size": 677742191,
+   "declared_checksum": "sha256:c6cf6c475677e3298b16f98a620099325f61670d74617862e1fcaee8878363ba",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val/metadata.json",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/val/metadata.json",
+   "declared_size": 86813605,
+   "declared_checksum": "sha256:aaf9895a966b38ce21609dd4cb62a74f521643557efee22d80e7a052d0589a68",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val/neg_counts.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/val/neg_counts.pt",
+   "declared_size": 1325310,
+   "declared_checksum": "sha256:60286e6ccce1fb1fe4d15814d1c543da041bc6a98139a828e9012bc80071f1b3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "val/neg_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/val/neg_embeddings.pt",
+   "declared_size": 12877072014,
+   "declared_checksum": "sha256:e93ba0902e234c5de433ee3d6d319756e2d0cf8d5af5587787779275e68f5801",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val/state_embeddings.pt",
+   "url": "https://huggingface.co/datasets/jackyk02/nemotron-science-qa-qwen3.6-35b-a3b-fp8-embeddings-256k/resolve/d4e81cd9b6f2314964ceb4d0cd5d115507835985/val/state_embeddings.pt",
+   "declared_size": 677742184,
+   "declared_checksum": "sha256:2f86dc9a1516184c33f5e6a75a75ba471611bd7a20428b8b3528f4160c0eef88",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

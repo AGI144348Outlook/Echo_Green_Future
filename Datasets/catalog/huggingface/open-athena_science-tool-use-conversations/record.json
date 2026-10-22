@@ -1,0 +1,89 @@
+{
+ "id": "huggingface:open-athena/science-tool-use-conversations",
+ "title": "open-athena/science-tool-use-conversations",
+ "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tScience Tool-Use Conversations\n\t\n\nThis dataset contains 11,405 synthetic conversations about science questions. GLM-5.3 generated both the user and assistant messages. The assistant could run commands in shellsim, an in-memory shell and Python simulator. Each row includes a system message, the user-visible conversation, a tool-call transcript, and the tool definition. Some conversations contain no tool calls.\nThe questions come from the so_openq split of… See the full description on the dataset page: https://huggingface.co/datasets/open-athena/science-tool-use-conversations.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-01T18:43:20.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "other",
+   "normalized": "other",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:9ac3f8fa2ed1d70251453fc4386c9f701e1e34f8aca3df880ec3e7e3dfaa9d33",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-22T13:56:28+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations/resolve/40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "LICENSE",
+   "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations/resolve/40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f/LICENSE",
+   "declared_size": 2619,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations/resolve/40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f/README.md",
+   "declared_size": 11092,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "enrich.py",
+   "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations/resolve/40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f/enrich.py",
+   "declared_size": 1391,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "train.parquet",
+   "url": "https://huggingface.co/datasets/open-athena/science-tool-use-conversations/resolve/40d0dabd6bbdf63e0487957ffc20ca2a5fc3377f/train.parquet",
+   "declared_size": 67004875,
+   "declared_checksum": "sha256:81b44856639e380d540e0bc2e858d686d8f4f235a6f676c63f92a17aee9749dc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
