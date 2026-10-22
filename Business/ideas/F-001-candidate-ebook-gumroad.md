@@ -2027,3 +2027,40 @@ Nothing moved since §87 on The-TAM-protocol (d46456a), library-shared (758afd2)
 For the joint review, the §87 step goes into `build.py` beside the `F001_A11Y` insert and reuses that loop: same `src.infolist()` order, same `dst.writestr(info, data)`, with both edits guarded (`xml:lang` only if absent on `<package>`; `role` only if absent on the toc nav). With 3.9 it then changes nothing; with 3.1.3 it changes exactly `content.opf` and `nav.xhtml`. Pinning pandoc (§84's 3.1.3 proposal) still decides which case the receipt sees. `build-report.json` would record whether each edit applied.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §89 (2026-10-22T20Z, Claude): §88.4 closed — the guarded step committed as an exact file whose hashes reproduce §88; and Ace on pandoc 3.9 shows `F001_A11Y` should be left unset there
+
+Nothing moved since §88 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (f0c36db); library-shared at 97cc0e6 (§88). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` from library-shared 97cc0e6, §24 settings (TEST-ONLY book id `urn:uuid:00000000-0000-4000-8000-000000000000`, `SOURCE_DATE_EPOCH=1768764429`), `F001_A11Y` = the §86 4-line test file (sha256 9e8c4908…, rewritten, same hash). pandoc 3.1.3 (system) and 3.9 (pypandoc_binary 1.17 wheel, as §83). EPUBCheck 5.1.0 (release zip). Ace by DAISY 1.3.6 via `ace-puppeteer` with the preinstalled Chromium (npm into scratch, `PUPPETEER_SKIP_DOWNLOAD=1`). No existing script edited (§76 stop rule); one new PROPOSED file added beside `PROPOSED-pdf_fix.py`, not wired into `build.py`.
+
+### 89.1 The exact step (new file, PROPOSED)
+
+`F-001-tam-build/PROPOSED-a11y_postprocess.py` (sha256 `b4e2ee47bf7e26dc…`): `<in.epub> <out.epub>`, copies members in order with each member's own `ZipInfo` (`zout.writestr(info, data)`), `xml:lang` added to `<package>` only when absent there (value from `dc:language`), `role="doc-toc"` added to the toc nav only when no `role` is present; prints which edits applied. This answers §88.4: a receipt hash for a post-processed EPUB can now be re-made from a committed file, not prose. Whether it moves into `build.py` stays with the joint review.
+
+### 89.2 Results (EXECUTION-VERIFIED this run)
+
+| Input (pandoc) | `F001_A11Y` | EPUB sha256 | edits applied | EPUBCheck | Ace serious | Ace moderate |
+|---|---|---|---|---|---|---|
+| 3.1.3 build | set | 4a0ef2ca4997af60… (= §86–§88) | — | 0/0/0 | 1: `epub-lang` | `epub-type-has-matching-role`, `metadata-accessibilitysummary`, `metadata-accessmodesufficient` |
+| 3.1.3 + step (twice) | set | **507a8babbcaeae19…** both (= §88 "guarded, original ZipInfo") | both | 0/0/0 | **0** | `metadata-accessibilitysummary`, `metadata-accessmodesufficient` |
+| step run again on its own output | set | 507a8babbcaeae19… (idempotent) | none | — | — | — |
+| 3.9 build | set | 2cbd8436a6c4e5b2… (= §88) | — | 0/0/0 | 0 | **`metadata-accessibilityhazard-invalid`**, `metadata-accessibilitysummary` |
+| 3.9 + step | set | 2cbd8436a6c4e5b2… (byte-identical, = §88) | none | 0/0/0 | (same as input) | |
+| 3.9 build | **unset** | 3c3989468003ed2d… | — | 0/0/0 | 0 | `metadata-accessibilitysummary` only |
+
+- The committed file reproduces §88's independently computed hash on 3.1.3 and the byte no-op on 3.9, so §88's table and this file agree. Only `EPUB/content.opf` and `EPUB/nav.xhtml` differ on 3.1.3; member order unchanged, `mimetype` first and stored.
+- §88.1's SOURCE-OBSERVED claim that both content findings are pandoc-3.1.3-only is now EXECUTION-VERIFIED by Ace on the 3.9 build (no `epub-lang`, no `epub-type-has-matching-role`).
+
+### 89.3 New finding: on pandoc 3.9 the test file makes Ace worse (EXECUTION-VERIFIED)
+
+1. With `F001_A11Y` set, the 3.9 OPF holds `schema:accessibilityHazard` = `none` twice (pandoc's default + the file's line, §84). Ace reports `Value 'none/...' is invalid for 'schema:accessibilityHazard'` (moderate). EPUBCheck stays silent (§85), so this is the first checker that treats §84's duplicate as an error, not only an accuracy point.
+2. With `F001_A11Y` unset, 3.9 gives the cleanest result of any build so far: 0 serious, 1 moderate (summary only, which is Timothy's text, §26). Pandoc 3.9's own 7 lines already include `accessModeSufficient textual`, which closes §86.2 item 2 for 3.9.
+3. The accuracy point of §84 still stands: those 7 defaults include `accessibilityFeature alternativeText` and `readingOrder`, and the draft has 0 image members (re-checked), so an editor still has to confirm or remove them; Ace does not test truth.
+
+### 89.4 Proposal for the joint review (PROPOSED, no diff)
+
+Which pandoc the receipt pins (§84) now decides the accessibility recipe:
+- **3.1.3:** `F001_A11Y` set (§26 lines + `accessModeSufficient`, §86.2) and the §89.1 step → 0 serious (Ace), summary pending.
+- **3.9:** `F001_A11Y` unset, or holding only `accessibilitySummary` (no line pandoc already writes), and the step is a byte no-op → 0 serious, summary pending; the editor reviews pandoc's `alternativeText`/`readingOrder` defaults.
+- `build-report.json` / receipt: record the pandoc version, whether `F001_A11Y` was set, the step's JSON line, and `tools.ace` counts, so a reviewer can see which recipe produced the hash.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
