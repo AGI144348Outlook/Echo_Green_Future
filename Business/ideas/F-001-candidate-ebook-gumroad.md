@@ -1996,3 +1996,34 @@ It belongs in the same place as the `F001_A11Y` insert (after pandoc, inside bui
 `tools.ace` (§86.2) can now be given a target that is reachable without Timothy: 0 serious after this step; the 2 moderate metadata findings stay listed until he supplies the summary and confirms `accessModeSufficient`. A clean Ace run checks the presence and shape of claims, not their truth (as §85–§86).
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §88 (2026-10-22T19Z, Claude): §87.2's "no-op with pandoc 3.9" tested — the OPF step as shown is not guarded and breaks a 3.9 EPUB; a guarded step that reuses each member's ZipInfo is a true byte no-op on 3.9
+
+Nothing moved since §87 on The-TAM-protocol (d46456a), library-shared (758afd2), main (8402a45) or mirror-chatgpt-root (f0c36db). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` from library-shared 758afd2, §24 settings (TEST-ONLY book id `urn:uuid:00000000-0000-4000-8000-000000000000`, `SOURCE_DATE_EPOCH=1768764429`), `F001_A11Y` = the §86 4-line test file (sha256 9e8c4908…, rewritten this run, same hash). pandoc 3.1.3 (system) and 3.9 (from the pypandoc_binary 1.17 wheel, as §83). EPUBCheck 5.1.0 (release zip). Ace was not re-run this time. No script in this branch edited (§76 stop rule); nothing committed but this note.
+
+### 88.1 Builds (EXECUTION-VERIFIED)
+
+- pandoc 3.1.3: `4a0ef2ca4997af60…` (= §86/§87 input). `<package>` has no `xml:lang`; toc `<nav>` has no `role`.
+- pandoc 3.9: `2cbd8436a6c4e5b2…`, the same over two builds. pandoc 3.9 already writes `<package … xml:lang="en" …>` and `<nav epub:type="toc" role="doc-toc" id="toc">`, so both of Ace's §86 content findings are pandoc-3.1.3-only (SOURCE-OBSERVED in the OPF and nav). The OPF holds 11 `schema:` lines (7 pandoc defaults + the file's 4, as §84).
+
+### 88.2 The §87.2 step applied to both (EXECUTION-VERIFIED)
+
+| Input | Variant | Output sha256 (2 runs each) | EPUBCheck 5.1.0 |
+|---|---|---|---|
+| 3.1.3 | as shown in §87.2 | 6d2803b03b48b360… both | 0 / 0 / 0 |
+| 3.1.3 | guarded, new ZipInfo | 6d2803b03b48b360… both | 0 / 0 / 0 |
+| 3.1.3 | guarded, original ZipInfo | 507a8babbcaeae19… both | 0 / 0 / 0 |
+| 3.9 | **as shown in §87.2** | de3c1d51b321ba0b… | **1 fatal (RSC-016: `xml:lang` already specified on `package`) / 1 error (OPF-001)** |
+| 3.9 | guarded, new ZipInfo | d78f59e9c4bf854a… (≠ input) | 0 / 0 / 0 |
+| 3.9 | guarded, original ZipInfo | **2cbd8436a6c4e5b2… = input, byte-identical** | 0 / 0 / 0 |
+
+1. **Correction to §87.2.** Its OPF line says "only if absent" in a comment, but the code does not check. On a 3.9 build it writes a second `xml:lang` on `<package>`, and the OPF no longer parses (expat: duplicate attribute; EPUBCheck: fatal). The nav line *is* guarded (its negative look-ahead) and is a no-op on 3.9. §87.2's INFERRED no-op therefore holds only for the nav half.
+2. The guard needed: insert only when `<package\b[^>]*\bxml:lang=` does not match.
+3. **Zip headers.** Writing each member through a fresh `ZipInfo(name, date_time)` (as §87.2 shows) changes `create_system` 0→3 and `create_version` 0→20 in every header, so even an unchanged EPUB gets new bytes (3.9 row 5). Passing the member's own `ZipInfo` instead, as `build.py`'s existing `F001_A11Y` step already does (`dst.writestr(info, data)`), makes the 3.9 run byte-identical to its input. Member contents are the same either way (all 16 compared for 3.1.3).
+4. **Hash note.** My 3.1.3 post-processed hashes (6d2803b0…, 507a8bab…) are not §87's `ec1c0642…`. §87 committed only an abbreviated snippet, not the exact scratch script, so its zip-writing details cannot be reproduced from the record. The rule for the joint review: a receipt hash for a post-processed EPUB is only checkable if the exact step is in `build.py`, not described in prose.
+
+### 88.3 Candidate (PROPOSED; not a diff, §76 stop rule)
+
+For the joint review, the §87 step goes into `build.py` beside the `F001_A11Y` insert and reuses that loop: same `src.infolist()` order, same `dst.writestr(info, data)`, with both edits guarded (`xml:lang` only if absent on `<package>`; `role` only if absent on the toc nav). With 3.9 it then changes nothing; with 3.1.3 it changes exactly `content.opf` and `nav.xhtml`. Pinning pandoc (§84's 3.1.3 proposal) still decides which case the receipt sees. `build-report.json` would record whether each edit applied.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
