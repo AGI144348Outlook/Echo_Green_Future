@@ -1810,3 +1810,27 @@ Ran `build.py` and `claim_scan.py` (library-shared efe3b9d, blobs ede8da6 / 31f3
 3. A receipt with any null hash or `missing` key is not releasable. The dry run has 5 such fields, so F-001 is not releasable today, which matches A1–A6.
 
 Questions for Timothy: none new (A1 claim marks, A2 datasets already cover the nulls). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §81 (2026-10-22T12Z, Claude): two receipt nulls are fillable from today's build — the EPUB hash under §24 settings, and a missing draft anchor
+
+Nothing moved since §80 on The-TAM-protocol (d46456a), library-shared (c8e9c48), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, library-shared scripts at c8e9c48 (`build.py` blob ede8da6, `build_pdf.py` unchanged). No script edited (§76 stop rule); no output committed.
+
+### 81.1 Results (EXECUTION-VERIFIED this run)
+
+| Build | `tam-draft.md` sha256 | `tam-draft.epub` sha256 | PDF sha256 |
+|---|---|---|---|
+| defaults, run 1 | c6a27a9e6df46070… | 9702b42a3de014a3… | 0c55a4b864a36e68… (wkhtmltopdf; xelatex fails: `lmodern.sty` not found) |
+| defaults, run 2 | c6a27a9e6df46070… | fe3dc66f513c966b… | 9c47935bcc6620f9… |
+| §24 settings, run 1 | c6a27a9e6df46070… | **ea180b602ebcbde2…** | — |
+| §24 settings, run 2 (one second later) | c6a27a9e6df46070… | **ea180b602ebcbde2…** | — |
+
+§24 settings here: `F001_BOOK_ID=urn:uuid:00000000-0000-4000-8000-000000000000` (a **TEST-ONLY** identifier, not a proposal for the real one: B6 picks it once) and `SOURCE_DATE_EPOCH=1768764429` (the d46456a commit time). PDF: 13 pages, 120,729 bytes; not reproducible, as §67 already found (font-subset tags, object order).
+
+### 81.2 What this means for the receipt (PROPOSED, no diff)
+
+1. **EPUB null → fillable.** With a fixed book id and `SOURCE_DATE_EPOCH`, two builds give byte-identical EPUBs, so a verifier can rebuild and compare; PROPOSED-PATCH-75 is not needed for this, only the two settings recorded in the receipt (`epub.book_id`, `epub.source_date_epoch`). Without them the EPUB hash means nothing on rebuild.
+2. **New field: `draft_md.sha256`.** `tam-draft.md` is byte-stable with or without settings (4/4 builds), so it is the reproducible anchor the PDF lacks. `build-report.json` does not record it today (its keys: source_files, missing, dup_check, csv, draft_repeats, draft_words, cover, epub_reproducible, accessibility_metadata, epub). PROPOSED: the receipt records it; the PDF keeps the as-uploaded hash (§67(a)) plus this anchor.
+3. **A date to decide with B6.** Under these settings the EPUB's `dc:date` and `dcterms:modified` are 2026-01-18T19:27:09Z, the source commit time, not a release date. If Timothy wants the publication date shown, `SOURCE_DATE_EPOCH` should be the release time, recorded in the receipt (INFERRED from pandoc's use of the variable, observed in content.opf).
+4. Correction to §80.2 item 1 (typo noted at 11Z): read `claim_scan.FILES`.
+
+Count after this section: §80's 5 fail-closed fields stand in the dry-run file (unchanged, records only); 1 of them (EPUB) is fillable once B6 fixes the book id. Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
