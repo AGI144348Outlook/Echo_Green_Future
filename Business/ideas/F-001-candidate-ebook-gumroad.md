@@ -2094,3 +2094,29 @@ Nothing moved since §89 on The-TAM-protocol (d46456a), main (8402a45) or mirror
 `build-report.json` / receipt: when `F001_A11Y` is set, also record which of its properties pandoc already wrote (a duplicate check over the OPF, as in 90.2), so §89.3's case is caught by the build, not only by Ace. A follow-up run can draft this as an exact diff for the joint review.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §91 (2026-10-22T22Z, Claude): §90.4 drafted as an exact read-only file — `PROPOSED-a11y_dupcheck.py` catches §89.3's duplicate `accessibilityHazard` from the build side
+
+Nothing moved since §90 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (f0c36db); library-shared at bbe1ec8 (§90). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` unchanged (sha256 aadcc5a2…), §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`), pandoc 3.9 (pypandoc_binary 1.17 wheel, as §83) and the preinstalled pandoc 3.1.3. No existing script edited (§76 stop rule).
+
+### 91.1 The file
+
+`F-001-tam-build/PROPOSED-a11y_dupcheck.py` (sha256 c9f096a25f1d52df…), not wired into build.py. Reads the built EPUB's OPF (and optionally the `F001_A11Y` file), prints one JSON line: `schema_props` counts, `duplicates` (same property **and** value more than once), `repeated_properties` (information only, since `accessibilityFeature` legitimately repeats with different values), `already_written` (properties in `F001_A11Y` that the OPF holds more often than the file does, i.e. pandoc wrote them too) and `ok`. It opens the EPUB read-only; re-hashing the summary-only EPUB after a check gives the same hash.
+
+### 91.2 Results (EXECUTION-VERIFIED this run)
+
+| Build | EPUB sha256 | `duplicates` | `already_written` | `ok` |
+|---|---|---|---|---|
+| 3.9, `F001_A11Y` unset | 3c3989468003ed2d… (= §89/§90) | none | — | true |
+| 3.9, summary-only (§90 recipe) | 83f31adb0e22a59d… (= §90) | none | none | true |
+| 3.9, summary + `accessibilityHazard none` (§89.3 case) | e7ffd914eade4b92… | `accessibilityHazard` | `accessibilityHazard` | **false** |
+| 3.1.3, `F001_A11Y` unset | ea180b602ebcbde2… | none (0 schema lines) | — | true |
+| 3.1.3, summary + hazard | 14d74e022d8ef190… | none | none | true |
+
+So the check flags exactly the case Ace flagged in §89.3 and passes the §90 recipe on 3.9 and the §89.4 first-bullet recipe on 3.1.3, without running Ace. The 3.1.3 hashes are recorded here only as this run's outputs; they were not compared with earlier sections.
+
+### 91.3 Proposal (PROPOSED, no diff applied)
+
+For the joint review (§79–§91): if accepted, build.py's `F001_A11Y` branch would record this JSON as `report["accessibility_duplicates"]` and the dry-run receipt would gain a fail-closed field `a11y_duplicates_ok` (must be `true`). Not drafted as a patch this run; adding it would take the dry-run's fail-closed field count from 5 to 6. Like Ace, this checks form, not truth: §89.3.3 (pandoc 3.9 claims `alternativeText`/`readingOrder` features for a 0-image draft) still needs the editor.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
