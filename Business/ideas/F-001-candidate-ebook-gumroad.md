@@ -1882,3 +1882,27 @@ Nothing moved since §82 on The-TAM-protocol (d46456a), library-shared (2014fd4)
 3. Before any switch to pandoc ≥ 3.9 (none is proposed), the default accessibility claims need an editor's check against the actual book, and the §26 insert step needs a duplicate test. Claims a buyer may rely on should be checked, not inherited from a tool default.
 
 Count after this section: unchanged from §82 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains two fields (`tools.pandoc_version`, `epub.text_members`). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §84 (2026-10-22T15Z, Claude): §83's untested case run — with pandoc 3.9, `F001_A11Y` duplicates pandoc's own lines and cannot remove its defaults
+
+Nothing moved since §83 on The-TAM-protocol (d46456a), library-shared (9db11c5), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` and `layout_map.py` from library-shared 9db11c5; pandoc 3.1.3 (system) and 3.9 (same `pypandoc_binary` 1.17 wheel as §83, sha256 d6b620b2…, unpacked in scratch). Same §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`). A TEST-ONLY `F001_A11Y` file of 4 lines (accessMode textual, accessModeSufficient textual, accessibilityFeature structuralNavigation, accessibilityHazard none); it is a test input, not a claim about the book. No script edited (§76 stop rule); no output committed.
+
+### 84.1 Results (EXECUTION-VERIFIED this run)
+
+| pandoc | builds | `tam-draft.epub` | `build-report.json` | `schema:` lines in `content.opf` |
+|---|---|---|---|---|
+| 3.1.3 | a, b | 139f7dabff1eb737… (equal) | 104fea6b25357122… (equal) | 4 (the file's 4) |
+| 3.9 | a, b | 5c3205790abe1ffb… (equal) | 4a18cac5f9496f95… (equal) | 11 (pandoc's 7 + the file's 4) |
+
+- Both stay reproducible with `F001_A11Y` set (2/2 equal per version); the §26 insert keeps entry order and stored `mimetype` (first entry, uncompressed).
+- With 3.9, all 4 of the file's lines repeat a line pandoc already wrote (same property and value): 4 exact duplicates. The OPF still parses as XML; no EPUB checker was run (UNVERIFIED whether a reader or EPUBCheck objects).
+- The file can only add lines. Pandoc 3.9's defaults stay even when the editor's file leaves them out: here `alternativeText`, `readingOrder` and `tableOfContents` remain although the file did not claim them. The draft holds 0 images (0 `<img>`, 0 image members), so `alternativeText` describes nothing (INFERRED).
+- `build-report.json` lists only the file's properties under `accessibility_metadata`; with 3.9 it under-reports what the EPUB actually claims.
+
+### 84.2 What this means (PROPOSED, no diff)
+
+1. Pin pandoc 3.1.3 for the release build (with §83.2 item 1), so the editor's `F001_A11Y` file is the only source of accessibility claims and the report matches the EPUB.
+2. If 3.9 or later is ever used: before the §26 insert, remove pandoc's own `schema:` lines and then insert the editor's file, or fail closed when any are present; and record in the receipt the `schema:` lines actually found in the final OPF, not only the file's. A candidate change for a later patch, not written now (§76 stop rule).
+3. Receipt check, any version: the set of `schema:` lines in the shipped `content.opf` equals the editor's file. Fails today with 3.9 (11 ≠ 4), passes with 3.1.3 (4 = 4).
+
+Count after this section: unchanged from §83 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains one check (shipped `schema:` lines = editor's file). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
