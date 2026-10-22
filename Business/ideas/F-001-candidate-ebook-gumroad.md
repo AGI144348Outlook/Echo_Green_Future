@@ -2064,3 +2064,33 @@ Which pandoc the receipt pins (§84) now decides the accessibility recipe:
 - `build-report.json` / receipt: record the pandoc version, whether `F001_A11Y` was set, the step's JSON line, and `tools.ace` counts, so a reviewer can see which recipe produced the hash.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §90 (2026-10-22T21Z, Claude): §89.4's pandoc-3.9 recipe tested — a summary-only `F001_A11Y` gives the first build with 0 Ace findings
+
+Nothing moved since §89 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (f0c36db); library-shared at 75ba3b4 (§89). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` from library-shared 75ba3b4 (sha256 aadcc5a2…), §24 settings (TEST-ONLY book id `urn:uuid:00000000-0000-4000-8000-000000000000`, `SOURCE_DATE_EPOCH=1768764429`). pandoc 3.9 from the pypandoc_binary 1.17 wheel (as §83), EPUBCheck 5.1.0 (release zip), Ace by DAISY 1.3.6 via `ace-puppeteer` with the preinstalled Chromium. No existing script edited.
+
+### 90.1 Test input
+
+`F001_A11Y` = a one-line file (sha256 54d371bb…) holding only `<meta property="schema:accessibilitySummary">TEST-ONLY placeholder summary; the real text is Timothy's (§26).</meta>`, i.e. no property pandoc 3.9 already writes (§89.4 second bullet). The placeholder is not product text; the real summary stays Timothy's (§26, B-questions).
+
+### 90.2 Results (EXECUTION-VERIFIED this run)
+
+| pandoc 3.9 build | EPUB sha256 | schema:* lines in OPF | EPUBCheck | Ace serious | Ace moderate |
+|---|---|---|---|---|---|
+| `F001_A11Y` unset | 3c3989468003ed2d… (= §89) | 7 (pandoc's own) | 0/0/0 | 0 | `metadata-accessibilitysummary` |
+| `F001_A11Y` = summary-only | **83f31adb0e22a59d…** (same over 2 builds) | 8, each property once (Hazard 1, Summary 1) | 0/0/0 | **0** | **none** |
+| summary-only + §89.1 step | 83f31adb0e22a59d… (byte no-op; step reports both edits skipped) | 8 | — | — | — |
+
+- First build in the F-001 series with no Ace finding at all and EPUBCheck 0/0/0. Member count 16, order unchanged, `mimetype` first.
+- No duplicate `schema:` property, so §89.3's `accessibilityHazard` error does not appear; build.py's insert needs no change for this recipe.
+
+### 90.3 What this settles and what it does not
+
+- Settles (for the joint review): on pandoc 3.9 the recipe is "pin 3.9, `F001_A11Y` = the summary line only, §89.1 step optional (no-op)". On 3.1.3 the §89.4 first bullet still applies.
+- Does not settle: Ace checks form, not truth. §89.3.3 still stands — pandoc 3.9's defaults claim `alternativeText` and `readingOrder` features, and the draft has 0 images; the editor confirms or removes them before any listing. The summary text and the B6 identifier remain Timothy's to write.
+
+### 90.4 Proposal (PROPOSED, no diff)
+
+`build-report.json` / receipt: when `F001_A11Y` is set, also record which of its properties pandoc already wrote (a duplicate check over the OPF, as in 90.2), so §89.3's case is caught by the build, not only by Ace. A follow-up run can draft this as an exact diff for the joint review.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
