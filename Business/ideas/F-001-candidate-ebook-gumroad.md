@@ -1906,3 +1906,28 @@ Nothing moved since §83 on The-TAM-protocol (d46456a), library-shared (9db11c5)
 3. Receipt check, any version: the set of `schema:` lines in the shipped `content.opf` equals the editor's file. Fails today with 3.9 (11 ≠ 4), passes with 3.1.3 (4 = 4).
 
 Count after this section: unchanged from §83 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains one check (shipped `schema:` lines = editor's file). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §85 (2026-10-22T16Z, Claude): the reference validator run for the first time — EPUBCheck 5.1.0 finds 0 errors and 0 warnings in all four §83–§84 builds, including pandoc 3.9's duplicate lines
+
+Nothing moved since §84 on The-TAM-protocol (d46456a), library-shared (77cbeae), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py`, `layout_map.py` and `epub_check.py` from library-shared 77cbeae. Validator: EPUBCheck 5.1.0, the W3C reference checker (free, open source), release zip from github.com/w3c/epubcheck (sha256 74a59af8602bf59b…), run with the system Java in scratch; nothing installed, nothing committed. Same §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`) and the same TEST-ONLY 4-line `F001_A11Y` file as §84. No script edited (§76 stop rule).
+
+### 85.1 Results (EXECUTION-VERIFIED this run)
+
+| pandoc | `F001_A11Y` | `tam-draft.epub` | `schema:` lines | EPUBCheck 5.1.0 (EPUB 3.3 rules) | `epub_check.py` |
+|---|---|---|---|---|---|
+| 3.1.3 | unset | ea180b602ebcbde2… | 0 | 0 fatal / 0 error / 0 warning / 0 info | 0 FAIL |
+| 3.1.3 | test file | 139f7dabff1eb737… | 4 | 0 / 0 / 0 / 0 | 0 FAIL, 2 WARN (no cover; no `accessibilitySummary`) |
+| 3.9 | unset | 3c3989468003ed2d… | 7 | 0 / 0 / 0 / 0 | not re-run |
+| 3.9 | test file | 5c3205790abe1ffb… | 11 (4 duplicates) | 0 / 0 / 0 / 0 | not re-run |
+
+- All four EPUB hashes equal the ones recorded in §81, §83 and §84 on earlier runs: the builds are reproducible across runs too, not only within one.
+- §84's open question is answered: EPUBCheck does not object to pandoc 3.9's duplicate `schema:` lines. The duplicates are an **accuracy** problem (claims the editor did not make, e.g. `alternativeText` with 0 images), not a **validity** problem. A validator pass therefore does not show the accessibility claims are true.
+- The checklist's packaging row (row 4, "EPUB validates (EPUBCheck)") can now be met by a real run, for the draft as it stands. The 2 `epub_check.py` WARNs are expected: no cover is chosen (§25) and no summary is written (§26); both wait on Timothy's text, not on code.
+
+### 85.2 What this means (PROPOSED, no diff)
+
+1. Receipt field `tools.epubcheck`: version plus release-zip sha256, and the result counts (fatal/error/warning). Releasable only at 0 fatal and 0 error; warnings listed, not hidden.
+2. Order in the pipeline: `build.py` → `epub_check.py` (fast, stdlib) → EPUBCheck (reference) on the exact EPUB whose hash goes in the receipt. Nothing changes in the scripts now (§76 stop rule).
+3. §84.2 item 1 stands (pin pandoc 3.1.3): the validator accepts both versions, so the reason to pin is the accuracy of the claims and the report, not validity.
+
+Count after this section: unchanged from §84 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains `tools.epubcheck`. Questions for Timothy: none new (B6 identifier, cover and summary text, and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
