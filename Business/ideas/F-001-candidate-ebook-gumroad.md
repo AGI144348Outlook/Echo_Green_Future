@@ -1931,3 +1931,30 @@ Nothing moved since §84 on The-TAM-protocol (d46456a), library-shared (77cbeae)
 3. §84.2 item 1 stands (pin pandoc 3.1.3): the validator accepts both versions, so the reason to pin is the accuracy of the claims and the report, not validity.
 
 Count after this section: unchanged from §84 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id); the receipt proposal gains `tools.epubcheck`. Questions for Timothy: none new (B6 identifier, cover and summary text, and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §86 (2026-10-22T17Z, Claude): the accessibility checker run for the first time — Ace by DAISY 1.3.6 finds two pandoc-made gaps EPUBCheck does not look for
+
+Nothing moved since §85 on The-TAM-protocol (d46456a), library-shared (01c0f7b), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, `build.py` and `layout_map.py` from library-shared 01c0f7b, pandoc 3.1.3, §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`). Checker: Ace by DAISY 1.3.6 (free, open source; `@daisy/ace` from npm into scratch, axe-core-for-ace 4.10.2-canary.3), run headless through `ace-puppeteer` with the preinstalled Chromium; nothing installed system-wide, nothing committed. No script edited (§76 stop rule).
+
+### 86.1 Results (EXECUTION-VERIFIED this run)
+
+| Build | `tam-draft.epub` | Ace outcome | serious | moderate |
+|---|---|---|---|---|
+| `F001_A11Y` unset | ea180b602ebcbde2… (same as §81/§83/§85) | fail | 4: `epub-lang`, `metadata-accessmode`, `metadata-accessibilityfeature`, `metadata-accessibilityhazard` | 3: `epub-type-has-matching-role`, `metadata-accessibilitysummary`, `metadata-accessmodesufficient` |
+| `F001_A11Y` = the 4 example lines of §26 (`accessMode`, 2× `accessibilityFeature`, `accessibilityHazard`; file sha256 9e8c490887cc8f6b…) | 4a0ef2ca4997af60… | fail | 1: `epub-lang` | 3: same as above |
+
+Note: this test file is the §26 example block, not byte-for-byte §84's test file (different EPUB hash, 139f7dab… there), so the second row is not a re-run of §84/§85.
+
+What Ace adds beyond EPUBCheck (§85, 0 errors):
+
+1. **`epub-lang` (serious):** `content.opf`'s `<package>` element has no `xml:lang`. `dc:language` is `en` and every XHTML file has `lang="en" xml:lang="en"`, so only the package attribute is missing (SOURCE-OBSERVED in the OPF). pandoc 3.1.3 writes it this way; `F001_A11Y` cannot fix it.
+2. **`epub-type-has-matching-role` (moderate):** `nav.xhtml`'s `<nav epub:type="toc">` has no `role="doc-toc"` (SOURCE-OBSERVED).
+3. The metadata rules behave as §26 intended: the 3 serious metadata findings disappear once the lines are present. `accessibilitySummary` and `accessModeSufficient` stay open: the summary is Timothy's text (§26), and `accessModeSufficient` is not in the §26 example.
+
+### 86.2 What this means (PROPOSED, no diff)
+
+1. Both content findings are mechanical and could be closed the same way `F001_A11Y` is applied (post-process inside the zip, order and timestamps kept, §24 reproducibility kept): add `xml:lang="en"` (from `dc:language`) to `<package>`, and `role="doc-toc"` to the toc `<nav>`. A candidate patch only, after the §76 stop rule lifts; no diff written now.
+2. §26's example block could add `<meta property="schema:accessModeSufficient">textual</meta>` (INFERRED true for a text-only draft with 0 images; the editor confirms).
+3. Receipt field `tools.ace`: version and the serious/moderate counts. Proposed release rule: 0 serious; moderate listed, not hidden. As with §85, a clean Ace run checks the presence and shape of claims, not their truth.
+
+Count after this section: unchanged from §85 (5 fail-closed fields in the dry-run file); the receipt proposal gains `tools.ace`. Questions for Timothy: none new (B6 identifier, cover and summary text, and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
