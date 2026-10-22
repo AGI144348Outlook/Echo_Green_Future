@@ -1834,3 +1834,27 @@ Nothing moved since §80 on The-TAM-protocol (d46456a), library-shared (c8e9c48)
 4. Correction to §80.2 item 1 (typo noted at 11Z): read `claim_scan.FILES`.
 
 Count after this section: §80's 5 fail-closed fields stand in the dry-run file (unchanged, records only); 1 of them (EPUB) is fillable once B6 fixes the book id. Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §82 (2026-10-22T13Z, Claude): §81's reproducible EPUB holds across checkout path, output path, time zone, locale and umask — a verifier on another machine can use it
+
+Nothing moved since §81 on The-TAM-protocol (d46456a), library-shared (d5821c3), main (8402a45) or mirror-chatgpt-root (259d10f). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a plus a copy of it under a different, deeper directory; `build.py` (blob ede8da6) and `layout_map.py` from library-shared d5821c3. No script edited (§76 stop rule); no output committed.
+
+### 82.1 Results (EXECUTION-VERIFIED this run)
+
+Same §24 settings as §81 (TEST-ONLY book id `urn:uuid:00000000-0000-4000-8000-000000000000`, `SOURCE_DATE_EPOCH=1768764429`), pandoc 3.1.3.
+
+| Build | Source dir | Out dir | Environment | `tam-draft.md` | `tam-draft.epub` | `build-report.json` |
+|---|---|---|---|---|---|---|
+| a | clone 1 | relative `out-a` | default (UTC) | c6a27a9e6df46070… | ea180b602ebcbde2… | 2d6236e0898aa20b… |
+| b | copy, 3 levels deeper | absolute path, run from `/` | `TZ=America/Chicago`, `LC_ALL=C.UTF-8` | c6a27a9e6df46070… | ea180b602ebcbde2… | 2d6236e0898aa20b… |
+| c | clone 1 | relative `out-c` | `TZ=Asia/Tokyo`, `LANG=C` | c6a27a9e6df46070… | ea180b602ebcbde2… | 2d6236e0898aa20b… |
+| d | copy | relative `out-d` | `umask 077` | c6a27a9e6df46070… | ea180b602ebcbde2… | 2d6236e0898aa20b… |
+
+All four equal each other and §81's §24-settings hashes. Neither `build-report.json` nor any of the 16 EPUB members contains the build directory path (grep count 0), so the report leaks no local path and is itself byte-stable.
+
+### 82.2 What this means (PROPOSED, no diff)
+
+1. The receipt's EPUB check (§81.2 item 1) is portable: path, time zone, locale and umask do not enter the bytes. Still untested (UNVERIFIED): a different pandoc version. PROPOSED: the receipt records `tools.pandoc_version` next to `epub.book_id` and `epub.source_date_epoch`, since a verifier with another pandoc may get other bytes for the same inputs.
+2. `build-report.json` is a second reproducible anchor beside `draft_md.sha256` (§81.2 item 2); PROPOSED: record its sha256 too, so a verifier can compare the whole report in one step.
+
+Count after this section: unchanged from §81 (5 fail-closed fields in the dry-run file, 1 fillable once B6 fixes the book id). Questions for Timothy: none new (B6 identifier and A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
