@@ -2319,3 +2319,30 @@ Count after this section: unchanged (5 fail-closed fields in the dry-run file). 
 Nothing moved on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d) since §97; library-shared at ff308e5. Following §97.3's own conclusion (the checks are ahead of the decisions), this run adds no new check and edits no script (§76 stop rule). Instead it adds one paragraph to `F-001-decision-sheet.md` (addendum 2026-10-23T05Z) that sums up §80–§97 for Timothy next to the reply card: what a review edition's build already passes, the one recorded limit (§75 / §97.3), and that the 5 null receipt fields (§80) wait on A1–A6.
 
 PROPOSED for later runs while A1–A6 stay open: F-001 refinements limited to (a) acting on Timothy's answers once they arrive, (b) upkeep if The-TAM-protocol or the pandoc pin moves, and (c) the joint review with ChatGPT of the §94.3 chain plus §96/§97 (four hashes in the receipt, §97.3). Count: unchanged (5 fail-closed fields). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §99 (2026-10-23T06Z, Claude): joint review item (c) — ChatGPT run 291's vacuous-pass finding on `PROPOSED-appendix_check.py` reproduced, and a guard drafted as a diff
+
+Nothing moved on The-TAM-protocol (d46456a) or main (8402a45) since §98; library-shared at bc45715. New: ChatGPT run 291 (`mirror-chatgpt-root` 5ef69fb, `contract-000/gpt/RUN-291-STATUS.md`) says, by source inspection, that the §96 appendix checker "has a zero-row/unknown-header vacuous-pass risk". This is §98's item (c), so this run checks it instead of adding a new check. Scratch only, `python3 -I -B`; the checker as committed (sha256 525898fc…, = §96); CSVs rebuilt from d46456a with `rebuild_datasets.py` as committed (again d3c176b9… / fecd151b…, = §97, reproducible); a synthetic two-chapter EPUB whose Appendix A/B show exactly the CSV masses (no pandoc build this run, so the real-EPUB baseline is INFERRED from §96, since the guard touches only CSV parsing). No committed script edited (§76 stop rule).
+
+### 99.1 Results (EXECUTION-VERIFIED), `dataset-b.csv` varied, A left real
+
+| case | as committed | with PROPOSED-PATCH-99 |
+|---|---|---|
+| baseline (real CSVs) | exit 0, B 8/8 PASS | exit 0, B 8/8 PASS |
+| header only, 0 data rows | **exit 0** ("all 0 … masses shown") | exit 1: 0 data rows |
+| empty file | **exit 0** | exit 1: header `[]` |
+| unknown header `x,y,z`, real rows | **exit 0** | exit 1: header not `ratio, mass_g` |
+| one column only | **exit 0** | exit 1: header not `ratio, mass_g` |
+| first 2 of 8 rows only (truncated) | exit 0 | **exit 0** (still passes) |
+
+So ChatGPT's finding is **confirmed**, and is a bit wider than stated: an empty file and a one-column file also pass vacuously.
+
+### 99.2 The draft (PROPOSED, not applied)
+
+`F-001-tam-build/PROPOSED-PATCH-99.diff` (applies cleanly to the committed checker with `git apply --check`): require the first two header cells that `rebuild_datasets.py` writes (`object, measured_g` / `ratio, mass_g`), at least one data row, and a `d.d` mass in column 2 of every row; otherwise FAIL. 8 added lines, 2 removed.
+
+### 99.3 What it does not settle
+
+A truncated CSV (row 6) still passes, because the check only asks that CSV masses appear in the EPUB, not the reverse. Two ways to close it, for the joint review: compare the row count with `dataset-check.json` (a build record, so the §75 limit applies) or compare the CSV sha256 with a pinned rebuild (§97.3, which already covers it). I lean to the second and to keeping this checker as a quick consistency check only.
+
+Count: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.

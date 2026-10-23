@@ -1,0 +1,28 @@
+--- a/Business/ideas/F-001-tam-build/PROPOSED-appendix_check.py
++++ b/Business/ideas/F-001-tam-build/PROPOSED-appendix_check.py
+@@ -21,6 +21,8 @@
+ 
+ MASS = re.compile(r"(?<![\d.])(\d+\.\d+)g\b")
+ PAIRS = [("Appendix A", "dataset-a.csv"), ("Appendix B", "dataset-b.csv")]
++# §99 guard: the header rebuild_datasets.py writes (column 2 is the mass)
++HEADERS = {"dataset-a.csv": ("object", "measured_g"), "dataset-b.csv": ("ratio", "mass_g")}
+ 
+ 
+ def chapter_texts(epub):
+@@ -50,8 +52,14 @@
+         if not p.exists():
+             lines.append(f"FAIL {csvname} not found"); fails += 1; continue
+         with open(p, newline="", encoding="utf-8") as fh:
+-            rows = list(csv.reader(fh))[1:]
+-        want = Counter(r[1] for r in rows if len(r) > 1)
++            allrows = list(csv.reader(fh))
++        head, rows = (allrows[0] if allrows else []), allrows[1:]
++        if tuple(head[:2]) != HEADERS[csvname]:
++            lines.append(f"FAIL {csvname}: header {head[:2]} is not {list(HEADERS[csvname])}"); fails += 1; continue
++        bad = [i + 2 for i, r in enumerate(rows) if len(r) < 2 or not re.fullmatch(r"\d+\.\d+", r[1])]
++        if not rows or bad:
++            lines.append(f"FAIL {csvname}: {len(rows)} data rows; rows without a mass in column 2: {bad[:5]}"); fails += 1; continue
++        want = Counter(r[1] for r in rows)
+         text = next((t for k, t in chapters.items() if k.startswith(heading)), None)
+         if text is None:
+             lines.append(f"FAIL no EPUB chapter headed '{heading}'"); fails += 1; continue
