@@ -2346,3 +2346,29 @@ So ChatGPT's finding is **confirmed**, and is a bit wider than stated: an empty 
 A truncated CSV (row 6) still passes, because the check only asks that CSV masses appear in the EPUB, not the reverse. Two ways to close it, for the joint review: compare the row count with `dataset-check.json` (a build record, so the §75 limit applies) or compare the CSV sha256 with a pinned rebuild (§97.3, which already covers it). I lean to the second and to keeping this checker as a quick consistency check only.
 
 Count: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §100 (2026-10-23T07Z, Claude): build-folder hygiene — the committed `.pyc` and the APPLY-ORDER byte-compile step dirty a fresh checkout; `.gitignore` added, clean recipe recorded
+
+Nothing moved on The-TAM-protocol (d46456a) or main (8402a45) since §99; library-shared at 1d683f1. New: ChatGPT run 292 (`mirror-chatgpt-root` a1f8bfa, `contract-000/gpt/LIBRARY-REVIEW-292.md`) reviewed all 56 blobs of library-shared at 1d683f1 (30 KEEP, 25 DEFER, 1 PRUNE). Its 56 (path, blob, bytes) rows equal `git ls-tree -r -l 1d683f1` exactly (EXECUTION-VERIFIED). Its one PRUNE is `F-001-tam-build/__pycache__/layout_map.cpython-313.pyc` (4,527 bytes, committed at §38, 6f20d24), excluded from GPT's active inputs. This run checks what that file does. Scratch worktrees only, Python 3.13.17; no committed script edited (§76 stop rule).
+
+### 100.1 Results (EXECUTION-VERIFIED)
+
+| check | result |
+|---|---|
+| `.pyc` header vs `layout_map.py` | CPython 3.13 magic, source size 2,920 = current `layout_map.py`, source mtime 2026-10-15T21:01:00Z = 6f20d24: matches, not stale |
+| `import layout_map` in a fresh checkout | git sets a new mtime, Python rewrites the tracked `.pyc` (4,527 → 4,606 bytes): `git status` shows it modified |
+| APPLY-ORDER.md line 17 (`python3 -I -m py_compile` on every `*.py`) | rewrites the tracked `.pyc` and adds 14 untracked `.pyc` files |
+| same step with `python3 -I -X pycache_prefix=<tmpdir> -m py_compile` | all 15 scripts compile; `git status` clean |
+| `import` with `python3 -B` | `git status` clean |
+| no committed script imports `layout_map` (grep) | the dirty tree comes only from manual imports or the py_compile step |
+| `build.py` output | the EPUB/PDF and CSVs are written from sources, not from `__pycache__`; the `.pyc` never reaches a customer file (SOURCE-OBSERVED) |
+
+Why it matters: §97's reproducibility claims and any "clean tree" release check assume `git status` is empty after the checks. Today the byte-compile step itself breaks that.
+
+### 100.2 What changed
+
+- Added `F-001-tam-build/.gitignore` (`__pycache__/`, `*.pyc`), so new bytecode stays out of commits. With it, the 14 new `.pyc` files no longer show; the tracked one still does (EXECUTION-VERIFIED).
+- The committed `.pyc` stays (R3: no deletions; GPT's PRUNE already keeps it out of active inputs). Untracking it with `git rm --cached` would count as a deletion from the tree, so it is listed for Timothy, not done.
+- Recipe for every later check (PROPOSED for APPLY-ORDER, not edited): run with `python3 -I -B`, and byte-compile with `-X pycache_prefix=<tmpdir>`.
+
+Count: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: one small new one (B7: may the generated `.pyc` be untracked with `git rm --cached`? Its blob stays in history; not blocking). A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both still open under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
