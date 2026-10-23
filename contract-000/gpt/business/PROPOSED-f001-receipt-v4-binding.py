@@ -73,7 +73,8 @@ def check_binding(pins, receipt, v3, v5, manifest):
         issues.append("audited v5 parser pin mismatch")
     if (manifest.get("v5_parser_blob") != V5_PARSER_BLOB or
         manifest.get("receipt_v3_blob") != V3_BLOB or
-        manifest.get("v5_gate_blob") != V5_GATE_BLOB):
+        not isinstance(manifest.get("v5_gate_blob"), str) or
+        manifest["v5_gate_blob"] != V5_GATE_BLOB):
         issues.append("reviewed verifier/parser blob mismatch")
     if manifest.get("publication_authorized") is not False:
         issues.append("publication authority must remain absent")
