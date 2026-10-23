@@ -1,0 +1,2105 @@
+{
+ "id": "huggingface:anyantudre/moore-image-lexicon",
+ "title": "anyantudre/moore-image-lexicon",
+ "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tMooré image lexicon\n\t\n\nThis dataset has 4,108 photos taken from three Mooré dictionaries. Each photo comes with the Mooré word and its French and English glosses. For 162 test photos there are also three wrong options for multiple-choice questions and a label that says whether the thing is local to West Africa. A second set of 222 household photos from Dollar Street is in household_set/.\nI built the dataset to test how small vision-language models handle West African objects in… See the full description on the dataset page: https://huggingface.co/datasets/anyantudre/moore-image-lexicon.",
+ "found_by_keywords": [
+  "lexicon"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "04a289561b9024265ef8f5ad76c96afd687bc8ec",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-09T08:43:49.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "other",
+   "normalized": "other",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'lexicon'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:0919284387c8a6722d15828bdb89453a6441eb5578e1f32ba03759ab6e5e40ff",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-23T13:37:07+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/README.md",
+   "declared_size": 6680,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "data/test-00000-of-00001.parquet",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/data/test-00000-of-00001.parquet",
+   "declared_size": 3724068,
+   "declared_checksum": "sha256:b82913f9113aa32195ff6fe8475d90849854687201bb2d14a00e9ee8a4a851cd",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "data/train-00000-of-00001.parquet",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/data/train-00000-of-00001.parquet",
+   "declared_size": 17611728,
+   "declared_checksum": "sha256:1e2c85355baf59a6f00c2da65dd0cc22b9c654c110a595cd6cfbe2390c5e849c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "data/validation-00000-of-00001.parquet",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/data/validation-00000-of-00001.parquet",
+   "declared_size": 3754338,
+   "declared_checksum": "sha256:b93dbf17ba91ded8719dff38ca072682cfcf7ed531281712e047987f4149ce76",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde23cf0b3a0f3f335a49.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde23cf0b3a0f3f335a49.jpg",
+   "declared_size": 36160,
+   "declared_checksum": "sha256:919c41dff878dd7a8ac3a4c28572c4d98526a8acc5840a9b201117b397c0020c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde28cf0b3a0f3f335ab3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde28cf0b3a0f3f335ab3.jpg",
+   "declared_size": 36732,
+   "declared_checksum": "sha256:faf52191867f7446db8dc18257cebe9f18fcb954d12b75379eebce23e16f903a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde29cf0b3a0f3f335ad1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde29cf0b3a0f3f335ad1.jpg",
+   "declared_size": 50438,
+   "declared_checksum": "sha256:4780f08511409cc2e35cf60094242148091a2bf9aeeca637fd9885863990a80a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde2bcf0b3a0f3f335af9.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde2bcf0b3a0f3f335af9.jpg",
+   "declared_size": 51328,
+   "declared_checksum": "sha256:561ee589c9ec18387a4ea190b3f4c4541c8210b92d061f042a94fa8f676a01d9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde2ecf0b3a0f3f335b39.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde2ecf0b3a0f3f335b39.jpg",
+   "declared_size": 29598,
+   "declared_checksum": "sha256:6e534932bfface6880f2b5fcfb3e58d81a3504175a791f8899ef94b7254dd077",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde2fcf0b3a0f3f335b57.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde2fcf0b3a0f3f335b57.jpg",
+   "declared_size": 29378,
+   "declared_checksum": "sha256:1cf382d067ba04cfbdabdede0dd84a014dfb870bb80288c12036fb373ef5904d",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde59cf0b3a0f3f335f2f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde59cf0b3a0f3f335f2f.jpg",
+   "declared_size": 21135,
+   "declared_checksum": "sha256:25799075c5e36a81d04f5ef14ded9bebc64e83cd7d632ed313fed60489553ce5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde5acf0b3a0f3f335f4d.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde5acf0b3a0f3f335f4d.jpg",
+   "declared_size": 45154,
+   "declared_checksum": "sha256:3804dcfd79d5ab4cc52bd4d3da4c470076f80c3a1f04f1c2503604f1d8b2fe2b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bde8ccf0b3a0f3f3363fd.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bde8ccf0b3a0f3f3363fd.jpg",
+   "declared_size": 42125,
+   "declared_checksum": "sha256:5a8cc5cdd7ea6c1431b0b019204b1626809533cfb00f82a8fdbf62dd7c5f01fa",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf21cf0b3a0f3f3372a5.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf21cf0b3a0f3f3372a5.jpg",
+   "declared_size": 26815,
+   "declared_checksum": "sha256:85183a31612541a6342be220d3586404870f9beefec041e9d8860d7e2382d04b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf21cf0b3a0f3f3372b3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf21cf0b3a0f3f3372b3.jpg",
+   "declared_size": 41877,
+   "declared_checksum": "sha256:3984df28711a8e56d20a2f68dfd1b3493138c6d1778e461ac595d54b5c60b0ca",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf22cf0b3a0f3f3372bf.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf22cf0b3a0f3f3372bf.jpg",
+   "declared_size": 42586,
+   "declared_checksum": "sha256:2363eac7c0dc5bf069aaf73f2708dc407f5aa045725cb323a9e065cfb0a84968",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf23cf0b3a0f3f3372e5.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf23cf0b3a0f3f3372e5.jpg",
+   "declared_size": 41614,
+   "declared_checksum": "sha256:8af0e9b0908b26d9e30dccb7d1465fba223bfa1fa092203afca631b3e9ac9b64",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf24cf0b3a0f3f3372f3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf24cf0b3a0f3f3372f3.jpg",
+   "declared_size": 40411,
+   "declared_checksum": "sha256:b182abc5fe8466054694e658469cb91a9ac2ba5b54c2dee0ff99f7508231487f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf24cf0b3a0f3f337305.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf24cf0b3a0f3f337305.jpg",
+   "declared_size": 37157,
+   "declared_checksum": "sha256:8d3545cc8c52e7588416c631c7856ceec231d7e77298d3e7c338d5f1915331de",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf25cf0b3a0f3f33730b.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf25cf0b3a0f3f33730b.jpg",
+   "declared_size": 38337,
+   "declared_checksum": "sha256:e42690b379b12062afcbe7e7b621015b02db3af02f154bb210add39e4dce35f9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf25cf0b3a0f3f33730d.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf25cf0b3a0f3f33730d.jpg",
+   "declared_size": 52409,
+   "declared_checksum": "sha256:f83b2e88426918c0759a4447ea6081444c3f8ec28fa6e487e135420dd85fa611",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf25cf0b3a0f3f33730f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf25cf0b3a0f3f33730f.jpg",
+   "declared_size": 36972,
+   "declared_checksum": "sha256:4134b695ad685a4ad7acdb5f73eff69e91652727cdc66fae6d148d1238ff59b4",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf25cf0b3a0f3f337315.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf25cf0b3a0f3f337315.jpg",
+   "declared_size": 36332,
+   "declared_checksum": "sha256:eeec5915f8a0d6433b9b60e90d1a26e87c0be4f1b07fe48861ec9d9bbd1ee9b5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf26cf0b3a0f3f337341.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf26cf0b3a0f3f337341.jpg",
+   "declared_size": 36579,
+   "declared_checksum": "sha256:4f8b2113489295ad7eeba37d12be752f3a1bfb590ff08e7964282ab2b23f7ca9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf27cf0b3a0f3f33735d.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf27cf0b3a0f3f33735d.jpg",
+   "declared_size": 74675,
+   "declared_checksum": "sha256:c42a8213563212e34ddd12793ebd00b869a3905bdf4ab72277f72452cdacb84c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf28cf0b3a0f3f337369.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf28cf0b3a0f3f337369.jpg",
+   "declared_size": 34218,
+   "declared_checksum": "sha256:c3a0940f168f50f277bf5f547af6ebfd8323bcdaecd163b464fc0b8fb0a1cee1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2acf0b3a0f3f3373b3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2acf0b3a0f3f3373b3.jpg",
+   "declared_size": 78953,
+   "declared_checksum": "sha256:fdc44d11e053306e11e67c0c0403c7515d413dd1b1217acaf64d1bd5b3fa989d",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2bcf0b3a0f3f3373c5.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2bcf0b3a0f3f3373c5.jpg",
+   "declared_size": 72949,
+   "declared_checksum": "sha256:f2a747ae8786d87c5f38dd511a473e3acc2dc475fffbc0d6e7c61594909a3c5b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2ccf0b3a0f3f3373e1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2ccf0b3a0f3f3373e1.jpg",
+   "declared_size": 31189,
+   "declared_checksum": "sha256:dd12b36e56c4cf1771281654d3ce6715b5c70dc5b6c8b18a7605e99d42a2b04c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2dcf0b3a0f3f3373ed.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2dcf0b3a0f3f3373ed.jpg",
+   "declared_size": 45787,
+   "declared_checksum": "sha256:4861d82f1f59bfe76446c0310ffab000a15f0f84d29732c39406b4b18db992d8",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2fcf0b3a0f3f33741d.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2fcf0b3a0f3f33741d.jpg",
+   "declared_size": 68236,
+   "declared_checksum": "sha256:910f53df0ca133babf77ea69bd009b5cdd90ecf408fd993cdd1dc863a2cfcabc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2fcf0b3a0f3f337427.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2fcf0b3a0f3f337427.jpg",
+   "declared_size": 57320,
+   "declared_checksum": "sha256:0cc766500a2d5482e359fc7efa1e618f4f3b8fcdeb1d742c8ff03b9441411f00",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf2fcf0b3a0f3f33742d.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf2fcf0b3a0f3f33742d.jpg",
+   "declared_size": 71488,
+   "declared_checksum": "sha256:8afafd402ba0a2eb86842d474bff6e096bf7a3e4794bcb5bdeec3737dd88e0a4",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf30cf0b3a0f3f33742f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf30cf0b3a0f3f33742f.jpg",
+   "declared_size": 57938,
+   "declared_checksum": "sha256:5b3f1584238949490c6d36a9bc33603584127333e27a59bc8fcbbee5717182f1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf32cf0b3a0f3f33745b.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf32cf0b3a0f3f33745b.jpg",
+   "declared_size": 43186,
+   "declared_checksum": "sha256:c604fe510fc65c23ca3d2f77961f9cb5519f240577f6c1406796013433a81bb0",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf32cf0b3a0f3f337463.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf32cf0b3a0f3f337463.jpg",
+   "declared_size": 33758,
+   "declared_checksum": "sha256:adccc192257601c6e0043dc2232c1d704af58e66f75e147aeda396bd69fac678",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf32cf0b3a0f3f337465.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf32cf0b3a0f3f337465.jpg",
+   "declared_size": 35120,
+   "declared_checksum": "sha256:23f58967659a77bf28feb8c03940b374485893a9708eed7cc273e8bd861def65",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf34cf0b3a0f3f33749f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf34cf0b3a0f3f33749f.jpg",
+   "declared_size": 30637,
+   "declared_checksum": "sha256:441bb01af11d56795494da5c7572261c589d0e2cb5a26ee450b2a62ea7edfa4c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf35cf0b3a0f3f3374b1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf35cf0b3a0f3f3374b1.jpg",
+   "declared_size": 28391,
+   "declared_checksum": "sha256:58a59ad83d01051bec4bf58a26539e130c757426efc79827bdeabe6b6f05cb5b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf5fcf0b3a0f3f3378b3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf5fcf0b3a0f3f3378b3.jpg",
+   "declared_size": 24495,
+   "declared_checksum": "sha256:f4cd41a16ec88f9ec9fc641a586637a1bcf10e7fc9b35724db78d5c8190bdcc8",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf99cf0b3a0f3f337e81.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf99cf0b3a0f3f337e81.jpg",
+   "declared_size": 34297,
+   "declared_checksum": "sha256:333ea9b2eb1ca2f4527240a89de562e1bdf7fa99a117767d21c0910f5104f80e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bdf9fcf0b3a0f3f337f31.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bdf9fcf0b3a0f3f337f31.jpg",
+   "declared_size": 38475,
+   "declared_checksum": "sha256:dd2c0ad336ddd4a9711a802314fb1d22af20f69cb7fff69d19339c7a98980fc2",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be023cf0b3a0f3f338b48.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be023cf0b3a0f3f338b48.jpg",
+   "declared_size": 39973,
+   "declared_checksum": "sha256:85eda6558db6b0c6b588a0a61d6fee93e41768034424f07840b366685a4896d1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be026cf0b3a0f3f338b7c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be026cf0b3a0f3f338b7c.jpg",
+   "declared_size": 43626,
+   "declared_checksum": "sha256:e3a4cf1c639cecbd5b927e866a0b6e8a69e5f66664763cf4a11b4ba43838f139",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be027cf0b3a0f3f338bb0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be027cf0b3a0f3f338bb0.jpg",
+   "declared_size": 36501,
+   "declared_checksum": "sha256:9406d5cb794343dec7ed3ec926b51f9b4fdc8f58ace1d6020271f349f83b3d93",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be028cf0b3a0f3f338bb8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be028cf0b3a0f3f338bb8.jpg",
+   "declared_size": 61428,
+   "declared_checksum": "sha256:e8c3c9e1f347a744de7e3301ae3faa0dd118d7cb8c402cd4067a47ca9181dc68",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be029cf0b3a0f3f338bd2.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be029cf0b3a0f3f338bd2.jpg",
+   "declared_size": 36106,
+   "declared_checksum": "sha256:bc9ca13211fb680f7c0a7d9feed2dbc54b04d07164c47bcbdb39e620ca5da09f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be032cf0b3a0f3f338ccc.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be032cf0b3a0f3f338ccc.jpg",
+   "declared_size": 69897,
+   "declared_checksum": "sha256:bb8d8397d1b593037628d3ea7321e4c7d8137c3d8a52d1551610fc70ec9f13f2",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be035cf0b3a0f3f338d20.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be035cf0b3a0f3f338d20.jpg",
+   "declared_size": 36994,
+   "declared_checksum": "sha256:de548d92fc621c55c1801981006a8eec6ea2c4ebbd2ab094cf1e1b2ee62b1ee1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be04acf0b3a0f3f338f4e.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be04acf0b3a0f3f338f4e.jpg",
+   "declared_size": 49293,
+   "declared_checksum": "sha256:84cd191bc3c9f86240b3b6ab2d44f3d991784812f797ecb7e3dfa124c05e1634",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be04bcf0b3a0f3f338f7c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be04bcf0b3a0f3f338f7c.jpg",
+   "declared_size": 30812,
+   "declared_checksum": "sha256:5f6af06c541d0ad6c0777e61d48200391ef0a1323edc58022a421425aac53396",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be050cf0b3a0f3f33900c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be050cf0b3a0f3f33900c.jpg",
+   "declared_size": 32410,
+   "declared_checksum": "sha256:a0501ede1c71baf5aa0bb640e3d78513ef89ae6116319339be6eeac02aab58a5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be0dacf0b3a0f3f339fdf.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be0dacf0b3a0f3f339fdf.jpg",
+   "declared_size": 23669,
+   "declared_checksum": "sha256:20c3b26a8a2db4ab7b8252e9d5d5e0f1c95ae2a2d846441502465e39d30e4c1e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be0decf0b3a0f3f33a05b.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be0decf0b3a0f3f33a05b.jpg",
+   "declared_size": 37879,
+   "declared_checksum": "sha256:c1dceb24d10fd85c200eb6972af296b31bdba83ffea3711b78d2a6a32ebfab43",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be1e8cf0b3a0f3f33bcd3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be1e8cf0b3a0f3f33bcd3.jpg",
+   "declared_size": 13031,
+   "declared_checksum": "sha256:7f21fb57cbcd95a3e13b7fee709a1f5378ac2e78d34c3641233ecd24b2f29428",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be3cecf0b3a0f3f33ef6f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be3cecf0b3a0f3f33ef6f.jpg",
+   "declared_size": 43603,
+   "declared_checksum": "sha256:78b36526b3d28d9671be49fd6bcd4e7aee53e424993bae71ebc022f29750bdd7",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be3d2cf0b3a0f3f33efd1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be3d2cf0b3a0f3f33efd1.jpg",
+   "declared_size": 29420,
+   "declared_checksum": "sha256:aa418292190d5965a2a15b75b83889640ecf718184e8aa5b9f397704a31b7f1e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be407cf0b3a0f3f33f5ee.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be407cf0b3a0f3f33f5ee.jpg",
+   "declared_size": 33958,
+   "declared_checksum": "sha256:c0491b02c5430e8c9727857a294b7649cf179f6e0bc73bb3f0edd8e95aec1aec",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be41dcf0b3a0f3f33f888.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be41dcf0b3a0f3f33f888.jpg",
+   "declared_size": 52797,
+   "declared_checksum": "sha256:c1b0cfe072422b05e02f3be4b0d33f0b81c2b2c7f7ca3bb213b6a4e292d56f66",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be4e9cf0b3a0f3f340f42.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be4e9cf0b3a0f3f340f42.jpg",
+   "declared_size": 28584,
+   "declared_checksum": "sha256:b54b856fce19e90aa71e1a2df7fb42d1367840eb391729ce4b59bcdf8e29c171",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be4eccf0b3a0f3f340fb0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be4eccf0b3a0f3f340fb0.jpg",
+   "declared_size": 34303,
+   "declared_checksum": "sha256:d801b1043929160d68c66c95f39d786fa919588835859a7db555ef91c3dc462c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be537cf0b3a0f3f34185c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be537cf0b3a0f3f34185c.jpg",
+   "declared_size": 22346,
+   "declared_checksum": "sha256:abc9605232adbf80f2e258209e8a507dba685406a505453cb778152848b332c3",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be53ccf0b3a0f3f3418e4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be53ccf0b3a0f3f3418e4.jpg",
+   "declared_size": 33459,
+   "declared_checksum": "sha256:cf8295ba3bcf9c4179dae90a688bb8b7103c4783d925d1fe14a47bac01f96934",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be53ecf0b3a0f3f341930.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be53ecf0b3a0f3f341930.jpg",
+   "declared_size": 25267,
+   "declared_checksum": "sha256:3e63502c1fadd2f0e837408468ab7e124f11529abf40f0c6f98f5bb4410862f1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be53fcf0b3a0f3f341936.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be53fcf0b3a0f3f341936.jpg",
+   "declared_size": 36946,
+   "declared_checksum": "sha256:957e5c0bcd1711cb4dc0bb8a46d99db0a1dcbfe327cf016825d6142620cb02d6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be544cf0b3a0f3f3419cc.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be544cf0b3a0f3f3419cc.jpg",
+   "declared_size": 38258,
+   "declared_checksum": "sha256:94d651830b1da74dba5f9efdc3e9c32ee52395df5ab5ec52c4f26cd91d6dab3f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be544cf0b3a0f3f3419d2.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be544cf0b3a0f3f3419d2.jpg",
+   "declared_size": 35871,
+   "declared_checksum": "sha256:f6bf657ba44f66ca4b741f1bb207f3baa9c58d416ee2c32e76142a7f47488f25",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4be545cf0b3a0f3f3419f2.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4be545cf0b3a0f3f3419f2.jpg",
+   "declared_size": 42643,
+   "declared_checksum": "sha256:bc6cb148b146859417999cac7e690d010f3b0fb3ba7db3e7fd4964800b1ef657",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bed33cf0b3a0f3f34f2ac.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bed33cf0b3a0f3f34f2ac.jpg",
+   "declared_size": 101324,
+   "declared_checksum": "sha256:d570995b9f19472b04af670ae12cd2a113eb0e79a9263c8c2b056b08d4f1afb2",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beee6cf0b3a0f3f3523fe.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beee6cf0b3a0f3f3523fe.jpg",
+   "declared_size": 44486,
+   "declared_checksum": "sha256:a45cfdf175f89c418481de56fce738b0db158381c498ee7bf0664bf78f1e79ae",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beee7cf0b3a0f3f35240c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beee7cf0b3a0f3f35240c.jpg",
+   "declared_size": 50987,
+   "declared_checksum": "sha256:d5d1ac0e333a0b5c029998f3c29a45e4d6ef377e2f463e599da1732507f1c339",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beee9cf0b3a0f3f352444.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beee9cf0b3a0f3f352444.jpg",
+   "declared_size": 55888,
+   "declared_checksum": "sha256:b9ab96b9f0c911a5d9982276dacc6f0cc53bdf47568ccc19fb55ab74530ecc2c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beeedcf0b3a0f3f3524c0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beeedcf0b3a0f3f3524c0.jpg",
+   "declared_size": 47941,
+   "declared_checksum": "sha256:70a3fff68294c48b8c389c86fcf761b14d5a89ef5fde5817d40ae4d407c42202",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beef2cf0b3a0f3f352564.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beef2cf0b3a0f3f352564.jpg",
+   "declared_size": 32344,
+   "declared_checksum": "sha256:8e3540e3869b45488ae96cf1a1fde797aad67afad2b7824c000b8347cca20e65",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beef9cf0b3a0f3f35262c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beef9cf0b3a0f3f35262c.jpg",
+   "declared_size": 25544,
+   "declared_checksum": "sha256:0c55d700506580ad9b807c744f541e46687172dbc20001ee20e6cbaeadacd282",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4beefacf0b3a0f3f352640.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4beefacf0b3a0f3f352640.jpg",
+   "declared_size": 32786,
+   "declared_checksum": "sha256:7daec13a0034e29de1c0530414f545c8151963dd23581e52a5f8497fcac1d9a4",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef07cf0b3a0f3f3527c0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef07cf0b3a0f3f3527c0.jpg",
+   "declared_size": 42389,
+   "declared_checksum": "sha256:a16ad867172f953a41ab7fa85c495c7783e5dbbe90c6980e1a6028aa658e848c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef07cf0b3a0f3f3527c8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef07cf0b3a0f3f3527c8.jpg",
+   "declared_size": 37894,
+   "declared_checksum": "sha256:52f8cef21f76496543a6c3605ffdd5941a88773fc45152975a5c409d12eb3545",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef0bcf0b3a0f3f352830.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef0bcf0b3a0f3f352830.jpg",
+   "declared_size": 57806,
+   "declared_checksum": "sha256:c3546056fe9216154548aa07f5c5f5638476adb2d1ec120ec2cec59b1867f85f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef13cf0b3a0f3f35293c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef13cf0b3a0f3f35293c.jpg",
+   "declared_size": 66894,
+   "declared_checksum": "sha256:8dd6680442df9c184fdca56ad1e0ff97e709ddec21bf79e075e7f4254a38eb14",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef15cf0b3a0f3f352966.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef15cf0b3a0f3f352966.jpg",
+   "declared_size": 48458,
+   "declared_checksum": "sha256:3b706fa3498fc1885904c2cb9b05a1046238a729524a7ba6738c8f906b36a5b5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef17cf0b3a0f3f35299a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef17cf0b3a0f3f35299a.jpg",
+   "declared_size": 39256,
+   "declared_checksum": "sha256:edd3f6299dbcb4a6c06275a284d05eb16bba949cd360aee06512350b0642ff5f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef18cf0b3a0f3f3529c8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef18cf0b3a0f3f3529c8.jpg",
+   "declared_size": 32321,
+   "declared_checksum": "sha256:b1ae3f43ac258e1086ca0fe282aff29fd38160b33a8a51a8c032944d3b9af3cd",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef1ecf0b3a0f3f352a78.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef1ecf0b3a0f3f352a78.jpg",
+   "declared_size": 66732,
+   "declared_checksum": "sha256:f75e5a341aa12e733a6c5d007c1ae78890a6d957b1e03c8f592d2f3b188c33b1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef22cf0b3a0f3f352afc.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef22cf0b3a0f3f352afc.jpg",
+   "declared_size": 42631,
+   "declared_checksum": "sha256:9028c48e5dcdd2acc71812d5129785a59e528730816cad88ea556797c177a39c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef23cf0b3a0f3f352b14.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef23cf0b3a0f3f352b14.jpg",
+   "declared_size": 35848,
+   "declared_checksum": "sha256:5c13bdb49c078759ec127013c6cbb1ded9378ffe3a605bec4569622ac73b249f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef27cf0b3a0f3f352b94.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef27cf0b3a0f3f352b94.jpg",
+   "declared_size": 46194,
+   "declared_checksum": "sha256:6d9613097e827f38db2a2190d1dbeb392822b3dec1633e91b1061f4f4514a703",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bef3dcf0b3a0f3f352e22.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bef3dcf0b3a0f3f352e22.jpg",
+   "declared_size": 42497,
+   "declared_checksum": "sha256:3da889b037d93454668131b23ced490dbee916570477c594a6e101ea63f87e10",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf04acf0b3a0f3f354af4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf04acf0b3a0f3f354af4.jpg",
+   "declared_size": 45924,
+   "declared_checksum": "sha256:3e22cff5e8d7aea247bb9026f83c2178a2b10ef6eb6807a3417c516b6a941633",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf04acf0b3a0f3f354af8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf04acf0b3a0f3f354af8.jpg",
+   "declared_size": 39813,
+   "declared_checksum": "sha256:3b4338de9cfa18c9b8367382ad1039f2d464b8114d90bcf8366fa6e71898ec85",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf04acf0b3a0f3f354b0e.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf04acf0b3a0f3f354b0e.jpg",
+   "declared_size": 46301,
+   "declared_checksum": "sha256:7e96e269abd7410950e29693228ad1dd7efd4e0be4f356b0bb0c5b8a5dda8757",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf04ccf0b3a0f3f354b42.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf04ccf0b3a0f3f354b42.jpg",
+   "declared_size": 38688,
+   "declared_checksum": "sha256:54473b9dd96f0d48cef228550c78c8ffe503c75eabeed860151afeae5b8a50ee",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf04fcf0b3a0f3f354b8c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf04fcf0b3a0f3f354b8c.jpg",
+   "declared_size": 50577,
+   "declared_checksum": "sha256:11ccee1fa8bb776eb8b4db76c16b72b161658f8d3b37f6f33a2164c35d2c40b6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf051cf0b3a0f3f354bc8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf051cf0b3a0f3f354bc8.jpg",
+   "declared_size": 39831,
+   "declared_checksum": "sha256:5a3d2ece8651af59dbed16e0cbae6c9beaff7f0c66cf835e78c1a45984d0334e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf055cf0b3a0f3f354be6.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf055cf0b3a0f3f354be6.jpg",
+   "declared_size": 50579,
+   "declared_checksum": "sha256:9ad7fb294a6a69ea29361dadb05e2ab097d9384f81c400f1c75c552c19e4326b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf056cf0b3a0f3f354c04.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf056cf0b3a0f3f354c04.jpg",
+   "declared_size": 36869,
+   "declared_checksum": "sha256:50006040e5edbca19880742157f0e76a43431995eb5ed95845e0069f56e6bd81",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf05bcf0b3a0f3f354c80.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf05bcf0b3a0f3f354c80.jpg",
+   "declared_size": 42899,
+   "declared_checksum": "sha256:8ddc33201d560378a57aa3b3ca85d905320e2e5fe776f4379764a209f935dd78",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf05bcf0b3a0f3f354c82.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf05bcf0b3a0f3f354c82.jpg",
+   "declared_size": 42108,
+   "declared_checksum": "sha256:ea83d96047c2e95420727d07108932ed494910e1ffae7330d937e9d86796c623",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf05ccf0b3a0f3f354ca4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf05ccf0b3a0f3f354ca4.jpg",
+   "declared_size": 43704,
+   "declared_checksum": "sha256:88d02d7bde70a9edd3a23f3cbe17fcca91cc3e1acca7a5484f234733b4511666",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf05ccf0b3a0f3f354ca8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf05ccf0b3a0f3f354ca8.jpg",
+   "declared_size": 50192,
+   "declared_checksum": "sha256:487031b8a31f01638e167542291f4266ed9075027bc6b1fbefb2e753d50740ca",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf07fcf0b3a0f3f35504a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf07fcf0b3a0f3f35504a.jpg",
+   "declared_size": 45861,
+   "declared_checksum": "sha256:f1061a05fcfcaf90be8dd3dcb5b7dc6ec1bc9fa5271c38860547d38a0f5e7af1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf080cf0b3a0f3f355060.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf080cf0b3a0f3f355060.jpg",
+   "declared_size": 61641,
+   "declared_checksum": "sha256:74d996e82e30aaba925410bcb41293cb49eac703d52022a3e3412cf04cfd1e57",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf084cf0b3a0f3f3550ca.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf084cf0b3a0f3f3550ca.jpg",
+   "declared_size": 55913,
+   "declared_checksum": "sha256:1612e21f20081be2a1bc9f26914f4f00e88c0bc4a51e80ac8f7476e1a6743e1c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf084cf0b3a0f3f3550d4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf084cf0b3a0f3f3550d4.jpg",
+   "declared_size": 54700,
+   "declared_checksum": "sha256:e661436a87f1fc0dff5f907da462122ca612dd8e5013df51105ab7355e932ae0",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf089cf0b3a0f3f355148.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf089cf0b3a0f3f355148.jpg",
+   "declared_size": 55945,
+   "declared_checksum": "sha256:968a7c80e2d9959c2d74bbbd0b1c56d49d81151c158f8f3c0093d187daa393bc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf08acf0b3a0f3f355162.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf08acf0b3a0f3f355162.jpg",
+   "declared_size": 60749,
+   "declared_checksum": "sha256:8676c2497adcf028f4751cb0e54871baab03aa3e5f9e4032f042d4e1fd22c53c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf08acf0b3a0f3f355178.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf08acf0b3a0f3f355178.jpg",
+   "declared_size": 65532,
+   "declared_checksum": "sha256:1d460c2506adbf4cd8b4479d9c630fd599203d69025951b8acec1264be83414a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf096cf0b3a0f3f35525e.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf096cf0b3a0f3f35525e.jpg",
+   "declared_size": 46106,
+   "declared_checksum": "sha256:bc923f26ed322a7cad957728def3029e26bde429ebf214fc751cca22c9d15145",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf099cf0b3a0f3f3552b8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf099cf0b3a0f3f3552b8.jpg",
+   "declared_size": 58954,
+   "declared_checksum": "sha256:97b73410e7d3ac315fff66ed972ed79e0ebca89bfbf9a5c9ffe6654a2cf35704",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf09ccf0b3a0f3f35530a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf09ccf0b3a0f3f35530a.jpg",
+   "declared_size": 61275,
+   "declared_checksum": "sha256:77dadc4560b12dcd5983cacf120614ed935a35bef18f8c758f0140c6fa67cf1f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf09fcf0b3a0f3f355372.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf09fcf0b3a0f3f355372.jpg",
+   "declared_size": 52321,
+   "declared_checksum": "sha256:8281436763f6e391b30e3bd956dca0ea89b4e946a6fd9bbe560c511e937b2106",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0a7cf0b3a0f3f35544a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0a7cf0b3a0f3f35544a.jpg",
+   "declared_size": 39019,
+   "declared_checksum": "sha256:13092f83985da5bb58848c45e9560ba88f9da1e1027aa484073b0d016e0a9e58",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0a8cf0b3a0f3f355470.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0a8cf0b3a0f3f355470.jpg",
+   "declared_size": 43544,
+   "declared_checksum": "sha256:13dac68147271b119471461237c454919c8aa35fd3849d38bdccb42b2595203e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0abcf0b3a0f3f3554c6.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0abcf0b3a0f3f3554c6.jpg",
+   "declared_size": 58072,
+   "declared_checksum": "sha256:774625c77dea949a58bd36445cf81c357810af25835fe4dd7b170c56c66cd587",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0afcf0b3a0f3f355544.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0afcf0b3a0f3f355544.jpg",
+   "declared_size": 58835,
+   "declared_checksum": "sha256:2c37a4a51c1b6620d7c73cc6a2acea32286a4628dfe3b4645c63e47f2ffb64f2",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0b1cf0b3a0f3f35556a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0b1cf0b3a0f3f35556a.jpg",
+   "declared_size": 64005,
+   "declared_checksum": "sha256:76ddd0542d02a0456e707da77346d10fed67c8580821395c0fdf1a28f19b99e9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0b7cf0b3a0f3f355628.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0b7cf0b3a0f3f355628.jpg",
+   "declared_size": 42137,
+   "declared_checksum": "sha256:52d608617fcd723ea5106ca7980902a8a58584a2d69fe7d53f45b99e0f4e5111",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0bacf0b3a0f3f355672.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0bacf0b3a0f3f355672.jpg",
+   "declared_size": 72884,
+   "declared_checksum": "sha256:fd2989aab82bb18228e93d8bf2cad25bbf14b5b5ff254544c83a2df5baa3344c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0bdcf0b3a0f3f3556c6.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0bdcf0b3a0f3f3556c6.jpg",
+   "declared_size": 76243,
+   "declared_checksum": "sha256:750e4f8a336bf1e50e68053ff2dc1a186e8dfd1965b1140eae2b20885436c836",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0c0cf0b3a0f3f355724.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0c0cf0b3a0f3f355724.jpg",
+   "declared_size": 32827,
+   "declared_checksum": "sha256:cf2518cf85d9ce140707377804f0fd0fefea74ed77d88f194e65127f2595e6f5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0d2cf0b3a0f3f3558b4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0d2cf0b3a0f3f3558b4.jpg",
+   "declared_size": 46135,
+   "declared_checksum": "sha256:09015e20ef59d50848881ca346e6772a990a9241166055cd5b4a078aee0cfd37",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0dacf0b3a0f3f35599c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0dacf0b3a0f3f35599c.jpg",
+   "declared_size": 59039,
+   "declared_checksum": "sha256:265271995479cd61e6f2c682729061f3244b7aa46138d8e3d347a1edcfc71983",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0dfcf0b3a0f3f355a32.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0dfcf0b3a0f3f355a32.jpg",
+   "declared_size": 51753,
+   "declared_checksum": "sha256:5006035f0f214e8be142d3d8e7318b9b83fddf4f1a109196e2683ab8630ceb23",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0e5cf0b3a0f3f355ae4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0e5cf0b3a0f3f355ae4.jpg",
+   "declared_size": 61841,
+   "declared_checksum": "sha256:f516dacc96cc56c9e3884ce6097f1df6d42a85daf6802724759bee3d8fb91d37",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0ebcf0b3a0f3f355b94.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0ebcf0b3a0f3f355b94.jpg",
+   "declared_size": 44251,
+   "declared_checksum": "sha256:6fb487f82591efb394cc13e0b35820525ef25d31ffc720761a2b5fa99286ff9a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0efcf0b3a0f3f355c1a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0efcf0b3a0f3f355c1a.jpg",
+   "declared_size": 50869,
+   "declared_checksum": "sha256:9b766da54874337a7afbca6ad034b35346d3f085feed6c87c753d07ba651920c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0f0cf0b3a0f3f355c38.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0f0cf0b3a0f3f355c38.jpg",
+   "declared_size": 61938,
+   "declared_checksum": "sha256:3daf846710a8ceced4850276082765c59e5eb8be5275d1752605331e5e613010",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0f3cf0b3a0f3f355c7e.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0f3cf0b3a0f3f355c7e.jpg",
+   "declared_size": 56746,
+   "declared_checksum": "sha256:662244d201a30c21229ba5f660fda3fcf7ff3039536301794f98b9b3538df558",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf0f4cf0b3a0f3f355ca8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf0f4cf0b3a0f3f355ca8.jpg",
+   "declared_size": 48090,
+   "declared_checksum": "sha256:e957c7b22f31a55982e50605488fa5d4df8d985f45f1704e614ead1a3a47ad2e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf107cf0b3a0f3f355daa.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf107cf0b3a0f3f355daa.jpg",
+   "declared_size": 50739,
+   "declared_checksum": "sha256:58de154b1648eb768905646516685c90e2b9a2b57faa021d12bc54b376817e33",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf110cf0b3a0f3f355e92.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf110cf0b3a0f3f355e92.jpg",
+   "declared_size": 54122,
+   "declared_checksum": "sha256:153638cad8f7c478f3687c33190fa41d08b49cdbadb20f820e0c4743ecedb13c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf114cf0b3a0f3f355efc.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf114cf0b3a0f3f355efc.jpg",
+   "declared_size": 47801,
+   "declared_checksum": "sha256:9896617ee1da51a095b5371edf662d9ec7695639aed5e6e248a7dfee923563db",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf115cf0b3a0f3f355f20.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf115cf0b3a0f3f355f20.jpg",
+   "declared_size": 63318,
+   "declared_checksum": "sha256:360c51cc0f61559b0e10ed53bb031284d37ba0f4eed94011d6ea0d1042737e2e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf116cf0b3a0f3f355f48.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf116cf0b3a0f3f355f48.jpg",
+   "declared_size": 38268,
+   "declared_checksum": "sha256:eeecce4c19f49aeea1b701d6722201b805b4b426421f814f9df866af787d4cf1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf117cf0b3a0f3f355f5a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf117cf0b3a0f3f355f5a.jpg",
+   "declared_size": 39661,
+   "declared_checksum": "sha256:d2eae01ab2ad3ccca39c032d20d46bcfaf41d089ec37592bfd32a2d60053b620",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf11acf0b3a0f3f355fbe.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf11acf0b3a0f3f355fbe.jpg",
+   "declared_size": 52975,
+   "declared_checksum": "sha256:58260eae42fa7619b5007634ca998a5d52dafd8c3956910acd4f0b470c64ad50",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf35fcf0b3a0f3f359e80.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf35fcf0b3a0f3f359e80.jpg",
+   "declared_size": 54902,
+   "declared_checksum": "sha256:caeac107fadbddf4fa83315f463d1006ee96263c5b3fffbc0bf312a146a6124c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf363cf0b3a0f3f359ef4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf363cf0b3a0f3f359ef4.jpg",
+   "declared_size": 41176,
+   "declared_checksum": "sha256:ce6851c7999b585992e0da7515230578329d7af09f19fed68acabe3f5b06ceb1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf365cf0b3a0f3f359f30.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf365cf0b3a0f3f359f30.jpg",
+   "declared_size": 45745,
+   "declared_checksum": "sha256:f6619c861f01192388921e58a34df666e7fc8671b6ce9979c017a799cae20b4e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf366cf0b3a0f3f359f40.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf366cf0b3a0f3f359f40.jpg",
+   "declared_size": 54475,
+   "declared_checksum": "sha256:2d4aba2128fd7c2a48c9c268e4c38762944f5b7c8f879cd9c6cd97654fc9e3da",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf369cf0b3a0f3f359f98.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf369cf0b3a0f3f359f98.jpg",
+   "declared_size": 47433,
+   "declared_checksum": "sha256:d635dd8c4000d629942e2425b574fc7e7b068fff1132c6d80752488b90de0c98",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf370cf0b3a0f3f35a070.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf370cf0b3a0f3f35a070.jpg",
+   "declared_size": 50605,
+   "declared_checksum": "sha256:7edf90454919d994193a29be8187ad06d86be600cdb47eaecb2d239e9fa9ca59",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf371cf0b3a0f3f35a07a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf371cf0b3a0f3f35a07a.jpg",
+   "declared_size": 51305,
+   "declared_checksum": "sha256:204a635593c928174ddb192819e405f47142a6247a5d77fcfa925d1d9289de9b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf372cf0b3a0f3f35a092.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf372cf0b3a0f3f35a092.jpg",
+   "declared_size": 41272,
+   "declared_checksum": "sha256:109a07c88fa64919b74ec24422f1029daf8a5c5446d4dc5af6d83ec1b94b003c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf373cf0b3a0f3f35a0be.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf373cf0b3a0f3f35a0be.jpg",
+   "declared_size": 53800,
+   "declared_checksum": "sha256:ff72c382c28090c6339b3e2f520b3d35718aa48d6b4ea1dea2913f005a353898",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf376cf0b3a0f3f35a110.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf376cf0b3a0f3f35a110.jpg",
+   "declared_size": 49833,
+   "declared_checksum": "sha256:7855816a413a88ac845c2fe348735332dc709c6b6847f92c0e28e471cf0f1cdc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf37dcf0b3a0f3f35a1da.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf37dcf0b3a0f3f35a1da.jpg",
+   "declared_size": 46350,
+   "declared_checksum": "sha256:89ef5b77d27a822554513b7ea904477e1a6eb3657b8463154f5a28f53b340165",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf37dcf0b3a0f3f35a1ee.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf37dcf0b3a0f3f35a1ee.jpg",
+   "declared_size": 36498,
+   "declared_checksum": "sha256:ef73a54136649d1c689d595439ad9088db21262cd014a7c7d2905f4e58d0c886",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf37ecf0b3a0f3f35a208.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf37ecf0b3a0f3f35a208.jpg",
+   "declared_size": 54065,
+   "declared_checksum": "sha256:5b642bfc2b56aa8bb314527be8b1e6484da26cd333d507c819bb0a1a55d9efed",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf381cf0b3a0f3f35a258.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf381cf0b3a0f3f35a258.jpg",
+   "declared_size": 46992,
+   "declared_checksum": "sha256:1f0451587db215a9fef9e964923f1359c577a81a49209da845adf5b8f4dac52c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf381cf0b3a0f3f35a26a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf381cf0b3a0f3f35a26a.jpg",
+   "declared_size": 49114,
+   "declared_checksum": "sha256:c9a48bbedb7d8dde009bf974c7e1a343036d661f3931395802c126cbdcecfdf6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf38dcf0b3a0f3f35a3c0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf38dcf0b3a0f3f35a3c0.jpg",
+   "declared_size": 68364,
+   "declared_checksum": "sha256:413226d4e6414c64fead181edfa3a2f143b827096990591903ead63bd57b99d6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf38fcf0b3a0f3f35a3e0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf38fcf0b3a0f3f35a3e0.jpg",
+   "declared_size": 74845,
+   "declared_checksum": "sha256:169e3b08a7991a43c7a7e545fb59ccaa7788578e64bd91d875abbf1cccc5e80a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf390cf0b3a0f3f35a3f8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf390cf0b3a0f3f35a3f8.jpg",
+   "declared_size": 80735,
+   "declared_checksum": "sha256:d49fed2b81e5c80d83fecca9e51cbe86e0a680825e68c5b56efdf98f360a2b61",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf391cf0b3a0f3f35a418.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf391cf0b3a0f3f35a418.jpg",
+   "declared_size": 52003,
+   "declared_checksum": "sha256:d64f374ec790464f41396d0aca4c2ab19671b372aaa32450fd384ed397900532",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf399cf0b3a0f3f35a4c8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf399cf0b3a0f3f35a4c8.jpg",
+   "declared_size": 49353,
+   "declared_checksum": "sha256:433f64647264b7a57bcd57d29951996086495eef6b952e76260bbc305c8a0e92",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf39acf0b3a0f3f35a4dc.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf39acf0b3a0f3f35a4dc.jpg",
+   "declared_size": 46933,
+   "declared_checksum": "sha256:7d755c499319d8dd69053078ecb54071dfa4d74cc87cf4e54ea0a26771172f9b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf39fcf0b3a0f3f35a56c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf39fcf0b3a0f3f35a56c.jpg",
+   "declared_size": 67080,
+   "declared_checksum": "sha256:d20ca4728f73c9c5d25bbcb592e8d3ac66d3c336963cf6ba270487dda1bb4f43",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3a4cf0b3a0f3f35a5fa.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3a4cf0b3a0f3f35a5fa.jpg",
+   "declared_size": 33859,
+   "declared_checksum": "sha256:373892dbc832462d237009aea55b0d853e01dc394f36fe9fa23f0cee05bdbf7b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3a5cf0b3a0f3f35a612.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3a5cf0b3a0f3f35a612.jpg",
+   "declared_size": 75629,
+   "declared_checksum": "sha256:0117cb47e107aaeec88cce16665840f7ae80c5f81beb49a27f385785c8360155",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3a7cf0b3a0f3f35a652.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3a7cf0b3a0f3f35a652.jpg",
+   "declared_size": 83233,
+   "declared_checksum": "sha256:03b89de324630ad353de36f7dbcf4b09c85d0af6bcecd6b1a1eecf9d617aa083",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3a7cf0b3a0f3f35a666.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3a7cf0b3a0f3f35a666.jpg",
+   "declared_size": 61237,
+   "declared_checksum": "sha256:f6c292fb06e4f7d509267f13b57a1a819eca18244f438750d1a804bb3e360252",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3a8cf0b3a0f3f35a66e.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3a8cf0b3a0f3f35a66e.jpg",
+   "declared_size": 49350,
+   "declared_checksum": "sha256:f1d21bdf90e8bd2f69b7c8c8ed9b43d9a88f9242b36b58e467020ab58917b272",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3aacf0b3a0f3f35a6a2.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3aacf0b3a0f3f35a6a2.jpg",
+   "declared_size": 60910,
+   "declared_checksum": "sha256:6a15a991e56630f19a28578f3144eb9c507ae2026090b943fb2623fca80078f6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3abcf0b3a0f3f35a6c0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3abcf0b3a0f3f35a6c0.jpg",
+   "declared_size": 46409,
+   "declared_checksum": "sha256:dfa5086c51283ee02786bd3b2c93e81f77cbac31f7e17d488bdcf25118d72c2b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3b6cf0b3a0f3f35a7d4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3b6cf0b3a0f3f35a7d4.jpg",
+   "declared_size": 50762,
+   "declared_checksum": "sha256:00799f27819cc375d4d9cd0ff5367e6b86c3d5c8021da4b65b47f223cab72ec3",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3b9cf0b3a0f3f35a830.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3b9cf0b3a0f3f35a830.jpg",
+   "declared_size": 49788,
+   "declared_checksum": "sha256:494835fea46e0d8d765eb4e9c5e8593e5e4c5687f82ec5ad3fe78c70a79a5d86",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3c0cf0b3a0f3f35a892.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3c0cf0b3a0f3f35a892.jpg",
+   "declared_size": 61216,
+   "declared_checksum": "sha256:9b4e4df61962b84d959ad449587e7d3527e7d58159d8af088c72d451f11491b6",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3c2cf0b3a0f3f35a8be.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3c2cf0b3a0f3f35a8be.jpg",
+   "declared_size": 60453,
+   "declared_checksum": "sha256:afa70b1f5fc57a2995814c1148d56ff45b22ae48410b7a4a8e886e7481fa21fb",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3c5cf0b3a0f3f35a914.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3c5cf0b3a0f3f35a914.jpg",
+   "declared_size": 44533,
+   "declared_checksum": "sha256:915946aa86d2516d10f421e7b3e99a18b44efd2f445510c6e890b992fa5fb2bd",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3cacf0b3a0f3f35a964.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3cacf0b3a0f3f35a964.jpg",
+   "declared_size": 50294,
+   "declared_checksum": "sha256:8c5b9885a37a879dbac64825d261e0a3ec85e9f2bd07549bc9887fbe78ee2c3a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3cdcf0b3a0f3f35a97c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3cdcf0b3a0f3f35a97c.jpg",
+   "declared_size": 58650,
+   "declared_checksum": "sha256:c1ec7c1e3d8629b791da5bf699c004ac574bf4101b7fa6502b556b7b29271e27",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3d5cf0b3a0f3f35a9ec.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3d5cf0b3a0f3f35a9ec.jpg",
+   "declared_size": 58183,
+   "declared_checksum": "sha256:b9293c277be87cce7c49f557e569fb3928e6aa6d7600308c23219da4c0092096",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3d6cf0b3a0f3f35aa00.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3d6cf0b3a0f3f35aa00.jpg",
+   "declared_size": 55043,
+   "declared_checksum": "sha256:4383e44645f96f4de37785f2f43188c97b2f9ba5e4c443fca68635c4fcef06bc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3d6cf0b3a0f3f35aa04.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3d6cf0b3a0f3f35aa04.jpg",
+   "declared_size": 74993,
+   "declared_checksum": "sha256:52b1f570c64ad05cdcf636e09c2dc4ba86e72862471e2c783ea806d16d2a8565",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3dacf0b3a0f3f35aa72.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3dacf0b3a0f3f35aa72.jpg",
+   "declared_size": 41499,
+   "declared_checksum": "sha256:4079982d62070b8b49f0e039300db4b39b15dd39c3c23fea446128ad7836f241",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3dbcf0b3a0f3f35aa84.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3dbcf0b3a0f3f35aa84.jpg",
+   "declared_size": 57751,
+   "declared_checksum": "sha256:98e8fe5283fe97890065bc1eafba335c45e3c82a1a8a3295cc60e22620bc3240",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3e3cf0b3a0f3f35ab66.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3e3cf0b3a0f3f35ab66.jpg",
+   "declared_size": 54996,
+   "declared_checksum": "sha256:2c1e188c5b73d9f49377c50c97d06139072d8c536e2d305f0efc6dc790d6bf66",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf3e5cf0b3a0f3f35ab98.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf3e5cf0b3a0f3f35ab98.jpg",
+   "declared_size": 52106,
+   "declared_checksum": "sha256:51b489bed1fce55c4f815fbb138eb18f709d187d8d6ceea2ce451cf5b26b8ac8",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf45bcf0b3a0f3f35b812.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf45bcf0b3a0f3f35b812.jpg",
+   "declared_size": 69299,
+   "declared_checksum": "sha256:c9f3a03f30e4aa254747ca59c37a3e692314f3aea892853ea7a422f5069c90c9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf460cf0b3a0f3f35b896.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf460cf0b3a0f3f35b896.jpg",
+   "declared_size": 50915,
+   "declared_checksum": "sha256:11c498ff0b131218102190b6e24565ecdab1b1f534716e8d2118a7f725dd8c82",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf468cf0b3a0f3f35b97c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf468cf0b3a0f3f35b97c.jpg",
+   "declared_size": 52112,
+   "declared_checksum": "sha256:d33312136e5170b256aa17d64d68e825922ee0d0d8af225880ac53939b86fd68",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5d4bf46ecf0b3a0f3f35ba34.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5d4bf46ecf0b3a0f3f35ba34.jpg",
+   "declared_size": 51246,
+   "declared_checksum": "sha256:92e8f5b1c4bdcc084ee9cfd2d95a48ce69c11d32209c62f3ae3944447f8ec307",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f54c3f62767d97a472f4.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f54c3f62767d97a472f4.jpg",
+   "declared_size": 27854,
+   "declared_checksum": "sha256:9f07be6a155b71ebced855776266b42104dc4b3f4a66ac33d9ee6fbb534b2807",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f82cf0611d7ddd740c80.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f82cf0611d7ddd740c80.jpg",
+   "declared_size": 25121,
+   "declared_checksum": "sha256:1081dd670ae27868c0833a56cdf7e473569308d93bef25f2ff1d43a42402c791",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f837f0611d7ddd740cdd.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f837f0611d7ddd740cdd.jpg",
+   "declared_size": 20535,
+   "declared_checksum": "sha256:fa82a8e19167ae528e6432c4ed427a921d03822e553a9f177152e7e2af282c47",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f84bf0611d7ddd740d83.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f84bf0611d7ddd740d83.jpg",
+   "declared_size": 43275,
+   "declared_checksum": "sha256:e237a05762cb34c82df01479624cf0e089450a7827a7cc9bc120d9683181c04b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f858f0611d7ddd740df1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f858f0611d7ddd740df1.jpg",
+   "declared_size": 43349,
+   "declared_checksum": "sha256:40951fc1812d8ca4d986cc476fbd12a0c7d6826dd17aa183717ee32bf22f1328",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f861f0611d7ddd740e42.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f861f0611d7ddd740e42.jpg",
+   "declared_size": 70477,
+   "declared_checksum": "sha256:1e3d9442e9b3dadfc1da4aa4deaf6a6c25e24011c5f20aeb2b795db4215d2f2a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f8a2f0611d7ddd74107b.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f8a2f0611d7ddd74107b.jpg",
+   "declared_size": 45908,
+   "declared_checksum": "sha256:d4f57fa3715eceff3211b48913ce0f00880df5c4960011d3a102c3c9a6b641cc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f8f8f0611d7ddd741364.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f8f8f0611d7ddd741364.jpg",
+   "declared_size": 48472,
+   "declared_checksum": "sha256:77f90af1f35d42bab05e5c6e04dcd35c6837282316f9c3688ab93ca437bc7650",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f8faf0611d7ddd741375.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f8faf0611d7ddd741375.jpg",
+   "declared_size": 18894,
+   "declared_checksum": "sha256:7211dc34f71bf696350c4dc46496c8df1b6a6a59df988f494fdeb6ef24285c02",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f8fcf0611d7ddd741382.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f8fcf0611d7ddd741382.jpg",
+   "declared_size": 26889,
+   "declared_checksum": "sha256:614707504d462313600f4f2340748b425cd754a63724b5d9e2f0885b537d7186",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f8fcf0611d7ddd741384.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f8fcf0611d7ddd741384.jpg",
+   "declared_size": 34942,
+   "declared_checksum": "sha256:d822bec42d464cc8944b5aab8887b61bbe7ffdc5f6035d70adc34ce4ba7c0086",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f903f0611d7ddd7413b7.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f903f0611d7ddd7413b7.jpg",
+   "declared_size": 15877,
+   "declared_checksum": "sha256:9bf6f2a2cf95a0afda08fcdec18a467f4314b8560d80b0eabe4ca36dd735b92f",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f908f0611d7ddd7413e3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f908f0611d7ddd7413e3.jpg",
+   "declared_size": 30362,
+   "declared_checksum": "sha256:59a989fb24d75116cb11cdc47788e9080d7dd7cf6b7b4fffac7282e59a4b01d3",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f90af0611d7ddd7413f0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f90af0611d7ddd7413f0.jpg",
+   "declared_size": 26943,
+   "declared_checksum": "sha256:418afe877fa77e6d9626bd867d063a7c04bf30deb92669f96b5e82c49e91a692",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f912f0611d7ddd741436.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f912f0611d7ddd741436.jpg",
+   "declared_size": 26013,
+   "declared_checksum": "sha256:0afd59853ea165836e3460cd8196fe52666a7d814f4d80f85a56daad41fe442e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f917f0611d7ddd741460.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f917f0611d7ddd741460.jpg",
+   "declared_size": 27481,
+   "declared_checksum": "sha256:66260507d1a0a6bf37b9a9daf1acb28fa75e4ef323bb619f52976984e7aa5049",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f91af0611d7ddd74147f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f91af0611d7ddd74147f.jpg",
+   "declared_size": 30773,
+   "declared_checksum": "sha256:dd59d3f4080a529c70aa9e0e9684ac3b892055356277e46440fb088e28fa3cc4",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f920f0611d7ddd7414b0.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f920f0611d7ddd7414b0.jpg",
+   "declared_size": 31054,
+   "declared_checksum": "sha256:4bae01a40e52884421a9cc0ba6e29a02af1c2fd3ffc62b2b50c52b055453e074",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f92df0611d7ddd741526.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f92df0611d7ddd741526.jpg",
+   "declared_size": 57167,
+   "declared_checksum": "sha256:324d449b2939ae16f4ebd19be97ff6b9d0c5309c02656d2452650d60b0ee128c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f934f0611d7ddd741567.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f934f0611d7ddd741567.jpg",
+   "declared_size": 41572,
+   "declared_checksum": "sha256:31c863a480cc91884fff6ac8fe24fec3cba21a4a64d8a330a00e3ae1290bd4fc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4f940f0611d7ddd7415b8.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4f940f0611d7ddd7415b8.jpg",
+   "declared_size": 36067,
+   "declared_checksum": "sha256:f0701441ba5072f5587e23c6f04c7ba6c23e047a909c33838af2cb31ca5b6ff1",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fad2f0611d7ddd7422f3.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fad2f0611d7ddd7422f3.jpg",
+   "declared_size": 31836,
+   "declared_checksum": "sha256:416965949c984ecc8dea1d2baf2e3e354997bb1d4fe3126758961a70083f523b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fad3f0611d7ddd7422fa.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fad3f0611d7ddd7422fa.jpg",
+   "declared_size": 47524,
+   "declared_checksum": "sha256:63e833d1e4954e52a6689c17d31032f1a5de4cd31d90b0fcb0cbbcfbfc479a89",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fb16f0611d7ddd74252f.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fb16f0611d7ddd74252f.jpg",
+   "declared_size": 63909,
+   "declared_checksum": "sha256:cf5988984659076758a1fd32c3211ab5773aa22e2cd54c279ac859d6596e0319",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fbdef0611d7ddd742bb6.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fbdef0611d7ddd742bb6.jpg",
+   "declared_size": 56336,
+   "declared_checksum": "sha256:d2440f3d5fdd6da1a4378324acced121dbad8091963041ec5fba82a531fef079",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fbdff0611d7ddd742bc5.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fbdff0611d7ddd742bc5.jpg",
+   "declared_size": 74700,
+   "declared_checksum": "sha256:5cdb7e8268073a9d04163e0f53790643cfaee99d5ec3b5768daa16bab237faa7",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fbf6f0611d7ddd742c86.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fbf6f0611d7ddd742c86.jpg",
+   "declared_size": 35142,
+   "declared_checksum": "sha256:206e4381b89a72d7441daf9c8e9683c7cb6cace36ee40c3662c73a406b5c5b2b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc04f0611d7ddd742d06.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc04f0611d7ddd742d06.jpg",
+   "declared_size": 54548,
+   "declared_checksum": "sha256:3e1da12ba9eca0cbb882aa2fe9e42e2ca1e03a9847911b68f40fd9c82ab61645",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc08f0611d7ddd742d20.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc08f0611d7ddd742d20.jpg",
+   "declared_size": 47262,
+   "declared_checksum": "sha256:53f3b6dbfcdcf25f49f1aaf205ada982a8c77777903cd6a3b0d62b555144d754",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc35f0611d7ddd742e94.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc35f0611d7ddd742e94.jpg",
+   "declared_size": 40008,
+   "declared_checksum": "sha256:b5ff1f21e8f3179e8d3978cdcd8d6201326fd220e63afe69065b4e93fcbe7c01",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc42f0611d7ddd742f02.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc42f0611d7ddd742f02.jpg",
+   "declared_size": 39007,
+   "declared_checksum": "sha256:639dcc2cbca5182ef3dc98517f455b12dcf4b9784f6eb1b26822ee830c2a635b",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc43f0611d7ddd742f0a.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc43f0611d7ddd742f0a.jpg",
+   "declared_size": 34375,
+   "declared_checksum": "sha256:658db9c10c36c44b6b44fc6d90376e24690b0737d9c55902200ef13699d4005c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ec4fc55f0611d7ddd742f96.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ec4fc55f0611d7ddd742f96.jpg",
+   "declared_size": 26501,
+   "declared_checksum": "sha256:278dd882cc73aca60bb19323badbbd302bb9fc8a6404b2ea45efe07673db460e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ed419e36858701b1019a208.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ed419e36858701b1019a208.jpg",
+   "declared_size": 44702,
+   "declared_checksum": "sha256:92d7ee52586ea06fe9a9decb2308fd647455a32f35609f33288de2ca5c214bfa",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ed42a29685870e51019a244.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ed42a29685870e51019a244.jpg",
+   "declared_size": 20802,
+   "declared_checksum": "sha256:c91b05e704a320860305d7d9aee9d9457903663150ec658bc83103868be87b24",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5ed6dd80b323617e009eb3ef.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5ed6dd80b323617e009eb3ef.jpg",
+   "declared_size": 43566,
+   "declared_checksum": "sha256:94dc3a74c5cb0138da0443d10c783537f2bc7861fa6104d60e753b46aac56e4e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5efb663a48cdebbec9b6300c.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5efb663a48cdebbec9b6300c.jpg",
+   "declared_size": 29415,
+   "declared_checksum": "sha256:0d7bb89ad5d406c34612b0e06cbbdfdc2b2c7e016ed3e9759a0b0c3a567e9f61",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5f17731e9607c1941974c2ca.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5f17731e9607c1941974c2ca.jpg",
+   "declared_size": 27090,
+   "declared_checksum": "sha256:98bd4cdc65be8eddc9a0a4db72da8dca2b48bbc2753492383e863879a6e3f219",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/5f184bb76d14e3e1c24de0b2.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/5f184bb76d14e3e1c24de0b2.jpg",
+   "declared_size": 37732,
+   "declared_checksum": "sha256:3128d8621d9a5efbe08d7b272afdbc748b4f63f6dc418d4c51cde0aa85364dff",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/605a669c801a8781d885e8da.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/605a669c801a8781d885e8da.jpg",
+   "declared_size": 42046,
+   "declared_checksum": "sha256:ef1e2f3ceb6ef25f517a4c29fb7b631bcd8543d4abbf30db401d4bbd05668567",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/605a73b1801a87456085efa1.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/605a73b1801a87456085efa1.jpg",
+   "declared_size": 46993,
+   "declared_checksum": "sha256:321748b554bb7a69e62e492bf1fd10894f28921d277b2e44fd1a39bfc9c35158",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/images/605a7a18d746332dd1aad5e9.jpg",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/images/605a7a18d746332dd1aad5e9.jpg",
+   "declared_size": 36268,
+   "declared_checksum": "sha256:320aa1e09800fe122382b02c263dd507205b4a3f2abea5cbb018f588c96a28a8",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "household_set/items.csv",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/household_set/items.csv",
+   "declared_size": 74285,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "labels/locality.csv",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/labels/locality.csv",
+   "declared_size": 7910,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  },
+  {
+   "name": "labels/removed_by_hand.csv",
+   "url": "https://huggingface.co/datasets/anyantudre/moore-image-lexicon/resolve/04a289561b9024265ef8f5ad76c96afd687bc8ec/labels/removed_by_hand.csv",
+   "declared_size": 1363,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "license 'other' is not on the download list"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

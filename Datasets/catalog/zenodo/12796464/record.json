@@ -1,0 +1,134 @@
+{
+ "id": "zenodo:12796464",
+ "title": "ProteinCartograhpy data accompanying \"Identification of capsid-like proteins in venomous and parasitic animals\"",
+ "url": "https://zenodo.org/records/12796464",
+ "doi": "10.5281/zenodo.12796464",
+ "description": "<p>This is the data for the <a href=\"https://github.com/Arcadia-Science/ProteinCartography/releases/tag/v0.4.2\">ProteinCartography</a> analysis in the pub \"<a href=\"https://doi.org/10.57844/arcadia-14b2-6f27\">Identification of capsid-like proteins in venomous and parastic animals.</a>\" Note that ProteinCartography (v0.4.2) was run in \"Cluster\" mode or \"From-folder\" mode using the parameters set in the <code>config_ff.yml</code> and the <em>Ornithodoros turicata&nbsp;</em>proteins. Notebooks used to fetch data and prepare custom plots can be found in the capsids GitHub <a href=\"https://github.com/Arcadia-Science/capsids\">repository</a>.</p>\n<p>&nbsp;</p>\n<p><strong>Files in this data repository include:&nbsp;</strong></p>\n<p><code>output.zip</code> is a folder containing all of the output files for the <em>Ornithodoros</em> ProteinCartography run, including the maps, aggregated features files, and the all-v-all similarity matrix.</p>\n<p><code>structures.zip</code> is a folder containing all the structures used in the ProteinCartography analysis. Structures beginning with \"VOG\" are viral capsid proteins folded using <a href=\"https://doi.org/10.1126/science.ade2574\">ESMFold</a>.</p>\n<p><code>ornithodoros_aggregated_features.tsv</code> is a file containing all the metadata gathered for each protein in the analysis from either <a href=\"https://www.uniprot.org\">UniProt</a> or the <a href=\"https://vogdb.org\">VOG database</a>.</p>\n<p><code>ornithodoros_aggregated_features_pca_umap.html</code> is the final map of the capsid proteins with the <em>Ornithodoros</em> proteins with metadata overlays.</p>\n<p><code>ornithodoros_aggregated_features_pca_umap.tsv</code> is a file containing all of the metadata gathered for each protein in the analysis, as well as the coordinates for the map.</p>\n<p><code>ornithodoros_leiden_similarity.html</code> is a heatmap showing the average between-cluster and within-cluster similarity between every cluster in the analysis.</p>\n<p><code>tick_or_v",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/12796464",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 4,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2024-07-23T18:20:51.475551+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:ea7cc26cf07409edaa9eb6cb07a94b3a48ddb904ec1222b6def45e0fef0f9aae",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-23T13:37:34+00:00",
+ "files": [
+  {
+   "name": "ornithodoros_aggregated_features_pca_umap.html",
+   "url": "https://zenodo.org/api/records/12796464/files/ornithodoros_aggregated_features_pca_umap.html/content",
+   "declared_size": 38570695,
+   "declared_checksum": "md5:dc6802552b83b5e76997f279c007a4cb",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ornithodoros.txt",
+   "url": "https://zenodo.org/api/records/12796464/files/ornithodoros.txt/content",
+   "declared_size": 83578,
+   "declared_checksum": "md5:62ccde02be538183d4bb62b3ce74799e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "output.zip",
+   "url": "https://zenodo.org/api/records/12796464/files/output.zip/content",
+   "declared_size": 1123973689,
+   "declared_checksum": "md5:1f48974c8c1c3dc7e44129f2da6e8099",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ornithodoros_aggregated_features.tsv",
+   "url": "https://zenodo.org/api/records/12796464/files/ornithodoros_aggregated_features.tsv/content",
+   "declared_size": 13238503,
+   "declared_checksum": "md5:e730e287afea4165fd9ee5487f1d0454",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "ornithodoros_leiden_similarity.html",
+   "url": "https://zenodo.org/api/records/12796464/files/ornithodoros_leiden_similarity.html/content",
+   "declared_size": 3640668,
+   "declared_checksum": "md5:d49888b37bebeaec7ec46eb4076ee5ba",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "config_ff.yml",
+   "url": "https://zenodo.org/api/records/12796464/files/config_ff.yml/content",
+   "declared_size": 2081,
+   "declared_checksum": "md5:cb19fd0f227d6219147cdfc763ebd31f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "uniprot_features1.tsv",
+   "url": "https://zenodo.org/api/records/12796464/files/uniprot_features1.tsv/content",
+   "declared_size": 12299544,
+   "declared_checksum": "md5:9323e5e7ebbbfa2fd26d1fe3d9fbdca7",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "tick_or_virus_umap.html",
+   "url": "https://zenodo.org/api/records/12796464/files/tick_or_virus_umap.html/content",
+   "declared_size": 5340066,
+   "declared_checksum": "md5:a7376a6309b63036456295aee498ef3b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "ornithodoros_aggregated_features_pca_umap.tsv",
+   "url": "https://zenodo.org/api/records/12796464/files/ornithodoros_aggregated_features_pca_umap.tsv/content",
+   "declared_size": 12639709,
+   "declared_checksum": "md5:844c181c9f83e2a67cc95e5cfe377478",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "structures.zip",
+   "url": "https://zenodo.org/api/records/12796464/files/structures.zip/content",
+   "declared_size": 1080009516,
+   "declared_checksum": "md5:5bf41e293f19ba00bf6e391c04bca118",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
