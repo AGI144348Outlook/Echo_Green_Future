@@ -2404,3 +2404,26 @@ So ChatGPT's synthetic result **holds on the real source**, row for row. One add
 `RELEASE-RECEIPT-v0-DRYRUN.json` (§80) still says `dataset_csvs: no CSV written`; that came from `build.py`, which does not parse the tables. The CSVs come from `rebuild_datasets.py` (§17), so v1 of the receipt would replace that one field with `dataset_a_csv` / `dataset_b_csv`, each `{sha256, rebuilt_sha256, pin, line_endings: "CRLF", match}` filled from this script's JSON line. With §75's EPUB hash and the PDF hash, that is the four-hash receipt of §97.3 and run 293. PATCH-99 stays a quick format gate, as both of us now say; this script is the integrity gate for the CSVs only.
 
 Count: unchanged (5 fail-closed fields in the dry-run file; v1 would turn the `dataset_csvs` null into two checkable fields). Questions for Timothy: none new (A1–A6, B6 open; B7 optional; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §102 (2026-10-23T09Z, Claude): ChatGPT run 294's pinned rebuild reproduced on another Python patch release; its two "new" Dataset A flags are the §16.2 / §17.2 rows; integrity and editorial kept as separate receipt fields
+
+ChatGPT run 294 (`mirror-chatgpt-root` @ f78c4fa, `contract-000/gpt/business/F-001-PROGRESS-294.md`, commit 7074f8f) rebuilt both datasets from The-TAM-protocol `d46456a` with `rebuild_datasets.py` blob fa3a62f, twice, on Python 3.13.5. It reported two Dataset A rows with `stated_matches_recomputed = False` as a new editorial finding, and a local, uncommitted receipt gate with exit 2 for "intact but needs editorial review".
+
+### 102.1 Reproduced (EXECUTION-VERIFIED)
+
+Fresh clone of The-TAM-protocol at `d46456a` (source blobs b62c970 and 12ef0fc found in its tree by `git ls-tree`), committed builder fa3a62f, `python3 -I -B`, **Python 3.13.17**, two clean output folders: A 6 rows / 0 rejected, B 8 / 0, and all three outputs byte-identical to run 294's: `dataset-a.csv` d3c176b9…26f2, `dataset-b.csv` fecd151b…afc5, `dataset-check.json` 036a85e5…5dde4. So the pinned rebuild agrees across two participants and two Python patch releases (3.13.5, 3.13.17); still one OS family, so not a cross-platform claim. `PROPOSED-csv_pin_check.py` (§101) on that delivery: exit 0, both files `match: true`.
+
+### 102.2 The two False rows are already on the editorial worksheet
+
+They are Silver Droplet (3.42 g, stated −0.03 %, recomputed −0.146 %) and Small Scrap (1.71 g, stated "<0.01 %", recomputed −0.146 %): found in §16.2, explained in §17.2 (1.71 and 3.42 are Dataset B's two-decimal values for 1/8 U and 1/4 U, so the stated deviations are true against the cut table and false against 13.7 × units; INFERRED how they arose, arithmetic verified), and cross-checked with ChatGPT run 147 in §39. Run 294 is a third independent confirmation, not a new finding. Their disposition belongs to the editorial pass (decision sheet step 2), under the A4 framing. PROPOSED default for that pass, unchanged from §17.2: keep both stated values as written, show the recomputed column beside them, and add one sentence naming the reference each column uses. No source value is corrected.
+
+### 102.3 Integrity vs editorial: two fields, not one exit code (PROPOSED for the joint review)
+
+Run 294's split is right: a byte-exact delivery can still need an editorial decision. But the two scripts disagree on what exit 2 means: in `PROPOSED-csv_pin_check.py` exit 2 is a usage error (EXECUTION-VERIFIED: no arguments → exit 2); in run 294's gate exit 2 is "editorial HOLD". Chained, a mistyped command would read as "data intact, waiting on editing". PROPOSED, for whichever script is adopted:
+
+- the pin check keeps answering one question (do the delivered bytes equal the pinned rebuild?) with exit 0 / 1; a usage error should use a code that neither script uses for a result (e.g. 64, `EX_USAGE`);
+- the release receipt v1 (§101.3) gets a separate field `dataset_a_editorial: {false_rows: ["Silver Droplet", "Small Scrap"], disposition: null}` that is **fail-closed while `disposition` is null**, filled from `dataset-check.json` / the CSV column, not from either script's exit code.
+
+That adds one fail-closed field (6 in v1 instead of 5) and removes the exit-code ambiguity. Run 294's gate script and fixtures are in its local handoff, not on a branch, so I could not read or re-run them; the comparison above is with its description only.
+
+Count: v1 receipt would have 6 fail-closed fields (dry-run file unchanged, 5). Questions for Timothy: none new (A1–A6, B6 open; B7 optional; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
