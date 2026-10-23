@@ -2188,3 +2188,39 @@ Nothing moved since §92 on The-TAM-protocol (d46456a), main (8402a45) or mirror
 For the joint review, one acceptance check: apply the twelve diffs in the §76 order, build with the §90 recipe, run the three scripts in the §93 order, and require EPUB 83f31adb0e22a59d… with all exits 0. Pass means the package is unchanged from what was reviewed. When an accepted change moves the hash, the record must give the new hash and the reason.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §94 (2026-10-23T01Z, Claude): §93.3's open gap closed — the listing gate run end to end on the full patched stack with the §90 EPUB
+
+Nothing moved since §93 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d); library-shared at 9cff73d (§93). Scratch only, `python3 -I -B`: export of `F-001-tam-build/` at 9cff73d with the twelve diffs applied in the §76 order (all apply; 7 files, +268 / −34; build.py cc553e4388f2, listing_check.py 18c58b494fd5, PROPOSED-pdf_fix.py 651944c7cfd7, = §76), fresh clone of The-TAM-protocol @ d46456a, pandoc 3.9 (pypandoc_binary 1.17 wheel) first on PATH for every step, §90 recipe (`F001_A11Y` file sha256 54d371bb…, TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`). No script in the folder edited (§76 stop rule).
+
+### 94.1 Why this run
+
+§93 checked the package up to the a11y scripts but said the listing gate (`listing_check.py --terms`) had not been re-run end to end since §67/§69/§74, which used pandoc 3.1.3 and earlier EPUBs. This run runs the whole documented chain once with the §90 EPUB.
+
+### 94.2 Chain (EXECUTION-VERIFIED this run)
+
+| Step | Result |
+|---|---|
+| `build.py tam out` | exit 0; EPUB **83f31adb0e22a59d…** (= §90–§93), 30,199 bytes; build-report.json records that sha256 (patch 75) |
+| `rebuild_datasets.py tam out` | exit 0; A 6 rows, B 8 rows, 0 rejected |
+| `build_pdf.py out` | exit 0; xelatex fails (`lmodern.sty` missing, as before), wkhtmltopdf 13 pages, sha256 be523d5b97c027c7… |
+| `epub_check.py out` | exit 0; 0 FAIL, 1 WARN (no cover image, expected without `F001_COVER`) |
+| `claim_scan.py tam out` | exit 0; 42 rows, all given a synthetic `test` status in scratch (the real marks are Timothy's) |
+| standalone HTML (`pandoc tam-draft.md -s --toc`) → `PROPOSED-pdf_fix.py` | exit 0; 13 pages, 9 GoTo, 0 dropped; fixed PDF 9eb1ea37947d3b25… |
+| delivery folder = out minus the unfixed PDF; §21.1 listing with test values (13 pages, 9 articles, $9, 30 days; listing sha256 f1f3ff00…); `terms.json` `{"price": 9, "refund_days": 30, "articles": 9}` | `listing_check.py --terms`: **exit 0, 22 PASS, 0 FAIL**, including "tam-draft.epub: sha256 83f31adb0e22 is the checked build EPUB (30199 bytes)" and "tam-draft.fixed.pdf: sha256 9eb1ea37947d is the reported build" |
+
+Controls (EXECUTION-VERIFIED):
+
+| Change to the delivery folder | Gate result |
+|---|---|
+| unfixed wkhtmltopdf PDF delivered instead of the fixed one | exit 1, only FAIL: "9 file:// URI(s)" |
+| EPUB swapped for the pandoc 3.9 `F001_A11Y`-unset build (3c3989468003ed2d…, §89), `epub_check.py` re-run so its report matches | exit 1, only FAIL: "30134 bytes, build-report.json says 30199" |
+| no `--terms` | exit 0, 14 PASS; output byte-identical to the unpatched `listing_check.py` on the same folder |
+
+### 94.3 What this settles and what it does not
+
+- Settles: with the §90 recipe, the full PROPOSED chain reaches a passing listing gate on the public source, and the gate still catches a leaking PDF and a swapped EPUB. The acceptance check proposed in §93.4 can now end with the gate: twelve diffs → §90 build → a11y scripts → `rebuild_datasets.py` → `build_pdf.py` → `PROPOSED-pdf_fix.py` → `epub_check.py` → `claim_scan.py` → [marks] → `listing_check.py --terms`, expecting EPUB 83f31adb… and gate exit 0.
+- Does not settle: the PDF is still not byte-reproducible (§67), so the PDF hashes above are this run's only. The listing values, claim marks, summary text, price and refund window are test values, not Timothy's. Adoption is still the joint review (Claude + ChatGPT), then a logged commit.
+- Observation (INFERRED, no change proposed): on the swapped EPUB the gate reports the size mismatch, not the hash mismatch patch 75 adds; both are FAILs, so the outcome is the same. A same-size swap would reach the hash line.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
