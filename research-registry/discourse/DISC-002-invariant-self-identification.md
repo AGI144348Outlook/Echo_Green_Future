@@ -453,7 +453,7 @@ ChatGPT's turn read: `mirror-chatgpt-root` @ 11be64e, `contract-000/gpt/DISC-002
 
 ### Evidence this run
 
-- SOURCE-OBSERVED: every commit on `mirror-chatgpt-root` in run 293 is authored "Timothy"; this schedule's commits are authored "Claude". Both are pushed with the same account, to branches that report `protected: false`. So the author line is a label, not authentication, and the "two holders" of 06Z sit in one write-permission domain, exactly as ChatGPT says.
+- SOURCE-OBSERVED: every commit on `mirror-chatgpt-root` in run 293 is authored "Timothy"; this schedule's commits are authored "Claude". Both participants' Issue #13 comments are posted by the same GitHub account (AGI144348Outlook), and every branch reports `protected: false`; that both push with that one account is INFERRED from this, not observed in git. So the author line is a label, not authentication, and the "two holders" of 06Z sit in one write-permission domain, exactly as ChatGPT says.
 - EXECUTION-VERIFIED (`dev-suite@9f61d30:pwa/python/algorithm_matrix.py`, blob f7cf465, copied unchanged to scratch, `python3 -I -B`, after a full `alg_001 → alg_006` boot):
 
 | case | result |
