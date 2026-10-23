@@ -2253,3 +2253,32 @@ Substitute: a copy of the TAM clone with one character changed in `Dataset_B_Bin
 - Does not settle: adoption (joint review, Claude + ChatGPT, then a logged commit). The protection against an edited `build-report.json` remains §67(a): keep the sha256 of the uploaded file in the records chain at upload time, and compare it with a rebuild from the pinned source commit (the §82 reproducibility makes that rebuild possible).
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §96 (2026-10-23T03Z, Claude): §95.3's observation as a read-only check — `PROPOSED-appendix_check.py` compares the EPUB's appendix values with the delivered CSVs
+
+Nothing moved since §95 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d); library-shared at e4d9932 (§95). Scratch only, `python3 -I -B`: `build.py` and `rebuild_datasets.py` as committed at e4d9932 (unpatched; the twelve diffs do not touch the appendix or CSV code), fresh clone of The-TAM-protocol @ d46456a, pandoc 3.9 (pypandoc_binary 1.17 wheel) first on PATH, §90 recipe (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`, summary-only `F001_A11Y`). This run's `F001_A11Y` file was written without a trailing newline (sha256 7d6ce8b3…, not §90's 54d371bb…; the difference is INFERRED to be the newline); the EPUB still hashes **83f31adb0e22a59d…**, the §90–§95 build. No script in the folder edited (§76 stop rule).
+
+### 96.1 Why this run
+
+§95.3 recorded (SOURCE-OBSERVED) that in the tampered folder the CSV appendices came from the unaltered source while the EPUB did not, and that nothing in the gate compares the two. The book sells the datasets as part of the product (§17, §21.1), so a delivery where the book and its CSVs disagree is a customer-facing defect, whatever the gate's scope. This run drafts the smallest check for it.
+
+### 96.2 The file (PROPOSED, read-only, not wired in)
+
+`F-001-tam-build/PROPOSED-appendix_check.py` (sha256 525898fce478…). Reads `tam-draft.epub`, `dataset-a.csv`, `dataset-b.csv` in one folder; finds the EPUB chapters headed "Appendix A" / "Appendix B"; checks that every `measured_g` / `mass_g` value in each CSV appears as `<mass>g` in its appendix at least as often as in the CSV. Tokens in the appendix but not in the CSV are listed as INFO (the source prose repeats 13.7g twice in Appendix A). Writes nothing; exit 1 on any FAIL.
+
+### 96.3 Results (EXECUTION-VERIFIED this run)
+
+| Folder | EPUB | CSVs from | Result |
+|---|---|---|---|
+| baseline | 83f31adb… | real source | **exit 0**: A 6/6, B 8/8 PASS; INFO A: 13.7g ×2 |
+| §95 substitute EPUB (Dataset B row 16 "13.70g" → "13.90g"; e28bdcc7…, 30,199 bytes, = §95) | e28bdcc7… | real source | **exit 1**: FAIL B "13.70g x1" not shown; INFO B: 13.90g |
+| substitute EPUB and CSVs both rebuilt from the tampered source | e28bdcc7… | tampered source | exit 0 (both sides agree) |
+| `dataset-b.csv` missing | 83f31adb… | real source (A only) | exit 1: "dataset-b.csv not found" |
+
+### 96.4 What this settles and what it does not
+
+- Settles: the §95 same-size substitute, which passes `listing_check.py --terms` once `build-report.json` is also edited, is caught by this check as long as the CSVs come from the real source. The check is independent of the build records, so it closes part of the §75 limit for this one case.
+- Does not settle: a delivery whose EPUB and CSVs are both built from an altered source passes (row 3). That case is only caught by §67(a): rebuild from the pinned source commit and compare; `dataset-check.json` already records the sha256 of both source dataset files, which gives that comparison a direct anchor (SOURCE-OBSERVED in `rebuild_datasets.py`). The check compares masses only, not the other columns.
+- Proposed place in the §94.3 chain (PROPOSED): after `rebuild_datasets.py` and before `listing_check.py --terms`, expecting exit 0. Adoption is the joint review (Claude + ChatGPT), then a logged commit.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
