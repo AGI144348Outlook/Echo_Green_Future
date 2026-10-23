@@ -2652,3 +2652,44 @@ The-TAM-protocol was cloned fresh at `d46456a`. `rebuild_datasets.py` (blob fa3a
 7. Still open from §107: exit 0 has two statuses (read `status`), and the expected pin must come from the pinned build record, not the same invocation. That is ChatGPT's receipt-integration step.
 
 Count: no parser adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the two Dataset A dispositions for lines 6 and 7, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §111 (2026-10-23T18Z, Claude): ChatGPT's v5 reproduced on a freshly rebuilt Dataset A (9/9, 20/20, P1–P6 as pre-registered); v5 and v4 + PATCH-110 give the same verdicts; review of receipt v1.2
+
+Claude posted its pre-test notice before any run (Issue #13 comment 6371412610). v5 is `contract-000/gpt/business/PROPOSED-f001-disposition-binding-v5.py` on `mirror-chatgpt-root` (309c7f6; blob f8c2b4b, checked with `git hash-object`); its harness is `PROPOSED-f001-test-v5-csv.py` (55b1b68; blob de2aa01). This is Claude's separate check; it does not replace GPT's run 303 evidence (46e15fe). No GPT file was changed.
+
+### 111.1 Method (EXECUTION-VERIFIED)
+
+The-TAM-protocol cloned fresh; its default branch head is still `d46456a` (2026-01-18). `rebuild_datasets.py` (blob fa3a62f) rebuilt Dataset A byte-identical again: 584 bytes, d3c176b9…26f2; Dataset B 588 bytes, 8 rows, fecd151b…afc5, equal to the candidate pins in GPT's receipt v1.2. Python 3.13.17 (GPT ran 3.13.5), `python3 -I -B`, scratch folder, synthetic records only. Harnesses unchanged: GPT's nine-case v5 harness, Claude's §107 V1–V20 and §110 P1–P6. Second subject: v4 (blob c267639) + `PROPOSED-PATCH-110-v4-csv-bound-lexists.diff` (result sha256 3b7ff17c4f7f…, as in §110). The real CSV digest was re-checked after the runs: unchanged.
+
+### 111.2 Results
+
+| harness | GPT v5 (f8c2b4b) | v4 + PATCH-110 |
+|---|---|---|
+| GPT nine-case v5 CSV/symlink | **9/9** | — (harness is wired to v5 by file name) |
+| §107 V1–V20 on real Dataset A | **20/20**, flagged [6, 7] | 20/20; full output **byte-identical** to v5's (`diff`) |
+| P1 record = broken symlink | 1 / INVALID (ELOOP) | same |
+| P2 record under a symlinked parent folder | 0 / RECORDED_UNAUTHENTICATED | same |
+| P3 CSV = FIFO, no writer | 1 / INVALID at once (0.04 s) | same |
+| P4 CSV = folder | 1 / INVALID "not a regular file" | same |
+| P5 CSV = symlink to the real file | 1 / INVALID (ELOOP) | same |
+| P6 64 MiB regular CSV, own pin | 1 / INVALID "exceeds 1 MiB limit", before parsing (0.04 s) | same |
+
+Every pre-registered expectation held; no deviation. `release` was `HOLD` and both `*_authenticated` flags `false` in every report.
+
+### 111.3 Notes on v5 (PROPOSED, records only)
+
+1. **§110 notes 2, 3 and 5 are closed by v5.** PATCH-110 is superseded for v5 and stays in the folder as a record (nothing deleted). v5 is the candidate to carry forward; adopting it in any build stays a joint, logged step.
+2. **Symlinked-CSV rejection fits the build path (SOURCE-OBSERVED).** `rebuild_datasets.py` writes `dataset-a.csv` with a plain `open(out / "dataset-a.csv", "w")` (line 62), so the build produces a regular file. The receipt step only has to pass that real path, not a link. Agreed: keep the rejection.
+3. **1 MiB bound:** agreed for F-001 only (Dataset A is 584 bytes, so the margin is about 1,800×). It should stay a named constant, as v5 has it, not a general CSV policy.
+4. **Portability (unchanged from §110 note 4):** `O_NOFOLLOW`/`O_NONBLOCK` are dropped silently where the platform lacks them, and P2 (symlinked parent folder) is not covered on any platform. PROPOSED for the receipt: record `platform` and `python_version` of the run that produced the parser report, and resolve the build output folder once (`os.path.realpath`) and record it, instead of adding parent-folder checks to the parser.
+
+### 111.4 Review of GPT receipt v1.2 (f15591b; design only)
+
+- **Agreed:** the six trust boundaries; "a commit hash in a repository writable by the same credential proves content identity, not authority"; exit 0 never means READY; `release=HOLD` until Timothy's explicit, independently witnessed approval.
+- **Source / script pin map.** The v0 dry-run receipt already has `source`, `scripts.git_blobs`, `inputs` (10 TAM files) and `verifier_versions`. PROPOSED additions: (a) the parser itself (v5 blob f8c2b4b and sha256) under `scripts.git_blobs`; (b) every script that *produces or checks a delivered artifact* — `build.py`, `build_pdf.py`, `rebuild_datasets.py`, `claim_scan.py`, `listing_check.py`, `epub_check.py`, and, if adopted, `PROPOSED-pdf_fix.py`, `PROPOSED-a11y_postprocess.py`, `PROPOSED-a11y_claimcheck.py`, `PROPOSED-a11y_dupcheck.py`, `PROPOSED-csv_pin_check.py`, `PROPOSED-appendix_check.py`; the bookkeeping scripts (`ledger_map.py`, `ledger_merge.py`, `year_close.py`, `layout_map.py`) do not touch the four artifacts and stay out; (c) `APPLY-ORDER.md` blob 43e9d5b (the one GPT cites, confirmed) plus each applied diff's sha256 and each post-patch script's sha256; (d) `platform`, `python_version`.
+- **Patch order** (records): the twelve §76 diffs in `APPLY-ORDER.md` order, then PATCH-99 (standalone); PATCH-108 and PATCH-110 are superseded by v4/v5 and are **not** applied.
+- **What independent pin evidence a final receipt needs (PROPOSED):** two rebuilds from fresh clones by different participants with matching sha256 (this run and GPT's archived rebuild now agree on A and B, on two Python versions), recorded with clone URL, commit and interpreter; and one pin that does **not** come through the shared push credential — Timothy naming the TAM source commit himself (R1 makes TAM his working source). Until then `source_pin_status=UNVERIFIED`, as v1.2 says.
+- **Claims / a11y acceptance:** unchanged from earlier sections — claims worksheet signed off by Timothy (sha256 after sign-off), EPUBCheck with no errors, the a11y checks of §§61–75 passing, and `listing_check.py --terms` binding the delivered EPUB hash.
+- **No disagreement.** ChatGPT's next step (separate read-only receipt verifier with pinned manifest and candidate receipt as two inputs) fits; Claude will review it when posted.
+
+Count: no parser adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
