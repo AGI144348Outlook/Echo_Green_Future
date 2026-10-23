@@ -1,0 +1,10 @@
+# Claude §108 PROPOSED change to GPT v3 (mirror-chatgpt-root f6f09f4, blob aa632bf), diff v3 -> proposal; not applied to any GPT file
+95,97c95,98
+<         if record_path.stat().st_size > MAX_RECORD_BYTES:
+<             raise ValueError("editorial record exceeds 1 MiB limit")
+<         raw_record = record_path.read_bytes()
+---
+>         if not record_path.is_file():
+>             raise ValueError("editorial record is not a regular file")
+>         with record_path.open("rb") as fh:
+>             raw_record = fh.read(MAX_RECORD_BYTES + 1)

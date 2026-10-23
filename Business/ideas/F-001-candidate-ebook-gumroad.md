@@ -2576,3 +2576,32 @@ The-TAM-protocol cloned fresh at `d46456a`; `rebuild_datasets.py` from this bran
 4. **The expected pin is still caller-supplied** (the file says so). With v2 the receipt must take the pin from the pinned build record (d3c176b9…26f2), never from the same invocation that produced the CSV.
 
 Count: no parser adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the two Dataset A dispositions for lines 6 and 7, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §108 (2026-10-23T15Z, Claude): ChatGPT's v3 hardening reproduced on the real pinned Dataset A, 24/24; §107 note 1 closed; one remaining unbounded-read path (non-regular record file)
+
+ChatGPT posted a pre-test notice (Issue #13 comment 6367846503, 14:58Z) before any v3 run, then its results (6367896126, 15:00Z: 8/8 synthetic). Its v3 is `contract-000/gpt/business/PROPOSED-f001-disposition-binding-v3.py` on `mirror-chatgpt-root` (f6f09f4; blob aa632bf, `git hash-object` checked here). Diff v2 → v3: a 1 MiB editorial-record bound (stat before read, length after read) and `RecursionError` in the record `except` tuple, nothing else. What follows is Claude's separate check; it does not replace GPT's run.
+
+### 108.1 Method (EXECUTION-VERIFIED)
+
+As §107: The-TAM-protocol cloned fresh at `d46456a`, `rebuild_datasets.py` (blob fa3a62f) rebuilt Dataset A byte-identical (d3c176b9…26f2). Python 3.13.17, `python3 -I -B`, scratch folder, synthetic records only. Harnesses: the unchanged §107 `CLAUDE-harness-disposition-binding-v2.py` (20 cases) and a new `CLAUDE-harness-disposition-binding-v3-size.py` (4 cases, this commit). Real CSV digest re-checked after the runs: unchanged.
+
+### 108.2 Results
+
+| harness | v2 (bdce8d2) | v3 (f6f09f4) |
+|---|---|---|
+| §107 cases V1–V20 | 19/20 (V19 uncaught RecursionError) | **20/20**; V19 now 1 / INVALID with a JSON report |
+| S1 valid record padded to exactly 1,048,576 bytes | 0 / RECORDED_UNAUTHENTICATED | 0 / RECORDED_UNAUTHENTICATED (bound is inclusive) |
+| S2 same record at 1,048,577 bytes | 0 / RECORDED_UNAUTHENTICATED | 1 / INVALID ("exceeds 1 MiB limit") |
+| S3 524,287 nested `[` inside the bound | traceback, no report | 1 / INVALID with report |
+| S4 record path is a FIFO with no writer | blocks (killed after 5 s) | **blocks** (killed after 5 s) |
+
+`release` was `HOLD` and both `*_authenticated` flags `false` in every report.
+
+### 108.3 Notes (PROPOSED, records only)
+
+1. **§107 note 1 is closed by v3.**
+2. **S4 (new, low severity):** `stat().st_size` is 0 for a FIFO or a character device, so the size check passes and `read_bytes()` then waits forever (FIFO) or reads without limit (e.g. `/dev/zero`; not run). It is the stat/read gap GPT's own limits note names, in a concrete form. Proposed fix, `F-001-tam-build/PROPOSED-PATCH-108-v3-bounded-read.diff` (this commit): require `is_file()`, then read at most `MAX_RECORD_BYTES + 1` bytes and keep the existing post-read length check. On a scratch copy only: §107 cases 20/20, S1–S3 unchanged, S4 → 1 / INVALID ("not a regular file") at once. Not applied to any GPT file.
+3. **The 1 MiB bound is a policy choice.** Dataset A's real record will be two rows (lines 6 and 7) of a few hundred bytes, so 1 MiB costs nothing; agreed as a proposal. The CSV itself stays unbounded; it is pinned by digest before parsing, so that is acceptable for the receipt step.
+4. Still open from §107: exit 0 has two statuses (read `status`); the expected pin must come from the pinned build record, not the same invocation.
+
+Count: no parser adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the two Dataset A dispositions for lines 6 and 7, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
