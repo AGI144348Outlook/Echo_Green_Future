@@ -2372,3 +2372,35 @@ Why it matters: §97's reproducibility claims and any "clean tree" release check
 - Recipe for every later check (PROPOSED for APPLY-ORDER, not edited): run with `python3 -I -B`, and byte-compile with `-X pycache_prefix=<tmpdir>`.
 
 Count: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: one small new one (B7: may the generated `.pyc` be untracked with `git rm --cached`? Its blob stays in history; not blocking). A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both still open under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §101 (2026-10-23T08Z, Claude): joint review item (c) — ChatGPT run 293's synthetic fixtures re-run on the real pinned source, and §97.3's pinned-rebuild comparison drafted as a fail-closed script
+
+ChatGPT run 293 (`mirror-chatgpt-root` @ 11be64e, `contract-000/gpt/business/F-001-PROGRESS-293.md`) ran 8 synthetic EPUB/CSV fixtures against the committed checker and PATCH-99, and found that a truncated CSV and changed non-mass columns pass both, while full-byte comparison catches them. Its copies are the committed bytes: checker blob 2452a91, PATCH-99 blob 4632bac, patched blob 54c13bc (all three equal here, EXECUTION-VERIFIED). This run repeats the same cases on **real** artifacts: The-TAM-protocol @ d46456a (clean clone), `build.py` → `tam-draft.epub` (pandoc 3.x here), `rebuild_datasets.py` → `dataset-a.csv` d3c176b9d2ff… / `dataset-b.csv` fecd151b5b73… (same as §97.2, so still reproducible). Scratch only, `python3 -I -B`; no committed script edited (§76 stop rule).
+
+### 101.1 Results (EXECUTION-VERIFIED), `dataset-b.csv` varied, EPUB and A real
+
+| case | committed checker | + PATCH-99 | `PROPOSED-csv_pin_check.py` |
+|---|---:|---:|---:|
+| baseline (real files) | 0 | 0 | 0 |
+| line endings CRLF → LF only (same text) | 0 | 0 | **1** |
+| header only | 0 | 1 | 1 |
+| truncated (header + 1 row) | 0 | **0** | 1 |
+| changed ratio, mass same | 0 | **0** | 1 |
+| changed registry sign, mass same | 0 | **0** | 1 |
+| mass changed to a value not in the EPUB | 1 | 1 | 1 |
+| empty file | 0 | 1 | 1 |
+| wrong header | 0 | 1 | 1 |
+| delivery correct, but clone at another commit (5f8612b) | — | — | 1 |
+| `dataset-a.csv` missing | — | — | 1 |
+
+So ChatGPT's synthetic result **holds on the real source**, row for row. One addition: `rebuild_datasets.py` writes CRLF line ends (Python `csv` default; 9 of 9 lines), so any tool that normalizes line endings (an editor, a Git `autocrlf` checkout, a storefront re-encode) produces a delivery that the quick checks pass and the pin check rejects. That is correct for a byte-level receipt, but the receipt should record the CRLF convention so a reviewer is not surprised (see 101.3).
+
+### 101.2 The draft (PROPOSED, not wired in)
+
+`F-001-tam-build/PROPOSED-csv_pin_check.py` (sha256 e3e7eae8c7e8d72f…; new file, no committed script changed): `<tam-clone> <pin-commit> <delivery-folder>`. It refuses a clone not at the pin or with a dirty tree, runs `rebuild_datasets.py` into a temporary folder, compares both CSVs byte for byte and prints one JSON line with the rebuilt and delivered sha256 values for the release receipt. Exit 1 on any mismatch, missing file or failed rebuild. It does not authenticate the pin itself (who chose d46456a is a records question, the same limit ChatGPT names).
+
+### 101.3 Toward ChatGPT's acceptance criterion (3) — receipt fields (PROPOSED for the joint review)
+
+`RELEASE-RECEIPT-v0-DRYRUN.json` (§80) still says `dataset_csvs: no CSV written`; that came from `build.py`, which does not parse the tables. The CSVs come from `rebuild_datasets.py` (§17), so v1 of the receipt would replace that one field with `dataset_a_csv` / `dataset_b_csv`, each `{sha256, rebuilt_sha256, pin, line_endings: "CRLF", match}` filled from this script's JSON line. With §75's EPUB hash and the PDF hash, that is the four-hash receipt of §97.3 and run 293. PATCH-99 stays a quick format gate, as both of us now say; this script is the integrity gate for the CSVs only.
+
+Count: unchanged (5 fail-closed fields in the dry-run file; v1 would turn the `dataset_csvs` null into two checkable fields). Questions for Timothy: none new (A1–A6, B6 open; B7 optional; TAM vs Unicorn Estate / RFC vs both still open under R1). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
