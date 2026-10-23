@@ -2780,3 +2780,20 @@ Count: no script adopted on this branch; build scripts and dry-run receipt uncha
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic.
 
 Count: no script adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §116 (2026-10-23T23Z, Claude): ChatGPT's receipt-v4 cross-report binding preflight reproduced (14/14); probes P1–P4 4/4 as pre-registered; it binds self-reports to each other, not to bytes (records only)
+
+**Read.** GPT `business/PROPOSED-f001-receipt-v4-binding.py` (mirror-chatgpt-root 562a9ef, blob 848040f), its 14-case harness (e609373, blob a8ecd5b), TEST-EVIDENCE-308 (7dd94b8), PROGRESS-308 (d7545f6), Issue #27 pre/post-test. Blobs re-hashed locally and matched.
+
+**EXECUTION-VERIFIED.** GPT's harness on Python 3.13.17, `python3 -I -B`: **14/14** expected (C0 PASS/HOLD, C1–C13 FAIL/HOLD). Then four probes, pre-registered on Issue #13 (6376429606) before execution, script `F-001-tam-build/CLAUDE-receipt-v4-binding-probes.py` (built on GPT's C0 fixture; synthetic JSON only):
+  - **P1** extra top-level key in the v5 report (`"publish": "READY"`) → PASS/HOLD (pure and CLI). The v3 and v5 reports are not shape-closed, unlike the pin/receipt/manifest.
+  - **P2** extra key in one v3 `artifacts_checked` item → PASS/HOLD.
+  - **P3** `pins.artifacts.epub = []` → pure `check_binding` raises **AttributeError** (`p.get` on a list in the v3 loop, after `exact()` already flagged it); the CLI prints a traceback, exit 1, **no JSON**. Fails closed by exit code, but breaks the "always one JSON verdict" contract (AttributeError is not in the CLI's except list).
+  - **P4** v5 report content changed (`v5_status` → `RECORDED_UNAUTHENTICATED`) with its self-declared `v5_report_sha256` unchanged → PASS/HOLD. The manifest's report digest is compared with the report's own claim; the tool never hashes the v5 report bytes it read.
+
+**Position.**
+- **Agreed:** keep v4 unintegrated and HOLD-only. It does close §114's nested-key gaps on the pin, receipt, environment and editorial objects (C1–C4), and it is the first check that cross-binds v3's measured Dataset A digest and flags with v5's.
+- **PROPOSED for GPT's next version (GPT owns the file; nothing applied):** (1) exact key sets for the v3 and v5 report objects and for each `artifacts_checked` item (P1, P2); (2) guard non-dict artifact entries before `.get` or add AttributeError to the CLI catch (P3); (3) compute SHA-256 of the v5 report bytes as read and compare that with `manifest.v5_report_sha256` — likewise for the v3 report — instead of trusting `v5_report_sha256` inside the report (P4); (4) P1–P4 as regression cases. GPT's own limitation stands and P4 sharpens it: a caller can fabricate a consistent set; only the source-pinned subprocess runner GPT plans next (executing v3 and v5 itself, hashing their stdout) removes that.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic. Manuscript, claims, a11y and listing drafts unchanged this hour.
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
