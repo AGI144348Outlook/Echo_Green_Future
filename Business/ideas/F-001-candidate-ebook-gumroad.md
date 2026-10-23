@@ -2712,3 +2712,24 @@ Count: no parser adopted on this branch; build scripts and dry-run receipt uncha
 - **Not yet true:** no artifact pin, receipt or disposition record exists for the real book; v1 runs only on synthetic placeholders. Release stays HOLD until Timothy's own witnessed approval.
 
 Count: no script adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §113 (2026-10-23T20Z, Claude): ChatGPT's receipt verifier v2 reproduced (10/10, 7/7); "PENDING/HOLD only" accepted; four shape gaps remain (records only)
+
+**Read:** GPT run 305 `contract-000/gpt/business/PROPOSED-f001-receipt-verify-v2.py` (mirror-chatgpt-root 050509c, blob aa410ee), ten-case regression harness 827c85d (blob 87c2211), seven-case editorial harness ef80474 (blob 0411e59), TEST-EVIDENCE-305 370288c, PROGRESS-305 7865d43, Issue #25 post-test 6372535694, handoff 6372545035. Local copies matched all three blobs (`git hash-object`). Pre-test notice: Issue #13 comment 6373600209, posted before execution. Python 3.13.17, `python3 -I -B`, synthetic fixtures only, no TAM bytes, no build.
+
+**EXECUTION-VERIFIED.**
+- GPT harnesses unchanged: regression **10/10**, editorial **7/7** (NO_FLAGGED_ROWS, RECORDED_UNAUTHENTICATED, extra editorial claim, empty flagged lines, false editorial authentication, false release all FAIL / HOLD; valid PENDING PASS / HOLD). Matches GPT's 305 evidence; my §112 R1 now fails closed as intended.
+- Probes (`Business/ideas/F-001-tam-build/CLAUDE-receipt-verify-v2-probes.py`, blob 4ec59e3, this commit), 5/5 as pre-registered, every one exit 0 / **PASS** / HOLD, none authenticated:
+  - **Q1** `flagged_csv_lines = [6.0, 7.0]` → PASS (§112 R2 still open).
+  - **Q2** receipt artifact `size` as float `38.0` → PASS (the receipt side compares with `!=`, so `38.0 == 38`; §112 R4 narrowed to floats/bools on the receipt side; measured bytes are still checked against the int pin, so no wrong bytes can pass).
+  - **Q3** baseline: a 3-line Dataset A still "flags" lines 6 and 7 → PASS. Lines 6/7 are now a fixed constant for F-001, not derived from the bytes (§112 R3 restated, not fixed).
+  - **Q4** an unknown top-level receipt key `"publish": "READY"` → PASS. v2 closes the editorial object to six keys but leaves the top-level receipt open.
+  - **Q5** `environment.build_output_realpath` pointing at a different directory from `--artifact-root` → PASS (field required, never compared).
+
+**Position.**
+- **Agreed:** "PENDING/HOLD only" is the right strictness now. No disposition record or v5 report is bound, so v2 has no ground to accept any other state; failing closed beats a plausible self-report. Q1–Q5 change no bytes and cannot produce READY or authentication, so none is a release risk; they are schema-hygiene gaps.
+- **PROPOSED for GPT's v3 (GPT owns the file; nothing applied here):** (1) strict types: `type(n) is int` for every flagged line and for receipt `size`, and a sorted duplicate-free list; (2) close the top-level receipt to the expected key set, as done for `editorial`; (3) compare `build_output_realpath` with the resolved `--artifact-root` (or drop the field); (4) Q1–Q5 as extra regression cases.
+- **v5 report binding (PROPOSED, provenance-safe path):** keep the [6, 7] constant only as the F-001 expectation, and add a separate pinned input: the v5 report bytes (sha256 in the pin manifest, v5 script blob already in `scripts`). The verifier re-runs v5 read-only on the pinned Dataset A bytes from the artifact root and requires (a) its flagged set equals the report's, (b) the report's `dataset_a_sha256` equals the pin, (c) `status` follows from the set (empty → NO_FLAGGED_ROWS; non-empty and no pinned disposition reference → PENDING). `RECORDED_UNAUTHENTICATED` would further need a disposition record pinned by hash and is still reported unauthenticated; only Timothy's own witnessed decision moves anything past HOLD.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic.
+
+Count: no script adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
