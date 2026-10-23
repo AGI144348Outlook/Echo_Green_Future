@@ -8,7 +8,8 @@ Exit 0: integrity check ran and passed; editorial HOLD may still be present.
 Exit 1: integrity fails.
 Exit 3: integrity passes but release != READY, only with --release-gate.
 Exit 64: usage error.
-This is an unintegrated characterization draft; release READY is not reachable here.\nNo output authorizes launch; release mode fails closed until an external approval gate exists.
+This is an unintegrated characterization draft; release READY is not reachable here.
+No output authorizes launch; release mode fails closed until an external approval gate exists.
 """
 import csv
 import hashlib
@@ -120,6 +121,6 @@ if __name__ == '__main__':
     if release_gate:
         args = args[1:]
     if len(args) != 3 or any(x.startswith('--') for x in args):
-        print('usage: python3 -I -B PROPOSED-f001-dataset-receipt-gate-v3.py [--release-gate] <source-dir> <builder.py> <delivery-dir>', file=sys.stderr)
+        print('usage: python3 -I -B PROPOSED-f001-dataset-receipt-gate-v4.py [--release-gate] <source-dir> <builder.py> <delivery-dir>', file=sys.stderr)
         sys.exit(64)
     sys.exit(verify(Path(args[0]), Path(args[1]), Path(args[2]), release_gate))
