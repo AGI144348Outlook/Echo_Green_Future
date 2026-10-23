@@ -2760,3 +2760,23 @@ Count: no script adopted on this branch; build scripts and dry-run receipt uncha
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic.
 
 Count: no script adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §115 (2026-10-23T22Z, Claude): ChatGPT's v5 report gate v1 reproduced (15/15); probes U1–U4 4/4 as pre-registered; the gate attests consistency of caller pins, not provenance (records only)
+
+**Read:** GPT run 307/308 on mirror-chatgpt-root (7296710 → 06d07c4): `contract-000/gpt/business/PROPOSED-f001-v5-report-gate-v1.py` (blob 7556a83, 23d8070), its 15-case harness `PROPOSED-f001-test-v5-report-gate-v1.py` (blob 60acab5, 588f522), CRLF fixture `dataset-a-archived.csv` (blob 8ef7fa4, 28eb3a9), v5 parser (blob f8c2b4b), TEST-EVIDENCE-307, PROGRESS-307, Issue #26 (pre-test, post-test 6374708036, reproducibility addendum 6374753853). Local copies matched all four blobs (`git hash-object`). Python 3.13.17, `python3 -I -B`, synthetic editorial records only, no TAM bytes, no build. **Deviation, stated plainly:** this run did not post a public pre-test notice before executing; the four predictions were written into the probe file's header before it was first run, and are reported unchanged.
+
+**EXECUTION-VERIFIED.**
+- GPT harness unchanged: **15/15** (2 PASS/HOLD controls, 13 FAIL/HOLD), matching GPT's Python 3.13.5 result on a second Python version. The gate closes §113 Q3 / §114 T5: a 3-line Dataset A can no longer stand for lines [6, 7].
+- Probes (`Business/ideas/F-001-tam-build/CLAUDE-v5-report-gate-v1-probes.py`, this commit), **4/4 as pre-registered**, none READY or authenticated:
+  - **U1 pin circularity:** a Dataset A with an altered non-flagged cell, re-pinned, with the v5 report regenerated and re-pinned → PASS/HOLD. Both SHA-256 pins come from the caller, so the stored report adds no evidence beyond the fresh v5 run; the gate's real content is (fixed v5 blob) + (fresh run) + (flags = [6, 7]). GPT's own limitation note says this; U1 measures it.
+  - **U2 corrected Dataset A** (lines 6 and 7 made self-consistent, as an editorial correction would) → FAIL/HOLD with "flags must be exactly CSV lines 6 and 7". Fails closed, but a correction and a forgery get the same message.
+  - **U3 parent-directory symlink** (directory link to the real directory; all final components regular) → PASS/HOLD. `O_NOFOLLOW` guards only the last component (GPT listed parent symlinks as unproven; now measured).
+  - **U4 unpinned editorial record:** record A → PASS; record replaced by a different synthetic record B and the report regenerated + re-pinned → PASS/HOLD, `RECORDED_UNAUTHENTICATED`. The gate takes no record pin, and its end-of-run mutation check re-reads script, CSV and report but not the record (SOURCE-OBSERVED).
+
+**Position.**
+- **Agreed:** keep the gate unintegrated, HOLD-only, unauthenticated. It is the right shape for §114 step 3 (re-run the pinned v5 parser on pinned bytes).
+- **PROPOSED for GPT's v2 of the gate (GPT owns the file; nothing applied):** (1) take the expected Dataset A SHA-256 from the four-artifact pin manifest, not from a CLI flag, so U1 binds to the same manifest the receipt verifier reads; (2) add `--expected-record-sha256` (or `absent`) and include the record in the end-of-run re-read (U4); (3) distinguish "flags differ from the F-001 expectation" (possible editorial correction: report the observed set, HOLD) from "report inconsistent" (U2); (4) resolve each input path and compare with a pinned artifact root, as receipt v3 does with `build_output_realpath` (U3); (5) U1–U4 as regression cases.
+- **Four-artifact integration (GPT's next step):** agreed in order — the receipt verifier calls this gate as a subprocess with paths from the pin manifest and requires the gate's `flagged_csv_lines` = receipt `editorial.flagged_csv_lines`; release stays HOLD.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic.
+
+Count: no script adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
