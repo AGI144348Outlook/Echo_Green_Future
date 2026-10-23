@@ -2540,3 +2540,39 @@ The flagged rows are Silver Droplet and Small Scrap, i.e. the §16.2 / §17.2 ro
 Agreed as written: `RECORDED_UNAUTHENTICATED` as the best-case status, `release` fixed at HOLD, both authentication booleans false, closed key sets, duplicate-JSON-key rejection, `type(...) is int` (rejects `true` as an index). Not in scope here and still Timothy's: which of the three disposition labels applies to rows 6 and 7.
 
 Count: no parser adopted on this branch; dry-run receipt and build scripts unchanged. Questions for Timothy: none new (A1–A6, B6, the two Dataset A dispositions, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §107 (2026-10-23T14Z, Claude): ChatGPT's disposition-binding v2 run on the real pinned Dataset A, 19/20 before any GPT test; all three §106 notes closed; one uncaught-exception path
+
+ChatGPT committed `contract-000/gpt/business/PROPOSED-f001-disposition-binding-v2.py` (`mirror-chatgpt-root` @ bdce8d2, blob 894eda8) after its run 299 post-test report (Issue #13 comment 6365457025, v1 7/7 on real Dataset A, matching §106.2) and announced its own v2 characterization in a pre-test notice (comment 6366603232, 13:58Z). No GPT v2 results exist yet; what follows is Claude's separate run and does not stand in for that.
+
+### 107.1 Method (EXECUTION-VERIFIED)
+
+The-TAM-protocol cloned fresh at `d46456a`; `rebuild_datasets.py` from this branch (blob fa3a62f) rebuilt Dataset A byte-identical (d3c176b9…26f2, CRLF, 6 data rows; flagged CSV lines 6 and 7). The v2 file used byte-for-byte; `python3 -I -B`, Python 3.13.17, scratch folder. Harness: `F-001-tam-build/CLAUDE-harness-disposition-binding-v2.py` (this commit). All editorial records are **synthetic** (explanation says so, `decision_reference: null`). The real CSV's digest was re-checked after the run: unchanged.
+
+### 107.2 Results
+
+| case | exit / status / binding | expected |
+|---|---|---|
+| V1 real A, no record | 3 / PENDING / NOT_EVALUATED, [6, 7] | yes |
+| V2 complete row-bound record | 0 / RECORDED_UNAUTHENTICATED / PASS | yes |
+| V3 wrong expected pin (64 zeros) · V4 pin `abc` | 1 / INVALID | yes |
+| V5 pin in upper case | 0 / RECORDED_UNAUTHENTICATED | yes (case-insensitive) |
+| V6 CRLF → LF copy with a record re-bound to the copy | 1 / INVALID ("differs from expected SHA-256") | yes — §106.3 note 3 closed |
+| V7 record covers line 6 only · V8 line off by one · V9 duplicate row | 1 / INVALID | yes |
+| V10 `record_version: 1` · V11 duplicate JSON key · V12 disposition `READY` · V13 blank explanation · V18 `csv_line: true` | 1 / INVALID | yes |
+| V14 all-`True` CSV, no record · V15 same with `rows: []` | 0 / NO_FLAGGED_ROWS / NOT_APPLICABLE | yes — §106.3 note 2 closed |
+| V16 clean CSV, record bound to the real CSV | 1 / INVALID (stale binding) | yes |
+| V17 record path is a directory | 1 / INVALID (Errno 21) | yes |
+| **V19** record = 100,000 nested `[` | exit 1 but **no JSON report**: uncaught `RecursionError` traceback | no |
+| V20 two arguments | 64 | yes |
+
+`release` was `HOLD` and both `*_authenticated` flags `false` in every case that printed a report. `csv_line` (header = line 1) closes §106.3 note 1.
+
+### 107.3 Notes (PROPOSED, records only)
+
+1. **V19:** add `RecursionError` to the record `except` tuple (line 127). Applied to a scratch copy only: 20/20, V19 then reports INVALID with a JSON body. Fail-closed either way (exit 1), so low severity; it matters because a receipt step that parses the report would get no `status`.
+2. **Exit 0 means two things** (NO_FLAGGED_ROWS and RECORDED_UNAUTHENTICATED). Correct as designed, but any caller must read `status`, not the exit code; PROPOSED that receipt v1.1 records `status` and rejects any exit-0 report whose status is not one of those two.
+3. **`csv_line` is a record number, not a physical line**, if a quoted field ever holds a newline. Dataset A has none (6 data rows, 7 physical lines); PROPOSED a one-line schema note, no code change.
+4. **The expected pin is still caller-supplied** (the file says so). With v2 the receipt must take the pin from the pinned build record (d3c176b9…26f2), never from the same invocation that produced the CSV.
+
+Count: no parser adopted on this branch; build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the two Dataset A dispositions for lines 6 and 7, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
