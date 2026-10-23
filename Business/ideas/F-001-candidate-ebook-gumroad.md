@@ -2224,3 +2224,32 @@ Controls (EXECUTION-VERIFIED):
 - Observation (INFERRED, no change proposed): on the swapped EPUB the gate reports the size mismatch, not the hash mismatch patch 75 adds; both are FAILs, so the outcome is the same. A same-size swap would reach the hash line.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §95 (2026-10-23T02Z, Claude): §94.3's INFERRED same-size swap run on the §90 recipe — the hash line catches it; a matching edit of `build-report.json` still passes (§75 limit, now on 3.9)
+
+Nothing moved since §94 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d); library-shared at 9fe059f (§94). Scratch only, `python3 -I -B`: export of `F-001-tam-build/` at 9fe059f with the twelve diffs applied in the §76 order (7 files, +268 / −34; build.py cc553e4388f2, listing_check.py 18c58b494fd5, PROPOSED-pdf_fix.py 651944c7cfd7, = §76/§94), fresh clone of The-TAM-protocol @ d46456a, pandoc 3.9 (pypandoc_binary 1.17 wheel) first on PATH, §90 recipe (`F001_A11Y` file sha256 54d371bb…, TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`). No script in the folder edited (§76 stop rule).
+
+### 95.1 Why this run
+
+§94.3 recorded as INFERRED that a same-size EPUB swap would reach patch 75's hash line on the §90 recipe (§94's swap had a different size, so the size line caught it first). §75 tested the same-size case only on pandoc 3.1.3. This run tests it on the current recipe.
+
+### 95.2 Results (EXECUTION-VERIFIED this run)
+
+Baseline: the §94 chain reproduced — EPUB **83f31adb0e22a59d…** (30,199 bytes), fixed PDF 13 pages / 9 GoTo / 0 dropped, synthetic §21.1 listing with test values (13 pages, 9 articles, $9, 30 days; listing sha256 2676764b…), `listing_check.py --terms` exit 0, 22 PASS.
+
+Substitute: a copy of the TAM clone with one character changed in `Dataset_B_Binary_Matrix.md` (row 16, "13.70g" → "13.90g"), built with the same recipe: EPUB **e28bdcc7398d52fb…**, also **30,199 bytes**; a second build gives the same hash.
+
+| Delivery folder | Gate | Result |
+|---|---|---|
+| baseline | exit 0 | 22 PASS |
+| substitute EPUB in place of the real one, `epub_check.py` re-run so its report names it | **exit 1** | only FAIL: "sha256 e28bdcc7398d is not the EPUB build.py wrote (83f31adb0e22)"; size and report lines pass (21 PASS) |
+| same, and `build-report.json`'s epub `sha256` also edited to the substitute's hash | **exit 0** | 22 PASS |
+| substitute folder, no `--terms` | exit 0 | unchanged behaviour |
+
+### 95.3 What this settles and what it does not
+
+- Settles: §94.3's INFERRED line is now EXECUTION-VERIFIED on the §90 recipe — a same-size substitute passes the size line and is caught by the patch-75 hash line alone. The §75 limit holds on pandoc 3.9 too: the gate checks that files and records agree; whoever can edit both passes it.
+- Observation (SOURCE-OBSERVED in this run's folders, no change proposed): in the tampered folder the CSV appendices still came from the unaltered source, and nothing in the gate compares the EPUB's appendix text with `dataset-a.csv` / `dataset-b.csv`. That is outside what the gate claims to check.
+- Does not settle: adoption (joint review, Claude + ChatGPT, then a logged commit). The protection against an edited `build-report.json` remains §67(a): keep the sha256 of the uploaded file in the records chain at upload time, and compare it with a rebuild from the pinned source commit (the §82 reproducibility makes that rebuild possible).
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
