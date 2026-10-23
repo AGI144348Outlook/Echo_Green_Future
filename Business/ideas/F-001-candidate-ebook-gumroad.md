@@ -2282,3 +2282,34 @@ Nothing moved since §95 on The-TAM-protocol (d46456a), main (8402a45) or mirror
 - Proposed place in the §94.3 chain (PROPOSED): after `rebuild_datasets.py` and before `listing_check.py --terms`, expecting exit 0. Adoption is the joint review (Claude + ChatGPT), then a logged commit.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §97 (2026-10-23T04Z, Claude): §96.4's open case — EPUB and CSVs both built from an altered source — is caught by comparing `dataset-check.json` with the pinned source commit, and fully by a pinned CSV rebuild
+
+Nothing moved since §96 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d); library-shared at 6ef44dc (§96). Scratch only, `python3 -I -B`: `rebuild_datasets.py` as committed at 6ef44dc, fresh clone of The-TAM-protocol @ d46456a, and a copy of that clone with one edit (Dataset B line 9 "13.70g" → "13.90g", the §95 substitute value). No script in the folder edited (§76 stop rule); no EPUB built this run.
+
+### 97.1 The anchor holds (EXECUTION-VERIFIED)
+
+`rebuild_datasets.py` hashes the source text after `read_text()` (SOURCE-OBSERVED, lines 71 and 84), which could differ from the committed bytes if the files had CR line endings. They have none (0 CR in either file), and the recorded hashes equal `git show d46456a:<file> | sha256sum`:
+
+| Source file | git blob | sha256 in `dataset-check.json` | sha256 of committed bytes |
+|---|---|---|---|
+| Dataset A (Eshtemoa Inventory) | b62c970 | 48437f58ee74… | 48437f58ee74… (match) |
+| `Dataset_B_Binary_Matrix.md` | 12ef0fc | bc16da657b19… | bc16da657b19… (match) |
+
+So a verifier with only git and `sha256sum` can check a delivery's `dataset-check.json` against the pinned commit, with no build.
+
+### 97.2 The altered-source case (EXECUTION-VERIFIED)
+
+| Build | `dataset-check.json` vs pinned commit | `dataset-a.csv` | `dataset-b.csv` |
+|---|---|---|---|
+| real source, run 1 | A match, B match | d3c176b9d2ff… | fecd151b5b73… |
+| real source, run 2 | A match, B match | d3c176b9d2ff… | fecd151b5b73… (byte-identical, so the CSVs are reproducible) |
+| altered source (B line 9) | A match, **B differs** (662929a5fbb8…) | d3c176b9d2ff… | **f9f5611c8e05…** |
+
+### 97.3 What this settles and what it does not
+
+- Settles: §96 row 3 (EPUB and CSVs both from the altered source, which `PROPOSED-appendix_check.py` passes) is caught by the `dataset-check.json` comparison if that file is delivered as built. It is caught in every case by rebuilding the CSVs from d46456a and comparing sha256 with the delivered CSVs, because the rebuild is byte-reproducible.
+- Does not settle: `dataset-check.json` is a build record, so a delivery that ships the real-source record next to altered CSVs passes the record comparison (§75 limit again). Only the pinned rebuild covers that. The EPUB side is covered by §75's hash line plus the §90 reproducible build, not by this run.
+- PROPOSED for the joint review (no file added this run): in the §94.3 chain, after `rebuild_datasets.py`, record the two CSV sha256 values next to the EPUB hash in the release receipt, so a second verifier compares four hashes (EPUB, PDF, two CSVs) from one pinned rebuild.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). The build checks are now well ahead of the decisions: the next useful F-001 step is Timothy's answers on the decision sheet, not another check. Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
