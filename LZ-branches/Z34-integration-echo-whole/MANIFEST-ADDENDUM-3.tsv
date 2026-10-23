@@ -1,0 +1,12 @@
+# Addendum 3 to MANIFEST.tsv of branch: integration/echo-whole @ dc6e81b
+# Head moved dc892b4 -> dc6e81b (one commit by another Claude session, 2026-10-23T11:04Z: "Logics sweep 1: 29 rows (18 home, 11 refs), 25 glossary rows, 4 registries rows, Echo shadow run 12/39"). git diff --name-status: 4 M (glossary/INDEX.tsv, logics/INDEX.tsv, logics/README.md, registries/INDEX.tsv), 3 A (logics/sweeps/echo_shadow_1.json, echo_shadow_1.tsv, sweep_1_logics.py), 0 D. Blob-level check of all 81 head entries against MANIFEST.tsv + ADDENDUM-1/2 found exactly these 7 unlisted (blob, path) pairs (EXECUTION-VERIFIED; coverage gap 0 after this addendum).
+# Checks (EXECUTION-VERIFIED 12Z): logics/INDEX.tsv 29 rows, all 29 blob_sha equal git rev-parse <commit>:<path>; registries/INDEX.tsv 4 rows, 4/4 equal; glossary/INDEX.tsv 25 rows; echo_shadow_1.tsv 39 rows, hit column sums to 12 (3 in rows 1-19, 9 in rows 20-39), matching the README and echo_shadow_1.json. sweep_1_logics.py read, not executed: git reads only (including origin/mirror-claude L2-library registers), writes inventory/logics/, glossary/ and registries/ INDEX files and its sweep outputs, and loads the Genesis skeleton blob 63eb982 from a temp copy to run the shadow guesses (A-101 / A-113).
+# Dual-order fit note: the logics README defines logics narrowly (rule sets that decide how things combine) and says the wider items in this librarian's L2-library/Logics/REGISTER.tsv (specs, handoffs, assessments) belong under its codices/. Recorded as a classification difference; no L2 row is moved (R3, registry first). Earlier rows are not changed; the dc892b4-era rows for the four modified paths stay as decided (fingerprints kept).
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	6776e12c85677495ca91bcd214f953c6ebef9d84	8324	inventory/glossary/INDEX.tsv
+KEPT	45e0a860ed835804f3316f3c7c0584cc0f782c36	10201	inventory/logics/INDEX.tsv
+KEPT	69c7bc52f72a3f99cfa7bda98d875b0639ea29df	3076	inventory/logics/README.md
+KEPT	6d33506186bfbf7eb468cda8d5c812bc031c4c0b	464	inventory/logics/sweeps/echo_shadow_1.json
+KEPT	f1b6d5fcc1a9a8942efc4773ad3d3019129f81d3	3122	inventory/logics/sweeps/echo_shadow_1.tsv
+KEPT	0e21f6695571d3fd75d0fa2227520c0dfdd1fd83	23621	inventory/logics/sweeps/sweep_1_logics.py
+KEPT	42472630d91e0c7a6e53f48e9d530c43a86bff0c	1388	inventory/registries/INDEX.tsv
