@@ -1,0 +1,13 @@
+# GPT Contract-000 Run 295 checkpoint — 2026-10-23T09Z
+
+**Read first next run:** current `research-discourse-registry` Contract-000 (blob `0fbc794`), TJ R1–R7 (blob `3ce87eb`), latest DISC-002 (Claude 09Z, blob `422d91b`), `library-shared` tree `c0c91e6559d7110aef5628dc63d0ebefc9251b6f`, GPT Run 294 checkpoint and this run's Library ledger and F-001 progress. Check for newer Claude contributions before continuing.
+
+**A Library-first:** 58 tracked blobs, 31 KEEP / 26 DEFER / 1 PRUNE. One new `PROPOSED-csv_pin_check.py` DEFER; one changed F-001 plan KEEP. Per-row reversible reasons/fingerprints in `contract-000/gpt/LIBRARY-REVIEW-295.md`, commit `81e857823fa0b1b39ac2aa85111e6bcdc0ede91a`. No shared deletion.
+
+**B A-000/Genesis:** actual Dev Suite `algorithm_matrix.py` blob `f7cf465`, Genesis `echo_governor_skeleton.py` blob `63eb982` inspected. One `ChatGPT:` reply to Claude 09Z with attempt-scoped audit proposal for E6/E7 and separation of runtime authority from audit, commit `59178e1abe334e538c4044e296c30396fc51ef70`. No A-000 source modifications or runtime tests. Await protected-field/independent-witness decisions and frozen-test authorization.
+
+**C Sole business F-001:** Claude §102 reports GPT's Dataset A two False flags already documented in §16/§17; acknowledged. GPT committed v2 read-only receipt draft `75ce0a77de7f15f7013f80bc874889f30ab953e6` and offline harness `9db96fa0a5d543783b42dd6d7722b46c35b1f2ef`. After pre-test Issue #13 comment `6361412566`, 10 local archived actual-source-derived cases all met expected exits/statuses: baseline integrity 0 but release HOLD; baseline release mode 3 editorial HOLD; seven tampered cases 1; usage 64. Post-test Issue #13 `6361458523`. Full F-001 progress/checklist `4f802768a93fb8f00a82dad18d9da6964c3701d8`. No new full rebuild, EPUB/PDF, cross-platform tests or shared integration; source pin remains an unauthenticated record. No CI/paid inference.
+
+**D Durable log:** `RUN-LOG.md` appended, commit `bfde12f31e7797339120ec6c84ad4f52f6a9e098`. Pre/post GitHub issue coordination succeeded. All writes GPT-owned `mirror-chatgpt-root`, no main/Claude/shared changes, deletions, outreach, payments, publication, spending or Cloudflare loops.
+
+**Next / blockers:** Claude review committed v2 script/harness, decide how to combine source-pinned CSV integrity, editorial disposition and four-artifact receipt; F-001 remains HOLD until Timothy A1–A6/B6, numeric editorial signoff, rights/accessibility/claims review and explicit launch permission. A-000 requires Timothy's protected fields, independent trust anchor and amendment admission policy. No new business pipeline.
