@@ -2159,3 +2159,32 @@ Content counts on the real builds: 10 spine documents, 11 headings, 9 toc links,
 For the joint review (§79–§92): if accepted with §91.3, the receipt records this JSON as `accessibility_claims` and adds a fail-closed field `a11y_claims_ok` (no unsupported claim). The `needs_editor` list goes on the editor's checklist. Not drafted as a patch; the dry-run's fail-closed field count stays at 5.
 
 Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (B6 identifier, cover and summary text, A1–A6 already open). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §93 (2026-10-23T00Z, Claude): the review package re-checked as one piece — twelve diffs still apply, the three a11y scripts compose, and the patched build gives the §90 EPUB
+
+Nothing moved since §92 on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (172039d); library-shared at 80ca6ff (§92). Scratch only, `python3 -I -B`, fresh clone of The-TAM-protocol @ d46456a, §24 settings (TEST-ONLY book id, `SOURCE_DATE_EPOCH=1768764429`), pandoc 3.9 (pypandoc_binary 1.17 wheel), §90 `F001_A11Y` file (sha256 54d371bb…). No script in the folder edited (§76 stop rule).
+
+### 93.1 Why this run
+
+§79–§92 left the joint review with twelve diffs plus three standalone a11y scripts, each checked alone. This run checks that they still fit together at the current head, so the review starts from one tested state.
+
+### 93.2 Results (EXECUTION-VERIFIED this run)
+
+| Check | Result |
+|---|---|
+| The 7 files the diffs touch, bc4d4ed → 80ca6ff | unchanged (only the 3 a11y scripts, the dry-run receipt and notes were added since) |
+| Twelve diffs, §76 order, `git apply` on a scratch copy of 80ca6ff | all apply; 7 files, +268 / −34; build.py cc553e4388f2, listing_check.py 18c58b494fd5, PROPOSED-pdf_fix.py 651944c7cfd7 (= §76); all `*.py` compile |
+| Unpatched build.py (aadcc5a2…), §90 recipe, 2 builds | EPUB 83f31adb0e22a59d… both times (= §90–§92) |
+| build → postprocess → dupcheck → claimcheck | exit 0 / 0 / 0; postprocess output 83f31adb… (byte no-op; reports `package_xml_lang: false, toc_nav_role: false`, nothing to add); dupcheck `duplicates: []`; claimcheck `ok: true`, `needs_editor: [alternativeText, readingOrder]` (= §92) |
+| Patched build.py (cc553e…), §90 recipe | exit 0; same EPUB 83f31adb…; build-report.json now records `epub.sha256` = 83f31adb0e22a59d921ad35e… (the field §75 adds) |
+
+### 93.3 What this settles and what it does not
+
+- Settles: the review package is consistent at 80ca6ff. Patch 75 does not change the EPUB bytes. The a11y scripts can run after the build in the order shown without changing the EPUB. `APPLY-ORDER.md` gains a §93 addendum with this order and the three scripts' hashes.
+- Does not settle: whether to adopt any of it. That is still the joint review (Claude + ChatGPT), then a logged commit. The listing gate (`listing_check.py --terms`) was not re-run end to end this time (§67/§69 recorded it). Editor items (§92 `needs_editor`, summary text, B6 identifier) are still open.
+
+### 93.4 Proposal (PROPOSED)
+
+For the joint review, one acceptance check: apply the twelve diffs in the §76 order, build with the §90 recipe, run the three scripts in the §93 order, and require EPUB 83f31adb0e22a59d… with all exits 0. Pass means the package is unchanged from what was reviewed. When an accepted change moves the hash, the record must give the new hash and the reason.
+
+Count after this section: unchanged (5 fail-closed fields in the dry-run file). Questions for Timothy: none new (A1–A6, B6 open; TAM vs Unicorn Estate / RFC vs both is still open under R1). Nothing was sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
