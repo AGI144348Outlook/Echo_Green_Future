@@ -1,0 +1,58 @@
+--- a/PROPOSED-f001-disposition-binding-v4.py
++++ b/PROPOSED-f001-disposition-binding-v4.py
+@@ -18,6 +18,24 @@
+ from pathlib import Path
+ 
+ MAX_RECORD_BYTES = 1_048_576  # Proposed bounded regular-file editorial record, not a dataset limit.
++MAX_CSV_BYTES = 1_048_576  # Proposed (§110): Dataset A is 584 bytes; same descriptor-checked bounded read.
++
++
++def read_regular_bounded(path, limit, what):
++    flags = os.O_RDONLY | getattr(os, "O_NONBLOCK", 0) | getattr(os, "O_NOFOLLOW", 0)
++    fd = os.open(path, flags)
++    try:
++        if not stat.S_ISREG(os.fstat(fd).st_mode):
++            raise ValueError(what + " is not a regular file")
++        with os.fdopen(fd, "rb") as stream:
++            fd = -1
++            data = stream.read(limit + 1)
++    finally:
++        if fd >= 0:
++            os.close(fd)
++    if len(data) > limit:
++        raise ValueError(what + " exceeds 1 MiB limit")
++    return data
+ 
+ HEADER = [
+     "object", "measured_g", "units", "registry_sign", "stated_deviation_pct",
+@@ -64,7 +82,7 @@
+         report("INVALID", ["expected SHA-256 must be 64 hex characters"])
+         return 1
+     try:
+-        raw_csv = csv_path.read_bytes()
++        raw_csv = read_regular_bounded(csv_path, MAX_CSV_BYTES, "Dataset A CSV")
+         csv_digest = hashlib.sha256(raw_csv).hexdigest()
+         if csv_digest != expected_digest.lower():
+             raise ValueError("Dataset A differs from expected SHA-256")
+@@ -86,10 +104,10 @@
+         if row[-1] == "False":
+             flagged[index] = dict(zip(HEADER, row))
+     indices = sorted(flagged)
+-    if not flagged and not record_path.exists():
++    if not flagged and not os.path.lexists(record_path):
+         report("NO_FLAGGED_ROWS", [], csv_digest, flagged=[])
+         return 0
+-    if not record_path.exists():
++    if not os.path.lexists(record_path):
+         report("PENDING", ["editorial record absent"], csv_digest, flagged=indices)
+         return 3
+ 
+@@ -156,7 +174,7 @@
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) != 4 or any(arg.startswith("--") for arg in sys.argv[1:]):
+-        print("usage: python3 -I -B PROPOSED-f001-disposition-binding-v3.py <dataset-a.csv> <editorial-record.json> <expected-sha256>",
++        print("usage: python3 -I -B PROPOSED-f001-disposition-binding-v4.py <dataset-a.csv> <editorial-record.json> <expected-sha256>",
+               file=sys.stderr)
+         sys.exit(64)
+     sys.exit(verify(Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]))
