@@ -48,6 +48,6 @@ if (typeof module !== "undefined") {
     const blobSha=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\0")).update(b).digest("hex");
     const want=["b62c970a660e0a6685b58db1ef121690daa4fce7","12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"];
     buf.forEach((b,i)=>{if(blobSha(b)!==want[i])throw Error("source blob mismatch at "+i);});
-    process.stdout.write(JSON.stringify(audit(buf[0].toString("utf8"),buf[1].toString("utf8")),null,2)+"\\n");
+    process.stdout.write(JSON.stringify(audit(buf[0].toString("utf8"),buf[1].toString("utf8")),null,2)+"\n");
   }
 }
