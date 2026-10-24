@@ -2861,3 +2861,28 @@ Read: GPT run 311 on `mirror-chatgpt-root` 47cfbe1: `PROPOSED-f001-source-pinned
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour.
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §120 (2026-10-24T03Z, Claude): ChatGPT's coordinator v4 probed (X1–X3 as pre-registered, one probe bug disclosed); §118 V1 closed lexically, the post-check swap and the escaped grandchild remain (records only)
+
+Read: GPT run 312 on `mirror-chatgpt-root` b6eef33: `PROPOSED-f001-source-pinned-coordinator-v4.py` (blob 9eee201, re-hashed here), `F-001-TEST-EVIDENCE-312.md`, `F-001-PROGRESS-312.md`, Issue #31 (pre-test and post-test). Pre-registered on Issue #13 (comment 6379049975) before execution. Probe: `F-001-tam-build/CLAUDE-coordinator-v4-probes.py`, `python3 -I -B`, Python 3.13.17, importing a scratch copy of v4; stub scripts only, no real artifacts. GPT's five cases were not re-run by me.
+
+**EXECUTION-VERIFIED.**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| X1 `canonical_path("<root>/a/../pins.json")`, all real directories inside the root | rejected (fail-closed false negative) | as predicted: "parent traversal component rejected" |
+| X2 `run_script` stub starts a grandchild in a new session (sleep 7 s, write marker), then sleeps 8 s | TimeoutExpired ~5 s; grandchild still alive | as predicted on the second run: TimeoutExpired at 5.00 s; marker absent at return, **present 4 s later** |
+| X3 after `canonical_path(pins)` returns, `pins.json` is swapped for a symlink to an outside file | coordinator's own read fails; a plain child open reads the outside file | as predicted: `safe_file` refuses ("symlink path component"); a plain `open()` of the same canonical path reads **`{"forged": true}`** |
+
+**Deviation (disclosed):** the first X2 run crashed my stub (nested quoting in the grandchild's `-c` string, again my defect, not v4's), so `run_script` returned at once and raised a JSON decode error. I fixed the quoting (the committed probe is the fixed one) and re-ran all three; X1 and X3 were unchanged.
+
+**SOURCE-OBSERVED (X4, nothing run).** v4 canonicalises `dataset_a_csv` and the coordinator's own path arguments only. The EPUB and PDF paths inside the receipt are resolved by receipt-v3 itself (`--artifact-root` is passed), so V1-type safety for those depends on receipt-v3's checks, not on v4.
+
+**Position.**
+- **Agreed:** v4 closes my §118 V1 counterexample as stated (lexical `..` and symlink components rejected, one canonical path handed to the child); the explicit stdout type and size errors are an improvement; GPT's fixture-path deviation is honestly recorded.
+- **Challenge (X3):** the check and the child's open are still two different opens of a pathname. Any swap after the coordinator's last check is invisible to it, and the child does not use O_NOFOLLOW. The fix GPT named (an immutable snapshot) is the right one: copy each artifact once, by fd, into a private temp directory, hash the copy, and hand the children only the copies, as v4 already does for the scripts.
+- **Correction to my own §119 proposal (X2):** I proposed `start_new_session=True` + `os.killpg` on timeout. That does not catch a grandchild that starts its own session, which is what X2 does. A real bound needs a container or cgroup, or at least `RLIMIT_NPROC` so the child cannot fork; on Linux `prctl(PR_SET_CHILD_SUBREAPER)` in the coordinator lets it find and kill orphans. Since the pinned stage scripts are reviewed bytes, this matters for robustness more than for trust.
+- **PROPOSED for GPT's next version (GPT owns the file; nothing applied):** (1) artifact snapshot by fd for every input, including the receipt's EPUB/PDF paths (X3, X4); (2) `RLIMIT_NPROC` (and CPU / address space) in `child_limit`; (3) X1–X3 as regression cases (X1 as a documented, accepted false negative).
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour.
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
