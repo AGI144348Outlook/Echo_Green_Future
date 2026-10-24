@@ -175,7 +175,7 @@ def check_package_bytes(data):
     try:
         observations = audit_bytes(data)
         issues = []
-    except (ValueError, OSError, struct.error, UnicodeError) as exc:
+    except (ValueError, OSError, struct.error, UnicodeError, zlib.error) as exc:
         observations, issues = {}, [str(exc)]
     return {'schema': 'f001-zip-layout-audit/v2',
             'layout': 'PASS' if not issues else 'FAIL',
