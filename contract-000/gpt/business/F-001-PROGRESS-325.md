@@ -1,0 +1,18 @@
+# F-001 TAM Protocol ebook — GPT continuing progress, Run 325 (2026-10-24 CT)
+
+**ONE project ID:** `F-001` TAM Protocol ebook; **DRAFT / HOLD / BLOCKED / NOT LAUNCH-READY**. Continue Run 324 and Claude's shared `Business/ideas/F-001-candidate-ebook-gumroad.md` §132, Git blob `cadcb2e`, plus decision sheet `2975edc`. Alternative income projects remain DEFER. No publication, outreach, accounts, payments, spending or paid inference.
+
+## Deliverables and acceptance checklist
+
+- [x] **Library-first:** [84-entry reversible source assessment](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/mirror-chatgpt-root/contract-000/gpt/LIBRARY-REVIEW-325.md), **31 KEEP / 52 DEFER / 1 PRUNE**. Changed Claude F-001 plan and new independent v4 probe; no shared deletion or overwrite.
+- [x] **A-000 independent contribution:** [single ChatGPT: reply](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/mirror-chatgpt-root/contract-000/gpt/DISC-002-ChatGPT-325.md) to Claude 15Z, accept source correction and candidate 256-entry bounded denial audit. No operational identity changes.
+- [x] **New GPT-owned candidate v5:** [ZIP32 ancestor index](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/mirror-chatgpt-root/contract-000/gpt/business/PROPOSED-f001-zip-layout-audit-v5.py), Git blob `cb1f7ee`, SHA-256 `89c2bb512f20b5b8e7dd40a4f63fc32af52745bcac48a65ebf294d3f34fe3ab5`. Sorted normalized names + bisect replaces v4 deep slash-prefix slicing. Preserve v3/v4.
+- [x] **Prospective test / report:** [Issue #44](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/44), [post-test](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/44#issuecomment-6385855069), [evidence](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/mirror-chatgpt-root/contract-000/gpt/business/F-001-TEST-EVIDENCE-325.md). Corrected fixture: **10/10 expected**, 1,000 randomized equivalence cases zero differences. v4 0.536438s vs v5 0.014368s on 65,535-byte name, local only. 2k/4k ratio 3.1905 observed; **Run 324's timing failure stays recorded**.
+- [ ] **Claude independent v5 review:** verify bisect ancestor semantics, ZIP producer compatibility, long-name and resource limits; no production promotion before review.
+- [ ] **Coordinator integration:** do not change v5 or authoritative chain without independent review, source pin and *new prospective* integration tests.
+- [ ] **Authentic four-artifact package:** source-pinned TAM manuscript; EPUB, PDF, Dataset A CSV, Dataset B CSV; reproducible build, claims/rights worksheet, Dataset A rows 6/7 editorial disposition, full EPUBCheck/PDF render/a11y and independent hashes.
+- [ ] **Commercial readiness:** exact credit, framing, price/refund, license, source branch, ISBN/identifier and storefront: Timothy A1–A6/B6 decisions; validated listing and terms; cross-review; explicit publication authorization. None supplied by synthetic ZIP tests.
+
+**Acceptance:** A readable genuine four-artifact product with authenticated source and editorial disposition, reproducible toolchain, independent EPUB/PDF/a11y and claim/rights checks, accurate listing/refund/credit/license, Claude/GPT review and Timothy's explicit approval. **Current status HOLD.**
+
+**Next GPT action:** request Claude v5 cross-review; avoid more standalone ZIP variants unless a material defect is identified; shift toward authentic book deliverables once Timothy's blockers and source evidence permit. **Complementary Claude action:** continue manuscript/rights/Dataset A/EPUBCheck/PDF/a11y/listing and independently challenge v5 without touching GPT-owned branch.
