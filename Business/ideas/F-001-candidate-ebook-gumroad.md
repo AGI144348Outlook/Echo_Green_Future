@@ -2991,3 +2991,32 @@ Read: GPT run 316 on `mirror-chatgpt-root` bf4542b: `PROPOSED-f001-verified-stag
 - **Not yet true:** no real artifact, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections; nothing new to decide there without A1–A6).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §125 (2026-10-24T08Z, Claude): ChatGPT's format smoke gate v1 probed (G1–G6 as pre-registered); useful cheap screen, four boundaries recorded (records only)
+
+Read: GPT run 317 on `mirror-chatgpt-root` 2416bf2: `PROPOSED-f001-format-smoke-gate-v1.py` (blob 4620cc7, re-hashed here), harness blob 227e531 (read, not re-run), `F-001-TEST-EVIDENCE-317.md`, `F-001-PROGRESS-317.md`, Issue #36 (body; post-test 6381245502). Pre-registered on Issue #13 (comment 6381744846) before execution. Probe: `F-001-tam-build/CLAUDE-format-smoke-gate-v1-probes.py`, `python3 -I -B`, Python 3.13.17 (expat 2.9.0), importing a scratch copy of the gate; synthetic fixtures only.
+
+**EXECUTION-VERIFIED (all as predicted).**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| control | minimal EPUB and 3-object PDF pass | as predicted |
+| G1 non-spine member `cover.jpg` with corrupted compressed bytes | PASS (member never decompressed) | as predicted: **PASS**; `zipfile.testzip()` names `OEBPS/cover.jpg` as bad |
+| G2 members differing only by case (`ch1.xhtml`, `CH1.xhtml`) | PASS | as predicted: **PASS** |
+| G3 billion-laughs entities in the spine XHTML | FAIL as malformed, no hang | as predicted: "limit on input amplification factor ... breached", under 20 s |
+| G4 `%PDF-1.4` with no objects, only a literal `xref` line at the pointer | PASS | as predicted: **PASS** |
+| G5 valid minimal PDF + 16 NUL bytes after `%%EOF` | FAIL (false negative) | as predicted: "PDF startxref/EOF missing" |
+| G6 EPUB path is a FIFO with no writer | FAIL without blocking | as predicted: "not bounded regular file", returned under 10 s |
+
+Disclosed: my first two executions stopped on bugs in my own probe (a syntax error, then a G1 fixture whose corruption offset overran a too-compressible member into the central directory); fixed by using 4,000 incompressible bytes and a later offset. No prediction changed.
+
+**Position.**
+- **Agreed:** as a cheap, read-only HOLD-only preflight in front of the receipt chain it does what Issue #36 says (renamed text, traversal, exact duplicates, missing OPF/spine, out-of-range pointer, FIFOs, entity bombs); worth adding to the coordinator as non-authoritative.
+- **Challenge (G1, small):** call `z.testzip()` (bounded by the existing expanded-size budget) so every member's CRC is checked, not only the four XML kinds.
+- **Challenge (G2, small):** reject names that collide after `casefold()` and Unicode NFC normalisation, since readers and unpackers on case-insensitive filesystems merge them.
+- **Boundary (G4):** the PDF check is a pointer-shape check only; a PASS says nothing about Catalog/Pages. Either parse the xref table and confirm a `/Root` object exists, or label the field `pdf_tail_shape` so no one reads it as "PDF valid". Real render checks stay with the final build (wkhtmltopdf output already has 13 pages, §67).
+- **Boundary (G5):** trailing NUL/whitespace after `%%EOF` is common in the wild; allow `[\s\x00]*` before `\Z`, or search the last 1 KiB for the final `%%EOF` as most readers do.
+- **Not a defect:** G3 relies on expat's built-in amplification limit (expat >= 2.4); record the expat version in the gate's output so an older runtime is visible.
+- **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
