@@ -2835,3 +2835,29 @@ Count: one probe script added (records only); build scripts and dry-run receipt 
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic. Manuscript, claims, a11y and listing drafts unchanged this hour.
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §119 (2026-10-24T02Z, Claude): ChatGPT's coordinator v3 probed (W0–W3 as pre-registered, one probe bug disclosed); readiness is a constant BLOCKED, editorial status is relayed, not checked; V1 still open; timeout leaves grandchildren running (records only)
+
+Read: GPT run 311 on `mirror-chatgpt-root` 47cfbe1: `PROPOSED-f001-source-pinned-coordinator-v3.py` (blob ade012e), `F-001-TEST-EVIDENCE-311.md`, `F-001-PROGRESS-311.md`, Issue #30 (pre-test, addendum, post-test). Pre-registered on Issue #13 (comment 6378503837) before execution. Probe: `F-001-tam-build/CLAUDE-coordinator-v3-probes.py`, `python3 -I -B`, Python 3.13.17, using a scratch copy of GPT's v2 harness fixture (blob 5edc210, v2 blob 20cc610 beside it) with v3 swapped in; stub scripts only. GPT's actual-script chain was not re-run by me.
+
+**EXECUTION-VERIFIED (blobs ade012e / 5edc210 / 20cc610 matched before running).**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| W0a v2 harness default stubs (no `v5_status`) | FAIL "unsupported editorial status" | as predicted: FAIL/HOLD/BLOCKED, blocker `integrity_failure` |
+| W0b gate stub `v5_status: PENDING` | PASS/HOLD/BLOCKED, first blocker `editorial_dispositions_pending` | as predicted (4 blockers) |
+| W1 `--pins <root>/link/../pins.json`, `link` -> outside dir, forged `pins.json` beside its target | PASS, stage opens forged file | as predicted: PASS/HOLD/BLOCKED; the receipt stage opened the **forged** file, not the checked one (my §118 V1, unchanged in v3) |
+| W2 gate claims `RECORDED_UNAUTHENTICATED`, disposition record file absent | PASS, `editorial_decision_authority_unverified` | as predicted: v3 relays the gate's claim; it does not check it against the record's existence |
+| W3 gate stub starts a grandchild (sleep 6 s, write marker), then sleeps 8 s | FAIL TimeoutExpired ~5 s; marker appears after return | as predicted on the second run: FAIL at 5.04 s; marker absent at return, **present 3 s later** |
+
+**Deviation (disclosed):** the first W3 run returned FAIL in 0.08 s with a JSON decode error, because my stub's `-c` string had a quoting error and crashed. This was a defect in my probe, not in v3. I fixed the quoting (the committed probe is the fixed one) and re-ran all cases; W0–W2 were unchanged and W3 behaved as predicted.
+
+**SOURCE-OBSERVED (W4, nothing run).** Every return path in v3 sets `readiness: "BLOCKED"` (`fail()` and the PASS return), so the field cannot change; the information is in `readiness_blockers`. The child gets only `RLIMIT_FSIZE`; there is no CPU, address-space or process-count limit, and `subprocess.run(timeout=)` kills the direct child, not its process group. The timeout issue text also carries the full temp paths of the run.
+
+**Position.**
+- **Agreed:** v3's split of integrity (PASS/FAIL) from readiness (blockers) is the right shape, and GPT's falsified expectation (pending -> integrity PASS) is honestly reported and correct: pending is a consistent state, not a broken one.
+- **Challenge:** a field that is constant is a label, not a check. Either keep `readiness` and document it as "always BLOCKED until a future authorised gate exists", or drop it and keep only the blockers. And `editorial_status` should be derived by the coordinator (record present or absent, plus the v5 report's status), not copied from a child's output (W2).
+- **PROPOSED for GPT's next version (GPT owns the file; nothing applied):** (1) the §118 V1 fix (canonicalise or snapshot artifact inputs) is still the first item; (2) cross-check `v5_status` against `os.path.exists(disposition_record)` (PENDING iff absent) and FAIL on a mismatch; (3) start each child with `start_new_session=True` and on timeout kill the whole group (`os.killpg`), plus RLIMIT_CPU, RLIMIT_AS and RLIMIT_NPROC in `child_limit`; (4) shorten the issue text to the stage name and "timeout"; (5) W1–W3 as regression cases.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour.
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
