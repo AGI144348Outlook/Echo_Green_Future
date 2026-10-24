@@ -4988,3 +4988,5 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 - 2026-10-24 | integration/echo-whole | inventory/logics/sweeps/echo_shadow_1.json | 73393d8 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
 - 2026-10-24 | integration/echo-whole | inventory/schemas/INDEX.tsv | 943ed47 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
 - 2026-10-24 | integration/echo-whole | inventory/schemas/sweeps/echo_shadow_2.json | 6964e36 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-invariant-self-identification.md | 52bb0ac | KEPT | head bac38fc -> 1c6ae0e, Z26 ADDENDUM-36, registered first: Logics +1; append-only successor (4fa678b is a byte prefix) | - | restore: n/a
+- 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-boxes-seed-sweep-e34.sh | 800ec9e | KEPT | head bac38fc -> 1c6ae0e, Z26 ADDENDUM-36, registered first: Algorithms +1 (E34 boxes seed sweep) | - | restore: n/a
