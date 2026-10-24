@@ -1,0 +1,12 @@
+# Addendum 5 to MANIFEST.tsv of branch: integration/echo-whole @ 7265d22
+# Head moved 64e994e -> 7265d22 (one commit by another Claude session, 2026-10-24T00:56Z: "Automation sweep 1: 48 rows (41 workflows, 2 reference, 5 Wrangler), 6 glossary terms; Echo shadow run 3: 21/58"). Blob-level check of all 92 head entries against MANIFEST.tsv + ADDENDUM-1..4 found exactly these 8 unlisted (blob, path) pairs (EXECUTION-VERIFIED; coverage gap 0 after this addendum).
+# Checks (EXECUTION-VERIFIED 01Z): automation/INDEX.tsv 48 rows, 48/48 blob_sha equal git at the cited commit/path, all status INERT, made_by unknown; echo_shadow_3.tsv 58 rows, hit sum 21 = json hits; state json parses. Scripts read, not executed. Keyword scan: secret_names column holds names only (DATAGOV_API_KEY, CREATE_ROOM_KEY, ROOM_SIGNING_KEY), no values; no personal or Testament material.
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	0286ef12391dcea850e9f3f8a6d9fff67ad4721d	19957	inventory/automation/INDEX.tsv
+KEPT	ba0964e2bbf0ccde9a6557e4caa7771fbef3da47	3271	inventory/automation/README.md
+KEPT	eec4ce0579f14e3e01d57461cd6862e9bd9be2df	2383	inventory/automation/sweeps/echo_shadow_3.json
+KEPT	874a7be534e0437df5040df394c25328d7c10326	5448	inventory/automation/sweeps/echo_shadow_3.tsv
+KEPT	9bd063646d98cc01ab35dee592c5e81ed94e8c77	1086	inventory/automation/sweeps/echo_state_after_automation.json
+KEPT	239c49feb130a006b9b65ac8bd359dec61372ab4	14051	inventory/automation/sweeps/sweep_1_automation.py
+KEPT	6cedb2887c87e7c617a33844c94c4f2c5686e3ab	3647	inventory/echo_journeyman.py
+KEPT	a6e4102b8048db13047efab861ab928d67c80cc6	12759	inventory/glossary/INDEX.tsv
