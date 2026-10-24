@@ -1,0 +1,17 @@
+# Contract-000 GPT Run 311 checkpoint — 2026-10-23
+
+**Branch:** `mirror-chatgpt-root` (GPT-owned orphan). Previous head `f1a9dcf195f68481030472658fb0cd1313dee2b1` (Run 310). This run's new files are GPT-owned only; no shared or protected branch edits. No deletion, paid inference, Cloudflare loops, account creation, outreach, publication or spending.
+
+**Read before development:** current Contract-000 `0fbc794`, TJ rulings `3ce87eb`, latest DISC-002 `908a5bbb` (Claude E18), shared Library tree `5a49272a8075d5d647691886d19237dba86df2c6` (69 blobs), previous GPT checkpoint `79cd885`, shared F-001 plan `e9c1627` (§117), decision sheet `2975edc`, APPLY-ORDER `43e9d5b`, Dev Suite `f7cf465`, Genesis `63eb982`, actual receipt-v3/v5-parser/v5-gate/v4-binding/coordinator-v2.
+
+**A Library:** [69-entry review 3fac3bc](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/3fac3bce11a0494fca92aa3267672df22249252d), **31 KEEP / 37 DEFER / 1 PRUNE**. Changed Claude plan and one new Claude coordinator-v1 probe, no deletions.
+
+**B DISC-002:** [ChatGPT E18 response 16cc5ff](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/16cc5ff49e97af30a1e9b90e9100f983c91900a2), one labeled section. New static source finding: Dev Suite `snapshot()` copies storage even when `alg_002()` is false. Proposed full read-surface witness inventory and candidate S1–S7 falsifiers, **not executed**. No A-000 or Genesis code modified.
+
+**C F-001:** Same TAM Protocol ebook, **HOLD**. [Pre/post-test Issue #30](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/30), [actual-script integration evidence 62317c0](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/62317c04eac91232b10624c13cc9e8df6f613ca5), [coordinator-v3 a6385b6](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/a6385b6b71cb2f26c37c2a6deabfa997345b0428), [persistent checklist 5680fdf](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/5680fdf4a40b44ced3c58fda493d77f8e9839003). Exact v3 tested Git blob `ade012e6b248dc1e05b8338aab7c53268fff73f0`. Pending integrity PASS/HOLD **falsified** initial FAIL expectation; v3 exposes `readiness=BLOCKED`. 3/3 v3 follow-on assertions: pending PASS/HOLD/BLOCKED, synthetic record PASS/HOLD/BLOCKED, altered EPUB FAIL/HOLD/BLOCKED. Fixtures were synthetic, EPUB/PDF placeholders invalid, no real ebook format verification or authenticated authority.
+
+**D coordination:** [Claude handoff](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6377935297); [run log](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/mirror-chatgpt-root/contract-000/gpt/RUN-311-LOG.md). Reproducibility ZIP `Contract000_Run311_Handoff.zip` SHA-256 `2020ba25ac6cc02bf96d091b52a192c36a3fc49196e6afdb3ff795b1a51b4909` available in conversation artifacts.
+
+**Next GPT:** obtain Claude independent review, then prospective test with genuine public-derived four-artifact build, format validators, source/record pins; continue F-001, no second project. **Next Claude:** challenge snapshot reading and v3 semantics, continue manuscript/claims/a11y/listing on Claude-owned paths.
+
+**Awaiting Timothy:** A-000 external witness/authority/projection/frozen cases; F-001 A1–A6/B6 and Dataset A lines 6/7 dispositions; explicit publication authorization. Independent source authentication, final EPUB/PDF and rights checks also incomplete. **Release HOLD; Contract-000 remains ongoing.**
