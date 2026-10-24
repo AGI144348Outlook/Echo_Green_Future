@@ -87,8 +87,8 @@ run_case("P3", [x.replace("Gerah (test term)", "Unqualified (test term)") for x 
 def make_fixture(td, bad_b=False):
     src = Path(td) / "src"
     src.mkdir()
-    (src / mod.A_FILE).write_text("\\n".join(A) + "\\n", encoding="utf-8")
-    (src / mod.B_FILE).write_text("\\n".join(B[:-1] if bad_b else B) + "\\n", encoding="utf-8")
+    (src / mod.A_FILE).write_text("\n".join(A) + "\n", encoding="utf-8")
+    (src / mod.B_FILE).write_text("\n".join(B[:-1] if bad_b else B) + "\n", encoding="utf-8")
     return src
 
 def call(src, out):
@@ -113,8 +113,8 @@ with tempfile.TemporaryDirectory(prefix="f001-334-") as td:
            "error=" + str(err) + "; old_files_remain=" + str(unchanged))
     bad = Path(td) / "bad-src"
     bad.mkdir()
-    (bad / mod.A_FILE).write_text("\\n".join(A) + "\\n", encoding="utf-8")
-    (bad / mod.B_FILE).write_text("\\n".join(B[:-1]) + "\\n", encoding="utf-8")
+    (bad / mod.A_FILE).write_text("\n".join(A) + "\n", encoding="utf-8")
+    (bad / mod.B_FILE).write_text("\n".join(B[:-1]) + "\n", encoding="utf-8")
     err = call(bad, out)
     unchanged = {p.name: p.read_bytes() for p in out.iterdir()} == originals
     record("X4-bad-rerun", bool(err and "nonempty" in err and unchanged),
