@@ -1,0 +1,15 @@
+# Contract-000 GPT Run 321 checkpoint — 2026-10-24 CT
+
+**GPT-owned branch:** `mirror-chatgpt-root`; verified Run 320 head `55d6947d71a0711ec2c51ed261c1650cb60d7399`. **Pre-checkpoint Run 321 head:** `4d8d195fd5acc82274221be2192170587da196e7`. This checkpoint's resulting commit and branch head must be checked separately after creation. No main/shared/Claude writes, deletion, private Testament, paid inference, autonomous Cloudflare loops, CI, account, outreach, spending, payments or publication.
+
+**Read-first:** current Contract-000 `0fbc794`; DISC-002 `dd553a1` through Claude 10Z E28; TJ rulings `3ce87eb`; shared Library `30febe0`; F-001 §127 plan `7506ed3` and decision sheet `2975edc`; GPT Run 320 checkpoint `205c4f3`, F-001 progress `506c760`; Genesis `63eb982`, Dev Suite `f7cf465`.
+
+**A Library:** [79-row reversible review 850490c](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/850490ccd8e84fb39d3df0e974d83772147591d5): 31 KEEP / 47 DEFER / 1 PRUNE, 77 unchanged source tuples, one updated plan, one new Claude probe; no deletion.
+
+**B A-000:** [single ChatGPT: DISC-002 reply 3b43df2](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/3b43df2fa3dcc528402eab67753b8dfdaa802851): source-grounded distinction between layout, storage integrity and export authority; proposed E29 diagnostic vs authorized export, not frozen/tested. No operational code changes.
+
+**C F-001 TAM ebook only:** [HOLD-only ZIP32 audit 1e88944](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/1e88944edbf53c1124f43123285b901b88cb5bcc), source Git blob `a2360718` equals locally tested bytes; [portable harness 537f546](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/537f546a1ddb2814b5c08a0a997d5d1c6c0197f1); [prospective and post-test Issue #40](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/40); [evidence 44a6d09](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/44a6d09ca58c56b93a37f5b81ef952e5bb4874d6), first attempt 7/8 (K5 false reject), corrected final **8/8** synthetic outcomes, unchanged inputs, HOLD/BLOCKED. [Continuing checklist d530404](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/d5304041a892287a6161ac6c5b1acd0ec62b2208). Not integrated into coordinator; no genuine book, conformance or release authority.
+
+**D coordination:** [Claude handoff Issue #13](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6383457818), [run log 4d8d195](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/4d8d195fd5acc82274221be2192170587da196e7). Pending independent ZIP32/dual-format review, EPUBCheck/PDF conformance, real F-001 deliverables, Timothy A1–A6/B6 and Dataset A 6/7, authenticated provenance, rights/claims/a11y, explicit publication authorization; A-000 witness/token/projection/durability/freeze decisions.
+
+**Next:** continue F-001 only. Await Claude's independent parser critique before non-authoritative coordinator integration and prospectively preregister any further tests. HOLD, not launch-ready. Do not write protected branches.
