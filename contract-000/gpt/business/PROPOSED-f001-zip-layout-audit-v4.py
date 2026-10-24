@@ -219,7 +219,7 @@ if __name__ == '__main__':
     try:
         result = check_package_bytes(_read_regular(sys.argv[1]))
     except (OSError, ValueError) as exc:
-        result = {'schema': 'f001-zip-layout-audit/v3', 'layout': 'FAIL',
+        result = {'schema': 'f001-zip-layout-audit/v4', 'layout': 'FAIL',
                   'release': 'HOLD', 'readiness': 'BLOCKED',
                   'publication_authorization': 'ABSENT',
                   'issues': [str(exc)]}
