@@ -1,0 +1,25 @@
+# Contract-000 GPT Run 322 — independent development log (2026-10-24 CT)
+
+**Read-first verified:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` blob `0fbc794`; DISC-002 blob `d4ee2b1` including Claude 11Z E29; Timothy rulings referenced in Run 321 checkpoint; shared Library `library-shared` head `e03a552989420c1ca05649fa70dbd3e5f2c2093a`; shared F-001 plan blob `794b33b` through §129, decision sheet `2975edc`, Workshop; GPT Run 321 checkpoint blob `ba812a2` and F-001 progress `4d3dd7f`; Genesis `63eb982` on `genesis-documentary` and Dev Suite `f7cf465` on `dev-suite`. Read the actual `anchor()/validate()/open_exchanges()` and `_digest()/alg_002()/storage()/snapshot()` code. No private Testament read.
+
+## A — Library-first
+
+[Reversible 81-row assessment](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/6d164762fbe5b4cdd458e5393e263019bd68cb48): **31 KEEP / 49 DEFER / 1 PRUNE**. Compared 79 prior rows: 78 unchanged path/blob/size, F-001 plan updated, two new Claude-authored probes DEFER. Every row records Git blob SHA, size and reason. The sole PRUNE excludes tracked generated Python bytecode from GPT active inputs; no source deletion or shared writes.
+
+## B — DISC-002 A-000 / Genesis
+
+[One labeled ChatGPT: response](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/f206edfdcc6d6f896d0fcb0a1cabecf4bf5ed3c0) to Claude E29 split-view stand-in: agree a single adapter-held MAC/head does not prove global uniqueness or freshness; conflicting heads require quarantine. Correct candidate naming: Claude split-view E29, GPT diagnostic/export E30. Code shows Genesis self-reanchor and Dev Suite snapshot returning storage without a separate export permission. E30 remains **PROPOSED**, not frozen/tested; no operational A-000 or Genesis/Dev Suite edits.
+
+## C — BUSINESS F-001 TAM ebook only
+
+- [Prospective Issue #41](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/41) posted before local M0–M9 tests; [M10 addendum](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/41#issuecomment-6384006251) posted before M10 execution.
+- Developed [strict ZIP32/EPUB audit v2](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/b2db24b38166582dbb8f29594e0dd0d4e1275ffa) from pinned v1; [final correction](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/ab2312d9d8139ce8fe9b8bc13e826f04063d2e37) catches malformed raw-DEFLATE `zlib.error`. Final source Git blob `0b780316bd3bdc933d8d3e648ca935ace82ffae2` equals locally tested bytes.
+- [M0–M9 harness](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/df2259dee1d3febf3ac4877261e7ea57f85356c8) and [M10 harness](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/bc4388d939494d9795bc7d8cad898428527814a7) Git blobs match locally executed files. Python 3.13.5, `python3 -I -B`, synthetic fixed-time fixtures, no CI/deployment. **M0–M9 final 10/10**; M10 initial **0/1** (uncaught zlib.error), corrected final **1/1**, all M0–M9 rerun **10/10**. **11/11 final expected outcomes after correction**, all inputs unchanged, all HOLD/BLOCKED. Source-generation assertion mismatch corrected before any test, disclosed.
+- [Full test evidence](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/9002727476ea6271a84c567c473f3abb05b99f18), [post-test same Issue](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/41#issuecomment-6384021226). **Limitation:** strict policy rejects ZIP extended-timestamp extras (M9) that may be legitimate. No real EPUB, EPUBCheck, PDF conformance, authenticity, accessibility or production integration verified.
+- [Continuing F-001 checklist](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/5fbd9261f0ecca5364ac60fadf9200c18f17033f) retains single project identifier, acceptance criteria and next action. [Claude coordination handoff](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6384026909) requests independent strict-v2 compatibility/security review and complementary editorial, provenance, Dataset A, rights/a11y/listing work; no overwriting.
+
+## D — Blockers and boundaries
+
+**A-000:** Timothy witness/head/key custody, monotonic freshness, token roles, protected projection, export scope, durability, test freeze and DevSuite.run decision. **F-001:** Claude v2 review; actual TAM EPUB/PDF/CSV package; source authentication, Dataset A rows 6/7, rights/claims, accessibility, complete EPUB/PDF validation, PDF marker spoofing, subprocess containment; Timothy A1–A6/B6 and explicit publication approval. `F-001` remains **HOLD / NOT LAUNCH-READY**.
+
+**Permissions:** GPT-owned `mirror-chatgpt-root` only. No main, shared, Claude or protected-branch edits; no shared deletion, private Testament, accounts, outreach, spending, payments, publication, paid API inference, autonomous Cloudflare loops or GitHub Actions tests. Next: await Claude review before a prospectively preregistered, non-authoritative staged-coordinator integration. Preserve all evidence and prior commits.
