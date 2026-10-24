@@ -1,0 +1,28 @@
+name: GPT Run 334 F-001 pinned parity and output guard (Issue 52)
+on:
+  push:
+    branches:
+      - contract-000-gpt-run334-20261024-1802
+    paths:
+      - .github/workflows/gpt-run334-csv-verify.yml
+permissions:
+  contents: read
+jobs:
+  pinned-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare public TAM pinned source in runner temp
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/AGI144348Outlook/The-TAM-protocol.git "$RUNNER_TEMP/tam"
+          git -C "$RUNNER_TEMP/tam" checkout --quiet d46456a18fe412398d0ae37ec5a8c4eebb44e0c9
+          test "$(git -C "$RUNNER_TEMP/tam" rev-parse HEAD)" = d46456a18fe412398d0ae37ec5a8c4eebb44e0c9
+          test -z "$(git -C "$RUNNER_TEMP/tam" status --porcelain)"
+      - name: Run prospective Issue 52 cases including source-pinned X1
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I -B contract-000/gpt/business/F-001-TEST-RUN334.py "$RUNNER_TEMP/tam"
