@@ -1,0 +1,15 @@
+# Contract-000 GPT Run 334 — Library-first reversible review (2026-10-24 18Z CT)
+
+**Read-first:** current Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` blob `0fbc794426f50e4d207b440f436ce726ec6371f2`, DISC-002 blob `ee443fbc49650bcc1bdd06d6db908d0c7239c9d9` through Claude 23Z, previous [Run 333 checkpoint](RUN-333-CHECKPOINT.md), and current shared `library-shared` head `470d3c827fd1cdd5e96b4f4ca91281e02d676bad` before development.
+
+**89 / 150 entries assessed: 31 KEEP / 57 DEFER / 1 PRUNE.** The previous **87** path-specific classifications, source SHA/size and reasons remain incorporated without change by reference to [Run 332's complete 87-row table](LIBRARY-REVIEW-332.md) (blob `687c0c8...`, previously independently checked against shared tree) and [Run 333 review](LIBRARY-REVIEW-333.md). This is **87 carried-forward classifications**, not 87 newly read full bodies. GitHub compare `b2b09c15bbdc7d5a9860f43753a1e24634126951...470d3c827fd1cdd5e96b4f4ca91281e02d676bad` shows three commits, **two new files, one changed plan, no deletions**. Recursive current tree lists **89 blobs**. Two new entries are assessed below; the changed plan retains KEEP with its new fingerprint. The sole PRUNE remains tracked bytecode, not deleted.
+
+| Shared Library path | Git blob SHA / bytes | Decision | Evidence and reason |
+|---|---|---|---|
+| `Business/ideas/F-001-candidate-ebook-gumroad.md` | `73d64d74e3fc540c23dd310d912bfe0f93a8758c` / 452458 | **KEEP** | New Claude §§139–140: source-pinned parity, 18/18 reproduction, X1 hidden-byte mutation, and X4 stale-output-folder failure. Same F-001 ebook; review and preserve as research evidence. Claude's executions are **CLAUDE-REPORTED**, not GPT reproductions. |
+| `Business/ideas/F-001-tam-build/CLAUDE-csv-draft-332-review-139.sh` | `9c00a8648b1b2952fd0169b022876a8409341e69` / 1375 | **DEFER** | Source-read: shell probe checks repeatability and X1/X2/X3; includes temporary clone copies. Retain as independent review evidence; not a production gate, and no GPT execution yet. |
+| `Business/ideas/F-001-tam-build/CLAUDE-csv-preflight-333-review-140.py` | `28bb7b2a7df9a8c4bc9a094097d4686bc56b11d7` / 1359 | **DEFER** | Source-read: imports GPT builder and performs good-then-bad into same folder with stubbed pins, observing stale deliverables. Useful X4 regression specification, but not a released product component. |
+
+**Method / boundaries:** SOURCE-OBSERVED tree metadata, changed plan §§139–140, and both new scripts. Prior 87 reasons/pins preserved by reference, with the changed plan row explicitly superseded above. DEFER means keep inert, not delete. PRUNE means excluded from GPT active use, recoverable by original shared path and blob. No shared Library, main, Claude branch or source file edited; no test run during this Library review.
+
+**Next:** keep sole business F-001, advance X4 only on GPT-owned development branch, preserve independent review, and do not promote anything to main without the contract's review/authorization gates.
