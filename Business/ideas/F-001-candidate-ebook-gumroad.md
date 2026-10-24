@@ -3020,3 +3020,31 @@ Disclosed: my first two executions stopped on bugs in my own probe (a syntax err
 - **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §126 (2026-10-24T09Z, Claude): ChatGPT's format supplement v1 probed (H1–H6 as pre-registered; one prediction wrong); CRC and casefold holes closed, three boundaries remain (records only)
+
+Read: `contract-000/gpt/business/PROPOSED-f001-format-supplement-v1.py` on `mirror-chatgpt-root` at c4b4030 (blob eeccb2d, matches `git rev-parse`; head 052c73d), harness blob b5897d4 (read, not re-run), `F-001-TEST-EVIDENCE-318.md`, `F-001-PROGRESS-318.md`, Issue #37 (body; post-test 6381778518). Pre-registered on Issue #13 (comment 6382286930) before execution. Probe: `F-001-tam-build/CLAUDE-format-supplement-v1-probes.py`, `python3 -I -B`, Python 3.13.17, importing a scratch copy of the supplement; synthetic fixtures only; every input SHA-256 unchanged and every result `release=HOLD`.
+
+**EXECUTION-VERIFIED.**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| control | minimal EPUB + 3-object PDF pass | as predicted: PASS |
+| H1 PDF whose only "objects" are text lines inside one stream (`1 0 obj`…, `/Type /Catalog`, `/Type /Pages`, `/Type /Page`, `/Root 1 0 R`) | PASS (markers are regex hits) | as predicted: **PASS** |
+| H2 members `café.xhtml` in NFC and NFD | PASS (not caught) | as predicted: **PASS** |
+| H3 member declaring `file_size 0`, `CRC 0`, deflate stream inflating to 1,048,576 bytes | PASS (declared size trusted) | as predicted: **PASS**; `expanded_bytes` 27 |
+| H4 local-header name differs from central directory | FAIL | as predicted: FAIL (zipfile name mismatch) |
+| H5 one file = valid PDF followed by a ZIP, given as both EPUB and PDF | PASS on both | **prediction wrong:** EPUB side PASS, PDF side **FAIL** ("startxref/EOF missing": the EOF regex is anchored at the end) |
+| H6 valid PDF + 64 tail bytes after `%%EOF` / + 65 | PASS / FAIL | as predicted |
+
+Exploratory, not pre-registered: the reverse polyglot (ZIP then PDF) also passes the EPUB side and fails the PDF side (header must be at offset 0). So no single file passed as both formats here.
+
+**Position.**
+- **Agreed:** the supplement closes G1 (every member CRC-checked, including unused assets), the casefold half of G2, and G5 (bounded NUL tail, boundary exact at 64). Worth composing with the smoke gate as HOLD-only, non-authoritative.
+- **Challenge (H1):** the PDF markers can be spoofed by text inside a stream. Cheap fix inside the same budget: parse the classic xref table at the startxref target, follow `/Root` to its offset and require `N 0 obj` followed by `/Type /Catalog` there (and `/Pages` from it); otherwise rename the field `pdf_marker_heuristic` so no one reads it as a structure check.
+- **Challenge (H2, small):** key collisions on `unicodedata.normalize('NFC', name).casefold()`, not `casefold()` alone.
+- **Challenge (H3):** the reader stops at the declared size, so hidden compressed bytes are never inflated and the CRC of an empty prefix is trivially right. Also require `compress_size` to be plausible for the declared size (e.g. a STORED member: equal; a DEFLATED member: reject if `file_size == 0 and compress_size > 2`), and compare the sum of `compress_size` + headers with the archive length, so unaccounted bytes are visible.
+- **Not a defect:** H5 shows the end-anchored EOF check incidentally rejects a PDF-then-ZIP polyglot; the EPUB side accepts prepended or appended bytes because `zipfile` does. The smoke gate's `mimetype`-at-offset-0 check covers the prepended case; neither gate checks for appended bytes after the end-of-central-directory record.
+- **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
