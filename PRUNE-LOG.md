@@ -4973,3 +4973,18 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 - 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-revocation-reanchor-e33-probe.py | 2841a9a | KEPT | head af93f07 -> bac38fc, Z26 ADDENDUM-35, registered first: Algorithms +1 (revocation / re-anchor E33 probe) | - | restore: n/a
 - 2026-10-24 | autonomous-agency | ECHO_AutonomousAgency/sandbox/recess_session_log.json | f166fcb | KEPT | head de9e7fc -> e54e91a, Z04 ADDENDUM-41, registered first: Registries +1 | - | restore: n/a
 - 2026-10-24 | autonomous-agency | ECHO_AutonomousAgency/sandbox/school_day_log.json | 8ecc661 | KEPT | head de9e7fc -> e54e91a, Z04 ADDENDUM-41, registered first: Registries +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/README.md | 55688d6 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/boxes_replay/qof_combinations.json | 3c0e67d | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/boxes_replay/tav_failures.json | 8f679fa | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/echo_shadow_3.json | f69b79f | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/echo_shadow_3.tsv | 9d58ca4 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/echo_shadow_3_boxes.json | 9864cc0 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/echo_shadow_3_boxes.tsv | edeefc5 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/echo_state_after_automation_boxes.json | c977a56 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/automation/sweeps/sweep_1_automation.py | 57a32b9 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/catalog_box.py | 7ac472c | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/echo_journeyman.py | 7544a89 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/glossary/INDEX.tsv | 51609da | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/logics/sweeps/echo_shadow_1.json | 73393d8 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/schemas/INDEX.tsv | 943ed47 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | integration/echo-whole | inventory/schemas/sweeps/echo_shadow_2.json | 6964e36 | KEPT | head 7265d22 -> a16093e, Z34 ADDENDUM-6, registered first: Indices +1 | - | restore: n/a

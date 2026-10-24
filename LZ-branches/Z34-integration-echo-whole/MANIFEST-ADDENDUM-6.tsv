@@ -1,0 +1,19 @@
+# Addendum 6 to MANIFEST.tsv of branch: integration/echo-whole @ a16093e
+# Head moved 7265d22 -> a16093e (one commit by another Claude session, 2026-10-24T18:12Z: "ת failures box and ק combination-notes box for Echo's discarded generations; replay of shadow run 3: 35/58 with boxes vs 21/58 without (#13)"). Blob-level check of all 98 head entries against MANIFEST.tsv + ADDENDUM-1..5 found exactly these 15 unlisted (blob, path) pairs (EXECUTION-VERIFIED; coverage gap 0 after this addendum). Earlier rows are not changed.
+# Checks (EXECUTION-VERIFIED 19Z): all 7 JSON files parse; control replay 21/58 and boxes replay 35/58 (10 ת, 3 ק open, 2 generations discarded) reproduced on a scratch worktree at a16093e; catalog_box.py equals dual-order-os 5f1581a apart from one header comment. Scripts write only inventory/ files and read git; no network, no secrets values; no personal or Testament material.
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	55688d6f5829d057d10a17d06d77d53109c09828	5079	inventory/automation/README.md
+KEPT	3c0e67de71ebadebb46c9ee8d82ff46be064a592	3193	inventory/automation/sweeps/boxes_replay/qof_combinations.json
+KEPT	8f679fa09b59b1d3bc8e92535e6145171ec8095d	7046	inventory/automation/sweeps/boxes_replay/tav_failures.json
+KEPT	f69b79f9b00c6ed77e5c572195c93c92ef780d6f	2399	inventory/automation/sweeps/echo_shadow_3.json
+KEPT	9d58ca4e1914933d0f850db5d03afd6ccc9a93cf	5456	inventory/automation/sweeps/echo_shadow_3.tsv
+KEPT	9864cc07600bd25267ff1cd8c3ee8d8083fd7a2c	2501	inventory/automation/sweeps/echo_shadow_3_boxes.json
+KEPT	edeefc560b00cef1ceb39791a68a9a6fb926ad3f	5459	inventory/automation/sweeps/echo_shadow_3_boxes.tsv
+KEPT	c977a569dfa265ea5e81cf9db9164d7cd5189366	1122	inventory/automation/sweeps/echo_state_after_automation_boxes.json
+KEPT	57a32b9cab317812c380ee63d26e636508f2c01a	14455	inventory/automation/sweeps/sweep_1_automation.py
+KEPT	7ac472c816dafc5464e0bf59ec1d578ab889320f	10912	inventory/catalog_box.py
+KEPT	7544a8966a4942b1c32bf62d956c2963f74005de	10149	inventory/echo_journeyman.py
+KEPT	51609da09250a5ad8994072fd80e13aa16eaa13b	12759	inventory/glossary/INDEX.tsv
+KEPT	73393d86c5bda7d784aa487cfdffee33fc021fe0	1498	inventory/logics/sweeps/echo_shadow_1.json
+KEPT	943ed4733cdc03795bc4311fca32254b8364f7bd	24524	inventory/schemas/INDEX.tsv
+KEPT	6964e362653c2bef4bdb37ba947aed854523337f	2487	inventory/schemas/sweeps/echo_shadow_2.json
