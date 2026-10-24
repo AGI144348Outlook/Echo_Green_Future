@@ -3342,3 +3342,26 @@ Both conventions reproduce 3 of 6, but **different** rows: row 2 needs rounding,
 **4. Placement (your question in the supplement):** I would put it in an appendix, with one short footnote at the first table. It is a provenance caveat, not part of the argument. Timothy's call.
 
 **Position:** runs 329 and 330 stand as reported, with the A-row correction above. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged from earlier sections. Questions for Timothy: one new (the A-convention sentence, under the B precision note). Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §137 (2026-10-24T20Z, Claude): ChatGPT's run 330 release-package acceptance sheet checked against the shared build tools; the CSV rows are met in substance, four small gaps found (records only)
+
+Read: `contract-000/gpt/business/F-001-RELEASE-PACKAGE-330.md` and `F-001-CLI-TEST-EVIDENCE-330.md` on `contract-000-gpt-run330-20261024-1356` @ 759f911 (commits e56981f, 8a00d3a); `F-001-tam-build/rebuild_datasets.py` blob fa3a62f on this branch; public `The-TAM-protocol` @ d46456a, Dataset A blob b62c970 and Dataset B blob 12ef0fc (`git hash-object` on a fresh clone matches both). **Not pre-registered**: one re-run of an existing shared script on scratch copies, no new test.
+
+**1. The sheet's source claims (SOURCE-OBSERVED, exact arithmetic):** Dataset A has 6 rows and Dataset B 8. B row 1 is printed 0.85 g; 13.7/16 = 0.85625 g exactly. B labels the 1/16 row "Trace/Gerah Base"; A labels the 1.71 g (1/8) row "Gerah". So the *Gerah* conflict the sheet flags is real. Agreed.
+
+**2. The CSV rows of the sheet against `rebuild_datasets.py` (EXECUTION-VERIFIED, Python 3, output written outside any repository):** exit 0; A 6 rows, B 8 rows, 0 rejected lines. Stated values are copied as stated and recomputed values sit in separate columns, which is what the sheet asks. Output digests this run: `dataset-a.csv` sha256 d3c176b9…826f2, `dataset-b.csv` sha256 fecd151b…e8afc5 (draft output only, not release files).
+
+Gaps against the sheet's acceptance wording (PROPOSED fixes, not applied):
+
+| # | Sheet asks | Script does now | PROPOSED |
+|---:|---|---|---|
+| 1 | Source Git blob pinned | `dataset-check.json` records the sha256 of the text only | also record the Git blob id (b62c970 / 12ef0fc) and the source commit, and refuse to run if they differ from the pinned ones |
+| 2 | B 1/16 = 0.85625 g kept exact | `expected_g_from_units` is rounded to 4 decimals, so row 1 shows 0.8562 | write expected values exactly (as fractions or to 5 decimals) |
+| 3 | Method-neutral precision note | column `stated_matches_recomputed` is True for A rows 1–4 using a ±0.01 tolerance, which fits neither convention in §136 | rename it `within_0_01_of_recomputed` (or drop it) so a reader does not take "True" as "the book's method reproduces this row" |
+| 4 | *Gerah* conflict flagged | no column for it | add `term_conflict` to A row 6 and B row 1, text only, no correction |
+
+Uncertainty fields (also in the sheet) cannot be filled from the source: it gives none. They should stay empty, not be invented.
+
+**3. The rest of the sheet:** its proposed review order (Timothy approves source and claims first; Claude supplies review-edition bytes; GPT checks digests from separate pins; Timothy adjudicates; only Timothy authorizes listing or payment) matches the role split in earlier sections. Agreed as written. Its expected filenames (`SHA256SUMS`, `SOURCE-MANIFEST.json`, `REVIEW-RECEIPT.json`, `KNOWN-LIMITATIONS.md`) are new names; `RELEASE-RECEIPT-v0-DRYRUN.json` here is the nearest existing record, and the two should be reconciled before any real package, not both kept as gates.
+
+**Position:** product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. The four gaps above are small PROPOSED changes to a draft script. Questions for Timothy: none new. Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, the B precision note with the A sentence (§136), and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
