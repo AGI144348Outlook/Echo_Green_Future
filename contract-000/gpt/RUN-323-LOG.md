@@ -1,0 +1,25 @@
+# Contract-000 GPT Run 323 — independent development log (2026-10-24 CT)
+
+**Read-first (verified before development):** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` blob `0fbc794`; DISC-002 `3a3f203` through Claude 13Z E30/RC-R5; Timothy rulings `3ce87eb`; GPT Run 322 checkpoint `5a0e70f`, progress `bdac29c`, previous Library review `6fa0c6d`; shared Library head `44e1efb5129fe04cd02069959eaffc0373d71faf`, current F-001 plan `9573e8b` through §130, decision sheet `2975edc`, Workshop/Business; actual Genesis `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982`, Dev Suite `dev-suite:pwa/python/algorithm_matrix.py` blob `f7cf465`. GPT-owned starting branch head `fafcdd48040daec54c49cb97373e88a5ac3e7307`. No private Testament read.
+
+## A — Library-first
+
+[82-entry reversible assessment](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/adbf1ed69d5e6e44d294f899392b172325e68420): **31 KEEP / 50 DEFER / 1 PRUNE**. 80 unchanged tuples, one updated Claude F-001 plan, one new Claude v2 probe; source tree complete (not truncated). Git blob/size/reason recorded per row; no shared deletion or modification. PRUNE remains a reversible active-set exclusion only.
+
+## B — A-000 / Genesis
+
+[One labeled ChatGPT: response](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/bfc0a2eb9c328bdc0cbced5a4792b18be26c7cb8) accepts Claude RC-R5 cases 6–7 as **PROPOSED, not frozen**: independently pinned content integrity separate from layout identity; authenticated actor/capability separate from a caller-supplied `GOVERNOR` string. Re-read actual `record()/anchor()/validate()/open_exchanges()` and `_digest()/alg_002()/storage()/snapshot()`. Source-observed gaps persist: Genesis self-reanchor and Dev Suite snapshot storage exposure. No operational A-000/Genesis/Dev Suite edits or tests.
+
+## C — BUSINESS F-001 TAM ebook only
+
+- Claude §130 independently found v2 false rejection for Info-ZIP/pandoc option bits and acceptance gaps for padded STORED extent / cp437 high-bit names. Continued **same F-001**, no new pipeline.
+- Developed [ZIP32 v3 candidate](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/86006888aaba1a3abc6507f74f679269e1934239), Git blob `9eb0566`, SHA-256 `9e312404babd9af8473638d786295d747af60cf17b05254a1ef970bc465597f8`; original v2 untouched.
+- [Prospective Issue #42](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/42) published before any Run 323 test; [Q1/Q2 addendum](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/42#issuecomment-6384599959) published before producer smoke; [post-test narrative in same Issue](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/42#issuecomment-6384613462) after execution. Python 3.13.5, `-I -B`, Info-ZIP 3.0, pandoc 3.1.11.1. **24/24 final expected outcomes:** 11/11 new P cases, 10/10 M0–M9 regression, 1/1 M10, 2/2 producer smokes. All structured checker results HOLD/BLOCKED; no input mutation. **Deviation:** first regression harness setup failed on incorrect single-reference assertion, corrected before executing any regression case; missing-script attempts exited 2, documented, not counted as tests.
+- [Full evidence](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/71e013a279b4edbf9d21c41b96ae2415125e54bd) records source/harness/result SHA-256s, actual outcomes, deviations and limits. Local handoff `Contract000_Run323_Handoff.zip` SHA-256 `dd747b78d11d04903c2f35a0d0036a955dc35db1a96416190357cd7dda46d743`, containing source, executed harnesses and JSON results.
+- [F-001 continuing checklist](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/8666e58868787f34b085016cbf20b1f841b45b76) retains single project, deliverables, acceptance criteria and next action. [Claude coordination handoff](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6384615517) requests independent v3 compatibility/security review; complementary Claude editorial, provenance, Dataset A, rights/a11y/listing tasks. No overwrite.
+
+## D — Blockers, next and boundaries
+
+**A-000:** Timothy's custodian/head/key and latest-generation authority; token issuers, protected projection/writer, export actors, durability/fork handling, test freeze and DevSuite.run decision. **F-001:** independent Claude v3 review; no genuine TAM four-artifact package; source rights and authentication; Dataset A rows 6/7; manuscript claims/editorial, EPUBCheck/PDF/a11y; Timothy A1–A6/B6 and explicit publication authorization. Next: review Claude findings before a separate prospectively registered HOLD-only integration; continue F-001, no new pipeline. F-001 **HOLD / NOT LAUNCH-READY**.
+
+**Safety and branch boundaries:** only GPT-owned `mirror-chatgpt-root` files created; Issue comments for coordination/testing. No main/shared/Claude/protected branch edits, shared deletions, private Testament material, accounts, outreach, publication, spending, payments, paid inference, autonomous Cloudflare loops or GitHub Actions test triggers. No unsupported launch-ready or A-000 execution claims.
