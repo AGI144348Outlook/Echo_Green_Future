@@ -7,7 +7,7 @@ function audit(aText,bText) {
   function pct(n){const neg=n<0n?"-":"+";const v=n<0n?-n:n;return neg+(v/100n).toString()+"."+(v%100n).toString().padStart(2,"0")+"%";}
   function roundEven(n,d){const sign=n<0n?-1n:1n;const v=n<0n?-n:n;let q=v/d;const r=v%d;if(2n*r>d||(2n*r===d&&q%2n===1n))q++;return sign*q;}
   function cents(n){const c=roundEven(n,1000n);return (c/100n).toString()+"."+(c%100n).toString().padStart(2,"0");}
-  const aLines=aText.split(/\r?\n/).filter(l=>/\d+(?:\.\d+)?g\s/.test(l));
+  const aLines=aText.split(/\r?\n/).filter(l=>/\s+\d+(?:\.\d+)?g\s+\d+(?:\.\d+)? Units? \(/.test(l));
   const bLines=bText.split(/\r?\n/).filter(l=>/^\d+\s+\d+(?:\.\d+)?g\s/.test(l));
   if(aLines.length!==6||bLines.length!==8)throw Error("source row-count mismatch: A="+aLines.length+" B="+bLines.length);
   const a=aLines.map((line,i)=>{
@@ -18,9 +18,8 @@ function audit(aText,bText) {
     const exact=BASE*u/8n,obs=micro(m[2]),diff=obs-exact;
     const computed=roundEven(diff*10000n,exact);
     const raw=m[5].replace("\\%","%");
-    const matches=raw.startsWith("<")?( (diff<0n?-diff:diff)*10000n < exact ):computed===BigInt(raw.replace("%",""))*100n; // overwritten for decimal parsing below
-    const printedScaled=raw.startsWith("<")?null:roundEven(micro(raw.replace("%",""))*100n,100000n);
-    const direct=raw.startsWith("<")?matches:computed===printedScaled;
+    const printedScaled=raw.startsWith("<")?null:(()=>{let v=raw.replace("%","");let sign=1n;if(v.startsWith("-")){sign=-1n;v=v.slice(1);}else if(v.startsWith("+"))v=v.slice(1);return sign*micro(v)/1000n;})();
+    const direct=raw.startsWith("<")?((diff<0n?-diff:diff)*10000n < exact):computed===printedScaled;
     return {row:i+1,object:m[1],observed_mass_g:m[2],units:m[3],registry_sign:m[4],printed_deviation:raw,term:m[6],theoretical_mass_g:fmt(exact),computed_deviation:pct(computed),direct_match:direct};
   });
   const b=bLines.map((line,i)=>{
@@ -46,7 +45,7 @@ if (typeof module !== "undefined") {
     const paths=process.argv.slice(2);
     if(paths.length!==2)throw Error("usage: node F-001-PRECISION-AUDIT-328.js DATASET_A DATASET_B");
     const buf=paths.map(p=>fs.readFileSync(p));
-    const blobSha=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\\0".replace("\\\\0","\\0"))).update(b).digest("hex");
+    const blobSha=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\0")).update(b).digest("hex");
     const want=["b62c970a660e0a6685b58db1ef121690daa4fce7","12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"];
     buf.forEach((b,i)=>{if(blobSha(b)!==want[i])throw Error("source blob mismatch at "+i);});
     process.stdout.write(JSON.stringify(audit(buf[0].toString("utf8"),buf[1].toString("utf8")),null,2)+"\\n");
