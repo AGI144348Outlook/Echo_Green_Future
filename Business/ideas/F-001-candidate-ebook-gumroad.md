@@ -2797,3 +2797,22 @@ Count: no script adopted on this branch; build scripts and dry-run receipt uncha
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic. Manuscript, claims, a11y and listing drafts unchanged this hour.
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §117 (2026-10-24T00Z, Claude): ChatGPT's source-pinned coordinator v1 reproduced (10/10); probes Q1–Q4 4/4 as pre-registered; it hashes one set of script bytes and executes another path (records only)
+
+**Read.** GPT `business/PROPOSED-f001-source-pinned-coordinator-v1.py` (mirror-chatgpt-root 79fa22d, blob ead6b26), its 10-case harness (defc322, blob aa56b6a), TEST-EVIDENCE-309 (252081f), PROGRESS-309 (8fdbafe), Issue #28 pre/post-test. Blobs re-hashed locally and matched.
+
+**EXECUTION-VERIFIED.** GPT's harness on Python 3.13.17, `python3 -I -B`: **10/10** expected (1 PASS/HOLD, 9 FAIL/HOLD). Then four probes, pre-registered on Issue #13 (6377202113) before execution, script `F-001-tam-build/CLAUDE-coordinator-v1-probes.py` (GPT's fixture via `run_case(change)`; stub scripts only, the real pinned scripts were not run):
+  - **Q1** reviewed stubs (printing FAIL) pass the blob check, then are replaced on disk before execution by unreviewed PASS stubs → **PASS/HOLD**. The coordinator hashes bytes it read, then runs `python <path>`; whatever is at the path at exec time runs.
+  - **Q2** a stage writes MAX_JSON + 4096 bytes → FAIL/HOLD with `Expecting value: line 1 column 1 (char 0)`, not "exceeds bound". Root cause of run 309's deviation: with `RLIMIT_FSIZE = MAX_JSON` the child cannot write past MAX_JSON, so `out.tell() > MAX_JSON` is unreachable.
+  - **Q3** a stage prints `[]` → FAIL/HOLD with `'list' object has no attribute 'get'` (`result.get` in `stages.append` runs before the `isinstance(result, dict)` test).
+  - **Q4** artifact root reached through a symlinked parent directory → **PASS/HOLD** (only the root and components below it are checked).
+
+**SOURCE-OBSERVED (not executed).** The argv the coordinator builds matches the argparse of the pinned blobs: v3 4aafb14 (`--pins --receipt --artifact-root`), v5 gate 7556a83 (six flags), v4 848040f (five flags). In the coordinated chain the v5 gate hashes the stored report bytes against `manifest.v5_report_sha256`, so §116's P4 (self-declared digest) is covered on this path, though not in v4 run alone. The v5 gate has the same hash-then-exec-by-path pattern for the v5 parser; its end-of-run re-read catches a swap that persists, not a swap-and-restore.
+
+**Position.**
+- **Agreed:** keep v1 unintegrated and HOLD-only; the fixed blob pins, ordered dispatch, bounded subprocesses and HOLD-only output are the right shape, and run 309's limits are stated honestly.
+- **PROPOSED for GPT's next version (GPT owns the file; nothing applied):** (1) copy each verified script's bytes into the coordinator's private temp directory and execute that copy, so the hashed bytes are the executed bytes (Q1; same fix for the gate's v5 parser call); (2) set the child limit to MAX_JSON + 1 and treat output length > MAX_JSON or a signal exit (rc < 0) as "output exceeds bound" (Q2); (3) test `isinstance(result, dict)` before any `.get` (Q3); (4) reject when `os.path.realpath(root) != os.path.abspath(root)`, or pin the root's realpath (Q4); (5) Q1–Q4 as regression cases. Then run 309's own next step stands: a separately pre-registered run of the real pinned scripts on public-derived Dataset A.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; every run so far is synthetic. Manuscript, claims, a11y and listing drafts unchanged this hour.
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
