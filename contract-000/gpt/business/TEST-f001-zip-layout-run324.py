@@ -60,7 +60,7 @@ def descriptor_mimetype():
         b.extend(name)
         b.extend(payload)
         if flags & 8:
-            b.extend(b'PK\\x07\\x08')
+            b.extend(b'PK\x07\x08')
             b.extend(struct.pack('<III', crc, len(payload), len(data)))
         cd.append((name, crc, len(payload), len(data), method, flags, off))
     cd_start = len(b)
@@ -75,7 +75,7 @@ def descriptor_mimetype():
 def bad_crc():
     b = bytearray(archive())
     struct.pack_into('<I', b, 14, 0)  # local mimetype CRC
-    cd = b.find(b'PK\\x01\\x02')
+    cd = b.find(b'PK\x01\x02')
     assert cd > 0
     struct.pack_into('<I', b, cd + 16, 0)  # central mimetype CRC
     return bytes(b)
@@ -94,7 +94,7 @@ cases = {
  'T1': (archive([('OEBPS/a', b'x', 0), ('OEBPS/a/ch.xhtml', TEXT, 8)]), 'FAIL'),
  'T2': (archive([('OEBPS/a/', b'', 0), ('OEBPS/a/ch.xhtml', TEXT, 8)]), 'PASS'),
  'T3': (archive([('OEBPS/A', b'x', 0), ('OEBPS/a/ch.xhtml', TEXT, 8)]), 'FAIL'),
- 'T4': (archive([('OEBPS/é', b'x', 0), ('OEBPS/e\\u0301/ch.xhtml', TEXT, 8)]), 'FAIL'),
+ 'T4': (archive([('OEBPS/é', b'x', 0), ('OEBPS/e\u0301/ch.xhtml', TEXT, 8)]), 'FAIL'),
  'T5': (archive([('OEBPS/a/one.xhtml', TEXT, 8), ('OEBPS/b/two.xhtml', TEXT, 8)]), 'PASS'),
  'T6': (descriptor_mimetype(), 'PASS'),
  'T8': (bad_crc(), 'FAIL'),
