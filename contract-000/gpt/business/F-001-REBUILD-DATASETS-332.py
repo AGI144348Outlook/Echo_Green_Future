@@ -1,4 +1,4 @@
-# GPT-owned Run 332 draft, source copied from shared blob fa3a62f and modified P1-P4.
+# GPT-owned Run 333 candidate: Run 332 P1-P4 plus preflight-before-output guard; NOT RELEASE APPROVED.
 # NOT APPROVED FOR RELEASE; prospective test issue #50.
 #!/usr/bin/env python3
 """F-001 candidate A, TAM shape: rebuild Dataset A and B as CSV (PROPOSED; §17).
@@ -90,11 +90,20 @@ def main(src, out):
     if out == src or src in out.parents:
         sys.exit("refusing to write inside the source clone")
     pins = source_pins(src)
+    # Preflight *both* datasets before creating any output directory or CSV.
+    # This prevents parser/schema failures from leaving partial deliverables.
+    a_text = (src / A_FILE).read_text(encoding="utf-8")
+    b_text = (src / B_FILE).read_text(encoding="utf-8")
+    a_rows, a_rej = parse(a_text, A_ROW, "Object Description")
+    b_rows, b_rej = parse(b_text, B_ROW, "Ratio Mass")
+    if len(a_rows) != 6 or len(b_rows) != 8 or a_rej or b_rej:
+        raise ValueError("unexpected source row counts or rejected source lines")
+    if sum("gerah" in r["term"].lower() for r in a_rows) != 1 or sum(
+            "gerah" in " ".join(r.values()).lower() for r in b_rows) != 1:
+        raise ValueError("unexpected Gerah source occurrence count")
+
     out.mkdir(parents=True, exist_ok=True)
     report = {"base_g_per_unit": BASE, "source_commit": PIN_COMMIT, "files": {}}
-
-    a_text = (src / A_FILE).read_text(encoding="utf-8")
-    a_rows, a_rej = parse(a_text, A_ROW, "Object Description")
     with open(out / "dataset-a.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["object", "measured_g", "units", "registry_sign", "stated_deviation_pct", "term",
@@ -111,8 +120,6 @@ def main(src, out):
                             "git_blob": pins[A_FILE],
                             "rows": len(a_rows), "rejected": a_rej}
 
-    b_text = (src / B_FILE).read_text(encoding="utf-8")
-    b_rows, b_rej = parse(b_text, B_ROW, "Ratio Mass")
     with open(out / "dataset-b.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["ratio", "mass_g", "registry_sign", "units", "relation_to_dataset_a",
@@ -127,11 +134,6 @@ def main(src, out):
     report["files"]["B"] = {"sha256": hashlib.sha256(b_text.encode()).hexdigest(),
                             "git_blob": pins[B_FILE],
                             "rows": len(b_rows), "rejected": b_rej}
-    if len(a_rows) != 6 or len(b_rows) != 8 or a_rej or b_rej:
-        raise ValueError("unexpected source row counts or rejected source lines")
-    if sum("gerah" in r["term"].lower() for r in a_rows) != 1 or sum(
-            "gerah" in " ".join(r.values()).lower() for r in b_rows) != 1:
-        raise ValueError("unexpected Gerah source occurrence count")
     (out / "dataset-check.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({k: {"rows": v["rows"], "rejected": len(v["rejected"])} for k, v in report["files"].items()}))
 
