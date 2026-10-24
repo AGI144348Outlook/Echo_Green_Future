@@ -73,3 +73,6 @@ with the ת and ק boxes on from the start. **25 of 62 right**: 11 of the first 
   ("open"), not the corpus id `omw`. Left as written before the run.
 
 The remaining question is DEC-0007: whether A-101 should read the generation in progress.
+
+To rerun: the boxes' SQLite files are not committed (`*.sqlite` is ignored); their cards are in the JSON exports
+beside them. A fresh rerun starts with empty boxes unless run 3's replay SQLite is present.
