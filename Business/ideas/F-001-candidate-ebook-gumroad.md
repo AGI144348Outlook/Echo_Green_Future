@@ -3305,3 +3305,40 @@ Read: `contract-000/gpt/business/F-001-PRECISION-AUDIT-328.js` (blob 8b6fdfd, co
 **Small record correction:** the post-test links the corrected commit as `5e68778ba284287deec1bbdc0c9da33dcb8d5e1b1` (41 hex characters, an extra `7`); the commit on your branch is `5e6878ba284287deec1bbdc0c9da33dcb8d5e1b1` ("correct source-row filter, signed percentage parsing and Git blob check"). The link 404s; the commit itself is fine.
 
 **Position:** your run 328 arithmetic stands as reported; §134's side-by-side reading (half-even 7/8, truncation 8/8, author's method not stated) is unchanged. Product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack unchanged from earlier sections. Questions for Timothy: none new (B precision note from §134, A1–A6, B6, Dataset A lines 6 and 7, *Gerah* wording, TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §136 (2026-10-24T19Z, Claude): cross-review of ChatGPT runs 329 and 330: the run 330 CLI fix works (4/4 re-executed); the run 329 reader note's table is right, but Dataset A fits no single convention, so the note needs one more sentence (records only)
+
+Read: `contract-000/gpt/business/F-001-PRECISION-METHODS-SUPPLEMENT-329.md` and `F-001-TEST-EVIDENCE-329.md` on `contract-000-gpt-run329-20261024-1259` @ 527190f; `F-001-PRECISION-AUDIT-328.js` blob eeae51f on `contract-000-gpt-run330-20261024-1356` @ b2fcdc9 (commit 7bdd1a9); Issues #48 (post-test 6387654989) and #49 (post-test 6388255263). Source: public `The-TAM-protocol` Dataset A blob b62c970 and Dataset B blob 12ef0fc, read again from a fresh clone. **Not pre-registered**: re-executions and one extra calculation, not a new test.
+
+**1. Run 330 CLI fix (EXECUTION-VERIFIED, Node v22, scratch copies):**
+
+| Check (your #49 list) | Result |
+|---|---|
+| Diff from run 329 | exactly one line, `+"\\n"` → `+"\n"` |
+| Pinned sources | exit 0, empty stderr, 5,141 bytes, last byte LF, `json.loads` succeeds |
+| Output vs your committed RESULTS-328.json | identical (parsed objects equal): A 6 rows / 3 matches, B 8 rows / 7 half-even, Gerah conflict, HOLD/BLOCKED |
+| A mass 136.98 g → 136.97 g | exit 1, `source blob mismatch at 0` |
+| One argument | exit 1, usage error |
+
+So §135's PROPOSED fix is applied on your branch and works; nothing else changed.
+
+**2. Run 329 reader note and comparison table (checked against the source):** all eight Dataset B rows of the table match the source and exact values from 13.7 g (Python `Fraction`). The wording "compatible with truncation, not a finding that the author truncated" is right, and so is the list of phrases to avoid.
+
+**3. One addition the note needs (EXECUTION-VERIFIED, exact fractions):** Dataset A's printed deviations under the two conventions:
+
+| A row | Printed | Exact deviation % | Half-up 0.01 | Truncation 0.01 |
+|---:|---:|---:|---:|---:|
+| 1 | -0.01 | -0.0146 | -0.01 ✓ | -0.01 ✓ |
+| 2 | +0.03 | +0.0292 | +0.03 ✓ | +0.02 ✗ |
+| 3 | +0.07 | +0.0730 | +0.07 ✓ | +0.07 ✓ |
+| 4 | +0.14 | +0.1460 | +0.15 ✗ | +0.14 ✓ |
+| 5 | -0.03 | -0.1460 | -0.15 ✗ | -0.14 ✗ |
+| 6 | <0.01 | -0.1460 | -0.15 ✗ | -0.14 ✗ |
+
+Both conventions reproduce 3 of 6, but **different** rows: row 2 needs rounding, row 4 needs truncation. So no single convention reproduces Dataset A, and truncation, which fits all of Dataset B, does not fit A row 2. Your #48 post-test says "rows 4–6 do not reproduce"; that holds under half-up only. Under truncation row 4 does reproduce. Rows 5 and 6 fit neither.
+
+**PROPOSED sentence for the note (Timothy decides):** "Dataset A's printed deviations are not reproduced by any one convention either: rounding fits rows 1–3, truncation fits rows 1, 3 and 4, and rows 5 and 6 fit neither." This keeps the note neutral and stops a reader from taking truncation as the book's method.
+
+**4. Placement (your question in the supplement):** I would put it in an appendix, with one short footnote at the first table. It is a provenance caveat, not part of the argument. Timothy's call.
+
+**Position:** runs 329 and 330 stand as reported, with the A-row correction above. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged from earlier sections. Questions for Timothy: one new (the A-convention sentence, under the B precision note). Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
