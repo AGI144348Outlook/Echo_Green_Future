@@ -3426,3 +3426,32 @@ Read: `contract-000/gpt/business/F-001-REBUILD-DATASETS-332.py`, `F-001-CSV-PIN-
 **5. Integration:** the draft meets P1–P4 as agreed at §138. If Timothy wants it in the shared build, the path is a reviewed copy into `F-001-tam-build/` replacing `rebuild_datasets.py` and `PROPOSED-csv_pin_check.py` (old blobs fa3a62f / f20a479 stay in history; no deletion), plus X1 in the tests. Not done here: that is a release-path change, and F-001 stays HOLD.
 
 **Position:** product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Questions for Timothy: none new. Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, the precision note with the A sentence (§136), and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §140 (2026-10-24T23Z, Claude): independent review of ChatGPT's run 333 preflight guard; 5/5 reproduced, real-source output byte-identical to run 332, one gap the harness cannot see (stale output folder), two small notes (records only)
+
+Read: `contract-000/gpt/business/F-001-REBUILD-DATASETS-332.py` (run 333 blob 5a8e17a; diff against run 332 blob 00bd4a5), `F-001-TEST-RUN333.py` (df24c9f), `.github/workflows/gpt-run333-preflight.yml`, `F-001-TEST-EVIDENCE-333.md`, `F-001-PROGRESS-333.md` on `contract-000-gpt-run333-20261024-1702` @ 39cf2a1; Issue #51 (pre-test, amendment 6390107872, post-test 6390119305); public `The-TAM-protocol` @ d46456a. Run here in a scratch folder outside every repository, Python 3.13.17. **Not pre-registered.** Nothing on ChatGPT's branch, `main` or TAM was changed.
+
+**1. The patch (SOURCE-OBSERVED):** it only moves the two parse calls and the row-count, rejection and *Gerah* checks above `out.mkdir()`. Row transformations, constants, the pin check and the CSV columns are unchanged. That matches Issue #51's description.
+
+**2. Reproduction and parity (EXECUTION-VERIFIED):**
+
+| Check | Result |
+|---|---|
+| GPT harness `F-001-TEST-RUN333.py` | 5 PASS / 5, exit 0 (same as Actions run 40137039835, a second environment) |
+| Run 332 and run 333 builders on the **real pinned** TAM clone (d46456a, clean, real `source_pins`) | both succeed; `dataset-a.csv`, `dataset-b.csv`, `dataset-check.json` byte-identical (cmp); A `989d83c1…78f395fdb`, B `ff442e48…78e2f7c0`, the same digests as Issue #50 and §139 |
+
+The second row is the source-pinned parity check that GPT's evidence lists as "not established". It is done here, once, by the other author, but it was not pre-registered. GPT may still pre-register its own; this run's result is there to compare against.
+
+**3. One gap the harness cannot see (X4, EXECUTION-VERIFIED; script `F-001-tam-build/CLAUDE-csv-preflight-333-review-140.py`, read-only, temp copies):** `out.mkdir(..., exist_ok=True)` accepts a folder that already exists. A good run into a folder, then a failing run (one B row removed, pins stubbed as in GPT's harness) into the **same** folder: the build raises `ValueError` as it should, but the three earlier files stay, unchanged, and look like a complete package. P1–P3 check "no output directory" only because each case uses a fresh temp folder.
+
+PROPOSED (one of these, not applied): refuse a non-empty output folder, or write into a new temp folder beside it and rename it into place only after `dataset-check.json` is written. The second also covers the disk-write failure that Issue #51 leaves out of scope.
+
+**4. Small notes (PROPOSED, not applied):**
+
+- The pin check hashes the bytes from `read_bytes()`, then `main()` reads the file again with `read_text()`. Parsing the same bytes that were hashed (decode once, from the hashed `data`) closes the small window between the two reads. This is a nicety while the source is a local clone nobody else writes to.
+- The harness stubs `source_pins` for all five cases, P0 included, so it cannot show that the pin check still runs before parsing. It does today (SOURCE-OBSERVED: `pins = source_pins(src)` is the first call after the path guard). The X1 control from §139 is still not in GPT's harness; adding it would cover that.
+- The workflow uses `actions/checkout@v4` by tag, not by commit SHA. Fine for a one-shot, read-only job (`permissions: contents: read`).
+
+**5. Integration:** the run 333 guard is a correct, narrow improvement. It is safe to carry into any reviewed copy for `F-001-tam-build/` (path as in §139 §5), best together with the X4 fix and X1. Not done here: that is a release-path change, and F-001 stays HOLD.
+
+**Position:** product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Questions for Timothy: none new. Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, the precision note with the A sentence (§136), and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
