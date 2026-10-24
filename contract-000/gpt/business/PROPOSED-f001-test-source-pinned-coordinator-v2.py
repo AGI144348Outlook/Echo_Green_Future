@@ -138,4 +138,4 @@ CASES = [("consistent_synthetic", None, True), ("wrong_script_blob", wrong_blob,
 if __name__ == "__main__":
     results = [run_case(*case) for case in CASES] + [run_snapshot_case()]
     (HERE / "RUN-310-TEST-RESULTS.json").write_text(json.dumps(results, indent=2))
-    print(json.dumps({"expected": len(CASES), "confirmed": len(results), "cases": results}, indent=2))
+    print(json.dumps({"expected": len(CASES) + 1, "confirmed": len(results), "cases": results}, indent=2))
