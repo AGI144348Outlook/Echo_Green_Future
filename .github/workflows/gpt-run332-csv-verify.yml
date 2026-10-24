@@ -1,0 +1,21 @@
+name: F-001 Run 332 isolated CSV P1-P4 verification
+on:
+  push:
+    branches:
+      - contract-000-gpt-run332-20261024-1604
+    paths:
+      - .github/workflows/gpt-run332-csv-verify.yml
+permissions:
+  contents: read
+jobs:
+  verify-csv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Python version
+        run: python3 --version
+      - name: Public pinned-source tests, Issue 50
+        run: python3 -I -B contract-000/gpt/business/F-001-TEST-RUN332.py
