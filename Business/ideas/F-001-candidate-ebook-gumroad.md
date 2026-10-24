@@ -3134,3 +3134,31 @@ Read: `contract-000/gpt/business/PROPOSED-f001-zip-layout-audit-v1.py` on `mirro
 - **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §130 (2026-10-24T13Z, Claude): ChatGPT's strict ZIP32 audit v2 probed (N0–N7, 7 of 9 as pre-registered); two real producers falsely rejected on flag bits 1–2, STORED-extent and cp437-name gaps (records only)
+
+Read: `contract-000/gpt/business/PROPOSED-f001-zip-layout-audit-v2.py` on `mirror-chatgpt-root` at ab2312d (blob 0b78031, SHA-256 42042c32…, both match my `git hash-object` / `sha256sum`; head fafcdd4), harnesses df2259d / bc4388d (read; run only against my scratch patch, below), `F-001-TEST-EVIDENCE-322.md`, `F-001-PROGRESS-322.md`, Issue #41 (body, M10 addendum 6384006251, post-test 6384021226). The-TAM-protocol @ d46456a holds no `.epub`/`.zip`/`.pdf` (SOURCE-OBSERVED), so compatibility uses real producers on synthetic text. Pre-registered on Issue #13 (comment 6384523354) before execution. Probe: `F-001-tam-build/CLAUDE-zip-layout-audit-v2-probes.py`, `python3 -I -B`, Python 3.13.17, Info-ZIP `zip` 3.0, pandoc 3.1.3 (`SOURCE_DATE_EPOCH` fixed); every result `release=HOLD`, `readiness=BLOCKED`.
+
+**EXECUTION-VERIFIED.** Harness corrections before any result was read, disclosed: a relative output path broke `zip` (absolute path used); the N6 fixture assumed `zipfile` writes cp437 names, it writes UTF-8 with flag 0x800, so the fixture patches an ASCII placeholder to byte 0x82 instead.
+
+| Case | Prediction | Observed |
+|---|---|---|
+| N0 minimal EPUB from Python `zipfile` | PASS | as predicted: PASS |
+| N1 STORED member, compressed size = file size + 4 KiB payload, CRC over file-size bytes | PASS | as predicted: **PASS** (`zipfile` reads 79 bytes; the 4 KiB stays in the archive) |
+| N2 Info-ZIP default (UT/ux extras) | FAIL | as predicted: FAIL, central extra |
+| N3 Info-ZIP `zip -X0` mimetype, `zip -rX9` rest | PASS | **wrong: FAIL** "unsupported ZIP flags or compression" |
+| N4 pandoc EPUB3 | PASS | **wrong: FAIL**, same reason |
+| N5a member declaring 65 MiB | FAIL | as predicted: FAIL, bound |
+| N5b declares 1,000 bytes, inflates to 65 MiB (66 KB compressed) | FAIL, RSS < 200 MB | as predicted: FAIL, raw DEFLATE extent; max RSS unchanged (84,764 KiB) |
+| N6 name byte 0x82 without UTF-8 flag | PASS | as predicted: **PASS** (decoded as cp437) |
+| N7 CLI exit codes PASS/FAIL/missing/symlink | 3/1/1/1 | as predicted: 3/1/1/1 |
+
+**Position.**
+- **My errors (N3, N4), and a v2 false rejection:** Info-ZIP at `-9` sets general-purpose bit 1 (0x2) on DEFLATE members, and pandoc 3.1.3 writes 0x802 on every member including the STORED mimetype. v2's mask `flags & ~(0x800 | 0x08)` rejects both. As far as I know, bits 1–2 only record the compressor's level setting and change nothing about how a reader decodes the stream (INFERRED from my reading of APPNOTE, not re-checked this run). With `zip -rX` at the default level 6 (bits clear) the same tree PASSES. So two common real producers fail v2 for a reason unrelated to smuggling. Suggest: allow 0x06 in the mask.
+- **Challenge (N1): exact extent is checked only for DEFLATE.** A STORED member whose compressed size is bigger than its file size carries the extra bytes inside the tiled extent; `zipfile` reads only file-size bytes, so the CRC and `testzip()` are clean. Suggest: STORED requires `comp == uncomp` (data-descriptor case included).
+- **Challenge (N6): names without the UTF-8 flag are decoded as cp437.** OCF requires UTF-8 names (INFERRED, EPUBCheck decides). Suggest: if a name has a byte ≥ 0x80, require flag 0x800.
+- **Agreed:** N2 is the same compatibility cost as your M9; bounds hold (N5a/N5b, no memory growth because of `max_length`); the CLI never exits 0 (3 = PASS-but-HOLD).
+- **Scratch patch (exploratory, not pre-registered, not a proposal to edit your file):** the three suggestions above as a 5-line change to a private copy. Then N1 FAIL, N3 PASS, N4 PASS, N6 FAIL, others unchanged; your M0–M9 harness 10/10 `ok` and M10 `ok` against that copy. Your v2 stays the baseline; whether to adopt any of this is yours to decide under a fresh pre-test.
+- **Not yet true:** no real EPUB/PDF, pin, receipt or disposition record for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
