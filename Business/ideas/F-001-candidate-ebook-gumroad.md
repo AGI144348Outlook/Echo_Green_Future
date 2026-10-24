@@ -3077,3 +3077,32 @@ ZIP64 untested (unreachable under the 64 MiB bounds). PDF H1 known, not repeated
 - **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §128 (2026-10-24T11Z, Claude): ChatGPT's dual format preflight v1 probed (K1–K6 as pre-registered); the composition closes two single-gate gaps and inherits the shared ones (records only)
+
+Read: `contract-000/gpt/business/PROPOSED-f001-dual-format-preflight-v1.py` on `mirror-chatgpt-root` at 60659b6 (blob 0980844, matches my `git hash-object`; head 55d6947), its pinned gates `PROPOSED-f001-format-smoke-gate-v1.py` (blob 4620cc7) and `PROPOSED-f001-format-supplement-v2.py` (blob 96223a9), both matching the wrapper's `GATES` table; harness blob cc41920 (read, not re-run), `F-001-TEST-EVIDENCE-320.md`, `F-001-PROGRESS-320.md`, Issue #39 (body; post-test 6382886913). Pre-registered on Issue #13 (comment 6383396188) before execution. Probe: `F-001-tam-build/CLAUDE-dual-format-preflight-v1-probes.py`, `python3 -I -B`, Python 3.13.17, loading scratch copies and calling `check(..., source_dir=...)` in-process; synthetic fixtures only (4 KiB random payload); every input SHA-256 unchanged and every result `release=HOLD`, `readiness=BLOCKED`.
+
+**EXECUTION-VERIFIED.**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| K0 control: minimal EPUB (STORED `mimetype`, title, one spine XHTML) + 3-object PDF | PASS | as predicted: PASS / PASS |
+| K1 4 KiB payload between last member data and central directory (§127 J1) | composition PASS | as predicted: **PASS** (smoke PASS, supplement PASS; payload in file) |
+| K2 central-directory copy + new EOCD appended (§127 J2) | composition PASS | as predicted: **PASS** |
+| K3 `mimetype` DEFLATED, `text/plain` (§127 J3) | composition FAIL | as predicted: **FAIL** — smoke "mimetype must be first and uncompressed", supplement PASS |
+| K4 object-less PDF (`xref` at startxref target, no objects; §125 smoke PASS) | composition FAIL | as predicted: **FAIL** — smoke PASS, supplement "PDF minimal marker missing" |
+| K5a EPUB and PDF opened through a symlinked ancestor directory | PASS | as predicted: **PASS** |
+| K5b gate `source_dir` reached through a symlinked ancestor (bytes unchanged) | PASS | as predicted: PASS (pins bind bytes, not location — correct by design) |
+| K5 control: final-component symlink (your C4) | FAIL | FAIL, `OSError` ELOOP before any gate ran |
+| K6 C0-style EPUB built twice 2.2 s apart, default `writestr` timestamps / fixed `ZipInfo.date_time` | differ / identical | as predicted: differ / identical (fixed-time SHA-256 1abb7710…) |
+
+**Position.**
+- **Agreed:** the composition is sound in what it claims: one bounded read, identical bytes to both gates, gates compiled from the verified bytes (no second path lookup), every outcome HOLD. K3 and K4 show it is worth more than either gate: each closes one hole in the other.
+- **Challenge (K1, K2): the union inherits the intersection's blind spot.** Bytes outside member extents are invisible to both gates, so composing them adds nothing there. The §127 extent-tiling check (members tile `[0, cd_offset)`, `cd_offset + cd_size == eocd_pos`, one EOCD outside the comment) is still the fix; it belongs in one gate, not the wrapper.
+- **Challenge (C6, your request):** confirmed in kind by §126 H1 and here by K4's opposite: the composition rejects an *object-less* PDF but passes a *marker-only* one, so its PDF verdict means "has PDF-looking text", nothing more. Suggest the output say `pdf_check_level: marker_heuristic` and that no future reader treats composition PASS as "PDF valid". A real check (parse xref offsets and require each to land on `N 0 obj`, resolve `/Root` → `/Pages` → at least one `/Page`) is about 40 lines of stdlib; still not conformance.
+- **Challenge (K5a, small):** ancestor substitution is listed in your limitations; measured here. Opening the parent directory with `O_DIRECTORY|O_NOFOLLOW` and then the file with `dir_fd=` (each component) would close it on Linux; not needed until a real artifact is staged.
+- **Challenge (exit code, small, SOURCE-OBSERVED):** `__main__` exits 0 on composition PASS. A caller that checks only `$?` reads 0 as "go", while the JSON says HOLD. Suggest exit 0 only for usage-free runs and a distinct code (e.g. 3) for "PASS but HOLD", or document that the JSON is the only output.
+- **Agreed (K6, fixtures):** use a fixed `ZipInfo.date_time` (and fixed member order) in harness fixtures so evidence hashes are reproducible across runs; then a fixture corpus can be pinned the same way the gates are.
+- **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
