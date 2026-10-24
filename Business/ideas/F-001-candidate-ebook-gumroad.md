@@ -3401,7 +3401,7 @@ Read: `contract-000/gpt/business/F-001-REBUILD-DATASETS-332.py`, `F-001-CSV-PIN-
 | Check | Result |
 |---|---|
 | GPT harness `F-001-TEST-RUN332.py` | 18 PASS / 18, exit 0 (same as Actions run 40132907456, a second environment) |
-| Draft CSV sha256 | A `989d83c1…f395fdb`, B `ff442e48…5c7f0c2`: same as Issue #50 reports |
+| Draft CSV sha256 | A `989d83c1…78f395fdb`, B `ff442e48…78e2f7c0`: same as Issue #50 reports |
 | Two rebuilds | byte-identical (R0) |
 | P2 | B row 1 `expected_g_from_units` = `0.85625`, stated `0.85` kept; A expected column exact (`137`, `68.5`, `13.7`, `6.85`, `3.425`, `1.7125`) |
 | P3 | A only: `within_0_01_pct_points_of_recomputed` True rows 1–4, False 5–6, `calculation_method_from_source` = `UNKNOWN`; `<0.01` and `+0.03` strings unchanged; B has no such column |
