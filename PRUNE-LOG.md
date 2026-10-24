@@ -5001,3 +5001,6 @@ Format: `date | branch | path | blob | STATUS | reason | duplicates | restore`
 - 2026-10-24 | integration/echo-whole | inventory/dependencies/sweeps/boxes/tav_failures.json | 3457abd | KEPT | head a16093e -> adf1fd3, Z34 ADDENDUM-7, registered first: Indices +1 | - | restore: n/a
 - 2026-10-24 | integration/echo-whole | inventory/dependencies/sweeps/boxes/qof_combinations.json | e734c97 | KEPT | head a16093e -> adf1fd3, Z34 ADDENDUM-7, registered first: Indices +1 | - | restore: n/a
 - 2026-10-24 | integration/echo-whole | inventory/dependencies/sweeps/echo_state_after_dependencies.json | 43727b1 | KEPT | head a16093e -> adf1fd3, Z34 ADDENDUM-7, registered first: Indices +1 | - | restore: n/a
+- 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-invariant-self-identification.md | 87e9aaf | KEPT | head 1c6ae0e -> 5d1ede1, Z26 ADDENDUM-37, registered first: Logics +1 | - | restore: n/a
+- 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-invariant-self-identification.md | e1ae183 | KEPT | head 5d1ede1 -> 432cb1d, Z26 ADDENDUM-38, registered first: Logics +1 | - | restore: n/a
+- 2026-10-24 | research-discourse-registry | research-registry/discourse/DISC-002-resh-reanchor-e35.py | 5b3dfce | KEPT | head 5d1ede1 -> 432cb1d, Z26 ADDENDUM-38, registered first: Algorithms +1 | - | restore: n/a
