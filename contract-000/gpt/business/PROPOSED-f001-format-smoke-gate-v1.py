@@ -131,10 +131,10 @@ def check_epub(data):
 
 
 def check_pdf(data):
-    if not re.match(rb"%PDF-[12]\\.[0-9]", data[:8]):
+    if not re.match(rb"%PDF-[12]\.[0-9]", data[:8]):
         raise ValueError("PDF header missing")
     tail = data[-2048:]
-    matches = list(re.finditer(rb"startxref\\s+(\\d+)\\s+%%EOF\\s*\\Z", tail))
+    matches = list(re.finditer(rb"startxref\s+(\d+)\s+%%EOF\s*\Z", tail))
     if not matches:
         raise ValueError("PDF startxref/EOF missing")
     offset = int(matches[-1].group(1))
@@ -142,7 +142,7 @@ def check_pdf(data):
         raise ValueError("PDF startxref out of range")
     obj = data[offset:offset + 256]
     if not (obj.startswith(b"xref") or
-            (re.match(rb"\\d+\\s+\\d+\\s+obj\\b", obj) and b"/XRef" in obj)):
+            (re.match(rb"\d+\s+\d+\s+obj\b", obj) and b"/XRef" in obj)):
         raise ValueError("PDF startxref target invalid")
     return {"ok": True, "startxref": offset}
 
