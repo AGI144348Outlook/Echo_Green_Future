@@ -2,11 +2,12 @@
 import hashlib
 import importlib.util
 import io
+import os
 import json
 import struct
 import zipfile
 
-SRC='/mnt/data/PROPOSED-f001-zip-layout-audit-v1.py'
+SRC=os.path.join(os.path.dirname(__file__), 'PROPOSED-f001-zip-layout-audit-v1.py')
 spec=importlib.util.spec_from_file_location('layout321', SRC)
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
