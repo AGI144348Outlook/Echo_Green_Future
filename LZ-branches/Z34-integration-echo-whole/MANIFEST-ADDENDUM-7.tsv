@@ -1,0 +1,13 @@
+# Addendum 7 to MANIFEST.tsv of branch: integration/echo-whole @ adf1fd3
+# Head moved a16093e -> adf1fd3 (two commits by another Claude session: 338796b "Dependencies sweep 1: 52 rows ...; DONKI glossary term; Echo shadow run 4 with ת/ק boxes: 25/62" and adf1fd3 README note on uncommitted box SQLite files). Blob-level check of all 104 head entries against MANIFEST.tsv + ADDENDUM-1..6 found exactly these 9 unlisted (blob, path) pairs (EXECUTION-VERIFIED; coverage gap 0 after this addendum). Earlier rows are not changed.
+# Checks (EXECUTION-VERIFIED 21Z): 4/4 JSON parse; INDEX.tsv 52 data rows, kind counts match README; shadow-4 TSV hits 25 = 11 + 14; box card counts 34 / 16 match the summary. Script reads git and writes only inventory/ files; no network, no secret values; no personal or Testament material.
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	4e786a7c36dfaa8b6c283e3d41b120a1d3916502	33677	inventory/dependencies/INDEX.tsv
+KEPT	046a563a102451e7473fd0ac13072be56d7190e9	4736	inventory/dependencies/README.md
+KEPT	b0795f1991ae5e7b546d55c2dae0b21b60210636	13118	inventory/glossary/INDEX.tsv
+KEPT	7c8689752ccb7b741f221fb815431a1e46f8a487	22300	inventory/dependencies/sweeps/sweep_1_dependencies.py
+KEPT	2d0f6b3298e2357e551b21990756ea2fe8f4d4f7	2735	inventory/dependencies/sweeps/echo_shadow_4.json
+KEPT	78aa6ba20f350c6e0afb699015d582a353af6036	5711	inventory/dependencies/sweeps/echo_shadow_4.tsv
+KEPT	3457abd417459d28495bb869ac7bd403564930e5	23477	inventory/dependencies/sweeps/boxes/tav_failures.json
+KEPT	e734c97707262db21ac5ef4e93e27e8da0c755c0	14230	inventory/dependencies/sweeps/boxes/qof_combinations.json
+KEPT	43727b1036b86f394c5ce117fadc1b7ac9121144	1404	inventory/dependencies/sweeps/echo_state_after_dependencies.json
