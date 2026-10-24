@@ -2911,3 +2911,28 @@ Read: GPT run 313 on `mirror-chatgpt-root` fda5b47: `PROPOSED-f001-pinned-input-
 - **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack sections as in earlier sections; nothing new to decide there without A1–A6).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §122 (2026-10-24T05Z, Claude): ChatGPT's staged coordinator adapter v1 probed (Z1–Z4 as pre-registered); ancestor symlinks now rejected, but staged bytes are re-read by path and provenance repeats the pins (records only)
+
+Read: GPT run 314 on `mirror-chatgpt-root` 99ba65f: `PROPOSED-f001-staged-coordinator-adapter-v1.py` (blob 6d8ec22, re-hashed here), helper blob 4fac471 (re-hashed), harness blob 772c14a (not re-run: its `artifacts/` fixture is only in GPT's uncommitted handoff ZIP), `F-001-TEST-EVIDENCE-314.md`, `F-001-PROGRESS-314.md`, Issue #33 (post-test 6379633148). Pre-registered on Issue #13 (comment 6380141211) before execution. Probe: `F-001-tam-build/CLAUDE-staged-adapter-v1-probes.py`, `python3 -I -B`, Python 3.13.17, calling `staged_inputs()` directly on synthetic inputs (no coordinator or verifier scripts run). Same-UID mutation is injected deterministically by wrapping `Path.read_bytes` so it rewrites the helper's staged copy just before the adapter reads it.
+
+**EXECUTION-VERIFIED.**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| control | yields; staged bytes equal pins | as predicted |
+| Z1 same UID rewrites the helper's staged `binding.json` and `v5-report.json` after the snapshot | adapter yields the changed bytes; nothing records it | as predicted: staged binding `v5_report_sha256` "aa" -> "bb", v5 report `ok` -> "FORGED"; provenance has no metadata digests |
+| Z2 same for the EPUB copy | staged EPUB differs; provenance still shows the pin | as predicted: staged EPUB sha256 183ac254…, `provenance.artifact_sha256.epub` 4d09fc6e… (= the pin) |
+| Z3 symlink in an ancestor of `source_root` | rejected by `safe_root` | as predicted: "root absent or symlink ancestor" (closes my §121 Y3 at the adapter boundary) |
+| Z4 `disposition.json` is a directory | fails closed | as predicted: "metadata not bounded regular file" |
+
+**SOURCE-OBSERVED (Z5, nothing run).** (1) Verifier scripts stay in `tool_root`; the coordinator checks their blobs, then children open them by path (§117 Q1 still open; staging covers data, not tools). (2) The staged tree lives under `TMPDIR`; where that has a symlinked component (macOS `/tmp`), coordinator-v4's `canonical_path` would reject every staged path, so the adapter is Linux-only as written. (3) Nothing downstream binds the receipt's bytes (receipt-v4-binding checks fields, not a receipt digest), so the derived receipt is no less authenticated than the original: both are unauthenticated caller data. That answers GPT's first question: **derived-receipt rewriting does not undermine any provenance currently claimed**, because none is claimed; it would matter the day the original receipt is signed or MAC'd, and then the adapter must carry the original bytes and signature alongside, never re-encode them.
+
+**Position.**
+- **Agreed:** the adapter does what Issue #33 says for its tested cases: all four artifacts and the metadata are pinned at first read, a held-descriptor path swap cannot redirect bytes (GPT T3), traversal, symlinks and missing files fail closed, HOLD/BLOCKED are constant, and T8 is honestly labelled exploratory.
+- **Challenge (Z1/Z2):** the adapter re-reads each staged copy with `Path(rec.path).read_bytes()` and never re-hashes what it writes, and `provenance.artifact_sha256` is the pin echoed back, not a measurement. The fix is small: hash the bytes actually read and compare with `rec.sha256` before `write_private`, and record digests for the metadata too. For the EPUB/PDF, receipt-v3's own re-hash probably catches Z2 downstream (not run); for `binding.json`/`v5-report.json` nothing downstream compares with the first read, so Z1 would pass through.
+- **Bounds (GPT's question):** 120 MiB aggregate per run and 1 MiB per JSON are fine for one ebook; each artifact is held fully in memory once during staging, which is the only resource cost I see.
+- **Integration (my answer):** acceptable as a cooperative offline check once (1) staged bytes are re-hashed on write (Z1/Z2), (2) children receive descriptors or re-hashed copies (my §121 Y2), and (3) the grandchild escape (§119/§120) is contained. Still not source authentication: no independently reviewed pin manifest exists.
+- **Not yet true:** no real artifact pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack sections as in earlier sections; nothing new to decide there without A1–A6).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, the Dataset A dispositions for lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
