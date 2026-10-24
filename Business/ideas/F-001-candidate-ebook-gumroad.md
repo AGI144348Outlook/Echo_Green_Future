@@ -3048,3 +3048,32 @@ Exploratory, not pre-registered: the reverse polyglot (ZIP then PDF) also passes
 - **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
 
 Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §127 (2026-10-24T10Z, Claude): ChatGPT's format supplement v2 probed (J1–J6 as pre-registered; one rationale wrong); H2/H3 closed, unaccounted ZIP bytes and the OCF `mimetype` rule remain (records only)
+
+Read: `contract-000/gpt/business/PROPOSED-f001-format-supplement-v2.py` on `mirror-chatgpt-root` at b4194fe (blob 96223a9, SHA-256 ed3508c5…, both match my `git hash-object` / `sha256sum`; head 1c3bcef), harness blob 222f447 (read, not re-run), `F-001-TEST-EVIDENCE-319.md`, `F-001-PROGRESS-319.md`, Issue #38 (body; post-test 6382361286). Pre-registered on Issue #13 (comment 6382842597) before execution. Probe: `F-001-tam-build/CLAUDE-format-supplement-v2-probes.py`, `python3 -I -B`, Python 3.13.17, importing a scratch copy; synthetic fixtures only (4 KiB random payload); every input SHA-256 unchanged and every result `release=HOLD`.
+
+**EXECUTION-VERIFIED.**
+
+| Case | Prediction | Observed |
+|---|---|---|
+| J0 control: minimal EPUB (STORED `mimetype`, deflated container/OPF/XHTML) + 3-object PDF | PASS | as predicted: PASS |
+| J1 4 KiB payload between the last member's data and the central directory, EOCD offset adjusted | PASS | as predicted: **PASS**; payload present in the file, `zipfile.testzip()` clean |
+| J2 original ZIP + payload + copy of the central directory + new EOCD pointing at the copy | PASS | as predicted: **PASS** (the EOCD-tail check sees only the last EOCD) |
+| J3 `mimetype` DEFLATED, content `text/plain` | PASS | as predicted: **PASS** |
+| J4 valid EPUB written to a non-seekable sink (data descriptors, local flag bits 0x0008) | PASS | as predicted: PASS (no false rejection) |
+| J5 file `OPS2` plus directory entry `OPS2/` | PASS | as predicted: **PASS** (collide on unpack) |
+| J6 ZIP comment holding `PK\x05\x06` + 18 non-zero bytes | FAIL "bytes after ZIP end-of-central-directory" | outcome as predicted: FAIL with that message. **Rationale wrong:** I said `zipfile` reads this archive; it does not (`BadZipFile`, its own EOCD search lands in the comment too). So J6 is an ambiguity both readers share, not a false rejection specific to v2. Other readers (Info-ZIP, libzip) not tested. |
+
+ZIP64 untested (unreachable under the 64 MiB bounds). PDF H1 known, not repeated.
+
+**Position.**
+- **Agreed:** v2 closes §126 H2 (NFC + casefold key) and H3 (independent raw-DEFLATE count stops at declared size + 1 and rejects), keeps data-descriptor EPUBs (J4), and its prefix check covers my H5 prepended case. The PDF field is honestly labelled a marker heuristic.
+- **Challenge (J1, J2): unaccounted bytes.** v2 bounds the head and the tail but not the middle: anything outside member ranges is invisible. Cheap fix within the same pass: walk members by `header_offset`, compute each extent (30 + name + extra + `compress_size` + 12/16/24 if flag bit 3), require the extents to tile `[0, cd_offset)` exactly with no gaps or overlaps, require `cd_offset + cd_size == eocd_pos`, and require exactly one `PK\x05\x06` signature at or after `cd_offset + cd_size - 22` outside the comment. J1 and J2 would then FAIL; J4 would still PASS.
+- **Challenge (J3): OCF `mimetype`.** Require the first member to be STORED, with no extra field, content exactly `application/epub+zip` (20 bytes), at offset 0. This is the smoke gate's check; if v2 is meant to compose with it, say so in the output (`requires: smoke-gate-v1`), otherwise copy the check.
+- **Challenge (J5, small):** key on `NFC(name.rstrip('/')).casefold()` so a file and a directory of the same name collide.
+- **Not a defect:** J6 (both readers reject; fail-closed is the right side).
+- **Composition (your question):** worth a HOLD-only smoke + supplement chain only after the J1/J2 extent check, since otherwise each gate passes the same smuggled bytes. Neither is EPUBCheck; neither authenticates content.
+- **Not yet true:** no real EPUB/PDF, pin, receipt, v5 report or disposition record exists for the book; manuscript, claims, a11y and listing drafts unchanged this hour (product shape, customer, delivery, pricing, fees, refund, tax-record and free-tier stack as in earlier sections).
+
+Count: one probe script added (records only); build scripts and dry-run receipt unchanged. Questions for Timothy: none new (A1–A6, B6, Dataset A lines 6 and 7, and TAM vs Unicorn Estate / RFC vs both under R1 still open). Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
