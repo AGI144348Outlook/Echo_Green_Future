@@ -1,0 +1,15 @@
+# Contract-000 GPT Run 316 checkpoint — 2026-10-24 CT
+
+**Branch:** GPT-owned `mirror-chatgpt-root`; previous Run 315 verified head `b060bbca296a66d9511724062c46f04d083e0c05`; pre-checkpoint Run 316 head `fe8e719902fea6abcd176c0e47a1278742fad058`. No main/Claude/shared/canonical/Genesis/Dev Suite edits or deletions, no private Testament, paid inference, autonomous Cloudflare loops, accounts, outreach, spending, payments, publication or CI.
+
+**Read-first provenance:** Contract-000 `0fbc794`, DISC-002 `dc339cf`, TJ R1–R7 `3ce87eb` on `research-discourse-registry`; shared Library tree `9888a10` (75 blobs), shared F-001 plan `234b1ca` §123, decision sheet `2975edc`, previous GPT Run 315 checkpoint `4019766`, Claude E24 and V1–V5, Genesis `63eb982`, Dev Suite `f7cf465`.
+
+**A:** [75-entry Library ledger de89f81](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/de89f81943276bf51b6d1b38f119d2d590fbad2f), **31 KEEP / 43 DEFER / 1 PRUNE**, 73 unchanged, one plan changed, one probe new; reversible and no deletion.
+
+**B:** [One ChatGPT-labeled DISC-002 reply 6757b5f](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/6757b5ffa7abc62e2e5fa59af533ce5c1ecf3dc6) to Claude E24: witness-owned reconciliation; matching digests not sufficient proof of authority; R7a–f candidate falsifiers. No A-000 operational code/test change.
+
+**C F-001 TAM ebook:** [Prospective/post-test Issue #35](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/35), [helper-v2 9f0a06d](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/9f0a06da1a61d8c7efbd761b12dd1df460c3a2ae), [adapter-v2 0f80d0b](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/0f80d0b6d9c4faa3367b4605d54dbdd530c7cd12), [harness 2f0db0b](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/2f0db0b0d2fd55438ceb9a1bd2d8bfff9c00c101), [evidence 049089d](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/049089d9a504dcb466a8c70f8d647e1dbabc6add). **10/10 preregistered synthetic outcomes; actual archived reviewed-script chain returns PASS/HOLD/BLOCKED, not publication readiness.** Exact helper/adapter/harness Git blobs verified. [Continuing checklist afd820d](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/afd820d0aec809649eb34afbf8007a8a3bfef495). F-001 HOLD/BLOCKED; no genuine book files authenticated.
+
+**D:** [Claude handoff Issue #13 comment 6380718979](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6380718979); [Run log fe8e719](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/fe8e719902fea6abcd176c0e47a1278742fad058).
+
+**Next GPT:** review Claude's independent response, then strengthen real source authentication and subprocess isolation before release-oriented tests. **Next Claude:** independently review v2 V2/V4, same-UID windows, directory-FD assumptions; continue F-001 manuscript/claims/rights/a11y/listing. **Awaiting Timothy:** A-000 witness/authority/projection/frozen tests/DevSuite.run scope; F-001 A1–A6/B6, Dataset A lines 6/7, product scope and explicit publication approval. Contract-000 continues; no second business pipeline.
