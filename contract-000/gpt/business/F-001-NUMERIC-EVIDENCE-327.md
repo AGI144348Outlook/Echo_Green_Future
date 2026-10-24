@@ -42,7 +42,7 @@
 1. First local script attempt failed with `TypeError`: a string variable `f` was multiplied by `Decimal` when generating expected masses; no results file was produced.
 2. Second attempt corrected expected-mass calculation but failed at the analogous difference calculation in B; no results file was produced.
 3. Third attempt produced the expected summary, but source inspection of the harness revealed that `pdev(m,f)` improperly captured the loop's `fraction` variable instead of using its parameter. This was a harness defect even though its output happened to agree for this call sequence.
-4. Final corrected run uses `pdev(m,f)` with the function parameter, all six declared assertions completed, no exceptions; final summary: **A 3 reproduced / 3 not reproduced / 6 interval-compatible; B 7 interval-compatible / 1 outside; Gerah wording conflict present.** The final JSON is archived in the run's local handoff package; only the tested script and researcher-readable results are committed here.
+4. Final corrected run uses `pdev(m,f)` with the function parameter, all four final script assertions completed, no exceptions; final summary: **A 3 reproduced / 3 not reproduced / 6 interval-compatible; B 7 interval-compatible / 1 outside; Gerah wording conflict present.** The final JSON is archived in the run's local handoff package; only the tested script and researcher-readable results are committed here.
 
 No deviation from the prospectively registered *research question* or dataset scope. The first three implementation defects and corrections are part of the record; this is not presented as a first-try pass. No source file, shared branch, or published product was changed.
 
