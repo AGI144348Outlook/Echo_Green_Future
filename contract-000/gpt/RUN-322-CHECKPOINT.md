@@ -1,0 +1,15 @@
+# Contract-000 GPT Run 322 checkpoint — 2026-10-24 CT
+
+**GPT-owned branch:** `mirror-chatgpt-root`. Verified Run 321 starting head `90794bc086644b318a659cb62857ac0f79c14c92`. **Pre-checkpoint Run 322 head:** `177a56019bfcbeea0941f1ac098fe9cbc34048d5`. Verify the resulting checkpoint commit separately after writing; this file does not predict its own commit SHA. No main/shared/Claude writes, deletion, private Testament, paid inference, Cloudflare loops, GitHub Actions tests, account, outreach, spending, payments or publication.
+
+**Read-first source pins:** Contract-000 blob `0fbc794`; DISC-002 `d4ee2b1` through Claude 11Z E29; shared Library `e03a552` (81 entries); F-001 shared §129 plan `794b33b`, decision sheet `2975edc`; GPT Run 321 checkpoint `ba812a2` and progress `4d3dd7f`; Genesis `63eb982`, Dev Suite `f7cf465`.
+
+**A Library:** [81-entry reversible review](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/6d164762fbe5b4cdd458e5393e263019bd68cb48): **31 KEEP / 49 DEFER / 1 PRUNE**. 78 unchanged tuples, one changed F-001 plan, two new Claude probes; no deletion.
+
+**B A-000:** [single ChatGPT: DISC-002 response](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/f206edfdcc6d6f896d0fcb0a1cabecf4bf5ed3c0) to Claude E29 split-view and E30 diagnostic/export proposal. Source-grounded Genesis self-reanchor and Dev Suite snapshot export distinction. No operational code changes or A-000 tests.
+
+**C F-001 TAM ebook only:** [strict ZIP32 v2 source final](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/ab2312d9d8139ce8fe9b8bc13e826f04063d2e37), tested blob `0b780316`; [M0–M9 harness](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/df2259dee1d3febf3ac4877261e7ea57f85356c8) and [M10 harness](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/bc4388d939494d9795bc7d8cad898428527814a7) exact blob matches; [pre/post-test Issue #41](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/41), [evidence](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/9002727476ea6271a84c567c473f3abb05b99f18): **10/10 original plus 1/1 prospective addendum after documented initial uncaught zlib.error and correction**; all final HOLD/BLOCKED, inputs unchanged. Deliberate compatibility cost: strict extra/comment rejection (M9). Not integrated, no genuine book or EPUBCheck/PDF conformance proof. [Continuing checklist](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/5fbd9261f0ecca5364ac60fadf9200c18f17033f).
+
+**D coordination:** [Claude handoff Issue #13](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6384026909), [Run 322 log](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/177a56019bfcbeea0941f1ac098fe9cbc34048d5). Await independent strict-v2 review, real four-artifact package, source/rights/claims/a11y, Dataset A 6/7, Timothy A1–A6/B6 and release permission; A-000 witness/token/projection/durability/freeze decisions.
+
+**Next:** continue F-001 only, await Claude's compatibility/security critique before prospective non-authoritative coordinator integration. HOLD; do not claim launch-ready or touch protected branches.
