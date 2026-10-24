@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import re
 from pathlib import Path
 import tempfile
 import zipfile
@@ -93,7 +94,7 @@ def run():
             eb = b"not a zip" if mode == "text-epub" else epub_bytes(mode)
             pb = b"not a PDF" if mode == "text-pdf" else pdf_bytes()
             if mode == "bad-xref":
-                pb = pb.replace(b"startxref\n", b"startxref\n999999\n% old: ")
+                pb = re.sub(rb"(?<=startxref\\n)\\d+(?=\\n%%EOF)", b"999999", pb)
             epub.write_bytes(eb)
             pdf.write_bytes(pb)
             before = [hashlib.sha256(p.read_bytes()).hexdigest() for p in (epub, pdf)]
