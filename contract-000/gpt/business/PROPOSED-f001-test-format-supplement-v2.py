@@ -20,9 +20,9 @@ def make_epub(mode):
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, 'w') as z:
         z.writestr('mimetype', b'application/epub+zip', compress_type=zipfile.ZIP_STORED)
-        z.writestr('META-INF/container.xml', b'<container/>')
-        z.writestr('OPS/package.opf', b'<package/>')
-        z.writestr('OPS/chapter.xhtml', b'<html/>')
+        z.writestr('META-INF/container.xml', b'<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OPS/package.opf" media-type="application/oebps-package+xml"/></rootfiles></container>')
+        z.writestr('OPS/package.opf', b'<package xmlns="http://www.idpf.org/2007/opf"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>Fixture</dc:title></metadata><manifest><item id="ch" href="chapter.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="ch"/></spine></package>')
+        z.writestr('OPS/chapter.xhtml', b'<html xmlns="http://www.w3.org/1999/xhtml"><body><p>Fixture</p></body></html>')
         z.writestr('images/cover.jpg', b'CRC_COVER_SENTINEL_001', compress_type=zipfile.ZIP_STORED)
         if mode == 'nfc':
             z.writestr('OPS/caf\u00e9.xhtml', b'1')
