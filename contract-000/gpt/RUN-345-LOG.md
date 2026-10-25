@@ -1,0 +1,17 @@
+# Contract-000 GPT Run 345 — durable development log (2026-10-25 05:02 CT)
+
+**Starting verified checkpoint:** GPT Run 344 `017efe757444223b853b508275781615d4164ea0`; independent branch `contract-000-gpt-run345-20261025-0502` descended from it. Never touched main or Claude's mirror.
+
+**Read-first:** Current authoritative `research-discourse-registry@0b6a968` Contract-000 `0fbc794`, DISC-002 `ee443fb`, Timothy rulings `3ce87eb`; previous Run 344 checkpoint/log/Library ledger/DISC/F-001 progress; `library-shared@470d3c8` tree (89 blobs), shared F-001 candidate, decision sheet and GPT checklist; current Genesis `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982`; Claude's latest DISC 23Z and shared F-001 §140. No private Testament.
+
+**A — Library-first:** [89-entry reversible ledger](LIBRARY-REVIEW-345.md) Git path/SHA/size reconciliation **89/89, zero mismatches**; **31 KEEP, 57 DEFER, 1 PRUNE**, five direct fresh source reads, prior individual reasons retained. PRUNE is inactive selection only. Shared Library unchanged.
+
+**B — A-000 / Genesis:** [One `ChatGPT:` response](DISC-002-ChatGPT-345.md) notes that `ReshIdentity.anchor()` can create a partial A-000 from `known.get("A-000", {})`; Pe `open_exchanges()` calls anchor on invalid Resh, while Governor deployment requires name/status/ACTIVE. **SOURCE-OBSERVED** code and **INFERRED** bootstrap discrepancy; proposed RC-R5 case 15, **NOT EXECUTED or frozen**. Claude's E35 and two-role Lesson 2 remain separately attributed.
+
+**C — BUSINESS sole F-001 TAM Protocol ebook:** [New GPT-only caller](business/F-001-STAGE-SESSION-345.py) blob `fc9118fc3c6b34b97e48ec4983593c3d3a20be03`, commit `a54b3e60171400975031fd4ef9a95a338e8cef56`, changes six source lines from Run 342 (five docs, one `PIN_GATE_BLOB`), now pins Run 344 gate `5d5bb8f`; Run 340 consumer `ebbef36` unchanged. [Pre-test Issue #53](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6396275766) posted before [P45 static 8/8 PASS](business/F-001-TEST-EVIDENCE-345.md); [post-test narrative](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6396282581) in same Issue. **P46–P48 NOT RUN**: container `git ls-remote` to public TAM failed DNS (`Could not resolve host: github.com`). No CI or Python integration test. [Progress checklist](business/F-001-PROGRESS-345.md) retains same deliverables, owners, acceptance criteria and release HOLD.
+
+**Verified commits before this log:** caller `a54b3e6`; Library `c149178`; DISC `1d2aa4b`; test evidence `a2c08b7`; F-001 progress `1c88806`. GitHub compare against Run 344: **5 commits ahead, 5 GPT-only new files**, no shared/main/Claude/protected discourse changes. [Claude coordination Issue #13](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/13#issuecomment-6396298586) posted with six-line diff review request and execution blocker. This log and checkpoint follow and must be verified after writing.
+
+**Blockers:** Runtime integration P46–P48 needs a clean pinned real TAM clone, exact builder, disposable staging root and independent Claude review; output spooling still has no hard disk quota. Timothy still decides A-000 bootstrap/custodian/witness/recovery/freeze and F-001 A1–A6/B6/C1, Dataset A rows 6/7, *Gerah*, editorial claims, rights, final EPUB/PDF, receipt and explicit publication approval.
+
+**Safety:** No private Testament, shared/main/Claude edits, deletion, new income project, accounts, outreach, spending, payments, publication, paid inference, autonomous Cloudflare loops or CI.
