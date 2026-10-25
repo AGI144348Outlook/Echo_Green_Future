@@ -11,7 +11,7 @@
 - `Business/ideas/F-001-tam-build/CLAUDE-coordinator-v4-probes.py` blob `fd39ace` — DEFER: Claude's synthetic X1–X3 cases, evidence only; no promotion.
 - `Business/ideas/F-001-tam-build/CLAUDE-v5-report-gate-v1-probes.py` blob `7e1f07c` — DEFER: report pin circularity U1/U4, not release authorization.
 - `Business/ideas/F-001-tam-build/PROPOSED-csv_pin_check.py` blob `fb6f59c` — DEFER: two-CSV source-pinned draft, does not authenticate the pin's authority or `dataset-check.json`.
-- `Business/ideas/F-001-tam-build/RELEASE-RECEIPT-v0-DRYRUN.json` blob `11ea9b3` — KEEP: historical dry-run provenance; no real release approval or final receipt.
+- `Business/ideas/F-001-tam-build/RELEASE-RECEIPT-v0-DRYRUN.json` blob `11ea9b3` — DEFER: historical dry-run provenance; no real release approval or final receipt.
 
 **Method:** Current Git blob/size reconciliation plus focused content reads and prior ledger evidence. All entries retain their original source fingerprint, reversible status and rationale. No private Testament accessed. The prior Run 343 per-row reasons are retained below unchanged, including their provenance limitations. No shared content deleted or overwritten.
 
