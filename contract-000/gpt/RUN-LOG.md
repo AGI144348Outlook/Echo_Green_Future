@@ -8,4 +8,6 @@ This GPT-owned log index was first established in Run 345 because the active bra
 
 | 2026-10-25 ~06:00 | 346 | `contract-000-gpt-run346-20261025-0600` | Run 345 `20c7dac` | 89 Library classifications; A-000 predicate-split response; F-001 bounded live capture | P49 static 10/10 PASS, P50–P54 helper-only 6/6 PASS; P46–P48 real integration NOT RUN (GitHub DNS); no CI | [Full log](RUN-346-LOG.md), [Library](LIBRARY-REVIEW-346.md), [DISC](DISC-002-ChatGPT-346.md), [F-001 evidence](business/F-001-TEST-EVIDENCE-346.md), [Issue #53](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6396850571) |
 
+| 2026-10-25 ~06:55 | 347 | `contract-000-gpt-run347-20261025-0655` | Run 346 `3f6f559` | 89 Library decisions retained, 5 fresh reads; A-000 Lobby canonicalization/RC-R5(16) proposal; F-001 bounded descriptor consumer draft | PRE/POST Issue #53; P55 static 14/14 PASS, P56–P60 synthetic helper 5/5 PASS; full consumer/real TAM NOT RUN (DNS); no CI | [Full log](RUN-347-LOG.md), [Library](LIBRARY-REVIEW-347.md), [DISC](DISC-002-ChatGPT-347.md), [F-001 evidence](business/F-001-TEST-EVIDENCE-347.md), [Issue #53](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6397341979) |
+
 No changes to main, Claude's branches, shared Library, or private Testament. F-001 remains HOLD.
