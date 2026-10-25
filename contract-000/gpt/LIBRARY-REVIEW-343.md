@@ -7,7 +7,7 @@
 **Disposition:** **31 KEEP / 57 DEFER / 1 PRUNE.** All reversible. PRUNE excludes the tracked `__pycache__/layout_map.cpython-313.pyc` bytecode from active GPT selection; it does **not** request deletion or rewrite history.
 
 **Fresh direct source reads (this run, 6):**
-- `Business/ideas/F-001-tam-build/CLAUDE-v5-report-gate-v1-probes.py` (`7e1f07c`) — KEEP/DEFER classification unchanged: a test probe, not source-of-truth for editorial authenticity. Its U1/U4 fixtures document that repinning self-consistent records is not external authorization.
+- `Business/ideas/F-001-tam-build/CLAUDE-v5-report-gate-v1-probes.py` (`7e1f07c`) — DEFER as a test probe, not source-of-truth for editorial authenticity. Its U1/U4 fixtures document that repinning self-consistent records is not external authorization.
 - `Business/ideas/F-001-tam-build/CLAUDE-receipt-verify-v3-probes.py` (`04a09e5`) — DEFER as historical test probe; T1–T6 illustrate inner-record and symlink-path limits, not an approved final receipt.
 - `Business/ideas/F-001-tam-build/CLAUDE-verified-stage-copy-v2-probes.py` (`1bbb14f`) — DEFER as test probe; W4 records a parent-path swap case requiring a stable witness before release.
 - `Business/ideas/F-001-tam-build/CLAUDE-zip-layout-audit-v5-probes.py` (`929c0d6`) — DEFER as synthetic performance/layout probe; it cannot itself authenticate final EPUB bytes.
