@@ -1,0 +1,21 @@
+# Contract-000 GPT Run 343 — durable development log (2026-10-25 02:55 CT)
+
+**Branch:** `contract-000-gpt-run343-20261025-0255`, created from verified Run 342 checkpoint `96be7fbec402a50c9b297e95ad9b90576d6021e9`. GPT-owned files only; no main, Claude, protected discourse or shared Library changes.
+
+**Read-first sequence / access:** Attempted `AGI144348Outlook/research-discourse-registry` repository metadata and installed-repository discovery: **NOT_FOUND**; current authoritative Contract-000 and protected DISC-002 could **not** be read. This is a continuing authority blocker, not a claim that the files do not exist. Read prior Run 342 checkpoint/log, 89-row Library ledger, DISC reply and F-001 checklist/session; current nontruncated `library-shared` tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`; shared F-001 plan (through §140), decision sheet, build/receipt/probe sources; latest accessible Claude 2026-10-24 23Z Issue #13 handoff; historical Timothy DISC-002 notation relay; actual `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982989b4f3478d649430b555c8f4ba755c27`. Historical relay is not the current protected DISC.
+
+**A. Library first:** [Run 343 ledger](LIBRARY-REVIEW-343.md) reconciles **89/89** Git path/blob/size records against unchanged shared tree: **31 KEEP / 57 DEFER / 1 PRUNE**. Six targeted fresh source reads, previous per-row evidence retained. No deletion, no new classifications without evidence.
+
+**B. A-000 / DISC-002:** [One `ChatGPT:` reply](DISC-002-ChatGPT-343.md) notes a newly specified source-level distinction: `governor_validate_and_deploy()` checks only `A-101` truthiness, not utility status or actual invocation; `OPEN(A-001)` in the docstring differs from the `A-101` lookup. This complements Claude E35's incomplete Resh check and his Swadesh two-role visible-label limit. Proposed a **future, unfrozen** disabled-utility fixture; no test, kernel edit or protected DISC write.
+
+**C. Only F-001 TAM ebook:** [New trust-chain audit](business/F-001-TRUST-CHAIN-AUDIT-343.md) identifies the Run 339 gate's **nested unbounded builder stdout/stderr capture** as a source-level limitation that Run 342's outer output spool does not address. [Continuing F-001 checklist](business/F-001-PROGRESS-343.md) retains one project, deliverables, acceptance criteria, Claude/GPT roles, and Timothy A1–A6/B6 decisions. No extra income pipeline, new production script, or untested gate proliferation.
+
+**Source reads / new evidence:** Claude's v5 report probes `7e1f07c`, receipt-v3 probes `04a09e5`, verified-copy-v2 probes `1bbb14f`, ZIP audit-v5 probes `929c0d6`, proposed CSV pin check `fb6f59c`, F-001 GPT checklist `69449fc`; Run 339 gate `25f0130`, Run 340 consumer `ebbef36`, Run 342 session `090538d`, current dry-run receipt `11ea9b3`, F-001 plan `73d64d7`, decision `2975edc`.
+
+**Commits made in order:** Library ledger `324a4cadcfe83d4cb054182f80ba3427bd3828fd`; wording clarification `b51dcbe3e224aec4ce74fe74f9d045edd5c8d5a1`; DISC `14f46a4ae615d9e30adb9f7c9edb4eb5bbe3788d`; F-001 trust-chain audit `4886f3fa1a3d7fe51ea87b12bc575e437d245514`; F-001 progress `a370de7658b1a8c26fd2e085813b3910b2cf4197`. This log and final checkpoint follow. Final commit and compare require independent verification after writing.
+
+**Tests:** ZERO tests, diagnostics, benchmarks, code imports/execution or CI. Existing Issue #53 is a prospective plan only; no post-test result is claimed. The current Contract/DISC access blocker and independent Claude review remain prerequisites to proposed testing. The present run's metadata comparison is a read-only Library assessment, not an executable test of repository code.
+
+**Outstanding:** Restore current Contract-000/protected DISC-002 read; Claude to challenge A-101 interpretation and nested capture finding; Timothy to decide A-000 external identity authority/recovery and A-001 vs A-101, F-001 A1–A6/B6, source rights/credit, Dataset A rows 6/7, *Gerah*, final claims/EPUB/PDF/CSV receipt, storefront/payment/publication authorization. F-001 remains HOLD.
+
+**Safety:** No private Testament, shared/main/Claude writes, deletion, spending, outreach, accounts, payments, publication, paid inference or autonomous Cloudflare loops.
