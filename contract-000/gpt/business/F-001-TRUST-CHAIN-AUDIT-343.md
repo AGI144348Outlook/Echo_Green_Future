@@ -1,0 +1,30 @@
+# F-001 TAM Protocol ebook — source-to-release trust-chain audit (Run 343; DRAFT / HOLD)
+
+**Single continuing project:** `F-001`. This is a **source review and packaging handoff**, not a test result, new business idea, release receipt or approval to sell. Reviewed the actual shared plan `Business/ideas/F-001-candidate-ebook-gumroad.md` blob `73d64d74e3fc540c23dd310d912bfe0f93a8758c` through Claude §140, decision sheet `2975edc`, shared build and receipt, GPT Run 339 gate (`25f0130`), Run 340 consumer (`ebbef36`), Run 342 caller (`090538d`), and Claude's existing F-001 probe scripts. The shared Library is pinned at `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`.
+
+## Concrete new source-review finding: the outer output cap is not an inner cap
+
+**SOURCE-OBSERVED:** Run 342's `F-001-STAGE-SESSION-342.py` calls the pinned Run 339 gate using `run_checked()`, which spools **the gate's** stdout/stderr to temporary files and rejects more than 16,384 bytes **after** the gate exits. However the Run 339 gate itself calls its dataset builder with `subprocess.run(..., capture_output=True, text=True, timeout=120)` and stores the builder's entire stdout/stderr in process memory before returning. The gate's `TIMEOUT_SECONDS` bounds elapsed time, **not bytes captured**. Thus the outer spooling improvement does **not** bound the nested builder's capture memory. Run 339 then uses only `child.returncode`; it does not need to retain unbounded child output for a successful stage.
+
+**INFERENCE / risk, not an observed failure:** A verbose or malfunctioning builder can consume substantial gate-process memory before Run 342 sees the gate's bounded stdout. A 120-second timeout does not prove a memory ceiling. The outer POSIX process-group cleanup in Run 342 may kill descendants on exit/timeout, but does not remove this *in-process nested capture* exposure. No adversarial builder or memory benchmark was run, so no actual exhaustion or exploitable attack is claimed.
+
+**PROPOSED next code change, pending Claude review and current Contract authority:** Change the **Run 339 gate's builder invocation** to use a bounded diagnostic capture with an explicit maximum number of bytes and fail-closed over-limit status; record the actual child exit/timeout in the existing failure marker. Ensure the chosen mechanism also terminates descendants on timeout and never creates `VERIFIED-STAGE.json` for an over-limit builder. Preserve the exact pinned builder/source/hash checks and existing `STAGED_ONLY` vocabulary. Updating this gate's bytes will require a **new independent Git blob pin** in the caller and fresh prospective tests; do not silently substitute the new gate under the Run 342 pin.
+
+**Proposed focused future tests (not executed):** normal pinned TAM builder produces the same three output hashes; a synthetic verbose builder exceeding the diagnostic limit yields FAILED-STAGE and nonzero exit; a synthetic slow builder times out with no verified marker; an earlier verified stage remains unchanged after later failure; outer caller rejects any old gate pin. These are candidates for an *amendment to existing Issue #53 before execution*, not post-hoc results.
+
+## Single product acceptance chain and owner split
+
+| Gate / deliverable | Evidence available now | What remains before acceptance | Responsible review |
+| --- | --- | --- | --- |
+| Identity / source rights | Shared plan and decision sheet; public TAM source commit `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9` | Timothy A1/A3/A4/A6 and actual rights/credit/framing signoff | Timothy, Claude |
+| Claims / precision | Claude §138–140 reviews; 6 Dataset A rows, 8 Dataset B rows; exact `0.85625` for 1/16, A rows 5–6 inconsistent, two *Gerah* references | A rows 6/7 editorial treatment, *Gerah* 1/8 vs 1/16, historical claims statuses, approved worksheet SHA | Claude editorial, Timothy |
+| Dataset bytes | Earlier GPT #50–#52 tests; Claude §139/§140 independent parity; draft Run 339 gate expects A `989d83c1…78f395fdb`, B `ff442e48…78e2f7c0` | Run 339/340/342 pipeline still UNTESTED; independently bind `dataset-check.json` as well as both CSVs, and prove fresh-stage failure handling | GPT build/test, Claude independent challenge |
+| EPUB/PDF | Shared build scripts, proposed patch order, Claude §80–§97 draft checks | Real final edition bytes, accessibility, claims/source agreement, fixed B6 identifier, actual hashes | Claude build/editorial, GPT byte verification |
+| Single final receipt | `RELEASE-RECEIPT-v0-DRYRUN.json` blob `11ea9b3` has null claims/PDF/EPUB/CSV hashes | One reconciled signed review receipt with external pins and verifier versions, no null required fields, no competing receipts | Both reviewers, Timothy |
+| Listing / money | A2/A5/B6/C1 options recorded but not approved | Explicit Timothy authorization; no account, listing, outreach, payout or publication in this run | Timothy |
+
+**Existing work not duplicated:** Claude's `PROPOSED-csv_pin_check.py` (`fb6f59c`) compares two delivered CSVs with a pinned rebuild but does not compare `dataset-check.json` and explicitly does not authenticate who selected the pin. Run 340's consumer *does* verify all three stage outputs and the source report, but only for a draft stage, not the final book package. These checks are complementary and must not be presented as two competing release receipts. The Run 342 [one-receipt map](F-001-RELEASE-HANDOFF-342.md) remains the integration plan.
+
+**Next action (one, not a new project):** Claude to review the nested builder-output bound and receipt trust boundary. Once current Contract/DISC authority is available, GPT to post a prospective Issue #53 amendment, implement one bounded builder-capture revision in its own branch, execute isolated tests and report the observed results in the same thread. Until then, continue editorial A1–A6/B6 decision preparation without claiming approval.
+
+**Status: HOLD / NOT LAUNCH-READY.** No code executed, tests, CI, paid API inference, autonomous Cloudflare loops, spending, outreach, account creation, publication or payments.
