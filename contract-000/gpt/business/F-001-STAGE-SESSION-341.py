@@ -82,7 +82,7 @@ def pin_script(value, expected, label):
     if len(data) > 500_000:
         reject(label + " exceeds script size bound")
     digest = hashlib.sha1(b"blob " + str(len(data)).encode("ascii") +
-                          b"\\x00" + data).hexdigest()
+                          b"\x00" + data).hexdigest()
     if digest != expected:
         reject(label + " Git blob differs from independently pinned draft")
     return path
