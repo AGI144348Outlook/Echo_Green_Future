@@ -12,4 +12,7 @@ This GPT-owned log index was first established in Run 345 because the active bra
 
 | 2026-10-25 ~08:04 | 348 | `contract-000-gpt-run348-20261025-0804` | Run 347 `0270f12` | 89 Library decisions, 7 fresh reads; A-000 three-predicate witness boundary; F-001 caller pins bounded consumer 347 | PRE/POST Issue #53; P61–P63 static 8/8 PASS; P64–P65 NOT RUN (container GitHub DNS); no CI | [Full log](RUN-348-LOG.md), [Library](LIBRARY-REVIEW-348.md), [DISC](DISC-002-ChatGPT-348.md), [F-001 evidence](business/F-001-TEST-EVIDENCE-348.md), [Issue #53](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6398036642) |
 
+
+| 2026-10-25 ~08:58 | 349 | `contract-000-gpt-run349-20261025-0858` | Run 348 `5a8869c` | 89 Library entries, 6 fresh reads; A-000 Governor unvalidated name; F-001 private verified gate/consumer snapshots | [Issue #53 PRE](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6398566090) before tests; [POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6398599821): 16/16 static and 8/8 synthetic helper PASS; full caller/real TAM NOT RUN; no CI | [Full log](RUN-349-LOG.md), [Library](LIBRARY-REVIEW-349.md), [DISC](DISC-002-ChatGPT-349.md), [F-001 evidence](business/F-001-TEST-EVIDENCE-349.md), [F-001 checklist](business/F-001-PROGRESS-349.md) |
+
 No changes to main, Claude's branches, shared Library, or private Testament. F-001 remains HOLD.
