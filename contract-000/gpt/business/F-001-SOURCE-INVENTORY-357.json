@@ -1,0 +1,55 @@
+{
+  "schema": "F-001-SOURCE-INVENTORY-v1",
+  "project_id": "F-001",
+  "artifact_type": "REVIEW_ONLY_SOURCE_IDENTITY",
+  "release": "HOLD",
+  "publication_authorized": false,
+  "authority": "NOT_GRANTED",
+  "verified_by": "ChatGPT independent GitHub connector reads, 2026-10-25 ~17 CT",
+  "warning": "This GPT-created inventory is not an independent publisher signature or an authorization; Git blob SHA-1 is not a raw file SHA-256.",
+  "tam_repository": "AGI144348Outlook/The-TAM-protocol",
+  "tam_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "tam_tree": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "sources": [
+    {
+      "path": "Dataset A: The Eshtemoa Inventory (Forensic Weight Distribution)",
+      "git_blob_sha1": "b62c970a660e0a6685b58db1ef121690daa4fce7",
+      "git_bytes": 610,
+      "expected_data_rows": 6,
+      "discrepancy_rows": [
+        "Silver Droplet",
+        "Small Scrap"
+      ]
+    },
+    {
+      "path": "Dataset_B_Binary_Matrix.md",
+      "git_blob_sha1": "12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4",
+      "git_bytes": 646,
+      "expected_data_rows": 8
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha1": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+      "git_bytes": 2561
+    },
+    {
+      "path": "Article 6",
+      "git_blob_sha1": "662d745f0b9b41236d1053cdbaa9351f7c020dd0",
+      "git_bytes": 3210
+    },
+    {
+      "path": "Article 10",
+      "git_blob_sha1": "e82be564872f636662652d34dcb8d3437559f84f",
+      "git_bytes": 812
+    }
+  ],
+  "builder": {
+    "repository": "AGI144348Outlook/Echo_Green_Future",
+    "branch": "library-shared",
+    "path": "Business/ideas/F-001-tam-build/rebuild_datasets.py",
+    "git_blob_sha1": "fa3a62f76549ecaea6e226ba5cca41597000d790",
+    "status": "SOURCE_INSPECTED_NOT_EXECUTED"
+  },
+  "acceptance_scope": "Input path/blob identity and static arithmetic review only. Not dataset rebuild, manuscript review, provenance authentication, EPUB/PDF format validation or release approval.",
+  "pretest_issue": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6403958386"
+}
