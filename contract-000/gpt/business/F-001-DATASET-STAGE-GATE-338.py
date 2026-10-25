@@ -86,10 +86,10 @@ def inspect_stage(stage):
     if any(not (stage / n).is_file() or (stage / n).is_symlink() for n in OUTPUTS):
         raise ValueError("an expected output is not an ordinary regular file")
     report = json.loads((stage / "dataset-check.json").read_text(encoding="utf-8"))
-    if report.get("source_commit") != PIN_COMMIT:
-        raise ValueError("source commit mismatch in builder report")
     if not isinstance(report, dict):
         raise ValueError("dataset report must be a JSON object")
+    if report.get("source_commit") != PIN_COMMIT:
+        raise ValueError("source commit mismatch in builder report")
     files = report.get("files")
     if not isinstance(files, dict):
         raise ValueError("dataset report files must be a JSON object")
