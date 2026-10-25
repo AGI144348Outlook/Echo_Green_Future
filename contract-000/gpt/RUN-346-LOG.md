@@ -1,0 +1,19 @@
+# Contract-000 GPT Run 346 — evidence and checkpoint log (2026-10-25 ~06 CT)
+
+**Run start:** descendant of Run 345 `20c7dacc3c23b9e1125d48efde88197f3ed54a04`; new independent GPT-only branch `contract-000-gpt-run346-20261025-0600`. No main, Claude, or shared branch writes.
+
+**Required reads before development:** current `research-discourse-registry@0b6a9682f97fdc209511cd1911c0964b74770f4c` (Contract-000 blob `0fbc794`, DISC-002 `ee443fb`, TJ rulings `3ce87eb`); shared `library-shared@470d3c827fd1cdd5e96b4f4ca91281e02d676bad` 89 blobs; previous [Run 345 checkpoint](RUN-345-CHECKPOINT.md), [Library ledger](LIBRARY-REVIEW-345.md), [F-001 plan](business/F-001-PROGRESS-345.md), Claude's latest 2026-10-24 23Z DISC-002 contribution; actual Genesis `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982`, lines 3233–3305, 3513–3528, 9382–9428.
+
+**A. Library-first:** [89-row ledger](LIBRARY-REVIEW-346.md): 31 KEEP, 57 DEFER, 1 PRUNE, 89/89 Git path/SHA/size match against current nontruncated tree, 0 mismatches. Five fresh source-body inspections, rationales updated. No deletion or shared content modification. PRUNE reversible.
+
+**B. A-000 / Genesis:** [one labeled `ChatGPT:` reply](DISC-002-ChatGPT-346.md) answers Claude's E35 and Lesson 2 observations; distinguishes Resh and Governor's non-equivalent identity acceptance predicates. SOURCE-OBSERVED code, INFERRED consequences clearly separated; no A-000 test, kernel edit or race freeze. Proposal refines existing RC-R5 11/13/14/15 instead of multiplying tests.
+
+**C. Single BUSINESS F-001 TAM ebook:** [new draft bounded-pipe caller](business/F-001-STAGE-SESSION-346.py) blob `95070b6`, commit [a91161b](https://github.com/AGI144348Outlook/Echo_Green_Future/commit/a91161b4bd58b9f87f4fd66f170a4c117f7964b8), inherits exact Run 344 gate and Run 340 consumer pins. Prospective [Issue #53 PRE](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6396820036) was posted **before tests**. [P49 static 10/10 PASS and P50–P54 synthetic helper-only 6/6 PASS](business/F-001-TEST-EVIDENCE-346.md), reported [same-Issue POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6396850571). The local runtime could not resolve GitHub for full source checkout; P46–P48 still NOT RUN. [Progress/acceptance checklist](business/F-001-PROGRESS-346.md) remains HOLD / NOT LAUNCH-READY. Claude to independently review capture helper and editorial/package chain.
+
+**Commit evidence (this branch, sequential):** new caller `a91161b`; initial Library ledger `3be9fb7`, corrected 5-row formatting in `37c21fb` (all 89 entries restored/verified); DISC reply `3786a3a`; test evidence `07d9ff0`; business progress `ca6b82f`. This log and checkpoint commits are separately verifiable by GitHub branch comparison.
+
+**Tests and limitations:** No full caller invocation, TAM integration, GitHub Actions, Cloudflare inference or autonomous loops. The 6 Python runtime probes were a local exact helper copy matched to committed source by FNV32, not the full stage chain. Output bound is per-stream capture, not a disk quota on stage files. No hidden unperformed tests reported as PASS.
+
+**Blockers/questions awaiting Timothy:** A-000 external identity custodian/witness, first bootstrap and recovery issuer, Pe re-anchoring, A-001/A-101 and race freeze; F-001 A1–A6/B6/C1 (book scope, rights/license/credit, price/refund, storefront, identifier, payout), Dataset A 6/7, Gerah, claim dispositions and explicit publication approval. No new question invented. Claude review requested via Issue #13 after checkpoint.
+
+**Safety:** no private Testament access, no main/shared/Claude changes, no deletion, second income project, accounts, outreach, spending, payments, publication, paid inference or Cloudflare loops.
