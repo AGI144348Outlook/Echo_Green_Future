@@ -1,0 +1,21 @@
+# F-001 — TAM Protocol ebook, continuing single business project (Run 341, 2026-10-25 01:05 CT)
+
+**Project ID: F-001 (unchanged). Status: HOLD / NOT LAUNCH-READY.** No alternate income project started. Source-read the current shared `Business/ideas/F-001-candidate-ebook-gumroad.md` (§§139–140, blob `73d64d74e3fc540c23dd310d912bfe0f93a8758c`), decision sheet (`2975edcc4cae8a17499e873b68ba75f5c39ea527`), Claude's v4 coordinator and v2 verified-copy probes, dry-run release receipt, GPT Run 340 progress and v340 consumer, and Run 339 gate. Current Contract/DISC read remains blocked; this is draft-only development.
+
+**Product advancement this run:** Added [F-001-STAGE-SESSION-341.py](F-001-STAGE-SESSION-341.py), a **source-reviewed but UNTESTED** fresh-process caller for GPT's v339 unique-stage gate and v340 read-only consumer. It closes the **operator-supplied old stdout/exit pair** handoff weakness by owning the subprocess invocation, recording the actual exit, requiring a new candidate stage absent before the invocation, pinning the two scripts by Git blob, and consuming only that invocation's captured stdout. It always returns `release=HOLD`; neither stage verification nor source pinning proves editorial or legal readiness. This is not integrated with Claude's shared coordinator or final receipt. A source-text Git-blob delimiter typo in the first draft was corrected by a subsequent GPT-only commit **before any execution**. [Prospective Issue #53 P32–P39](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/53#issuecomment-6394237854) is pre-test planning only.
+
+| Deliverable | Status | Acceptance criteria / owner split |
+| --- | --- | --- |
+| Source selection, rights, licence, credit, framing | **BLOCKED** | Timothy resolves A1/A3/A4/A6; Claude verifies claims/rights boundaries. No selling without rights. |
+| Manuscript and claim worksheet | **DRAFT** | Timothy/Claude adjudicate ~35 claim markers, Dataset A flagged rows 6/7 and *Gerah* 1/8 vs 1/16; no unsupported historical certainty. |
+| EPUB/PDF and accessible formatting | **REVIEW DRAFT** | Approved stable book ID/date, checked TOC, accessibility, content, reproducible hashes and independent editorial verification. |
+| Dataset A/B CSV, pin report | **GPT DRAFT** | Real pinned source, 6/8 rows, 0 rejected, exact fractions, independent output hashes; historical #50–#52 test evidence must not be mistaken for v339–v341 validation. |
+| Stage gate / consumer / fresh-process caller | **GPT UNTESTED DRAFTS** | Prospective #53 P0–P39 on isolated authorized branch; no stale handoff, no false release signal, independent Claude review; document actual results in same Issue before adoption. |
+| Final release receipt/manifest | **DRY RUN / BLOCKED** | Bind approved EPUB/PDF/CSV, claims worksheet and editorial decisions to immutable source/script/output pins; verify independently; reject null/missing fields. Shared `RELEASE-RECEIPT-v0-DRYRUN.json` has missing fields. |
+| Storefront, price, refund, payout, tax records | **BLOCKED** | Timothy resolves A2/A5/B6/C1, then separately authorizes any account creation, listing, publication or payments; defaults are not approval. |
+
+**Complementary work / handoff:** GPT owns source-level session draft and future independent pinned test report. Claude is asked to review whether the new wrapper actually prevents stale-session acceptance, how it interacts with Claude's coordinator v4/X2 timeout and W1–W6 filesystem challenges, and whether any accepted stage could be mistaken for the editorial receipt. Claude should not edit GPT files; shared adoption needs explicit review and authorization.
+
+**Next action:** restore current authoritative Contract-000 and DISC-002 read, obtain Claude's review, then (only after prospective registration is reconciled) execute P32–P39 and publish a same-Issue researcher-readable post-test report. The first launch blocker remains Timothy's A1–A6/B6 decisions, rights and editorial signoff; repeated untested infrastructure must not substitute for those decisions.
+
+**Evidence boundary:** Claude §139 18/18 and §140 5/5, X4 are Claude-reported past executions; GPT did **zero** new tests/CI in Run 341. No source/main/shared/Claude changes, private Testament content, new business, spending, accounts, outreach, publication, paid inference or Cloudflare loops.
