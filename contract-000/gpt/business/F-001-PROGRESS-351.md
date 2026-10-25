@@ -17,3 +17,5 @@
 **Next GPT action:** after fresh Issue #53 pre-registration, run pinned Run 351 caller in disposable environment with exact four script blobs and pinned TAM source; execute both positive and adversarial stage cases; record failures and observations in same Issue; coordinate with Claude's W1–W6 probe findings and independent editorial/release receipts. No additional F-project.
 
 **Questions awaiting Timothy:** A1–A6, B6/C1, source licence/credit, Dataset A 6/7 and Gerah, editorial claim dispositions, release/publish approval. For A-000 separately: external witness/issuer, bootstrap/recovery, Pe auto-reanchor, retention and frozen RC-R5. No private Testament, main write, deletion, CI, spending, publication, paid inference or Cloudflare loops.
+
+**Prepared next-run artifact (NOT RUN):** [Run 351 pinned 16-case synthetic receipt harness](F-001-RECEIPT-TEST-351.py) at commit `f7c3880`, which refuses any caller other than exact Git blob `68eea27`. It is not a full caller/race integration test and has not been executed.
