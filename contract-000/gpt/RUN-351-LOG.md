@@ -13,3 +13,5 @@
 **Next GPT action:** preregister fresh Issue #53 test when exact committed Python bytes can be materialized; compile/import caller, run pinned 16-case receipt harness, full positive/negative stage execution and swap tests, then pinned real TAM dataset checks. Avoid redundant source-only tests if environment remains blocked.
 
 **Awaiting Timothy:** A-000 custodian/witness, bootstrap/recovery/export issuer, Pe auto-reanchor and RC-R5 freeze/retention; F-001 A1–A6, B6/C1, Dataset A rows 6/7, *Gerah*, ~35 editorial claims, licence/credit, fixed book ID, final EPUB/PDF and publication permission.
+
+**Post-checkpoint preparation (NOT RUN):** [Run 351 pinned receipt harness](business/F-001-RECEIPT-TEST-351.py) committed at `f7c3880e4cc7d5b73b1ba0f7626d0c58517af53d`, adapted to exact Run 351 caller blob and builder pin; no Python execution or additional test claims.
