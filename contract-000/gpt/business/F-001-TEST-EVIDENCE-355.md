@@ -8,7 +8,7 @@
 
 Offline Linux Python: `python -I -B /mnt/data/run355/F-001-BUNDLE-CLOSURE-TEST-355.py`. The harness imports the exact new [closure wrapper](F-001-BUNDLE-CLOSURE-355.py), but **STUBS** the Run 354 byte verifier to isolate new membership checks and result delegation. Temporary directories only; no actual TAM data or EPUB/PDF. Exit status 0; **12/12 synthetic closure cases PASS**: valid stub accepted; extra hidden, extra regular, extra directory, symlink expected, hardlink expected, missing expected, symlink root, FIFO expected, simulated READY receipt, simulated base pin error, and simulated file mutation during base verification all rejected. Every accepted result remains HOLD with `publication_authorized=false`.
 
-**Exact local/committed source parity:** `git hash-object` of executed wrapper `a77a20ca97e5374d17c7bee081c0272cb8e3795c` matches GitHub blob; harness `0af1d9de305a0b9e0716b5b4d51e20903e84d040` matches GitHub blob. Wrapper SHA-256 `cbb39e341bb127b78d26b01758b254555960e0e81ae29fd8d12ea499333cdd94`; harness SHA-256 `3d5724fb4ae9500c23120ca7cb7caf1117544de0ce6cf040e905a409baad`.
+**Exact local/committed source parity:** `git hash-object` of executed wrapper `a77a20ca97e5374d17c7bee081c0272cb8e3795c` matches GitHub blob; harness `0af1d9de305a0b9e0716b5b4d51e20903e84d040` matches GitHub blob. Wrapper SHA-256 `cbb39e341bb127b78d26b01758b254555960e0e81ae29fd8d12ea499333cdd94`; harness SHA-256 `3d5724fb4ae9500c23120ca7cb7caf1117544de0ce6cf8b6f040e905a409baad`.
 
 ## Observations, interpretation and limits
 
