@@ -1,0 +1,56 @@
+{
+  "run": 368,
+  "project": "F-001",
+  "status": "HOLD",
+  "source_git_blob": "adc3123c303168650e03270701cd3123afe0ce28",
+  "test_harness_git_blob": "ce4d4068669a3fd670be8d5a76c664f2c7175686",
+  "execution": "python -I test_listing_368.py; exact source script placed alongside harness",
+  "fixture": "synthetic; no actual TAM artifact",
+  "cases": [
+    {
+      "name": "invalid_epub_uncut_claim_and_unverified_pdf_promise",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "name": "invalid_epub_without_pdf_promise",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "name": "missing_claims_csv",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "forbidden_testimonial",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "pdf_pages_assertion_without_report",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true
+    },
+    {
+      "name": "open_claim_status",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "limits": [
+    "synthetic fixtures",
+    "invalid EPUB intentionally not a real EPUB",
+    "no manuscript validation by listing gate",
+    "no real TAM stage",
+    "not a publication approval"
+  ]
+}
