@@ -1,0 +1,87 @@
+{
+  "run": 361,
+  "project": "F-001",
+  "method": "V8 execution of same audit(sources) function committed as a Node CLI; connector Git blob IDs used as inputs (not locally recomputed SHA-1)",
+  "source_blobs": {
+    "builder": "e8af6e5f011ec3e827c94737c717937944924eb8",
+    "gate": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+    "consumer": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+    "coordinator": "68eea27de6e9a961f31122a08585ee6e24fed2df"
+  },
+  "expected_test_cases": 8,
+  "as_expected": 8,
+  "tests": [
+    {
+      "name": "four pinned GitHub files",
+      "expected": "PASS",
+      "observed": "PASS",
+      "as_expected": true,
+      "errors": []
+    },
+    {
+      "name": "gate commit changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "GATE_PIN_COMMIT_MISMATCH"
+      ]
+    },
+    {
+      "name": "builder A blob changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "BUILDER_PIN_A_BLOB_MISMATCH"
+      ]
+    },
+    {
+      "name": "consumer expected A CSV changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "CONSUMER_CSV_A_MISMATCH"
+      ]
+    },
+    {
+      "name": "coordinator gate pin changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "COORDINATOR_PIN_GATE_BLOB_MISMATCH"
+      ]
+    },
+    {
+      "name": "gate builder pin changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "GATE_PIN_BUILDER_BLOB_MISMATCH"
+      ]
+    },
+    {
+      "name": "coordinator source commit changed",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "COORDINATOR_PIN_SOURCE_COMMIT_MISMATCH"
+      ]
+    },
+    {
+      "name": "missing consumer",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "as_expected": true,
+      "errors": [
+        "MISSING_CONSUMER"
+      ]
+    }
+  ],
+  "network": "Local git ls-remote attempted after PRE-TEST; failed DNS resolution github.com; full stage NOT RUN",
+  "status": "HOLD / NOT LAUNCH-READY"
+}
