@@ -23,7 +23,7 @@ PINS = {
         "rows": 6,
     },
     "B": {
-        "sha256": "bc16da657b19317e110cdcf4159a9118aa89f2cfc4f8183e7f1d94f2eb3b81",
+        "sha256": "bc16da657b19317e110cdcf4159a9118aa89f2cfc4f8183e7e3f1d94f2eb3b81",
         "git_blob": "12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4",
         "rows": 8,
     },
