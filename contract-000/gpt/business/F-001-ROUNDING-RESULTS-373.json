@@ -1,0 +1,275 @@
+{
+  "run": 373,
+  "project": "F-001",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "source_git_blobs": {
+    "A": "b62c970a660e0a6685b58db1ef121690daa4fce7",
+    "B": "12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"
+  },
+  "checks": [
+    {
+      "name": "A six",
+      "passed": true
+    },
+    {
+      "name": "B eight",
+      "passed": true
+    },
+    {
+      "name": "A source pin",
+      "passed": true
+    },
+    {
+      "name": "B source pin",
+      "passed": true
+    },
+    {
+      "name": "All A claims feasible within display precision",
+      "passed": true
+    },
+    {
+      "name": "Silver nominal discrepancy",
+      "passed": true
+    },
+    {
+      "name": "Small Scrap nominal discrepancy",
+      "passed": true
+    },
+    {
+      "name": "B ratio1 not nearest half-up",
+      "passed": true
+    },
+    {
+      "name": "B ratio1 truncation possible",
+      "passed": true
+    },
+    {
+      "name": "B ratio4 exact half-cent tie",
+      "passed": true
+    },
+    {
+      "name": "All B ratio/16",
+      "passed": true
+    },
+    {
+      "name": "A negative control impossible",
+      "passed": true
+    },
+    {
+      "name": "B negative control impossible",
+      "passed": true
+    }
+  ],
+  "passed": 13,
+  "total": 13,
+  "analysis": {
+    "status": "REVIEW_ONLY_HOLD",
+    "assumptions": "nearest 0.01g; percentage rounded to 0.01 point; <0.01 means absolute deviation",
+    "A": [
+      {
+        "name": "Ingot Slice (Heavy)",
+        "mass_g": 136.98,
+        "units": 10,
+        "claim": "-0.01",
+        "term": "Maneh (Decimal Base)",
+        "expected_g": 137,
+        "nominal_deviation_pct": -0.01459854014599287,
+        "possible_pct_interval": [
+          -0.0182481751824859,
+          -0.010948905109499838
+        ],
+        "claim_pct_interval": [
+          -0.015,
+          -0.005
+        ],
+        "possible_under_assumptions": true
+      },
+      {
+        "name": "Coiled Wire (Large)",
+        "mass_g": 68.52,
+        "units": 5,
+        "claim": "+0.03",
+        "term": "5-Shekel (Redemption)",
+        "expected_g": 68.5,
+        "nominal_deviation_pct": 0.029197080291964994,
+        "possible_pct_interval": [
+          0.021897810218978932,
+          0.03649635036495106
+        ],
+        "claim_pct_interval": [
+          0.024999999999999998,
+          0.034999999999999996
+        ],
+        "possible_under_assumptions": true
+      },
+      {
+        "name": "Hacksilber Scraps (x3)",
+        "mass_g": 13.71,
+        "units": 1,
+        "claim": "+0.07",
+        "term": "Shekel Ha-Kodesh",
+        "expected_g": 13.7,
+        "nominal_deviation_pct": 0.07299270072993842,
+        "possible_pct_interval": [
+          0.03649635036496921,
+          0.10948905109490763
+        ],
+        "claim_pct_interval": [
+          0.065,
+          0.07500000000000001
+        ],
+        "possible_under_assumptions": true
+      },
+      {
+        "name": "Flattened Foil",
+        "mass_g": 6.86,
+        "units": 0.5,
+        "claim": "+0.14",
+        "term": "Beqa (The Half)",
+        "expected_g": 6.85,
+        "nominal_deviation_pct": 0.14598540145986388,
+        "possible_pct_interval": [
+          0.07299270072993842,
+          0.21897810218978933
+        ],
+        "claim_pct_interval": [
+          0.135,
+          0.14500000000000002
+        ],
+        "possible_under_assumptions": true
+      },
+      {
+        "name": "Silver Droplet",
+        "mass_g": 3.42,
+        "units": 0.25,
+        "claim": "-0.03",
+        "term": "Reva (The Quarter)",
+        "expected_g": 3.425,
+        "nominal_deviation_pct": -0.14598540145985092,
+        "possible_pct_interval": [
+          -0.29197080291970184,
+          0
+        ],
+        "claim_pct_interval": [
+          -0.034999999999999996,
+          -0.024999999999999998
+        ],
+        "possible_under_assumptions": true
+      },
+      {
+        "name": "Small Scrap",
+        "mass_g": 1.71,
+        "units": 0.125,
+        "claim": "<0.01",
+        "term": "Gerah (Metric Sub-unit)",
+        "expected_g": 1.7125,
+        "nominal_deviation_pct": -0.14598540145985092,
+        "possible_pct_interval": [
+          -0.43795620437955274,
+          0.14598540145985092
+        ],
+        "claim_pct_interval": [
+          -0.01,
+          0.01
+        ],
+        "possible_under_assumptions": true
+      }
+    ],
+    "B": [
+      {
+        "ratio": 1,
+        "mass_g": 0.85,
+        "units_label": "1/16",
+        "relation": "Trace/Gerah Base",
+        "expected_g": 0.85625,
+        "nearest_half_up_possible": false,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 2,
+        "mass_g": 1.71,
+        "units_label": "1/8",
+        "relation": "Matches \"Small Scrap\"",
+        "expected_g": 1.7125,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 4,
+        "mass_g": 3.42,
+        "units_label": "1/4",
+        "relation": "Matches \"Silver Droplet\"",
+        "expected_g": 3.425,
+        "nearest_half_up_possible": false,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": true,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 8,
+        "mass_g": 6.85,
+        "units_label": "1/2",
+        "relation": "The Beqa Invariant",
+        "expected_g": 6.85,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 16,
+        "mass_g": 13.7,
+        "units_label": "1.00",
+        "relation": "The Sanctuary Shekel",
+        "expected_g": 13.7,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 32,
+        "mass_g": 27.4,
+        "units_label": "2.00",
+        "relation": "Commercial Standard",
+        "expected_g": 27.4,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 80,
+        "mass_g": 68.5,
+        "units_label": "5.00",
+        "relation": "Matches \"Coiled Wire\"",
+        "expected_g": 68.5,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      },
+      {
+        "ratio": 160,
+        "mass_g": 137,
+        "units_label": "10.0",
+        "relation": "Matches \"Ingot Slice\"",
+        "expected_g": 137,
+        "nearest_half_up_possible": true,
+        "truncation_possible": true,
+        "exactly_half_cent_tie": false,
+        "ratio_over_16_matches_units": true
+      }
+    ]
+  },
+  "limitations": [
+    "source precision convention unconfirmed",
+    "source historical truth not assessed",
+    "V8 pure-function test, Node CLI not tested",
+    "not pinned Run334 builder or release"
+  ]
+}
