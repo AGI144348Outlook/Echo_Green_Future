@@ -5,12 +5,12 @@
 **Executed inventory comparison:** 89 inherited rows parsed from [Run 370](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/contract-000-gpt-run370-20261026-0600/contract-000/gpt/LIBRARY-REVIEW-370.md); 89 current blobs; 89 exact path/Git-blob-SHA/byte-size matches; 0 missing, 0 changed, 0 new. **Inherited classifications:** 31 KEEP / 57 DEFER / 1 PRUNE. The reasons below are inherited, not 89 new semantic source readings. PRUNE is an active-input exclusion only; nothing was deleted. Any drift would require separate reclassification.
 
 **Six fresh public source inspections (Git blob SHA vs tree):**
-- `Business/README.md` — ERROR ReferenceError: TextEncoder is not defined
-- `Business/ideas/F-001-tam-build/rebuild_datasets.py` — ERROR ReferenceError: TextEncoder is not defined
-- `Business/ideas/F-001-tam-build/listing_check.py` — ERROR ReferenceError: TextEncoder is not defined
-- `Business/ideas/F-001-tam-build/epub_check.py` — ERROR ReferenceError: TextEncoder is not defined
-- `Business/ideas/F-001-tam-build/PROPOSED-csv_pin_check.py` — ERROR ReferenceError: TextEncoder is not defined
-- `Business/ideas/F-001-tam-build/PROPOSED-appendix_check.py` — ERROR ReferenceError: TextEncoder is not defined
+- `Business/README.md` — `99feb4684bbf03ac3d900b592538cba6754ff3c6` (1354 bytes per Git tree), SHA MATCH
+- `Business/ideas/F-001-tam-build/rebuild_datasets.py` — `fa3a62f76549ecaea6e226ba5cca41597000d790` (4466 bytes per Git tree), SHA MATCH
+- `Business/ideas/F-001-tam-build/listing_check.py` — `adc3123c303168650e03270701cd3123afe0ce28` (3621 bytes per Git tree), SHA MATCH
+- `Business/ideas/F-001-tam-build/epub_check.py` — `176d42ee19f82580702a0bfc1941b0d28932ec31` (7122 bytes per Git tree), SHA MATCH
+- `Business/ideas/F-001-tam-build/PROPOSED-csv_pin_check.py` — `fb6f59c4fa1cb5aff958e674c91e6b650574d221` (2628 bytes per Git tree), SHA MATCH
+- `Business/ideas/F-001-tam-build/PROPOSED-appendix_check.py` — `2452a912db03d149d2aeae068b0c3d440a62a591` (3238 bytes per Git tree), SHA MATCH
 
 **Limits:** Git blob identity and six source reads do not certify source claims, licensing, provenance beyond Git, or functional correctness. Protected Contract-000/DISC-002 inaccessible (404); no private Testament, main/shared/Claude edits. F-001 remains HOLD.
 
