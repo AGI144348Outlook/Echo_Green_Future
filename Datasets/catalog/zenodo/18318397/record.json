@@ -1,0 +1,152 @@
+{
+ "id": "zenodo:18318397",
+ "title": "Input data and cached results for, \"MSA-based pLMs encode evolutionary distance but don't reliably exploit it\"",
+ "url": "https://zenodo.org/records/18318397",
+ "doi": "10.5281/zenodo.18318397",
+ "description": "<p><strong>Input Data</strong></p>\n<p>- response_regulator_inputs: Raw Pfam alignments (PF00072, PF00196, PF00486, PF04397) and PDB representative sequences for response<br>regulator analysis<br>- msa_difficulty: Pythia 2.0 MSA difficulty scores (msa_difficulty.csv)<br>- casp15_input: CASP15 MSAs and target PDB structures (msas/, targets/)</p>\n<p><strong>Intermediate Results</strong></p>\n<p>- response_regulators_seq_weights: MSA Pairformer sequence weights for response regulator queries (inference_results.pt)<br>- uniclust30_msas: Diversity-filtered MSAs from OpenProteinSet (1024 sequences each)<br>- uniclust30_trees: FastTree phylogenies for each MSA (.fasttree.newick, .fasttree.log)<br>- uniclust30_seq_weights: MSA Pairformer sequence weights for all UniClust30 MSAs (seq_weights.pt)<br>- uniclust30_iqtrees: IQ-TREE phylogenies for 10 smallest MSAs (.iqtree.newick, .iqtree.log)<br>- uniclust30_seq_weights_depth_200: Sequence weights for depth-200 filtered MSAs (seq_weights_depth_200.pt)<br>- contact_prediction: Beta-carbon contact predictions with/without sequence weighting (cb_contacts.pt, cb_contacts_uniform.pt, pdbs/)<br>- casp15_contact_prediction: Beta-carbon contact predictions for CASP15 targets (casp15_cb_contacts.pt,<br>casp15_cb_contacts_uniform.pt)<br>- layer_shuffling: Layer ablation study with shuffled sequence weights (single/, cumulative/)</p>\n<p><strong>Pub Info</strong></p>\n<p>- No need to manually download, the notebook pub will download necessary materials when executed</p>\n<p>- DOI: https://doi.org/10.57844/arcadia-ppdz-asaz</p>\n<p>- URL: https://arcadia-science.github.io/2025-phylogenetic-analysis-of-msa-pairformer</p>",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/18318397",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 8,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-01-28T22:37:28.595651+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:d4796655da1d13a0d0fe1fc12ac2b90e268efaa986fdffdba1271f3fea3ba2f5",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-26T14:25:39+00:00",
+ "files": [
+  {
+   "name": "contact_prediction.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/contact_prediction.zip/content",
+   "declared_size": 4783524419,
+   "declared_checksum": "md5:16b071ca085469a0fd077a6dccb1d582",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "uniclust30_iqtrees.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/uniclust30_iqtrees.zip/content",
+   "declared_size": 205138,
+   "declared_checksum": "md5:359410e9f5e71f7a8d614d016c12be73",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "uniclust30_seq_weights_depth_200.pt.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/uniclust30_seq_weights_depth_200.pt.zip/content",
+   "declared_size": 83681269,
+   "declared_checksum": "md5:21b0c0b3cdaff0e96215024b037537f5",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "uniclust30_seq_weights.pt.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/uniclust30_seq_weights.pt.zip/content",
+   "declared_size": 241524666,
+   "declared_checksum": "md5:d7b0528947cc7b9f24f369cc9480a1cb",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "uniclust30_trees.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/uniclust30_trees.zip/content",
+   "declared_size": 78221391,
+   "declared_checksum": "md5:75c066142610828596973ca29cb7ebe1",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "response_regulator_inputs.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/response_regulator_inputs.zip/content",
+   "declared_size": 105751529,
+   "declared_checksum": "md5:54e5a3c4617f59d5313135144946ca5a",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "layer_shuffling.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/layer_shuffling.zip/content",
+   "declared_size": 2505753588,
+   "declared_checksum": "md5:0b930e8ae0407e5dc872a7a403cc59ab",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "msa_difficulty.csv.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/msa_difficulty.csv.zip/content",
+   "declared_size": 30946,
+   "declared_checksum": "md5:916dfc2d21b015d9d89b393c92add8ac",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "response_regulator_seq_weights.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/response_regulator_seq_weights.zip/content",
+   "declared_size": 56452148,
+   "declared_checksum": "md5:27ccef1e73fe9a8486847765a3ed2abf",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "casp15_input.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/casp15_input.zip/content",
+   "declared_size": 25492729,
+   "declared_checksum": "md5:2043231bd2f5d3926fb190a7d736598f",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "casp15_contact_prediction.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/casp15_contact_prediction.zip/content",
+   "declared_size": 17431428,
+   "declared_checksum": "md5:ac3d32ceb4d448483af069077ebe830d",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "uniclust30_msas.zip",
+   "url": "https://zenodo.org/api/records/18318397/files/uniclust30_msas.zip/content",
+   "declared_size": 639418359,
+   "declared_checksum": "md5:cf0cb3f8b671929add4222f7445371ec",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
