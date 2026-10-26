@@ -19,6 +19,9 @@ const tests = [
  ["out-of-range",d=>{d.baseline[0].sentence_no=999;d.baseline[0].id=d.baseline[0].file+"#S999";return d;},false],
  ["tampered-trigger",d=>{d.baseline[0].triggers=["unknown"];return d;},false],
  ["release-authorized",d=>{d.release_authorized=true;return d;},false],
+ ["jointly-forged-sha",d=>{const x=d.sources[0];x.blob_sha="1".repeat(40);for(const c of [...d.baseline,...d.supplemental])if(c.file===x.file)c.source_blob_sha=x.blob_sha;return d;},false],
+ ["forged-source-size",d=>{d.sources[0].bytes+=1;return d;},false],
+ ["reviewed-with-evidence-but-unapproved",d=>{d.baseline[0].review_status="CLAIMED";d.baseline[0].review_evidence="unapproved-note";d.reviewed_count=1;return d;},false],
 ];
 const results = tests.map(([name,change,expect])=>{
   const result = auditClaimQueue(change(clone()));
