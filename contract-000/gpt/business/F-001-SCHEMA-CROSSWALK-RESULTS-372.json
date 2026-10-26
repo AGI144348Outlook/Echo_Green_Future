@@ -1,0 +1,69 @@
+{
+  "run": 372,
+  "pretest_issue": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/56#issuecomment-6416753260",
+  "source_blobs": {
+    "a": "8ef7fa41ef0229ce9a2754737f0aa0e774fd3b7b",
+    "b": "0df0e4153cf2ae9c292dd05588485e13bfd999f3",
+    "report": "0f333dd8d9a86dff947883bd41d46a585dc83c59"
+  },
+  "tests": [
+    {
+      "name": "actual 14 source rows review-only HOLD",
+      "pass": true
+    },
+    {
+      "name": "334 schemas deliberately differ",
+      "pass": true
+    },
+    {
+      "name": "missing A row rejected",
+      "pass": true
+    },
+    {
+      "name": "changed A mass rejected",
+      "pass": true
+    },
+    {
+      "name": "duplicate A object rejected",
+      "pass": true
+    },
+    {
+      "name": "missing B row rejected",
+      "pass": true
+    },
+    {
+      "name": "changed source SHA rejected",
+      "pass": true
+    },
+    {
+      "name": "A flag altered rejected",
+      "pass": true
+    },
+    {
+      "name": "unclosed CSV quote rejected",
+      "pass": true
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "positive": {
+    "status": "REVIEW_ONLY",
+    "release": "HOLD",
+    "source_rows_usable_for_review": true,
+    "a_rows": 6,
+    "b_rows": 8,
+    "errors": [],
+    "pinned_334_compatible": false,
+    "pinned_334_blockers": [
+      "Run371 A header 9 fields vs Run334 11",
+      "Run371 B header 8 fields vs Run334 9",
+      "Run371 report lacks source_commit and git_blob fields",
+      "Run371 CSV bytes differ from independent Run334 SHA-256 pins"
+    ],
+    "editorial_flags": [
+      "Dataset A two stated/recomputed deviation disagreements",
+      "Gerah label differs between datasets"
+    ],
+    "limitations": "Structural and source-row comparison only; no SHA-256 computed, no Run334 execution, no release authorization."
+  }
+}
