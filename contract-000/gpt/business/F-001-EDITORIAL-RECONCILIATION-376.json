@@ -1,0 +1,404 @@
+{
+  "project_id": "F-001",
+  "status": "HOLD_EDITORIAL_REVIEW",
+  "release_authorized": false,
+  "evidence_kind": "DERIVED_LEGACY_CSV_NOT_ORIGINAL_HISTORICAL_PROOF",
+  "checks": {
+    "passed": 45,
+    "total": 45,
+    "all_pass": true,
+    "detail": [
+      {
+        "name": "A has 6 rows",
+        "pass": true
+      },
+      {
+        "name": "B has 8 rows",
+        "pass": true
+      },
+      {
+        "name": "A has expected 9 columns",
+        "pass": true
+      },
+      {
+        "name": "B has expected 8 columns",
+        "pass": true
+      },
+      {
+        "name": "A1 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A1 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "A2 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A2 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "A3 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A3 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "A4 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A4 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "A5 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A5 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "A6 expected mass",
+        "pass": true
+      },
+      {
+        "name": "A6 recomputed percent",
+        "pass": true
+      },
+      {
+        "name": "B1 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B1 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B1 deviation",
+        "pass": true
+      },
+      {
+        "name": "B2 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B2 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B2 deviation",
+        "pass": true
+      },
+      {
+        "name": "B3 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B3 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B3 deviation",
+        "pass": true
+      },
+      {
+        "name": "B4 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B4 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B4 deviation",
+        "pass": true
+      },
+      {
+        "name": "B5 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B5 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B5 deviation",
+        "pass": true
+      },
+      {
+        "name": "B6 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B6 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B6 deviation",
+        "pass": true
+      },
+      {
+        "name": "B7 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B7 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B7 deviation",
+        "pass": true
+      },
+      {
+        "name": "B8 ratio/16",
+        "pass": true
+      },
+      {
+        "name": "B8 expected mass",
+        "pass": true
+      },
+      {
+        "name": "B8 deviation",
+        "pass": true
+      },
+      {
+        "name": "exact A source flags",
+        "pass": true
+      },
+      {
+        "name": "A Gerah at 1/8",
+        "pass": true
+      },
+      {
+        "name": "B Gerah at 1/16",
+        "pass": true
+      },
+      {
+        "name": "B first 0.85",
+        "pass": true
+      },
+      {
+        "name": "A/B 14 provenance rows",
+        "pass": true
+      }
+    ]
+  },
+  "editorial_questions": [
+    "Explain or qualify Dataset A Silver Droplet and Small Scrap deviation flags; do not silently correct original figures.",
+    "Resolve Gerah terminology: Dataset A labels 1/8 U, Dataset B labels 1/16 U; preserve both pending author decision.",
+    "Explain Dataset B 0.85 g display versus 0.85625 g model at 1/16 U; truncation is a hypothesis, not established source method.",
+    "Qualify same-unit A/B displayed mass differences (0.01-0.02 g); distinct objects/precision may explain them.",
+    "Resolve Article 4, source rights/licence, claim worksheet and publication choices before release."
+  ],
+  "rows": [
+    {
+      "dataset": "A",
+      "csv_line": 2,
+      "object": "Ingot Slice (Heavy)",
+      "units": "10.0",
+      "measured_g": "136.98",
+      "stated_deviation_pct": "-0.01",
+      "computed_pct": -0.0146,
+      "source_matches": "True",
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "A",
+      "csv_line": 3,
+      "object": "Coiled Wire (Large)",
+      "units": "5.0",
+      "measured_g": "68.52",
+      "stated_deviation_pct": "+0.03",
+      "computed_pct": 0.0292,
+      "source_matches": "True",
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "A",
+      "csv_line": 4,
+      "object": "Hacksilber Scraps (x3)",
+      "units": "1.0",
+      "measured_g": "13.71",
+      "stated_deviation_pct": "+0.07",
+      "computed_pct": 0.07299,
+      "source_matches": "True",
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "A",
+      "csv_line": 5,
+      "object": "Flattened Foil",
+      "units": "0.5",
+      "measured_g": "6.86",
+      "stated_deviation_pct": "+0.14",
+      "computed_pct": 0.14599,
+      "source_matches": "True",
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "A",
+      "csv_line": 6,
+      "object": "Silver Droplet",
+      "units": "0.25",
+      "measured_g": "3.42",
+      "stated_deviation_pct": "-0.03",
+      "computed_pct": -0.14599,
+      "source_matches": "False",
+      "flags": [
+        "SOURCE_FLAGGED_DEVIATION"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "A",
+      "csv_line": 7,
+      "object": "Small Scrap",
+      "units": "0.125",
+      "measured_g": "1.71",
+      "stated_deviation_pct": "<0.01",
+      "computed_pct": -0.14599,
+      "source_matches": "False",
+      "flags": [
+        "SOURCE_FLAGGED_DEVIATION",
+        "A_GERAH_1_8_LABEL"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 2,
+      "ratio": "1",
+      "units": "1/16",
+      "mass_g": "0.85",
+      "relation_to_dataset_a": "Trace/Gerah Base",
+      "computed_pct": -0.72993,
+      "comparable_a_object": null,
+      "mass_delta_vs_a_g": null,
+      "flags": [
+        "B_GERAH_1_16_LABEL",
+        "B_0_85_DISPLAY_PRECISION"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 3,
+      "ratio": "2",
+      "units": "1/8",
+      "mass_g": "1.71",
+      "relation_to_dataset_a": "Matches \"Small Scrap\"",
+      "computed_pct": -0.14599,
+      "comparable_a_object": "Small Scrap",
+      "mass_delta_vs_a_g": 0,
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 4,
+      "ratio": "4",
+      "units": "1/4",
+      "mass_g": "3.42",
+      "relation_to_dataset_a": "Matches \"Silver Droplet\"",
+      "computed_pct": -0.14599,
+      "comparable_a_object": "Silver Droplet",
+      "mass_delta_vs_a_g": 0,
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 5,
+      "ratio": "8",
+      "units": "1/2",
+      "mass_g": "6.85",
+      "relation_to_dataset_a": "The Beqa Invariant",
+      "computed_pct": 0,
+      "comparable_a_object": "Flattened Foil",
+      "mass_delta_vs_a_g": -0.01,
+      "flags": [
+        "SAME_UNIT_DISTINCT_DISPLAY_MASS"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 6,
+      "ratio": "16",
+      "units": "1.00",
+      "mass_g": "13.70",
+      "relation_to_dataset_a": "The Sanctuary Shekel",
+      "computed_pct": 0,
+      "comparable_a_object": "Hacksilber Scraps (x3)",
+      "mass_delta_vs_a_g": -0.01,
+      "flags": [
+        "SAME_UNIT_DISTINCT_DISPLAY_MASS"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 7,
+      "ratio": "32",
+      "units": "2.00",
+      "mass_g": "27.40",
+      "relation_to_dataset_a": "Commercial Standard",
+      "computed_pct": 0,
+      "comparable_a_object": null,
+      "mass_delta_vs_a_g": null,
+      "flags": [],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 8,
+      "ratio": "80",
+      "units": "5.00",
+      "mass_g": "68.50",
+      "relation_to_dataset_a": "Matches \"Coiled Wire\"",
+      "computed_pct": 0,
+      "comparable_a_object": "Coiled Wire (Large)",
+      "mass_delta_vs_a_g": -0.02,
+      "flags": [
+        "SAME_UNIT_DISTINCT_DISPLAY_MASS"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "dataset": "B",
+      "csv_line": 9,
+      "ratio": "160",
+      "units": "10.0",
+      "mass_g": "137.00",
+      "relation_to_dataset_a": "Matches \"Ingot Slice\"",
+      "computed_pct": 0,
+      "comparable_a_object": "Ingot Slice (Heavy)",
+      "mass_delta_vs_a_g": 0.02,
+      "flags": [
+        "SAME_UNIT_DISTINCT_DISPLAY_MASS"
+      ],
+      "status": "EDITORIAL_REVIEW_ONLY"
+    }
+  ],
+  "inputs": {
+    "dataset_a": {
+      "git_blob": "8ef7fa41ef0229ce9a2754737f0aa0e774fd3b7b",
+      "source_path": "contract-000-gpt-run371-20261026-0700/contract-000/gpt/business/F-001-DATASET-STAGE-371/dataset-a.csv"
+    },
+    "dataset_b": {
+      "git_blob": "0df0e4153cf2ae9c292dd05588485e13bfd999f3",
+      "source_path": "contract-000-gpt-run371-20261026-0700/contract-000/gpt/business/F-001-DATASET-STAGE-371/dataset-b.csv"
+    }
+  }
+}
