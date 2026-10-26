@@ -6,6 +6,40 @@
    SOURCE PIN: The-TAM-protocol d46456a18fe412398d0ae37ec5a8c4eebb44e0c9
    SOURCE MANIFEST: GPT Run 378, 8 Git-pinned public source files.
 */
+const PINNED_SOURCES = Object.freeze({
+  "README.md": {
+    "sha": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+    "bytes": 2561
+  },
+  "Article 1 Hacksilber": {
+    "sha": "237bd3335abdcc0f0465817dffe01ad6eaa86055",
+    "bytes": 2345
+  },
+  "Article 2 Water Weight Computes": {
+    "sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c",
+    "bytes": 2535
+  },
+  "The Color Dyed and Dental Records": {
+    "sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d",
+    "bytes": 2974
+  },
+  "Article 5": {
+    "sha": "c8c1bf617c0d81389f6c2408ed975131695857ff",
+    "bytes": 3969
+  },
+  "Article 6": {
+    "sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0",
+    "bytes": 3210
+  },
+  "Article 10": {
+    "sha": "e82be564872f636662652d34dcb8d3437559f84f",
+    "bytes": 812
+  },
+  "Collective information": {
+    "sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+    "bytes": 33708
+  }
+});
 function auditClaimQueue(d) {
   const errors = [];
   const fail = (message) => errors.push(message);
@@ -27,6 +61,9 @@ function auditClaimQueue(d) {
       fail("source:invalid-record"); continue;
     }
     if (sourceMap.has(s.file)) fail("source:duplicate:"+s.file);
+    const pin = PINNED_SOURCES[s.file];
+    if (!pin || s.blob_sha !== pin.sha || s.bytes !== pin.bytes)
+      fail("source:pin-mismatch:"+s.file);
     sourceMap.set(s.file,s);
   }
   const baseline = Array.isArray(d.baseline) ? d.baseline : [];
@@ -50,6 +87,7 @@ function auditClaimQueue(d) {
       if (typeof c.excerpt !== "string" || !c.excerpt.trim()) fail("claim:empty-excerpt:"+c.id);
       if (c.review_status !== "UNREVIEWED") {
         reviewed++;
+        fail("claim:non-pinned-review-status:"+c.id);
         if (!c.review_evidence || typeof c.review_evidence !== "string" ||
             !c.review_evidence.trim()) fail("claim:review-without-evidence:"+c.id);
       }
@@ -68,6 +106,8 @@ function auditClaimQueue(d) {
       }
     }
   }
+  for (const file of Object.keys(PINNED_SOURCES))
+    if (!sourceMap.has(file)) fail("source:missing-pin:"+file);
   for (const s of sources) if (s && typeof s.file === "string") {
     if (counts.get("baseline:"+s.file)!==s.baseline_candidates) fail("source:baseline-count:"+s.file);
     if ((counts.get("supplemental:"+s.file)||0)!==s.supplemental_candidates) fail("source:supplemental-count:"+s.file);
