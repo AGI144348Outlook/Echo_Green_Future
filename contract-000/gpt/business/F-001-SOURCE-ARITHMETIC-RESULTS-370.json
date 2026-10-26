@@ -1,0 +1,213 @@
+{
+  "status": "HOLD_SOURCE_AUDIT_ONLY",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "source_git_blobs": {
+    "A": "b62c970a660e0a6685b58db1ef121690daa4fce7",
+    "B": "12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"
+  },
+  "test_environment": "V8 JS audit core executed against authenticated GitHub-fetched public source text; standalone Node CLI not executed",
+  "assertions": {
+    "A_blob_from_connector": true,
+    "B_blob_from_connector": true,
+    "A_6_rows": true,
+    "B_8_rows": true,
+    "A_no_rejects": true,
+    "B_no_rejects": true,
+    "A_2_nominal_discrepancies": true,
+    "B_all_ratios_over16": true,
+    "A_Gerah_one_eighth": true,
+    "B_Gerah_one_sixteenth": true,
+    "A_silver_droplet_nominal_negative": true,
+    "A_small_scrap_nominal_negative": true,
+    "B_first_mass_rounding": true
+  },
+  "results": {
+    "base_g_per_unit": 13.7,
+    "A": {
+      "count": 6,
+      "rejected": [],
+      "rows": [
+        {
+          "object": "Ingot Slice (Heavy)",
+          "mass": "136.98",
+          "units": "10.0",
+          "sign": "UU",
+          "dev": "-0.01",
+          "term": "Maneh (Decimal Base)",
+          "expected_g": 137,
+          "nominal_deviation_pct": -0.015,
+          "stated_deviation_pct": "-0.01",
+          "stated_within_0_01pp": true,
+          "delta_pp": -0.005
+        },
+        {
+          "object": "Coiled Wire (Large)",
+          "mass": "68.52",
+          "units": "5.0",
+          "sign": "U+V",
+          "dev": "+0.03",
+          "term": "5-Shekel (Redemption)",
+          "expected_g": 68.5,
+          "nominal_deviation_pct": 0.029,
+          "stated_deviation_pct": "+0.03",
+          "stated_within_0_01pp": true,
+          "delta_pp": -0.001
+        },
+        {
+          "object": "Hacksilber Scraps (x3)",
+          "mass": "13.71",
+          "units": "1.0",
+          "sign": "U",
+          "dev": "+0.07",
+          "term": "Shekel Ha-Kodesh",
+          "expected_g": 13.7,
+          "nominal_deviation_pct": 0.073,
+          "stated_deviation_pct": "+0.07",
+          "stated_within_0_01pp": true,
+          "delta_pp": 0.003
+        },
+        {
+          "object": "Flattened Foil",
+          "mass": "6.86",
+          "units": "0.5",
+          "sign": "Harrow",
+          "dev": "+0.14",
+          "term": "Beqa (The Half)",
+          "expected_g": 6.85,
+          "nominal_deviation_pct": 0.146,
+          "stated_deviation_pct": "+0.14",
+          "stated_within_0_01pp": true,
+          "delta_pp": 0.006
+        },
+        {
+          "object": "Silver Droplet",
+          "mass": "3.42",
+          "units": "0.25",
+          "sign": "1/4",
+          "dev": "-0.03",
+          "term": "Reva (The Quarter)",
+          "expected_g": 3.425,
+          "nominal_deviation_pct": -0.146,
+          "stated_deviation_pct": "-0.03",
+          "stated_within_0_01pp": false,
+          "delta_pp": -0.116
+        },
+        {
+          "object": "Small Scrap",
+          "mass": "1.71",
+          "units": "0.125",
+          "sign": "1/8",
+          "dev": "<0.01",
+          "term": "Gerah (Metric Sub-unit)",
+          "expected_g": 1.7125,
+          "nominal_deviation_pct": -0.146,
+          "stated_deviation_pct": "<0.01",
+          "stated_within_0_01pp": false,
+          "delta_pp": null
+        }
+      ],
+      "nominal_mismatch_count": 2
+    },
+    "B": {
+      "count": 8,
+      "rejected": [],
+      "rows": [
+        {
+          "ratio": "1",
+          "mass": "0.85",
+          "sign": "(Stroke)",
+          "units": "1/16",
+          "relation": "Trace/Gerah Base",
+          "expected_g": 0.85625,
+          "nominal_deviation_pct": -0.73,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "2",
+          "mass": "1.71",
+          "sign": "(II)",
+          "units": "1/8",
+          "relation": "Matches \"Small Scrap\"",
+          "expected_g": 1.7125,
+          "nominal_deviation_pct": -0.146,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "4",
+          "mass": "3.42",
+          "sign": "(IIII)",
+          "units": "1/4",
+          "relation": "Matches \"Silver Droplet\"",
+          "expected_g": 3.425,
+          "nominal_deviation_pct": -0.146,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "8",
+          "mass": "6.85",
+          "sign": "Harrow",
+          "units": "1/2",
+          "relation": "The Beqa Invariant",
+          "expected_g": 6.85,
+          "nominal_deviation_pct": 0,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "16",
+          "mass": "13.70",
+          "sign": "Jar (U)",
+          "units": "1.00",
+          "relation": "The Sanctuary Shekel",
+          "expected_g": 13.7,
+          "nominal_deviation_pct": 0,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "32",
+          "mass": "27.40",
+          "sign": "U+II",
+          "units": "2.00",
+          "relation": "Commercial Standard",
+          "expected_g": 27.4,
+          "nominal_deviation_pct": 0,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "80",
+          "mass": "68.50",
+          "sign": "U+V",
+          "units": "5.00",
+          "relation": "Matches \"Coiled Wire\"",
+          "expected_g": 68.5,
+          "nominal_deviation_pct": 0,
+          "ratio_over_16_equals_units": true
+        },
+        {
+          "ratio": "160",
+          "mass": "137.00",
+          "sign": "UU",
+          "units": "10.0",
+          "relation": "Matches \"Ingot Slice\"",
+          "expected_g": 137,
+          "nominal_deviation_pct": 0,
+          "ratio_over_16_equals_units": true
+        }
+      ],
+      "ratio_invariant_fail_count": 0
+    },
+    "gerah": {
+      "A": [
+        {
+          "object": "Small Scrap",
+          "units": "0.125"
+        }
+      ],
+      "B": [
+        {
+          "ratio": "1",
+          "units": "1/16"
+        }
+      ]
+    }
+  }
+}
