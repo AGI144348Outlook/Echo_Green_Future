@@ -1,5 +1,6 @@
 {
   "run": 372,
+  "revision": "full 14-row fixture equality added after initial 9 tests",
   "pretest_issue": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/56#issuecomment-6416753260",
   "source_blobs": {
     "a": "8ef7fa41ef0229ce9a2754737f0aa0e774fd3b7b",
@@ -8,11 +9,11 @@
   },
   "tests": [
     {
-      "name": "actual 14 source rows review-only HOLD",
+      "name": "14 exact 371 rows review-only HOLD",
       "pass": true
     },
     {
-      "name": "334 schemas deliberately differ",
+      "name": "Run334 schema incompatible",
       "pass": true
     },
     {
@@ -32,20 +33,32 @@
       "pass": true
     },
     {
-      "name": "changed source SHA rejected",
+      "name": "source SHA changed rejected",
       "pass": true
     },
     {
-      "name": "A flag altered rejected",
+      "name": "A flag changed rejected",
       "pass": true
     },
     {
       "name": "unclosed CSV quote rejected",
       "pass": true
+    },
+    {
+      "name": "A unit changed rejected",
+      "pass": true
+    },
+    {
+      "name": "A term changed rejected",
+      "pass": true
+    },
+    {
+      "name": "B relation changed rejected",
+      "pass": true
     }
   ],
-  "passed": 9,
-  "total": 9,
+  "passed": 12,
+  "total": 12,
   "positive": {
     "status": "REVIEW_ONLY",
     "release": "HOLD",
@@ -64,6 +77,6 @@
       "Dataset A two stated/recomputed deviation disagreements",
       "Gerah label differs between datasets"
     ],
-    "limitations": "Structural and source-row comparison only; no SHA-256 computed, no Run334 execution, no release authorization."
+    "limitations": "Exact 14-row fixture equality from Run371 output only; no independent SHA-256 computed, no Run334 execution, no release authorization."
   }
 }
