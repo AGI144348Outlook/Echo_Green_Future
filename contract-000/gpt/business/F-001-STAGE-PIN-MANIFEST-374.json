@@ -1,0 +1,133 @@
+{
+  "project": "F-001",
+  "run": 374,
+  "source": "authenticated GitHub source read, no local checkout",
+  "release": "HOLD",
+  "stage_status": "BLOCKED_NOT_EXECUTED",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "source_git_blobs": {
+    "A": "b62c970a660e0a6685b58db1ef121690daa4fce7",
+    "B": "12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"
+  },
+  "script_git_blobs": {
+    "F-001-REBUILD-DATASETS-334.py": "e8af6e5f011ec3e827c94737c717937944924eb8",
+    "F-001-DATASET-STAGE-GATE-344.py": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+    "F-001-STAGE-CONSUMER-347.py": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+    "F-001-STAGE-SESSION-351.py": "68eea27de6e9a961f31122a08585ee6e24fed2df"
+  },
+  "expected_csv_sha256": {
+    "A": "989d83c16568f23a97251d93919068f3a5e726c738644625af909b278f395fdb",
+    "B": "ff442e48acaf00900a3bc3d7900bf987995355a34226b749dbd5b81878e2f7c0"
+  },
+  "tests": [
+    {
+      "name": "Git blob pin builder",
+      "pass": true
+    },
+    {
+      "name": "Git blob pin gate",
+      "pass": true
+    },
+    {
+      "name": "Git blob pin consumer",
+      "pass": true
+    },
+    {
+      "name": "Git blob pin session",
+      "pass": true
+    },
+    {
+      "name": "Git blob pin sourceA",
+      "pass": true
+    },
+    {
+      "name": "Git blob pin sourceB",
+      "pass": true
+    },
+    {
+      "name": "source HEAD pin builder",
+      "pass": true
+    },
+    {
+      "name": "source HEAD pin gate",
+      "pass": true
+    },
+    {
+      "name": "source HEAD pin consumer",
+      "pass": true
+    },
+    {
+      "name": "coordinator source HEAD pin",
+      "pass": true
+    },
+    {
+      "name": "builder pin gate",
+      "pass": true
+    },
+    {
+      "name": "builder pin consumer",
+      "pass": true
+    },
+    {
+      "name": "builder pin session",
+      "pass": true
+    },
+    {
+      "name": "session gate pin",
+      "pass": true
+    },
+    {
+      "name": "session consumer pin",
+      "pass": true
+    },
+    {
+      "name": "source A/B pin gate",
+      "pass": true
+    },
+    {
+      "name": "source A/B pin consumer",
+      "pass": true
+    },
+    {
+      "name": "CSV A/B digest gate",
+      "pass": true
+    },
+    {
+      "name": "CSV A/B digest consumer",
+      "pass": true
+    },
+    {
+      "name": "CSV A/B digest session",
+      "pass": true
+    },
+    {
+      "name": "coordinator explicitly HOLD",
+      "pass": true
+    },
+    {
+      "name": "consumer explicitly HOLD",
+      "pass": true
+    },
+    {
+      "name": "gate no release attestation",
+      "pass": true
+    },
+    {
+      "name": "negative control: altered builder SHA rejected",
+      "pass": true
+    },
+    {
+      "name": "negative control: altered source commit rejected",
+      "pass": true
+    },
+    {
+      "name": "negative control: altered CSV SHA rejected",
+      "pass": true
+    }
+  ],
+  "passed": 26,
+  "total": 26,
+  "failed": [],
+  "blocked_reason": "Local git ls-remote failed: Could not resolve host github.com; no clean local TAM checkout, therefore no Run334→344→347→351 integration execution.",
+  "evidence_scope": "Static exact-source pin assertions and negative altered-string controls only; no Python, CI, EPUB/PDF, rights or launch authorization."
+}
