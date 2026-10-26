@@ -7,7 +7,7 @@
 **Five freshly inspected public bodies (blob identities matched live shared tree):**
 - `Formulas/F-0001-Echo-Harness-Usability-Criterion.md` — `09e5c0ec7e5b2e362b2b6fc05f7849c69bf36987`: **KEEP**, preserves Timothy's exact notation without inventing semantics.
 - `Workshop/README.md` — `d39dcb35cb4ef7bdf226ded0e907a0f2d7426ab0`: **KEEP**, inert wing map only.
-- `Workshop/fallbacks/README.md` — `d9fe3e458a5d2c95abe88a26d617f0c2d94f634f`: **DEFER**, no active fallback content.
+- `Workshop/fallbacks/README.md` — `d9fe3e458a5d2c95abe88a26d617f0c2d94f634f`: **KEEP**, directory/provenance reference only; no active fallback content.
 - `Workshop/pipelines/P-001-budgeted-inference/README.md` — `cae451754258a855ea914be8e0cbcec316bb246d`: **KEEP**, reference-only budgeted inference evidence; no paid inference executed.
 - `Business/ideas/F-001-tam-build/epub_check.py` — `176d42ee19f82580702a0bfc1941b0d28932ec31`: **KEEP**, offline structure checker; release rights/editorial truth remain unverified.
 
