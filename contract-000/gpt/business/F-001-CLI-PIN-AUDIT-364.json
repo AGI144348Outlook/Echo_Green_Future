@@ -1,0 +1,121 @@
+{
+  "project": "F-001",
+  "run": 364,
+  "kind": "source-level static CLI/pin diagnostic; no staging execution",
+  "pretest": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/56#issuecomment-6408620573",
+  "pins": {
+    "builder": "e8af6e5f011ec3e827c94737c717937944924eb8",
+    "gate": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+    "consumer": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+    "session": "68eea27de6e9a961f31122a08585ee6e24fed2df"
+  },
+  "checks": [
+    {
+      "name": "actual Git blob builder",
+      "expected": "e8af6e5f011ec3e827c94737c717937944924eb8",
+      "observed": "e8af6e5f011ec3e827c94737c717937944924eb8",
+      "pass": true
+    },
+    {
+      "name": "actual Git blob gate",
+      "expected": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+      "observed": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+      "pass": true
+    },
+    {
+      "name": "actual Git blob consumer",
+      "expected": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+      "observed": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+      "pass": true
+    },
+    {
+      "name": "actual Git blob session",
+      "expected": "68eea27de6e9a961f31122a08585ee6e24fed2df",
+      "observed": "68eea27de6e9a961f31122a08585ee6e24fed2df",
+      "pass": true
+    },
+    {
+      "name": "gate references Run 334 builder",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "consumer references Run 334 builder",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session references Run 334 builder",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "builder pins TAM commit",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "gate pins TAM commit",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "consumer pins TAM commit",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session pins TAM commit",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session pins exact gate",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session pins exact consumer",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session parser has required five arguments",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session emits HOLD on receipt",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "stage emits STAGED_ONLY",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    {
+      "name": "session docstring names stale Run 332 builder",
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  ],
+  "pass": 17,
+  "total": 17,
+  "local_git": "DNS failure: Could not resolve host github.com",
+  "status": "HOLD",
+  "real_stage": "NOT_RUN"
+}
