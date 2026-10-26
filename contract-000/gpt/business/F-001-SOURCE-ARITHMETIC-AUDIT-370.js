@@ -29,7 +29,7 @@ function auditF001(sourceA,sourceB){
 }
 const [a,b]=process.argv.slice(2);
 if(!a||!b){console.error("usage: node F-001-SOURCE-ARITHMETIC-AUDIT-370.js A B");process.exit(2);}
-function blobSha(x){return crypto.createHash("sha1").update(Buffer.concat([Buffer.from("blob "+x.length+"\\0"),x])).digest("hex");}
+function blobSha(x){return crypto.createHash("sha1").update(Buffer.concat([Buffer.from("blob "+x.length+" "),Buffer.from([0]),x])).digest("hex");}
 const aa=fs.readFileSync(a),bb=fs.readFileSync(b);
 const ap=blobSha(aa),bp=blobSha(bb);
 if(ap!=="b62c970a660e0a6685b58db1ef121690daa4fce7"||bp!=="12ef0fc2df6a4f55b4db9c90c08e2d5fbcc493a4"){console.error("PIN_MISMATCH");process.exit(2);}
