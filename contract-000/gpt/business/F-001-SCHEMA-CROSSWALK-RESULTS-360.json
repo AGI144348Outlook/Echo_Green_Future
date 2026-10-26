@@ -1,0 +1,114 @@
+{
+  "schema": "F-001-REAL-CSV-TO-STAGE-CROSSWALK-v1",
+  "run": 360,
+  "project": "F-001",
+  "release": "HOLD",
+  "publication_authorized": false,
+  "scope": "structural compatibility only, not actual Python stage execution or raw SHA256 verification",
+  "source": {
+    "branch": "contract-000-gpt-run359-20261025-1900",
+    "run358_git_blobs": {
+      "a": "8ef7fa41ef0229ce9a2754737f0aa0e774fd3b7b",
+      "b": "0df0e4153cf2ae9c292dd05588485e13bfd999f3",
+      "check": "0f333dd8d9a86dff947883bd41d46a585dc83c59"
+    },
+    "shared_builder_blob": "fa3a62f76549ecaea6e226ba5cca41597000d790",
+    "pinned_builder334_blob": "e8af6e5f011ec3e827c94737c717937944924eb8",
+    "gate344_blob": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+    "consumer347_blob": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+    "coordinator351_blob": "68eea27de6e9a961f31122a08585ee6e24fed2df"
+  },
+  "actual_headers": {
+    "a": "object,measured_g,units,registry_sign,stated_deviation_pct,term,expected_g,recomputed_deviation_pct,stated_matches_recomputed",
+    "b": "ratio,mass_g,registry_sign,units,relation_to_dataset_a,expected_g_from_units,deviation_pct,ratio_over_16_equals_units"
+  },
+  "expected_headers": {
+    "a": "object,measured_g,units,registry_sign,stated_deviation_pct,term,expected_g,recomputed_deviation_pct,within_0_01_pct_points_of_recomputed,calculation_method_from_source,terminology_conflict",
+    "b": "ratio,mass_g,registry_sign,units,relation_to_dataset_a,expected_g_from_units,deviation_pct,ratio_over_16_equals_units,terminology_conflict"
+  },
+  "actual_report_keys": [
+    "base_g_per_unit",
+    "files"
+  ],
+  "builder_schema_source_observed": true,
+  "source_pin_chain_matches": true,
+  "tests": [
+    {
+      "name": "actual Run358 versus Run334 stage",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "A_HEADER_NOT_334",
+        "B_HEADER_NOT_334",
+        "SOURCE_COMMIT_NOT_ATTESTED",
+        "A_SOURCE_BLOB_NOT_ATTESTED",
+        "B_SOURCE_BLOB_NOT_ATTESTED"
+      ]
+    },
+    {
+      "name": "synthetic structural positive",
+      "pass": true,
+      "compatible": true,
+      "errors": []
+    },
+    {
+      "name": "A header corruption",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "A_HEADER_NOT_334"
+      ]
+    },
+    {
+      "name": "B header corruption",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "B_HEADER_NOT_334"
+      ]
+    },
+    {
+      "name": "source commit drift",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "SOURCE_COMMIT_NOT_ATTESTED"
+      ]
+    },
+    {
+      "name": "source A blob drift",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "A_SOURCE_BLOB_NOT_ATTESTED"
+      ]
+    },
+    {
+      "name": "source B blob drift",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "B_SOURCE_BLOB_NOT_ATTESTED"
+      ]
+    },
+    {
+      "name": "rejected A row",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "A_ROWS_OR_REJECTS_INVALID"
+      ]
+    },
+    {
+      "name": "wrong B count",
+      "pass": true,
+      "compatible": false,
+      "errors": [
+        "B_ROWS_OR_REJECTS_INVALID"
+      ]
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "stage_python_executed": false
+}
