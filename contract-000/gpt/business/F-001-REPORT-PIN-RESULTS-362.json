@@ -1,0 +1,41 @@
+{
+  "run": "362",
+  "project": "F-001",
+  "status": "HOLD",
+  "pretest": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/56#issuecomment-6407217718",
+  "posttest": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/56#issuecomment-6407235051",
+  "source": "contract-000/gpt/business/F-001-REPORT-PIN-362.js",
+  "environment": "V8 isolated functions executor; source validator evaluated from same committed string; Node CLI not run",
+  "tested_scope": "synthetic report-field consistency only",
+  "pass": 12,
+  "total": 12,
+  "expected_outcomes": [
+    "pinned:CONSISTENT_HOLD",
+    "wrong_commit:REJECT_HOLD",
+    "wrong_A_sha:REJECT_HOLD",
+    "wrong_B_sha:REJECT_HOLD",
+    "wrong_A_blob:REJECT_HOLD",
+    "wrong_B_blob:REJECT_HOLD",
+    "wrong_A_count:REJECT_HOLD",
+    "B_rejected:REJECT_HOLD",
+    "extra_field:REJECT_HOLD",
+    "missing_B:REJECT_HOLD",
+    "wrong_base:REJECT_HOLD",
+    "Run358_report:REJECT_HOLD"
+  ],
+  "source_pins": {
+    "builder": "e8af6e5f011ec3e827c94737c717937944924eb8",
+    "gate": "5d5bb8f85db7f21c50ca71625e82c51102fed088",
+    "consumer": "b2a97390ba39959cd2f86a5e51ea186348f31fb2",
+    "coordinator": "68eea27de6e9a961f31122a08585ee6e24fed2df",
+    "tam_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9"
+  },
+  "limitations": [
+    "synthetic reports only",
+    "GitHub DNS failure prevents clean TAM clone and real Python staging",
+    "JS JSON.parse does not reject duplicate keys",
+    "source SHA references from Run 358 actual-source report, not independently signed provenance",
+    "no EPUB/PDF, CI, or rights approval",
+    "no production adoption or release authorization"
+  ]
+}
