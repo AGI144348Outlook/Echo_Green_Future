@@ -1,0 +1,301 @@
+{
+  "project": "F-001 TAM Protocol ebook",
+  "status": "HOLD / NOT LAUNCH-READY",
+  "source": {
+    "repo": "AGI144348Outlook/Echo_Green_Future",
+    "branch": "contract-000-gpt-run358-20261025-1805",
+    "A_git_blob": "8ef7fa41ef0229ce9a2754737f0aa0e774fd3b7b",
+    "B_git_blob": "0df0e4153cf2ae9c292dd05588485e13bfd999f3"
+  },
+  "tests": {
+    "count": 9,
+    "passed": 9,
+    "checks": [
+      {
+        "name": "6 A rows",
+        "pass": true
+      },
+      {
+        "name": "8 B rows",
+        "pass": true
+      },
+      {
+        "name": "2 A point flags",
+        "pass": true
+      },
+      {
+        "name": "A printed claims all precision-compatible",
+        "pass": true
+      },
+      {
+        "name": "B exact ratio/unit",
+        "pass": true
+      },
+      {
+        "name": "B nearest-cent exception ratio1",
+        "pass": true
+      },
+      {
+        "name": "A absurd claim fails",
+        "pass": true
+      },
+      {
+        "name": "B changed unit fails",
+        "pass": true
+      },
+      {
+        "name": "B ratio1 counterfactual 0.86 becomes rounding-compatible",
+        "pass": true
+      }
+    ]
+  },
+  "initial_attempt": "Failed before assertions: decimal-only parser rejected Dataset B units 1/16; amendment in Issue #56 #6405229244 before corrected retry",
+  "audit": {
+    "status": "HOLD / NOT RELEASE EVIDENCE",
+    "assumptions": {
+      "base_g_per_unit": "13.7",
+      "mass_printed_precision_g": "0.01",
+      "measured_mass_interval": "printed ±0.005 g; endpoints included conservatively for rounding ties",
+      "numeric_deviation_claim": "printed percent ±0.005 percentage points",
+      "less_than_claim": "<0.01 means absolute deviation <0.01 percent",
+      "mass_accuracy_tolerance": "NONE ADOPTED"
+    },
+    "A": [
+      {
+        "object": "Ingot Slice (Heavy)",
+        "measured_g": "136.98",
+        "units": "10.0",
+        "expected_g": "137.000000",
+        "stated_deviation_pct": "-0.01",
+        "builder_point_flag": "True",
+        "point_deviation_pct": -0.014598,
+        "mass_interval_g": [
+          "136.975000",
+          "136.985000"
+        ],
+        "deviation_interval_pct": [
+          -0.018248,
+          -0.010948
+        ],
+        "claimed_band_intersects_mass_precision": true
+      },
+      {
+        "object": "Coiled Wire (Large)",
+        "measured_g": "68.52",
+        "units": "5.0",
+        "expected_g": "68.500000",
+        "stated_deviation_pct": "+0.03",
+        "builder_point_flag": "True",
+        "point_deviation_pct": 0.029197,
+        "mass_interval_g": [
+          "68.515000",
+          "68.525000"
+        ],
+        "deviation_interval_pct": [
+          0.021897,
+          0.036496
+        ],
+        "claimed_band_intersects_mass_precision": true
+      },
+      {
+        "object": "Hacksilber Scraps (x3)",
+        "measured_g": "13.71",
+        "units": "1.0",
+        "expected_g": "13.700000",
+        "stated_deviation_pct": "+0.07",
+        "builder_point_flag": "True",
+        "point_deviation_pct": 0.072992,
+        "mass_interval_g": [
+          "13.705000",
+          "13.715000"
+        ],
+        "deviation_interval_pct": [
+          0.036496,
+          0.109489
+        ],
+        "claimed_band_intersects_mass_precision": true
+      },
+      {
+        "object": "Flattened Foil",
+        "measured_g": "6.86",
+        "units": "0.5",
+        "expected_g": "6.850000",
+        "stated_deviation_pct": "+0.14",
+        "builder_point_flag": "True",
+        "point_deviation_pct": 0.145985,
+        "mass_interval_g": [
+          "6.855000",
+          "6.865000"
+        ],
+        "deviation_interval_pct": [
+          0.072992,
+          0.218978
+        ],
+        "claimed_band_intersects_mass_precision": true
+      },
+      {
+        "object": "Silver Droplet",
+        "measured_g": "3.42",
+        "units": "0.25",
+        "expected_g": "3.425000",
+        "stated_deviation_pct": "-0.03",
+        "builder_point_flag": "False",
+        "point_deviation_pct": -0.145985,
+        "mass_interval_g": [
+          "3.415000",
+          "3.425000"
+        ],
+        "deviation_interval_pct": [
+          -0.29197,
+          0
+        ],
+        "claimed_band_intersects_mass_precision": true
+      },
+      {
+        "object": "Small Scrap",
+        "measured_g": "1.71",
+        "units": "0.125",
+        "expected_g": "1.712500",
+        "stated_deviation_pct": "<0.01",
+        "builder_point_flag": "False",
+        "point_deviation_pct": -0.145985,
+        "mass_interval_g": [
+          "1.705000",
+          "1.715000"
+        ],
+        "deviation_interval_pct": [
+          -0.437956,
+          0.145985
+        ],
+        "claimed_band_intersects_mass_precision": true
+      }
+    ],
+    "B": [
+      {
+        "ratio": "1",
+        "mass_g": "0.85",
+        "units": "1/16",
+        "expected_g": "0.856250",
+        "ratio_units_exact": true,
+        "point_deviation_pct": -0.729927,
+        "expected_within_nearest_cent_interval": false,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "0.845000",
+          "0.855000"
+        ]
+      },
+      {
+        "ratio": "2",
+        "mass_g": "1.71",
+        "units": "1/8",
+        "expected_g": "1.712500",
+        "ratio_units_exact": true,
+        "point_deviation_pct": -0.145985,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "1.705000",
+          "1.715000"
+        ]
+      },
+      {
+        "ratio": "4",
+        "mass_g": "3.42",
+        "units": "1/4",
+        "expected_g": "3.425000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": -0.145985,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": true,
+        "mass_interval_g": [
+          "3.415000",
+          "3.425000"
+        ]
+      },
+      {
+        "ratio": "8",
+        "mass_g": "6.85",
+        "units": "1/2",
+        "expected_g": "6.850000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": 0,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "6.845000",
+          "6.855000"
+        ]
+      },
+      {
+        "ratio": "16",
+        "mass_g": "13.70",
+        "units": "1.00",
+        "expected_g": "13.700000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": 0,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "13.695000",
+          "13.705000"
+        ]
+      },
+      {
+        "ratio": "32",
+        "mass_g": "27.40",
+        "units": "2.00",
+        "expected_g": "27.400000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": 0,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "27.395000",
+          "27.405000"
+        ]
+      },
+      {
+        "ratio": "80",
+        "mass_g": "68.50",
+        "units": "5.00",
+        "expected_g": "68.500000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": 0,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "68.495000",
+          "68.505000"
+        ]
+      },
+      {
+        "ratio": "160",
+        "mass_g": "137.00",
+        "units": "10.0",
+        "expected_g": "137.000000",
+        "ratio_units_exact": true,
+        "point_deviation_pct": 0,
+        "expected_within_nearest_cent_interval": true,
+        "rounding_tie_boundary": false,
+        "mass_interval_g": [
+          "136.995000",
+          "137.005000"
+        ]
+      }
+    ],
+    "summary": {
+      "A_rows": 6,
+      "A_builder_false": 2,
+      "A_claim_interval_challenges": [],
+      "B_rows": 8,
+      "B_ratio_unit_failures": [],
+      "B_nearest_cent_incompatible": [
+        "1"
+      ],
+      "B_tie_boundaries": [
+        "4"
+      ]
+    }
+  }
+}
