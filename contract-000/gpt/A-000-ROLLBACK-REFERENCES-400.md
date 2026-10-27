@@ -1,0 +1,15 @@
+# A-000 — rollback and retained-reference boundary, Run400
+
+**Evidence state:** SOURCE-OBSERVED Genesis `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982989b4f3478d649430b555c8f4ba755c27`; **EXECUTION-VERIFIED** eight checks of an isolated, source-transcribed Python model, **not** full Genesis or frozen RC-R5. [Prospective test plan](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/73) published before execution. [Reproducible Python probe](a000_rollback_alias_probe_400.py).
+
+**Problem:** `ReshIdentity.anchor()` mutates the existing `A-000` dict *in place* before inserting `A-000-RESH`, then may fail when a Hebrew Lobby agent's `definition_words` is `None`. A naive recovery implementation might replace `matrix.known` with a deep-copied prior map. That restores the map's visible contents, but what about an existing consumer holding the old `A-000` dict reference?
+
+**Hypothesis:** Simple replacement of `matrix.known` after failure leaves the old reference modified and detached; restoring the original `A-000` dict **in place** repairs this particular reference. Neither method, alone, establishes independent identity authority or durable failure provenance.
+
+**Method:** In an isolated Python 3 process, transcribe the relevant write ordering from Genesis and inject a Lobby `resh` agent with `definition_words=None`. Save a separate external reference to the original `A-000` dict, provoke `TypeError`, then compare no rollback, replacement rollback and in-place rollback. Execute `python -I -B a000_rollback_alias_probe_400.py`. No real Governor process or shared source was modified.
+
+**Observations — 8/8 checks passed:** the original-order reproduction raises `TypeError` and leaves partial matrix writes; replacement rollback restores the matrix map but the retained external dict still contains `identity_symbol='resh'` and is no longer the map's dict; in-place rollback restores the map and that retained A-000 reference. All checks were assertions on this isolated model, not integration tests.
+
+**Interpretation:** RC-R5(14), if Timothy authorizes it, needs to specify what counts as a transaction boundary: A-000 record, Resh alias, Lobby words, *all preexisting references*, and an attributable failure witness. Replacing a dictionary is not sufficient if other agents hold pointers. The demonstrated in-place repair covers only one A-000 reference; it does **not** solve alias references, concurrency, rollback durability, issuer custody, or failed-attempt retention. An immutable outside witness remains a proposed governance requirement, not an observed implementation.
+
+**Challenge / limitations:** The full 440 KB Genesis module was read through the GitHub connector but not executed. Source-transcribed `A-000-RESH` includes only fields relevant to the failure, not the complete original record. The tested Lobby has a synthetic invalid value. Real call-path construction, concurrent readers and recovery remain unverified. No production patch, frozen test, main/shared write or identity authority decision.
