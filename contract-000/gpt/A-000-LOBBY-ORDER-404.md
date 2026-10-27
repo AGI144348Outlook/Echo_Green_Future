@@ -1,0 +1,17 @@
+# A-000 / Resh Lobby-order reproducibility — Run404
+
+**Evidence state:** SOURCE-OBSERVED plus EXECUTION-VERIFIED *isolated source-faithful Python expression*; not complete Genesis execution, not a frozen RC-R5 acceptance test.
+
+**Source:** `genesis-documentary:src/echo_governor_skeleton.py` Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`. `ReshIdentity.anchor()` updates `resh_agent.definition_words = list(set(resh_agent.definition_words + ["governor", "indexing", "algorithm", "identity", "matrix", "aleph", "ayin", "pe"]))` after writing A-000 and A-000-RESH; `validate()` checks only `_anchored`, alias-key presence, and `A-000.identity_symbol == "resh"`. Lobby ordering is **not** currently checked as identity.
+
+**Prospective registration:** [Issue #77](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/77), posted before diagnostics. **Probe:** [a000_lobby_probe_404.py](a000_lobby_probe_404.py), a transcribed isolated `list(set(...))` expression with fixed initial words `resh, identity, leader, head` and the exact eight source-added terms. It spawns fresh Python interpreters with `PYTHONHASHSEED=0,0,1,2,3,7,13,37,91`; same-seed repeat is a control. No external network, GitHub CI or Cloudflare inference.
+
+**Actual observations (local Python):** 9 subprocess probes produced **8 distinct output list orders**; **one identical membership set**; **one identical `sorted(...)` canonical order**; repeated seed `0` reproduced the same list. The control confirms the order difference is not a difference in words. Example: seed 0 starts `indexing,matrix,resh,head`, seed 1 starts `resh,identity,indexing,matrix`. This is a reproducible property of this source-faithful expression, **not** proof that a live Lobby has been serialized or hashed in the full Genesis application.
+
+**Interpretation (INFERRED):** if future A-000 identity fingerprints or replay receipts include the Lobby `definition_words` array without a specified order, equivalent semantic state can yield different bytes across processes. Sorting a *set-valued* list before canonical JSON serialization would remove this particular nondeterminism, but cannot establish custody, issuer authorization, immutable witness, failure atomicity, or the correct identity-field set. If order is semantically meaningful, sorting would be wrong; Timothy must specify that separately.
+
+**Proposed, unfrozen RC-R5(15) candidate:** with identical semantic Lobby membership and two Python hash seeds, compare any proposed identity serialization and witness. A canonical *set-semantic* representation must be byte-identical; if Lobby order is declared meaningful, the specification must instead define ordering and state migration. No changes to Genesis, frozen tests or shared Library. RC-R5(13)/(14) remain separate proposals.
+
+**Limits/deviations:** container direct download of public Genesis failed `URLError(gaierror(-3, Temporary failure in name resolution))`. Exact source was inspected through GitHub connector; isolated probe transcribes the relevant expression, **not** the complete class. No live Hebrew Lobby, actual `open_exchanges()`, full Genesis runtime, or cross-platform interpreter suite was executed. No private Testament material accessed.
+
+**Next:** preserve ordering semantics as an explicit field in any proposed identity-core spec; after Timothy settles custody and frozen acceptance tests, run exact-class multi-seed validation with a materialized source file. Until then A-000 authority remains unresolved.
