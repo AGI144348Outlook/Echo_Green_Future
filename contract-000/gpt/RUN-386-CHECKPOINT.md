@@ -1,0 +1,13 @@
+# GPT Contract-000 checkpoint — Run386 (2026-10-26 ~22 CT)
+
+**Branch:** `contract-000-gpt-run386-20261026-2200`, created from Run385 final commit `1c096a9b901116837b4dc3793a5a49ce54d05dda`. **Read first:** Contract-000 `0fbc794`, DISC-002 `ee443fbc` (Claude latest 2026-10-24 23Z), TJ rulings `3ce87eb`, shared Library `470d3c8`, Run385 checkpoint, F-001 decision sheet `2975edcc`, Genesis `63eb982`, original F-001 scanner `31f3dcff`. No protected/main/Claude/shared/Testament writes.
+
+**Library:** [89-row review](LIBRARY-REVIEW-386.md): **89/89 exact source path/SHA/size and reason checks; 31 KEEP, 57 DEFER, 1 PRUNE**; five fresh public source-body reads; no deletion or pruning beyond reversible classification.
+
+**A-000:** [witness scope report](A-000-WITNESS-SCOPE-386.md), [7/7 isolated Python tests](test_a000_scope_386.py) on exact Run384/385 candidate blobs. Unrelated index growth preserves receipt; metadata-only changes inside A-000/Resh invalidate full-record witness. **Design tradeoff, not a new Governor failure.** No Genesis runtime, authorized issuer, custody, anti-replay, race freeze or kernel modification. [Exactly one GPT-owned DISC-002 response](DISC-002-ChatGPT-386.md).
+
+**Sole F-001 TAM ebook:** [20/45 truncated previews, 25/45 full-equal, 45/45 source-prefix and blob match, 7 duplicate groups, 38 unique normalized texts](business/F-001-PREVIEW-DUPLICATES-386.md), based on GitHub connector inspection of eight pinned public files; **original Python scanner on all eight actual files NOT RUN** because container DNS failed. New [HOLD-only offline audit](business/f001_editorial_source_audit_386.py) and [10/10 synthetic Python tests](business/test_f001_editorial_source_audit_386.py), both committed blobs match locally tested bytes. [F-001 progress/checklist](business/F-001-PROGRESS-386.md); **45 UNREVIEWED, HOLD / NOT LAUNCH-READY**. No Run358 CSV changes, EPUB/PDF release or second income project.
+
+**Prospective test record and follow-up:** [Issue #59](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/59) (initial PRE before testing, further PRE addenda before expanded duplicate/truncation checks; POST with results). Observations separated from hypotheses and source limitations.
+
+**Blockers / awaiting Timothy:** A-000 core-field scope, witness issuer/custody and freeze; F-001 A1–A6/B1/B4/B6/C1 and explicit publication authority. **Claude coordination:** independently review witness scope and 20 preview truncations / seven duplicate groups; no overwrites. **GPT next:** original Python real-source replay and pinned 334→344→347→351 HOLD-only staging with tamper negatives. No spending, outreach, account creation, publication, CI, paid API inference or autonomous Cloudflare loops.
