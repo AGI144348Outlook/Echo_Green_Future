@@ -1,0 +1,21 @@
+# F-001 TAM ebook — source-bound P1 reviewer packet, Run399
+
+**Project ID:** F-001 (same sole income project). **Release:** HOLD / NOT LAUNCH-READY. [Prospective PRE test registration, Issue #72](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/72). This work does not establish claim truth, editorial approval, copyright permission, storefront readiness, or publication authorization.
+
+**Read-first pins:** previous [Run398 checkpoint](../RUN-398-CHECKPOINT.md); [45-card full-sentence queue](F-001-FULL-SENTENCE-QUEUE-388.json) blob `06530d6729c3af39feebce9a6999650270008bf5`; [18 P1 editorial proposals](F-001-P1-EDITORIAL-PROPOSALS-393.json) blob `5a4af09820c5842616cb26a3eefe3612195633d8`; source TAM repository `AGI144348Outlook/The-TAM-protocol` commit `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9`.
+
+**New durable artifacts:** [HOLD-only, pure-core/optional Node CLI reviewer-packet generator](f001_p1_reviewer_packet_399.js) (final blob `ce68fbbb287ba71f25146febd92bff06e4cb4698`); [generated human-review packet](F-001-P1-REVIEW-PACKET-399.json) (blob `a999d151a212369d52d0070397b9fea13e39a129`). The packet has 18 unique P1 records, each with exact source tuple, original sentence and context, related duplicate occurrences, proposed action, suggested wording **explicitly not approved**, evidence requirements and empty human reviewer/rights fields. Every record and the envelope explicitly retain HOLD. No editorial status was advanced.
+
+## Method and results
+
+Source and proposal files were read through the GitHub connector. The committed JavaScript core was loaded in an isolated V8 evaluator and called with the exact parsed source JSON. It checked 45 queue IDs, 18 P1 records, Git source SHA/commit, sentence ordinals, full text, duplicate links, unreviewed state and prohibited approval/release flags. Synthetic negative fixtures were made by changing **one** field at a time; original source files remained unchanged. The generated packet was then committed, fetched again, and compared structurally to the independent re-generation.
+
+**First test pass:** 13/14 expected outcomes. A deliberately nonreciprocal duplicate link in a **P2** queue card was accepted, because the first validator checked reciprocal duplicate links only while visiting P1 proposals. This contradicted the hypothesis that the *entire* 45-card duplicate graph was guarded. The defect was not suppressed.
+
+**Correction:** added a full 45-card reciprocal-link/self-link/duplicate-link graph check to the same GPT-owned generator; no source queue or Claude file changed.
+
+**Final committed-source test pass:** **15/15 expected** (1 actual pinned-source positive; 14 tamper negatives: source blob, full sentence, ordinal, file, missing proposal, duplicate proposal, forged approval, release flag, proposal duplicate link, nonreciprocal P2 duplicate link, P1 priority drift, source commit drift, prefilled reviewer, self-link). The final 18-item packet matched fresh re-generation **exactly** after re-fetching the committed blob; 18 unique IDs, 8 P1-to-duplicate references, 0 reviewed, no release flags. Note that the full queue has 14 cards with at least one duplicate link; the packet contains only 18 P1 cards.
+
+**Limitations:** V8 pure-function tests, **not** actual Node CLI execution, Android/browser usability, primary-source truth review, rights determination, final EPUB/PDF validation or the original eight-source Python scanner. The code validates against the two pinned Git source blobs when they are supplied; the CLI does not itself fetch or cryptographically authenticate arbitrary local file bytes against those Git SHAs. Human reviewers must inspect the primary sources and independently decide each occurrence. All 45 editorial cards remain UNREVIEWED.
+
+**Next:** Claude independently review 18 P1 primary evidence/rights/duplicate treatments and return attributable findings in Claude-owned files; GPT execute original Python scanner against all eight source-pinned TAM texts and verify complete 334→344→347→351 HOLD-only coordinator staging when materialization is available; Timothy retains editorial, rights and publication decisions. No new project, account, outreach, spending, payment, publication or paid inference.
