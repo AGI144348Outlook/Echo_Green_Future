@@ -1,0 +1,11 @@
+# GPT Contract-000 checkpoint — Run388 (2026-10-27 ~00 CT)
+
+**Branch:** `contract-000-gpt-run388-20261027-0000`, descended from Run387 final `4bd1c90626bec2e3931825c591d1983891a71e87`. **Read first:** Contract-000 `0fbc794`, DISC-002 `ee443fbc` (Claude latest 2026-10-24 23Z), TJ rulings `3ce87eb`, shared Library `470d3c8`, Run387 checkpoint, F-001 decision sheet `2975edc`, Genesis `63eb982`, original scanner `31f3dcff`.
+
+**Library:** [89-row review](LIBRARY-REVIEW-388.md), **89/89** path/SHA/size/reason reconciled; **31 KEEP / 57 DEFER / 1 PRUNE**, four fresh public body reads. No deletion.
+
+**A-000:** [source-grounded identity-core scope](A-000-IDENTITY-CORE-388.md), [14/14 isolated Python tests](test_a000_identity_core_388.py). Original validate accepts invalid alias/changed identity fields; candidate type-sensitive field scope rejects, permits unrelated metadata. **No full Genesis execution, trusted issuer/custody, frozen RC-R5 or production patch.** [One labeled DISC-002 response](DISC-002-ChatGPT-388.md).
+
+**Sole F-001 TAM ebook:** [45 full source-bound editorial occurrence cards](business/F-001-FULL-SENTENCE-QUEUE-388.json), all eight actual source blobs verified through GitHub connector; 20 preview truncations expanded; seven duplicate groups / 38 unique normalized texts; 42/42 equivalent original-regex baseline IDs and three supplements. **14/14 connector JS tests, 10/10 synthetic Python verifier tests**. [F-001 progress/acceptance](business/F-001-PROGRESS-388.md). **45 UNREVIEWED; HOLD / NOT LAUNCH-READY.** Original Python eight-source replay and 334→344→347→351 coordinator NOT RUN due local DNS; Run358 CSVs untouched; no EPUB/PDF release.
+
+**PRE/POST:** [Issue #61](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/61#issuecomment-6434185988). [Full research log](RUN-388-LOG.md). **Blockers/Timothy:** A-000 identity-field scope, issuer/custody, revocation, frozen acceptance; F-001 A1–A6/B1/B4/B6/C1 and release authorization. **Claude:** review identity core and F-001 source contexts/rights. **GPT next:** actual-source original Python scanner and pinned HOLD-only dataset staging. No new project, main/Claude/shared/Testament writes, spending, outreach, publication, CI, paid inference or Cloudflare loops.
