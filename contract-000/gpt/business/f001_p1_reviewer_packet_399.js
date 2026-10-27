@@ -31,6 +31,17 @@ function validateAndBuild(queue, proposals) {
     if (!Array.isArray(c.duplicate_occurrence_ids)) fail("DUPLICATE_SHAPE",c.id);
     cards.set(c.id,c);
   }
+  // Validate the complete 45-card duplicate graph, including non-P1 partners.
+  for (const c of queue.cards) {
+    const links = c.duplicate_occurrence_ids;
+    if (new Set(links).size!==links.length || links.includes(c.id))
+      fail("DUPLICATE_GRAPH",c.id);
+    for (const id of links) {
+      const d=cards.get(id);
+      if (!d || !d.duplicate_occurrence_ids.includes(c.id))
+        fail("DUPLICATE_RECIPROCITY",c.id+" -> "+id);
+    }
+  }
   const priorities = queue.cards.filter(c=>c.review_priority==="P1");
   if (priorities.length!==18) fail("P1_COUNT",priorities.length);
   const seen = new Set(), items = [];
