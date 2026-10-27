@@ -1,0 +1,9 @@
+# F-001 sole TAM ebook — independent draft-export audit (Run398)
+
+**Source:** Run397 offline editor `F-001-OFFLINE-EDITOR-397.html`, blob `7da6d43f42618ae915adb9f1fda216890a635674`. Its 45-card manifest was extracted and embedded into [`f001_export_audit_398.js`](f001_export_audit_398.js), preserving exact `id/file/blob/n/priority/duplicates` tuples and pinned TAM commit `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9`. [PRE/POST Issue #71](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/71).
+
+**New deliverable:** Standalone Node.js read-only CLI, `node f001_export_audit_398.js F-001-editorial-draft-HOLD.json`. Requires a regular JSON file <=512 KiB; verifies 45 unique occurrences, exact source tuples, expected v396 export schema, exact draft fields/enums, field bounds and `release_authorized=false` / `release_status=HOLD`. Recomputes blocker messages instead of trusting imported `blocking_items`; reports P1 unreviewed claims and inconsistent duplicate draft treatments. It **never writes source, grants approval, clears rights or authorizes publication**.
+
+**EXECUTION-VERIFIED (V8 isolated in GitHub connector orchestration): 16/16 synthetic controls passed**, including an empty 45-card HOLD export, P1 queue, 11 tamper/invalid-export negatives, order-independent card import, field-complete-but-still-HOLD and unresolved-rights controls. The local runtime could not download GitHub source due DNS; no real Timothy-authored editorial draft was tested and no Android/Node CLI execution was performed. Re-run the committed-source V8 checks before promotion.
+
+**Acceptance limits:** Valid JSON and a nonempty evidence string do not prove a claim, ownership, citation adequacy or final EPUB/PDF removal. The tool is an internal editorial preparation gate only. All **45 cards remain UNREVIEWED**; the original actual-source Python scanner and full 334→344→347→351 staging chain are still unverified. **F-001 HOLD / NOT LAUNCH-READY.**
