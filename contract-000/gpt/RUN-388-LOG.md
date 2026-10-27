@@ -1,0 +1,17 @@
+# GPT Contract-000 Run388 — independent development log (2026-10-27 ~00 CT)
+
+**Start:** Run387 final verified commit `4bd1c90626bec2e3931825c591d1983891a71e87`; created non-main branch `contract-000-gpt-run388-20261027-0000` directly from it. Read first: Contract-000 `0fbc794`, DISC-002 `ee443fbc` (Claude latest 2026-10-24 23Z), TJ rulings `3ce87eb`, shared Library tree `470d3c8`, Run387 checkpoint `4bd1c906`, 89-row Library ledger `811bb81`, F-001 decision `2975edc` and prior progress `9413c69`, Genesis `63eb982`, original scanner `31f3dcff`, Run383 45-card queue `3346ad7` and Issue #13 coordination. No private Testament read.
+
+**PRE-TEST:** [Issue #61](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/61) created before any tests. **POST-TEST:** [same issue](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/61#issuecomment-6434185988), with observations, negatives, deviations, evidence and limitations.
+
+**A — Library-first:** 89/89 exact shared path/blob/size matches, 89 unique and no blank reasons; **31 KEEP, 57 DEFER, 1 PRUNE**. Four additional public body reads verified by Git SHA. [Full reversible ledger](LIBRARY-REVIEW-388.md). No deletion.
+
+**B — A-000:** pinned Genesis `ReshIdentity` source inspected. [Identity-core analysis](A-000-IDENTITY-CORE-388.md), [candidate](a000_identity_core_388.py), [14/14 isolated Python tests](test_a000_identity_core_388.py), committed blobs match locally tested bytes. Source predicate accepts invalid alias and changed identity fields; proposed type-sensitive core check rejects them but is NOT an authority/witness. [Exactly one labeled DISC-002 response](DISC-002-ChatGPT-388.md). No full Genesis runtime, race freeze or Governor patch.
+
+**C — same F-001 TAM ebook:** fetched eight actual public pinned source files through GitHub connector, verified blob identities, [full-text 45-card occurrence queue](business/F-001-FULL-SENTENCE-QUEUE-388.json) with all source sentences and adjacent context; 20 truncated previews expanded, seven duplicate groups, 38 unique normalized texts, 42/42 regex-equivalent baseline IDs and three supplemental cards. [Editorial report](business/F-001-FULL-SENTENCE-REVIEW-388.md), [single-project progress](business/F-001-PROGRESS-388.md). Connector-side JS **14/14** controls; [Python gate](business/f001_full_sentence_verify_388.py) with [10/10 synthetic tests](business/test_f001_full_sentence_verify_388.py); committed code/test blobs match local tested bytes. **All 45 UNREVIEWED, HOLD / NOT LAUNCH-READY.** Original Python eight-real-source scanner and full 334→344→347→351 coordinator NOT RUN; Run358 CSVs unchanged.
+
+**Deviations:** connector JS `TextEncoder` logging error corrected by rerunning source reads; local GitHub raw download failed DNS, preventing actual-source local Python execution. Connector-side regex translation is not original Python execution. No rights, factual accuracy, EPUB/PDF release or store approval inferred.
+
+**Coordination:** Claude to independently review A-000 protected field scope/issuer and F-001 four P1 duplicate pairs, Article6#S29, Article4/Gerah and rights; no overwrites. **Awaiting Timothy:** A-000 custodian/freeze/re-anchor and F-001 A1–A6/B1/B4/B6/C1 and explicit publication approval. **Next GPT:** exact source transfer, original Python scanner replay, HOLD-only pinned dataset chain with positive/tamper negatives.
+
+No main/Claude/shared/Testament changes, account, outreach, spending, publication, payments, CI, paid inference or autonomous Cloudflare loops.
