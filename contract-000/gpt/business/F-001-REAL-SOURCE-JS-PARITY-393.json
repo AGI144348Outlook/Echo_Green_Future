@@ -1,0 +1,392 @@
+{
+  "project": "F-001",
+  "run": 393,
+  "status": "HOLD / NOT LAUNCH-READY",
+  "method": "Connector fetched exact GitHub source blobs; JavaScript translation of claim_scan.py regex, sentence splitting and triggers. Original Python scanner was NOT executed on eight real sources.",
+  "pre_test_issue": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/66",
+  "scanner_source_blob": "31f3dcff486c4c8cc96d514eb425da86834d00c3",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "source_pins": [
+    {
+      "file": "README.md",
+      "git_blob_sha": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+      "pinned_sha": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+      "pin_matches": true
+    },
+    {
+      "file": "Article 1 Hacksilber",
+      "git_blob_sha": "237bd3335abdcc0f0465817dffe01ad6eaa86055",
+      "pinned_sha": "237bd3335abdcc0f0465817dffe01ad6eaa86055",
+      "pin_matches": true
+    },
+    {
+      "file": "Article 2 Water Weight Computes",
+      "git_blob_sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c",
+      "pinned_sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c",
+      "pin_matches": true
+    },
+    {
+      "file": "The Color Dyed and Dental Records",
+      "git_blob_sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d",
+      "pinned_sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d",
+      "pin_matches": true
+    },
+    {
+      "file": "Article 5",
+      "git_blob_sha": "c8c1bf617c0d81389f6c2408ed975131695857ff",
+      "pinned_sha": "c8c1bf617c0d81389f6c2408ed975131695857ff",
+      "pin_matches": true
+    },
+    {
+      "file": "Article 6",
+      "git_blob_sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0",
+      "pinned_sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0",
+      "pin_matches": true
+    },
+    {
+      "file": "Article 10",
+      "git_blob_sha": "e82be564872f636662652d34dcb8d3437559f84f",
+      "pinned_sha": "e82be564872f636662652d34dcb8d3437559f84f",
+      "pin_matches": true
+    },
+    {
+      "file": "Collective information",
+      "git_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+      "pinned_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+      "pin_matches": true
+    }
+  ],
+  "counts": {
+    "baseline": 42,
+    "per_file": {
+      "README.md": 1,
+      "Article 1 Hacksilber": 2,
+      "Article 2 Water Weight Computes": 3,
+      "The Color Dyed and Dental Records": 3,
+      "Article 5": 3,
+      "Article 6": 3,
+      "Article 10": 4,
+      "Collective information": 23
+    },
+    "per_trigger": {
+      "certainty": 12,
+      "percent": 2,
+      "accuracy": 13,
+      "superlative": 20
+    },
+    "supplemental": 3,
+    "all_unreviewed": true
+  },
+  "parity": {
+    "positive_exact_baseline": true,
+    "source_pin_positive": true,
+    "tampered_sentence_rejected": true,
+    "dropped_candidate_rejected": true,
+    "swapped_trigger_rejected": true,
+    "altered_source_pin_rejected": true,
+    "unexpected_candidate_rejected": true,
+    "no_fetch_errors": true
+  },
+  "errors": [],
+  "baseline_rows": [
+    {
+      "id": "README.md#S24",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "213bcfaf560dcc54fbb7ae79fad932e86b660357"
+    },
+    {
+      "id": "Article 1 Hacksilber#S9",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "237bd3335abdcc0f0465817dffe01ad6eaa86055"
+    },
+    {
+      "id": "Article 1 Hacksilber#S18",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "237bd3335abdcc0f0465817dffe01ad6eaa86055"
+    },
+    {
+      "id": "Article 2 Water Weight Computes#S5",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c"
+    },
+    {
+      "id": "Article 2 Water Weight Computes#S18",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c"
+    },
+    {
+      "id": "Article 2 Water Weight Computes#S24",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c"
+    },
+    {
+      "id": "The Color Dyed and Dental Records#S23",
+      "triggers": [
+        "certainty",
+        "superlative"
+      ],
+      "source_blob_sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d"
+    },
+    {
+      "id": "The Color Dyed and Dental Records#S33",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d"
+    },
+    {
+      "id": "The Color Dyed and Dental Records#S37",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d"
+    },
+    {
+      "id": "Article 5#S7",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "c8c1bf617c0d81389f6c2408ed975131695857ff"
+    },
+    {
+      "id": "Article 5#S8",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "c8c1bf617c0d81389f6c2408ed975131695857ff"
+    },
+    {
+      "id": "Article 5#S22",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "c8c1bf617c0d81389f6c2408ed975131695857ff"
+    },
+    {
+      "id": "Article 6#S4",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0"
+    },
+    {
+      "id": "Article 6#S23",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0"
+    },
+    {
+      "id": "Article 6#S29",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "662d745f0b9b41236d1053cdbaa9351f7c020dd0"
+    },
+    {
+      "id": "Article 10#S3",
+      "triggers": [
+        "certainty",
+        "accuracy"
+      ],
+      "source_blob_sha": "e82be564872f636662652d34dcb8d3437559f84f"
+    },
+    {
+      "id": "Article 10#S4",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "e82be564872f636662652d34dcb8d3437559f84f"
+    },
+    {
+      "id": "Article 10#S5",
+      "triggers": [
+        "percent",
+        "accuracy"
+      ],
+      "source_blob_sha": "e82be564872f636662652d34dcb8d3437559f84f"
+    },
+    {
+      "id": "Article 10#S8",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "e82be564872f636662652d34dcb8d3437559f84f"
+    },
+    {
+      "id": "Collective information#S26",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S27",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S39",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S55",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S57",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S68",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S69",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S97",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S100",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S110",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S128",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S147",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S149",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S153",
+      "triggers": [
+        "accuracy"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S172",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S178",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S230",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S236",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S271",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S293",
+      "triggers": [
+        "certainty",
+        "accuracy"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S294",
+      "triggers": [
+        "certainty"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S295",
+      "triggers": [
+        "percent",
+        "accuracy"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    },
+    {
+      "id": "Collective information#S298",
+      "triggers": [
+        "superlative"
+      ],
+      "source_blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+    }
+  ]
+}
