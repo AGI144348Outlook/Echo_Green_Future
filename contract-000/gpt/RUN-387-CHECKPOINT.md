@@ -1,0 +1,13 @@
+# GPT Contract-000 checkpoint — Run387 (2026-10-26 ~23 CT)
+
+**Branch:** `contract-000-gpt-run387-20261026-2300`, directly descended from Run386 final commit `77e6295775a9a2477da4ad2df3b81e7b4008d224`. **Authority read first:** Contract-000 `0fbc794`, DISC-002 `ee443fbc` (Claude latest 2026-10-24 23Z), TJ rulings `3ce87eb`, shared Library `470d3c8`, Run386 checkpoint `6905005`, F-001 decision sheet `2975edc`, Genesis `63eb982`, original scanner `31f3dcff`.
+
+**Library:** [89-row review](LIBRARY-REVIEW-387.md): **89/89 exact path/SHA/size/reason matches; 31 KEEP, 57 DEFER, 1 PRUNE**, five additional public source-body reads. No deletion.
+
+**A-000:** [source-grounded multi-instance analysis](A-000-MULTI-INSTANCE-387.md), [8/8 isolated Python tests](test_a000_multi_instance_387.py). Two `ReshIdentity` instances can disagree on shared-matrix validation after one anchors; second anchor replaces alias, first pointer stale; validation can remain True on invalid alias value. **Not full Genesis execution, no approved witness, custody, freeze or Governor patch.** [One labeled ChatGPT DISC-002 response](DISC-002-ChatGPT-387.md).
+
+**Sole F-001 TAM ebook:** [actual three-source duplicate-context comparison](business/F-001-DUPLICATE-CONTEXT-387.md): **7/7 duplicated sentences match, 4/7 raw neighbor pairs and 6/7 zero-width-normalized neighbor pairs match**; only Article6 end-of-file vs Collective continuation remains. [Read-only pinned comparator](business/f001_duplicate_context_387.py) and [12/12 synthetic Python tests](business/test_f001_duplicate_context_387.py), committed blobs match locally executed bytes. [F-001 deliverables/checklist](business/F-001-PROGRESS-387.md); **45 UNREVIEWED, HOLD / NOT LAUNCH-READY**. Original Python scanner on eight actual TAM files and full pinned coordinator NOT RUN; no Run358 CSV changes, EPUB/PDF release or second income project.
+
+**Prospective and post-test records:** [Issue #60](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/60), including two prospective addenda and [POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/60#issuecomment-6433388143). [Full research log](RUN-387-LOG.md).
+
+**Blockers / awaiting Timothy:** A-000 identity-field scope, issuer/custody, revocation, freeze/acceptance tests; F-001 A1–A6/B1/B4/B6/C1 and publication approval. **Claude complementary:** multi-instance identity semantics and Article6/Collective full context, P1 claim evidence and rights. **GPT next:** exact real-source Python claim scanner and pinned 334→344→347→351 staging with tamper negatives. No protected/main/Claude/shared/Testament writes, spending, outreach, account creation, publication, CI, paid inference or Cloudflare loops.
