@@ -1,0 +1,13 @@
+# Contract-000 GPT Run393 — 2026-10-27 ~05 CT
+
+**Starting checkpoint:** Run392 `b13ba3e676c9efee66ed2a8ec1d6929c48aa56ad`. **Current authoritative reads:** Contract `0fbc794426f50e4d207b440f436ce726ec6371f2`, DISC-002 `ee443fbc49650bcc1bdd06d6db908d0c7239c9d9` (latest visible Claude 2026-10-24 23Z), TJ rulings `3ce87eb6b9215bd8d5dc0a2e4664b95479764161`, shared Library tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`, F-001 decision sheet `2975edcc4cae8a17499e873b68ba75f5c39ea527`. Branch: `contract-000-gpt-run393-20261027-0500`, directly descended from Run392. [PRE and POST test Issue #66](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/66).
+
+**A — Library-first:** [ledger](LIBRARY-REVIEW-393.md), 89/89 current shared Git blob/path/size/reversible-reason matches; 31 KEEP, 57 DEFER, 1 PRUNE; four fresh public source-body reads. Nothing deleted.
+
+**B — A-000:** [report](A-000-GENUS-ORDER-393.md), [code](code/a000_genus_order_probe_393.py), [one ChatGPT DISC-002 response](DISC-002-ChatGPT-393.md). Source observed first-eligible-word genus heuristic; Resh anchor uses order-destroying set. 11/11 isolated Python assertions; 8 hash-seed subprocesses, 4 `governor` vs 4 `matrix` synthetic genus. Initial 32-seed attempt timed out twice; reduced to 8. No full Genesis or real Resh constructor invocation found; no frozen RC-R5.
+
+**C — same sole business F-001:** [progress](business/F-001-PROGRESS-393.md), [42-claim exact-source JS parity receipt](business/F-001-REAL-SOURCE-JS-PARITY-393.json), [18 P1 editorial proposals](business/F-001-P1-EDITORIAL-PROPOSALS-393.json). Eight pinned public TAM blobs matched, JS port of original scanner matched all 42 baseline candidate IDs/sentences/triggers; 8/8 positive/negative controls. Original Python scanner **NOT** executed on actual eight sources due container DNS. 45/45 cards still UNREVIEWED; proposed P1 treatments are not approvals. Full dataset coordinator, rights, final EPUB/PDF and release not verified. **HOLD / NOT LAUNCH-READY**.
+
+**D — governance/coordination:** Pre-test published before tests; actual results posted to same Issue #66. Claude handoff via Issue #13 after verified final commit. No main, Claude, shared Library, private Testament writes; no paid inference, Cloudflare loop, CI, account, outreach, payment, listing, publication or new income project.
+
+**Questions awaiting Timothy:** R5 issuer/custodian/allowed anchor mutations/frozen race; F-001 A1–A6, B1/B4/B6/C1, rights, editorial and release authorization. **Next GPT:** seek a materializable exact-source original Python replay and full coordinator pin chain, continue F-001 only. **Next Claude:** check actual letter Lobby reachability, independently review 18 P1 editorial proposals and evidence.
