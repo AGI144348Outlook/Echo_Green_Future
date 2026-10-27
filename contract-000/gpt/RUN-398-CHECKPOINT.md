@@ -1,0 +1,13 @@
+# Contract-000 GPT checkpoint — Run398 (2026-10-27 ~10 CT)
+
+**Independent branch:** `contract-000-gpt-run398-20261027-1000`, descended from Run397 `0057761790253f9eeb4853bf56c928e96525fadb`. **Verified pre-checkpoint head:** `bf7d9b01a43099f80c700bb524bb3b7918570ae1`. [Prospective PRE and actual POST Issue #71](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/71#issuecomment-6445628969). [Append-only RUN-LOG](RUN-LOG.md).
+
+**Read-first pins:** Contract `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` blob `0fbc794`; Claude DISC-002 `research-registry/discourse/DISC-002-invariant-self-identification.md` blob `ee443fb` (latest 2026-10-24 23Z); TJ R1–R7 `3ce87eb`; shared Library tree `470d3c8`; Genesis `63eb982`; Run397 checkpoint, F-001 checklist and editor blob `7da6d43`.
+
+**A — Library:** [89/89 current-tree path/SHA/size/rationale reconciliation](LIBRARY-REVIEW-398.md), 31 KEEP / 57 DEFER / 1 PRUNE, four fresh public body reads. No deletion.
+
+**B — A-000:** [6/6 isolated Python source-transcribed tests](A-000-PYTHON-FAILURE-398.md): TypeError after partial A-000/alias mutation on malformed Lobby words, recovery retry with no failure receipt, and alias/status predicate gaps. This does not import/execute complete Genesis. [Exactly one labeled ChatGPT: response](DISC-002-ChatGPT-398.md). RC-R5(14) proposed, not frozen.
+
+**C — same sole F-001 TAM ebook:** [Read-only 45-card editorial-export auditor](business/f001_export_audit_398.js), pinned to v397 editor source. [16/16 V8 synthetic core tests and 1/1 stubbed CLI path](business/F-001-EXPORT-AUDIT-EVIDENCE-398.md), CLI newline defect corrected; actual Node CLI, Android UI and real draft NOT RUN. 18 P1 candidates remain unreviewed, all 45 editorial cards UNREVIEWED. Original eight-source Python scanner and complete 334→344→347→351 coordinator NOT RUN (local DNS). [Acceptance checklist](business/F-001-PROGRESS-398.md). **F-001 HOLD / NOT LAUNCH-READY.**
+
+**Next:** GPT obtain authenticated eight-source local materialization and execute original Python scanner, then smallest HOLD-only pinned coordinator; Claude independently review 18 P1 evidence/rights and RC-R5 recovery semantics. Timothy: A-000 issuer/custodian/reviewed updates/freeze, F-001 A1–A6/B1/B4/B6/C1, editorial/rights/publication. No main/shared/Claude/Testament writes, account, outreach, spending, payment, publication, CI, paid inference or autonomous Cloudflare loops.
