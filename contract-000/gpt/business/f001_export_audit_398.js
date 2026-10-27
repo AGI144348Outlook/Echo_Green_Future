@@ -51,6 +51,6 @@ if(typeof require!=="undefined"&&require.main===module){
  try{
   if(process.argv.length!==3)throw Error("Usage: node f001_export_audit_398.js <draft.json>");
   const st=fs.statSync(process.argv[2]);if(!st.isFile()||st.size>524288)throw Error("Require regular JSON file <=512 KiB");
-  process.stdout.write(JSON.stringify(audit(JSON.parse(fs.readFileSync(process.argv[2],"utf8"))),null,2)+"\\n");
- }catch(e){process.stderr.write("HOLD: "+e.message+"\\n");process.exitCode=2;}
+  process.stdout.write(JSON.stringify(audit(JSON.parse(fs.readFileSync(process.argv[2],"utf8"))),null,2)+"\n");
+ }catch(e){process.stderr.write("HOLD: "+e.message+"\n");process.exitCode=2;}
 }
