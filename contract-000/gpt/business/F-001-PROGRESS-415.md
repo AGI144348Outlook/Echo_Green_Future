@@ -1,0 +1,18 @@
+# F-001 — same sole TAM Protocol ebook, Run415 checklist
+
+**Project identifier:** F-001 (unchanged since prior runs). **Status:** HOLD / NOT LAUNCH-READY. **Read first:** [shared decision sheet](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/library-shared/Business/ideas/F-001-decision-sheet.md) blob `2975edc`, [Run414 progress](F-001-PROGRESS-414.md), [shared Business/Workshop](https://github.com/AGI144348Outlook/Echo_Green_Future/tree/library-shared/Business). No other income pipeline opened. GPT owns provenance/packaging checks; Claude independently handles historical/scientific evidence, rights and listing language; Timothy decides account/publication/spending.
+
+| Deliverable / acceptance criterion | Verified current state | Next action / owner |
+| --- | --- | --- |
+| Original eight-source Python scanner with exact Git pins and candidate count | Run414 ZIP adapter remains; **real eight-source Python scanner NOT RUN** (local DNS Errno -3). Run412 JS 42-occurrence estimate is provisional, not Python parity. | GPT: receive exact pinned public ZIP and execute original Python scanner through offline adapter; record source-bound HOLD receipt. |
+| Baseline editorial queue | **45 cards UNREVIEWED**, including 18 P1. No approvals. | Claude: independent evidence/rights; Timothy: human dispositions. |
+| Supplemental editorial queue | **37 occurrences / 34 groups UNREVIEWED**. G020/G021/G002 overlap candidates only. | Claude: independent evidence/rights and overlap; Timothy: dispositions. |
+| **NEW**: cut-disposition consistency before listing | [Exact original listing checker](F-001-LISTING-CHECK-PINNED-415.py) passed a **synthetic** cut-still-present case; [GPT HOLD-only supplemental gate](F-001-CUT-DISPOSITION-GATE-415.py) rejects it; [16/16 synthetic tests](F-001-CUT-EVIDENCE-415.md) passed. No real manuscript/editorial approval. | GPT: after source-pin and human dispositions, bind each cut to final manuscript build and run both checks; add EPUB/rendered parity. |
+| Export integrity and Android | Run410 export verifier synthetic/negative checks inherited; actual positive Node CLI and Android still NOT RUN. | GPT: positive source-bound export and real Android QA. |
+| Dataset A/B and full coordinator | Earlier 6 A + 8 B checks inherited; Run334→344→347→351 chain **NOT VERIFIED**, Run358 CSVs untouched. | GPT: HOLD-only exact coordinator integration with positive/tamper-negative tests. |
+| Rights, license, price, credit and terms | R1 authorship stated; A1–A6/B1/B4/B6/C1 remain **draft placeholders, not approvals**. | Timothy: select material, license/source, storefront, credit, framing, price/refunds, identifier and payout; Claude rights review. |
+| Final EPUB/PDF and release receipt | No approved final manuscript, EPUB/PDF or release receipt. | GPT: reproducible package/checksums and accessibility checks after approvals; Claude cross-review; Timothy explicit release authorization. |
+
+**Acceptance criteria:** actual original-source scanner receipt; complete 45+37 human-reviewed dispositions; verified source-bound cut handling and listing; complete dataset/coordinator chain; approved rights/credit/price/refund/identifier; independently checked EPUB/PDF/accessibility and explicit Timothy release permission. **No synthetic test can satisfy these human or actual-source gates.**
+
+**Immediate next action:** obtain exact eight-file public TAM archive and run Run414 offline scanner replay; separately preserve the new supplemental cut check for the eventual approved manuscript. **Blockers:** local GitHub DNS for Python, human editorial decisions and rights, Android/final package. No paid inference, CI, Cloudflare loops, account creation, outreach, publication, spending or payments.
