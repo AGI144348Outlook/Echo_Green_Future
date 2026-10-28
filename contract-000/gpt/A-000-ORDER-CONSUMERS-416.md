@@ -8,7 +8,7 @@ Run415 demonstrated that `ReshIdentity.anchor()` lines 3287–3290 deduplicates 
 
 1. `Lobby._compute_genus_depths()` (lines 1274–1305) selects the **first** eligible `definition_words` member also in `self.agents` as a genus. `Lobby.compute_generality_scores()` calls it around line 1250. For a Hebrew-letter Lobby with `resh`, `aleph`, `ayin`, `pe`, these are actual letter-agent names and can be competing candidates. A call after a Resh re-anchor could therefore depend on order; **actual timing/call-path remains unverified**.
 2. `LogicReasoningMatrix._is_genuine_subtype()` (lines 6279–6291) checks the **first five** indirect definition words; the same set in another order can change a subtype result. The normal `_find_specializations()` filter excludes `department='letter'`, so this is a genuine general consumer but **not evidence that normal Resh specialization invokes it**.
-3. `WordAgent.report()` (around line 1119) projects the **first eight** definition words; `Lobby.run_typed_study_groups()` (around line 1543) joins all definition words into curriculum text. These are order-sensitive representations, though their identity-signature significance is unproven.
+3. `WordAgent.report()` (around line 1119) projects the **first eight** definition words; `Lobby.run_study_proposals()` (around line 1543) joins all definition words into curriculum text. These are order-sensitive representations, though their identity-signature significance is unproven.
 4. `RussianDollGenerality._genus_of()` (around lines 7729–7745) also chooses the **first** eligible noun-parent word. This is another source-level candidate; it was not exercised in the isolated Run416 fixture.
 
 ## Execution-verified: isolated source-transcribed fixture only
