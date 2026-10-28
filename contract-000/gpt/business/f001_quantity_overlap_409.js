@@ -9,7 +9,7 @@ const {extractJSON,audit,gitBlobSha}=require("./f001_cross_queue_audit_407.js");
 const PINS=["7da6d43f42618ae915adb9f1fda216890a635674","e3e2942181d5460b631e428096429c9939a6062d"];
 function quantities(text){
   if(typeof text!=="string")throw Error("non-string passage");
-  const result=[...text.matchAll(/(?<![\\p{L}\\p{N}])(\\d+(?:[.,]\\d+)?)\\s*(kg|km|mm|cm|grams?|g)(?![\\p{L}])/giu)]
+  const result=[...text.matchAll(/(?<![\p{L}\p{N}])(\d+(?:[.,]\d+)?)\s*(kg|km|mm|cm|grams?|g)(?![\p{L}])/giu)]
     .map(m=>m[1].replace(",",".")+"|"+(m[2].toLowerCase().startsWith("gram")?"g":m[2].toLowerCase()));
   return [...new Set(result)].sort();
 }
@@ -54,7 +54,7 @@ function review(cards,map){
 function main(argv){
   if(argv.length!==2)throw Error("usage: node f001_quantity_overlap_409.js <baseline397.html> <supplemental406.html>");
   const texts=argv.map((path,i)=>{const b=fs.readFileSync(path);if(gitBlobSha(b)!==PINS[i])throw Error("source Git blob mismatch: "+path);return b.toString("utf8")});
-  process.stdout.write(JSON.stringify(review(extractJSON(texts[0],"CARDS"),extractJSON(texts[1],"MAP")),null,2)+"\\n");
+  process.stdout.write(JSON.stringify(review(extractJSON(texts[0],"CARDS"),extractJSON(texts[1],"MAP")),null,2)+"\n");
 }
-if(require.main===module){try{main(process.argv.slice(2))}catch(e){process.stderr.write("HOLD quantity audit failed: "+e.message+"\\n");process.exitCode=1}}
+if(require.main===module){try{main(process.argv.slice(2))}catch(e){process.stderr.write("HOLD quantity audit failed: "+e.message+"\n");process.exitCode=1}}
 module.exports={quantities,review,PINS};
