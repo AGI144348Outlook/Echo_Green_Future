@@ -3,6 +3,9 @@
 // Usage: node f001_review_handoff_417.js CROSS-QUEUE.json EDITORIAL-QUEUE.json EXACT-GROUP.json P1-PACKET.json > manifest.json
 // Does not edit any input, authorize release, or adjudicate claims.
 const fs=require('node:fs');
+const crypto=require('node:crypto');
+const PINNED_BLOBS=['ab5e755c1d1f33fd2c9fd3af2866bc68ab1a4b16','3346ad7583225d82ddf435f8daf691c78aca7330','32dfe75589a031de46c28145fe993122ee2ca0f2','a999d151a212369d52d0070397b9fea13e39a129'];
+function gitBlobSha(buf){return crypto.createHash('sha1').update(Buffer.from('blob '+buf.length+'\0')).update(buf).digest('hex');}
 function build(a,q,g,p) {
   function check(ok,msg){if(!ok)throw Error(msg)}
   check(a.project==="F-001"&&q.project==="F-001"&&g.project==="F-001"&&p.project==="F-001","project mismatch");
@@ -36,7 +39,7 @@ function build(a,q,g,p) {
   check(rows.every(x=>x.id===x.file+"#S"+x.sentence_no&&/^[a-f0-9]{40}$/.test(x.source_blob_sha)),"invalid source binding");
   return {
     format:"f001-hold-review-handoff-v1",project:"F-001",source_commit:a.source_commit,
-    upstream_blobs:{cross_queue:"fd0bdc8a3870a21a5987112dbc8b0fdf1b1ecfbb",baseline:"3346ad7583225d82ddf435f8daf691c78aca7330",supplemental:"32dfe75589a031de46c28145fe993122ee2ca0f2",p1:"a999d151a212369d52d0070397b9fea13e39a129"},
+    upstream_blobs:{cross_queue:"ab5e755c1d1f33fd2c9fd3af2866bc68ab1a4b16",baseline:"3346ad7583225d82ddf435f8daf691c78aca7330",supplemental:"32dfe75589a031de46c28145fe993122ee2ca0f2",p1:"a999d151a212369d52d0070397b9fea13e39a129"},
     status:"HOLD / NOT LAUNCH-READY",release_authorized:false,human_reviewed_count:0,
     baseline_count:45,baseline_p1_count:18,supplemental_count:37,supplemental_group_count:34,total_occurrences:82,
     note:"Draft handoff only. Baseline excerpt may be truncated; verify original source. Supplemental sentence is group text, not independent evidence. Human review, rights, real scanner, final EPUB/PDF and Timothy authorization remain outstanding.",
@@ -54,7 +57,9 @@ function validate(a,q,g,p,m) {
 }
 if(require.main===module){
   if(process.argv.length!==6){console.error('Usage: node f001_review_handoff_417.js <cross-queue> <baseline-queue> <supplemental-groups> <p1-packet>');process.exit(2);}
-  try{const [a,q,g,p]=process.argv.slice(2).map(x=>JSON.parse(fs.readFileSync(x,'utf8')));const m=build(a,q,g,p);validate(a,q,g,p,m);console.log(JSON.stringify(m,null,2));}
+  try{const bytes=process.argv.slice(2).map(x=>fs.readFileSync(x));
+  bytes.forEach((b,i)=>{if(gitBlobSha(b)!==PINNED_BLOBS[i])throw Error('source Git blob pin mismatch at input '+i);});
+  const [a,q,g,p]=bytes.map(b=>JSON.parse(b.toString('utf8')));const m=build(a,q,g,p);validate(a,q,g,p,m);console.log(JSON.stringify(m,null,2));}
   catch(e){console.error('FAIL/HOLD: '+e.message);process.exit(1);}
 }
 module.exports={build,validate};
