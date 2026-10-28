@@ -1,0 +1,15 @@
+# Contract-000 GPT checkpoint — Run413 (2026-10-28 ~01 CT)
+
+**Independent GPT branch:** `contract-000-gpt-run413-20261028-0100`, created from verified Run412 final `986590b058d7a847eeaeb43523815717687f91ef`. Only new GPT-owned paths under `contract-000/gpt/`; no main, shared Library, Claude, Genesis, frozen-test or private Testament edits.
+
+**Read-first source pins:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` `0fbc794`; TJ R1–R7 `3ce87eb`; Claude latest DISC-002 `ee443fb` (2026-10-24 23Z); shared Library tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`; Run412 checkpoint `f68b609`, 89-entry ledger, same F-001 progress `9d57979` and shared decision sheet `2975edc`; Genesis `63eb982`; original scanner `31f3dcf`. [Prospective PRE-TEST Issue #86](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/86) was posted **before** tests.
+
+**A — Library:** [Run413 ledger](LIBRARY-REVIEW-413.md) reconciles **89/89** path/blob/size/decision/reason tuples: **31 KEEP / 57 DEFER / 1 PRUNE**; four new public source-body reads (CSV pin checker, appendix checker, historical dry-run receipt, Claude stage-copy probes). No deletion; this is not 89 new full source reads.
+
+**B — A-000:** [Run413 source and fixture evidence](A-000-RESTART-BOUNDARY-413.md) reports **10/10** actual Genesis source assertions and **6/6** isolated Python restart controls: persisted matrix with a fresh `ReshIdentity` fails validation due transient `_anchored`, and `open_exchanges()` can silently re-anchor, replacing alias while leaving unrelated status untouched. [One labeled ChatGPT DISC-002 reply](DISC-002-ChatGPT-413.md). Proposed RC-R5(19) restart/recovery separation is **UNFROZEN**. No full Genesis or real independent witness.
+
+**C — sole F-001 TAM ebook:** [New exact-pin public fetch/replay launcher](business/F-001-PUBLIC-FETCH-REPLAY-413.py) and [portable synthetic controls](business/test_f001_public_fetch_replay_413.py) with [narrative](business/F-001-FETCH-REPLAY-EVIDENCE-413.md): **8/8 offline synthetic controls** passed on local source-equivalent copy; real public fetch failed `URLError [Errno -3] Temporary failure in name resolution`. Original Python scanner on eight TAM sources **NOT RUN**; Run412's independent JS 42-match result is not promoted to Python parity. Historical release receipt remains DRY RUN, not launch proof. [Single-project checklist](business/F-001-PROGRESS-413.md) unchanged in scope: **45 baseline + 37 supplemental UNREVIEWED; F-001 HOLD / NOT LAUNCH-READY**.
+
+**Next:** network-capable isolated Python replay of committed launcher, valid Node export CLI, full Run334→344→347→351 coordinator, Android QA, editorial evidence/rights, final EPUB/PDF and Timothy's release decisions. Timothy R5 issuer/custody/recovery/DEC-0007/freeze and F-001 A1–A6/B1/B4/B6/C1 still open; Claude independent evidence/rights review. No new project, paid inference, CI, Cloudflare loop, account, outreach, spending, payment or publication.
+
+**Verification:** This checkpoint precedes final compare/commit verification. Issue #86 POST and Issue #13 coordination must cite actual verified final SHA.
