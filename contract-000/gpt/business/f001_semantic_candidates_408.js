@@ -11,8 +11,8 @@ const PINS=["7da6d43f42618ae915adb9f1fda216890a635674","e3e2942181d5460b631e4280
 const STOP=new Set(("the a an and or of to for in on with from that this these those is are was were be been being as by it its at into out over under not no so if than then which who has have had do does did will would can could may might shall should we our their there they you your what where when how one two three more less same any all each every both only also about according based because through between after before across during some such very now just here them").split(" "));
 function tokens(s){
   if(typeof s!=="string")throw Error("non-string sentence");
-  return [...new Set((s.normalize("NFKC").toLowerCase().match(/[\\p{L}\\p{N}]+(?:\\.\\d+)?/gu)||[])
-    .filter(t=>(t.length>=3||/^\\d+$/.test(t))&&!STOP.has(t)))].sort();
+  return [...new Set((s.normalize("NFKC").toLowerCase().match(/[\p{L}\p{N}]+(?:\.\d+)?/gu)||[])
+    .filter(t=>(t.length>=3||/^\d+$/.test(t))&&!STOP.has(t)))].sort();
 }
 function similarity(a,b){
   const A=tokens(a),B=tokens(b),bs=new Set(B),shared=A.filter(t=>bs.has(t));
@@ -52,7 +52,7 @@ function main(argv){
   if(argv.length!==2)throw Error("usage: node f001_semantic_candidates_408.js <baseline397.html> <supplemental406.html>");
   const contents=argv.map((p,i)=>{const b=fs.readFileSync(p);if(gitBlobSha(b)!==PINS[i])throw Error("input Git blob mismatch: "+p);return b.toString("utf8")});
   const result=review(extractJSON(contents[0],"CARDS"),extractJSON(contents[1],"MAP"));
-  process.stdout.write(JSON.stringify(result,null,2)+"\\n");
+  process.stdout.write(JSON.stringify(result,null,2)+"\n");
 }
-if(require.main===module){try{main(process.argv.slice(2))}catch(e){process.stderr.write("HOLD lexical review failure: "+e.message+"\\n");process.exitCode=1}}
+if(require.main===module){try{main(process.argv.slice(2))}catch(e){process.stderr.write("HOLD lexical review failure: "+e.message+"\n");process.exitCode=1}}
 module.exports={tokens,similarity,review,PINS};
