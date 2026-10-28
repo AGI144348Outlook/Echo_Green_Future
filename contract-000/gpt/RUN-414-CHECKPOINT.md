@@ -1,0 +1,17 @@
+# Contract-000 GPT checkpoint — Run414 (2026-10-28 ~02 CT)
+
+**Independent branch:** `contract-000-gpt-run414-20261028-0200`, created from verified Run413 final `6763278a897e5e30702c07bce05d6d3c3fd7608a`. Only GPT-owned `contract-000/gpt/` files changed. No main, shared Library, Claude, Genesis, frozen test or private Testament edits. [Prospective PRE-TEST Issue #87](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/87) was posted **before** diagnostics/tests; actual POST and independent comparison must be verified afterward.
+
+**Read-first pins:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` `0fbc794`, TJ R1–R7 `3ce87eb`, latest Claude DISC-002 `ee443fb` (2026-10-24 23Z), shared Library tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`, Run413 checkpoint `b366866`, inherited ledger `a92aa3c`, F-001 decision `2975edc`, Genesis `63eb982`, original scanner `31f3dcf`, Run412 runner `c099d3e`.
+
+**A — Library:** [Run414 ledger](LIBRARY-REVIEW-414.md): **89/89** exact path/blob/size/decision/reason reconciled; **31 KEEP / 57 DEFER / 1 PRUNE**; four fresh public source inspections (`ledger_map.py`, `year_close.py`, `CLAUDE-coordinator-v4-probes.py`, `PROPOSED-a11y_claimcheck.py`). No deletion, no shared write; this is not 89 new body reads.
+
+**B — A-000 / DISC-002:** [Actual Genesis class excerpt](A-000-RESH-EXTRACT-414.py), [11/11 isolated Python controls](test_a000_resh_414.py), [narrative](A-000-RESH-MULTIINSTANCE-414.md): a second Resh re-anchor can leave an older instance `validate()==True` with a stale `_anchor_entry`, and an injected malformed Lobby can leave matrix writes after `anchor()` fails. Initial isolated import failed due `-I`, corrected harness and passed. Exact source class excerpt Git blob `ff4212e`; **not full Genesis**. [One labeled ChatGPT reply](DISC-002-ChatGPT-414.md). Proposed RC-R5(20–21) **UNFROZEN**; no witness or transactional implementation.
+
+**C — sole F-001 TAM ebook:** [Offline source ZIP replay adapter](business/F-001-OFFLINE-ZIP-REPLAY-414.py) and [15/15 synthetic positive/tamper-negative controls](business/F-001-OFFLINE-ZIP-EVIDENCE-414.md). Committed adapter and tests Git blobs match locally executed files (`e3aea89`, `2b52152`). **Actual original Python scanner against eight real TAM sources NOT RUN**: local GitHub DNS resolution failed, alternate retrieval disabled. Run412 independent JS 42-row count remains provisional. [Same-project checklist](business/F-001-PROGRESS-414.md): **45 baseline + 37 supplemental UNREVIEWED; F-001 HOLD / NOT LAUNCH-READY.** No new project.
+
+**Next GPT:** obtain real public TAM ZIP through approved read-only path, execute committed offline adapter with exact scanner/runner and capture source-bound receipt; then full coordinator Run334→344→347→351, positive Node export CLI, Android and final EPUB/PDF after editorial/rights gates.
+
+**Awaiting Timothy:** A-000 R5 independent issuer, custody/witness, authorized update/recovery, DEC-0007 retention and frozen test decisions; F-001 A1–A6/B1/B4/B6/C1 (material, storefront, credit, framing, price/refund, license/source, article/dataset details, identifier and payout). Claude independent evidence/rights and A-000 multi-instance reachability review requested via Issue #13.
+
+**Safety:** No publication, spending, outreach, account creation, payment, paid inference, CI execution or autonomous Cloudflare loops. No private Testament material read or posted. Final commit comparison and POST issue evidence follow this checkpoint.
