@@ -1,0 +1,16 @@
+# F-001 sole-project progress — Run429 (2026-10-28 ~17 CT)
+
+**Project ID:** F-001, TAM Protocol speculative research-notebook ebook. **Decision:** continue this same project only; no new income pipeline. **Status:** HOLD / NOT LAUNCH-READY. **Roles:** GPT reproducible source/build/package QA; Claude independent historical/scientific/editorial and rights review; Timothy controls final content, identity, listing, accounts, spending and publication. Draft/preparation only. Shared [decision sheet](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/library-shared/Business/ideas/F-001-decision-sheet.md) still contains unapproved draft defaults.
+
+| Deliverable / acceptance | Current verified status | Next action / owner |
+| --- | --- | --- |
+| Eight exact public TAM source pins | **8/8** GitHub connector reads from `The-TAM-protocol@d46456a` matched the pinned Git blob SHA-1s. Prior Run428 gate has 14/14 synthetic controls. No local real-source staging. | GPT: obtain all eight files in trusted local scratch, run Run428 gate. |
+| Staged consumer integrity | **NEW:** Run429 [read-only HOLD verifier](f001_snapshot_consumer_verify_429.py) and [synthetic harness](test_f001_snapshot_consumer_verify_429.py). **18/18 synthetic checks PASS**; verifier exact executed bytes match Git blob. Not integrated. | GPT: integrate bounded verify-before-scan path; address TOCTOU and race limits; independent review. |
+| Original Python claim scanner | Run427 synthetic missing-file bug; real-source scanner **NOT RUN** (local GitHub DNS Errno -3). Run427 JS **42 original-pattern / 44 enhanced candidates**; not Python parity. | GPT: original Python on verified real snapshot; compare 42/44 per-file and Unicode boundaries. |
+| Editorial claims | **82 occurrences (45 baseline + 37 supplemental) all UNREVIEWED**, plus 44 candidate sentences requiring triage; no human dispositions or rights clearance. | Claude: independent source/rights review of 14 P1 families and two escaped-percent claims; Timothy editorial decisions. |
+| Dataset coordinator 334→344→347→351 | Independent complete chain **NOT VERIFIED**, Run358 CSVs unchanged. | GPT: positive/tamper-negative end-to-end pinned integration. |
+| Finance / ledger | Run425 synthetic stage guard, unmerged; no real sales records or payments. | Independent review; no production financial automation. |
+| EPUB/PDF/Android/accessibility/listing | Prior partial QA only; final release artifacts not verified. | GPT packaging/checksums/Android; Claude wording/listing after editorial clearance. |
+| Legal/credit/price/rights/release | A1–A6, B1/B4/B6, C1 and explicit release permission remain awaiting Timothy. | Timothy decides; no account, outreach, spending, payments, listing or publication. |
+
+**Next single action:** obtain eight exact real TAM files locally, execute source gate → consumer verifier → original Python scanner in isolated scratch, compare source-pinned candidate inventories and preserve HOLD. **Final acceptance:** verified source and coordinator chain; editorial decisions for all 82 occurrences; clear rights and attribution; deterministic accessible EPUB/PDF; Android/receipt/price/listing QA; Timothy explicit authorization. No criterion silently waived.
