@@ -1,0 +1,17 @@
+# F-001 sole-project progress — Run423 (2026-10-28 ~11 CT)
+
+**Project ID:** F-001, unchanged since previous runs. **Product:** TAM Protocol research-notebook ebook. **Decision source:** `library-shared:Business/ideas/F-001-decision-sheet.md` blob `2975edcc4cae8a17499e873b68ba75f5c39ea527`. **Status: HOLD / NOT LAUNCH-READY.** No other income pipeline opened. Claude remains responsible for independent historical/scientific editorial and rights review; GPT for source-pinned tooling, checksums, research and QA. All work is draft/preparation only.
+
+| Deliverable / acceptance | Verified state | Next action |
+| --- | --- | --- |
+| Eight public TAM sources + original `claim_scan.py` | Source SHA references retained; **original Python scanner NOT RUN** (local GitHub DNS Errno -3). Prior 42 JS occurrences provisional. | Materialize exact source bytes through approved read path, check Git fingerprints, run original Python and tamper-negative fixtures. |
+| 82 editorial occurrences (45 baseline + 37 supplemental; 18 P1 in 14 families) | **82/82 UNREVIEWED.** P1-F07 research memo from Run422; **Run423 adds P1-F01/F12 pinned-source gap**: no CSV blobs in 11-file TAM tree, six A and eight B rows, no independently computed >95% correlation. | Claude/Timothy independently review P1-F01, F12 and F07; collect primary artifact provenance, choose evidence-based disposition for each occurrence and preserve duplicate family links. |
+| P1 family validator | Run421 22 bounded V8 controls and Run422 8 structural controls; **real Node CLI still NOT RUN**. | Exact pinned Node positive/byte-tamper-negative replay. |
+| Dataset A/B builder + coordinator 334→344→347→351 | Source retained, complete integration **NOT VERIFIED**; Run358 CSVs unchanged. | Independent end-to-end source/receipt positive and tamper-negative replay. |
+| Manuscript, scientific claims, credit and rights | HOLD; **Timothy A1–A6, B1/B4/B6, C1**, rights and editorial decisions unresolved. | Make manuscript evidence/claim separation and rights decisions before release candidate. |
+| EPUB/PDF/accessibility/Android QA | HOLD; `epub_check.py` source inspected but **not run** this cycle. | Deterministic final build, checksums, external EPUBCheck/Ace and Android review. |
+| Listing, store account, price, payouts, publication | NOT AUTHORIZED. | Explicit Timothy approval plus verified release receipt; no contact, payment, spending or publication before then. |
+
+**Run423 actual tests:** 12/12 bounded V8 assertions on exact pinned public TAM tree and README/A/B contents; this is a source-audit result, **not** statistical or historical validation. Original source scanner and Node CLI unexecuted due local DNS failure. [Evidence and proposed human editorial language](F-001-P1-F01-F12-SOURCE-AUDIT-423.md). [Prospective PRE and actual POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/96). **Next concrete action:** independent P1-F01/F12 evidence review and a verified source materialization route for original Python scanner, while retaining HOLD.
+
+**Acceptance criteria for release (not met):** exact source and build reproducibility, complete human claim dispositions, evidence/rights approval, fixed book identifier and author credit, deterministic EPUB/PDF with accessibility and Android checks, signed final listing/price/terms and Timothy's explicit publication authorization. No sale, account creation, outreach, spending, payment, CI, paid inference or Cloudflare loop.
