@@ -1,0 +1,21 @@
+# PROPOSED / UNMERGED F-001 scanner lexical coverage patch (Run430)
+# Original shared scanner Git blob: 31f3dcff486c4c8cc96d514eb425da86834d00c3
+# JavaScript real-source 45-candidate manifest is NOT original Python execution.
+# The original source and shared Library remain unchanged.
+diff --git a/Business/ideas/F-001-tam-build/claim_scan.py b/Business/ideas/F-001-tam-build/claim_scan.py
+--- a/Business/ideas/F-001-tam-build/claim_scan.py
++++ b/Business/ideas/F-001-tam-build/claim_scan.py
+@@ -23,5 +23,5 @@
+          "Collective information"]
+ TRIGGERS = {
+-    "certainty": r"\b(prove[sd]?|proof|proven|confirm(s|ed)?|undeniabl[ey]|definitive(ly)?|certain(ly)?|irrefutabl[ey]|conclusive(ly)?|demonstrat(es|ed)|establish(es|ed))\b",
++    "certainty": r"\b(prove[sd]?|proving|proof|proven|confirm(s|ed)?|undeniabl[ey]|definitive(ly)?|certain(ly)?|irrefutabl[ey]|conclusive(ly)?|demonstrat(es|ed|ing)|establish(es|ed))\b",
+     "percent": r"\d+(\.\d+)?\s?%",
+     "accuracy": r"\b(accura(te|cy)|precision|precise(ly)?|correlat(es|ed|ion))\b",
+@@ -24,5 +24,5 @@
+ TRIGGERS = {
+     "certainty": r"\b(prove[sd]?|proof|proven|confirm(s|ed)?|undeniabl[ey]|definitive(ly)?|certain(ly)?|irrefutabl[ey]|conclusive(ly)?|demonstrat(es|ed)|establish(es|ed))\b",
+-    "percent": r"\d+(\.\d+)?\s?%",
++    "percent": r"\d+(\.\d+)?\s?\\?%",
+     "accuracy": r"\b(accura(te|cy)|precision|precise(ly)?|correlat(es|ed|ion))\b",
+     "superlative": r"\b(only|exactly|always|never|impossible)\b",
