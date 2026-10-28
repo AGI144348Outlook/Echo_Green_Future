@@ -1,0 +1,15 @@
+# Contract-000 GPT Run412 — verified work log (2026-10-28 ~00 CT)
+
+**PRE-TEST:** [Issue #85](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/85) published before diagnostics and experiments. **Read first:** current Contract-000 `0fbc794`; TJ rulings R1–R7 `3ce87eb`; latest Claude DISC-002 `ee443fb`; Run411 checkpoint and F-001 progress; shared Library HEAD `470d3c8`, F-001 decision sheet `2975edc`; Genesis `63eb982`, original scanner `31f3dcf`.
+
+**A Library:** full recursive Git tree reconciliation **89/89 exact path, blob, size and inherited nonblank reason**; 31 KEEP / 57 DEFER / 1 PRUNE. Four new public source-body inspections (rebuild_datasets, listing_check, epub_check, F-001-gpt-checklist) with exact Git blob matches. [Reversible 89-entry ledger](LIBRARY-REVIEW-412.md). No deletions.
+
+**B A-000:** exact Genesis class read; source-transcribed [7/7 isolated Python replay controls](A-000-WITNESS-REPLAY-TEST-412.py) demonstrate old record+old witness can pass naive digest equality, while simulated external monotonic epoch rejects rollback. [Evidence](A-000-WITNESS-REPLAY-412.md), [one labeled ChatGPT DISC reply](DISC-002-ChatGPT-412.md). No real custodian, authorized update, complete Genesis execution or frozen RC-R5(18).
+
+**C same F-001:** GitHub connector read **8/8 exact pinned TAM source blobs**; independent JavaScript translation of the original claim scanner yielded **42 candidate matches** by file 1/2/3/3/3/3/4/23. [Source-bound report](business/F-001-SCANNER-CROSSCHECK-412.json). [HOLD-only exact snapshot runner](business/F-001-SCANNER-SNAPSHOT-412.py) and [synthetic test](business/f001_scanner_snapshot_test_412.py) **6/6 PASS**, exact committed Git blobs matched local tested files. [Narrative evidence](business/F-001-SCANNER-EVIDENCE-412.md), [continuing checklist](business/F-001-PROGRESS-412.md). Original real-source Python scanner still NOT RUN due local DNS/materialization; Node positive, Android, coordinator and final EPUB/PDF remain outstanding. All 45+37 editorial occurrences UNREVIEWED.
+
+**Deviations:** JS harness `TextEncoder` unavailable; corrected unused measurement, reran 42. Python `-I` test sibling import initially failed; fixed test-only absolute file import, reran 6/6. Direct raw.githubusercontent.com Python URL returned DNS `Errno -3`. No source file or frozen test changed.
+
+**Restrictions:** only new GPT-owned `contract-000/gpt/` files on non-main run412 branch; no main, shared Library, Claude branch, Genesis, private Testament, paid inference, CI, autonomous Cloudflare, account, outreach, spending, payments or publication.
+
+**Next:** materialize public exact TAM sources to local Python, execute original scanner snapshot and verify 42/per-file counts; real Node export CLI positive, Android, Run334→344→347→351 coordinator, editorial/rights decisions and release gates. Timothy: A-000 issuer/witness/custody/recovery/frozen tests/DEC-0007; F-001 A1–A6/B1/B4/B6/C1 and eventual release authorization. Claude: independent identity replay challenge and editorial primary evidence/rights. Final commit verification and POST in Issue #85 follow this log.
