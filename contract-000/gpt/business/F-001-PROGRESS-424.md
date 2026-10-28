@@ -1,0 +1,18 @@
+# F-001 sole-project progress — Run424 (2026-10-28 ~12 CT)
+
+**Project ID F-001 unchanged:** TAM Protocol speculative research-notebook ebook. **Decision:** `library-shared:Business/ideas/F-001-decision-sheet.md` blob `2975edcc4cae8a17499e873b68ba75f5c39ea527`. **Status: HOLD / NOT LAUNCH-READY.** No new income pipeline. Claude owns independent historical/scientific editorial and rights review; GPT owns source-pinned packaging, QA and test artifacts. Drafts and preparation only.
+
+| Deliverable / acceptance | Verified state | Next action |
+| --- | --- | --- |
+| Eight public TAM sources + original `claim_scan.py` | Source references retained; original Python scanner **NOT RUN** on eight real files (raw GitHub DNS failed). Previous 42 JS rows provisional. | Materialize exact source blobs via approved connector-backed route, check Git fingerprints, run original scanner positive/tamper negatives. |
+| 82 editorial occurrences | **82/82 UNREVIEWED**: 45 baseline (18 P1 in 14 sentence families) + 37 supplemental. Run422 P1-F07 and Run423 P1-F01/F12 research are proposed wording only. | Claude/Timothy independently review primary evidence, rights, attribution, proposed disposition; preserve occurrence IDs. |
+| P1 family validator | Prior bounded V8 controls passed, but original Node CLI not executed. | Real pinned Node CLI positive and tamper-negative replay. |
+| Dataset A/B and coordinator 334→344→347→351 | Source-pinned partial checks only; complete integration **NOT VERIFIED**, Run358 CSVs unchanged. | Independent end-to-end receipt and tamper-negative replay. |
+| Preparatory financial ledger `ledger_merge.py` | **Run424 NEW:** exact original 4052-byte Git blob `0f706be` locally executed on synthetic CSV. **13/13 assertions over seven cases PASS**; blank/invalid `net` can yield exit0 with `net_missing` and partial `net_total`. Proposed one-line exit-status patch passed **6/6** additional cases; patch is **UNMERGED** and still writes output on error. | Claude independent review; later bounded transaction/staging gate and separate status/report check before any real sales data. This is not a release blocker that substitutes for editorial work. |
+| Manuscript, rights, credit and terms | HOLD; Timothy A1–A6, B1/B4/B6/C1 and publication choices unresolved. | Human claim decisions, evidence/rights, exact credit, price and source/license selection. |
+| EPUB/PDF, accessibility, Android | No final artifact verified this run; prior draft checks are not final release certification. | Fixed identifier, deterministic final build, EPUBCheck/Ace, PDF, Android visual QA and checksums. |
+| Store/listing/payment | NOT AUTHORIZED. | Explicit Timothy authorization after all acceptance gates; no account/outreach/payment/publication beforehand. |
+
+**Run424 PRE and POST:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/97. [Original-source synthetic evidence](F-001-LEDGER-NET-GAP-424.md) and [inert proposed patch](F-001-LEDGER-NET-MISSING-PROPOSED-424.diff). The exact Git blob was locally reconstructed from authenticated GitHub connector text and hash-verified; raw URL download failed DNS. No real sales data was accessed.
+
+**Acceptance criteria still unmet:** reproducible source and coordinator; all human claim dispositions and manuscript/rights approvals; fixed author credit/book identifier; final deterministic EPUB/PDF plus accessibility and Android review; verified listing, price, terms and release receipt; Timothy's explicit authorization. **Next concrete action:** Claude independently adjudicates P1 source/rights claims; GPT pursues exact original eight-source scanner and staging/packaging when materialization is available. Maintain HOLD.
