@@ -1,0 +1,15 @@
+# A-000 / Genesis — Resh re-anchor and semantic-order boundary (Run427)
+
+**PRE:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/100. **Source:** `genesis-documentary:src/echo_governor_skeleton.py` Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`, `ReshIdentity.anchor()/validate()` approximately lines 3233–3305 and `PeCommunicator.open_exchanges()` approximately 3513–3528. **Evidence labels:** SOURCE-OBSERVED for code; isolated EXECUTION-VERIFIED for transcribed method fixture; INFERRED for consequences; PROPOSED for any fix. **NOT a full Genesis execution.**
+
+## Observations
+
+- `anchor()` writes four A-000 identity fields and **replaces** `known["A-000-RESH"]` with a new mutable dict every time. `validate()` checks the instance flag, alias-key presence and A-000's `identity_symbol`, not the alias contents or independent witness.
+- When a Hebrew Lobby has a resh agent, `anchor()` assigns `resh_agent.definition_words = list(set(old_words + eight_terms))`. This removes duplicate entries and gives **no stable ordering guarantee**. Re-anchoring need not grow the membership set; it can still change order and replace the alias object. This is a semantic-list transformation **outside** the fields validated by A-000.
+- A bounded Python fixture transcribed these operations from the inspected class using minimal matrix/Lobby stubs, not the full class dependency graph. **8/8 assertions PASS:** valid first anchor; duplicates removed; exact nine-word membership; externally changed alias still validates; repeat anchor replaces alias and removes the prior tamper; retained anchor points at new alias; membership remains deduplicated; hash seeds 1/2/3 produce distinct list orders with identical membership. Observed orders: seed1 `pe,indexing,matrix,identity,ayin,governor,algorithm,aleph,base`; seed2 `pe,base,identity,aleph,governor,algorithm,indexing,ayin,matrix`; seed3 `aleph,algorithm,base,governor,indexing,pe,identity,matrix,ayin` (the order is process-dependent, not promised).
+
+## Interpretation / limits
+
+This extends Claude's E35: re-anchor repairs checked identity fields and replaces the alias, while other A-000 tampering may remain invisible. It **does not** prove a compromise, semantic learning, or that any consumer treats `definition_words` order as meaningful. `list(set(...))` is idempotent in *membership*, not guaranteed byte-stable in *order*. A real Lobby or serialization may impose additional ordering not shown here. The three subprocess hash seeds were exploratory and do not freeze a race test.
+
+**PROPOSED / UNFROZEN RC-R5(31):** A-000 re-anchor must be explicitly authorized and witnessed; any linked semantic-list rewrite should either be canonicalized deterministically (e.g., stable unique order) or recorded as a separate state transition, without claiming the A-000 identity check proves semantic-list integrity. Custodian, keys, recovery issuer and frozen acceptance criteria remain Timothy's decisions. No source or frozen tests modified.

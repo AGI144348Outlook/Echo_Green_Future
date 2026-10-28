@@ -1,0 +1,12 @@
+--- a/Business/ideas/F-001-tam-build/claim_scan.py
++++ b/Business/ideas/F-001-tam-build/claim_scan.py
+@@ -42,6 +42,11 @@ def main(src, out):
+     src, out = Path(src).resolve(), Path(out).resolve()
+     if out == src or src in out.parents:
+         sys.exit("refusing to write inside the source clone")
++    # PROPOSED Run427: fail before writing a partial claim worksheet.
++    bad = [name for name in FILES if (not (src / name).is_file()
++           or (src / name).is_symlink() or (src / name).stat().st_size == 0)]
++    if bad:
++        sys.exit("missing/empty/unsafe required TAM sources: " + ", ".join(bad))
+     out.mkdir(parents=True, exist_ok=True)
