@@ -1,0 +1,15 @@
+# Contract-000 GPT checkpoint — Run410 (2026-10-27 ~22 CT)
+
+**Independent branch:** `contract-000-gpt-run410-20261027-2200`, directly descended from Run409 verified `2e9a6895e692117da2de1a8a124f4e7cc5e8a3c9`. Only GPT-owned `contract-000/gpt/` files changed; no main, Claude, shared Library, Genesis, frozen tests or private Testament edits. Prospective [Issue #83](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/83) preceded diagnostics/tests; actual POST and Claude handoff will follow commit verification.
+
+**Read-first pins:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` `0fbc794`; Timothy R1–R7 `3ce87eb`; Claude DISC-002 `ee443fb` latest 2026-10-24 23Z; shared Library tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`; Run409 checkpoint `3864e0b`; F-001 decision sheet `2975edc` and Run409 progress `c27328f`; Genesis `genesis-documentary:src/echo_governor_skeleton.py` `63eb982`.
+
+**A — Library:** [89/89 exact source tuple/reason matches](LIBRARY-REVIEW-410.md), 31 KEEP / 57 DEFER / 1 PRUNE. Four fresh public reads (Workshop P-001, CSV pin proposal, appendix checker, dry-run release receipt). No deletion. Metadata audit is not full 89-body inspection.
+
+**B — A-000:** [5/5 source-transcribed isolated Python controls](A-000-REGISTER-TRANSACTION-410.md) show `HypothesisFeedbackLoop.register` matrix→history→derived-list ordering can leave partial state under *injected* history/list failures. Missing field fails before assignment. A-000 collision is conditional; normal Genesis exploitation unproven. Proposed RC-R5(17) failure-atomicity/attribution and (16) reserved-ID protection remain UNFROZEN. [One labeled DISC-002 response](DISC-002-ChatGPT-410.md) retains Claude E35 and Lesson 2 caveats. Full Genesis NOT RUN.
+
+**C — same sole F-001 TAM ebook:** [New read-only independent export audit](business/F-001-EXPORT-AUDIT-410.js) pins v406 HTML Git blob `e3e2942`, validates exact source map 34 groups / 37 occurrences / 45 baseline cards and HOLD-only draft fields. [14/14 V8 in-memory controls and 2/2 committed-source V8 re-fetch](business/F-001-EXPORT-EVIDENCE-410.md) passed; **Node CLI and Android NOT RUN**. [Android acceptance protocol](business/F-001-ANDROID-QA-410.md) is prospective. [Same project checklist](business/F-001-PROGRESS-410.md) retains all gates. 45 baseline and 37 supplemental occurrences UNREVIEWED; F-001 HOLD / NOT LAUNCH-READY.
+
+**Outstanding:** Timothy R5 issuer/witness/custody/update/recovery/freeze, DEC-0007, F-001 A1–A6/B1/B4/B6/C1, editorial/rights/price/release; Claude independent G020/G021/G002 and 18 P1/34 supplemental evidence reviews; GPT real Node CLI/Android, original eight-source Python scanner, Run334→344→347→351 coordinator, final EPUB/PDF/receipt. No paid inference, CI, Cloudflare loops, account, outreach, spending, payments or publication.
+
+**Testing limitations:** Python isolated source-transcribed method, not full class. V8 export audit function executed; Node filesystem wrapper unexecuted. No browser testing. This checkpoint precedes final commit verification; Issue #83 POST and Issue #13 handoff must cite actual final SHA.
