@@ -1,0 +1,119 @@
+{
+  "format": "f001-lexical-review-candidates-v1",
+  "project": "F-001",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "editor_blobs": {
+    "baseline": "7da6d43f42618ae915adb9f1fda216890a635674",
+    "supplemental": "e3e2942181d5460b631e428096429c9939a6062d"
+  },
+  "status": "HOLD / NOT LAUNCH-READY",
+  "release_authorized": false,
+  "baseline_count": 45,
+  "baseline_p1": 18,
+  "supplemental_group_count": 34,
+  "supplemental_occurrence_count": 37,
+  "total_compared": 1530,
+  "threshold": {
+    "min_shared_tokens": 3,
+    "min_jaccard": 0.2
+  },
+  "candidate_pair_count": 3,
+  "candidates": [
+    {
+      "baseline_id": "Article 10#S8",
+      "baseline_priority": "P1",
+      "baseline_file": "Article 10",
+      "baseline_blob": "e82be564872f636662652d34dcb8d3437559f84f",
+      "baseline_sentence": "These are the only points on the planet where the 13.7g Invariant is natively \"read\" by the geology of the Earth (Salt, Magnetism, Elevation).",
+      "supplemental_group": "G021",
+      "supplemental_ids": [
+        "Collective information#S37"
+      ],
+      "supplemental_refs": [
+        {
+          "id": "Collective information#S37",
+          "file": "Collective information",
+          "blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+          "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9"
+        }
+      ],
+      "supplemental_sentence": "The Earth is 'wired' for the 13.7g Invariant.",
+      "lexical_jaccard": 0.25,
+      "shared_tokens": [
+        "13.7",
+        "earth",
+        "invariant"
+      ],
+      "human_review_status": "UNREVIEWED",
+      "editorial_disposition": null,
+      "rights_clearance": null,
+      "release_authorized": false
+    },
+    {
+      "baseline_id": "Collective information#S298",
+      "baseline_priority": "P1",
+      "baseline_file": "Collective information",
+      "baseline_blob": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+      "baseline_sentence": "These are the only points on the planet where the 13.7g Invariant is natively \"read\" by the geology of the Earth (Salt, Magnetism, Elevation).",
+      "supplemental_group": "G021",
+      "supplemental_ids": [
+        "Collective information#S37"
+      ],
+      "supplemental_refs": [
+        {
+          "id": "Collective information#S37",
+          "file": "Collective information",
+          "blob_sha": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8",
+          "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9"
+        }
+      ],
+      "supplemental_sentence": "The Earth is 'wired' for the 13.7g Invariant.",
+      "lexical_jaccard": 0.25,
+      "shared_tokens": [
+        "13.7",
+        "earth",
+        "invariant"
+      ],
+      "human_review_status": "UNREVIEWED",
+      "editorial_disposition": null,
+      "rights_clearance": null,
+      "release_authorized": false
+    },
+    {
+      "baseline_id": "Article 1 Hacksilber#S9",
+      "baseline_priority": "P2",
+      "baseline_file": "Article 1 Hacksilber",
+      "baseline_blob": "237bd3335abdcc0f0465817dffe01ad6eaa86055",
+      "baseline_sentence": "In the 2nd Millennium BCE, the Indus 13.7g chert weight was the most precise mass-standard in the ancient world.",
+      "supplemental_group": "G002",
+      "supplemental_ids": [
+        "README.md#S7"
+      ],
+      "supplemental_refs": [
+        {
+          "id": "README.md#S7",
+          "file": "README.md",
+          "blob_sha": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+          "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9"
+        }
+      ],
+      "supplemental_sentence": "The Metric Hardware (13.7g Base)\n​The core of the system is the Indus Chert Standard.",
+      "lexical_jaccard": 0.222222,
+      "shared_tokens": [
+        "13.7",
+        "chert",
+        "indus",
+        "standard"
+      ],
+      "human_review_status": "UNREVIEWED",
+      "editorial_disposition": null,
+      "rights_clearance": null,
+      "release_authorized": false
+    }
+  ],
+  "limitations": [
+    "Lexical overlap is not semantic equivalence, contradiction, evidence or editorial approval.",
+    "A paraphrase with few shared tokens can be missed; unrelated text can share tokens.",
+    "No draft, right, credit, sale or release is authorized; all source review statuses remain UNREVIEWED."
+  ]
+}
