@@ -1,6 +1,6 @@
 --- a/Business/ideas/F-001-tam-build/claim_scan.py
 +++ b/Business/ideas/F-001-tam-build/claim_scan.py
-@@ -42,6 +42,11 @@ def main(src, out):
+@@ -37,4 +37,9 @@ def main(src, out):
      src, out = Path(src).resolve(), Path(out).resolve()
      if out == src or src in out.parents:
          sys.exit("refusing to write inside the source clone")
