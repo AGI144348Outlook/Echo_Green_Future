@@ -1,0 +1,21 @@
+# A-000 / Genesis — Resh letter-Lobby orientation timing (Run428)
+
+**Prospective PRE:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/101. **SOURCE-OBSERVED pins:** `genesis-documentary:src/echo_governor_skeleton.py` Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`; `genesis-documentary:src/alphabet_data.py` blob `3ec8330646880e69dd9dd74b35f79fd58409af0e`; demonstration `tests/pe_ayin_resh_communication.py` blob `64a171a6791f2356006683596b56cbe289cbbdc0`. **NOT** a complete Genesis import or production execution.
+
+## Actual source call order
+
+1. `make_letter_lobby()` (skeleton lines 9204–9238) creates one WordAgent for each alphabet entry, sets `generality_score = 0.9`, and calls `lobby.run_orientation()` **before returning**.
+2. The actual Pe/Resh demonstration creates `hebrew_lobby = make_letter_lobby(...)` and only then `resh = ReshIdentity(matrix, hebrew_lobby=hebrew_lobby)`; `resh.anchor()` follows. Its earlier `lobby.compute_generality_scores()` is on a **different ordinary Lobby**, not the Hebrew-letter Lobby.
+3. `ReshIdentity.anchor()` (lines 3253–3295) adds `aleph`, `ayin`, `pe` and five other terms to the Hebrew resh agent's `definition_words` with `list(set(...))`. It does **not** rerun orientation, update `resh_agent.raw_definition`, or recompute `generality_score`.
+4. `Lobby.run_orientation()` (lines 1188–1217) scans definition references and writes bidirectional `ties` through `add_tie()`; it is not automatically triggered by changes to `definition_words`. The `WordAgent.words_referenced_in_definitions()` method (around lines 1100–1112) reads the *current* definition list, so a later explicit orientation could see new references.
+5. The actual Hebrew `resh` properties in `alphabet_data.py` (around line 102) include `identity` but **not** `aleph`, `ayin`, or `pe` initially. The anchor therefore adds three named letter references after the initial orientation. The complete 22-letter graph can have other preexisting ties; it was not run here.
+
+## Bounded execution evidence
+
+[Committed source-transcribed Python fixture](test_a000_letter_lobby_timing_428.py) uses the actual public properties for **four** Hebrew letters (`resh`, `aleph`, `ayin`, `pe`) and transcribes the relevant reference scan, orientation and anchor mutation. **12/12 isolated assertions passed**. The four-letter fixture had **0** ties before orientation/anchor, **0** after anchor despite the three newly added references, and **3** after an **explicit later** orientation. `raw_definition` and the synthetic agent's 0.9 generality remained unchanged. The fixture's committed Git blob matched the executed bytes (`5bbccbb163d744d717f7ee38021b4f51287a1efe`).
+
+**Interpretation (INFERRED):** In the demonstrated Genesis call order, an anchor can leave the letter agent's definition list ahead of its orientation-derived tie graph. This is a different concern from Run427's nondeterministic list order. It is **not** evidence that a full 22-letter Governor has zero ties, that the three added links must be accepted as semantic truth, or that any actual identity check is compromised. `run_orientation()` is additive; blindly rerunning it may increase weights of existing ties, so a fix needs an explicit reconcile/rebuild policy rather than simply repeating the call.
+
+**PROPOSED / UNFROZEN RC-R5(32):** Identity anchoring must not silently create new semantic references without a specified, attributable decision about dependent orientation state: either (a) keep identity metadata separate from vocabulary definitions, or (b) perform a deterministic, idempotent, witnessed graph reconciliation with before/after deltas. Preserve original `raw_definition` provenance, and test full 22-letter order and restart separately. Timothy retains issuer, witness, recovery, and test-freeze authority. No Genesis, main, shared Library, Claude, or frozen test files changed.
+
+**Claude handoff:** Please independently inspect the full 22-letter Hebrew Lobby and the Pe demo's actual runtime to confirm which Resh↔Ayin/Pe/Aleph ties exist before and after anchoring; challenge the premise that definition references should automatically become ties. E35's partial repair and Lesson2's two visible-role choices/`visible_fields` remain preserved.
