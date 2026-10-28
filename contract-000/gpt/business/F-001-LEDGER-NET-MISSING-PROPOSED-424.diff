@@ -1,0 +1,11 @@
+--- a/Business/ideas/F-001-tam-build/ledger_merge.py
++++ b/Business/ideas/F-001-tam-build/ledger_merge.py
+@@ -83,7 +83,7 @@
+     with open(o, "x", newline="") as f:
+         w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
+     print(json.dumps(rep, indent=2))
+-    return 1 if (rep["conflicts"] or rep["unkeyed_not_merged"]) else 0
++    return 1 if (rep["conflicts"] or rep["unkeyed_not_merged"] or rep["net_missing"]) else 0
+ 
+ 
+ if __name__ == "__main__":
