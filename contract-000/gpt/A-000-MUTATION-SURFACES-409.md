@@ -1,0 +1,18 @@
+# A-000 Run409 — source-level mutation-surface inventory
+
+**Evidence state:** SOURCE-OBSERVED on `genesis-documentary:src/echo_governor_skeleton.py`, exact Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`, 9,529 lines. [Prospective pre-test Issue #82](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/82). **16/16 bounded source assertions passed**; these are not full Python Genesis runtime tests, independent attestation, or frozen acceptance. Timothy's R5 requires ordinary-write protection with explicit logged reviewed GPT/Claude updates, but no race contract has authorized a Genesis patch.
+
+## Source observations
+
+1. `AlgorithmMatrix.record(self, entry_id, entry)` at lines **435–436** directly assigns `self.known[entry_id] = entry` without a reserved-ID check. Run408 already identified this.
+2. **Additional independently relevant writer:** the hypothesis feedback `register(self, hyp, result)` at **2909–2937** reads `alg_id = hyp["id"]` and writes `self.matrix.known[alg_id] = {...}` at **2914**. This method has no reserved-ID, collision or authority check. **INFERRED conditional risk:** if an external caller passes an otherwise valid `hyp` with `id="A-000"`, the method can replace the Governor entry without invoking `AlgorithmMatrix.record()`. The normal `hypothesize()` path constructs `A-{self._next_id}`; this inspection does **not** establish that a normal run generates A-000 or that an untrusted user can call this method. Do not conflate possible API misuse with observed production exploitation.
+3. The source contains **nine** direct `.known[key] = ...` assignment sites (lines **436, 1454, 2914, 3263, 3266, 5600, 6994, 7590, 9422**). Most use generated N-/A-/subagent IDs; no claim that they ordinarily collide with A-000. They show that adding a guard to `record()` alone does not mediate every write. `known` is also a mutable public dictionary; aliasing and direct mutation bypass method-level checks.
+4. `ReshIdentity.anchor()` at **3258–3266** mutates the fetched A-000 dictionary and directly replaces the alias; `validate()` at **3296–3302** checks only `_anchored`, alias key existence and A-000 `identity_symbol == "resh"`. `open_exchanges()` at **3519–3520** conditionally reanchors on validation failure, without a local rollback. Claude E35 and GPT Runs400–408 cover the related status, alias, stale-reference and recovery limitations.
+
+## Implications / candidate acceptance boundary (PROPOSED, UNFROZEN)
+
+RC-R5(16) should cover **every** A-000 mutation surface, not merely `AlgorithmMatrix.record()`: ordinary `record` rejection, hypothesis `register` collision rejection, direct dictionary/alias mutation detection, authorized reviewed update, durable attribution, and explicit failure/recovery. A registry write interface and externally held witness may be needed; a method guard without encapsulation is insufficient. No patch is made and Timothy retains issuer/custody/freeze decisions.
+
+**Challenge cases:** a source-level assertion does not establish runtime reachability, thread-safety, tamper resistance, or witness independence. Test the real `HypothesisFeedbackLoop.register()` with a reserved-ID hypothesis in a disposable isolated matrix only after a prospective, frozen race protocol; verify that legitimate next-ID hypotheses still work and that attempted collisions leave both A-000 and failure evidence intact. An independent grader, not this source review, must judge acceptance.
+
+**Execution record:** 16/16 source assertions PASS after Issue #82 PRE; full Genesis, Python class, CI and authorized R5 implementation **NOT RUN**. No main/Claude/Genesis/frozen-test edits.
