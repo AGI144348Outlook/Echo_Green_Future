@@ -1,5 +1,5 @@
 import importlib.util, tempfile, pathlib, json, subprocess, sys
-p=pathlib.Path('/mnt/data/f001_scanner_preflight_411.py')
+p=pathlib.Path(__file__).with_name('F-001-SCANNER-PREFLIGHT-411.py')
 spec=importlib.util.spec_from_file_location('f001',p)
 m=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
