@@ -1,0 +1,18 @@
+# A-000 / Genesis — process restart, re-anchor and identity custody (Run413)
+
+**Prospective pre-test:** [Issue #86](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/86), posted before execution. **Actual source:** `genesis-documentary:src/echo_governor_skeleton.py` blob `63eb982989b4f3478d649430b555c8f4ba755c27`, `AlgorithmMatrix` 341–437, `ReshIdentity` 3233–3310, `PeCommunicator.open_exchanges` 3513–3528. Claude's latest DISC-002 blob `ee443fbc49650bcc1bdd06d6db908d0c7239c9d9` (2026-10-24 23Z).
+
+## SOURCE-OBSERVED
+- A newly constructed `ReshIdentity(matrix)` sets `_anchored=False` and `_anchor_entry=None` regardless of what `matrix.known` contains. `validate()` requires the transient flag plus A-000-RESH presence and A-000.identity_symbol == resh; no persisted epoch or independent witness is checked.
+- `anchor()` mutates/creates A-000's identity fields, **replaces** `matrix.known["A-000-RESH"]`, sets `_anchored=True`, and keeps a reference to the new alias. It does not append a recovery record. `open_exchanges()` invokes `anchor()` whenever `validate()` is false; it does not distinguish first bootstrap, restart, tamper, and authorized recovery.
+- `AlgorithmMatrix.record()` directly writes any ID, including A-000 (R5 gap already identified). Source-level checks here cover only the inspected classes/caller, not every repository path.
+
+## EXECUTION-VERIFIED, bounded
+- **10/10** direct source-text assertions in a GitHub connector V8 read: initial flag, alias, predicate, creation/overwrite and caller branch, plus no restore method within the class.
+- **6/6** isolated `python3 -I -B` fixture assertions using a source-transcribed no-Lobby Resh class and a stub matrix: fresh object fails; anchor validates; constructing a new Resh over unchanged anchored matrix fails; the exact `open_exchanges` two-line branch reanchors; alias dict object is replaced; unrelated `status='REVIEW-PENDING'` remains after re-anchor while `validate()` returns true. [Reproducible fixture](A-000-RESTART-PROBE-413.py), Git blob `aa1839de15050ec71a05a3fcbb88bf599e143ecc`.
+- The fixture's first alias-identity assertion compared against a deep-copied alias, which was too weak. The test was corrected to retain the **original live alias object** and rerun: 6/6. The connector's first committed-file structural check incorrectly expected the string '413' in the fixture; the test harness was corrected and 4/4 artifact signatures passed, without modifying source.
+
+## Interpretation and UNFROZEN acceptance sketch
+A process restart with preserved matrix data can look like failed identity validation **solely because `_anchored` is transient**. If a caller uses `open_exchanges()`, it can silently recreate the alias and restore local validation. This does not prove tampering or independent identity continuity; it means local identity admission, recovery and restart are conflated. **Proposed RC-R5(19), not frozen:** an authenticated durable identity state survives restart without a silent write; a clean first bootstrap has explicit authority; stale/replayed matrix+witness fails; a legitimate authorized update/recovery emits attributable evidence and advances independently held version custody; denied states never open exchanges. Add positive restart/export/import and interrupted-recovery cases before freeze.
+
+**Limitations:** no complete Genesis runtime, actual restart persistence implementation, external witness, key holder, durable storage or real attack demonstrated. Claude's E35 narrower wording remains: re-anchor repairs checked fields, leaves other tampering invisible; Lesson2 40/40 is two exposed role decisions, not vocabulary learning. No Genesis/shared/main/Claude edits.
