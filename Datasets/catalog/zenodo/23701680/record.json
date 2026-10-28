@@ -1,0 +1,92 @@
+{
+ "id": "zenodo:23701680",
+ "title": "Example code and data for channel smoothing and width estimation in the Oregon Coast Range",
+ "url": "https://zenodo.org/records/23701680",
+ "doi": "10.5281/zenodo.23701680",
+ "description": "<p>This repository provides a simplified Python workflow and example datasets for analyzing channel and valley geometry from high-resolution topographic data in the Oregon Coast Range, Oregon, USA. The materials are associated with the study &ldquo;Network-scale patterns of bedrock-channel sinuosity in the Oregon Coast Range&rdquo; by Lin, Yanites, and Schanz.</p>\n<p><strong>The package includes:</strong></p>\n<ul>\n<li>\n<p><strong>smooth_channel_mini.py:</strong> A demonstration script for smoothing channel polylines and estimating median channel width (W50) and valley width (V50) from DEM cross-sections.</p>\n</li>\n<li>\n<p><strong>Yaquina_DEM_clip.tif:</strong> A high-resolution DEM subset from the Yaquina Basin.</p>\n</li>\n<li>\n<p><strong>Yaquina_channels_clip.gpkg:</strong> Example channel geometries from the Yaquina Basin.</p>\n</li>\n<li>\n<p><strong>README.md:</strong> Instructions describing input data, parameters, processing steps, and outputs.</p>\n</li>\n<li>\n<p><strong>requirements.txt:</strong> Python packages required to run the demonstration.</p>\n</li>\n</ul>\n<p>The script illustrates selected components of the channel-processing workflow and generates smoothed channel geometries, cross-sections, and stream-order summaries of channel and valley widths.</p>\n<p>This repository is intended as a methodological demonstration rather than a complete reproduction package for all figures and statistical analyses presented in the manuscript.</p>",
+ "found_by_keywords": [
+  "Indus Valley script"
+ ],
+ "topic_section": "indus valley script",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/23701680",
+   "status": "unverified"
+  },
+  "version": {
+   "value": 4,
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-10-27T20:24:19.812940+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'Indus Valley script'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:77d65dc097823779d697d873bdcb261487a093f68827b30bee81ee9896136818",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-28T13:20:02+00:00",
+ "files": [
+  {
+   "name": "Yaquina_DEM_clip.tif",
+   "url": "https://zenodo.org/api/records/23701680/files/Yaquina_DEM_clip.tif/content",
+   "declared_size": 193141411,
+   "declared_checksum": "md5:b9b285e2928e719c17b6cb4c329ee294",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "requirements.txt",
+   "url": "https://zenodo.org/api/records/23701680/files/requirements.txt/content",
+   "declared_size": 53,
+   "declared_checksum": "md5:4e3e9fd0277d7c71c9fc58c179425cf5",
+   "format": null,
+   "stored": "files/zenodo/23701680/requirements.txt",
+   "bytes": 53,
+   "sha256": "6133951866ae168e7d26b12e8415ed797468495d13b17f5c9e9279b59eb6ffb6",
+   "checksum_check": "match",
+   "provenance_checksum_status": "verified against source"
+  },
+  {
+   "name": "README.md",
+   "url": "https://zenodo.org/api/records/23701680/files/README.md/content",
+   "declared_size": 8389,
+   "declared_checksum": "md5:dd0b257e62d47793f6368064c5bcf0f9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "smooth_channel_mini.py",
+   "url": "https://zenodo.org/api/records/23701680/files/smooth_channel_mini.py/content",
+   "declared_size": 8834,
+   "declared_checksum": "md5:87ad02910f0c54be03cb8417367fe255",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "Yaquina_channels_clip.gpkg",
+   "url": "https://zenodo.org/api/records/23701680/files/Yaquina_channels_clip.gpkg/content",
+   "declared_size": 3424256,
+   "declared_checksum": "md5:fd36a315d78a0eb70f853ad89388944d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
