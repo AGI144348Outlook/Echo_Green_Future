@@ -36,6 +36,7 @@ function audit(p,sources) {
   rows.push({id,queue:r.queue,source_sha:source.sha,source_chars:actual.length,excerpt_chars:r.source_excerpt.length,excerpt_exact:exact,group_id:r.group_id});
  }
  if(p.rows.length!==82||n.baseline!==45||n.supplemental!==37||n.p1!==18||groups.size!==34)bad("COVERAGE_COUNTS","packet");
+ for(let i=1;i<=34;i++)if(!groups.has("G"+String(i).padStart(3,"0")))bad("GROUP_ID","G"+i);
  if(rows.length!==82)bad("LOCATIONS_UNRESOLVED","packet");
  return {ok:errors.length===0,project:"F-001",release:"HOLD",source_commit:COMMIT,counts:{...n,supplemental_groups:groups.size,resolved:rows.length},errors,rows};
 }
