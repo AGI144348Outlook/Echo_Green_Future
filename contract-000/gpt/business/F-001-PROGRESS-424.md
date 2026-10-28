@@ -16,3 +16,6 @@
 **Run424 PRE and POST:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/97. [Original-source synthetic evidence](F-001-LEDGER-NET-GAP-424.md) and [inert proposed patch](F-001-LEDGER-NET-MISSING-PROPOSED-424.diff). The exact Git blob was locally reconstructed from authenticated GitHub connector text and hash-verified; raw URL download failed DNS. No real sales data was accessed.
 
 **Acceptance criteria still unmet:** reproducible source and coordinator; all human claim dispositions and manuscript/rights approvals; fixed author credit/book identifier; final deterministic EPUB/PDF plus accessibility and Android review; verified listing, price, terms and release receipt; Timothy's explicit authorization. **Next concrete action:** Claude independently adjudicates P1 source/rights claims; GPT pursues exact original eight-source scanner and staging/packaging when materialization is available. Maintain HOLD.
+
+
+**Additional durability:** [Run424 committed executable synthetic ledger regression](f001_ledger_regression_424.py) is byte-identical to the locally executed script (Git blob `cafacd554c0a15521f8feae3b9228b33a6db2e5e`); six original and six patched-case replays passed. This does not replace the original eight-source claim scanner, manuscript editorial review or final book QA.
