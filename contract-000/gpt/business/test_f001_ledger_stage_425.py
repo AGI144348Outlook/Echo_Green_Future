@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Run425 synthetic tests; PRE Issue #98. No private sales data."""
+"""Run425 synthetic tests; PRE Issue #98. No private sales data.
+Usage: python -I -B test_f001_ledger_stage_425.py /path/to/verified/ledger_merge.py
+"""
 import csv, importlib.util, json, os, subprocess, sys, tempfile
 from pathlib import Path
 
 BASE=Path(__file__).resolve().parent
+SOURCE=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else BASE/'ledger_merge.py'
 FIELDS=['date','fiscal_contract','kind','category','gross','fees','net',
         'asset_or_liability','share','source','source_ref','receipt_ref','evidence','entered_by']
 
@@ -29,7 +32,7 @@ def case(label, old, new, expected, check=None, preexisting=False):
         if preexisting:
             out.write_text('SENTINEL')
         cmd=[sys.executable,'-I','-B',str(BASE/'f001_ledger_stage_gate_425.py'),
-             str(BASE/'ledger_merge.py'),str(prior),str(src),str(out)]
+             str(SOURCE),str(prior),str(src),str(out)]
         p=subprocess.run(cmd,capture_output=True,text=True,timeout=12)
         assert p.returncode==expected,(label,p.returncode,p.stdout,p.stderr)
         rep=json.loads(p.stdout)
@@ -45,7 +48,7 @@ def case(label, old, new, expected, check=None, preexisting=False):
 
 
 def main():
-    script=BASE/'ledger_merge.py';data=script.read_bytes()
+    script=SOURCE;data=script.read_bytes()
     spec=importlib.util.spec_from_file_location('gate',BASE/'f001_ledger_stage_gate_425.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
     assert mod.git_blob(data)==mod.ORIGINAL_GIT_BLOB
     good=row()
