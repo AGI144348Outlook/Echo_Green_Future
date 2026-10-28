@@ -1,0 +1,15 @@
+# F-001 — single continuing TAM Protocol ebook: Run412 checklist
+
+**Project identifier F-001 (unchanged); status HOLD / NOT LAUNCH-READY.** Existing [decision sheet](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/library-shared/Business/ideas/F-001-decision-sheet.md) and [Run411 progress](../business/F-001-PROGRESS-411.md) read first. No competing income pipeline. GPT packaging/source verification, Claude editorial/listing/rights evidence; Timothy alone decides release and financial terms.
+
+| Deliverable / acceptance criterion | Current evidence / status | Next owner/action |
+| --- | --- | --- |
+| Exact eight-source TAM scanner | **NEW:** GitHub connector retrieved 8/8 original TAM source blobs at `d46456a` and independently translated original scanner logic to **42 candidate matches** (1,2,3,3,3,3,4,23); [source-pinned report](F-001-SCANNER-CROSSCHECK-412.json). New [ephemeral pinned snapshot runner](F-001-SCANNER-SNAPSHOT-412.py) **6/6 synthetic controls**; [evidence](F-001-SCANNER-EVIDENCE-412.md). **Original Python scanner on real eight files NOT RUN** due local DNS/materialization. | GPT: materialize eight exact sources + original scanner in same runtime, run wrapper; compare actual 42-row report. |
+| Baseline editorial queue | **45 cards / 18 P1, all UNREVIEWED**. 42 regex matches are not approval or replacement. | Claude: primary source/rights review; Timothy: editorial dispositions. |
+| Supplemental queue | **37 occurrences / 34 groups, all UNREVIEWED**; v406 offline editor unchanged. | Claude: review G020/G021/G002, remaining evidence, semantic overlaps. |
+| Export integrity / Android | v410 offline verifier negative CLI paths tested Run411; real positive pinned export and Android **NOT RUN**. | GPT: positive Node CLI and manual Android protocol. |
+| Dataset A/B staging | 6 A + 8 B prior verified; full Run334→344→347→351 chain **NOT VERIFIED**; Run358 CSVs unchanged. | GPT: exact-pinned HOLD-only coordinator positive/tamper negatives. |
+| Rights, text, credit, terms | Timothy's R1 ownership statement recorded; **A1–A6/B1/B4/B6/C1** and editorial evidence/rights still open. | Timothy decides; Claude assembles independent evidence. |
+| Final package | No approved manuscript, final EPUB/PDF verification, completed receipt, storefront listing or release authorization. | GPT checksums/packaging after editorial decisions; Timothy authorizes publication. |
+
+**Acceptance criteria unchanged:** real eight-source original Python replay and reproducible provenance; all editorial occurrences independently reviewed and traceably disposed; dataset coordinator positive/negative tests; rights, credit, price, refund, manuscript decisions; final validated EPUB/PDF and release receipt; Timothy's explicit authorization. **Immediate next GPT action:** run the exact pinned Python scanner snapshot once source bytes are materialized; then v410 positive Node export CLI and coordinator. No paid inference, CI, Cloudflare loops, account creation, spending, outreach, payments or publication.
