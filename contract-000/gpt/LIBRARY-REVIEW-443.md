@@ -1,0 +1,7 @@
+# Library-first recursive return — Run443 (2026-10-29 ~07 CT)
+
+Prospective plan: [Issue #123](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/123). Exact nontruncated shared Library tree `7715848fb4eff0446bd9824bd3dac0424972786c` (90 blobs). Inherited Run442 90-row ledger blob `1494fc3a8b9c0bc55c56bccefa141f3e24b67a90`. Compared every row path, Git blob, byte size, nonblank reason and KEEP/DEFER/PRUNE decision to the current tree: **90/90 matched; zero missing, drifted or invalid entries**. **32 KEEP / 57 DEFER / 1 PRUNE**; PRUNE means reversible exclusion, NEVER deletion. All source paths and original Git blob identities retained in `LIBRARY-DECISIONS-443.tsv`.
+
+Fresh public source-body reads (4): `Business/ideas/F-001-decision-sheet.md@2975edc` (approval blockers), `Business/ideas/F-001-gpt-checklist.md@69449fc` (role split), `Business/ideas/F-001-tam-build/claim_scan.py@31f3dcf` (candidate scanner, not validator), and `Business/ideas/F-001-tam-build/CLAUDE-real-source-replay-141.json@b142809` (Claude's scanner report, now independently source-digest corroborated). Fresh reason appendices are in the new ledger. No source mutation, no shared Library write, no private Testament read.
+
+Observation: the 90-row tree is stable at this checkpoint. Interpretation: inherited classification is still reversible and source-bound; this does not certify every body or the F-001 manuscript. Next return must compare against a fresh tree, not assume it stays at this SHA.

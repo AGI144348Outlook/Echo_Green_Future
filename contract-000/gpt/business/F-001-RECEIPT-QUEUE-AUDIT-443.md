@@ -1,0 +1,19 @@
+# F-001 sole TAM ebook — independent receipt and editorial queue reconciliation, Run443
+
+**Pre-test:** Issue #123, published before diagnostics. **Status HOLD / NOT LAUNCH-READY**. Source: The-TAM-protocol public commit `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9`; original scanner `claim_scan.py@31f3dcff486c4c8cc96d514eb425da86834d00c3`; Claude §141 receipt `library-shared:Business/ideas/F-001-tam-build/CLAUDE-real-source-replay-141.json@b14280959a482591448ab9f1cd34ea0c4a8f21a6`; cross-queue `F-001-CROSS-QUEUE-407.json@ab5e755c`.
+
+## Actual independently executed source-digest checks
+
+Fetched **8/8 public TAM source bodies** by pinned commit using GitHub connector; independently re-encoded UTF-8 and computed SHA-256 using a pure JavaScript implementation (known vector `sha256('abc') = ba7816bf...15ad` **PASS**). Each of the eight independent SHA-256 values **MATCHED** Claude §141's `source_sha256`; each fetched Git blob matched the TAM tree. Git blob and byte-size details plus complete SHA-256 values are in `F-001-RECEIPT-QUEUE-443.json`. Receipt's eight pre/post source digests are equal; all eight named files exist in TAM source tree; reported `rows=42` and `claims_csv_sha256=2758aea1...` are internally coherent fields, **not independently reproduced scanner outputs**. 8/8 source-digest parity is **not** 42/42 independent Python scanner parity. No original Python scanner or 334→344→347→351 coordinator was executed by GPT in Run443. This is connector/JS computation, not local raw-byte custody, filesystem race exclusion or scanner replay.
+
+## Editorial queue reconciliation — new crosswalk
+
+Independently parsed the committed Run407 cross-queue JSON: **45 baseline + 37 supplemental = 82 distinct occurrence IDs; 34 supplemental groups; zero ID overlaps**. All four Article 10 scanner candidates **already exist in the baseline 45**: `Article 10#S3`, `#S4`, `#S5`, `#S8`. Their four repetitions in the Collective also **already exist in baseline** as `Collective information#S293`, `#S294`, `#S295`, `#S298`. **None of these eight IDs is supplemental.** Thus the four scanner candidates and their four repeated instances do **not** add eight new items to the 82 queue; they are eight existing baseline occurrences, linked by repeated source content. They also do not constitute eight independent scientific confirmations. This resolves the mapping gap Claude explicitly corrected in §142 without changing either queue.
+
+**Editorial status:** zero cleared by this run; Article10 four candidate claims remain provisional HOLD, and all 82 queue occurrences remain UNREVIEWED for acceptance. Claude's §142 metrology review suggests framing/footnote options but Timothy's A4/A6 decisions and historical/geophysical validation are still open. The scanner misses Article10's strong closing 'Geophysical Fact' sentence, so candidate detection is not exhaustive. No publication, claims promotion, rights approval or manuscript edit.
+
+## Failures / deviations / limits
+
+No observed digest or queue mismatches. Earlier planned full independent Python parity could not be inferred from source hashes; no attempt was made to call it executed. The SHA256 check uses connector-returned text re-encoded as UTF-8, not an independent raw binary download; the exact byte sizes match the TAM Git tree. The crosswalk uses source IDs in a previously committed queue; semantic editorial decisions and image rights remain open. A full original-Python replay with independently captured output files and postscan custody is the next verification step, not a result of this run.
+
+**Single next action:** coordinate Claude's editorial disposition of these eight baseline occurrences (four claims and four Collective repetitions) without approving them; then continue 82-occurrence human editorial review, and separately obtain independent Python scanner parity/packaging receipts. F-001 remains HOLD.
