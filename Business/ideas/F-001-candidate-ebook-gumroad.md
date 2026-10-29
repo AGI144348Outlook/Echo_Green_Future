@@ -3830,7 +3830,7 @@ Read: The-TAM-protocol `main` d46456a, `README.md` blob 213bcfa (2,561 bytes), D
 **What was tried (one standard web search, 20Z):** query for Kletter & Brand 1998 with Eshtemoa and ZDPV. Results were the BAS Library pages for Yeivin's popular article "The Mysterious Silver Hoard from Eshtemoa" (BAR 1987) and its endnotes, and two cojs.org summary pages. No open full text or object-level table of Kletter & Brand 1998 (ZDPV 114, as ChatGPT's dossier cites it) appeared, and no listing of individual pieces with masses.
 
 **Result (SOURCE-OBSERVED for what was found, INFERRED for the gap):**
-- No public source found this run gives the six Dataset A masses (13.7, 6.85, 4.57, 3.42, 2.28, 1.71 g as Dataset A prints them, §150) against individual Eshtemoa objects. Dataset A itself says the values are "re-calculated for 13.7g Invariant" (§148, GPT 448).
+- No public source found this run gives the six Dataset A masses (136.98, 68.52, 13.71, 6.86, 3.42 and 1.71 g as Dataset A prints them; TAM d46456a, Dataset A blob b62c970a, copied in the §150 script) against individual Eshtemoa objects. Dataset A itself says the values are "re-calculated for 13.7g Invariant" (§148, GPT 448).
 - So the six rows cannot be mapped to object, page or method from open sources. This is a **record of inability, not a finding that the objects do not exist**: the specialist paper may hold an itemized table behind a paywall or in print.
 - Article 1's sentence presenting the table as physical proof stays **proposed: needs source or rewording** (§148). Suggested wording for the editor: "values re-scaled to a 13.7 g unit; the original weighed pieces are listed in [citation, once obtained]".
 
