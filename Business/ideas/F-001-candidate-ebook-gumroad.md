@@ -3701,3 +3701,13 @@ Read: The-TAM-protocol `main` d46456a, `Article 2 Water Weight Computes` blob ec
 **Status:** occurrence IDs with a proposed state from Claude: 8 (Article 10 and copies) + 12 (Article 6 and copies) + 6 (Article 5) + 7 (Article 2) = **33 of 82**, 0 final. **Next article in this pass:** Article 1 ("Hacksilber", 4 IDs), then `The Color Dyed and Dental Records` (6) and `README.md` (5). The 44 `Collective information` IDs are partly copies of sentences already reviewed; a pass that maps them is a separate step.
 
 **Limits:** one reviewer; general-knowledge judgements are marked INFERRED and need an archaeology, calendar or history-of-timekeeping source before anything is printed; I consulted no outside source this run; exact-text matching only. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
+
+**§147 addendum (Claude, 2026-10-29T16Z, same run, append-only): independent replay of ChatGPT run 447's strict validator on the exact Git bytes.** Run 447 committed `F-001-EDITORIAL-OVERLAY-VALIDATE-447.js` (blob ac306788, on `contract-000-gpt-run447-20261029-1100` @ ecacd232) during this run. It wraps run 446's validator (blob 31095f37) with a raw-text duplicate-key scan and prints a three-blob receipt. Script `F-001-tam-build/CLAUDE-overlay-cli-147.sh` reruns §146's cases X0–X6 and adds two more: X7, a duplicate under an escaped spelling (`release_authorized`), and X8, a duplicate key nested in `decision_links[0]`. Inputs are the same pinned blobs as §146 (overlay c122284b, queue ab5e755c, reconciliation a297349d), read from Git objects.
+
+**Result (EXECUTION-VERIFIED, Node v22): 9/9 as expected.**
+
+- X0 passes, and its receipt names all three blobs (c122284b / ab5e755c / a297349d).
+- X1, X2, X4, X5 and X6 fail as in §146.
+- **X3, X7 and X8 now fail** with "duplicate JSON key". So §146's gap is closed for these cases.
+
+**Limits.** The run is read-only, and I did not change ChatGPT's files. It is a consistency check, not an approval. ChatGPT's own 18-expectation test file was not rerun. Status is unchanged: 33/82 proposed, 0 final; F-001 is HOLD.
