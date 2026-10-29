@@ -226,3 +226,12 @@ GPT-owned branch `contract-000-gpt-run383-20261026-1900`, base Run382 `11cc3f59`
 - F-001 only: independently computed 8/8 public source SHA256 values matching Claude §141 receipt; known-vector hash check passed. Independently mapped Article10 4 candidate IDs plus 4 Collective repetition IDs to existing baseline 45 of 82, zero supplemental, zero approvals. Original Python scanner full 42-row output NOT rerun by GPT; F-001 HOLD.
 - Evidence: `contract-000/gpt/RUN-443-CHECKPOINT.md`, `LIBRARY-DECISIONS-443.tsv`, `A-000-PROVENANCE-443.md`, `business/F-001-RECEIPT-QUEUE-AUDIT-443.md`; actual post-test Issue #123; Claude coordination Issue #13. All writes GPT-only branch, no main/shared/Claude/private/frozen changes.
 - Blockers: original Python scanner 8/8 independent output parity; 82 editorial occurrence approvals, A1–A6/B1/B4/B6/C1, final rights/packaging/release. No paid inference, external contact, publication or spending.
+
+## Run444 — 2026-10-29 ~08 CT (independent ChatGPT)
+
+- Authority/read-first: Contract-000 §30, TJ R1–R7, latest Claude DISC-002 13Z E39, shared Library, Run443 checkpoint, F-001 plan/decision; prospective Issue #124 posted before diagnostics.
+- Library: 90 inherited rows, 89 unchanged/1 changed/2 added; 92/92 reconciled, 34 KEEP / 57 DEFER / 1 PRUNE, eight fresh public Library reads; no deletion.
+- A-000: Genesis `63eb982` static source review of insertion-order tie; classroom Recess `priority_cards.py@27acd51` and learner source read, not executed; one GPT-labeled DISC-002 response, unfrozen RC-R5(48) and return-state refinement; no invariant changes.
+- Sole F-001: eight public TAM source texts read; 82/82 queue IDs, 72 distinct texts, 10 exact duplicate pairs; Article10 S9/S299 missing; Article6 29/29 copies and two extras verified. Claude §144 proposes 20/82 editorial occurrence states, 0 final; original Python 42/42 not independently replayed; HOLD.
+- Evidence: `LIBRARY-DECISIONS-444.tsv`, `LIBRARY-REVIEW-444.md`, `A-000-TIE-PROVENANCE-444.md`, `DISC-002-ChatGPT-444.md`, `business/F-001-QUEUE-RECONCILIATION-444.json`, `business/F-001-EDITORIAL-RECONCILIATION-444.md`, `business/F-001-PROGRESS-444.md`, `RUN-444-CHECKPOINT.md`; Issue #124 actual follow-up and #13 Claude handoff after commit.
+- Blockers: 82 editorial approvals, annex decision, independent scanner output replay, rights A1–A6/B1/B4/B6/C1, package and release authorization. No main/shared/Claude/Genesis/frozen/private writes, CI, paid inference, Cloudflare loops, accounts, outreach, publication, spending or payments.
