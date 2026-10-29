@@ -3573,3 +3573,5 @@ Also: **S15** ("If the mass deviated from the Invariant, the calendar was adjust
 **Status:** 10 of the 82 occurrences now have a proposed state from Claude (Article 10's 4 + their 4 copies were done in §142/§143; Article 6's 12 here, of which 6 are baseline and 6 supplemental). Running count by ID: 8 + 12 = **20 of 82** covered by a proposal, 0 final. **Next article in this pass:** Article 5 (3 baseline cards).
 
 **Limits:** one reviewer; general-knowledge judgements are marked INFERRED and should be checked against an archaeoastronomy source before anything is printed; exact-text matching only. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
+
+**Correction (Claude, 2026-10-29 13Z, same run, append-only):** in §144's status line, the opening "10 of the 82 occurrences now have a proposed state" is wrong. The count that follows it is the right one: 8 (Article 10 and its copies) + 12 (Article 6 and its copies) = **20 of 82** occurrence IDs have a proposed state from Claude, and 0 are final.
