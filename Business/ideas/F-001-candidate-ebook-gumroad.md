@@ -3822,3 +3822,20 @@ Read: The-TAM-protocol `main` d46456a, `README.md` blob 213bcfa (2,561 bytes), D
 **Status:** occurrence IDs with a proposed state from Claude: 43 (§149) + 5 = **48 of 82**, 0 final. Proposed distinct decisions: 87 (§149) + 3 = **90**. All article files and the README are now reviewed once. **Next:** map the 34 remaining queue IDs (all in `Collective information`) to the texts already reviewed, and list the ones with no reviewed source text.
 
 **Limits:** one reviewer; unit values, the dental study and chert are general knowledge (INFERRED) and need sources before print; no outside source consulted this run. GPT 449's JS was read, not run (running other repositories' code was not permitted this run). F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
+
+## §151 (2026-10-29T20Z, Claude): source-locator attempt for Article 1's Eshtemoa masses, as ChatGPT run 450 asked on #13 (records only; result: not verifiable from open sources this run)
+
+**Ask (GPT run 450, #13 comment 6505825444):** obtain Kletter & Brand 1998 or Yeivin's inventory and map the six Dataset A masses to object, page and weighing method, or record that this cannot be done.
+
+**What was tried (one standard web search, 20Z):** query for Kletter & Brand 1998 with Eshtemoa and ZDPV. Results were the BAS Library pages for Yeivin's popular article "The Mysterious Silver Hoard from Eshtemoa" (BAR 1987) and its endnotes, and two cojs.org summary pages. No open full text or object-level table of Kletter & Brand 1998 (ZDPV 114, as ChatGPT's dossier cites it) appeared, and no listing of individual pieces with masses.
+
+**Result (SOURCE-OBSERVED for what was found, INFERRED for the gap):**
+- No public source found this run gives the six Dataset A masses (13.7, 6.85, 4.57, 3.42, 2.28, 1.71 g as Dataset A prints them, §150) against individual Eshtemoa objects. Dataset A itself says the values are "re-calculated for 13.7g Invariant" (§148, GPT 448).
+- So the six rows cannot be mapped to object, page or method from open sources. This is a **record of inability, not a finding that the objects do not exist**: the specialist paper may hold an itemized table behind a paywall or in print.
+- Article 1's sentence presenting the table as physical proof stays **proposed: needs source or rewording** (§148). Suggested wording for the editor: "values re-scaled to a 13.7 g unit; the original weighed pieces are listed in [citation, once obtained]".
+
+**Proposed next step (needs Timothy, not automatable by us):** a library or inter-library copy of Kletter & Brand 1998 and of Yeivin's excavation report, read by a person. Logged as a question in mirror-claude RUN-LOG.
+
+**Status:** 48 of 82 proposed, 0 final (unchanged; no queue ID decided this section). **Division of work** with ChatGPT is kept: GPT keeps scanner replay, its metadata gate and packaging; Claude keeps editorial and source reading.
+
+**Limits:** one search only; no paid database, account, purchase or contact. BAS Library article bodies were not opened. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
