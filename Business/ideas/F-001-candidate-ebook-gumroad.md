@@ -3853,3 +3853,45 @@ Read: The-TAM-protocol `main` d46456a, `README.md` blob 213bcfa (2,561 bytes), D
 **Reading:** GPT's aggregate 42 now also holds row by row against the original Python, on these pinned sources. This is a parity result about the scanner, not a check of any claim in the text and not a mapping to the 82-item editorial queue (that mapping is still the next step; this section does not do it). A byte-for-byte CSV comparison between the two implementations is not meaningful because the JS writes no CSV; the comparison is field-level.
 
 **Status:** 48 of 82 proposed, 0 final (unchanged). F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+## §153 (2026-10-29T22Z, Claude): mapping of the 44 `Collective information` queue IDs to reviewed texts (10 copies, 34 with no reviewed counterpart), and an editorial pass on the first 14 of those 34 (records only)
+
+**Ask:** §150 "Next" and ChatGPT run 451/452 on #13: map the remaining `Collective information` queue IDs to texts already reviewed, list those with no reviewed source, then review them.
+
+**Inputs (pinned):** The-TAM-protocol `main` @ d46456a1 (read-only clone); queue `F-001-CROSS-QUEUE-407.json` blob ab5e755c (read with `git cat-file`; GPT's branch not touched). Scripts added this section, both read-only and run `python3 -I` outside any repository (EXECUTION-VERIFIED): `CLAUDE-collective-map-153.py` (claim_scan.py splitter, same as §145; exact copy and closest difflib match in the other seven files) and `CLAUDE-collective-checks-153.py` (arithmetic on the C35 table's own longitudes; no outside data).
+
+### A. Mapping (EXECUTION-VERIFIED)
+
+The queue holds **44** `Collective information` occurrences (24 baseline, 20 supplemental G015–G034). **10 are exact copies** of sentences already reviewed: C150/G015, C153, C161/G016, C168/G017, C172, C178 = Article 6 S1, S4, S12, S19, S23, S29 (§144); C293, C294, C295, C298 = Article 10 S3, S4, S5, S8 (§143). Their proposed states follow the article sentence (linked decisions, as in GPT 445's overlay groups). **34 have no counterpart**: the best match in any other file has ratio ≤ 0.524 (C37 vs Color/Dental S16), so none is a near copy. They need their own pass; 14 are done below and **20 remain**: C68, C69, C76, C82, C97, C100, C109, C110, C115, C117, C126, C129, C141, C147, C149, C222, C230, C236, C271, C276.
+
+### B. Arithmetic (`CLAUDE-collective-checks-153.py`, EXECUTION-VERIFIED)
+
+- Longitude separations between the four C35 nodes (Indus 68.1° E, Eshtemoa 35.0° E, Persepolis 52.8° E, Cabo Verde 23.6° W): 33.1, 15.3, 91.7, 17.8, 58.6, 76.4°. **None is 72° or 108° (±1°)**, which C13 says the hoards "often" sit at, and **none is 49.3°**, the "step-down interval" of C90.
+- C90: 13.7 % of 360° = 49.32°. The arithmetic is right; the link to the 13.7 g unit is a percentage reusing the same digits.
+- C128: 13.7 t ÷ 13.7 g = 1,000,000. This holds for any n (n t ÷ n g = 10⁶), so it shows nothing about Moai; it follows from choosing 13.7 t.
+- C27/C57: 13.73 km and 13.7 g are different dimensions; in miles the same distance is 8.53, in nautical miles 7.41. A match of digits across units carries no evidential weight.
+
+### C. Proposed evidence states (14 IDs; Timothy and the joint review decide)
+
+| Queue ID | Text, short | Proposed state |
+|---|---|---|
+| C3 (G018) | Jars buried at longitude/latitude intersections to "lock" jurisdiction to 13.7 g | **Hypothesis, no evidence offered.** The sentence says "In this model"; keep only if the chapter is labelled as a model. |
+| C11 (G019) | Eshtemoa, Lothal and Maya caches "Sealed with Bitumen and weighted to the 13.7g standard" | **Not supported.** No source is given for bitumen sealing at any of the three; Maya caches are not known to follow any standard weight unit (INFERRED, general knowledge, unverified this run). Cut or cite each site. |
+| C26 | "Great Circle Alignment research (2025)" shows sites at distances "that reflect our Registry" | **Uncited.** The 2025 study is not named; "stunning" is rhetoric. Cite it or cut. |
+| C27 | Persepolis "exactly 13.73 km" from the ancient equator | **Unit coincidence (B), uncited.** The ancient-equator line is itself a hypothesis (INFERRED); "exactly" to 10 m is not meaningful for a site hundreds of metres across. |
+| C35 (G020) | Evidence table "Grid Pointers" | **Mixed.** Longitudes are about right (INFERRED). Eshtemoa "26kg" differs from Yeivin's ~28 kg as summarised in GPT 450's dossier and the README's ">26 kg" (pick one, cite it). Persepolis's "evidence" is the C27 coincidence; Cabo Verde's is a question mark. Label the table as proposed nodes, not evidence. |
+| C37 (G021) | "The Earth is 'wired' for the 13.7g Invariant." | **Rhetoric, unsupported as a claim.** Keep only as metaphor. |
+| C39 | Melchizedek buried jars at harmonic intervals across the Atlantic | **Narrative, no evidence;** B shows no harmonic spacing among the book's own nodes. Label as speculation. |
+| C46 (G022) | Points as "Pins" of the 13.7 g Operating System | **Metaphor.** Keep if framed as such. |
+| C53 (G023) | High Island as the "Step-Up" node "if" the standard reached the Maya | **Conditional hypothesis.** Fine as conditional; no High Island find is in the repository. |
+| C55 | "This is where the math gets undeniable." | **Overclaim.** B shows the Easter Island/Persepolis figures are unit coincidences. Cut. |
+| C57 | Easter Island 9.62 km and Persepolis 13.73 km from a realigned equator | **Uncited "recent calculations";** same unit issue as C27. Cite or cut. |
+| C60 (G024) | Easter Island as the "Pacific Anchor" (labelled "The Intuition") | **Labelled intuition.** Keep with the label. |
+| C90 | 13.7 % of the circle = 49.3°, "the exact Step-Down interval" for trade winds | **Arithmetic right, conclusion unsupported:** no node pair in C35 is 49.3° apart and no wind-navigation source is given. `\%` is a LaTeX leftover. |
+| C128 | 13.7 t Moai ÷ 13.7 g = 1,000,000 "exactly" | **True by construction (B), not evidence.** No "standard 13.7-ton Moai" is sourced; published averages for moai are lower (INFERRED, general knowledge, unverified). |
+
+**Out of queue (1 proposed decision):** C13 "they often sit at harmonic intervals (e.g., 72 degrees or 108 degrees apart)": no pair of the book's own nodes does (B). Suggest cutting or naming the pairs.
+
+**Status:** the 10 copies were already counted in §143/§144 (the 48 reviewed IDs plus these 34 make 82), so occurrence IDs with a proposed state from Claude are 48 + 14 = **62 of 82**, 0 final. Proposed distinct decisions: 90 + 14 + 1 = **105**. **Next:** the 20 remaining Collective IDs listed in A.
+
+**Limits:** one reviewer; site facts (bitumen, Maya weights, moai masses, the ancient-equator source) are general knowledge or unverified (INFERRED) and need sources before print; no outside source consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
