@@ -3455,3 +3455,36 @@ PROPOSED (one of these, not applied): refuse a non-empty output folder, or write
 **5. Integration:** the run 333 guard is a correct, narrow improvement. It is safe to carry into any reviewed copy for `F-001-tam-build/` (path as in §139 §5), best together with the X4 fix and X1. Not done here: that is a release-path change, and F-001 stays HOLD.
 
 **Position:** product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Questions for Timothy: none new. Still open: A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, the precision note with the A sentence (§136), and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §141 (2026-10-29T10Z, Claude): ChatGPT's run 439 gate and run 440 post-scan wrapper run once on the real pinned TAM source with the unmodified original scanner; 42/42 parity, 8/8 Git blob pins, post-scan custody matched (records only)
+
+Read: `contract-000/gpt/business/f001_raw_replay_gate_439.py` (Git blob 38184fb, equal to the pin in `F-001-POSTSCAN-EVIDENCE-440.md`), `f001_postscan_custody_440.py` (Git blob abf9ac4, the wrapper commit ChatGPT names; it loads its sibling gate by explicit path), `F-001-CONNECTOR-CLAIM-CANDIDATES-436.json` (the 42-row manifest), `F-001-POSTSCAN-EVIDENCE-440.md`, `F-001-PROGRESS-440.md` on `contract-000-gpt-run440-20261029-0355` @ b4aebd29fa2a; original `F-001-tam-build/claim_scan.py` from this branch (Git blob 31f3dcf, equal to the gate's `SCANNER_BLOB`); public The-TAM-protocol `main` @ d46456a (`git archive` into a scratch folder; `ls-remote` shows `main` unchanged since the earlier sections, and the unmerged MIT branch still at 5f8612b).
+
+**Why this run:** ChatGPT's runs 439 and 440 list the same blocker as their next step: "obtain the exact eight raw TAM files in an authorised execution environment and run the unmodified original scanner through the gate and wrapper". This cloud run has the public source, so it did that once.
+
+**Result (EXECUTION-VERIFIED, Python 3.13.18, all inputs copied byte-for-byte into a scratch folder, nothing edited; full output `F-001-tam-build/CLAUDE-real-source-replay-141.json`):**
+
+| Check | Result |
+|---|---|
+| wrapper exit / gate result | 0 / `LOCAL_SOURCE_AND_SCANNER_PARITY_ONLY` |
+| source Git blob pins verified against the manifest | 8 / 8 |
+| scanner Git blob | 31f3dcf, as pinned |
+| candidate rows, file order, sentence numbers, trigger lists, excerpts, blank status | 42 / 42 match the run 436 manifest |
+| per-file rows | README 1, Article 1 2, Article 2 3, Color/Dental 3, Article 5 3, Article 6 3, Article 10 4, Collective 23 |
+| per-trigger hits | superlative 20, accuracy 13, certainty 12, percent 2 |
+| post-scan rehash | `MATCHED_AT_POST_SCAN_REHASH` (8/8 sha256 unchanged after the scanner exited) |
+| `claims.csv` sha256 | 2758aea1cd8244095f3c75a85b8fb73a79799d784f8cb2bfb2f86c9f3cbd0912 |
+| `claims-report.json` sha256 | f1c9e933ea3ffb1ef9fd2326e07938c61000c133478f795a15a403270a8a1ca1 |
+
+So the source-pinned parity that runs 434–440 record as "NOT RUN" is now run once, by the other author, on the real bytes. It was not pre-registered here; ChatGPT can pre-register its own replay and compare against these two digests.
+
+**Assumptions challenged (SOURCE-OBSERVED; PROPOSED notes, not applied):**
+
+- The gate checks `claims.csv` and `claims-report.json` but not whether the scanner wrote anything else into the output folder. An "only these two files" check costs one line.
+- The interpreter is not pinned (`sys.executable`). The scanner's sentence splitter and trigger regexes are plain `re`, so a version change is unlikely to move rows, but the receipt should record `sys.version` next to the digests.
+- The post-scan rehash catches a change made before the wrapper re-reads; as ChatGPT says, it is not a lock. For a cloud replay like this one (fresh `git archive`, nothing else running) that limit does not matter; for a shared machine it would.
+- The manifest is trusted as given. It is ChatGPT's own run 436 file; this replay confirms it matches the scanner on the real source, which is the independent check it lacked.
+
+**What this does not settle:** the 42 rows are candidates only. The 82 editorial occurrences, rights (A6), the Article 10 "99.9%" sentence, EPUB/PDF, coordinator and release gates, and A1–A6 stay open. F-001 stays HOLD.
+
+**Position:** product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Questions for Timothy: none new; still open A1–A6, B6, Dataset A rows 6 and 7, *Gerah*, the §136 precision note, and TAM vs Unicorn Estate / RFC vs both under R1. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
