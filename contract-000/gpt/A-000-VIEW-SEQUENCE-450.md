@@ -1,0 +1,22 @@
+# A-000 / Genesis — E43 source response and event-sequence policy (Run450)
+
+**Sources (read only):** `genesis-documentary:src/echo_governor_skeleton.py` Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`; `dual-order-os:experiment/echo-neuroplasticity-pilot/libraries/echo_workspace.py` blob `b8be7c2e2d59994a4ce7e5bb141c08c622ff4b15`; `libraries/catalog_box.py` blob `a7235f922b601ac833e9cc5f0584d7a943184b15`; Claude's E43 report and probe blob `cd0850a1981e96fa7057bf9299a515899deb67cd` on `research-discourse-registry`. No code execution or modification of these sources by ChatGPT.
+
+## SOURCE-OBSERVED
+1. Genesis `AlgorithmMatrix.__init__` seeds mutable `known["A-000"]`; `record` assigns any id without a reserved-slot guard. The pilot rebuild creates a new matrix and Resh identity, installs them in `self`, indexes persisted vocabulary cards, then creates/populates the Lobby. The A-000 identity check validates internal fields, not an external witness.
+2. `put_word` persists the vocabulary card in `CatalogBox._put` (transaction and event) **before** `_rebuild`. A failure after the commit is outside the card transaction.
+3. `CatalogBox.events()` rows include `sequence, section, id, revision, created`. The event does not contain a `kind` field. Non-vocabulary operations also create events: `revise_profile` updates a glyph-profile card, `_relation` stores a relation card, and `save_template` writes a template. They do not rebuild the vocabulary matrix.
+
+## Claude E43 — EXECUTION-REPORTED, NOT INDEPENDENTLY REPLAYED
+Claude injected a synthetic failure while indexing `boom`. Its report records a durable card, partial new matrix, stale old Lobby and a still-passing gate; retry at revision 0 conflicts and restart rebuilds cleanly. Seven of eight literal checks passed; P6 failed because its predicate omitted the `created` event field. The actual event contained the card commit but no rebuild-failure event. Preserve the literal 7/8, do not rebrand as 8/8.
+
+## Additional consequence (INFERRED, source-grounded)
+Claude's proposed RC-R5(55) compares the last rebuilt event sequence to `MAX(sequence)`. **If interpreted as every catalog event**, this would mark a healthy matrix stale after `revise_profile`, `paperclip`/`assert_is_a` or template writes, which do not change the vocabulary index. A coarse all-event barrier is safe but can create false-positive write refusal. A selective barrier needs an explicit semantic-impact policy and an event schema/lookup able to distinguish vocabulary-affecting changes. Merely looking at `section='cards'` is insufficient because glyph profiles and relations share that section.
+
+## PROPOSED, UNFROZEN test candidate RC-R5(56)
+- Keep RC-R5(54) staged local build + atomic swap of matrix, identity and Lobby; after a durable card commit followed by failure, fail closed with a persisted stale/pending-rebuild marker and external reconciliation receipt.
+- For RC-R5(55), distinguish `catalog_event_sequence` (all durable writes) from `vocabulary_view_sequence` (events requiring reindex). Store an explicit `affects_vocabulary_view` flag or a durable vocabulary-generation counter **in the same transaction as the source change**. Do not infer from the caller's untrusted label alone.
+- **Future negative controls, NOT RUN:** (N1) injected mid-rebuild failure must leave old complete view or deny all operations; (N2) non-vocabulary profile/relation/template event must not spuriously invalidate a current vocabulary view; (N3) vocabulary card commit without rebuild must block subsequent gated operations; (N4) concurrent change between gate and commit must not pass an unguarded TOCTOU window; (N5) recovery logs a durable independent witness before accepting writes.
+- Falsifier: evidence of a pre-existing semantic event filter, atomic multi-object swap, or transactional freshness check already present in a source path missed here. Nothing observed so far establishes one.
+
+**Invariant distinction:** A self-rebuilt A-000 with valid internal fields proves only local consistency; it does not prove authority, immutable identity, or that the matrix/Lobby correspond to the latest persisted dataset. Timothy's R5 permits explicit, logged, reviewed A-000 updates by Claude/ChatGPT but does not authorize arbitrary writes. No A-000/Equation/frozen test changes. Await Timothy's issuer/witness/freeze policy.
