@@ -3614,3 +3614,51 @@ Formatting: S13 prints LaTeX source (`68.1^\circ E`) in plain text. The book cop
 **Limits:** one reviewer; general-knowledge judgements are marked INFERRED and need an archaeology/Azores source before anything is printed; I consulted no outside source this run; exact-text matching only. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
 
 **Correction (Claude, 2026-10-29 14Z, same run, append-only):** in §145's "Proposed" paragraph, the two new candidates are **S9 and S26**. S19 is not a candidate: it is already a queue row (G014), and its unit fix is part of that row's decision. The totals stand: 77 proposed distinct decisions plus 4 candidates (S15, S20 from §144; S9, S26 here).
+
+## §146 (2026-10-29T15Z, Claude): ran ChatGPT run 446's overlay validator CLI on the exact Git bytes it pins (the step run 446 could not do: its container had no DNS for raw.githubusercontent.com). Real input passes; 5 of 6 file-level tamper cases fail as they should; one gap: a duplicate JSON key in the overlay passes
+
+**Inputs (SOURCE-OBSERVED, `git hash-object`).** All four files are from branch `contract-000-gpt-run446-20261029-1000` @ b468d91e, read straight from Git objects (no network fetch):
+
+- validator `F-001-EDITORIAL-OVERLAY-VALIDATE-446.js`: 31095f37;
+- overlay `F-001-EDITORIAL-OVERLAY-445.json`: c122284b;
+- queue `F-001-CROSS-QUEUE-407.json`: ab5e755c (= the pin);
+- reconciliation `F-001-QUEUE-RECONCILIATION-444.json`: a297349d (= the pin).
+
+**Method.** Script `F-001-tam-build/CLAUDE-overlay-cli-146.sh` is read-only. It works in a fresh temp directory and runs Node v22.23.4. It runs the CLI once on the real bytes and then on six file-level variants. These are real files on disk, not in-memory models, so this is the CLI integration check that run 446 listed as open.
+
+**Results (EXECUTION-VERIFIED).**
+
+| Case | Expected | Got |
+|---|---|---|
+| X0 real bytes | PASS | PASS (exit 0) |
+| X1 queue re-serialized (same JSON value, new bytes) | FAIL | FAIL "queue Git blob" |
+| X2 reconciliation + one trailing newline | FAIL | FAIL "reconciliation Git blob" |
+| X3 overlay with `"release_authorized": true` followed by `"release_authorized": false` | FAIL | **PASS (exit 0)** |
+| X4 overlay group B01 `final: true` | FAIL | FAIL "unapproved group B01" |
+| X5 overlay truncated at 200 bytes | FAIL | FAIL (JSON parse) |
+| X6 overlay with a UTF-8 BOM | FAIL | FAIL (JSON parse) |
+
+**What X3 means (SOURCE-OBSERVED cause).** `JSON.parse` keeps the last of two duplicate keys. The `fields()` allow-list sees only parsed keys. The overlay itself is not pinned by blob; only the queue and the reconciliation are. So a person who reads the file can see `"release_authorized": true`, while the validator sees `false` and reports PASS.
+
+This does not approve anything by itself, because the release step is still Timothy's. But it is a place where the file and the gate can disagree.
+
+**Proposed fixes (PROPOSED; either is enough).**
+
+- (a) Refuse duplicate keys. For example, scan the raw text with a small tokenizer, or check that every object's key count in the raw text equals `Object.keys(parsed).length`.
+- (b) Make the PASS line print the overlay's own Git blob. Then a PASS receipt names the exact bytes it judged, and a later reader can check that the bytes have not changed.
+
+I would do both. Add X3 as a negative control.
+
+**Limits.**
+
+- This is a consistency check only. It does not fact-check anything, clear rights, or approve editorial work.
+- The original Python 42/42 scanner replay is still ChatGPT's open item. I did not repeat it this run.
+- I did not edit the GPT validator or the overlay (they are ChatGPT's files).
+
+**Status (unchanged).**
+
+- Editorial states: 26/82 occurrence IDs are under a Claude proposal, and none is final.
+- F-001 is **HOLD / NOT LAUNCH-READY**.
+- No account, payment, listing or outreach.
+
+**Next.** Article 4 editorial pass (the next article in the queue), if ChatGPT's run 447 does not reorder.
