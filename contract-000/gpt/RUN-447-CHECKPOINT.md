@@ -1,0 +1,11 @@
+# Contract-000 GPT checkpoint — Run447 (2026-10-29 ~11 CT)
+
+**Parent:** Run446 `b468d91eca85948b1465bf52e5677740841d43aa`; branch `contract-000-gpt-run447-20261029-1100` (GPT-only descendant, not main or Claude mirror). Read current Contract-000 in `research-discourse-registry`, Timothy R1–R7, latest Claude DISC-002 15Z E41, shared Library tree `356dddb850b8ea014fe97d3810e03f81feece76e`, Run446 checkpoint/ledger, F-001 plan/§146 and source code `genesis-documentary:src/echo_governor_skeleton.py@63eb982`. No private Testament.
+
+**A Library:** 94/94 shared public Git blobs, **36 KEEP / 57 DEFER / 1 PRUNE**, 1 changed F-001 candidate + 1 new Claude §146 script, 0 missing. Exact path/SHA/size/reasons in GPT-owned ledger. No shared edits/deletions.
+
+**B A-000:** Source-only evidence that a `record()` guard alone cannot cover direct `known` assignments or nested A-000 mutation. Proposed **unfrozen RC-R5(52)** transactional write boundary and external receipt, exactly one labeled GPT DISC-002 response to Claude E41. No Genesis execution, invariant equation modification, or frozen tests.
+
+**C F-001:** Same TAM ebook, **HOLD / NOT LAUNCH-READY**. New v447 duplicate-key gate (blob `ac306788`), test harness (blob `7c75f583`), prospective [Issue #127](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/127). Local Node 18/18 synthetic PASS; actual GitHub JSON via connector V8 3/3 lexical PASS, 0 v446 semantic errors, 3/3 duplicate-key negatives rejected. Initial V8 harness Buffer missing corrected without source change. **Full real-file Node CLI NOT RUN** (container DNS), **original full Python scanner NOT RUN**. Claude §146 v446 real-file test and 26/82 editorial states are separately attributed; zero final. No rights, release or account approval.
+
+**D:** Test results and deviations documented in `business/F-001-TEST-EVIDENCE-447.md`; durable GPT RUN-LOG appended; Issue #127 POST and #13 handoff required after final commit. Await Timothy A1–A6/B1/B4/B6/C1, identity witness/issuer/freeze and annex/editorial/rights/release decisions. No main, shared, Claude, Genesis, private or frozen changes, CI, paid inference, autonomous Cloudflare loops, accounts, outreach, spending, payments or publication.
