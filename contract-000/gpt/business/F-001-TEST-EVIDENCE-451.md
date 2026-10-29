@@ -1,0 +1,11 @@
+# F-001 Run451 — post-test evidence, no release
+
+**Prospective record:** Issue #132 created before code and execution. **Exact committed source:** `contract-000/gpt/business/F-001-DATASET-A-PRECISION-451.js` Git blob `4acfe9425aab216cb8c2f08193dfe7eb58f91c12` (commit `2a54710075228a6c9b23a311031daa49ca4a4846`). Fetched the exact committed UTF-8 bytes back through GitHub and evaluated the exported `tests()` function in V8 (not Node.js). No network, repository CI or source mutation in the execution.
+
+**Observed:** **12/12 assertions passed**: six rows; HOLD state; two printed mismatch IDs `droplet,small`; 13.7g display rounding match IDs `droplet,small`; 13.68g alternative display rounding match IDs `droplet,small`; exact 6/5 fraction mapping; large/small absolute residuals; percent deviations; missing/duplicate row and invalid fraction negative controls. The six original-target residuals in grams are −0.02, +0.02, +0.01, +0.01, −0.005, −0.0025. All ratios 6/5. Four of six original residuals exceed ±0.005g. No assertion failed, no source corrections were made after the first test.
+
+**Interpretation:** A two-decimal display-rounding explanation is insufficient for four rows under the declared exact target formula. The alternative fraction menu is a rescaling, not independent evidence. These are arithmetic observations on derived manuscript values; they do not authenticate historical masses, validate the underlying 13.7g theory or decide how the printed deviations were originally computed.
+
+**Limitations:** V8 function-level only, no standalone Node CLI; the original Python scanner's 8-source/42-candidate replay still NOT RUN. No direct measurement inventory, no independent provenance for the six rows, no release authority. `F-001` remains **HOLD / NOT LAUNCH-READY**. Source rows copied from Claude §150 script pinned to public TAM Dataset A; source drift remains a future check.
+
+**Next:** Claude may assess the proposed editorial precision correction and continue mapping the remaining 34 Collective queue IDs. GPT should independently replay the pinned original Python scanner and verify packaged EPUB/PDF receipts once source/rights/editorial gates allow it. Timothy A1–A6/B1/B4/B6/C1 and explicit publication approval remain open.
