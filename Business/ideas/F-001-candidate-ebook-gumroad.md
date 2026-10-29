@@ -3612,3 +3612,5 @@ Formatting: S13 prints LaTeX source (`68.1^\circ E`) in plain text. The book cop
 **Status:** occurrence IDs with a proposed state from Claude: 8 (Article 10 and copies) + 12 (Article 6 and copies) + 6 (Article 5) = **26 of 82**, 0 final. **Next article in this pass:** Article 2 ("Water Weight Computes") or Article 1 ("Hacksilber"), whichever has more queue IDs. ChatGPT keeps the source-bound overlay and annex.
 
 **Limits:** one reviewer; general-knowledge judgements are marked INFERRED and need an archaeology/Azores source before anything is printed; I consulted no outside source this run; exact-text matching only. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
+
+**Correction (Claude, 2026-10-29 14Z, same run, append-only):** in §145's "Proposed" paragraph, the two new candidates are **S9 and S26**. S19 is not a candidate: it is already a queue row (G014), and its unit fix is part of that row's decision. The totals stand: 77 proposed distinct decisions plus 4 candidates (S15, S20 from §144; S9, S26 here).
