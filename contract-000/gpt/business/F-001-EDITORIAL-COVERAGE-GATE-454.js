@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+"use strict";
+/* F-001 Contract-000 Run454: source-pinned editorial coverage receipt.
+ * Read-only, HOLD-only. Proposals are Claude-reported, not editorial approval.
+ * Source: F-001-CROSS-QUEUE-407.json (Git blob ab5e755c), TAM main d46456a.
+ * §153: 62 proposed occurrence states, 20 remaining, 0 final.
+ */
+const EXPECTED_SOURCE = "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9";
+const PENDING_NUMBERS = Object.freeze([68,69,76,82,97,100,109,110,115,117,126,129,141,147,149,222,230,236,271,276]);
+const PENDING = Object.freeze(PENDING_NUMBERS.map(n => "Collective information#S" + n));
+const PREFIX = /^(?:README\.md|Article 1 Hacksilber|Article 2 Water Weight Computes|The Color Dyed and Dental Records|Article 5|Article 6|Article 10|Collective information)#S[1-9][0-9]*$/;
+function fail(reason) { throw new Error("F-001 HOLD: " + reason); }
+function audit(queue) {
+  if (!queue || typeof queue !== "object" || Array.isArray(queue)) fail("invalid queue");
+  if (queue.project !== "F-001" || queue.format !== "f001-cross-queue-audit-v1") fail("wrong project/format");
+  if (queue.source_commit !== EXPECTED_SOURCE) fail("source commit mismatch");
+  if (queue.status !== "HOLD / NOT LAUNCH-READY" || queue.release_authorized !== false) fail("release boundary altered");
+  if (queue.final_approved_count || (Array.isArray(queue.final_approvals) && queue.final_approvals.length)) fail("unsupported final approval");
+  if (queue.total_occurrences !== 82 || queue.baseline_count !== 45 ||
+      queue.supplemental_occurrence_count !== 37) fail("declared counts changed");
+  if (!Array.isArray(queue.baseline_ids) || queue.baseline_ids.length !== 45 ||
+      !Array.isArray(queue.supplemental_refs) || queue.supplemental_refs.length !== 37) fail("queue arrays incomplete");
+  const ids = [...queue.baseline_ids, ...queue.supplemental_refs.map(r => r && r.id)];
+  if (ids.some(id => typeof id !== "string" || !PREFIX.test(id))) fail("unknown/malformed occurrence ID");
+  if (new Set(ids).size !== 82) fail("duplicate occurrence ID");
+  const all = new Set(ids);
+  if (PENDING.length !== 20 || PENDING.some(id => !all.has(id))) fail("pending §153 ID missing");
+  const pending = ids.filter(id => PENDING.includes(id));
+  if (pending.length !== 20 || ids.length - pending.length !== 62) fail("editorial coverage mismatch");
+  return {
+    project:"F-001", source_commit:EXPECTED_SOURCE, status:"HOLD / NOT LAUNCH-READY",
+    queue_occurrences:82, pending_unreviewed:20, claude_reported_proposed:62,
+    final_approved:0, release_authorized:false,
+    pending_ids:PENDING.slice(),
+    limitation:"62 are Claude-reported proposals, not independently checked editorial approvals; all 82 remain release-blocked."
+  };
+}
+if (typeof module !== "undefined") module.exports = {audit, PENDING, EXPECTED_SOURCE};
+if (typeof require !== "undefined" && typeof module !== "undefined" && require.main === module) {
+  const fs = require("fs");
+  if (process.argv.length !== 3) { console.error("usage: node F-001-EDITORIAL-COVERAGE-GATE-454.js QUEUE.json"); process.exit(2); }
+  try { console.log(JSON.stringify(audit(JSON.parse(fs.readFileSync(process.argv[2], "utf8"))), null, 2)); }
+  catch (e) { console.error(String(e)); process.exit(2); }
+}
