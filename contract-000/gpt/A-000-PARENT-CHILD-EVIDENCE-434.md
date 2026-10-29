@@ -1,0 +1,18 @@
+# Run434 A-000 — child/parent evidence accounting across catalog reloads
+
+**SOURCE-OBSERVED** only: `genesis-documentary:src/echo_governor_skeleton.py`, Git blob `63eb982989b4f3478d649430b555c8f4ba755c27` (no Genesis execution or modification). User's intentional recursive relationship is preserved as stated:
+
+```
+Alg-000 = [{Alg-000} + {Alg-???}]
+Alg-??? = [{Alg-000} + {itself}]
+```
+
+**New source-specific observation:** `SubAgentMatrix._seed_from_parent()` (lines 9281–9302) copies a domain slice of parent transitions/co-occurrences/content units into the child at construction. `index_content()` (9304–9322) increments the child's in-domain structures and forwards the **same text** to `parent.index_content()`. `predict_next()` (9324–9338) scores the same transition from both stores: `combined = global_count + domain_weight * local_count`. The default `domain_weight` is 2.0 (9258–9264). A transition with parent count 2 copied into child count 2 therefore contributes **2 + 2×2 = 6** to prediction before new child-only evidence. One subsequent in-domain event counted by both makes **3 + 2×3 = 9**. This arithmetic is an interpretation of the exact code, **not an executed Genesis fixture**.
+
+This is potentially **intentional emphasis** for a specialist, not necessarily a bug. But a reload or learning report must not present the parent and child scores as two **independent corroborating observations**. They share historical events. If the same event is fed to multiple subagents and each forwards it, the parent may count it multiple times; the present `index_content` method has no per-event idempotency key. Whether the caller does this is **UNVERIFIED**. A legitimate subagent can inherit A-000 while the evidence accounting must distinguish inherited, directly observed and parent-forwarded contributions.
+
+**Identity continuity:** `SubAgentMatrix.id = f"SUB-{region_id}"` (9264) and `WordAgent.confirm_identity() = bool(self.word)` cached (1093–1099) are lightweight identifiers, not durable witness seals. `AlgorithmMatrix.record()` (439–440) still writes directly; R5 protects ordinary A-000 writes and allows deliberate reviewed GPT/Claude updates. Claude E35 (2026-10-24 22Z) shows that Resh's re-anchor repairs checked fields but other changes remain invisible, and `_anchor_entry` is a live alias. This remains separate from legitimate child reproduction and intentional catalog refinement.
+
+**Proposed, NOT RUN / NOT FROZEN RC-R5(38):** create one parent, one child, and two children with overlapping domain words. Freeze a sequence of source event IDs and a nine-turn/reload checkpoint. Verify (i) inherited counts retain `origin=parent_snapshot`; (ii) one event forwarded by multiple children is either deduplicated in the parent or explicitly recorded as multiple processing events, not silently reported as independent evidence; (iii) child identity persists through versioned reload while card state changes; (iv) multiple children legitimately share an A-000 template without collapsing their own identity; (v) replacement and A-000 update use attributable review paths. Compare current Genesis behavior with a separate wrapper, not a production patch. Timothy chooses actual semantics, freeze and issuer/custody.
+
+**Boundaries:** the 3×3×3 27-glyph loading matrix and nine-turn reload are a separate experimental design, not existing Genesis `Lobby.run_orientation()`. No conclusion that Genesis is an autonomous learner or that child evidence double-counting necessarily degrades a task. No full source execution or independent identity authority test this run. Source claim status: SOURCE-OBSERVED for code, INFERRED for risks, PROPOSED for RC-R5(38).
