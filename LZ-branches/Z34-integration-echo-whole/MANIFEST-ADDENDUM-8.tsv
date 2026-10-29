@@ -1,0 +1,41 @@
+# Addendum 8 to MANIFEST.tsv of branch: integration/echo-whole @ 292cd86
+# Head moved adf1fd3 -> 292cd86 (one commit by another Claude session, 2026-10-24T23:15Z: "Deployments sweep 1 ...; archives sweep 1 ...; Echo shadow runs 5 (13/35) and 6 (13/31)"). git diff --name-status: 33 A, 4 M, 0 D. Blob-level check of all 137 head entries against MANIFEST.tsv + ADDENDUM-1..7 found exactly these 37 unlisted (blob, path) pairs (EXECUTION-VERIFIED; gap 0 after this addendum). Registered first in Indices (same sub-library as ADDENDUM-7). ARC-0001/0006/0019 and ARC-0009/0018 member lists are byte-identical pairs (same blob). Earlier rows are not changed.
+# Checks (EXECUTION-VERIFIED 10Z): 12/12 JSON parse; 2/2 shadow TSV hit sums equal their JSON (13 and 13); 2/2 Python ast-parse (not executed; SOURCE-OBSERVED no network calls); deployments INDEX secret_names column holds names only. No personal or Testament material seen.
+# columns: status<TAB>blob_sha<TAB>bytes<TAB>path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	2948a75bd8a7c3751ef2ec35814f05d698f2de36	5520	inventory/archives/INDEX.tsv
+KEPT	4268dee1a50540cb70ead74dce84cff34a9d537e	3349	inventory/archives/README.md
+KEPT	5762815d7cfbb288b623edbcbc57af272bbc297f	24195	inventory/archives/sweeps/boxes/qof_combinations.json
+KEPT	85d8b12402fbd239445f5e75dcc33ee7f14ecf87	38314	inventory/archives/sweeps/boxes/tav_failures.json
+KEPT	cbc92704b1d9089e0ca4f8f8d32f05b9dad1ed92	2028	inventory/archives/sweeps/echo_shadow_6.json
+KEPT	b9bdca450f605a45cd29ce7d616e68d00048d102	2488	inventory/archives/sweeps/echo_shadow_6.tsv
+KEPT	a15661a960dbd9f7d79cbe3e7a24e2dfa5d59f50	1770	inventory/archives/sweeps/echo_state_after_archives.json
+KEPT	cb8d995b77827c351a69447f5aa5a61eff52bc49	1826	inventory/archives/sweeps/members/ARC-0001.tsv
+KEPT	05086c5387d0ea6af8471ff5d780add4879b5181	201	inventory/archives/sweeps/members/ARC-0002.tsv
+KEPT	66198d8beb5aab657a4ac57bbedeac9171e8833e	1395	inventory/archives/sweeps/members/ARC-0003.tsv
+KEPT	bceb077f9f4797eff8d0a9ae7754ce0479cbbfcf	2871	inventory/archives/sweeps/members/ARC-0004.tsv
+KEPT	dfdcc42517a55a72944c32e59de5cd8cd8872e95	2113	inventory/archives/sweeps/members/ARC-0005.tsv
+KEPT	cb8d995b77827c351a69447f5aa5a61eff52bc49	1826	inventory/archives/sweeps/members/ARC-0006.tsv
+KEPT	574ea6b0b76e6c0cec968bb668615f01799eae00	181	inventory/archives/sweeps/members/ARC-0007.tsv
+KEPT	df7e1ff58bff032da38eaf86581fdd2a58224389	2716	inventory/archives/sweeps/members/ARC-0008.tsv
+KEPT	b4621e7614ffc609c7e5e477c87609edb2ec13c8	2688	inventory/archives/sweeps/members/ARC-0009.tsv
+KEPT	4eba91ef2546d3b5028380bd8c8955687386477a	34677	inventory/archives/sweeps/members/ARC-0010.tsv
+KEPT	7794751bcb7fc85dc442b702d1b465cc10d6907a	1937	inventory/archives/sweeps/members/ARC-0011.tsv
+KEPT	7ef2b029abe52f4ffdd7e93099de9504534bacc3	506	inventory/archives/sweeps/members/ARC-0012.tsv
+KEPT	e852d7d5c3d637e03c7954c2433c5f21dd3dbb20	4613	inventory/archives/sweeps/members/ARC-0013.tsv
+KEPT	8e34e5195460731782eba11dd980917ea74c1336	4323	inventory/archives/sweeps/members/ARC-0014.tsv
+KEPT	8440fb350c3b82a4a2d804ce618036fe32afa63a	2155	inventory/archives/sweeps/members/ARC-0015.tsv
+KEPT	d356fce2930c49915f0161cfeb25bc07f5fe27a7	3845	inventory/archives/sweeps/members/ARC-0016.tsv
+KEPT	63bfc6a2873c459c43f3b41494bc35764292307e	319	inventory/archives/sweeps/members/ARC-0017.tsv
+KEPT	b4621e7614ffc609c7e5e477c87609edb2ec13c8	2688	inventory/archives/sweeps/members/ARC-0018.tsv
+KEPT	cb8d995b77827c351a69447f5aa5a61eff52bc49	1826	inventory/archives/sweeps/members/ARC-0019.tsv
+KEPT	951d9dcd3a83ea5013e4b9cfd18126f2b7b40dda	3426	inventory/archives/sweeps/members/ARC-0020.tsv
+KEPT	7d01d93c3c35df3f2cdb08c84fba0dbae5b10629	422	inventory/archives/sweeps/members/ARC-0021.tsv
+KEPT	19f2f128f4604fc390a97bd6480fb55417c67c59	5885	inventory/archives/sweeps/sweep_1_archives.py
+KEPT	7a5527b54949b6ff86d5ffc36bff260ffbe5dca4	9555	inventory/deployments/INDEX.tsv
+KEPT	4baeabf73b52b541543ea5c0b0cdbb7ac4ecdd7d	3576	inventory/deployments/README.md
+KEPT	f15d2c93decca9979b4b337c688eda086f95648e	21814	inventory/deployments/sweeps/boxes/qof_combinations.json
+KEPT	322d2c36af0ba8dfe8e700f8c3fd4c3aa928b609	31638	inventory/deployments/sweeps/boxes/tav_failures.json
+KEPT	fb287397f6aa7780257352b26adf70ab04a553de	2232	inventory/deployments/sweeps/echo_shadow_5.json
+KEPT	36285637efdab857558e18859eea7563b34f01b4	3356	inventory/deployments/sweeps/echo_shadow_5.tsv
+KEPT	c0f3a34f3bb25c210b1c379315073a0c4dcd4499	1655	inventory/deployments/sweeps/echo_state_after_deployments.json
+KEPT	eece0e99c8011400d0158b147383abc13d5781c9	17170	inventory/deployments/sweeps/sweep_1_deployments.py
