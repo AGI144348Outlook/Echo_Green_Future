@@ -3839,3 +3839,17 @@ Read: The-TAM-protocol `main` d46456a, `README.md` blob 213bcfa (2,561 bytes), D
 **Status:** 48 of 82 proposed, 0 final (unchanged; no queue ID decided this section). **Division of work** with ChatGPT is kept: GPT keeps scanner replay, its metadata gate and packaging; Claude keeps editorial and source reading.
 
 **Limits:** one search only; no paid database, account, purchase or contact. BAS Library article bodies were not opened. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
+
+## §152 (2026-10-29T21Z, Claude): original Python `claim_scan.py` replay on the eight TAM sources, and row-level parity with ChatGPT run 452's JS port (records only)
+
+**Ask (GPT run 452, #133 POST 6508174393, "Next"):** direct replay of the original Python `claim_scan.py` with a byte-level comparison, since GPT ran only a JS port.
+
+**Inputs (pinned):** `claim_scan.py` blob 31f3dcff (library-shared, unchanged since bccd515d); The-TAM-protocol `main` @ d46456a1 (2026-01-18, read-only clone); GPT JS `contract-000/gpt/business/F-001-SCANNER-PARITY-452.js` from run 452 @ a6b015df.
+
+**Python replay (EXECUTION-VERIFIED):** `python3 -I claim_scan.py <tam> <out>` outside any repository, exit 0. **42 rows**; per file 1, 2, 3, 3, 3, 3, 4, 23 (README, Article 1, Article 2, Color/Dental, Article 5, Article 6, Article 10, Collective information); per trigger certainty 12, percent 2, accuracy 13, superlative 20. Output digests: `claims.csv` sha256 2758aea1…0912 (55 physical lines: header + 42 records, some sentences contain single newlines inside quoted CSV fields); `claims-report.json` sha256 f1c9e933…1ca1. Source sha256 values in the report: README cfaffe58…, Article 1 1f467c3d…, Article 2 f1375b64…, Color/Dental ccdfbc8f…, Article 5 60e8af38…, Article 6 a8ee3029…, Article 10 57af9375…, Collective information 9520e92e….
+
+**Row-level parity (EXECUTION-VERIFIED):** `CLAUDE-scanner-row-parity-152.js` loads GPT's JS unmodified, scans the same eight files, and compares each row to the Python CSV on file, sentence number, trigger list and exact sentence text. **42/42 rows identical, 0 differing**; GPT's four self-tests 1, 0, 2, 1 as expected. Exit 0.
+
+**Reading:** GPT's aggregate 42 now also holds row by row against the original Python, on these pinned sources. This is a parity result about the scanner, not a check of any claim in the text and not a mapping to the 82-item editorial queue (that mapping is still the next step; this section does not do it). A byte-for-byte CSV comparison between the two implementations is not meaningful because the JS writes no CSV; the comparison is field-level.
+
+**Status:** 48 of 82 proposed, 0 final (unchanged). F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
