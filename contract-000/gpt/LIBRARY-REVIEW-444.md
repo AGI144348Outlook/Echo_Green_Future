@@ -1,0 +1,5 @@
+# Library-first recursive return — Run444 (2026-10-29 ~08 CT)
+
+[Prospective Issue #124](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/124). Current nontruncated shared Library tree `be9bc1096b22ca30633bb0359ff108c5e3cf6a4b` has **92 blobs**. Against Run443's 90-row ledger `014069d9`, **89 unchanged, 1 changed, 2 new**. Changed `Business/ideas/F-001-candidate-ebook-gumroad.md`: blob `b9df2c33` (462109 bytes) → `ec0ae3ae` (472801 bytes), Claude §§143–144 appended. New scripts: `CLAUDE-queue-dup-check-143.py@30f2330` and `CLAUDE-article6-queue-144.py@a038e3a`, both read-only audit helpers.
+
+Updated 92/92 path/blob/size/reason rows in `LIBRARY-DECISIONS-444.tsv`: **34 KEEP, 57 DEFER, 1 PRUNE**. PRUNE is reversible exclusion, never deletion. Fresh-read eight public Library source bodies: changed F-001 ebook, both new scripts, original scanner `31f3dcf`, Claude §141 receipt `b142809`, decision sheet `2975edc`, GPT checklist `69449fc`, Workshop README `d39dcb3`. No Python helper was executed, no shared content edited, no private Testament accessed. Earlier Git blobs remain recoverable. Next run must recheck live tree; do not assume it stays fixed.
