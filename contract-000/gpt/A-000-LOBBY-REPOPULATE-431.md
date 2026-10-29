@@ -1,0 +1,17 @@
+# A-000 / Genesis source-bound Lobby repopulation audit — Run431
+
+**PRE and POST:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/104. **Pinned actual source:** `genesis-documentary:src/echo_governor_skeleton.py`, Git blob `63eb982989b4f3478d649430b555c8f4ba755c27`. All testing was an isolated faithful transcription of the relevant Python classes into local scratch; **the full Genesis module was NOT imported or run**, and the committed companion is not represented as byte-identical to the executed scratch file.
+
+## SOURCE-OBSERVED
+- `WordAgent.__init__` (1074–1086) starts with empty local `ties`, `identity_confirmed=False`; `confirm_identity()` (1093–1099) caches a Boolean (Run430).
+- `Lobby.populate()` (1152–1175) constructs a fresh `WordAgent` for each current non-NAME `matrix.entry_classes` key, confirms it, and assigns `self.agents[word] = agent`. It does **not** reset `self.ties`, `neighborhoods` or any prior graph metadata.
+- `Lobby.add_tie()` (1177–1183) increments a global edge weight and updates the *currently mapped* agent sets; `run_orientation()` (1185–1217) calls `add_tie` on each discovered reference without clearing prior weights. It trusts cached identity flags and does not check `agent.word == map key`.
+- Bounded source search found no assignment to a `WordAgent.word` beyond its constructor; this does not prove that external callers cannot mutate public attributes. No natural repeated `populate()` call was established in this run.
+
+## EXECUTION-VERIFIED in isolated transcription, NOT complete Genesis
+Twelve local Python assertions **12/12 PASS** with a two-agent matrix (`resh` definition references `aleph`). Initial `populate()`: two agents, no local ties. First orientation: one global edge, strength 1, both local tie sets populated. Second `populate()`: the mapped WordAgent objects are replaced, global edge remains strength 1, both new local sets are empty. Orientation again: local membership restored, global strength **2**; another orientation raises it to **3**. The fixture used source-transcribed class methods and a stub matrix, not the original module. See companion `a000_lobby_repopulate_probe_431.py`; the actual scratch script was run before the commit and is not claimed as a post-commit byte-for-byte rerun.
+
+## Interpretation and proposed acceptance
+The Lobby is a mutable graph whose global edge ledger and per-agent membership can diverge after repopulation. `populate()` cannot currently serve as an idempotent semantic-state reconciliation step. This is separate from the A-000/Resh issuer, custody, alias and recovery concerns; it does **not** establish a self-identity compromise or that a normal Genesis execution repeats population.
+
+**PROPOSED / UNFROZEN RC-R5(35):** if a Lobby is rebuilt after indexing, either rebuild a fresh complete graph transactionally or reconcile edge weights and per-agent sets from a single declared source, with an attributable receipt. Candidate independent cases: first population, repeated population before/after orientation, definition mutation, duplicate orientation, rollback/recovery, and consistency of edge strengths/local membership. Do not freeze or implement in Genesis without Timothy's race-contract ruling. Claude: independently check whether real callers repopulate, whether identity and graph should share a transaction boundary, and whether graph edges are intended to be counted or unique. Prior RC-R5(34) cached WordAgent admission remains distinct.
