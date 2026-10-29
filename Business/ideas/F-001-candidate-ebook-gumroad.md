@@ -3543,3 +3543,33 @@ So the supplemental queue already treats a copy as one decision, and the baselin
 - *Rights:* the four sentences are Timothy's own text (R1). The only rights question in Article 10 is the "2D plot" it describes, if the book reproduces it (A6, open, §142 (b)).
 
 **Limits:** exact-text matching only (near-duplicates not assessed); one reviewer; the queue's own card fields (draft wording, P1 flag) were not read beyond the IDs. F-001 stays HOLD; 0 of the now 73 proposed decisions is final.
+
+## §144 (2026-10-29T13Z, Claude): editorial pass on Article 6 ("The Zenith Bottleneck"), the next article in the 82-occurrence queue after Article 10. Six distinct queue texts (12 occurrences); proposed evidence states; two sentences outside the queue flagged (records only)
+
+Read: The-TAM-protocol `main` d46456a, `Article 6` blob 662d745 (3,210 bytes) and `Collective information` blob 710ad3c, read-only clone; ChatGPT run 443 `F-001-RECEIPT-QUEUE-AUDIT-443.md` and handoff #13 6496144552. Run 443 and §143 crossed and agree: the four Article 10 rows are existing baseline cards. So I moved on to the next article in the queue. Script: `F-001-tam-build/CLAUDE-article6-queue-144.py` (same splitter as `claim_scan.py`; read only; writes nothing).
+
+**Queue coverage (EXECUTION-VERIFIED).** Article 6 splits into 29 sentences. All 29 are copied byte for byte in `Collective information` at S150–S178, and S292 and S296 also repeat two of them. Six Article 6 texts are in the queue, each with its copy:
+
+| Queue IDs (original / copy) | Queue | Text, short | What a reader would need to accept it as stated | Proposed evidence state (Timothy decides) |
+|---|---|---|---|---|
+| S1 / C150 | supplemental G015 | title + subtitle "Subterranean Optical Calibration and the 13.7g Metric of Celestial Time" | nothing as a title; the subtitle presents "13.7g Metric" as an established unit | **framing** (title); keep, the claims sit in the body |
+| S4 / C153 | baseline | "their geometric precision suggests a higher function: Diurnal Astronomical Observatories" | measurements of the shafts and a comparison with storage pits | **interpretation**; "suggests" is already hedged. Zenith-tube observatories are a recognised topic in Mesoamerican archaeoastronomy (INFERRED, general knowledge; no source consulted this run). So the sentence may be supportable with a citation |
+| S12 / C161 | supplemental G016 | heading + "The Zenith Tube functioned as the 'Trigger' for the Water Clock" | any source tying a zenith tube to a water clock at these sites | **claimed** (reconstruction); no source in the corpus |
+| S19 / C168 | supplemental G017 | "By storing the 13.7g Chert Weights or the Hacksilber Jars at the bottom of the Zenith Tube, the Maya were…" | a find of such weights or jars in a zenith tube | **claimed**; also joins two other articles' objects (Hacksilber, Article 1; chert weights) to Mesoamerica with no find cited |
+| S23 / C172 | baseline | "They prove that the 'bottlenecked underground things' were actually the Eyes of the Registry…" | the proof referred to | **claimed**; "prove" is the word that needs changing or support (same pattern as Article 10's "proves", §142) |
+| S29 / C178 | baseline | end of the Watchman's log quote + closing bracket | none (in-voice, ritual close) | **voice / framing**; mark as the Watchman's words, not the author's finding |
+
+**Two sentences outside the queue that a fact-check would flag (SOURCE-OBSERVED in the text; the judgements are INFERRED from general knowledge, and no outside source was consulted this run):**
+
+1. **S3 / C152:** "…subterranean shafts found at Mayan sites such as Xochicalco and Chichén Itzá…". Xochicalco (Morelos) is usually described as an Epiclassic central-Mexican site, not a Maya one. It has Maya-style influences, but "Mayan sites such as Xochicalco" would likely be corrected by a specialist reader. This is a **factual-accuracy** item, not a framing one. Suggested fix for the book copy only: "Mesoamerican sites such as Xochicalco and Chichén Itzá".
+2. **S7–S10 / C156–C159** (seeing stars by day): "Seeing Through the Sun" and "the daytime observation of Zenith Passages… independent of the blinding glare". The idea that a deep shaft lets you see stars in daylight is a widely repeated misconception. The bright sky is scattered light along the line of sight, and a tube does not remove it. A solar zenith passage, meaning the sun's image falling straight down the shaft, is observable and is the usual archaeoastronomical reading. So S9's "Sun **or** a specific 'Registry Star'" is fine for the Sun, but a reviewer would challenge the star half. Proposed state: **claimed, physically doubtful for stars**. Suggested note: limit the daytime claim to the Sun.
+
+Also: **S15** ("If the mass deviated from the Invariant, the calendar was adjusted to account for the Precession of the Equinoxes") and **S20** ("The silver was literally 'charged' by the zenith light") are strong claims that no pattern triggers. That is the same kind of gap as Article 10's S9 (§142, §143). "Literally" in S20 is the word a reader would push on.
+
+**Splitter notes (for GPT's scanner notes; nothing changed):** S1, S12 and S29 each join a heading or a closing bracket to a sentence. This happens because the splitter breaks on `.!?` and blank lines, and Article 6 uses single line breaks with zero-width spaces (U+200B) at line starts. It is the same cause as §142's C436-016. It does not affect the 42-row parity.
+
+**Proposed (Timothy and the joint review decide; nothing in either queue was changed):** 6 decisions for these 12 occurrences, one per distinct text (§143 rule). Add 2 decisions for the out-of-queue items above (S3 and S7–S10), and keep S15 and S20 as candidates. The running tally of proposed decisions becomes 73 (§143) + 2 = 75, plus 2 candidates. For Article 6, the A4 reader-note pattern from §142 would cover S12, S19, S23 and S29 ("read 'prove' and 'literally' as the reconstruction's claims"). S3 and the star half of S9 are different: they are ordinary factual corrections, and they would apply under any framing.
+
+**Status:** 10 of the 82 occurrences now have a proposed state from Claude (Article 10's 4 + their 4 copies were done in §142/§143; Article 6's 12 here, of which 6 are baseline and 6 supplemental). Running count by ID: 8 + 12 = **20 of 82** covered by a proposal, 0 final. **Next article in this pass:** Article 5 (3 baseline cards).
+
+**Limits:** one reviewer; general-knowledge judgements are marked INFERRED and should be checked against an archaeoastronomy source before anything is printed; exact-text matching only. F-001 stays HOLD / NOT LAUNCH-READY. No accounts, payments, spending or contact.
