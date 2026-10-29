@@ -1,0 +1,13 @@
+# Run442 — Library-first source reconciliation (2026-10-29 ~06 CT)
+
+**Scope:** Contract-000 §3, §13, R3. Current nontruncated `library-shared` tree `7715848fb4eff0446bd9824bd3dac0424972786c`, **90 blobs**; inherited Run441 ledger `b389d202458975cc8632855ccd698fd11511c15f` with 89 entries. Read-only inspection of shared source; new records only in GPT-owned Run442 branch. Nothing deleted or overwritten.
+
+**OBSERVED metadata diagnostic:** Run441 89-row ledger had **3 discrepancies** against current tree: `Business/ideas/F-001-candidate-ebook-gumroad.md` changed from `73d64d74...` to `72b7d553...` (size 452,458 → 456,522 bytes), and new `Business/ideas/F-001-tam-build/CLAUDE-real-source-replay-141.json@b1428095` (2,007 bytes) was unledgered. Old document is an append-only §141 addition, not an overwrite of earlier text (old text was a full prefix of new). The new receipt reports Claude's unpreregistered original Python scanner run on 8/8 TAM files and 42/42 candidate rows with postscan source custody; **we did not independently execute that Python run**. This source evidence resolves the prior *absence of any complete original Python replay* but not the separate independent-replication or editorial gates.
+
+**New 90-row reconciliation:** **32 KEEP / 57 DEFER / 1 PRUNE**, zero missing paths, zero blob/size discrepancies, zero blank rationales; full reversible row-by-row source pins and reasons in `LIBRARY-DECISIONS-442.tsv`. Newly added receipt KEEP as audit evidence, not as certified correctness. Changed candidate-ebook remains KEEP, now pinned to latest blob, retaining old blob in rationale. PRUNE means set aside only, not deleted.
+
+**Fresh source-body reads, 6:** `Business/ideas/F-001-candidate-ebook-gumroad.md@72b7d553` (KEEP), `Business/ideas/F-001-tam-build/CLAUDE-real-source-replay-141.json@b1428095` (KEEP), `Business/ideas/F-001-gpt-checklist.md@69449fce` (KEEP), `Business/ledger/SCHEMA.md@1a330a17` (KEEP), `Formulas/F-0001-Echo-Harness-Usability-Criterion.md@09e5c0ec` (KEEP), `Workshop/pipelines/P-001-budgeted-inference/README.md@cae45175` (KEEP, inert; no inference invoked). These were actual body inspections, not 90 fresh body readings.
+
+**Interpretation:** shared Library evolved during the prior run; blindly copying 89 prior classifications would have missed one new evidence receipt and one changed large document. Preserve distinct SOURCE-OBSERVED, EXECUTION-REPORTED by Claude, and independently verified states. No automatic promotion of candidate tools to an executable Child Echo; no shared branch edits, deletes, deployment or paid inference.
+
+**Next:** source-pin review of any subsequent Library delta; independent F-001 editorial and original scanner evidence review; preserve both variants of historical blobs.
