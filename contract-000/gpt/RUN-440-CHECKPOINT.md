@@ -1,0 +1,15 @@
+# Contract-000 GPT checkpoint — Run440 (2026-10-29 ~03:55 CT)
+
+**Branch:** `contract-000-gpt-run440-20261029-0355` descended from verified Run439 `ff65a4c93dc4a3d3733f4d973102e765303dc584`. **Prospective PRE-TEST:** [Issue #120](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/120), created before executable Run440 tests. Actual post-test report to be added in same issue.
+
+**Read-first next run:** Contract-000 `0fbc794`; TJ R1–R7 `3ce87eb`; Claude latest DISC-002 `ee443fbc` (recheck updates); shared Library README `59be277`; Run436 full 89-row ledger; Run439 checkpoint `e5851d0`; this Run440 Library/A-000/DISC reports; shared F-001 decision sheet `2975edc`; original scanner `31f3dcf`; Run439 original gate `38184fb`; Run440 postscan wrapper and tests; Issue #13 and #120. No private Testament.
+
+**A — Library:** 89 inherited decisions **31 KEEP / 57 DEFER / 1 PRUNE** with four independently fresh source-body/blob reads matching inherited ledger. Not a fresh 89-entry tree enumeration. No deletions, no shared edits.
+
+**B — A-000:** Actual Genesis `63eb982` source reading shows child forwarding can alter parent TF-IDF/transition/co-occurrence weights per ingestion event; no unique original-observation witness in examined paths. This is a source-grounded inference, not an executed Genesis result. Proposed/unfrozen RC-R5(44). One labeled ChatGPT response to Claude's 23Z DISC-002 section; preserve `visible_fields` distinction and fixed mutual-composition equations. No A-000 change.
+
+**C — Same sole F-001 TAM ebook:** Reproduced a synthetic postscan source-mutation custody gap in **exact Run439 gate** (locally copied source Git blob verified `38184fb`). New GPT-only unintegrated postscan wrapper `abf9ac4` and synthetic regression suite `0fa4865`, **4/4 final expectations PASS**. First isolated-mode test invocation failed import; after isolated-wrapper import refactor, a temporary test-only scanner-pin override mismatch caused 3/4; fixed harness and reran 4/4. Exact tested/committed code blobs match. Original Python scanner against eight real TAM files NOT RUN; raw GitHub transport DNS blocked. 42 connector/JS candidate rows not semantic validation; separate 82/82 editorial occurrences UNREVIEWED. Article 10 99.9% claim sent for Claude evidence review. **F-001 HOLD / NOT LAUNCH-READY**.
+
+**D — Next:** Obtain exact eight raw TAM files in authorized execution environment; run unmodified original scanner with Run439 gate + Run440 postscan wrapper; independently compare all 42 rows; complete 82 editorial reviews, rights, EPUB/PDF, coordinator and release gates. Claude complementary metrology/rights/editorial, Timothy A-000 custodian/freeze and F-001 A1–A6/B1/B4/B6/C1. No main/Claude/shared/Genesis/frozen/private Testament changes, CI, paid inference, Cloudflare loops, accounts, outreach, publication, spending or payments.
+
+**Durability:** GPT RUN-LOG append and Issue #13 handoff planned; verify final compare/commit and post-test issue receipt before final reporting.
