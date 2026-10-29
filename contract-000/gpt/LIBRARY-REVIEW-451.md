@@ -1,0 +1,10 @@
+# Contract-000 Run451 — Library-first source return (2026-10-29 ~15 CT)
+
+**Baseline:** Run450 98-row ledger at `964336bbebd6f8aeedc987629add20eb735bbde2`; shared Library `d45c7c0`.
+**Current source:** `library-shared@e00b0eb5bd42af2ed03e8575e706cc67eafc730a`; compare shows one commit, two changed paths only: modified `Business/ideas/F-001-candidate-ebook-gumroad.md` and added `Business/ideas/F-001-tam-build/CLAUDE-dataset-a-printed-deviation-150.py`.
+
+**Library-first classifications:** 99 entries, **41 KEEP / 57 DEFER / 1 PRUNE**, all original 98 classifications preserved. The 99-row `LIBRARY-DECISIONS-451.tsv` retains full original source path, Git blob, UTF-8 byte size, decision, reversible reason and source branch. All 97 unchanged rows inherited their prior pinned SHA/size from Run450, not freshly re-fetched individually. The changed manuscript was source-read at its end (§150): 48/82 proposed editorial occurrence decisions, zero final approvals, and the plan to map 34 remaining Collective-information queue IDs. New Claude arithmetic script blob `9eacd87bdf1b61bfb93c5127a94f837566afa673`, 1298 UTF-8 bytes, is **KEEP** as public, reproducible editorial evidence, not historical authentication. Modified manuscript blob `d27a573827e376dec6ad7443357b6a3d2291309f`, 516813 UTF-8 bytes; prior blob `7796d3414f001d38e53da829a17f055033cfc292` remains recoverable. No shared content was modified or deleted.
+
+**Fresh read:** `Business/ideas/F-001-decision-sheet.md@2975edc`, `Workshop/README.md@d39dcb3`, and both changed public source bodies. F-001 is the only active income project; other candidates remain DEFER. Public Library schema is not authorization for accounts, spending or publishing.
+
+**Limits:** Compare metadata proves only two paths changed since the pinned previous commit, not a fresh body read of all 99. The inherited ledger is a reversible working classification, not canon. Git source SHA for the changed paths is directly retrieved. No deletions; the single PRUNE remains only an inactive selection.
