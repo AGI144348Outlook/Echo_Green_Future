@@ -1,0 +1,150 @@
+{
+  "format": "f001-queue-reconciliation-444",
+  "project": "F-001",
+  "status": "HOLD / NOT LAUNCH-READY",
+  "source_commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+  "source_git_blobs": {
+    "README.md": "213bcfaf560dcc54fbb7ae79fad932e86b660357",
+    "Article 1 Hacksilber": "237bd3335abdcc0f0465817dffe01ad6eaa86055",
+    "Article 2 Water Weight Computes": "ec657c3fa0f70da9686fb1ae52983d28f77c6c4c",
+    "The Color Dyed and Dental Records": "b525ad60ab37cb2d72ea43c40ba687b0fe2a348d",
+    "Article 5": "c8c1bf617c0d81389f6c2408ed975131695857ff",
+    "Article 6": "662d745f0b9b41236d1053cdbaa9351f7c020dd0",
+    "Article 10": "e82be564872f636662652d34dcb8d3437559f84f",
+    "Collective information": "710ad3cd4feeae7bafa329d7437a78df4c40cfa8"
+  },
+  "queue_source": "contract-000/gpt/business/F-001-CROSS-QUEUE-407.json",
+  "queue_git_blob": "ab5e755",
+  "method": "Read-only GitHub connector fetch; same sentence-splitting regex as original Python scanner reproduced in JavaScript; exact trimmed Unicode text comparison; no original Python scanner run",
+  "existing_occurrences": 82,
+  "existing_distinct_ids": 82,
+  "existing_distinct_texts": 72,
+  "exact_duplicate_pairs": 10,
+  "baseline_ungrouped_pairs": [
+    {
+      "ids": [
+        "Article 6#S4",
+        "Collective information#S153"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 6#S23",
+        "Collective information#S172"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 6#S29",
+        "Collective information#S178"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 10#S3",
+        "Collective information#S293"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 10#S4",
+        "Collective information#S294"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 10#S5",
+        "Collective information#S295"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    },
+    {
+      "ids": [
+        "Article 10#S8",
+        "Collective information#S298"
+      ],
+      "review": "UNREVIEWED",
+      "action": "link decisions; do not remove occurrences"
+    }
+  ],
+  "supplemental_grouped_pairs": [
+    {
+      "ids": [
+        "Article 6#S1",
+        "Collective information#S150"
+      ],
+      "group_id": "G015",
+      "review": "UNREVIEWED"
+    },
+    {
+      "ids": [
+        "Article 6#S12",
+        "Collective information#S161"
+      ],
+      "group_id": "G016",
+      "review": "UNREVIEWED"
+    },
+    {
+      "ids": [
+        "Article 6#S19",
+        "Collective information#S168"
+      ],
+      "group_id": "G017",
+      "review": "UNREVIEWED"
+    }
+  ],
+  "missing_article10": {
+    "ids": [
+      "Article 10#S9",
+      "Collective information#S299"
+    ],
+    "sentence": "This tells the observer that the Registry is not a \"belief system\"—it is a Geophysical Fact.",
+    "in_existing_queue": false,
+    "proposed_annex_only": true
+  },
+  "if_annex_accepted": {
+    "occurrences": 84,
+    "distinct_texts": 73,
+    "final_approvals": 0
+  },
+  "article6": {
+    "sentence_count": 29,
+    "exact_copies_in_collective": "S150–S178",
+    "additional_copies": [
+      [
+        "Article 6#S2",
+        "Collective information#S292"
+      ],
+      [
+        "Article 6#S6",
+        "Collective information#S296"
+      ]
+    ],
+    "claude_proposed_occurrence_states": 20,
+    "final_approvals": 0,
+    "other_flagged_not_approved": [
+      "Article 6#S3",
+      "Article 6#S7–S10",
+      "Article 6#S15",
+      "Article 6#S20"
+    ]
+  },
+  "limitations": [
+    "Same splitter as original scanner, not independent sentence segmentation",
+    "Exact-text only, no near-duplicate or semantic equivalence analysis",
+    "No external historical/geophysical fact-check",
+    "No original Python scanner or release package execution",
+    "No change to 82-ID queue or any editorial approval"
+  ]
+}
