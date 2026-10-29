@@ -1,0 +1,25 @@
+# F-001 Run437 — HOLD-only scanner-output integrity gate: actual evidence and limitations
+
+**Same sole project F-001:** TAM Protocol speculative research-notebook ebook. **HOLD / NOT LAUNCH-READY.** Prospective PRE-TEST [Issue #117](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/117) was published before the local diagnostics and tests below. No other income project initiated.
+
+## What was actually done
+
+1. Read the **unmodified** original shared `Business/ideas/F-001-tam-build/claim_scan.py` Git blob `31f3dcff486c4c8cc96d514eb425da86834d00c3` and the previously committed GPT source preflight (Run434) and Git pin gate (Run435). The original scanner **skips missing source files**, writes a blank status column, and uses four Python regex triggers and a fixed sentence splitter. It is candidate discovery only, not a scientific/rights adjudicator.
+2. Attempted a fresh HTTPS GET of exact pinned public TAM `README.md` at commit `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9` from the local Python environment. **Failed DNS resolution** for `raw.githubusercontent.com`. Therefore **no original eight-file source replay**, no exact local TAM byte snapshot, and no Python/JS parity determination. Prior connector-side eight blob metadata pins and 42 JS-transcribed candidates are inherited, not independently re-executed here.
+3. Implemented new GPT-only `f001_claim_output_gate_437.py`, Git blob **`73b9c043d40e14b2396b41f5febbdf2acef472b1`**, and `test_f001_claim_output_gate_437.py`, Git blob **`bdb9ebef449f4c7b80b8146708b5d1158c2d6da8`**. Verified **byte-for-byte** identity between locally executed source/test and committed Git blobs by computing the local Git blob SHA1 and comparing to GitHub `fetch_file` blob SHA.
+4. Ran `python -I -m unittest discover -s /mnt/data/contract437 -p 'test_f001_claim_output_gate_437.py' -v` using **Python 3.13.5** on an isolated temporary eight-file **synthetic** source set, with synthetic verified-receipt shape and scanner CSV/report. **12/12 PASS** in 0.035s on final source. Tests: positive fixture; missing file; modified source bytes; symlink source; truncated CSV; prematurely promoted status; altered report count; missing report source fingerprint; invalid receipt count; duplicate JSON key; symlinked CSV; wrong repository identity. No real TAM bytes were used.
+5. The new gate checks eight exact source names and current SHA256 against a **previously trusted external-pin receipt**, recomputes the original scanner's sentence/trigger candidate rows using Python, and compares them to the entire CSV plus report source hashes, per-file/per-trigger counts and row totals. A success returns **`HOLD_SCAN_OUTPUT_MATCH_NOT_EDITORIAL_APPROVAL`**; failure raises an error. It does not modify inputs or approve any claim.
+
+## Interpretation, limits and known remaining risks
+
+- **EXECUTION-VERIFIED only on synthetic fixtures:** 12/12 controls. This is not an original TAM scanner run, not a full Run334→344→347→351 coordinator integration, and not a release test.
+- The verifier relies on an externally authenticated `f001-verified-git-pins/v1` receipt from the existing Run435 gate; it **does not independently authenticate** a forged receipt by status alone. Run434 presence, Run435 external pins and this output gate must be applied in that order, with independent trust in the source Git commit.
+- It compares current source bytes, not an atomic snapshot held open through scanning; concurrent file replacement/TOCTOU, receipt forgery, and output replacement between checks require a future snapshot/coordinator integration test.
+- This gate is for the **unreviewed original scanner output** with blank statuses. Once human editorial dispositions are entered, the modified CSV intentionally fails this gate; a separate editorial approval receipt is required. `listing_check.py` treats `claimed` and `inferred` as completed markings, **not independently established facts**.
+- The inherited 42 connector-JS candidates remain **42 CANDIDATE_UNREVIEWED**, not the **82 human editorial occurrences** (45 baseline + 37 supplemental), which remain **82/82 UNREVIEWED**. No scientific claim, copyright, publication, or payment authorization.
+
+## Acceptance path and division of labor
+
+**GPT next:** obtain exact pinned eight-file TAM source bytes; run existing Run434 source presence and Run435 external Git pin gates, run **unmodified** original Python `claim_scan.py` in scratch, then apply this Run437 output gate; compare original Python rows to inherited 42 connector-JS rows. Add separate tests for forged receipts, concurrent mutation and editorial-approval separation before any coordinator integration. **Claude independently:** object-level historical/metrology verification, copyright/license and editorial dispositions; challenge claims and source provenance. **Timothy:** A1–A6/B1/B4/B6/C1 and explicit release/rights decisions.
+
+**Status remains HOLD / NOT LAUNCH-READY.** No storefront, account, outreach, publication, paid inference, spending, payment, CI or Cloudflare loops.
