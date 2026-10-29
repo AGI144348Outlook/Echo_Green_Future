@@ -3513,3 +3513,33 @@ Metrology note (INFERRED from the text): "99.9% accuracy" has no unit of error (
 **Limits:** one article of eight; editorial judgement by one reviewer; no historical or geophysical source was consulted; the infographics file was not opened. F-001 stays HOLD; the other 78 editorial occurrences remain UNREVIEWED.
 
 **Correction (Claude, 2026-10-29 11Z, same run, append-only):** in §142's limits, "the other 78 editorial occurrences" is wrong. The 82 occurrences are ChatGPT's queue (45 baseline cards + 37 supplemental occurrences, `DISC-002-ChatGPT-407.md`), a different list from the 42 scanner candidates; this pass did not map Article 10's four rows onto it. Read instead: "all 82 editorial occurrences remain UNREVIEWED by Claude; this pass covers Article 10's 4 scanner candidates only."
+
+## §143 (2026-10-29T12Z, Claude): Article 10's four scanner rows reconciled with ChatGPT's 82-occurrence editorial queue, as run 442 asked; the 82 occurrences are 72 distinct sentences (records only)
+
+Read: ChatGPT run 442 `F-001-ARTICLE10-EDITORIAL-442.md` and Issue #122 POST 6494981654; the queue definition `contract-000/gpt/business/F-001-CROSS-QUEUE-407.json` (blob ab5e755, as carried on `contract-000-gpt-run442-20261029-0601` @ 28c9d560: 45 baseline + 37 supplemental occurrences in 34 groups); The-TAM-protocol `main` d46456a (read-only clone). Script: `F-001-tam-build/CLAUDE-queue-dup-check-143.py`. It uses the same sentence splitter as `claim_scan.py`, reads only, and writes nothing.
+
+**Mapping (EXECUTION-VERIFIED):**
+
+- The four Article 10 scanner rows are **already in the queue** as baseline cards `Article 10#S3`, `#S4`, `#S5`, `#S8` (rows C436-016 to C436-019 in §142). They are not new items.
+- Each of the four also has a **byte-identical copy** in the baseline: `Collective information#S293`, `#S294`, `#S295`, `#S298`. These are the repeated Article #10 section near the end of that file, the repetition run 442 noted.
+- The closing sentence, "…it is a Geophysical Fact." (`Article 10#S9` = `Collective information#S299`), is in **neither** queue. Run 442 and §142 both flagged it. It is the one Article 10 sentence the queue still lacks.
+- The sentence numbering matches across both tools. Every queue ID resolves under the scanner's splitter, and the ten duplicate pairs below pair up exactly. A numbering offset could not produce that.
+
+**Whole-queue finding (EXECUTION-VERIFIED):** the 82 IDs are distinct (as the 407 audit says), but they resolve to **72 distinct sentence texts**. There are 10 exact-text pairs, all of them Article 6 or Article 10 text repeated in `Collective information`:
+
+| Queue | Pairs (original ↔ copy in Collective information) |
+|---|---|
+| baseline | Article 6 S4↔S153, S23↔S172, S29↔S178; Article 10 S3↔S293, S4↔S294, S5↔S295, S8↔S298 |
+| supplemental | Article 6 S1↔S150, S12↔S161, S19↔S168 (already grouped together: G015, G016, G017) |
+
+So the supplemental queue already treats a copy as one decision, and the baseline queue does not. The 407 audit's `exact_text_overlaps: []` is correct for what it checks, which is overlap *between* the two queues. It does not check for duplicates *within* the baseline. 7 baseline pairs = 7 cards that would get a second, possibly different, disposition for the same words.
+
+**Proposed (Timothy and the joint review decide; nothing in either queue was changed):** keep all 82 occurrences, since both copies stay in the book and in the record (R3). Make one editorial decision per distinct text, and record the copy as "same text as <ID>, same decision". That gives 72 decisions for 82 places. Add `Article 10#S9` (and its copy S299) as one new decision, which makes 73. For Article 10, the four decisions are the evidence states in §142 (claimed / claimed / proposed test / claimed). They match run 442's provisional HOLDs row for row. Run 442's proposed wordings and my §142 reader note are two ways to do the same thing (soften the copy or annotate it), so they do not conflict. That is Timothy's A4 choice.
+
+**Complementary review run 442 asked for:**
+
+- *Already assessed?* Yes, the four rows are covered by §142 (Claude) and run 442 (ChatGPT), and the two agree. No disposition is final. Both are proposals awaiting Timothy.
+- *Independent historical or geophysical validation?* None in the eight files (SOURCE-OBSERVED, §142's search, confirmed by run 442's). I consulted no outside source, so there is still no evidence either way from outside the corpus.
+- *Rights:* the four sentences are Timothy's own text (R1). The only rights question in Article 10 is the "2D plot" it describes, if the book reproduces it (A6, open, §142 (b)).
+
+**Limits:** exact-text matching only (near-duplicates not assessed); one reviewer; the queue's own card fields (draft wording, P1 flag) were not read beyond the IDs. F-001 stays HOLD; 0 of the now 73 proposed decisions is final.
