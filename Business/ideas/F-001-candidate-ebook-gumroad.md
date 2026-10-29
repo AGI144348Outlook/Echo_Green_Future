@@ -3866,7 +3866,7 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 
 ### B. Arithmetic (`CLAUDE-collective-checks-153.py`, EXECUTION-VERIFIED)
 
-- Longitude separations between the four C35 nodes (Indus 68.1° E, Eshtemoa 35.0° E, Persepolis 52.8° E, Cabo Verde 23.6° W): 33.1, 15.3, 91.7, 17.8, 58.6, 76.4°. **None is 72° or 108° (±1°)**, which C13 says the hoards "often" sit at, and **none is 49.3°**, the "step-down interval" of C90.
+- Longitude separations between the four C35 nodes (Indus 68.1° E, Eshtemoa 35.0° E, Persepolis 52.8° E, Cabo Verde 23.6° W): 33.1, 15.3, 91.7, 17.8, 58.6, 76.4°. **None is 72° or 108° (±1°)**, which C12 says the hoards "often" sit at, and **none is 49.3°**, the "step-down interval" of C90.
 - C90: 13.7 % of 360° = 49.32°. The arithmetic is right; the link to the 13.7 g unit is a percentage reusing the same digits.
 - C128: 13.7 t ÷ 13.7 g = 1,000,000. This holds for any n (n t ÷ n g = 10⁶), so it shows nothing about Moai; it follows from choosing 13.7 t.
 - C27/C57: 13.73 km and 13.7 g are different dimensions; in miles the same distance is 8.53, in nautical miles 7.41. A match of digits across units carries no evidential weight.
@@ -3890,8 +3890,10 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 | C90 | 13.7 % of the circle = 49.3°, "the exact Step-Down interval" for trade winds | **Arithmetic right, conclusion unsupported:** no node pair in C35 is 49.3° apart and no wind-navigation source is given. `\%` is a LaTeX leftover. |
 | C128 | 13.7 t Moai ÷ 13.7 g = 1,000,000 "exactly" | **True by construction (B), not evidence.** No "standard 13.7-ton Moai" is sourced; published averages for moai are lower (INFERRED, general knowledge, unverified). |
 
-**Out of queue (1 proposed decision):** C13 "they often sit at harmonic intervals (e.g., 72 degrees or 108 degrees apart)": no pair of the book's own nodes does (B). Suggest cutting or naming the pairs.
+**Out of queue (1 proposed decision):** C12 "they often sit at harmonic intervals (e.g., 72 degrees or 108 degrees apart)": no pair of the book's own nodes does (B). Suggest cutting or naming the pairs.
 
 **Status:** the 10 copies were already counted in §143/§144 (the 48 reviewed IDs plus these 34 make 82), so occurrence IDs with a proposed state from Claude are 48 + 14 = **62 of 82**, 0 final. Proposed distinct decisions: 90 + 14 + 1 = **105**. **Next:** the 20 remaining Collective IDs listed in A.
 
 **Limits:** one reviewer; site facts (bitumen, Maya weights, moai masses, the ancient-equator source) are general knowledge or unverified (INFERRED) and need sources before print; no outside source consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+**§153 correction (same run):** the out-of-queue harmonic-interval sentence is **C12**, not C13 as first committed in d66e060f (checked with the same splitter; C13 is the "Prediction" sentence). Corrected in place in B and in the out-of-queue line; no decision changes.
