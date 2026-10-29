@@ -1,0 +1,9 @@
+# Contract-000 GPT Library review — Run446 (2026-10-29 ~10 CT)
+
+**PRE-TEST:** Issue #126 preceded this run's reconciliation and validator tests. **Source:** `library-shared` tree `6ec6ece096aedd3346f667e8567e7519c1129c3c` (nontruncated); inherited Run445 ledger `e80685afa372f0dd2e5d4107d2d02f45b307540b`. **Scope:** 93 Git blobs (<=150), all assessed with reversible path, blob SHA, byte size, classification and reason in `LIBRARY-DECISIONS-446.tsv`.
+
+**Result (observed):** 35 KEEP / 57 DEFER / 1 PRUNE; 0 missing inherited paths, 1 changed F-001 candidate and 1 newly added Claude read-only Article queue script. Previous 92-row ledger had 34 KEEP / 57 DEFER / 1 PRUNE. Changed `Business/ideas/F-001-candidate-ebook-gumroad.md` from `ec0ae3ae` (472801 bytes) to `a632735f` (480910 bytes): Claude §145 Article 5 review and correction, 26/82 editorial occurrences with proposed states, 0 final. New `Business/ideas/F-001-tam-build/CLAUDE-article-queue-145.py@4b201780` (1467 bytes) is a read-only crosswalk script; KEEP as provenance evidence, **not** an execution claim or production approval.
+
+**Fresh source-body reads:** F-001 candidate §145, F-001 decision sheet, new `CLAUDE-article-queue-145.py`, Workshop README; additional read-only source examination of shared F-001 queue and reconciliation on GPT-owned branch. No private Testament material, no deletion or modification of shared Library. KEEP means retain for reference, not automatically run/adopt. PRUNE remains reversible, with source intact.
+
+**Limits:** metadata comparison covers all 93 blobs; fresh content reading was selective, not a line-by-line semantic audit of every entry. Historical KEEP/DEFER/PRUNE reasons remain attributed to earlier passes; no new factual endorsement.
