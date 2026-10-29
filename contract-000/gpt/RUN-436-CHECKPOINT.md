@@ -1,0 +1,15 @@
+# Contract-000 GPT checkpoint — Run436 (2026-10-28 ~23:56 CT)
+
+**Branch:** `contract-000-gpt-run436-20261028-2356`, created from verified Run435 final commit `88e63087581f63525e7353ee12175db59eddad8e`. **PRE-TEST:** GitHub Issue #116 published before diagnostics and any new tests. This checkpoint is written before final RUN-LOG append / issue POST; do not mistake it for the final branch head.
+
+**Read first next run:** Contract `research-discourse-registry:research-registry/contracts/CONTRACT-000.md@0fbc794`, TJ rulings `3ce87eb`, Claude latest DISC-002 `ee443fb` (2026-10-24 23Z unless changed), shared `library-shared` tree `470d3c827fd1cdd5e96b4f4ca91281e02d676bad`, this run's `LIBRARY-REVIEW-436.md`, `A-000-MUTUAL-COMPOSITION-CATALOG-436.md`, `DISC-002-ChatGPT-436.md`, F-001 progress/evidence and source-bound 42-row candidate JSON. Genesis `63eb982`, original F-001 scanner `31f3dcf`, TAM pinned source commit `d46456a`, F-001 decision sheet `2975edc`, coordination Issue #13 and PRE/POST Issue #116. No private Testament.
+
+**A — Library-first:** independently reconciled **89/89** current Git tree source paths, SHA, byte sizes and nonempty inherited rationales, **31 KEEP / 57 DEFER / 1 PRUNE**, zero drift; four public source-body reads. Full reversible 89-row ledger retained; no deletion/shared edits.
+
+**B — A-000/DISC-002:** exact Genesis source inspected; `record()` permits A-000 overwrite, Resh identity checks local mutable markers, SubAgentMatrix seeds parent slice and forwards evidence. Timothy's mutual equations and formula invariance are design specification, **not a proven executable composition operator in Genesis**. One labeled ChatGPT reply to Claude's latest DISC-002 committed on GPT branch. RC-R5(40) proposed/unfrozen; E35 and Lesson2 two exposed role decisions/`visible_fields` limits retained. No Genesis test or patch.
+
+**C — sole F-001:** 8/8 connector source Git blob IDs match pinned manifest. JavaScript source-transcribed regex scan over connector-returned eight public TAM texts yielded **42 candidates** (1/2/3/3/3/3/4/23), recorded with provenance and `CANDIDATE_UNREVIEWED`. Follow-up 42/42 unreviewed, 0 duplicate source+sentence positions. **Original Python on eight exact raw bytes NOT RUN:** local DNS failure, downloader precondition and web cache miss. Python/JS Unicode semantics unverified. **82/82 editorial occurrences remain UNREVIEWED; F-001 HOLD / NOT LAUNCH-READY**. Coordinator, package, rights and release remain unverified.
+
+**D — next:** acquire raw eight-file snapshot, independent hash verification, original scanner replay and queue reconciliation; Claude independently challenge historical object-level evidence/rights and duplicate forwarded provenance; Timothy still rules on A-000 custody, race freeze and F-001 A1–A6/B1/B4/B6/C1. No main/Claude/shared/Genesis/frozen-test edits, paid inference, Cloudflare loops, CI, publication, account, outreach, spending or payments.
+
+**Durability:** issue POST, Issue #13 coordination and final commit verification are separate finalization actions; do not claim completed until observed.
