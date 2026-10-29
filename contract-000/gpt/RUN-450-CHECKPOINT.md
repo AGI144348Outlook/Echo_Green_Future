@@ -1,0 +1,15 @@
+# Contract-000 Run450 — ChatGPT independent checkpoint (2026-10-29 ~14 CT)
+
+**Base:** Run449 final `cd898d947e35e83a78e88dfb981c74bdc8d4b651`. **Branch:** `contract-000-gpt-run450-20261029-1400`. Only `contract-000/gpt/` paths written. Final commit SHA and ahead/behind verification are recorded in Issue #130 POST after GitHub compare, not presumed here.
+
+**Pre-read:** `research-discourse-registry` Contract-000 blob `0fbc794` (§3, §15, §25, §30), TJ R1–R7 blob `3ce87eb`, DISC-002 Claude E43 blob `b1f58ed` and probe `cd0850a`, `library-shared` tree `d45c7c0`, previous Run449 checkpoint and ledger, shared F-001 plan `7796d341` and decision sheet `2975edcc`, Genesis `63eb982`, pilot workspace `b8be7c2` and catalog `a7235f9`.
+
+**A — Library-first:** 98/98 exact path/SHA/size reconciliation, 0 new/changed/deleted, **40 KEEP / 57 DEFER / 1 PRUNE**. Full 98-row reversible `LIBRARY-DECISIONS-450.tsv`, narrative `LIBRARY-REVIEW-450.md`. Four selected public shared source bodies read; no content deleted or changed.
+
+**B — A-000 / DISC-002:** Source-level response to Claude E43's 7/8 fault injection. New inferred caveat: RC-R5(55) `MAX(events.sequence)` can spuriously invalidate a healthy vocabulary view after non-vocabulary card/relation/template writes. Proposed unfrozen RC-R5(56) semantic-impact generation counter and negative controls; not executed. One labeled `DISC-002-ChatGPT-450.md` and `A-000-VIEW-SEQUENCE-450.md`. No Genesis/frozen/Equation edits.
+
+**C — sole F-001 TAM ebook:** New externally sourced Article 1 archaeological provenance dossier, identifying historical hoard support but unresolved **62lb (1987) / ~23kg (2025) / >26kg (manuscript)** totals, chronology differences and no independent item-level proof for six derived masses. Kletter & Brand 1998 full text and Mari/Ugarit tablet passages remain unverified. `F-001-ARTICLE1-PROVENANCE-450.md`. Offline source metadata gate and reproducible test harness committed: exact fetched Git blobs V8 **10/10 synthetic/negative controls PASS**, including fail-closed actual TAM six rows with missing independent locators. Gate checks metadata, not truth; always release HOLD. `F-001-TEST-EVIDENCE-450.md`, `F-001-PROGRESS-450.md`.
+
+**D — trace and blockers:** Prospective [Issue #130](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/130) published before tests; POST and #13 Claude handoff follow final verified commit. Independent original Python 8-source/42-candidate scanner NOT RUN; no full Node CLI; Claude E43 not independently replayed. Shared §149 remains 43/82 proposed, 0 final. F-001 **HOLD / NOT LAUNCH-READY**. Await primary itemized Eshtemoa inventory, Mari/Ugarit editions, editorial/rights/release approval and Timothy A1–A6/B1/B4/B6/C1; A-000 issuer/witness/freeze unresolved.
+
+**Next:** Ask Claude via #13 to independently inspect specialist Eshtemoa item weights and source mapping; GPT continue exact scanner/packaging validation on same F-001. No main/shared/Claude/Genesis/frozen/private changes, deletion, CI, accounts, outreach, spending, payments, publication, paid inference or autonomous Cloudflare loops.
