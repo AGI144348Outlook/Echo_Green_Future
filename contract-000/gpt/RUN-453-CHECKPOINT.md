@@ -1,0 +1,15 @@
+# Contract-000 Run453 — independent GPT checkpoint (2026-10-29 ~17 CT)
+
+**Parent:** Run452 branch `contract-000-gpt-run452-20261029-1600` (final `a6b015dfcbab219f501df8eb644221d4cd4a5677`). **This branch:** `contract-000-gpt-run453-20261029-1700`. All changes under `contract-000/gpt/`; no main, Claude, Genesis, pilot, shared Library or frozen-test writes.
+
+**Read-first:** Contract-000 §30 `research-discourse-registry@0fbc794`, TJ R1–R7 `3ce87eb`, latest Claude DISC-002 E46 `1b79b8e`, shared `library-shared@c5e8d78` (new §152 manuscript and scanner parity script), Run452 checkpoint `a7406cd`, 99-row ledger `e823c66`, F-001 progress `5974285`, shared F-001 decision sheet `2975edc`, Workshop README `d39dcb3`, Genesis `63eb982`, pilot workspace `b8be7c2` and catalog `a7235f9`, exact Python scanner `31f3dcf`, eight TAM source blobs from `d46456a`. No private Testament accessed.
+
+**A Library:** 100 entries **42 KEEP / 57 DEFER / 1 PRUNE**. Previous 99 reviewed by ledger and latest shared commit diff; two changed/new public source files read; 98 other rows inherited unchanged, not individually re-fetched. Manuscript §152 retained HOLD; new Claude parity comparator KEEP. No deletion.
+
+**B A-000:** Read Genesis/pilot and replied once to Claude E46 in `DISC-002-ChatGPT-453.md`. Accepted 56G-c/d as proposals, added operation-time gate race N9, old-tuple reader N10, A-000-tamper-vs-freshness N11. E46 was Claude's exploratory 4/4; **not GPT-executed**. No A-000 implementation or frozen tests.
+
+**C F-001 only:** [Issue #134 PRE](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/134) before tests; [POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/134#issuecomment-6509345805) afterward. Exact original scanner reconstructed and Git blob checked, synthetic missing-source run exits 0 with seven absent inputs (new **fail-open completeness defect**). New GPT-owned pinned snapshot gate `5de203a` and harness `0e8eaac`, both fetched back byte-identical, **11/11 synthetic PASS** after one harness setup error corrected. Full TAM Python replay by GPT **NOT RUN** (local GitHub raw DNS failure); Claude §152 reports 42 Python rows and 42/42 JS row parity. F-001 HOLD, 48/82 proposed, zero final.
+
+**D Blockers:** full public source bytes unavailable to local Python runtime (GitHub connector reads possible, direct download DNS blocked); original scanner's missing-file behavior; historical item-level Eshtemoa masses; editorial 34 remaining; Timothy's A1–A6/B1/B4/B6/C1 decisions, A-000 witness/issuer/freeze; EPUB/PDF packaging/release receipts. No accounts, outreach, publication, spending, payments, paid inference or Cloudflare loops.
+
+**Next GPT:** obtain exact eight TAM source bytes in an executable offline runtime, run pinned scanner gate, compare full CSV/report digests to Claude §152, then HOLD-only packaging. **Next Claude:** map remaining 34 Collective editorial IDs; inspect missing-source defect/gate if useful. Final commit verification to follow in RUN-LOG/Issue #13.
