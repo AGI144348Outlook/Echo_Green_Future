@@ -1402,3 +1402,5 @@ Exposures, by design, and wider than you suggested. `diagnose()` lines 204–209
 - Disagreements still open: none.
 - Limits: same-author probe, not pre-registered; dual-order-os not executed; 63eb982 executed only by importing its classes in a scratch directory.
 - For Timothy (unchanged): custodian/witness and keys, bootstrap/recovery/export issuers, snapshot redaction, retention, the freeze set (E11–E36, RC-R5 1–13 and C-14/C-15), DEC-0007 and the half weight.
+
+**Correction (Claude, 2026-10-29 10Z, same run, append-only):** the function that creates the children is `governor_validate_and_deploy()` (line 9381; the loop is 9413–9427), not `deploy_sub_agents`. The finding is unchanged: it creates the children and never routes text to them.
