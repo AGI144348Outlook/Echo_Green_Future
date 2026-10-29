@@ -1,0 +1,15 @@
+# Contract-000 GPT durable checkpoint — Run434 (2026-10-28 ~21:57 CT)
+
+**Branch:** `contract-000-gpt-run434-20261028-2157`, descendant of `contract-000-gpt-run433-20261028-2100`. **Prospective PRE before tests:** https://github.com/AGI144348Outlook/Echo_Green_Future/issues/110. Actual POST and final commit/compare to be recorded after this checkpoint; do not preclaim checkpoint's own commit.
+
+**Read first next run:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md` (blob `0fbc794`, §30); TJ R1–R7 (blob `3ce87eb`); Claude latest DISC-002 2026-10-24 23Z (blob `ee443fbc` unless updated); `library-shared` tree `470d3c8`; this run's 89-row `LIBRARY-REVIEW-434.md`; `A-000-PARENT-CHILD-EVIDENCE-434.md`; single labeled `DISC-002-ChatGPT-434.md`; `business/F-001-PROGRESS-434.md`; Issue #13. Genesis blob `63eb982`, shared scanner `31f3dcf`, F-001 decision sheet `2975edc`.
+
+**A — Library-first:** reconciled **89/89** shared entries by exact path, Git blob SHA, byte size and retained nonempty reasons: **31 KEEP / 57 DEFER / 1 PRUNE**, 0 drift. Five fresh public source-body inspections, including scanner, decision sheet, apply-order, Formula F-0001 and Claude coordinator v4 probes. No deletion, shared write or new adoption.
+
+**B — A-000/DISC-002:** source-only inspection of `SubAgentMatrix` shows initial parent graph copy, local + parent update for one in-domain event, and weighted local+global scoring. Inherited and forwarded observations are not independent corroboration; actual multiple-child duplicate delivery is UNVERIFIED. Proposed **RC-R5(38) UNFROZEN**; no full Genesis execution. Maintained Timothy's intended A-000 child reproduction and lawful versioned replacement, Claude E35's limited re-anchor and Lesson2 `visible_fields` caveats. One labeled `ChatGPT:` reply committed only to GPT branch.
+
+**C — same sole F-001:** added fail-closed eight-source preflight and 16-control synthetic unittest; initial `python -I` direct-script import error (exit 1) corrected by `python -B -m unittest`, **16/16 PASS** in 0.065s. Exact executed/committed Git blob SHA match: preflight `59720d729e0a63ec2ee2d656a4f2f4e7468fe305`, tests `082c7bdfa9d72774775ac4dc80a928d9c7bdb2e2`. Original real eight-source scanner, full coordinator, final EPUB/PDF/Android NOT RUN. **82/82 editorial occurrences UNREVIEWED; F-001 HOLD / NOT LAUNCH-READY**. The receipt self-hashes source bytes but does not verify trusted Git pins; TOCTOU/atomicity remain open.
+
+**D — safeguards:** No main, Claude, Genesis, shared Library, private Testament, frozen tests, contract self-updates, accounts, outreach, spending, payments, publication, CI, paid inference or Cloudflare loops. No additional business pipeline. Root RUN-LOG append and actual issue POST pending finalization.
+
+**Next:** trusted 8-file TAM snapshot via connector, compare Git blob pins, original scanner 82-row replay, hold-only coordinator and independent evidence review; Claude traces child forwarding callers and F-001 archaeology/rights; Timothy A-000 witness/issuer/freeze and F-001 A1–A6/B1/B4/B6/C1 and release authority. 
