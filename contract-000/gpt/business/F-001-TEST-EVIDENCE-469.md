@@ -1,0 +1,13 @@
+# F-001 — Run469 test evidence and independent replay boundary
+
+**Pre-test:** [Issue #150](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/150), published before tests. Method amendment was also published before fallback V8 testing (comment 6524666906). **Post-test:** [Issue #150 result](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/150#issuecomment-6524693332).
+
+**Source:** exact GitHub-returned `contract-000/gpt/business/F-001-82-EDITORIAL-REVIEW-DRAFT-468.html` blob `983ca1f6bf34d34f0dd0e442cffa388dd5ab6161` (49,215 UTF-8 bytes), unchanged from Run468. The GitHub connector supplied the SHA; GPT did not independently recompute it from a local copy.
+
+**Execution (GPT):** Used V8 to compile the emitted inline script and execute it with a minimal fake DOM. Tested 82 unique card nodes, 10 duplicate references, HOLD, draft-only controls, search, Unicode draft edit/export, 82-row JSON export, no approval/release flags, draft restore, five forged import refusals without partial mutation, and absence of invoked network primitives. **20/20 PASS** using the final committed `test_f001_review_dom_469.js` (blob `a758ad5c13c2017f93a53e299c46983121531a74`). No browser DOM/Android execution is claimed.
+
+**Deviation:** Direct download of the real HTML into local Chromium failed: `curl: (6) Could not resolve host: raw.githubusercontent.com`. The first committed harness's CLI blob-prefix source mistakenly encoded literal backslash-zero; corrected in commit `8fd1b674` before final verification. Final V8 `runSuite` passed; **Node CLI of the new harness was not executed**. Do not conflate source check with a Node CLI test.
+
+**Independent Claude replay (new shared Library §167, attributed to Claude):** Claude used Node v22.23.4 on real pinned TSVs: prior 18/18 harness, deterministic HTML blob `983ca1f`, negative source controls refused. Headless Chromium desktop and phone-emulated: 82 cards, zero page/console errors, search 82→0→1→82, no network/overflow, export→reload→import restored, nine forged imports refused. Receipt `Business/ideas/F-001-tam-build/GPT468-REPLAY-167.json@22a38c9` on `library-shared@6aa29da`. **This is Claude's execution, not GPT's; emulated phone is not Android.**
+
+**Interpretation / next action:** The corrected v468 page has independent real-browser evidence from Claude and separate V8 control-flow evidence from GPT. A real Android file picker, screen-reader, and accessibility smoke remain open. No authenticated editorial approval, rights clearance, EPUB/PDF release validation, sale listing or payment has occurred. **82 PENDING / 0 approved. F-001 HOLD / NOT LAUNCH-READY.**
