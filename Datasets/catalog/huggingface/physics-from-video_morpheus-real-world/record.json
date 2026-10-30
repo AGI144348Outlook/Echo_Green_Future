@@ -1,0 +1,2312 @@
+{
+ "id": "huggingface:physics-from-video/morpheus-real-world",
+ "title": "physics-from-video/morpheus-real-world",
+ "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tMorpheus — Real-World Physics Videos\n\t\n\nReal-world reference footage for Morpheus, a benchmark that tests whether\nvideo generative models (Wan, CogVideo, LTX-Video, COSMOS-predict1/2,\nPyramid-Flow, Veo3, Kling-Turbo, ...) obey Newtonian mechanics. Object\ntrajectories are extracted via SAM2 tracking and tested against physical laws\n(energy/momentum conservation, equations of motion) rather than pixel-matched\nto a single \"correct\" video.\nThis repo contains the filmed real-world… See the full description on the dataset page: https://huggingface.co/datasets/physics-from-video/morpheus-real-world.",
+ "found_by_keywords": [
+  "physics"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "3100bb28926231bd7127d0df8d569329675d44c8",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-07-06T07:45:52.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "mit",
+   "normalized": "mit",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'physics'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:3095e210d6bd1b35681675a1158cae4b8c0de371c1ad1c83624379a6fd314a03",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-10-30T16:02:48+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/.gitattributes",
+   "declared_size": 2504,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/README.md",
+   "declared_size": 2970,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00000.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00000.jpg",
+   "declared_size": 146283,
+   "declared_checksum": "sha256:64a5813b99b1a4d65fb843abc0b2592286a9cc3bd9c2101c6fd439a8a5886ad7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00001.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00001.jpg",
+   "declared_size": 144075,
+   "declared_checksum": "sha256:febd548409b7725f22c8cf51ef098f8e2df681b009051cc6c0de20b57261a3bf",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00002.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00002.jpg",
+   "declared_size": 143254,
+   "declared_checksum": "sha256:3374b634687413a6d02aa408103c5f54ac69cab37aa7b6a88ea95e579fd80bec",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00003.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00003.jpg",
+   "declared_size": 142195,
+   "declared_checksum": "sha256:0fe87177e8dde4b0daeec490226496c086bc3ed78844bcc08ae2841a81c4a59d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00004.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00004.jpg",
+   "declared_size": 141404,
+   "declared_checksum": "sha256:30b3618df4e648728788914e449c2ebe70fa20ab94ed066e77e131e107770589",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00005.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00005.jpg",
+   "declared_size": 141972,
+   "declared_checksum": "sha256:f3121396b052ba57aadb48931ba163ac8bdaea4ed808d82aac93be5061839457",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00006.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00006.jpg",
+   "declared_size": 140187,
+   "declared_checksum": "sha256:660c41489d0a8a38eddb4978d81b6e9b5c6f4216cb90bb6abec9a406e319eeea",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00007.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00007.jpg",
+   "declared_size": 138769,
+   "declared_checksum": "sha256:3c562393224971b8b45bc207c575a05159e06df0eefe7352ea794e8c65f2395d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00008.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00008.jpg",
+   "declared_size": 138563,
+   "declared_checksum": "sha256:6ecaf6500fdf7f4b0e99b6e5f6abe15db4f62e5260f5dd16be6f5815271f3a2f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00009.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00009.jpg",
+   "declared_size": 140841,
+   "declared_checksum": "sha256:c57ebc0b963c3ce1a2f472ced2a0935078f16345ee1565d66b0d5d48297f5fd8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00010.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00010.jpg",
+   "declared_size": 141216,
+   "declared_checksum": "sha256:e5d9ad0d50f0b77f34d9c2cb1ff4b85beb2e96d81d6e1db3534ed13007a5f0e1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00011.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00011.jpg",
+   "declared_size": 140108,
+   "declared_checksum": "sha256:ae46cc026543cae0b469f4f08ee80b3ec7465e2530557224ec001d3b78f48f50",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00012.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00012.jpg",
+   "declared_size": 140410,
+   "declared_checksum": "sha256:adefa930fde728351a674cd22f1d55015437692641959d54bde9b5caf38a7432",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00013.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00013.jpg",
+   "declared_size": 141346,
+   "declared_checksum": "sha256:535827f0d50fb53d93e85005ec002ce9fc7892161d980409cfc8cb99168b910b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00014.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00014.jpg",
+   "declared_size": 141747,
+   "declared_checksum": "sha256:a26fce7d4e7975c2209a1e9524e3f733dccdf6117589a1a92426fb89f11dd002",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00015.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00015.jpg",
+   "declared_size": 140960,
+   "declared_checksum": "sha256:f8f255c2fa35a621d04e2c267d4dbab2d5f58bd2f2962ce10459d2d8394ce33e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00016.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00016.jpg",
+   "declared_size": 140830,
+   "declared_checksum": "sha256:8981010e4d05846975b3707d81dc0a92fa84ecc607e052f7251aa24ca7062374",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00017.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00017.jpg",
+   "declared_size": 141071,
+   "declared_checksum": "sha256:155c70938d7b56ff69843dee6cb98f011c802705fbbd49ad1193ebf877f26f1d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00018.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00018.jpg",
+   "declared_size": 141344,
+   "declared_checksum": "sha256:8945d708c088f8fca43adeccf330acba95e10a492896214075fbcb6a3eeda5d0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00019.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00019.jpg",
+   "declared_size": 140605,
+   "declared_checksum": "sha256:b721d324ad375b4a62a7fcb95d3c7809b4466309b92ffe6c31fe6bbb58f2077a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00020.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00020.jpg",
+   "declared_size": 140177,
+   "declared_checksum": "sha256:4104d9da307fd09f8a6e54542e4d2afde4f33bbe785f47b0f0c5f5df9d07fcfb",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00021.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00021.jpg",
+   "declared_size": 140908,
+   "declared_checksum": "sha256:804c8a5b41ae55ebeeeb6310fe938bcaed292a4c30d05dfa9605fb42b290f2d1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00022.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00022.jpg",
+   "declared_size": 140864,
+   "declared_checksum": "sha256:47caf45673f7c629dc9e86a19294f6f53eb822ae836576f9b540ff6d57140ddd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00023.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00023.jpg",
+   "declared_size": 140560,
+   "declared_checksum": "sha256:d8eb3232a91af2eccee728682271776f98cf58cf2a8921d91bed657c643cda9e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00024.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00024.jpg",
+   "declared_size": 139955,
+   "declared_checksum": "sha256:28a5838e2fd42a30e6cbabf1bf80871c013b5fa24f7110298383399335ef2214",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00025.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00025.jpg",
+   "declared_size": 141028,
+   "declared_checksum": "sha256:0217468ed6a0b01ab85cfc770e4acbe849198d4539c5e718dbba3c7962a3681d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00026.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00026.jpg",
+   "declared_size": 140597,
+   "declared_checksum": "sha256:6934438fa61a28f0da885bcb4dd1524b4c3de2ceacda9267c9fbae6bdd6c336e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00027.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00027.jpg",
+   "declared_size": 140534,
+   "declared_checksum": "sha256:f2ae4ab2242459f334ae79f18f52de087bf35da6346cb6051104748ba3bd82e6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00028.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00028.jpg",
+   "declared_size": 140310,
+   "declared_checksum": "sha256:f923dcd824546c4424c3898e53b320b5caf1953be9a86fcdc170a68a57e11ba3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00029.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00029.jpg",
+   "declared_size": 140693,
+   "declared_checksum": "sha256:80ca6d3aa96290291a502cdd1ca3357d625b14c22e29515c0a4e128e1244cc73",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00030.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00030.jpg",
+   "declared_size": 140432,
+   "declared_checksum": "sha256:05a0eef8bd06c3185ef37ec12e78f8b13ef1cbb06191e97665ead038474e87da",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00031.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00031.jpg",
+   "declared_size": 140133,
+   "declared_checksum": "sha256:e052d1da380d4e07b66619e74c73a5433030ea90fefde29d011654639f56b2be",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00032.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00032.jpg",
+   "declared_size": 139813,
+   "declared_checksum": "sha256:f077b53ecc4269279d8f5b4365d39f5ca3bfb98aae2da0181c7dc33e0f1476d4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00033.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00033.jpg",
+   "declared_size": 141144,
+   "declared_checksum": "sha256:0db02dda5de7dace04118ff7d6bb2c30239855808e2110e299e109dd5a0119c8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00034.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00034.jpg",
+   "declared_size": 141036,
+   "declared_checksum": "sha256:254f6a14f5ab1ccdee10e72ab07a5e37bc01daf64084cd4439807cd050edfb0c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00035.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00035.jpg",
+   "declared_size": 139924,
+   "declared_checksum": "sha256:7fd00a1b5d24227e4a98f9023b1f6eaa7ea7b4ed51654aca8d300c06f6243c22",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00036.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00036.jpg",
+   "declared_size": 139923,
+   "declared_checksum": "sha256:f69ccebc9fbe08be23a84412ec36d32bf2429178a810f5a0df5a742aa022b7a0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00037.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00037.jpg",
+   "declared_size": 141030,
+   "declared_checksum": "sha256:8fe8dbf59b1a75f68ba9c130e08672df506fc21161f97c0cd6129bc9b397cc70",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00038.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00038.jpg",
+   "declared_size": 140876,
+   "declared_checksum": "sha256:f672099bc8b20a2d56243106ac347d15fdf29b8a2a6ba5b62464ce159eca2b61",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00039.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00039.jpg",
+   "declared_size": 140224,
+   "declared_checksum": "sha256:6da365c38f95fcf915a206aa0589b0de0c7faa8cd524309ddddb29639bd3e264",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00040.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00040.jpg",
+   "declared_size": 139995,
+   "declared_checksum": "sha256:419f917843d5ab18cb7ab35c401748afb0c51f62f30b7d096297afb8b01a5060",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00041.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00041.jpg",
+   "declared_size": 141535,
+   "declared_checksum": "sha256:9fe9c58b7314e72c81c5534e3c0be518444778dc4759a5335fc99690751bf5ec",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00042.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00042.jpg",
+   "declared_size": 141109,
+   "declared_checksum": "sha256:b2d476f5cf49212a00e45b744d9b5df649927f2f94b93a076ea249a5c203e7fc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00043.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00043.jpg",
+   "declared_size": 139163,
+   "declared_checksum": "sha256:31d66b011d9f88338153fb4abc04d8585fbe058d36250dfa099a30336f68f37a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00044.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00044.jpg",
+   "declared_size": 138357,
+   "declared_checksum": "sha256:b5911a6098416e2ec7e3c5761d606042fc6b3652a2532032149e212672fe9695",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00045.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00045.jpg",
+   "declared_size": 137859,
+   "declared_checksum": "sha256:24ca9c5ff474f5ef4086605a62e4af18dd1d6b1e185ba73874131c33452a6fa3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00046.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00046.jpg",
+   "declared_size": 137249,
+   "declared_checksum": "sha256:926f0148f1f4f55b49048e731e6d90de9b75e8c7a950069714b436cbebad190e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00047.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00047.jpg",
+   "declared_size": 136101,
+   "declared_checksum": "sha256:dc577b5248ec900d00fbba741a9992480a3d6e115cd22492ceae878f30deb0d9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00048.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00048.jpg",
+   "declared_size": 135605,
+   "declared_checksum": "sha256:922a361c61b672a2552412570057db0886ea4782405a66d10ffb2032fba68014",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00049.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00049.jpg",
+   "declared_size": 137371,
+   "declared_checksum": "sha256:ed70a53fd5c750841f4b4df600f30324584c9adf86c3762834981acb1d130467",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00050.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00050.jpg",
+   "declared_size": 137110,
+   "declared_checksum": "sha256:624aa4a08ad2c8aa4436eddbbbdd48a2456dbef509b2e921526e03b8da452a31",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00051.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00051.jpg",
+   "declared_size": 136484,
+   "declared_checksum": "sha256:14c1282458175f86528a35f9e68f41cc8a97c230acb643b11853031b5527bc38",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00052.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00052.jpg",
+   "declared_size": 136749,
+   "declared_checksum": "sha256:648817564632943e241262a659b5deebe060b8f64e0a5d5a81b62fc5e5660213",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00053.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00053.jpg",
+   "declared_size": 138034,
+   "declared_checksum": "sha256:bf9841d86a336821eae501ad430d338fcfc71debf4b986ea569bf332f59495c7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00054.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00054.jpg",
+   "declared_size": 137732,
+   "declared_checksum": "sha256:96f303fea7439e9db88df588fcc8b057bf6e7f725e23f6a8a77a6f46ee88cc45",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00055.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00055.jpg",
+   "declared_size": 137100,
+   "declared_checksum": "sha256:1cbc7888f0a9eeadedfcd27e1e3294aa4e4c5ae78b6261cd172af8de71884fff",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00056.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00056.jpg",
+   "declared_size": 137214,
+   "declared_checksum": "sha256:53549dd8a596c92f29c404fdd6b8bf85ebf22a34159fcf16ae2245dfe84323c2",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00057.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00057.jpg",
+   "declared_size": 138583,
+   "declared_checksum": "sha256:c42a262b919635495878cd4f9908ac31bf2ed2fce663256c5366f14c35ed0683",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00058.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00058.jpg",
+   "declared_size": 138081,
+   "declared_checksum": "sha256:c04ad85fd4576d86e1b6399aee06202578a31bdd977475d854932a12ce774f4c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00059.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00059.jpg",
+   "declared_size": 137639,
+   "declared_checksum": "sha256:a2bb318e678ad21f6cc487224cbc97ded860acfb636a8717314938b39b7ad738",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00060.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00060.jpg",
+   "declared_size": 137504,
+   "declared_checksum": "sha256:e1a5d8795ed3df0776c58fe1c620ece48fea2fe10e37053696d5ffdfb6b2ea86",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00061.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00061.jpg",
+   "declared_size": 139460,
+   "declared_checksum": "sha256:2fc4635651bdf526a0d6a7795608e601897ed80815db6842d10fa0a2ca48cad0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00062.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00062.jpg",
+   "declared_size": 139342,
+   "declared_checksum": "sha256:bbb90230a83709b0d582fb19e07d487656a44be9956419d7bd91f272b80dd90d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00063.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00063.jpg",
+   "declared_size": 138148,
+   "declared_checksum": "sha256:4dfa9a0363507048945fff90c40250e9f3107275be6d69bfc0107bed2d50f6b5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00064.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00064.jpg",
+   "declared_size": 137585,
+   "declared_checksum": "sha256:04ff3549d36f9d7caa314a3e465c67bbcf75f656c3ef4404bc533e4a51579d24",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00065.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00065.jpg",
+   "declared_size": 139597,
+   "declared_checksum": "sha256:75a2bd8ffb1850c69d20fc7016f88548657ca40e022d31661569c70532b1ffd9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00066.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00066.jpg",
+   "declared_size": 139729,
+   "declared_checksum": "sha256:0f952803fc342dba1f6241ec3e0958b545cf55ee7041d1d82616e2ba388457d5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00067.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00067.jpg",
+   "declared_size": 138855,
+   "declared_checksum": "sha256:ce4937c0d13167ef6696469f7c47c356e3130a2061846959059a74604797506c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00068.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00068.jpg",
+   "declared_size": 138804,
+   "declared_checksum": "sha256:1acb7a16bd933012079335262a75f1255f0aa6774b78637b4eb9eff0acf5247d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00069.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00069.jpg",
+   "declared_size": 141501,
+   "declared_checksum": "sha256:3189acd5ef9d68a17e04ef64536cd43cce7e93a3feb5d8d63765e4b823f78a34",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00070.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00070.jpg",
+   "declared_size": 142492,
+   "declared_checksum": "sha256:e8397e25354eb5fae68525712d097992f1636ba0257e0fc66fb00e3322a88598",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00071.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00071.jpg",
+   "declared_size": 141412,
+   "declared_checksum": "sha256:db82f34bfa76ca42b3e9495f9c7f9b953035bb184361ca8a9a5ebae1ecf22224",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00072.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00072.jpg",
+   "declared_size": 141696,
+   "declared_checksum": "sha256:e48a145e69e67b699d3105865e20616db103989c308bccde843722512a15146c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00073.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00073.jpg",
+   "declared_size": 144583,
+   "declared_checksum": "sha256:25f7dd131706887c9694d2e5250ef5cf8d9eb6e4a94b2012a959d17998578c8c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00074.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00074.jpg",
+   "declared_size": 144467,
+   "declared_checksum": "sha256:26156c4f1342886c0a2d361bd4ab06dacfa0d52273bdc7a0e6ce3b8c42aa3bfd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00075.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00075.jpg",
+   "declared_size": 142827,
+   "declared_checksum": "sha256:64f51a3a319d555721e6b42be7b5979a2e3c57d2618817dc0bb528d62674d0cb",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00076.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00076.jpg",
+   "declared_size": 141828,
+   "declared_checksum": "sha256:45ba2aeb9fd8547671a59f08efb0e2c184d3a72247e2a2550f68215814535a80",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00077.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00077.jpg",
+   "declared_size": 146085,
+   "declared_checksum": "sha256:25131ad50480385439b8a3400d789638eabf2a4636ee2e35ccb3cdac00ad9456",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00078.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00078.jpg",
+   "declared_size": 148046,
+   "declared_checksum": "sha256:95e34e18cca19f94ed5a3b716f74dab7deff61149c87cccb9b908b272cc62677",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00079.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00079.jpg",
+   "declared_size": 146790,
+   "declared_checksum": "sha256:7c276269235e5d04489373429ca425e5857b5ce8caa0026ad323af9e7b14ceba",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00080.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/frames_for_tracking/00080.jpg",
+   "declared_size": 146012,
+   "declared_checksum": "sha256:0b6130c136deb82714a2862b74d50ef4666173c255e282428133d09f48cfd396",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/info.json",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/info.json",
+   "declared_size": 336,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/output_video.mp4",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/0/output_video.mp4",
+   "declared_size": 526421,
+   "declared_checksum": "sha256:8ff290f6846d16981f07356d9ad7eee1e37864a21ea09c8e1c418f317dbc509c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00000.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00000.jpg",
+   "declared_size": 145091,
+   "declared_checksum": "sha256:aa0bd322c6e03eab092d9691783b88eb2574c51bb747dddb788faae188eb2224",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00001.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00001.jpg",
+   "declared_size": 140793,
+   "declared_checksum": "sha256:4bcb6311971932d68875f7a175fc9db9a738c7611e63739aabf34fec3fdb74ae",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00002.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00002.jpg",
+   "declared_size": 138917,
+   "declared_checksum": "sha256:5acfbf13c056a62908dbddd9ae890482269c6da155d16fb9bd79aeb653d3fd23",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00003.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00003.jpg",
+   "declared_size": 138599,
+   "declared_checksum": "sha256:a4b3ac083b7d0787fd33b02eb378c7309ecadc470344e63cd967e9c86bf3f3d4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00004.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00004.jpg",
+   "declared_size": 139004,
+   "declared_checksum": "sha256:4c9bde9e21429070a6e79788561273cdce88f0ca36ba5e134eef8586d04eb648",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00005.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00005.jpg",
+   "declared_size": 142003,
+   "declared_checksum": "sha256:516b77afa450422524bcb5a27ffb59518981a2628d5e5b12e3c36cf14eeb4b5e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00006.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00006.jpg",
+   "declared_size": 141859,
+   "declared_checksum": "sha256:62dc17c64ea96a5da2eb979fba8a37773900c3b1b240586fe23fcad7bfe7bf88",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00007.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00007.jpg",
+   "declared_size": 140851,
+   "declared_checksum": "sha256:97ded211fa1d7047e2d99adf80c142dbec5c9e53388c13fe2ca8eeb299224d1e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00008.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00008.jpg",
+   "declared_size": 141038,
+   "declared_checksum": "sha256:bb1c69b038b83a82387dd9ad59ca9ffa0d776dd3c3204379627f3fc8b8a1c80e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00009.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00009.jpg",
+   "declared_size": 142267,
+   "declared_checksum": "sha256:4a97c798d9c372432503addf653b948910d2b2d1c45780efa6e439bb9865b4f2",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00010.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00010.jpg",
+   "declared_size": 143119,
+   "declared_checksum": "sha256:7a1df9363cbffc2f10730c46c7db53f1f45590a184a82159ff667c5d1743e6c6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00011.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00011.jpg",
+   "declared_size": 142295,
+   "declared_checksum": "sha256:5bfa19d7458adf1ca6deadf78c75c129f56ebd90afc734b3c071f629fb3dc707",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00012.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00012.jpg",
+   "declared_size": 142440,
+   "declared_checksum": "sha256:39582747edd6bb63c887f55f8c53d9c30e488d81e955b571467c7d0b72121846",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00013.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00013.jpg",
+   "declared_size": 142727,
+   "declared_checksum": "sha256:b51a95ad57df171f47468a42f3997a6ae4d8f935a33da1eb8c0669213549c7fb",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00014.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00014.jpg",
+   "declared_size": 143331,
+   "declared_checksum": "sha256:d59d42c6cffece9918e5eb6b0dad0216d2faba3e0e662da91f0e421bfd3f9f7b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00015.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00015.jpg",
+   "declared_size": 142308,
+   "declared_checksum": "sha256:40c8538701e8cedeb99cf51b1990b6cc3cc2827ea47b10d27b233fcf9b372c0b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00016.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00016.jpg",
+   "declared_size": 142539,
+   "declared_checksum": "sha256:8b8f01335da18ea7f5a0c97bc1afe09ae2e06769786e3e43d160bfcc096c8829",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00017.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00017.jpg",
+   "declared_size": 143216,
+   "declared_checksum": "sha256:2da27876bcb253af2cf04190e79728c3a7bde89ae722dabf0270e9fb1678952f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00018.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00018.jpg",
+   "declared_size": 143394,
+   "declared_checksum": "sha256:e721661ac045c6d12acf8b89cb474208d9916d99a56173be3faeb9fe6bb23924",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00019.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00019.jpg",
+   "declared_size": 142445,
+   "declared_checksum": "sha256:252b14d361ea13baba734094c4fdc5086f633fbda2dca2304e84fdfc332f47f3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00020.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00020.jpg",
+   "declared_size": 141973,
+   "declared_checksum": "sha256:e91f2a93bec2dc4a7e06822e99d01fca27b65bbcc2fcefbc3057fba8a5e53381",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00021.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00021.jpg",
+   "declared_size": 142816,
+   "declared_checksum": "sha256:5eff82fb5520e4559924e755ccd50f986837c38fce3c819884eb2d2514e2649e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00022.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00022.jpg",
+   "declared_size": 143274,
+   "declared_checksum": "sha256:0b8c62ae74e630d716e1bf620d27e160458ef7804fe75ee2418dea2ead48d225",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00023.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00023.jpg",
+   "declared_size": 142651,
+   "declared_checksum": "sha256:00972d4bc4950397da1c3f593100031e0bda088da3fc70a5fd170229175e65c5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00024.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00024.jpg",
+   "declared_size": 142899,
+   "declared_checksum": "sha256:7ff13370b626a6ca2212b159ec3697f5e4e3f477db9fd6002e82b5ee85fe8097",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00025.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00025.jpg",
+   "declared_size": 143571,
+   "declared_checksum": "sha256:b1387359e20148c3ae4bb9b7ecb4ad970f60a00465fae5dc0033b4cd8af24c33",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00026.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00026.jpg",
+   "declared_size": 144042,
+   "declared_checksum": "sha256:15c83e4b046629b1e42acb287aff1fc3fd8d894f8e3adf2a57a0d9dde0291468",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00027.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00027.jpg",
+   "declared_size": 143816,
+   "declared_checksum": "sha256:39b72459e1a89c95f77f5fa2b35195f2ba9c4019ffc5b7c9afd89ae8c0953a7a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00028.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00028.jpg",
+   "declared_size": 143897,
+   "declared_checksum": "sha256:f2e7a30642d48ba96bd1b33f64234fd0df7580343d649ccf43cb9c86888466b8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00029.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00029.jpg",
+   "declared_size": 144755,
+   "declared_checksum": "sha256:d226c93fded414b2e0775dfd3737f28f2e48fa7fbaed6145fbf1c42543967920",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00030.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00030.jpg",
+   "declared_size": 144966,
+   "declared_checksum": "sha256:f253737892b39b46b904e51f65056504fcb4cb931c3c1caf830e92017f18b69e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00031.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00031.jpg",
+   "declared_size": 144065,
+   "declared_checksum": "sha256:4741752a4eace4d695628eba0bcc2e4ea7932f015f7cdc7b88eed95afc7063f3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00032.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00032.jpg",
+   "declared_size": 143800,
+   "declared_checksum": "sha256:81a1d0acd85ebdeb45417d19e16cd2009c6126dc2a669a0cb0a008fd9d541f97",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00033.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00033.jpg",
+   "declared_size": 144489,
+   "declared_checksum": "sha256:6cd4e75805f3d3bacfcf624c24ae0305c3dc996001b3810342a27fba83c91ec9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00034.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00034.jpg",
+   "declared_size": 145184,
+   "declared_checksum": "sha256:bc0a4fbae82b5cd035720f05d26fd9913a64b2e874d394324ee2b7b5960f38ac",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00035.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00035.jpg",
+   "declared_size": 144640,
+   "declared_checksum": "sha256:6dcd12cf67dd3e8c49bd525ab61affda17705d4291516def60bfa60085e475ef",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00036.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00036.jpg",
+   "declared_size": 144616,
+   "declared_checksum": "sha256:9ef84aaeae5009a01f1eac3f0851b4363ec864ab7cdceb95700b4e81610c55a6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00037.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00037.jpg",
+   "declared_size": 145557,
+   "declared_checksum": "sha256:2e910943833227826a23ce7847b42754a0a275bbdde2aad69d62334bacb16465",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00038.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00038.jpg",
+   "declared_size": 145955,
+   "declared_checksum": "sha256:2a7b02a607a3601ceb4f3335ac7cae5574ad288ae0e304c5248ff48079ec487c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00039.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00039.jpg",
+   "declared_size": 145444,
+   "declared_checksum": "sha256:0cc6d2f9b974fbf490b63377ecb195ba0c85814aceededd26952b0e368a3b5c8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00040.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00040.jpg",
+   "declared_size": 144816,
+   "declared_checksum": "sha256:a18ca1b24262e3c46fd06896fbdd4e07b4e18d23dfdc6a5fa01c24719287f7f5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00041.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00041.jpg",
+   "declared_size": 145541,
+   "declared_checksum": "sha256:5076ccb97a9e3086ef623f237097e94086d8ffb2ec07b9423727770b93196ace",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00042.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00042.jpg",
+   "declared_size": 145783,
+   "declared_checksum": "sha256:0c36c3be1cec278b2085111043240f7d266bd4764e0cef55d131e2babfe045f6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00043.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00043.jpg",
+   "declared_size": 144651,
+   "declared_checksum": "sha256:fbf5c757e8acfee884f1c91fef1654fb41d97f25509f991aed6f7a0b1b0116ac",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00044.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00044.jpg",
+   "declared_size": 144605,
+   "declared_checksum": "sha256:201992b0a68172c7e64c2fa8d000ed0c1b01e142210247e56503cf2afaa3e68e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00045.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00045.jpg",
+   "declared_size": 145511,
+   "declared_checksum": "sha256:b10517c4a46ad975218ebfa686dd4415328dba73a2c25a42a1dfa850f200364d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00046.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00046.jpg",
+   "declared_size": 146289,
+   "declared_checksum": "sha256:b4ea87422238cce8de1f5fb4015965b323d86ab50387c5694671aeba44369493",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00047.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00047.jpg",
+   "declared_size": 145032,
+   "declared_checksum": "sha256:3fbcfbbe843efb6e0b3839e22f9eae904920d7e2de1ed900dfcab983b5433ba4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00048.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00048.jpg",
+   "declared_size": 145226,
+   "declared_checksum": "sha256:66d8829703e0662f7ea453acec64d458fbe1ab63c1a7778ac0ab06271e627cc8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00049.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00049.jpg",
+   "declared_size": 146047,
+   "declared_checksum": "sha256:0cca18a71981dc3dc60aecf7cff634a42881428058d11d72a06ef4721422df3c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00050.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00050.jpg",
+   "declared_size": 145863,
+   "declared_checksum": "sha256:1431cf284f56a3ee72061d939cd6a9cd10780cacbe68375fe194524a8c9329db",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00051.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00051.jpg",
+   "declared_size": 145102,
+   "declared_checksum": "sha256:320039f49c303cc2730c7ce79bb25095d05e4436613ccaea34c5b23ec19f4e8a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00052.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00052.jpg",
+   "declared_size": 144985,
+   "declared_checksum": "sha256:0ee67db8ead7efcf5979f9d785206324937bbd43f11fa4ddcc2a8d9662bc72ed",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00053.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00053.jpg",
+   "declared_size": 146109,
+   "declared_checksum": "sha256:472ee24b70e765f4cd65da36cd055b2dd4dceefa301f8d7025ade223daf3dae4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00054.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00054.jpg",
+   "declared_size": 146546,
+   "declared_checksum": "sha256:f5bb34e30c4572935199ce5c64415595b9fdbfebdd7f59cb617dee10c688801a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00055.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00055.jpg",
+   "declared_size": 145374,
+   "declared_checksum": "sha256:da896b290bccc823859a123553cd76b4bb85b3d44bb108ac370cc03a4620c15e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00056.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00056.jpg",
+   "declared_size": 145293,
+   "declared_checksum": "sha256:34d26719228a5459abbe2259d30bd62cb64527e70eda0e0b69f8cc484d0c78b1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00057.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00057.jpg",
+   "declared_size": 145747,
+   "declared_checksum": "sha256:1196a6d8ddd375bc6617ca11a1cab2c578174e5fa4ffa20e521c0ac2bedf7ac1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00058.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00058.jpg",
+   "declared_size": 146219,
+   "declared_checksum": "sha256:79c4512a6828ad3326964eca75e96b69b1651b046091888117ed12ccdb16818d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00059.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00059.jpg",
+   "declared_size": 145446,
+   "declared_checksum": "sha256:5579fce7bd7f9a83c89b1e1e15490faa13d58f5fe7c1297022b68adc1aa73572",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00060.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00060.jpg",
+   "declared_size": 145685,
+   "declared_checksum": "sha256:ffda53276383ad5a473fc2a2abf2dceea7360b07a8fa36b8923d02a8c7f1b33d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00061.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00061.jpg",
+   "declared_size": 145668,
+   "declared_checksum": "sha256:63deba14070a548c52de09ecde7be8ffbf897af51a3f1fd6c03081f198fa4edc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00062.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00062.jpg",
+   "declared_size": 146102,
+   "declared_checksum": "sha256:1137ec88c2a7a5e13e78996537633b82554990ac9bcba2c57fb12b09a8f71da5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00063.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00063.jpg",
+   "declared_size": 145116,
+   "declared_checksum": "sha256:2413a1615dedca79948dffa2fac7e5a9b368b972d7efd6121ebf5ee903c51289",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00064.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00064.jpg",
+   "declared_size": 145222,
+   "declared_checksum": "sha256:28062706387713eccd1cab8f27508b9f00ac8e0d4b73aff1270a0249c39f6989",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00065.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00065.jpg",
+   "declared_size": 145889,
+   "declared_checksum": "sha256:eb6a6bbd81db62c36969aebb5e0c03d0a84e574b0d3e0ec40e30889d80c7ce56",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00066.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00066.jpg",
+   "declared_size": 146588,
+   "declared_checksum": "sha256:bb04ed3469fb207b1694ec7b40c4d9b875576af05308c9fdef8ec0b9d104cb15",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00067.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00067.jpg",
+   "declared_size": 145928,
+   "declared_checksum": "sha256:267ec72abf02468956966173cdda15460a3fb291172d35338c34c08fadc95b31",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00068.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00068.jpg",
+   "declared_size": 146538,
+   "declared_checksum": "sha256:70b061b4dd3063918205fdfdf9ed6a4c44766a2e55c5e324e94ccd8edc8c1bfe",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00069.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00069.jpg",
+   "declared_size": 148300,
+   "declared_checksum": "sha256:f51aad771f7d4b78bd9c7a8808e13fece64c4f099a000e42726489a868a55df2",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00070.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00070.jpg",
+   "declared_size": 150360,
+   "declared_checksum": "sha256:6795c4f7712695bad1942ff9752af093a30400f2090654cd880d5902b761e5b3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00071.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00071.jpg",
+   "declared_size": 148471,
+   "declared_checksum": "sha256:dc33d4de4d11cd991b3ccf4cd6b846dbf36714873b5a7e1535b3b06377467331",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00072.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00072.jpg",
+   "declared_size": 149063,
+   "declared_checksum": "sha256:4140d600ba8ffaf1a57ebdc1124d91fce408acd79aa1cefec1a93498c8a228e5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00073.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00073.jpg",
+   "declared_size": 150460,
+   "declared_checksum": "sha256:89416fb89a7b52ff1d2aa7e2ad66764660a383936e45a1f64a0196b25b718fe1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00074.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00074.jpg",
+   "declared_size": 151436,
+   "declared_checksum": "sha256:e1bc0ce1172c340c6307ba92ed43b3f7e1bdee771515eaae027081dd2199ccd8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00075.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00075.jpg",
+   "declared_size": 150276,
+   "declared_checksum": "sha256:8c5f37a6cef60e929fe5de79fa8a9134c20c4fdf1a36ac680996b262264fb597",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00076.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00076.jpg",
+   "declared_size": 150714,
+   "declared_checksum": "sha256:f80c0fd543e28d9569ac30819e3f46034c859e87583bac452c4e2f1e00e97d00",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00077.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00077.jpg",
+   "declared_size": 153110,
+   "declared_checksum": "sha256:4b2a5671e5365c773c59670442e1a65986afbcb52d8d108f0a15c2d7783c41ec",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00078.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00078.jpg",
+   "declared_size": 154823,
+   "declared_checksum": "sha256:3beccf1559a2a5047934e7baa73eff8f0764da0dd09937339acc09ff0a36a6d6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00079.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00079.jpg",
+   "declared_size": 151625,
+   "declared_checksum": "sha256:99fd72718acc42f3f4797fe81333212a4f0d7f3d8e96769f7f6f464cd505c2fe",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00080.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/frames_for_tracking/00080.jpg",
+   "declared_size": 148498,
+   "declared_checksum": "sha256:2157557ba42616300b677e16c7ee1757a4fff0b2902ebed95ce152fe26286faa",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/info.json",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/info.json",
+   "declared_size": 336,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/output_video.mp4",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/1/output_video.mp4",
+   "declared_size": 497843,
+   "declared_checksum": "sha256:ca7af069fbe03fcf54140901ef9c939a85e0f10a5c2dad27bfa1c2381abc87c7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00000.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00000.jpg",
+   "declared_size": 144594,
+   "declared_checksum": "sha256:d5ead45dc6b5065c210e90ad3d287eebf6589ce43fa82a01b1937de49d16d9bf",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00001.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00001.jpg",
+   "declared_size": 143285,
+   "declared_checksum": "sha256:67a2976bdc9aa2bc5344e9329f3b4300b167bafd3ca2e37d7a215ee09d51fea9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00002.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00002.jpg",
+   "declared_size": 141775,
+   "declared_checksum": "sha256:92becf5d51c97ced1672be86b74e14bb63e2ba3f2cd555d3e0101a3f693754fa",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00003.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00003.jpg",
+   "declared_size": 140744,
+   "declared_checksum": "sha256:6001d09fba325485bdcee45694df1e73a6fa1731a2e29e70f49dbdeaa2523008",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00004.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00004.jpg",
+   "declared_size": 141183,
+   "declared_checksum": "sha256:56c19a5221c30c79f8331783627a9b532feb9d7f4d145078b9f45adc07ddd50f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00005.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00005.jpg",
+   "declared_size": 142276,
+   "declared_checksum": "sha256:a74486a4cf84b3209d97d710e1ad87e8120e9e80b1dc135cc2489623e1604439",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00006.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00006.jpg",
+   "declared_size": 142084,
+   "declared_checksum": "sha256:4e1f1c3cb95e5290dc3f259114465b8ef73e164906b2a0f58d1905b1b65a68c7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00007.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00007.jpg",
+   "declared_size": 140663,
+   "declared_checksum": "sha256:15e0c75ac3f8369d942318e8dc4dcb7b091bbc486185e2a1ef5718b796128181",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00008.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00008.jpg",
+   "declared_size": 141014,
+   "declared_checksum": "sha256:85353f9da527170925e04a0ab7174336af5ca83f30183d2b42dc486e2bdcdbe5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00009.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00009.jpg",
+   "declared_size": 142807,
+   "declared_checksum": "sha256:51828aaaa2908628a86f4cf7f5daccc1c46a7c9cc5abc7db0ba4ff4b6952b60a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00010.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00010.jpg",
+   "declared_size": 144403,
+   "declared_checksum": "sha256:85c49fb1a7e1a5c26e84ade74e4e83619b2c22daf3d277a9e167cd8fb0e4b880",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00011.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00011.jpg",
+   "declared_size": 143430,
+   "declared_checksum": "sha256:dd78c4811ec7c47728a45b28f20f0c181159d1ef2202c5ad25bd9c408100fa59",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00012.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00012.jpg",
+   "declared_size": 143498,
+   "declared_checksum": "sha256:28380841a6d28141423b21a4839b4f32b370e348d4b5644cfb9ccb4e3096f1d7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00013.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00013.jpg",
+   "declared_size": 143456,
+   "declared_checksum": "sha256:3d1e1a10ebf1a39a43faf668eb1a0eb1b2f905e4c3597e64799b9b1c27c60a8e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00014.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00014.jpg",
+   "declared_size": 143875,
+   "declared_checksum": "sha256:c59b871bb248dc1037af507b5cabfad3b643d1b4f1d1edc5477f136e471dd5b5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00015.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00015.jpg",
+   "declared_size": 143600,
+   "declared_checksum": "sha256:566b27721d946101c0e1e3efb07391a8baa509ff518b2cd6177655947b6deb2d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00016.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00016.jpg",
+   "declared_size": 143508,
+   "declared_checksum": "sha256:acafacb3cd2d0fe56ce9ce2471dbc1d469b45c91a31a3a3a6ce21e457e2c13cc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00017.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00017.jpg",
+   "declared_size": 143287,
+   "declared_checksum": "sha256:fee3fada8c3e2c1152f5e0b7986d8e2171d0c551578e3e88198aa190112f8ca5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00018.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00018.jpg",
+   "declared_size": 144021,
+   "declared_checksum": "sha256:49d478fde994e6747f44d34ebb22fe0fcd04cbe7d50710304933f17c9c362ba8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00019.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00019.jpg",
+   "declared_size": 143655,
+   "declared_checksum": "sha256:104c318e58323c9b872715f2b280ce9563709dd5ae262960f3955c7bad32064b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00020.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00020.jpg",
+   "declared_size": 143669,
+   "declared_checksum": "sha256:4a8ad6818802b7e6980bab3330f9a8fe86b60c747022500411ab3c9f8c2ab09f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00021.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00021.jpg",
+   "declared_size": 143232,
+   "declared_checksum": "sha256:d8dde892009e19b237056debaa98068e7a94a7112cff973b866fe3a08e5b9fb7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00022.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00022.jpg",
+   "declared_size": 143632,
+   "declared_checksum": "sha256:4d6054f90cf08dcfc6b941b282cf8a3a334fb9ed16ff61f70235d6ed3dfad9e4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00023.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00023.jpg",
+   "declared_size": 143742,
+   "declared_checksum": "sha256:89224a5061c75f74356ddb6cedaf705591bddc5e93f4d2a0732c99326d38e3b9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00024.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00024.jpg",
+   "declared_size": 143888,
+   "declared_checksum": "sha256:fb694e9bf8eea8bb3ffde29e7feb1d83963684ba65c2966ff9bb3c2e881c886d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00025.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00025.jpg",
+   "declared_size": 143894,
+   "declared_checksum": "sha256:3099f04f79f8fd7a751f76f4123ffc0a136f3a708a02055ae769a6dfcb7ea179",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00026.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00026.jpg",
+   "declared_size": 144004,
+   "declared_checksum": "sha256:94fbe2e76133c201c5c997bea225dc1cd1dfc58d85dc289a13d8fc44b1456c5d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00027.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00027.jpg",
+   "declared_size": 143748,
+   "declared_checksum": "sha256:dc30df1ee973c4c0bfebab0efc7b636a9a699d0b5df3a550c0ef8c44c00f36fe",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00028.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00028.jpg",
+   "declared_size": 143685,
+   "declared_checksum": "sha256:49e4fddd1156a0b3119a7c00e8f31c79833b560a5457026f2aa12983deeb2599",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00029.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00029.jpg",
+   "declared_size": 143921,
+   "declared_checksum": "sha256:597fd58daee4c984e7a1cfa109f93629b09eaae2838b98796641d40c49dd50dd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00030.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00030.jpg",
+   "declared_size": 143873,
+   "declared_checksum": "sha256:69d4c597d708cf3a8138e9bca8cb1f8de6a4c5b18055ade2b8d6a62425396f0f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00031.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00031.jpg",
+   "declared_size": 143769,
+   "declared_checksum": "sha256:a71678b824a21265cb4630bff5af3f1c2ad21c374cacd94334122c9e2a82baf2",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00032.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00032.jpg",
+   "declared_size": 143884,
+   "declared_checksum": "sha256:84f716f690670adff495967bfbc3ef1180fcffa059217799cb596c5e891a1b07",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00033.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00033.jpg",
+   "declared_size": 143406,
+   "declared_checksum": "sha256:275e999545059975200712002c5846f46116b323725e7f5438e6128e86c3d814",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00034.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00034.jpg",
+   "declared_size": 143575,
+   "declared_checksum": "sha256:e858751a2e1eb1b4b2ed3029954a0b71e25c40474ed27f3f8390fece34d54d1e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00035.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00035.jpg",
+   "declared_size": 143305,
+   "declared_checksum": "sha256:2871ab96faf0c382f85662290b66ac397d14609b0e000826ec0c81e4fd59368d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00036.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00036.jpg",
+   "declared_size": 143297,
+   "declared_checksum": "sha256:2014e0031851f5e6a350154753c3f83753c61d2b01e506cfe1fde1558c44f9d5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00037.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00037.jpg",
+   "declared_size": 143344,
+   "declared_checksum": "sha256:5e6fb627333225dabda9e4bbe154ebacd11cdded51bf174578476b8c943984a5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00038.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00038.jpg",
+   "declared_size": 143515,
+   "declared_checksum": "sha256:da2ca23ce963241fb3c80df9b8482cc9b4e7dc8934ab0eea9b3f03395138eb81",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00039.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00039.jpg",
+   "declared_size": 143308,
+   "declared_checksum": "sha256:0aa5d3dfc4ae7a2af5bae4a2391c47d16952635cd53caac9a2f6e63acda2e0bc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00040.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00040.jpg",
+   "declared_size": 143636,
+   "declared_checksum": "sha256:1212414db05f57d826fd4093439c0f90104b92cb5014a12e71116d89e3c9a6a5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00041.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00041.jpg",
+   "declared_size": 143640,
+   "declared_checksum": "sha256:bce53fea00f84ae9a38cd62920f36b8f6a9f53d019e047e77ed2a922b1efa430",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00042.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00042.jpg",
+   "declared_size": 143782,
+   "declared_checksum": "sha256:3d386de92bf121a703da081ed5fd0ee90ac4309b3b8501c3fc5e9fb8d9d0cd45",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00043.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00043.jpg",
+   "declared_size": 143534,
+   "declared_checksum": "sha256:30d1855244cb828c5ef5e3cc89199e5a52c5162fc4a5b351cafa2f23890d93ac",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00044.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00044.jpg",
+   "declared_size": 143557,
+   "declared_checksum": "sha256:48a2de7e82e42af06cd66a5e68cd9fbfba87744196d27b450aca32f926884600",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00045.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00045.jpg",
+   "declared_size": 144891,
+   "declared_checksum": "sha256:50b15daf466ce4e2c6aeea6ef39226942314cffe468912603e6ff21c138edbc6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00046.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00046.jpg",
+   "declared_size": 146037,
+   "declared_checksum": "sha256:ca50e60f7e1e4bfb5f6c6db52f79cee21b026dcfe61dc9449b5e101d7f667b2c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00047.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00047.jpg",
+   "declared_size": 151474,
+   "declared_checksum": "sha256:caf92162420f767138ab73c17438698e13c9288a8ec907ce9362e03cdccceeb7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00048.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00048.jpg",
+   "declared_size": 153214,
+   "declared_checksum": "sha256:853d66065766808ae7edd4d1a85a2658c1748392ac82487bf0ed5b51a22b28f3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00049.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00049.jpg",
+   "declared_size": 152902,
+   "declared_checksum": "sha256:483ef1f8138a4557a8a8a7c3b2317d082f31f15b1e4acf32f7913d654196ad23",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00050.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00050.jpg",
+   "declared_size": 152992,
+   "declared_checksum": "sha256:e42f286bf0ceb307a8aa51471633f31b27f37568d7e8cd9af8ecea16ff23959e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00051.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00051.jpg",
+   "declared_size": 152151,
+   "declared_checksum": "sha256:4c4be81545152f206778446f3a1e64fed2d2c572dcad8251cbe3789ba3a9b2a9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00052.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00052.jpg",
+   "declared_size": 151765,
+   "declared_checksum": "sha256:7f0bcf0b0d3de61c859ba7bbbdf313f7f42377bf588f64e669206a46b562c4d7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00053.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00053.jpg",
+   "declared_size": 151515,
+   "declared_checksum": "sha256:3007a24b4ec91416cf938f770b86ecd6a95a8a07bf8a9a06e4ec9872caeada23",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00054.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00054.jpg",
+   "declared_size": 152107,
+   "declared_checksum": "sha256:a71f244967113147bd8265e3be52d8d6198808e15bd237b8631d8fd168f83b80",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00055.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00055.jpg",
+   "declared_size": 152085,
+   "declared_checksum": "sha256:a2b5c02c4cd5764d3ff86fbcbe75cbf64ae310a9ac73c670155a30117e07823a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00056.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00056.jpg",
+   "declared_size": 152087,
+   "declared_checksum": "sha256:cc1cd5f3134c84d028054393508769bbe12b102d524db14b536436ae1c46062d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00057.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00057.jpg",
+   "declared_size": 151995,
+   "declared_checksum": "sha256:9a98a788c014751becf2eb5babdf9031b4a8fd5856e417ef93aad5d4fd8d4275",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00058.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00058.jpg",
+   "declared_size": 152173,
+   "declared_checksum": "sha256:8c3206f50c8f776f1fd608fb51135f54a42c9cce876b875d85352ea1015298ce",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00059.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00059.jpg",
+   "declared_size": 152225,
+   "declared_checksum": "sha256:2fdcd2a6444939445ade1aa6ce27f566779a1387c3927163746c6fad5b4a990a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00060.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00060.jpg",
+   "declared_size": 152258,
+   "declared_checksum": "sha256:3ad8693b1fc25eb957087ddf92abbe1029277d35e85e27d20e8e4695b54a2dbe",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00061.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00061.jpg",
+   "declared_size": 151826,
+   "declared_checksum": "sha256:ef77629c4c6b7f65da4b6599f2042b78aca0b1405883ee68d53c8e2f7180fe00",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00062.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00062.jpg",
+   "declared_size": 151548,
+   "declared_checksum": "sha256:c727e2895d58d86ac285c7efe25d32851c62dac3eb592cc0f0e405afab06e408",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00063.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00063.jpg",
+   "declared_size": 151430,
+   "declared_checksum": "sha256:0198ba61db25603689011e23f5b9cb81a8f43f9e87a9b5e1decd0c2eeff68128",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00064.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00064.jpg",
+   "declared_size": 151546,
+   "declared_checksum": "sha256:7ff0830eab33915ce83d93be61c9fa8836eaea99cbff2243ab2112cffb99a583",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00065.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00065.jpg",
+   "declared_size": 151544,
+   "declared_checksum": "sha256:5fc4fb58cd9f206df5756d6cddfb872ab65ce1b9822a42f02931e3f1169bacf6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00066.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00066.jpg",
+   "declared_size": 151820,
+   "declared_checksum": "sha256:13c9564f627ec162dc964e1dc8fccc9a3355af86154b974cca18fbdde90db13b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00067.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00067.jpg",
+   "declared_size": 151608,
+   "declared_checksum": "sha256:4a86a2c97355c5475cfd0012622b2801215846e9b5d93c55879cfb1cc146b4d4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00068.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00068.jpg",
+   "declared_size": 151832,
+   "declared_checksum": "sha256:a876b369e6407625396e8513941453de93be041350250b120f23f71b6f0de94f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00069.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00069.jpg",
+   "declared_size": 151889,
+   "declared_checksum": "sha256:e2f082c3f316861580c2c672f591d018bb5c035a620553a974993142e3c8ab49",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00070.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00070.jpg",
+   "declared_size": 151950,
+   "declared_checksum": "sha256:0a5b2b2e293d0c80b38ed6f6a9b4f25f66a3583efcc474cd6a1faee26986f881",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00071.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00071.jpg",
+   "declared_size": 151910,
+   "declared_checksum": "sha256:bed9c9c4a7bc5227ac178438bf07e98a2e12b0b9d419857d88773bc8cbf01193",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00072.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00072.jpg",
+   "declared_size": 151754,
+   "declared_checksum": "sha256:84101107ed54c96fe4d6422cb5150559e3afb84f5f4a0064ec7c1c0e9ed087ee",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00073.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00073.jpg",
+   "declared_size": 152096,
+   "declared_checksum": "sha256:e879ec08c495149679b3e557bffaa53a9ba8c36f750d63dda22b050a259103c6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00074.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00074.jpg",
+   "declared_size": 152442,
+   "declared_checksum": "sha256:caf3e57d6787c8f8af953ea7749ff65efe098fed2121e6696715e77774ea0ca1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00075.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00075.jpg",
+   "declared_size": 152184,
+   "declared_checksum": "sha256:730f64949b0dcb7f668b462de7cfc1470b7fae5ffa981080ffb1b8ee4da8b501",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00076.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00076.jpg",
+   "declared_size": 152781,
+   "declared_checksum": "sha256:5b4d87d73e73cb53150f83c8cd1e0f751aee6b7bd129ef486b6e809e0c964f40",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00077.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00077.jpg",
+   "declared_size": 149963,
+   "declared_checksum": "sha256:c0f7f15961b01813dabed2f558e11e7b68d119b095cb2c609ab67d0f3e48644a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00078.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00078.jpg",
+   "declared_size": 150305,
+   "declared_checksum": "sha256:859ee23fa975e72c5c2cc77ae9e8e39e8b8a00d2a8e815bae42a49f11dfd1e08",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00079.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00079.jpg",
+   "declared_size": 149336,
+   "declared_checksum": "sha256:e10c588bfa942c244e84de94e39d16699694239ff6d8a7288477047ab06c6340",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00080.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/frames_for_tracking/00080.jpg",
+   "declared_size": 149154,
+   "declared_checksum": "sha256:6f5d7d769c6fe4a03f922eb03f87e4379965b7023df8feea07c5c090ea8338d1",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/info.json",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/info.json",
+   "declared_size": 336,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/output_video.mp4",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/bouncing_ball/2/output_video.mp4",
+   "declared_size": 494745,
+   "declared_checksum": "sha256:f481941ef5d6668484adcbfeb17b2b65da0e32e744b6d451d0809b508508b350",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "keyframe_interpolation/WAN-2.1/enhanced/collision_big_hits_small/0/frames_for_tracking/00000.jpg",
+   "url": "https://huggingface.co/datasets/physics-from-video/morpheus-real-world/resolve/3100bb28926231bd7127d0df8d569329675d44c8/keyframe_interpolation/WAN-2.1/enhanced/collision_big_hits_small/0/frames_for_tracking/00000.jpg",
+   "declared_size": 175275,
+   "declared_checksum": "sha256:7825342c80776a35e703a881aea5fcc9418c04d02ec43fd8aaf2064905a863a5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
