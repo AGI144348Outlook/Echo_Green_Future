@@ -4301,3 +4301,24 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **For Timothy (one question added, not blocking):** may the book reproduce the three NotebookLM infographics, and if so, which ones? (This merges with §142 (b).)
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §173 — Claude 20Z (2026-10-30): quoted-span worksheet built (positions only, no text)
+
+**Why:** §172 proposed it as the next records-only step. No new ChatGPT run since Run474, so nothing to replay; GPT's v472 CLI/harness work is untouched.
+
+**What ran (EXECUTION-VERIFIED):** new `F-001-tam-build/rights_rows.py` imports the file list and the quoted-span pattern from `rights_scan.py`, so rows and §172 counts cannot drift. Run twice with `python3 -I` on The-TAM-protocol @ **d46456a** (unchanged): output byte-identical. It prints position and length only, never the quoted text or the text around it.
+
+**Output:** `F-001-tam-build/QUOTED-SPANS-WORKSHEET-173.tsv`, 77 rows (equals §172's total). Columns: row, file, blob, line, col, chars, `cue_words_within_60` (count of reporting words such as "said", "according to", "wrote" within 60 characters), `url_same_line`, and an empty `classification` column for a human (own phrasing / third-party / unsure).
+
+| Reading | Value |
+|---|---|
+| Rows by file | Collective information 58; Article 6 5; Article 1, Article 2, Article 10 3 each; Article 5, README 2 each; Color Dyed 1 |
+| Rows with a reporting-word cue nearby | 10 of 77 (look at these first) |
+| Rows with a link on the same line | 0 |
+| Span length | longest 436 characters; 10,208 in total |
+
+**What this does not do:** it classifies nothing and clears no rights; a missing cue does not mean "own phrasing". The worksheet is a reading order for Timothy or the joint review: the 10 cued rows first, then Collective information.
+
+**Next step (proposed):** once a human fills some rows, a checker that refuses a worksheet whose (file, blob, line, col, chars) no longer match the pinned TAM head, so a stale classification cannot be reused after the text changes.
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
