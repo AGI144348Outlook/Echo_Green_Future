@@ -1,0 +1,15 @@
+# Contract-000 Run455 — independent ChatGPT checkpoint (2026-10-29 19 CT / 2026-10-30 00Z)
+
+**Parent:** Run454 `contract-000-gpt-run454-20261029@7ef10fbfc9e0a5932f480f8f2d24912d221fdc7b`. **Branch:** `contract-000-gpt-run455-20261029-1900`. GPT-owned paths only; no main, Claude, shared, Genesis, pilot, private Testament, frozen test or release writes.
+
+**Read-first evidence:** Contract-000 `0fbc794` and TJ R1–R7 `3ce87eb` on `research-discourse-registry`; Claude's latest DISC-002 E48 in `research-registry/discourse/DISC-002-invariant-self-identification.md` `f112176`; Run454 checkpoint `bb986ab`, Run454 ledger `fe28c42`, Run454 F-001 progress `a541504`, RUN-LOG; shared Library compared from `86647bf3` (two newer commits: manuscript §154–155 and `CLAUDE-collective-checks-155.py`); actual Genesis `63eb982`, pilot workspace `b8be7c2` and catalog `a7235f9`. No private material read.
+
+**A — Library-first:** 103 source-bound reversible entries, **45 KEEP / 57 DEFER / 1 PRUNE**. Two changed source paths read; 101 inherited rows retain prior reasons. Manuscript `19ba502b`, script `d943c7f`; source metadata and reasons in `LIBRARY-DECISIONS-455.tsv`, review `LIBRARY-REVIEW-455.md`. No deletion.
+
+**B — A-000 / DISC-002:** one `ChatGPT:` section in `DISC-002-ChatGPT-455.md` replies to Claude E48 6/6 exploratory duplicate-word witness, does not claim independent replay. New **PROPOSED** catalog-wide semantic uniqueness boundary, including direct `box.put_card` bypass, and unfrozen negative controls N13–N16. Identity authority, vocabulary uniqueness, view freshness and operation-time validity remain separate. Genesis/pilot/A-000 unchanged.
+
+**C — sole F-001:** Claude §155 advances **72/82 proposed, 10 pending, 0 final**. GPT-owned `F-001-EDITORIAL-COVERAGE-GATE-455.js` exact Git blob `1cc136f` adds exact 82-ID source pin and updated HOLD-only receipt. [Issue #136 prospective plan before execution; actual POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/136). **12/12 V8 PASS**, 1 positive + 11 adversarial rejects. Committed Node test harness but Node CLI **NOT RUN**. Claude §154 real eight-source Python replay (42 rows, same hashes) is **Claude-executed only**. GPT independent eight-source Python replay, EPUB/PDF and external source checks **NOT RUN**. Business `F-001-PROGRESS-455.md` maintains single project and acceptance checklist. **F-001 HOLD / NOT LAUNCH-READY**.
+
+**D — blockers and next:** 10 Collective IDs await Claude's provisional review; 82 final approvals still pending; source rights, historical mass locators, EPUB/PDF and Android QA; Timothy A1–A6/B1/B4/B6/C1 and A-000 issuer/witness/freeze and word-sense identity. Next GPT: original Python 8/8 independent scanner replay or HOLD-only package receipt. No accounts, publication, outreach, spending, payments, paid inference, autonomous Cloudflare loops or CI.
+
+**Verification note:** exact final branch SHA and changed-path comparison must be checked after the append-only RUN-LOG commit; this file does not invent a final SHA.
