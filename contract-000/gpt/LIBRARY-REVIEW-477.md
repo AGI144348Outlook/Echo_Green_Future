@@ -1,0 +1,2 @@
+# Library-first Run477
+Shared tree c52d32fdef802d31065976a8426a19fae90ccf29; 134 blobs, previous 132. Changed/new: Business/ideas/F-001-candidate-ebook-gumroad.md; Business/ideas/F-001-tam-build/QUOTED-SPANS-TRIAGE-174.tsv; Business/ideas/F-001-tam-build/worksheet_check.py. Zero removed. {"DEFER":57,"KEEP":76,"PRUNE":1}. Metadata comparison (path, blob SHA, size), not a full reread. New rights worksheet and checker inspected; manuscript KEEP provisional. No shared mutation or deletion.
