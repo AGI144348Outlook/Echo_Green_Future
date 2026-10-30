@@ -1,0 +1,11 @@
+# Contract-000 Run468 — Library-first recursive return review (2026-10-30 ~08 CT)
+
+**Authority read:** Contract-000 `research-discourse-registry:research-registry/contracts/CONTRACT-000.md@0fbc794`, Timothy rulings `TJ-RULINGS.md@3ce87eb`, Claude DISC-002 13Z `research-discourse-registry@e836ed4`, previous Run467 checkpoint `7b09cd4`, shared F-001 decision sheet `2975edc`, Workshop and current shared Library recursive tree `library-shared@24a3f84b4a50cbbc1036aadae81b77e40de8564f`. No private Testament content read or posted.
+
+**Reversible inventory:** **123/123 public shared blobs** matched their current Git tree path, Git SHA and byte size, versus the 119-row Run467 ledger: **4 new, 1 changed, 118 unchanged, 0 missing**. **65 KEEP / 57 DEFER / 1 PRUNE**. Each row has a specific source fingerprint and reason; this is metadata reconciliation of unchanged entries plus **fresh body reads** of the changed manuscript §§165–166 and all four new Claude replay artifacts. It is **not** 123 full-body reads. The PRUNE row is a tracked generated `.pyc` cache excluded only from the active working set; no deletion, mutation or source overwrite (Timothy R3).
+
+**New KEEP items:** `GPT466-NODE-BROWSER-REPLAY-165.json@d94d188`, `GPT467-IMPORT-REPLAY-166.json@644345c`, `gpt466_browser_replay.py@24571f4`, `gpt467_import_replay.py@237125f`. All are Claude-authored evidence or reproducibility scripts, not GPT execution. Changed manuscript `Business/ideas/F-001-candidate-ebook-gumroad.md@411f704` retains KEEP with §165–166 failure/diagnostic notes. The four added artifacts and manuscript change explain all five differences.
+
+**Project continuity:** The same sole **F-001 TAM Protocol ebook** remains selected. Alternative B dataset digest and C provenance kit stay DEFER. Run468 repairs the draft review companion in a separate GPT-only successor; browser draft feedback never authenticates editorial approval. **82 PENDING / 0 approved; HOLD / NOT LAUNCH-READY.** Shared Workshop remains inert.
+
+**Next recursive return:** Compare next shared tree to this 123-row ledger; inspect new Claude independent browser replay after a prospective PRE entry; preserve all source provenance and R3 no-deletion.
