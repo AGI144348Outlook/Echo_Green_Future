@@ -3914,3 +3914,34 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 3. The gate pins one exact source state. Any TAM edit (e.g. Timothy's editorial A1–A6 decisions) changes the pins, so the pin set needs a logged update step, like A-000 under R5.
 
 **Editorial status unchanged:** 62/82 occurrence IDs proposed, 0 final; **20** Collective IDs remain (ChatGPT's 453 handoff says 34; 14 of those were reviewed in §153). F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+## §155 (Claude, 2026-10-30 00Z): editorial pass on 10 more `Collective information` IDs (C68–C117), records only
+
+**Ask:** §153 "Next" and ChatGPT run 454 (`F-001-PROGRESS-454.md` on `contract-000-gpt-run454-20261029` @ 7ef10fb): review the 20 remaining Collective IDs. This run takes the first 10 in §153's list.
+
+**Inputs (pinned):** The-TAM-protocol `main` @ d46456a1 (read-only clone; `Collective information` split with claim_scan.py's splitter, as in §145/§153). New read-only script `CLAUDE-collective-checks-155.py` (blob d943c7f), run with `python3 -I` (EXECUTION-VERIFIED). It uses only textbook constants written in the file, with no outside data. First run: two output keys were mislabelled (`acrux_rises_north_of_lat` meant *south of*). The labels were fixed before commit, the numbers did not change, and the script was re-run.
+
+### A. Arithmetic (`CLAUDE-collective-checks-155.py`, EXECUTION-VERIFIED; the constants are textbook values, INFERRED)
+
+- C69: 1/15° = **4 arcminutes**. C68's "drift" is precession, about **71.6 years per degree** (50.3″/yr).
+- C97: which stars a site sees depends on **latitude**, not on which point of a coast it is. Polaris stands about **28.9°** high at High Island (29.57° N) and never rises at Easter Island (27.1° S). Acrux (Southern Cross) rises only south of about **26.9° N**, so it never rises at High Island. Each pairing in C97 is therefore right, but "the only points on their respective coastlines" is not: every point at that latitude sees the same stars. Local height only lowers the horizon, by about 5.6′ at 10 m.
+- C109: lifting a 13.7 g mass by h metres reduces its **weight** by 3.1 × 10⁻⁷ per metre (free-air gradient). That is about **43 µg at 10 m** and 216 µg at 50 m. Its mass does not change. "Metric friction" is not a physical quantity.
+
+### B. Proposed evidence states (10 IDs; Timothy and the joint review decide)
+
+| Queue ID | Text, short | Proposed state |
+|---|---|---|
+| C68 | Pyramids built as stone "Nouns" to measure the stars' angular shift and keep the 13.7 g Registry synced | **Hypothesis, no evidence.** Precession is real (A), but no source links any pyramid to measuring it, or to a 13.7 g unit. Label as the book's model. |
+| C69 | "New research": the Great Pyramid is aligned with the Fall Equinox to 1/15° to calibrate the "Water-Clock" | **Distorted citation.** As far as I know, the published finding (Glen Dash, 2017) is that the pyramid is aligned to the cardinal directions within a few arcminutes, and that an equinox sighting is one *possible method*. It is not aligned "with the equinox" (INFERRED, general knowledge, not checked against the paper this run). The water-clock / 13.7 g purpose is unsupported. Cite Dash correctly and drop the purpose, or cut. |
+| C76 | Earth as a "Giant Clepsydra"; pyramids as "Measurement Marks"; islands as "Terminals" for the "13.7g Breath" | **Metaphor** (spoken to the reader: "You are seeing…"). Keep only if framed as metaphor. "Downloaded from the stars" cannot stand as a claim. |
+| C82 | High Island and Easter Island are "Resonant Nodes calibrated to the 13.7g Invariant" and Great-Circle harmonics | **Model statement** ("In the TAM Protocol"). §153 B found no harmonic spacing among the book's own nodes, so "calibrated" has no support. Keep only as the model's definition. |
+| C97 | The only coastal points with a clear sightline to calibrate the water clock against the Southern Cross / North Star | **Partly false (A):** the star pairings are right, but "only points" is false, because visibility depends on latitude. The calibration purpose is unsupported. Cut "only"; keep, if at all, as a model. |
+| C100 | In both scripts, "Noun" signs open a sequence "exactly 13.7% more often than in random distribution" | **Uncited statistic.** No corpus, count, baseline or test is given, and "exactly" is implausible for a sign-frequency ratio. Which two scripts are meant is not clear from this sentence. `\%` is a LaTeX leftover. Cite the analysis or cut. |
+| C109 | A 13.7 g chert weight on the salt dome: "Metric Friction" changes slightly vs sea level | **Physically misdescribed (A).** Only weight changes, by about 43 µg at 10 m (no balance in antiquity could detect this). Mass is unchanged, and "metric friction" is undefined. Cut, or restate correctly as a negligible gravity effect. |
+| C110 | The dome gave the ancient "Crossers" a "Natural Lab" to test silver purity and water clocks | **Narrative, no evidence.** No source places silver testing or water clocks at High Island. Label as speculation. |
+| C115 | "The 13.7g constant is the 'Carrier Wave' that connects them." | **Metaphor.** Keep if framed as such. |
+| C117 | 13.7 g silver on the dome "Synced to the very core of the planet", plus a closing bracket and "Would you like me to hypothesize…" | **Rhetoric, unsupported as a claim.** The trailing "Would you like me to hypothesize the 'Submerged Node'…" is a chatbot prompt left in the source text and should be removed from any manuscript. That is an editorial cleanup, not a content decision. |
+
+**Status:** occurrence IDs with a proposed state from Claude are 62 + 10 = **72 of 82**, 0 final. Proposed distinct decisions: 105 + 10 = **115**. **10 Collective IDs remain:** C126, C129, C141, C147, C149, C222, C230, C236, C271, C276. (ChatGPT's 454 coverage gate pins 20 pending, so it will report drift once this section is counted. That is expected, and the gate needs a logged pin update, not an edit by Claude.)
+
+**Limits:** one reviewer. Every site fact and every citation (Dash 2017, High Island's elevation, star positions) is general knowledge, INFERRED, and needs a source before print. No outside source was consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
