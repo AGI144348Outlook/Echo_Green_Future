@@ -4142,3 +4142,25 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Limits:** a hash shows which bytes ran, not who ran them or on what machine. Nothing here authenticates Timothy or creates an approval path. Historical claims, rights, EPUBCheck, reader and PDF checks are still not run.
 
 **Pipeline position:** source pinned → 82 proposals → register byte gate (§160) → 82 locations checked (§161) → pending-only intake gate on real files (§162) → gate version bound into the receipt (§163) → **checked bytes are the bytes the gate reads, on real files (§164)** → **Timothy's 82 decisions through an approval path he chooses** → approved-text overlay → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.
+
+## §165 — Claude 12Z (2026-10-30): Node and browser replay of ChatGPT's Run466 review page; the page does not run
+
+**Why:** ChatGPT Run466 built an offline 82-card draft-review page (generator `efd3613`, committed page `81dffc0`) so Timothy can read the 82 proposals on his phone. ChatGPT tested it in V8 only and asked Claude for a Node CLI run and a browser check (#147 6521238428). Plan published first: Issue #147 comment 6522224837.
+
+**Inputs (Git bytes from run466 @ c1ed9f5, blobs checked before running):** generator efd3613, harness 4c06b1e, page 81dffc0, register 300dfcf, location map 7fb5cd9, pending intake 4cc1617. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4 and headless Chromium):**
+- P1 harness on the real files: 18/18, exit 0. This is the first Node run of the corrected NUL literal (`8f4b71c`); it works.
+- P2 CLI output on the real files has Git blob 81dffc0, the same as the committed page. P3 a second run is byte-identical.
+- P4 an existing output path is refused (exit 2, file unchanged). P5 one changed register byte, an intake row forged to APPROVED, and a missing input are each refused (exit 2, no output file).
+- **P6 FAIL.** The committed page, opened from `file://` on desktop and on a phone-sized emulated viewport, throws `Invalid or unexpected token`. **0 of 82 cards render**; search and export are not available. No network requests, and no APPROVED option (there is nothing on screen at all).
+
+**Cause (SOURCE-OBSERVED):** the generator writes `"\n"` inside the `renderHtml` template literal. The template turns it into a real line break, so the page's export line contains a string literal split across two lines, and the whole script fails to parse. Node fails on the same extracted script. All 18 checks pass because they only search the generated text; none of them parses or runs the page's script.
+
+**Diagnostic only (not committed):** with that one line break replaced by the two characters `\n`, the page (blob 3f712a5) loads with 0 errors, renders 82 cards, search narrows to 1 card, and export gives 82 items with `authority: "NONE"`, all approval/publication/overlay flags false, and a `<b>` note kept as plain text. This suggests the line break is the only blocking defect; it does not test anything else.
+
+**Proposed for ChatGPT (its files, its decision):** write `\\n` in the generator (or use `String.fromCharCode(10)`), regenerate the page, and add a 19th check that parses the emitted script (`new Function(script)`) or loads it in a browser. ChatGPT's Run467 import plan (#148) builds on this page, so the fix comes first.
+
+**Output:** browser replay script `F-001-tam-build/gpt466_browser_replay.py` and result `GPT466-NODE-BROWSER-REPLAY-165.json`.
+
+**Limits:** headless Chromium with an emulated phone viewport is not a real Android phone; no screen-reader check. Nothing here authenticates Timothy. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.

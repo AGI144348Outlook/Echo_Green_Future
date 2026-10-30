@@ -1,0 +1,125 @@
+{
+ "section": "F-001 §165",
+ "run": "Claude 2026-10-30T12Z",
+ "pre_test": "Issue #147 comment 6522224837 (published before execution)",
+ "inputs_git_blobs": {
+  "generator": "efd361343076b71cf1f695ab047aae6685e391f4",
+  "harness": "4c06b1e613ad8a0e404d1267b1107b61f966f141",
+  "committed_html": "81dffc0c5d483a1598691326d5280a79d2084c2c",
+  "register": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+  "location": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+  "intake": "4cc1617d1f1bbea1661f74ba931f86660c087939"
+ },
+ "source_branch": "contract-000-gpt-run466-20261030-0605@c1ed9f5f",
+ "runtime": {
+  "node": "v22.23.4",
+  "browser": "Playwright Chromium (headless)"
+ },
+ "P1_node_harness": {
+  "exit": 0,
+  "passed": 18,
+  "total": 18
+ },
+ "P2_cli_output_git_blob": "81dffc0c5d483a1598691326d5280a79d2084c2c",
+ "P2_equals_committed": true,
+ "P3_second_run_byte_identical": true,
+ "P4_existing_output_refused": {
+  "exit": 2,
+  "file_unchanged": true
+ },
+ "P5_negatives": {
+  "one_register_byte_changed": {
+   "exit": 2,
+   "output_created": false
+  },
+  "intake_row_APPROVED": {
+   "exit": 2,
+   "output_created": false
+  },
+  "missing_input": {
+   "exit": 2,
+   "output_created": false
+  }
+ },
+ "P6_browser_committed_html": {
+  "desktop": {
+   "errors": [
+    "pageerror: Invalid or unexpected token"
+   ],
+   "network": [],
+   "cards": 0,
+   "approved_option": 0,
+   "scroll_overflow": false
+  },
+  "phone-emulated": {
+   "errors": [
+    "pageerror: Invalid or unexpected token"
+   ],
+   "network": [],
+   "cards": 0,
+   "approved_option": 0,
+   "scroll_overflow": false
+  }
+ },
+ "P6_result": "FAIL: script does not parse ('Invalid or unexpected token'); 0 of 82 cards render; search and export unavailable",
+ "root_cause_SOURCE_OBSERVED": "generator f001_review_companion_466.js line 82 writes \"\\n\" inside the renderHtml template literal (backtick, line 30); the template turns it into a raw newline, so the emitted client script contains an unterminated string literal \"<LF>\". Node new Function() on the extracted script fails the same way.",
+ "diagnostic_only_copy": {
+  "change": "that one raw newline replaced by the two characters backslash-n; nothing else",
+  "git_blob": "3f712a5858cbbaefa87634b7ef1d17dc2ab41338",
+  "committed": false,
+  "result": {
+   "desktop": {
+    "errors": [],
+    "network": [],
+    "cards": 82,
+    "approved_option": 0,
+    "scroll_overflow": false,
+    "visible_after_search": 1,
+    "export": {
+     "format": "F-001-review-feedback-DRAFT/v1",
+     "authority": "NONE",
+     "timothy_approval_authenticated": false,
+     "publication_authorized": false,
+     "editorial_overlay_applied": false
+    },
+    "export_items": 82,
+    "first_item": {
+     "occurrence_id": "README.md#S24",
+     "draft_status": "DRAFT_REVISE",
+     "draft_note": "<b>test</b>"
+    },
+    "statuses": [
+     "",
+     "DRAFT_REVISE"
+    ]
+   },
+   "phone-emulated": {
+    "errors": [],
+    "network": [],
+    "cards": 82,
+    "approved_option": 0,
+    "scroll_overflow": false,
+    "visible_after_search": 1,
+    "export": {
+     "format": "F-001-review-feedback-DRAFT/v1",
+     "authority": "NONE",
+     "timothy_approval_authenticated": false,
+     "publication_authorized": false,
+     "editorial_overlay_applied": false
+    },
+    "export_items": 82,
+    "first_item": {
+     "occurrence_id": "README.md#S24",
+     "draft_status": "DRAFT_REVISE",
+     "draft_note": "<b>test</b>"
+    },
+    "statuses": [
+     "",
+     "DRAFT_REVISE"
+    ]
+   }
+  }
+ },
+ "why_the_V8_and_Node_suites_passed": "all 18 checks test the generated string (includes/regex), none parses or runs the emitted client script",
+ "limits": "headless Chromium with a phone-sized emulated viewport and Android user agent is not a real Android device; no screen reader audit; nothing here authenticates Timothy; all 82 states stay PENDING; F-001 HOLD"
+}
