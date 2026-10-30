@@ -7,8 +7,12 @@ triage: prints the §173 positions plus two more counts-only cues, never the quo
   repeats_in_other_files = number of OTHER listed TAM files containing the exact span (a pointer to Timothy's own
   recurring phrasing or to a shared source; not proof of either); verse_ref_within_60 = scripture-style
   references (Book 3:16) inside the span or within 60 characters (translation choice matters for rights).
+units (Claude 22Z, §175): groups the rows into decision units, one per distinct quoted text (rows whose inner text is
+  identical share a unit), prints unit, rows, files, cued, read_order; never the text. check also refuses a worksheet in
+  which two rows of the same unit carry different non-blank classifications (one human decision per text).
 Usage: python3 -I worksheet_check.py check <tam dir> <worksheet.tsv>
-       python3 -I worksheet_check.py triage <tam dir> <worksheet.tsv>  > triage.tsv"""
+       python3 -I worksheet_check.py triage <tam dir> <worksheet.tsv>  > triage.tsv
+       python3 -I worksheet_check.py units <tam dir> <triage.tsv>  > units.tsv"""
 import sys, os, re, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rights_scan import FILES, PAT  # same pattern and file list as §172/§173
@@ -51,6 +55,18 @@ def check(d, ws):
         except ValueError: errs.append(f"row {rid}: non-numeric position"); continue
         if pos is None or (pos, n) not in spans[f]: errs.append(f"row {rid}: no quoted span of {r['chars']} chars at line {r['line']} col {r['col']}")
         if r.get("classification", "") not in OK_CLASS: errs.append(f"row {rid}: classification not in own/third-party/unsure/blank")
+    seen = {}
+    for r in body:
+        if r["file"] not in texts: continue
+        t = texts[r["file"]][1]
+        try: pos = locate(t, int(r["line"]), int(r["col"])); n = int(r["chars"])
+        except ValueError: continue
+        if pos is None: continue
+        c = r.get("classification", "")
+        if c:
+            k = t[pos + 1:pos + n - 1]
+            if k in seen and seen[k][1] != c: errs.append(f"row {r['row']}: classification {c} differs from row {seen[k][0]} ({seen[k][1]}) for the same quoted text")
+            seen.setdefault(k, (r["row"], c))
     n_spans = sum(len(s) for s in spans.values())
     if len(body) != n_spans: errs.append(f"worksheet has {len(body)} rows, text has {n_spans} spans")
     print(f"rows={len(body)} spans_in_text={n_spans} errors={len(errs)}")
@@ -72,5 +88,24 @@ def triage(d, ws):
     return 0
 
 
+def units(d, ws):
+    texts, (head, body) = load(d), read_ws(ws)
+    groups = {}
+    for r in body:
+        t = texts[r["file"]][1]; pos = locate(t, int(r["line"]), int(r["col"])); n = int(r["chars"])
+        groups.setdefault(t[pos + 1:pos + n - 1], []).append(r)
+    def cued(rs): return any(int(r.get("cue_words_within_60") or 0) or r.get("url_same_line") == "yes"
+                             or int(r.get("repeats_in_other_files") or 0) or int(r.get("verse_ref_within_60") or 0) for r in rs)
+    def tier(rs):  # §174 reading order: reporting-word cue first, then shared texts, then the rest
+        if any(int(r.get("cue_words_within_60") or 0) for r in rs): return 1
+        return 2 if len({r["file"] for r in rs}) > 1 else 3
+    order = sorted(groups.values(), key=lambda rs: (tier(rs), int(rs[0]["row"])))
+    print("\t".join(["unit", "rows", "files", "n_rows", "cued", "read_order"]))
+    for i, rs in enumerate(order, 1):
+        print("\t".join([f"U{i:02d}", ",".join(r["row"] for r in rs), "|".join(sorted({r["file"] for r in rs})),
+                         str(len(rs)), "yes" if cued(rs) else "no", str(tier(rs))]))
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit({"check": check, "triage": triage}[sys.argv[1]](sys.argv[2], sys.argv[3]))
+    sys.exit({"check": check, "triage": triage, "units": units}[sys.argv[1]](sys.argv[2], sys.argv[3]))

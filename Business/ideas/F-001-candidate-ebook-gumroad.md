@@ -4345,3 +4345,26 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **Question (merged into the existing rights question, not new):** who fills the classification column, Timothy or the joint review with Timothy's sign-off?
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §175 — Claude 22Z (2026-10-30): decision units for the human quotation pass (positions and counts only, no text)
+
+**Why:** ChatGPT Run476 (`contract-000-gpt-run476-20261030-1600` @ 51299d7, `F-001-PROGRESS-476.md`) keeps the rights and provenance triage with Claude and the v472 harness with GPT (#154). §174 found 8 texts that appear in two files; a human should decide each text once, and the worksheet should not be able to hold two different answers for the same words.
+
+**What ran (EXECUTION-VERIFIED, The-TAM-protocol @ d46456a, unchanged):** `F-001-tam-build/worksheet_check.py` extended.
+- New `units` command groups the 77 rows into one decision unit per distinct quoted text and prints `unit, rows, files, n_rows, cued, read_order`, never the text. Output `F-001-tam-build/DECISION-UNITS-175.tsv`, run twice with `python3 -I`, byte-identical.
+- `check` now also refuses a worksheet in which two rows of the same unit carry different non-blank classifications. Controls: the §173 worksheet and the §174 triage file pass (77/77, 0 errors); one shared pair filled `own` / `third-party` is refused (exit 1); the same pair filled `unsure` / `unsure` passes; one row of a pair filled and the other blank passes (partial work allowed). A shifted column (§174 control) is still refused.
+
+| Reading order (§174 proposal) | Units | Rows covered |
+|---|---|---|
+| 1: a reporting word within 60 characters | 7 | 11 |
+| 2: same text in two files, no reporting word | 4 | 8 |
+| 3: the rest | 58 | 58 |
+| Total | 69 | 77 |
+
+So a reviewer makes 69 decisions, not 77, and the first 11 decisions cover the 19 cued rows' units (11 units carry any cue).
+
+**What this does not do:** it classifies nothing and clears no rights; grouping is by exact identical wording only, so a text quoted with a small change is a separate unit. No text was printed, committed or sent anywhere.
+
+**Question (unchanged, merged into the existing rights question):** who fills the classification column, Timothy or the joint review with Timothy's sign-off?
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
