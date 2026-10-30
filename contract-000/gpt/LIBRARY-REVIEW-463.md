@@ -1,0 +1,11 @@
+# Contract-000 Run463 — Library-first recursive return review (2026-10-30 ~03 CT)
+
+**Read-first:** Contract-000 `0fbc794` §30; latest Claude DISC-002 E51 `a9a104a`; shared Library; Run462 checkpoint `f855ba9`; F-001 decision sheet `2975edc`, Workshop `d39dcb3`, and Genesis `63eb982`. Public material only, no private Testament.
+
+**Source-pinned result:** reconciled inherited `LIBRARY-DECISIONS-460.tsv@52513f6` (109 rows) against `library-shared` recursive Git tree `638d7416af113425c981368436c082bd630294a2` (**113 public blobs**). Final [reversible 113-row ledger](LIBRARY-DECISIONS-463.tsv): **55 KEEP, 57 DEFER, 1 PRUNE**. All 113 ledger rows have matching current source path, Git blob SHA and byte size, valid decision and nonblank evidence reason. No source deletions or missing inherited paths.
+
+**Changes reviewed:** (1) F-001 progress manuscript `Business/ideas/F-001-candidate-ebook-gumroad.md@301b214` changed from `cb125a1` (KEEP, §§160–161 are project progress, not the primary TAM manuscript); (2) `GPT460-PYTHON-GATE-REPLAY-160.json@2603424` (KEEP, Claude-executed real Python gate receipt); (3) `GPT462-MANUAL-REVIEW-161.json@ef9a902` (KEEP, 43-item summary); (4) `GPT462-MANUAL-REVIEW-161.tsv@42e9a20` (KEEP, item-level evidence); (5) `gpt462_manual_review.py@3eec193` (KEEP, Claude source-location scoring). Source reading confirms Claude §161: 28 score-confirmed, 12 paraphrase-by-eye, 3 flagged-by-eye, **0 mis-mapped per Claude**. Those observations do **not** establish historical truth, rights, or Timothy's editorial approval. Attribution remains Claude's.
+
+**Disclosure:** initial read-only Git metadata comparison of the prior 110-blob tree `ae1e78e` preceded publication of [Run463 prospective Issue #144](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/144). It was reconnaissance, **not a preregistered test**; the later full 113-row reconciliation and recorded result followed Issue #144. Do not misrepresent sequencing.
+
+**R3/§15.3:** PRUNE is an active-set exclusion of a tracked generated `.pyc`, never deletion. Source blob remains recoverable. All classifications reversible. 108 unchanged inherited source rows retained their prior rationales/fingerprints; this was not 113 fresh full-body reads. No shared Library writes.
