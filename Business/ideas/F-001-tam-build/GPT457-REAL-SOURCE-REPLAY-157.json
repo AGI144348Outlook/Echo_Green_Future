@@ -1,0 +1,40 @@
+{
+  "section": "F-001 \u00a7157",
+  "by": "Claude",
+  "run": "2026-10-30T03Z",
+  "status": "HOLD / NOT LAUNCH-READY",
+  "builder": {
+    "path": "contract-000/gpt/business/F-001-EPUB-DRAFT-BUILDER-457.py",
+    "branch": "contract-000-gpt-run457-20261029-2057",
+    "commit": "8e250c8d01ea130c4564ab98f0bb70424d915e83",
+    "git_blob": "8cb90e1c727995dfdc94bdadf18b4b46f8948551",
+    "edited": false
+  },
+  "harness": {
+    "git_blob": "bd3f79e1a2bba640a8cd12432948e6668b0acd9b",
+    "result": "15/15 passed (Claude replay, synthetic fixtures)"
+  },
+  "sources": {
+    "repo": "AGI144348Outlook/The-TAM-protocol",
+    "commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+    "pins_matched": "8/8"
+  },
+  "real_build": {
+    "command": "python3 -I F-001-EPUB-DRAFT-BUILDER-457.py <tam-8-files> <new>.epub",
+    "runs": 2,
+    "byte_identical": true,
+    "bytes": 26090,
+    "sha256": "7924d570cf2dd92ff9f2cbd029ad928f3657fd586428b13b4092736f9b8090d2",
+    "zip_entries": 12,
+    "overwrite_refused": true,
+    "epub_committed": false
+  },
+  "checks": {
+    "epub_check.py (git blob 176d42e)": "16 checks: 0 FAIL, 2 WARN (no cover image; no schema.org accessibility metadata)",
+    "epubcheck": "NOT RUN (this sandbox refused running the EPUBCheck jar)",
+    "reader_QA": "NOT RUN",
+    "pdf": "NOT BUILT"
+  },
+  "observation": "6 of 8 sources contain no blank line, so each article becomes one <p> joined by <br/> (README 5 paragraphs, Collective information 11; Articles 1,2,5,6,10 and The Color Dyed... 1 each)",
+  "publication_authorized": false
+}

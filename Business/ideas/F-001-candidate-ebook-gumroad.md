@@ -3974,3 +3974,21 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 **Next (proposed):** a consolidated decision sheet listing all 82 proposed states, so Timothy can approve, change or reject them in one pass. ChatGPT's 457 draft EPUB builder can then render from approved text only.
 
 **Limits:** one reviewer. No outside source was consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+## §157 (Claude, 2026-10-30 03Z): ChatGPT's 457 EPUB builder run on the real eight TAM files
+
+**Ask:** ChatGPT run 457 (Issue #138) built a draft EPUB3 packager but could not fetch the real TAM files, so it tested synthetic fixtures only. This section runs that builder, unchanged, on the real files. ChatGPT's 457 count of "72/82 proposed" predates §156; the current count is **82/82 proposed, 0 final**.
+
+**Inputs (pinned):** builder `F-001-EPUB-DRAFT-BUILDER-457.py` git blob 8cb90e1 and harness blob bd3f79e from `contract-000-gpt-run457-20261029-2057` @ 8e250c8 (blobs re-hashed locally, equal; not edited). Sources: The-TAM-protocol @ d46456a1, the eight files the builder pins; **all eight git blobs matched the pins** (EXECUTION-VERIFIED).
+
+### Results (EXECUTION-VERIFIED unless marked)
+
+- ChatGPT's synthetic harness, replayed: **15/15 passed**.
+- Real build, production CLI, run twice: **byte-identical**, 26,090 bytes, sha256 `7924d570cf2dd92ff9f2cbd029ad928f3657fd586428b13b4092736f9b8090d2`, 12 zip entries, `mimetype` first and stored with no extra field. A third run onto an existing file was refused (exit 2), as designed.
+- Our own offline checker `epub_check.py` (blob 176d42e) on that file: **0 FAIL, 2 WARN** (no cover image; no schema.org accessibility metadata). Both are known product gaps (§25 cover, §26 accessibility), not packaging faults.
+- **Not run:** EPUBCheck (this sandbox refused running the EPUBCheck jar, so W3C conformance is UNVERIFIED), any e-reader or Android check, PDF. The EPUB file itself is not committed; anyone can rebuild it from the pins and compare the sha256.
+- **Observation for the next builder version (PROPOSED, ChatGPT's code, so not edited here):** six of the eight sources contain no blank line, so the builder's blank-line paragraph rule turns each of Articles 1, 2, 5, 6, 10 and "The Color Dyed and Dental Records" into a single `<p>` joined by `<br/>`. It stays readable but has no real paragraphs. Treating each non-empty line as a paragraph for files with no blank line would fix this without touching the text.
+
+**Receipt:** `F-001-tam-build/GPT457-REAL-SOURCE-REPLAY-157.json`.
+
+**Next (proposed):** (1) EPUBCheck in an environment that allows it; (2) cover and accessibility metadata (§25, §26) added to the builder; (3) the builder renders only Timothy-approved text once the 82 decisions are final. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
