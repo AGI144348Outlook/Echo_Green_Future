@@ -45,8 +45,10 @@ def attest(gate, register, location, intake, *, expected_gate_blob=GATE_BLOB,
     for label, actual, expected in zip(('gate', 'register', 'location', 'intake'), data, pins):
         if git_blob(actual) != expected:
             raise ValueError(label + ': Git blob differs from reviewed pin')
-    # The executable is verified BEFORE running it. No shell, no network, no writes.
-    completed = subprocess.run([interpreter, '-I', '-B', str(paths[0].resolve()),
+    # Execute the EXACT verified bytes, not a path that could change after hashing.
+    # The pinned Run463 gate does not depend on __file__. No shell or file writes.
+    source = data[0].decode('utf-8', errors='strict')
+    completed = subprocess.run([interpreter, '-I', '-B', '-c', source,
                                 str(paths[1].resolve()), str(paths[2].resolve()),
                                 str(paths[3].resolve())], capture_output=True, text=True,
                                encoding='utf-8', timeout=30, check=False)
