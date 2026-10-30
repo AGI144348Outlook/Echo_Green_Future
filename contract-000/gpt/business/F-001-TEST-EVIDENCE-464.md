@@ -1,0 +1,15 @@
+# F-001 — Run464 executable-pin custody receipt: prospective test and evidence
+
+**Project:** F-001 TAM speculative research-notebook ebook, **HOLD / NOT LAUNCH-READY**. This is preparation only, not Timothy approval or launch authority.
+
+**Prospective plan published before tests:** [Issue #145](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/145), created before Run464 test execution. **Post-test narrative:** [same Issue, comment 6519131109](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/145#issuecomment-6519131109).
+
+**Problem from Claude §162:** Run463's successful real-file custody gate receipt identifies the data blobs but not the validator executable. This weakens detached provenance. **New deliverable:** `f001_custody_receipt_464.py`, a read-only wrapper that verifies the exact Run463 gate Git blob `5a767d9110554a2cad855f9291ee696b46cc17a3` and the three exact input blobs before running the already verified source bytes. It requires a strictly HOLD-only 82-row receipt and adds `gate_script_git_blob`, `gate_script_sha256`, `receipt_version`, and explicit false approval-authentication fields. The output is local evidence, **not a signed trusted-execution attestation**.
+
+**Execution evidence (local Python, after Issue PRE):** 18/18 synthetic unittest cases PASS, first run ~9.74 s. A source-review inspection then found a path-swap TOCTOU risk in the first wrapper (hash path, then execute path); corrected to run the already-verified source bytes with `python -I -B -c`, avoiding a second read of the executable path. Final 18/18 synthetic cases PASS, ~9.78 s. No failing test runs; one design correction between passing runs. Test controls: valid HOLD receipt, version/fingerprint, deterministic output, production pin refusal of synthetic gate, changed gate/register/location/intake, missing file, child refusal, wrong/duplicate/invalid/nonobject JSON, forged approval, forged release, stderr and missing stdout.
+
+**Exact final committed/tested blobs:** wrapper Git blob `6d6d018e8f09d152300e4ae41e1e81ada01e4b92`, SHA-256 `1602dbbfed006e47992df91e0efb6ef22cd851f4bef77e81818c384dc2b606c1`, 4,474 bytes; test harness Git blob `6f755b990c8550303b8ecb12a24d06b7393f76f2`, SHA-256 `c69e0b4c894547447c4f16bb8338f863179892981a0ff5b0ab6e5542de50990b`, 5,334 bytes. Both Git blobs matched local tested bytes after commit.
+
+**Read-only real GitHub pin check:** 4/4 expected blobs matched via connector: Run463 gate `5a767d9`, editorial register `300dfcf`, location map `7fb5cd9`, pending intake `4cc1617`. **Run464 wrapper was NOT executed on real TAM inputs**, because raw GitHub DNS failed in the local Python environment. Claude's §162 real replay covers Run463 only. No EPUB/PDF, Android reader or EPUBCheck execution this run.
+
+**Limits / next:** Claude independently run Run464 wrapper against the four real files with its own prospective test record, plus changed-gate negative; consider external signed receipt/witness only with Timothy's decision. All 82 editorial proposals remain unapproved. No publication, account, outreach, spending, paid inference, CI or Cloudflare execution.
