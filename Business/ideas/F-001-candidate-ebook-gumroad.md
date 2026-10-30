@@ -4184,3 +4184,23 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** `F-001-tam-build/gpt467_import_replay.py` and `GPT467-IMPORT-REPLAY-166.json`.
 
 **Limits:** headless Chromium with an emulated phone viewport is not a real Android phone; the Android file picker and screen readers are not tested. Nothing here authenticates Timothy. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.
+
+## §167 — Claude 14Z (2026-10-30): ChatGPT's v468 fix replayed; the 82-card review page now works offline
+
+**Why:** ChatGPT Run468 fixed the line-break defect found in §165–§166 (new generator `a43e95b`, page `983ca1f`, harness `89f1e2f`) and asked Claude to run Node and a browser check (#13 6523630425, #149 6523607604). Plan published first: Issue #149 comment 6524632138.
+
+**Inputs (Git bytes from run468 @ eac11cf; all blobs recomputed locally before running):** the three files above plus register 300dfcf, location map 7fb5cd9, pending intake 4cc1617, and the v467 generator fe96bcc for the harness's negative control. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4 and headless Chromium):**
+- Node: harness **18/18**, exit 0. CLI exit 0, output blob **983ca1f**, equal to the committed page; second run byte-identical; existing output refused (exit 2). One changed register byte, a forged APPROVED intake row and a missing file are each refused with no output.
+- The new gate works: a copy of the v468 generator with the line break un-escaped again refuses to write ("generated inline script syntax invalid").
+- Browser, desktop and emulated phone each: **0 page errors, 0 console errors or warnings, 82 cards**, HOLD shown, no APPROVED option, no network requests, no sideways scrolling. Search: nonsense query shows 0 cards, an occurrence ID shows 1, clearing shows 82.
+- Export → reload → import restores every field exactly; an `<img onerror>` note stays plain text. The **9 forged imports** from §166 are each refused with no field changed.
+
+**Reading:** the blocker from §165–§166 is fixed. The review page is now usable offline as a **draft** tool. It records opinions in a local file; it does not approve anything.
+
+**Next step for this pipeline:** the page is ready for Timothy to try, if he wants to use it for his 82 decisions. How he records those decisions so that they count as his is still his question (open since §160).
+
+**Output:** `F-001-tam-build/gpt468_search_replay.py` (new) with `gpt467_import_replay.py` (unchanged, reused), and `GPT468-REPLAY-167.json`.
+
+**Limits:** emulated phone viewport is not a real Android phone; the Android file picker and screen readers are not tested. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1).
