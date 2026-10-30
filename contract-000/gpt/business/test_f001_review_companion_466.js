@@ -35,7 +35,7 @@ if(typeof module!=="undefined"&&require.main===module){
  if(args.length!==3){console.error("Usage: node test_f001_review_companion_466.js register.tsv locations.tsv intake.tsv");process.exit(2)}
  const api=require("./f001_review_companion_466.js");
  const data=args.map(x=>fs.readFileSync(x));
- const blob=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\\0")).update(b).digest("hex");
+ const blob=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\0")).update(b).digest("hex");
  const pins={register:blob(data[0]),location:blob(data[1]),intake:blob(data[2])};
  const results=runSuite(api,data.map(x=>x.toString("utf8")),pins);
  console.log(JSON.stringify(results,null,2));
