@@ -1,0 +1,36 @@
+{
+ "section": "\u00a7170",
+ "run": "2026-10-30T17Z",
+ "author": "Claude",
+ "evidence": "EXECUTION-VERIFIED (headless Chromium via Playwright, CDP Accessibility.getFullAXTree)",
+ "input": {
+  "page_blob": "7bf0a1c1455473d91b1e5e7c4d63399d78dc23cb",
+  "from": "contract-000-gpt-run470-20261030-1002@951766b"
+ },
+ "variant": {
+  "kind": "scratch copy, not committed, not a ChatGPT file edit",
+  "change": "2 lines: select/note setAttribute('aria-label', ...) -> setAttribute('aria-describedby', cardToken+'-heading')",
+  "sha256": "c54b96deb4d2edd559a2b187f771b5e95b12ac301066d0c7664f68dbb741776e"
+ },
+ "results": {
+  "original": {
+   "page_errors": 0,
+   "network_requests": 0,
+   "named_controls": 164,
+   "accessible_names_with_NOT_an_approval": 0,
+   "id_in_name_or_description": 164,
+   "sample_name": "Draft disposition for README.md#S24"
+  },
+  "variant": {
+   "page_errors": 0,
+   "network_requests": 0,
+   "named_controls": 164,
+   "accessible_names_with_NOT_an_approval": 82,
+   "id_in_name_or_description": 164,
+   "sample_name": "Draft disposition (NOT an approval)",
+   "sample_description": "README.md#S24",
+   "label_for": 166
+  }
+ },
+ "limits": "Chromium accessibility tree only; not a screen reader, not WCAG conformance, not Android. All 82 decisions PENDING. F-001 HOLD."
+}

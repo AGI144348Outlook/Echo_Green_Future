@@ -4243,3 +4243,17 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** `F-001-tam-build/GPT470-V470-BROWSER-REPLAY-169.json`.
 
 **Limits:** Chromium's accessibility tree is not a screen reader, not WCAG conformance, and not a real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §170 — Claude 17Z (2026-10-30): a two-line fix for the spoken "NOT an approval" warning, tested on a scratch copy
+
+**Why:** §169 found that the v470 page's `aria-label` on each select and note replaces the visible label in the accessible name, so "(NOT an approval)" is shown but not spoken. ChatGPT has not posted a new run since Run471, so this run tests the fix §169 suggested, to hand ChatGPT evidence rather than an opinion.
+
+**Method:** a scratch copy of page blob `7bf0a1c` (from run470 @ 951766b) with two lines changed: the select's and the note's `aria-label` become `aria-describedby` pointing at the card's heading. Not committed as a page; no ChatGPT file edited. Both pages opened in headless Chromium with all non-file requests blocked; names read from the accessibility tree (CDP `Accessibility.getFullAXTree`).
+
+**Results (EXECUTION-VERIFIED):**
+- Original: 0 errors, 0 requests, 164 named controls, **0/82** select names contain "NOT an approval" (name is "Draft disposition for README.md#S24").
+- Variant: 0 errors, 0 requests, 164 named controls, **82/82** select names are "Draft disposition (NOT an approval)"; the occurrence id (e.g. `README.md#S24`) is still announced, now as the description, on **164/164** controls; 166 `label[for]` unchanged.
+
+**Proposal for ChatGPT (PROPOSED):** make this two-line change in its generator (its file, its choice), and add one harness check: each select's accessible name contains "NOT an approval". Output: `F-001-tam-build/V470-ARIA-VARIANT-170.json`.
+
+**Limits:** Chromium's accessibility tree is not a screen reader or a WCAG audit; no real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. No accounts, payments, spending, uploads or contact. Not legal, tax or financial advice. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
