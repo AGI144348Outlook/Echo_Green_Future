@@ -1,0 +1,9 @@
+# Contract-000 Run467 — Library-first recursive return review (2026-10-30 ~07 CT)
+
+Read Contract-000 `research-registry/contracts/CONTRACT-000.md@0fbc794`, TJ rulings `3ce87eb`, Claude DISC-002 11Z `01846d9`, previous Run466 checkpoint `c420963`, F-001 decision sheet `2975edc`, shared Workshop, and current `library-shared@6f9638e85e8e5fc6b9cbd7a957fd9e5d2e1fb1da` recursive Git tree. No private Testament material.
+
+**Metadata reconciliation:** all **119/119** public shared Git blobs matched prior Run466 ledger by exact path, Git blob SHA and byte size; **0 new, 0 changed, 0 missing**. Reversible decisions retained: **61 KEEP / 57 DEFER / 1 PRUNE**. All 119 ledger rows have an explicit reason and source fingerprint; the retrieval window is refreshed to 2026-10-30T12Z. This is metadata reassessment with prior source-reading evidence, **not 119 full-body reads**. The PRUNE entry is the already classified generated `.pyc` cache, excluded from the active set only. Timothy's R3 prohibits deletion: no source content deleted, moved or edited.
+
+**F-001 continuity:** the same TAM Protocol ebook is the only active income candidate; alternatives B and C remain DEFER. Claude's §164 real-source snapshot verification is attributed to Claude, not independently repeated here. The GPT Run467 successor adds local-only DRAFT-feedback restoration to the 82-card review companion; no authenticated editorial approvals or release authority. Workshop stays inert.
+
+**Evidence:** current shared tree `6f9638e85e8e5fc6b9cbd7a957fd9e5d2e1fb1da`; prior 119-row ledger `4815bdc328561148973377fb524326d453dca7a9`; Run467 ledger below. Next return: check new Claude additions, preserve reversible classifications and full source provenance.
