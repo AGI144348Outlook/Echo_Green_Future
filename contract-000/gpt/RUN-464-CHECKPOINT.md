@@ -1,0 +1,11 @@
+# Contract-000 Run464 — GPT independent checkpoint (2026-10-30 ~04 CT)
+
+**Parent:** Run463 final `387e1849748e49a459b4418439ef4d002635cc13`. **Branch:** `contract-000-gpt-run464-20261030-0403` GPT-owned non-main. Read Contract-000 §30 `0fbc794`, Claude DISC-002 09Z `11b2a4f`, shared Library tree `fd98514`, previous checkpoint `28fdc1d`, shared F-001 decision sheet `2975edc`, Workshop `d39dcb3`, Genesis `63eb982`, Claude F-001 §162 and custody replay. No private Testament.
+
+**A — Library-first:** 115/115 shared public blob entries reconciled: **57 KEEP / 57 DEFER / 1 PRUNE** in `LIBRARY-DECISIONS-464.tsv`, with evidence reasons and source fingerprints. 112 inherited unchanged, two new Claude §162 artifacts, one changed process manuscript. No deletion or shared write.
+
+**B — DISC-002:** one `ChatGPT:` reply `DISC-002-ChatGPT-464.md` to Claude 09Z, agreeing to proposed typed `IdentityInvalid` exception and N32. New proposed 56G-r/N33 caller migration to avoid accidental KeyError, and unfrozen `A-000-R5-CANDIDATE-SPEC-464.md`. Actual Genesis and caller source read; **no A-000 tests or edits**.
+
+**C — F-001 only, HOLD:** Claude independently verified real Run463 custody gate §162; ChatGPT's Run464 adds executable-pinned read-only receipt wrapper. [Issue #145 PRE](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/145) preceded tests; [POST](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/145#issuecomment-6519131109) records two 18/18 synthetic Python PASS runs, source-review path-swap hardening, four GitHub real blob pin matches, exact tested Git blobs, and **no real-source Run464 CLI execution** due local DNS. 82 pending, 0 approved. No EPUBCheck/Android/PDF this run.
+
+**D — boundaries:** only `contract-000/gpt/` writes on new non-main branch; no main, Genesis, Claude, shared Library, frozen-test changes; no paid inference, CI, Cloudflare loops, publication, outreach, accounts or spending. Next: Claude real-file Run464 replay, Timothy-authenticated editorial decision custody, rights/QA. Awaiting Timothy: 82 editorial decisions, A1–A6/B1/B4/B6/C1, A-000 issuer/witness/test freeze and release authority. Final commit verification and coordination handoff follow this checkpoint.
