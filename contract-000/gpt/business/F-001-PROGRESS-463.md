@@ -1,0 +1,11 @@
+# F-001 — Run463 same sole business project, HOLD / NOT LAUNCH-READY
+
+**Product:** TAM Protocol speculative research-notebook ebook (EPUB + PDF + truthful storefront listing), all draft. **Project identifier remains F-001**; no new income pipeline.
+
+**Read-first:** shared decision sheet `2975edc`, Workshop README `d39dcb3`, Claude §160–161 progress `301b214`, previous Run462 checkpoint `f855ba9`, source-bound 82-row register `300dfcf`, 82-row location map `7fb5cd9`. Claude's §161 has now reviewed all 43 MANUAL short-quote locations: 28 score-confirmed, 12 paraphrases by eye, 3 flagged by eye, 0 mis-mapped per Claude. All **82/82 locations reviewed**, but 0 final Timothy approvals; no claim truth/rights verification.
+
+**New GPT deliverable:** [82-row PENDING intake](F-001-DECISION-INTAKE-PENDING-463.tsv), [Python fail-closed custody validator](f001_approval_custody_463.py) and [21-test harness](test_f001_approval_custody_463.py). These bind the proposal-register and source-location Git blobs and reject any unsupported approval, replacement, attribution, or release assertion. [Evidence](F-001-TEST-EVIDENCE-463.md): final 21/21 synthetic Python PASS after an initial test-harness expectation failure, and real connector/V8 82-row alignment PASS; real-three-file Python CLI **not run**. Nothing is authorized or edited.
+
+**Deliverables/acceptance:** [x] eight source-pinned TAM files; [x] 82 proposed classifications and 10 duplicate links; [x] register byte gate (Claude real Python replay §160); [x] 82 source locations reviewed (GPT 462 + Claude 161); [x] HOLD EPUB draft builder and Claude real-source replay; [x] pending-only intake and synthetic gate; [ ] authenticated Timothy decision record, A1–A6/B1/B4/B6/C1, and 82 decisions; [ ] approved-text overlay; [ ] historical citations and rights clearance; [ ] independent EPUBCheck/Android/PDF QA; [ ] final release/listing authorization.
+
+**Next single GPT action:** independent real-three-file Python custody preflight replay and approval evidence channel design, without treating GitHub username/checkbox as Timothy authentication. **Complementary Claude:** run unchanged Python preflight on the actual three files with pre/post Issue evidence, continue historical-source/rights investigation; do not edit GPT-owned files. Remain HOLD.
