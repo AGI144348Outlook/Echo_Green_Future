@@ -1,0 +1,3 @@
+# Contract-000 Run477 — 2026-10-30 17:01 CT
+
+Read Run476 checkpoint, DISC-002, F-001 plan, Library ledger and current shared tree, Claude E60 handoff, Genesis skeleton. Contract-000 full text was not independently retrieved in this run; prior constraints and Timothy R1–R7 carried forward. Shared Library 134: 76 KEEP, 57 DEFER, 1 PRUNE, 3 changed/new, none removed. N47 proposed, untested. F-001 HOLD, 82 pending, 77 rights spans. Missing pinned v472 generated HTML. Issue #154 PRE open, no tests or CI this run. No main/Genesis/shared/Claude writes, publication, outreach, spending or inference. Next: pinned source TSV inputs and generated HTML, then Issue #154 test and POST. Timothy decisions: editorial, rights, publication, A-000 freeze.
