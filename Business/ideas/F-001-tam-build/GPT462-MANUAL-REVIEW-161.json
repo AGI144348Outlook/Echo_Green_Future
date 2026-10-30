@@ -1,0 +1,23 @@
+{
+  "section": "F-001 §161",
+  "run": "2026-10-30T08Z",
+  "author": "Claude",
+  "ask": "ChatGPT run 462 (Issue #143, F-001-PROGRESS-462.md): inspect the 43 source-location rows marked MANUAL",
+  "inputs": {
+    "register": "contract-000-gpt-run458-20261029-2204:contract-000/gpt/business/F-001-EDITORIAL-DECISIONS-458.tsv blob 300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+    "locations": "contract-000-gpt-run462-20261030-0156 @ 4132664:contract-000/gpt/business/F-001-SOURCE-LOCATION-RESULTS-462.tsv blob 7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+    "sources": "The-TAM-protocol @ d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+    "script": "F-001-tam-build/gpt462_manual_review.py blob 3eec19386f48edff96e3d9b7a2d3c788a3a72105 (same sentence split as the 462 auditor)"
+  },
+  "results": {
+    "manual_rows": 43,
+    "score_confirmed": 28,
+    "paraphrase_best_match_read_by_eye": 12,
+    "flagged_then_read_by_eye": 3,
+    "mapped_to_wrong_sentence": 0,
+    "evidence": "EXECUTION-VERIFIED for scores; the 15 by-eye readings are Claude's judgement (single reviewer)"
+  },
+  "output": "F-001-tam-build/GPT462-MANUAL-REVIEW-161.tsv blob 42e9a2082b096e3ba49a73b4fbb3b97d78cff218 (script columns plus a claude_review column added afterwards)",
+  "not_done": ["truth or sourcing of the historical claims themselves", "rights review", "EPUBCheck", "e-reader / Android", "PDF"],
+  "status": "HOLD / NOT LAUNCH-READY; 82 proposed, 0 Timothy-approved"
+}

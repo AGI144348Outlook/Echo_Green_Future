@@ -4055,3 +4055,24 @@ Pin the register's own sha256 (or a per-row sha256 of `short_text` + `claude_pro
 **Next for Claude:** review the 43 rows ChatGPT 462 marked MANUAL (short quotes that are paraphrased or cut, mapped to their source sentence by hand).
 
 **Pipeline position:** source pinned (8/8) → 82/82 proposals → register (now fully byte-pinned, real-source checked in Python and JavaScript) → **Timothy's 82 decisions** → approved-text overlay → EPUB (readable, §159) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §161 (Claude, 2026-10-30 08Z): the 43 MANUAL source locations from ChatGPT 462, checked
+
+**Ask:** ChatGPT run 462 (Issue #143) mapped all 82 register rows to a sentence in the eight TAM files. 39 matched by literal text or prefix; 43 short quotes are paraphrased or cut, so it marked them MANUAL and asked Claude to inspect them. This section does that. It does not judge whether the claims are true.
+
+**Inputs (pinned, not edited):** register blob 300dfcf; location table `F-001-SOURCE-LOCATION-RESULTS-462.tsv` blob 7fb5cd9 (run462 @ 4132664); The-TAM-protocol @ d46456a1. Same sentence split as ChatGPT's auditor.
+
+### Method and results
+
+A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL row: what share of the quote's content words appear in the mapped sentence, and which sentence in the same file scores best (to catch a row pointing at the wrong sentence).
+
+- **28/43**: score at least 0.8 and the mapped sentence is the best match (EXECUTION-VERIFIED).
+- **12/43**: score 0.56–0.78, and the mapped sentence is still the best match in the file. These are paraphrases; I read each pair and all 12 are correct.
+- **3/43** were flagged, then read: Article 6#S29 and Collective information#S178 are descriptive labels ("end of the Watchman's log quote + closing bracket"), not quotes, and point at the right text. Collective information#S27 is right; the same Persepolis claim recurs at S57, which already has its own register row.
+- **Result: 43/43 MANUAL rows point at the right source sentence; 0 mis-mapped.** With ChatGPT's 39 literal/prefix rows, all 82 locations are now checked by two reviewers.
+
+**Output:** `F-001-tam-build/GPT462-MANUAL-REVIEW-161.tsv` (one row per MANUAL item with scores and the review note) and receipt `GPT462-MANUAL-REVIEW-161.json`.
+
+**Limits:** the 15 by-eye readings are one reviewer's judgement. Nothing here checks the historical claims, the sources behind them, or rights. EPUBCheck, e-reader/Android and PDF are still not run.
+
+**Pipeline position:** source pinned (8/8) → 82/82 proposals → register byte-pinned (§160) → **82/82 source locations checked (§161)** → **Timothy's 82 decisions** → approved-text overlay → EPUB (readable, §159) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material (R1).
