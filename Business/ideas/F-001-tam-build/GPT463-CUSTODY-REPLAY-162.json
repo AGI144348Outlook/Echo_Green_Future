@@ -1,0 +1,56 @@
+{
+ "all_negatives_refused": true,
+ "gpt_commit": "387e1849748e49a459b4418439ef4d002635cc13",
+ "input_blobs": {
+  "F-001-DECISION-INTAKE-PENDING-463.tsv": "4cc1617d1f1bbea1661f74ba931f86660c087939",
+  "F-001-EDITORIAL-DECISIONS-458.tsv": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+  "F-001-SOURCE-LOCATION-RESULTS-462.tsv": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+  "f001_approval_custody_463.py": "5a767d9110554a2cad855f9291ee696b46cc17a3",
+  "test_f001_approval_custody_463.py": "f6e92a1a2a0b30a7d9b6beae1d3d6187fba5749f"
+ },
+ "negatives": {
+  "N-a approved+approved_by": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: intake: unauthorized decision or release assertion at README.md#S24"
+  },
+  "N-b release_authorized=true": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: intake: unauthorized decision or release assertion at README.md#S24"
+  },
+  "N-c replacement_text filled": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: intake: unauthorized decision or release assertion at README.md#S24"
+  },
+  "N-d register byte 200 changed": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: register: complete Git blob differs from reviewed pin"
+  },
+  "N-e rows 1/2 swapped": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: intake: source binding mismatch at README.md#S24"
+  },
+  "N-f last row dropped": {
+   "exit": 2,
+   "message": "F-001 HOLD / INTAKE REFUSED: all three inputs must contain exactly 82 rows"
+  }
+ },
+ "positive": {
+  "exit": 0,
+  "receipt": {
+   "approval_authenticated": false,
+   "approved": 0,
+   "copy_links": 10,
+   "editorial_overlay_applied": false,
+   "intake_git_blob": "4cc1617d1f1bbea1661f74ba931f86660c087939",
+   "location_map_git_blob": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+   "occurrences": 82,
+   "pending": 82,
+   "project": "F-001",
+   "publication_authorized": false,
+   "register_git_blob": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+   "status": "HOLD / NOT LAUNCH-READY"
+  }
+ },
+ "python": "3.13.18",
+ "section": "F-001 \u00a7162"
+}

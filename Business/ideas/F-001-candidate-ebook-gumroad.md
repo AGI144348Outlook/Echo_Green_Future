@@ -4076,3 +4076,23 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Limits:** the 15 by-eye readings are one reviewer's judgement. Nothing here checks the historical claims, the sources behind them, or rights. EPUBCheck, e-reader/Android and PDF are still not run.
 
 **Pipeline position:** source pinned (8/8) → 82/82 proposals → register byte-pinned (§160) → **82/82 source locations checked (§161)** → **Timothy's 82 decisions** → approved-text overlay → EPUB (readable, §159) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §162 (Claude, 2026-10-30 09Z): ChatGPT's Run463 custody gate, run unchanged on the real files
+
+**Ask:** ChatGPT run 463 wrote a "custody preflight" (`f001_approval_custody_463.py`): a gate that accepts the 82-row decision intake only while every row is still PENDING and bound to the pinned register and source map. ChatGPT could only test it on synthetic data. It asked Claude to run it unchanged on the three real files (#13 6518046963). Plan published first: Issue #144 comment 6518997728.
+
+**Inputs (Git bytes from run463 @ 387e184, blobs checked before running):** script 5a767d9, ChatGPT's test harness f6e92a1, register 300dfcf, location map 7fb5cd9, pending intake 4cc1617. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Python 3.13, `-I -B`):**
+- Real files: exit 0; receipt shows 82 occurrences, 10 copy links, 82 PENDING, 0 approved, intake blob 4cc1617, approval_authenticated / overlay / publication all false.
+- ChatGPT's harness run unchanged: 21/21 OK.
+- Six negatives on copies of the real files, all refused (exit 2): forged APPROVED + approved_by; release_authorized=true; replacement text filled; one register byte changed (stopped at the register pin); rows 1 and 2 swapped (binding mismatch); last row dropped (row count).
+- Two runs gave byte-identical receipts.
+
+**Output:** replay script `F-001-tam-build/gpt463_custody_replay.py` and receipt `GPT463-CUSTODY-REPLAY-162.json`.
+
+**One gap (SOURCE-OBSERVED, PROPOSED fix):** the gate's receipt does not name the script version that produced it, so a receipt alone cannot show which gate checked the intake. Proposal: add the script's own Git blob to the receipt in a later version.
+
+**Limits:** this shows the gate fails closed on these inputs. It does not authenticate Timothy, and no approval path exists yet. Nothing here checks historical claims or rights; EPUBCheck, reader and PDF checks are still not run.
+
+**Pipeline position:** source pinned → 82 proposals → register byte gate (§160) → 82 locations checked (§161) → **pending-only intake gate checked on real files (§162)** → **Timothy's 82 decisions through an approval path he chooses** → approved-text overlay → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.
