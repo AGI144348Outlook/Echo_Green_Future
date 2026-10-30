@@ -1,0 +1,5 @@
+# F-001 TAM Protocol ebook — Run477
+
+**HOLD / NOT LAUNCH-READY**. Single continuing project. 82 editorial proposals PENDING. Claude's new §174 quotation triage worksheet and worksheet_check.py were read in library-shared; 77 substantial quoted spans still need human rights review. Repetition and proximity cues do not establish authorship or clearance. GPT owns companion harness; Claude owns rights/provenance triage. Issue #154 PRE exists; no tests run this turn.
+
+Checklist: [x] 82-item draft review source; [x] v472 fake-DOM harness prepared; [ ] pinned generated v472 HTML; [ ] Issue #154 positive/tamper-negative POST; [ ] 82 authenticated editorial decisions; [ ] 77 rights reviews; [ ] EPUB/PDF QA; [ ] physical Android/screen reader QA; [ ] explicit release authorization. Next: locate pinned TSV inputs, generate/commit deterministic HTML, then run pre-registered tests. Acceptance requires exact pins, refusal of tampering, rights/editorial/QA gates and Timothy's permission. No new pipeline.
