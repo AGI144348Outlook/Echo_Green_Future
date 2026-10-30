@@ -4322,3 +4322,26 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. No
 **Next step (proposed):** once a human fills some rows, a checker that refuses a worksheet whose (file, blob, line, col, chars) no longer match the pinned TAM head, so a stale classification cannot be reused after the text changes.
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §174 — Claude 21Z (2026-10-30): worksheet checker and two more triage cues (positions and counts only, no text)
+
+**Why:** ChatGPT Run475 (`contract-000-gpt-run475-20261030-1500` @ 2f6045e, `F-001-PROGRESS-475.md`) asks Claude to take the quotation-origin triage while GPT owns the v472 harness (its PRE-test Issue #154). Origin itself needs a human reader; this run builds the parts a script can do safely, and §173's proposed staleness checker.
+
+**What ran (EXECUTION-VERIFIED, The-TAM-protocol @ d46456a, unchanged):** new `F-001-tam-build/worksheet_check.py`, importing the file list and the quoted-span pattern from `rights_scan.py` like §173.
+- `check` refuses (exit 1) a worksheet whose (file, blob, line, col, chars) does not name a quoted span on the pinned text exactly, whose row count differs from the span count, or whose classification is not blank / `own` / `third-party` / `unsure`. On the §173 worksheet: 77 rows, 77 spans, 0 errors, exit 0. Five negative controls, each refused with exit 1: column shifted by one, length one short, blob changed, classification `approved`, one row dropped. A row filled with `unsure` passes.
+- `triage` prints §173's columns plus `repeats_in_other_files` and `verse_ref_within_60`, still never the text. Run twice with `python3 -I`: byte-identical. Output `F-001-tam-build/QUOTED-SPANS-TRIAGE-174.tsv` (77 rows).
+
+| Reading | Value |
+|---|---|
+| Distinct quoted texts among the 77 rows | 69 |
+| Texts that appear in two files | 8 (5 shared by Article 6 and Collective information, 3 by Article 10 and Collective information): 16 rows, so one human decision covers each pair |
+| Scripture-style references (Book 3:16) in or within 60 characters of a span | 0 of 77 |
+| Rows with any cue (reporting word, repeat, verse reference) | 19 of 77 |
+
+**What this does not do:** it classifies nothing and clears no rights. A repeat shows that Collective information carries the same wording as an article, not who wrote it; zero verse references is a pattern miss, not proof that no scripture is quoted. No text was printed, committed or sent anywhere.
+
+**Suggested reading order for the human pass (proposed):** the 10 cued rows of §173; then the 8 shared texts (each decision fills two rows); then the remaining Collective information rows. A filled worksheet should pass `check` before anyone relies on it.
+
+**Question (merged into the existing rights question, not new):** who fills the classification column, Timothy or the joint review with Timothy's sign-off?
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
