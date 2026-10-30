@@ -1,0 +1,122 @@
+{
+  "section": "F-001 §159",
+  "by": "Claude",
+  "run": "2026-10-30T05Z",
+  "status": "HOLD / NOT LAUNCH-READY",
+  "builder": {
+    "path": "contract-000/gpt/business/F-001-EPUB-READABLE-BUILDER-459.py",
+    "branch": "contract-000-gpt-run459-20261029-2257",
+    "commit": "85378d72",
+    "git_blob": "ce86e030f044bbe1d2cc75caab70e96c850c4256",
+    "wraps_git_blob": "8cb90e1c727995dfdc94bdadf18b4b46f8948551",
+    "edited": false
+  },
+  "harness": {
+    "git_blob": "17980f650a3a6783629908fb5b1a29401ba713a7",
+    "result": "24/24 passed (Claude replay, synthetic fixtures)"
+  },
+  "sources": {
+    "repo": "AGI144348Outlook/The-TAM-protocol",
+    "commit": "d46456a18fe412398d0ae37ec5a8c4eebb44e0c9",
+    "pins_matched": "8/8 (builder refuses otherwise)"
+  },
+  "real_build": {
+    "command": "python3 -I F-001-EPUB-READABLE-BUILDER-459.py <tam-8-files> <new>.epub",
+    "runs": 2,
+    "byte_identical": true,
+    "bytes": 26312,
+    "sha256": "9fa88d5a8d05f10c43e5fe677282a195ffed8dc814592c815b771adba89acbae",
+    "overwrite_refused": true,
+    "epub_committed": false
+  },
+  "roundtrip": {
+    "chapters": 8,
+    "roundtrip_exact": "8/8",
+    "rows": [
+      {
+        "file": "OEBPS/chapter-01.xhtml",
+        "title": "README.md",
+        "paragraphs": 27,
+        "nonblank_lines": 27,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-02.xhtml",
+        "title": "Article 1 Hacksilber",
+        "paragraphs": 21,
+        "nonblank_lines": 21,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-03.xhtml",
+        "title": "Article 2 Water Weight Computes",
+        "paragraphs": 28,
+        "nonblank_lines": 28,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-04.xhtml",
+        "title": "The Color Dyed and Dental Records",
+        "paragraphs": 24,
+        "nonblank_lines": 24,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-05.xhtml",
+        "title": "Article 5",
+        "paragraphs": 21,
+        "nonblank_lines": 21,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-06.xhtml",
+        "title": "Article 6",
+        "paragraphs": 24,
+        "nonblank_lines": 24,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 4
+      },
+      {
+        "file": "OEBPS/chapter-07.xhtml",
+        "title": "Article 10",
+        "paragraphs": 6,
+        "nonblank_lines": 6,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 0
+      },
+      {
+        "file": "OEBPS/chapter-08.xhtml",
+        "title": "Collective information",
+        "paragraphs": 274,
+        "nonblank_lines": 274,
+        "exact_roundtrip": true,
+        "br": 0,
+        "hebrew_chars": 32
+      }
+    ]
+  },
+  "checks": {
+    "epub_check.py (git blob 176d42e)": "0 FAIL, 2 WARN (no cover image; accessibility metadata present but missing schema:accessibilityHazard and schema:accessibilitySummary)",
+    "epubcheck": "NOT RUN",
+    "reader_QA": "NOT RUN",
+    "pdf": "NOT BUILT"
+  },
+  "observations": [
+    "Collective information: 12 markdown table lines and 71 bullet lines are rendered as literal text paragraphs",
+    "32 Hebrew characters in Collective information and 4 in Article 6 sit in lang=en paragraphs with no lang/dir marking",
+    "README.md first line is a markdown heading rendered as literal '#' text"
+  ],
+  "publication_authorized": false
+}

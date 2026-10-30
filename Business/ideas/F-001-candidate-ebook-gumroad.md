@@ -4010,3 +4010,27 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 Pin the register's own sha256 (or a per-row sha256 of `short_text` + `claude_proposed_state`) in the gate, the same way it already pins the manuscript blob. Then any edit to a proposal fails closed until it is re-pinned in a logged commit. This matters before Timothy's decisions are recorded in the same sheet: an approval column next to an unpinned proposal could approve text nobody proposed.
 
 **Pipeline position:** source pinned (8/8) → scanner (42 rows) → 82/82 proposals → register (now Node-verified, content-pin gap open) → **Timothy's 82 decisions** → approved-text overlay → EPUB/PDF → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy (RUN-LOG): F-001 from TAM only, or also the Unicorn Estate / RFC material.
+
+## §159 (Claude, 2026-10-30 05Z): ChatGPT's 459 readable builder run on the real eight TAM files
+
+**Ask:** ChatGPT run 459 (Issue #140) made a successor builder that puts each non-empty source line in its own `<p>` (the fix proposed at §157) and adds a `main` landmark and textual accessibility metadata. It tested synthetic fixtures only. This section runs it, unchanged, on the real files.
+
+**Inputs (pinned):** `F-001-EPUB-READABLE-BUILDER-459.py` git blob ce86e03, the unchanged 457 builder it wraps (8cb90e1), harness 17980f6, all from `contract-000-gpt-run459-20261029-2257` @ 85378d7 (re-hashed locally, equal; not edited). Sources: The-TAM-protocol @ d46456a1; the builder's eight pins all matched.
+
+### Results (EXECUTION-VERIFIED, Claude-executed)
+
+- ChatGPT's synthetic harness, replayed: **24/24 passed**.
+- Real build, production CLI, run twice: **byte-identical**, 26,312 bytes, sha256 `9fa88d5a8d05f10c43e5fe677282a195ffed8dc814592c815b771adba89acbae`. A third run onto an existing file was refused (exit 2).
+- **Text fidelity:** in all **8/8** chapters the `<p>` texts equal the source's non-empty lines exactly, in order (README 27, Article 1 21, Article 2 28, Color/Dental 24, Article 5 21, Article 6 24, Article 10 6, Collective information 274); no `<br/>` remains. The §157 one-paragraph problem is fixed.
+- Our offline checker `epub_check.py` (blob 176d42e): **0 FAIL, 2 WARN**: no cover image; accessibility metadata now present but missing `schema:accessibilityHazard` and `schema:accessibilitySummary`.
+- **Not run:** EPUBCheck, e-reader or Android check, PDF. The EPUB is not committed; it can be rebuilt from the pins and compared by sha256.
+
+### Observations for the next builder version (PROPOSED; ChatGPT's code, so not edited here)
+
+1. `Collective information` has 12 markdown table lines and 71 bullet lines, and README's first line is a `#` heading; all are shown as literal text (`| … |`, `- …`, `# …`). Rendering these three markdown forms as `<table>`, `<ul>` and `<h2>` would keep every word and only change structure.
+2. 36 Hebrew letters (32 in `Collective information`, 4 in Article 6) sit inside `lang="en"` paragraphs. Wrapping Hebrew runs in `<span lang="he" dir="rtl">` helps screen readers and right-to-left display.
+3. Add the two missing accessibility fields (hazard: `none`, after a check; a one-sentence summary). Combined with a cover (§25), that clears both WARNs.
+
+**Receipt:** `F-001-tam-build/GPT459-REAL-SOURCE-REPLAY-159.json`; check script `F-001-tam-build/gpt459_roundtrip_check.py`.
+
+**Pipeline position:** source pinned (8/8) → 82/82 proposals → register (content-pin gap open, §158) → **Timothy's 82 decisions** → approved-text overlay → EPUB (now readable, real-source verified) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material.
