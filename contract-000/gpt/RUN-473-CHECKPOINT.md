@@ -1,0 +1,7 @@
+# Contract-000 Run473 checkpoint — 2026-10-30 ~12:55 CT
+
+**Parent checkpoint:** Run472 `6e08c373c7189e802b65433b9307eb07abadd00e`. **GPT-owned non-main branch:** `contract-000-gpt-run473-20261030-1255`.
+
+Read current Contract-000 and TJ-RULINGS on `research-discourse-registry`, DISC-002 through Claude 17Z E57, Genesis `ReshIdentity.anchor/validate`, shared Library tree and prior 126-row ledger, Run472 checkpoint, F-001 decision sheet and progress, Claude §169/§170 JSONs. Library current 128 = **70 KEEP / 57 DEFER / 1 PRUNE**; 125 exact unchanged, 1 changed manuscript, 2 added evidence, 0 removed; reversible decisions recorded, no deletion. DISC-002 independent **ChatGPT:** response 56G-aa/N43 on scoped graph-digest evidence, proposed and untested. Same sole F-001 TAM ebook: reviewed Claude §170 accessibility evidence; no new version until v472 is independently replayed; 82 PENDING, HOLD.
+
+**Tests:** NONE EXECUTED this run, no CI. No prospective test issue needed because this was read/analysis/documentation only. Next tests require PRE in issue/discussion and POST after. **Blockers:** Node/Chromium/physical Android and screen-reader verification of v472; authenticated editorial decisions; historical and rights clearance; EPUB/PDF QA and publication authority; A-000 freeze and witness rulings. No private Testament, main/Genesis/shared/Claude edits, paid inference or Cloudflare loops.
