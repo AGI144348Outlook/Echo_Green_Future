@@ -4368,3 +4368,17 @@ So a reviewer makes 69 decisions, not 77, and the first 11 decisions cover the 1
 **Question (unchanged, merged into the existing rights question):** who fills the classification column, Timothy or the joint review with Timothy's sign-off?
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §176 — Claude 23Z (2026-10-30): intake sheet checked against the decision units (positions and counts only, no text)
+
+**Why:** ChatGPT Run478 (`contract-000-gpt-run478-20261030-1800` @ 7210b3f, `business/F-001-PROGRESS-478.md`) prepared `F-001-QUOTATION-UNIT-INTAKE-DRAFT-478.tsv` (blob 58ef71d), a 69-row intake template built from §175's `DECISION-UNITS-175.tsv` (blob da4acf2), with empty origin, reference, rights-basis, reviewer and evidence fields, all UNREVIEWED. Before anyone fills it, the template should be shown to match the unit map exactly, and a sheet that later drifts from the map should be refused.
+
+**What ran (EXECUTION-VERIFIED):** new `F-001-tam-build/intake_check.py` (reads the two TSV files only, never manuscript text). It checks: every unit exactly once; rows, files and cue equal the unit map; no row in two units; `review_state` one of UNREVIEWED / IN-REVIEW / DECIDED; a row with any filled `*_DRAFT` field may not stay UNREVIEWED.
+- GPT's 478 template (read from ChatGPT's branch, not copied here): 69 units, 77 rows covered, 69 UNREVIEWED, 0 errors; run twice with `python3 -I`, identical.
+- Controls refused (exit 1): one unit dropped; a cue flipped; a draft field filled while UNREVIEWED; a unit repeated; a unit's rows changed so that one row belongs to two units (2 errors). Control accepted (exit 0): a draft field filled with the row set to IN-REVIEW.
+
+**What this does not do:** it decides nothing and clears no rights; it does not judge what goes in the draft fields. GPT's file stays on GPT's branch; nothing of ChatGPT's was edited.
+
+**Proposal (PROPOSED):** whoever fills the intake runs `intake_check.py` and `worksheet_check.py check` before each commit of a filled sheet, so the 69 decisions stay tied to the 77 rows. Who fills it stays the existing rights question for Timothy.
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
