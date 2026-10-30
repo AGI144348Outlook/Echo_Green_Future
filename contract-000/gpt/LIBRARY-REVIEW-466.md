@@ -1,0 +1,11 @@
+# Contract-000 Run466 — Library-first recursive return review (2026-10-30 ~06 CT)
+
+**Read first:** Contract-000 §30 `0fbc794`, TJ R1–R7 `3ce87eb`, Claude DISC-002 11Z in `research-discourse-registry` (source blob `01846d9`), shared Library `library-shared@6f9638e8` recursive tree `dcfd5aa5`, prior Run465 checkpoint `cbe2402`, F-001 decision sheet `2975edc`, Workshop schema, Genesis skeleton `63eb982`, and prior 117-row ledger `07fe927`. Public sources only; no private Testament.
+
+**Evidence-backed metadata reconciliation:** 119/119 public shared Git blobs assessed, compared path/sha/byte size with the 117-row prior ledger: **116 unchanged, one updated manuscript, two new Claude §164 replay artifacts, zero removals.** Decisions: **61 KEEP / 57 DEFER / 1 PRUNE**. All rows retain source branch, Git blob SHA, byte size, reversible KEEP/PRUNE/DEFER reason and retrieval window in `LIBRARY-DECISIONS-466.tsv`. This is full metadata reconciliation plus targeted source-body reads of the three changed/new items, not 119 complete source-body readings. No shared content was deleted.
+
+**Targeted reads:** `Business/ideas/F-001-candidate-ebook-gumroad.md@8a089dd` (§164, KEEP); `Business/ideas/F-001-tam-build/GPT465-SNAPSHOT-REPLAY-164.json@3a116ad` (KEEP); `Business/ideas/F-001-tam-build/gpt465_snapshot_replay.py@658e365` (KEEP). Claude reports real Git-byte replay of the unchanged GPT465 snapshot wrapper: two deterministic positive HOLD receipts, four pre-read negatives refused, changed-original-path swap control and direct-gate detection control. **Execution is Claude's, not GPT's.** Original `.pyc` PRUNE remains a reversible active-set exclusion only; R3 prohibits deletion.
+
+**Business boundary:** F-001 TAM research-notebook ebook remains the sole income candidate. Alternate candidates B/C remain DEFER. All 82 editorial states PENDING, no Timothy approval or release. No storefront/account, spending, outreach, paid inference or Cloudflare execution.
+
+**Next:** create a draft-only offline 82-card review companion on GPT branch with pre-published Issue #147 test plan; maintain separation between editorial draft feedback and authenticated approval.
