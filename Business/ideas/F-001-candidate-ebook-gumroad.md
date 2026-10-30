@@ -3945,3 +3945,32 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 **Status:** occurrence IDs with a proposed state from Claude are 62 + 10 = **72 of 82**, 0 final. Proposed distinct decisions: 105 + 10 = **115**. **10 Collective IDs remain:** C126, C129, C141, C147, C149, C222, C230, C236, C271, C276. (ChatGPT's 454 coverage gate pins 20 pending, so it will report drift once this section is counted. That is expected, and the gate needs a logged pin update, not an edit by Claude.)
 
 **Limits:** one reviewer. Every site fact and every citation (Dash 2017, High Island's elevation, star positions) is general knowledge, INFERRED, and needs a source before print. No outside source was consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+## §156 (Claude, 2026-10-30 02Z): editorial pass on the last 10 `Collective information` IDs (C126–C276), records only
+
+**Ask:** ChatGPT runs 455 and 456 (#13 comments 6511503149 and 6512299891): review the 10 remaining Collective IDs. This section takes all 10.
+
+**Inputs (pinned):** The-TAM-protocol `main` @ d46456a1, read-only clone. `Collective information` was split with claim_scan.py's sentence regex (`(?<=[.!?])\s+|\n{2,}`), copied inline into a one-off read-only command, not by running claim_scan.py. The first 16 hex digits of the file's sha256 are `9520e92eaf735276`. No new script this run and no arithmetic, so section A is empty. Every outside fact below is general knowledge, INFERRED, and not checked against a source this run.
+
+### B. Proposed evidence states (10 IDs; Timothy and the joint review decide)
+
+| Queue ID | Text, short | Proposed state |
+|---|---|---|
+| C126 | Heading "The 13.7g Connection:" plus "the 13.7g Invariant as the Seed, the Moai are the Trees"; a Moai's weight "is a Gravimetric Battery" | **Metaphor, with one physical misstatement.** A resting statue stores no usable energy because of its mass ("battery" has no physical meaning here). Keep only as framed metaphor. Layout: the splitter merged a heading into this sentence; restore the line break in the manuscript. |
+| C129 | Moai are "Million-Unit Nouns" built to hold the 13.7 g Registry so no "Metric Shock" or storm could move the coordinate | **Model statement, no evidence.** The mainstream account of the Moai is ancestor statues (INFERRED). As far as I know, an average Moai weighs on the order of 10 t, so "million units" of 13.7 g (13.7 t) is a loose order of magnitude at best, not a design figure. Label as the book's model. |
+| C141 | High Island "treasure" as Hacksilber "RAM"; applying the 13.7 g standard to Lafitte's rumored hoard shows he "was likely using the Order of Melchizedek's weight system" | **Unsupported, and circular.** The hoard is a legend: as far as I know, no Lafitte hoard has been recovered or weighed, so there is nothing to apply a standard to. No source links Lafitte to any "Order of Melchizedek". Cut "likely", or cut. |
+| C147 | "Both knew that the only way to protect your 'Breath' is to anchor it to a Geodetic Noun." | **Rhetoric: an unverifiable claim about what historical people knew.** Keep only as the author's interpretation ("In this model, …"). |
+| C149 | Weights aligning with the 13.7 g shekel would be "empirical proof he was part of the Sovereign Registry" | **Method error.** A match is at most consistent with a hypothesis, not proof. Ancient shekel standards varied by region and period; as far as I know, some sit near 11–12 g and others near 14 g, so a tolerance band around 13.7 g would also catch other standards. Restate as a testable prediction with a stated tolerance and a comparison against those other standards. |
+| C222 | A 13.7 g silver jar in a salt dome is "protected from electromagnetic noise", keeping its "Metric Purity" for millennia | **Likely false as chemistry (INFERRED).** Salt is not an electromagnetic shield in any useful sense. Silver in chloride-rich, moist ground corrodes to silver chloride ("horn silver"), so a salt setting threatens purity rather than preserving it. Cut, or rewrite as a question for a conservator. |
+| C230 | Field note: look for "Moai-like" stone structures "exactly where the magnetic intensity shifts" | **Untested research prompt.** It can be kept as a clearly labelled research idea only if it says what "shifts" means (a threshold on a named magnetic anomaly map) and what result would count against it. As written, nothing could falsify it. |
+| C236 | The "Crossers" knew how much "Breath" (silver/food/water) to carry to the next node because "the Grid is Calibrated to the Wind" | **Narrative, no evidence.** No source given for the "Crossers" or for any wind calibration. Label as speculation. |
+| C271 | The "Bottlenecked" tubes "you mentioned" keep at least one node "In Sync" with "the 13.7g frequency" however much the Earth wobbles | **Unsupported, plus residue.** A mass is not a frequency, so "13.7g frequency" is undefined. "You mentioned" addresses a chat partner: like C117, it is conversation residue and must not reach a manuscript (editorial cleanup, not a content decision). |
+| C276 | "The 13.7g standard is the focal point." | **Thesis statement.** Keep as the book's own framing. It makes no factual claim by itself. |
+
+**Status:** occurrence IDs with a proposed state from Claude are 72 + 10 = **82 of 82**, 0 final. Proposed distinct decisions: 115 + 10 = **125**. **No Collective IDs remain unreviewed.** ChatGPT's coverage gates (454/455) pin the pending set, so they should now report drift (10 → 0 pending). That is expected and needs a logged pin update on ChatGPT's side, not an edit by Claude.
+
+**Patterns across the 82 (for Timothy):** two pieces of chatbot residue (C117, C271) and one LaTeX leftover (C100) need mechanical cleanup in any case. The claims that recur and would need a source before print are the 13.7 g unit itself, the Eshtemoa masses (awaiting Timothy since 2026-10-29 20Z), and every "new research" citation. Without those, the honest framing for the book is a speculative research notebook. That framing is the product shape F-001 already uses.
+
+**Next (proposed):** a consolidated decision sheet listing all 82 proposed states, so Timothy can approve, change or reject them in one pass. ChatGPT's 457 draft EPUB builder can then render from approved text only.
+
+**Limits:** one reviewer. No outside source was consulted this run. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
