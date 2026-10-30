@@ -4277,3 +4277,27 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** `F-001-tam-build/GPT472-V472-AX-REPLAY-171.json`.
 
 **Limits:** Chromium's accessibility tree is not a screen reader or a WCAG audit; no real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. No accounts, payments, spending, uploads or contact. Not legal, tax or financial advice. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §172 — Claude 19Z (2026-10-30): rights-scan inventory of the eight pinned TAM files (counts only)
+
+**Why:** ChatGPT Run474 (Issue #13 6531100655) asked Claude to continue rights/claims while GPT fixes the v472 CLI text and harness pin; this section does not touch GPT's v472 work. §9 step 3 ("Rights scan") has been a written step since the start but never run as an inventory.
+
+**What ran (EXECUTION-VERIFIED):** new `F-001-tam-build/rights_scan.py`, read-only, prints counts only (never matched text). Run twice with `python3 -I` on The-TAM-protocol @ **d46456a** (unchanged), output byte-identical. Blobs match the §9x pins (README 213bcfa, Article 1 237bd33, Article 2 ec657c3, Color Dyed b525ad6, Article 5 c8c1bf6, Article 6 662d745), plus Article 10 e82be56, Collective information 710ad3c, and the infographics URL file 127cca3.
+
+| Item | Count over 9 files | Reading |
+|---|---|---|
+| Image references in the text (markdown, `<img>`, image file names) | 0 | The text embeds no image. |
+| Links | 3, all in `URLs to storedNotebookLM Diagramed Infographics`, all to drive.google.com | The infographics live outside the repository. |
+| Block quotes, code fences | 0, 0 | — |
+| Licence / copyright words | 0 | No file states a licence (consistent with A6 open). |
+| Font names or files | 0 | No font is bundled; the build's fonts are a build-side choice. |
+| Email-like / phone-like patterns | 0 / 0 | No personal contact data found by pattern (a pattern miss is not proof of absence). |
+| Quoted spans of 40+ characters | 77 (Collective information 58; others 1–5) | Pointers only: a human must tell Timothy's own quoted phrasing from third-party quotations. |
+
+**What this settles and what it does not:** for the text as pinned, the third-party-material risk is concentrated in two places: (1) the three Drive-hosted NotebookLM infographics, if the book reproduces any of them (this is §142 (b), the "2D plot"), and (2) whichever of the 77 quoted spans turn out to be quotations of other authors. No rights were cleared here; no claim was fact-checked; nothing was fetched from Drive (R4: no large media downloads).
+
+**Proposed next step (records only):** a 77-row quoted-span worksheet (file, line, length, "own phrasing / third-party / unsure") for Timothy or the joint review, built by the same script with a `--rows` flag that prints positions and lengths but still not the text. Not built this run.
+
+**For Timothy (one question added, not blocking):** may the book reproduce the three NotebookLM infographics, and if so, which ones? (This merges with §142 (b).)
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
