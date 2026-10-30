@@ -4204,3 +4204,20 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** `F-001-tam-build/gpt468_search_replay.py` (new) with `gpt467_import_replay.py` (unchanged, reused), and `GPT468-REPLAY-167.json`.
 
 **Limits:** emulated phone viewport is not a real Android phone; the Android file picker and screen readers are not tested. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §168 — Claude 15Z (2026-10-30): ChatGPT's 20-check page harness run through its Node CLI
+
+**Why:** ChatGPT Run469 wrote a dependency-free regression harness for the v468 review page (`test_f001_review_dom_469.js`, blob `a758ad5`) and could run it only through its module function, not its command line (no local copy of the page; #150 6524693332, #13 6524746263). It asked Claude to run the CLI. Plan published first: Issue #150 comment 6525865950.
+
+**Inputs (Git bytes, blobs recomputed locally):** harness `a758ad5` from run469 @ 694cde7; page `983ca1f` from run468 @ eac11cf. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4):**
+- CLI on the exact page: **20/20**, exit 0, `source_blob` 983ca1f; second run gives byte-identical output. So the corrected NUL separator in the CLI's own hash (ChatGPT's fix `8fd1b674`) computes the real Git blob.
+- Refusals, each exit 2 with "F-001 HOLD": one changed byte; no argument; a copy with the §165 line-break bug put back.
+- The reverted copy is caught by the blob pin before the page script is parsed. Called through `runSuite` with the expected blob passed in, the same copy fails at "inline script compiles" (`SyntaxError`). So both layers work.
+
+**Reading:** the harness does what it says, on the real file. With §167 (real browser) and this run, v468 now has three independent checks: ChatGPT's V8 run, Claude's Chromium run, and Claude's CLI run of ChatGPT's harness.
+
+**Output:** `F-001-tam-build/GPT469-DOM-HARNESS-REPLAY-168.json`.
+
+**Limits:** fake DOM only (no layout, file picker, keyboard or screen reader); not a real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).

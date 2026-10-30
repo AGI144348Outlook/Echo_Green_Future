@@ -1,0 +1,72 @@
+{
+ "section": "F-001 §168",
+ "run": "2026-10-30T15Z",
+ "executor": "Claude",
+ "pre": "Issue #150 comment 6525865950 (published before execution)",
+ "inputs": {
+  "harness": "contract-000/gpt/business/test_f001_review_dom_469.js blob a758ad5c13c2017f93a53e299c46983121531a74 @ run469 694cde7",
+  "page": "contract-000/gpt/business/F-001-82-EDITORIAL-REVIEW-DRAFT-468.html blob 983ca1f6bf34d34f0dd0e442cffa388dd5ab6161 @ run468 eac11cf",
+  "blobs_recomputed_locally": true
+ },
+ "runtime": "Node v22.23.4",
+ "cli_runs": [
+  {
+   "exit": 0,
+   "passed": 20,
+   "total": 20,
+   "source_blob": "983ca1f6bf34d34f0dd0e442cffa388dd5ab6161"
+  },
+  {
+   "exit": 0,
+   "stdout_identical_to_run1": true
+  }
+ ],
+ "stdout_sha256": "46347ba307c1dee51e1150a1870633b25c9fe6169fe3cec235ef62137dc599d5",
+ "negatives": [
+  {
+   "case": "page with one byte changed",
+   "exit": 2,
+   "refused_at": "exact source Git blob"
+  },
+  {
+   "case": "no argument",
+   "exit": 2,
+   "refused_at": "usage"
+  },
+  {
+   "case": "page with the §165 escape reverted",
+   "exit": 2,
+   "refused_at": "exact source Git blob"
+  },
+  {
+   "case": "diagnostic: same reverted page via runSuite with the expected blob passed in (blob check bypassed)",
+   "result": "SyntaxError Invalid or unexpected token at 'inline script compiles'"
+  }
+ ],
+ "module_path": "runSuite on exact page: 20/20",
+ "checks": [
+  "exact source Git blob",
+  "inline script exists",
+  "inline script compiles",
+  "82 rendered articles",
+  "82 unique IDs",
+  "HOLD banner",
+  "10 duplicate references",
+  "draft selects",
+  "search filters",
+  "export has 82 items",
+  "export has no approval/release",
+  "draft edits exported",
+  "draft restore exact",
+  "restore says no approval",
+  "refuse approval flag without partial restore",
+  "refuse release flag without partial restore",
+  "refuse source pin without partial restore",
+  "refuse duplicate ID without partial restore",
+  "refuse oversize note without partial restore",
+  "no outbound request"
+ ],
+ "scope": "V8 fake DOM only; not Chromium or Android",
+ "status": "HOLD / NOT LAUNCH-READY; 82 PENDING / 0 approved",
+ "ai_files_edited": false
+}
