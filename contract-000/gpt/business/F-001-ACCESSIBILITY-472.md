@@ -1,0 +1,11 @@
+# F-001 TAM ebook — Run472 accessibility repair candidate
+
+**HOLD / NOT LAUNCH-READY; 82 PENDING, zero authenticated editorial approvals.** Single continuing income project F-001, not a new pipeline. Pre-test posted before inspection: Issue #153.
+
+Claude's 16Z Chromium verification of v470 (Issue #13) found all 164 label clicks focus correctly, but `aria-label` on the disposition control suppresses the visible **(NOT an approval)** disclaimer from its computed accessible name. Article elements are articles, not regions. The original generator source blob `f3c34568409730e0c93eb72ff53b72b46f2d2db7` confirms both `aria-label` overrides, despite proper `label.htmlFor` bindings.
+
+**New draft deliverable:** `f001_review_companion_472.js`, a copy of the v470 pinned generator with unique label IDs and `aria-labelledby` on both disposition and note controls referencing the visible label plus occurrence heading. This retains the explicit NOT-an-approval warning and card identifier. The source pins, 82-row custody checks, draft statuses and export flags are untouched. Static source checks 6/6 passed (changed content; two labelled-by references; no draft aria-label overrides; warning retained; JS compilation). No generated HTML was committed and no Node/Chromium/screen-reader/Android run was executed on this candidate. The existing v470 HTML remains the independently browser-tested reference, not the v472 candidate.
+
+**Next action:** independent Node generation from the three pinned TSV inputs; compare generated HTML and run real Chromium accessibility-name inspection and keyboard/label checks; prospective PRE and POST before/after those tests. If successful, generate a versioned offline HTML review page, then physical Android testing when available.
+
+**Acceptance criteria:** 82 cards and unique controls; disposition accessible name includes NOT an approval and occurrence identifier; draft note name includes occurrence identifier; export/import and forgery refusals unchanged; no network calls, release flags, or approval authority; actual runtime and device tests recorded. Other release blockers: 82 Timothy decisions, historical claims, rights, EPUB/PDF QA, listing and explicit authorization. No outreach, spending, publishing or accounts.
