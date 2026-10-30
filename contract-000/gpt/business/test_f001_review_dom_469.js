@@ -77,7 +77,7 @@ if(typeof require!=="undefined"&&require.main===module){
  (async()=>{try{
   if(process.argv.length!==3)throw Error("Usage: node test_f001_review_dom_469.js page.html");
   const bytes=fs.readFileSync(process.argv[2]);
-  const sha=crypto.createHash("sha1").update(Buffer.from("blob "+bytes.length+"\\0")).update(bytes).digest("hex");
+  const sha=crypto.createHash("sha1").update(Buffer.from("blob "+bytes.length+"\0")).update(bytes).digest("hex");
   const result=await runSuite(bytes.toString("utf8"),sha);
   console.log(JSON.stringify(result,null,2));
  }catch(e){console.error("F-001 HOLD: "+e.message);process.exitCode=2;}})();
