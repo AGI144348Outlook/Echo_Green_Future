@@ -161,7 +161,7 @@ if(typeof module!=="undefined"&&module.exports)module.exports={PINS,HOLD,parseTs
 if(typeof require!=="undefined"&&require.main===module){
  const fs=require("node:fs"),crypto=require("node:crypto");
  const args=process.argv.slice(2);
- if(args.length!==4){console.error("Usage: node f001_review_companion_470.js register.tsv locations.tsv intake.tsv output.html");process.exit(2);}
+ if(args.length!==4){console.error("Usage: node f001_review_companion_472.js register.tsv locations.tsv intake.tsv output.html");process.exit(2);}
  try{
   const data=args.slice(0,3).map(x=>fs.readFileSync(x));
   const blob=b=>crypto.createHash("sha1").update(Buffer.from("blob "+b.length+"\0")).update(b).digest("hex");
