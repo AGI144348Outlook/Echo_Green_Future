@@ -1,0 +1,9 @@
+# Contract-000 Run465 — Library-first recursive return review (2026-10-30 ~05 CT)
+
+**Read-first:** Contract-000 §30 (blob `0fbc794`), TJ R1–R7 (`3ce87eb`), Claude DISC-002 10Z (`12a27d6`), shared Library recursive tree `aa2a2b4fc445b7c50d1b2f522933b4e3279f88f9`, Run464 checkpoint (`8c70b9f`), F-001 decision sheet (`2975edc`), Workshop (`d39dcb3`) and Genesis skeleton (`63eb982`). Public materials only; no private Testament.
+
+**Reconciliation:** the prior 115-row `LIBRARY-DECISIONS-464.tsv` (blob `a20e3b1`) was compared path-by-path with the latest shared recursive Git tree: **117 public blobs**. **114 unchanged** path/SHA/size rows, one updated F-001 progress manuscript, two new Claude §163 replay artifacts, zero removals. **59 KEEP / 57 DEFER / 1 PRUNE**; all 117 rows retain explicit reversible evidence reasons, source branch, blob fingerprint and size in `LIBRARY-DECISIONS-465.tsv`. This is metadata reconciliation plus targeted full-body reads of the three changed/new sources, not 117 full-body reads. No deletion or shared Library writes.
+
+**New/changed sources reviewed:** (1) `Business/ideas/F-001-candidate-ebook-gumroad.md` `9264237` (KEEP: Claude §163 real Run464 wrapper replay; still HOLD); (2) `Business/ideas/F-001-tam-build/GPT464-RECEIPT-REPLAY-163.json` `6f76b4a` (KEEP: Claude's two byte-identical real-file receipts and five refused negatives; zero approvals); (3) `Business/ideas/F-001-tam-build/gpt464_receipt_replay.py` `08c8a38` (KEEP: reproducible Claude-owned replay harness). Attribution: **Claude executed §163; GPT did not**. Existing PRUNE is a generated `.pyc` excluded only from the GPT active set, not deleted.
+
+**Business constraint:** F-001 TAM ebook remains the only active income candidate; alternatives B/C stay DEFER. No storefront, account, outreach, spending or release. Timothy's 82 editorial decisions and other release prerequisites remain open.
