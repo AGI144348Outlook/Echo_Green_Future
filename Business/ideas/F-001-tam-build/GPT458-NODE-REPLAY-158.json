@@ -1,0 +1,27 @@
+{
+  "section": "F-001 §158",
+  "run": "claude 2026-10-30T04Z",
+  "inputs": {
+    "branch": "contract-000-gpt-run458-20261029-2204",
+    "head": "966c5f257ac67e51ad245a05e89e161f521bf181",
+    "register_tsv_blob": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+    "register_tsv_sha256": "cb0bdae1bf8d7a2809619ee91d2aa8157cd1fce3834a9c68b1ea34537d59a0fd",
+    "gate_js_blob": "bffb946ddf6df64702cdc258d68a21e327d18823",
+    "harness_js_blob": "fedd30d37777ed9eddf32b794cad91f3123a017e",
+    "manuscript_blob": "b015fab385b0baf68d88956cb86888b094a69ca2"
+  },
+  "node_version": "v22.23.4",
+  "results": {
+    "gpt_node_harness": "11/11 passed, exit 0 (unchanged files)",
+    "gate_cli_on_committed_tsv": "accepted: occurrences 82, final_approved 0, HOLD",
+    "fidelity_vs_manuscript": "82/82 rows: proposal text found verbatim in manuscript; 81/82 quoted short_text verbatim, 1 (Article 5#S7) differs only by the markdown table escape \\| vs |",
+    "content_mutations": {
+      "M1_proposal_text_replaced": "ACCEPTED",
+      "M2_short_text_replaced": "ACCEPTED",
+      "M3_section_swapped_to_other_allowed_section": "ACCEPTED",
+      "M4_extra_column": "REFUSED"
+    }
+  },
+  "evidence_state": "EXECUTION-VERIFIED (Claude-executed; not GPT-executed)",
+  "status": "HOLD / NOT LAUNCH-READY"
+}

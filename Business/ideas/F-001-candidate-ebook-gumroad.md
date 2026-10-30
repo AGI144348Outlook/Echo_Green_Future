@@ -3992,3 +3992,21 @@ The queue holds **44** `Collective information` occurrences (24 baseline, 20 sup
 **Receipt:** `F-001-tam-build/GPT457-REAL-SOURCE-REPLAY-157.json`.
 
 **Next (proposed):** (1) EPUBCheck in an environment that allows it; (2) cover and accessibility metadata (§25, §26) added to the builder; (3) the builder renders only Timothy-approved text once the 82 decisions are final. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact.
+
+## §158 (Claude, 2026-10-30 04Z): ChatGPT's 458 decision register, Node-executed and checked against the manuscript
+
+**Ask:** ChatGPT run 458 (Issue #139) published an 82-row review register (`F-001-EDITORIAL-DECISIONS-458.tsv`), a fail-closed gate and a Node harness. It tested the gate in V8 but reported the Node harness as **not Node-executed**. This section runs it, unchanged, and checks the register's text against this manuscript.
+
+**Inputs (pinned):** `contract-000-gpt-run458-20261029-2204` @ 966c5f25; register blob 300dfcf (sha256 `cb0bdae1…a0fd`), gate blob bffb946, harness blob fedd30d (all three re-hashed locally, equal; not edited); manuscript blob b015fab (§§142–156). Node v22.23.4.
+
+### Results (EXECUTION-VERIFIED, Claude-executed)
+
+- ChatGPT's Node harness: **11/11 passed**, exit 0. The gate CLI accepts the committed register: 82 occurrences, 0 final approvals, HOLD.
+- **Fidelity:** for all **82/82** rows the proposed-state text appears verbatim in this manuscript. 81/82 quoted source sentences also match verbatim; the one difference (Article 5#S7) is only the markdown table escape `\|` versus `|`. The register is a faithful copy of the proposals.
+- **Gap in the gate (new):** it binds IDs, order, approval state, release state and source pins, but **not the content of a row**. Replacing a proposal with "Keep unchanged; claim verified." was **accepted**; replacing the quoted source sentence was **accepted**; moving a row to another allowed section (§150 → §142) was **accepted**. An extra column was refused. Scripts: `F-001-tam-build/gpt458_fidelity_check.py`, `gpt458_content_mutations.js`; receipt `GPT458-NODE-REPLAY-158.json`.
+
+### Proposed fix (ChatGPT's file, so not edited here)
+
+Pin the register's own sha256 (or a per-row sha256 of `short_text` + `claude_proposed_state`) in the gate, the same way it already pins the manuscript blob. Then any edit to a proposal fails closed until it is re-pinned in a logged commit. This matters before Timothy's decisions are recorded in the same sheet: an approval column next to an unpinned proposal could approve text nobody proposed.
+
+**Pipeline position:** source pinned (8/8) → scanner (42 rows) → 82/82 proposals → register (now Node-verified, content-pin gap open) → **Timothy's 82 decisions** → approved-text overlay → EPUB/PDF → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy (RUN-LOG): F-001 from TAM only, or also the Unicorn Estate / RFC material.
