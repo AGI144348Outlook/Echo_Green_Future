@@ -1,0 +1,15 @@
+# Contract-000 Run460 — GPT independent checkpoint (2026-10-30 ~00 CT)
+
+**Parent:** GPT Run459 `contract-000-gpt-run459-20261029-2257` head `85378d72d7a5c5856bef6ca9c3dc17559eb379f6`. **Branch:** `contract-000-gpt-run460-20261030-0004`, GPT-owned non-main, no shared/Claude/Genesis/pilot writes.
+
+**Read-first:** Contract-000 `0fbc794` incl §30, TJ R1–R7 `3ce87eb`, Claude DISC-002 05Z `7d4bda99` and E50, prior Run459 checkpoint, shared Library tree `df061c9b`, shared Business and Workshop F-001 records, original Genesis `63eb982`, real EPUB §159 receipt `26a0288`, register `300dfcf`. No private Testament.
+
+**A Library:** 109 source-bound reversible decisions in [Run460 ledger](LIBRARY-DECISIONS-460.tsv): **51 KEEP / 57 DEFER / 1 PRUNE**. Compared all 109 Git tree paths/blobs/sizes with inherited 104-row ledger, zero missing/invalid; fresh-read six changed/new public source bodies (one §158–159 manuscript revision and five receipts/scripts). No deletions or shared writes. The initial read-side metadata diff occurred before prospective issue publication and was disclosed honestly in #141.
+
+**B A-000:** One [labeled ChatGPT DISC-002 response](DISC-002-ChatGPT-460.md) to Claude 05Z E50 and proposed 56G-l. SOURCE-OBSERVED `ReshIdentity.validate` checks only alias presence and A-000 marker, while `record` accepts any ID. PROPOSED, unfrozen **56G-m** identity witness binding A-000 + Resh alias + matrix generation + reviewed external revision, with **N22–N24** controls. No Genesis/pilot execution or implementation; E50 remains Claude's exploratory result.
+
+**C same sole business F-001:** New [HOLD byte-fidelity guard](business/F-001-EDITORIAL-BYTE-GATE-460.py) and [22-test harness](business/test_f001_byte_gate_460.py), both uploaded exact-byte Git blobs matching local tested source: `61a1872` and `b0c2d8b`. [Issue #141](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/141) pre-test; local Python `-I` **22/22 synthetic PASS** after fixing a non-ASCII bytes-literal syntax error and a 21/22 interim failure involving a forged copy target. New exact ten-link map closes the structural gap. [Evidence](business/F-001-TEST-EVIDENCE-460.md), [progress](business/F-001-PROGRESS-460.md). Actual pinned register production replay blocked by local DNS; no real GPT EPUB/PDF or EPUBCheck. Claude's real §159 EPUB remains Claude-executed. 82 provisional editorial proposals, **zero Timothy approvals**; F-001 HOLD.
+
+**D blockers/next:** independent real-register CLI replay; authenticated Timothy editorial decisions and A1–A6 etc; object-level historical citations, rights, EPUBCheck/Android/PDF and explicit publication authorization. A-000 issuer/witness, lexical identity/sense and frozen race acceptance remain open. Claude complementary role: real-source guard replay and citations/rights; GPT packaging/integrity. No publication, outreach, accounts, spending, payments, paid inference, CI or Cloudflare loops.
+
+**Verification:** GitHub source blob checks matched local tested files. Final branch compare and issue comments are to be verified after the RUN-LOG append; this checkpoint does not claim future writes.
