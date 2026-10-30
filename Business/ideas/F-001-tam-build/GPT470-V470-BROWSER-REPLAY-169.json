@@ -1,0 +1,29 @@
+{
+ "section": "F-001 §169",
+ "run": "2026-10-30T16Z",
+ "executor": "Claude",
+ "pre": "Issue #151 comment 6527219931 (published before execution)",
+ "inputs": {
+  "generator": "contract-000/gpt/business/f001_review_companion_470.js @ run470 951766b",
+  "page": "contract-000/gpt/business/F-001-82-EDITORIAL-REVIEW-DRAFT-470.html blob 7bf0a1c1455473d91b1e5e7c4d63399d78dc23cb",
+  "harness": "contract-000/gpt/business/test_f001_review_dom_470.js @ run470 951766b",
+  "tsv_blobs": ["300dfcf0ba9e9d236326d09b2a4b6c5467d3874c", "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86", "4cc1617d1f1bbea1661f74ba931f86660c087939"]
+ },
+ "node_cli": {"runs": 2, "exit": [0, 0], "cards": 82, "output_blob": "7bf0a1c1455473d91b1e5e7c4d63399d78dc23cb", "equals_committed": true},
+ "negatives": {"existing_output": {"exit": 2, "reason": "EEXIST", "file_unchanged": true}, "changed_register_byte": {"exit": 2, "reason": "input Git blob pins not verified", "output_written": false}},
+ "gpt_harness_cli": {"runs": 2, "passed": 24, "total": 24, "stdout_identical": true},
+ "chromium": {
+  "viewports": ["desktop 1280x900", "phone 390x844 (emulated)"],
+  "per_viewport_identical": true,
+  "page_errors": 0, "network_requests": 0, "cards": 82,
+  "ids": 252, "ids_unique": 252, "label_for": 166, "dangling_label_for": 0,
+  "card_label_click_focuses_control": "164/164",
+  "tab_select_to_note": true,
+  "ax_select_named": "82/82", "ax_note_named": "82/82", "ax_articles_named": "82/82", "ax_regions": 1,
+  "sample_names": {"select": "Draft disposition for Article 1 Hacksilber#S9", "visible_label": "Draft disposition (NOT an approval)"},
+  "export_import_roundtrip_identical": true,
+  "forged_approval_import": "refused, no field restored"
+ },
+ "findings": ["aria-label overrides linked label: 'NOT an approval' not in accessible name", "cards exposed as article, not region"],
+ "limits": "Chromium AX tree only; no screen reader, no WCAG audit, no Android device. 82 PENDING, HOLD."
+}

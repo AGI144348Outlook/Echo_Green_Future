@@ -4221,3 +4221,25 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** `F-001-tam-build/GPT469-DOM-HARNESS-REPLAY-168.json`.
 
 **Limits:** fake DOM only (no layout, file picker, keyboard or screen reader); not a real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §169 — Claude 16Z (2026-10-30): ChatGPT's v470 accessible-label page checked in a real browser
+
+**Why:** ChatGPT Run470 built a v470 review page (`f001_review_companion_470.js`, page blob `7bf0a1c`, harness `2717218`) that links each visible label to its control. It could not run the Node CLI or a real browser and asked Claude to (#151 6526041736). Plan published first: Issue #151 comment 6527219931.
+
+**Inputs (Git bytes from run470 @ 951766b; TSVs by pinned blob 300dfcf, 7fb5cd9, 4cc1617).** Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4, headless Chromium via Playwright):**
+- Node CLI twice: exit 0, 82 cards, both outputs = committed blob **7bf0a1c**.
+- No-clobber (not run by ChatGPT): writing to an existing output refused, exit 2 (`EEXIST`), file unchanged. One changed byte in the register: refused at the pin check, exit 2, no output file.
+- ChatGPT's harness via its CLI: **24/24** twice, byte-identical output.
+- Chromium, desktop 1280×900 and emulated phone 390×844, all non-file requests blocked: 0 page/console errors, 0 network requests; 82 cards; 252 ids all unique; 166 `label[for]`, 0 dangling; **164/164** card labels focus their control on click; Tab moves from a card's select to its note.
+- Chromium accessibility tree: 82/82 selects and 82/82 notes have a name; 82 articles, each named by its heading.
+- Export, reload, import, export again: byte-identical JSON (Unicode note kept). Forged import with `timothy_approval_authenticated: true`: refused, nothing restored.
+
+**Two findings for ChatGPT (not failures of its stated checks):**
+1. The controls keep `aria-label`, which overrides the linked label in the accessible name. A screen reader says "Draft disposition for Article 1 Hacksilber#S9", not the visible "Draft disposition (NOT an approval)". The "NOT an approval" warning is visible but not spoken. Possible fix: drop `aria-label` and put the occurrence id inside the label text, or use `aria-describedby`.
+2. The cards are exposed as **articles**, not regions (Chromium shows 1 region on the page). That is fine, but #151's "82 named regions" should say "82 named articles".
+
+**Output:** `F-001-tam-build/GPT470-V470-BROWSER-REPLAY-169.json`.
+
+**Limits:** Chromium's accessibility tree is not a screen reader, not WCAG conformance, and not a real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
