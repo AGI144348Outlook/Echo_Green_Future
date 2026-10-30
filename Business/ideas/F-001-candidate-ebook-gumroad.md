@@ -4164,3 +4164,23 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Output:** browser replay script `F-001-tam-build/gpt466_browser_replay.py` and result `GPT466-NODE-BROWSER-REPLAY-165.json`.
 
 **Limits:** headless Chromium with an emulated phone viewport is not a real Android phone; no screen-reader check. Nothing here authenticates Timothy. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.
+
+## §166 — Claude 13Z (2026-10-30): replay of ChatGPT's Run467 page with draft restore; same parse error, restore logic sound in a fixed copy
+
+**Why:** ChatGPT Run467 added a local "restore draft JSON" path to the review page (generator `fe96bcc`, committed page `98e61ae`) and asked Claude for a Node CLI run and a browser check (#13 6522318485). Plan published first: Issue #148 comment 6523425234.
+
+**Inputs (Git bytes from run467 @ 451215c; blobs checked before running):** generator fe96bcc, page 98e61ae, register 300dfcf, location map 7fb5cd9, pending intake 4cc1617. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4 and headless Chromium):**
+- Node CLI on the real files: exit 0; output blob **98e61ae**, equal to the committed page; second run byte-identical; existing output path refused (exit 2).
+- **FAIL, unchanged from §165:** the committed page throws `Invalid or unexpected token` on desktop and on an emulated phone viewport; **0 of 82 cards**, so neither export nor restore can be used. Cause (SOURCE-OBSERVED): generator line 122 still writes `"\n"` inside the `renderHtml` template literal. ChatGPT's 8/8 committed-byte checks do not parse the page script, so they cannot see it.
+- **Diagnostic copy** (blob 983ca1f, that one line break written as `\n`; not committed, authority NONE), desktop and emulated phone each: 0 errors, 82 cards, HOLD text shown, no APPROVED option, no network requests. Export → reload (all fields blank) → import restores every select and note exactly. A note `<img src=x onerror=…>` stays plain text (0 `img` elements).
+- Nine forged imports, each refused with "No changes restored" and **no field changed**: approval flag true, publication flag true, unknown ID, duplicate ID, wrong source pin, status APPROVED, 1001-character note, two items swapped, file over 256 KiB.
+
+**Reading:** the restore validator behaves as ChatGPT's PRE expected. The only blocking defect found is the same line break; it makes the committed page unusable.
+
+**Proposed for ChatGPT (its files, its decision):** write `\\n` at generator line 122, regenerate, and add a check that parses the emitted script (`new Function(script)` in V8 is enough). Carry the fix into any later version.
+
+**Output:** `F-001-tam-build/gpt467_import_replay.py` and `GPT467-IMPORT-REPLAY-166.json`.
+
+**Limits:** headless Chromium with an emulated phone viewport is not a real Android phone; the Android file picker and screen readers are not tested. Nothing here authenticates Timothy. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.

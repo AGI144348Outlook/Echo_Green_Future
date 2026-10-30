@@ -1,0 +1,149 @@
+{
+ "section": "F-001 §166",
+ "run": "Claude 2026-10-30T13Z",
+ "pre_test": "Issue #148 comment 6523425234 (published before execution)",
+ "inputs_git_blobs": {
+  "generator": "fe96bcc29f10aaf77cea4d11bbe076332b991188",
+  "committed_html": "98e61ae72f1a3c431478572fe5026319a8bc78b0",
+  "register": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+  "location": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+  "intake": "4cc1617d1f1bbea1661f74ba931f86660c087939"
+ },
+ "source_branch": "contract-000-gpt-run467-20261030-0700@451215cc",
+ "runtime": {
+  "node": "v22.23.4",
+  "browser": "Playwright Chromium (headless); phone = emulated viewport, not Android"
+ },
+ "N1_cli_exit": 0,
+ "N2_cli_output_git_blob": "98e61ae72f1a3c431478572fe5026319a8bc78b0",
+ "N2_equals_committed": true,
+ "N3_second_run_byte_identical": true,
+ "N4_existing_output_refused_exit": 2,
+ "N5_page_script_parse": "FAIL: Invalid or unexpected token at export line (raw newline from \"\\n\" inside renderHtml template literal, generator line 122; same defect as §165)",
+ "B_committed_page": {
+  "desktop": {
+   "errors": [
+    "Invalid or unexpected token"
+   ],
+   "cards": 0,
+   "hold_text": true,
+   "approved_option": 0,
+   "network": []
+  },
+  "phone-emulated": {
+   "errors": [
+    "Invalid or unexpected token"
+   ],
+   "cards": 0,
+   "hold_text": true,
+   "approved_option": 0,
+   "network": []
+  },
+  "negatives": {}
+ },
+ "diagnostic_copy": {
+  "git_blob": "983ca1f6bf34d34f0dd0e442cffa388dd5ab6161",
+  "change": "one raw newline replaced by the two characters \\n; not committed; export authority NONE",
+  "results": {
+   "desktop": {
+    "errors": [],
+    "cards": 82,
+    "hold_text": true,
+    "approved_option": 0,
+    "roundtrip_restored": true,
+    "msg_valid": "Restored 82 DRAFT entries locally. No editorial approval or release authority.",
+    "img_injected": 0,
+    "negatives": {
+     "approval_true": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: authority flag is not false"
+     },
+     "publication_true": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: authority flag is not false"
+     },
+     "unknown_id": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 5"
+     },
+     "duplicate_id": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 6"
+     },
+     "wrong_pin": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: source pins mismatch"
+     },
+     "status_APPROVED": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: invalid draft status at 3"
+     },
+     "note_1001": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: invalid or oversized note at 2"
+     },
+     "swapped_order": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 0"
+     },
+     "file_256KiB_plus": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: file exceeds 256 KiB"
+     }
+    },
+    "after_errors": [],
+    "network": []
+   },
+   "phone-emulated": {
+    "errors": [],
+    "cards": 82,
+    "hold_text": true,
+    "approved_option": 0,
+    "roundtrip_restored": true,
+    "msg_valid": "Restored 82 DRAFT entries locally. No editorial approval or release authority.",
+    "img_injected": 0,
+    "negatives": {
+     "approval_true": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: authority flag is not false"
+     },
+     "publication_true": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: authority flag is not false"
+     },
+     "unknown_id": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 5"
+     },
+     "duplicate_id": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 6"
+     },
+     "wrong_pin": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: source pins mismatch"
+     },
+     "status_APPROVED": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: invalid draft status at 3"
+     },
+     "note_1001": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: invalid or oversized note at 2"
+     },
+     "swapped_order": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: unknown, duplicate or reordered occurrence at 0"
+     },
+     "file_256KiB_plus": {
+      "ui_unchanged": true,
+      "message": "No changes restored: DRAFT import refused: file exceeds 256 KiB"
+     }
+    },
+    "after_errors": [],
+    "network": []
+   }
+  }
+ },
+ "state": "82 PENDING / 0 approved; F-001 HOLD / NOT LAUNCH-READY"
+}
