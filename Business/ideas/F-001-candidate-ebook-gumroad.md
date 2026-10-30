@@ -4119,3 +4119,26 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Limits:** a hash shows which bytes ran, not who ran them or on what machine. Nothing here authenticates Timothy or creates an approval path. Historical claims, rights, EPUBCheck, reader and PDF checks are still not run.
 
 **Pipeline position:** source pinned → 82 proposals → register byte gate (§160) → 82 locations checked (§161) → pending-only intake gate on real files (§162) → **gate version bound into the receipt, checked on real files (§163)** → **Timothy's 82 decisions through an approval path he chooses** → approved-text overlay → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.
+
+## §164 (Claude, 2026-10-30 11Z): ChatGPT's Run465 snapshot wrapper, run unchanged on the real files
+
+**Ask:** §163 noted that the Run464 wrapper checks the data files and then hands their paths to the gate, which reads them again. ChatGPT run 465 wrote `f001_custody_snapshot_465.py`: it reads each file once, checks the four Git blob pins, and gives the gate private read-only copies of the checked bytes instead of the original paths. ChatGPT tested it on synthetic data only (20/20) and asked Claude to run it on the real files, twice, with a changed-original-path control and pre-read negatives (#146 6520118641, #13 6520131455). Plan published first: Issue #146 comment 6521054589.
+
+**Inputs (Git bytes from run465 @ f011356f, blobs checked before running):** wrapper fcf16e6, harness 4999f7d, gate 5a767d9, register 300dfcf, location map 7fb5cd9, pending intake 4cc1617. Copies only; no ChatGPT file edited.
+
+**Results (EXECUTION-VERIFIED, Python 3.13.18, `-I -B`):**
+- Real files: exit 0, twice, byte-identical receipts (receipt SHA-256 c9ec56ac…10b3). The receipt shows 82 occurrences, 10 copy links, 82 PENDING, 0 approved, gate blob 5a767d9, gate SHA-256 eeb5513d…31fb (same as §163), `input_snapshot_mode` private-verified-byte-snapshots, and all approval, overlay and publication flags false.
+- ChatGPT's harness run unchanged: 20/20 OK (0.4 s here, against about 19 s reported by ChatGPT; the cases are the same).
+- Four pre-read negatives, all refused with exit 2 and no stdout: (a) gate with one comment line added; (b) one register byte changed; (c) intake row 1 forged to APPROVED by "Timothy"; (d) missing path.
+- Changed-original-path control: with the wrapper imported unchanged and `subprocess.run` patched to overwrite all three original data files with forged bytes just before the gate starts, the wrapper still returned a receipt equal to the positive one, and the originals were confirmed changed. Detection check: the gate run directly on those forged originals refuses (exit 2), so the control would have caught a reread of the original paths. No `f001-verified-snapshot-*` directory was left behind (0 before, 0 after).
+
+**Output:** replay script `F-001-tam-build/gpt465_snapshot_replay.py` and result `GPT465-SNAPSHOT-REPLAY-164.json`.
+
+**Source notes (SOURCE-OBSERVED unless marked):**
+- The §163 reread window is closed for this wrapper, on real files, for the single-process swap tested here. It is not a test against another local user acting on the temporary directory.
+- The §163 proposal to rename the self-reported flag was taken up: the field is now `produced_by_wrapper_run`. The interpreter version is still not in the receipt.
+- When the gate refuses, it prints its refusal on stdout (83 bytes in the detection check), not stderr. The wrapper is still safe, because it requires exit 0 and an exact receipt, but a reader of the gate alone should not treat "stdout present" as success.
+
+**Limits:** a hash shows which bytes ran, not who ran them or on what machine. Nothing here authenticates Timothy or creates an approval path. Historical claims, rights, EPUBCheck, reader and PDF checks are still not run.
+
+**Pipeline position:** source pinned → 82 proposals → register byte gate (§160) → 82 locations checked (§161) → pending-only intake gate on real files (§162) → gate version bound into the receipt (§163) → **checked bytes are the bytes the gate reads, on real files (§164)** → **Timothy's 82 decisions through an approval path he chooses** → approved-text overlay → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: TAM only, or also the Unicorn Estate / RFC material (R1); and how he wants to record his 82 decisions so that they count as his.

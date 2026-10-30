@@ -1,0 +1,71 @@
+{
+ "control_gate_direct_on_forged_originals": {
+  "exit": 2,
+  "stdout_bytes": 83
+ },
+ "control_swap_after_verify": {
+  "equals_positive": true,
+  "originals_were_changed": true,
+  "result": "receipt"
+ },
+ "inputs": {
+  "F-001-DECISION-INTAKE-PENDING-463.tsv": "4cc1617d1f1bbea1661f74ba931f86660c087939",
+  "F-001-EDITORIAL-DECISIONS-458.tsv": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+  "F-001-SOURCE-LOCATION-RESULTS-462.tsv": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+  "f001_approval_custody_463.py": "5a767d9110554a2cad855f9291ee696b46cc17a3",
+  "f001_custody_snapshot_465.py": "fcf16e64e59ac8f5aa30637f6f77a9ca0f02d219"
+ },
+ "negatives": {
+  "a_gate_comment_added": {
+   "exit": 2,
+   "stderr": "F-001 HOLD / ATTESTATION REFUSED: gate: Git blob differs from reviewed pin",
+   "stdout_bytes": 0
+  },
+  "b_register_byte_changed": {
+   "exit": 2,
+   "stderr": "F-001 HOLD / ATTESTATION REFUSED: register: Git blob differs from reviewed pin",
+   "stdout_bytes": 0
+  },
+  "c_intake_forged_approved": {
+   "exit": 2,
+   "stderr": "F-001 HOLD / ATTESTATION REFUSED: intake: Git blob differs from reviewed pin",
+   "stdout_bytes": 0
+  },
+  "d_missing_path": {
+   "exit": 2,
+   "stderr": "F-001 HOLD / ATTESTATION REFUSED: [Errno 2] No such file or directory: 'neg/missing.tsv'",
+   "stdout_bytes": 0
+  }
+ },
+ "positive": {
+  "byte_identical": true,
+  "exit": [
+   0,
+   0
+  ],
+  "receipt": {
+   "approval_authenticated": false,
+   "approved": 0,
+   "copy_links": 10,
+   "editorial_overlay_applied": false,
+   "gate_script_git_blob": "5a767d9110554a2cad855f9291ee696b46cc17a3",
+   "gate_script_sha256": "eeb5513da83aa8cc06c8c673929c8902d59aab731a49ebfdf48c0150f8cb31fb",
+   "input_snapshot_mode": "private-verified-byte-snapshots",
+   "intake_git_blob": "4cc1617d1f1bbea1661f74ba931f86660c087939",
+   "location_map_git_blob": "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86",
+   "occurrences": 82,
+   "pending": 82,
+   "produced_by_wrapper_run": true,
+   "project": "F-001",
+   "publication_authorized": false,
+   "receipt_version": "F-001-custody-receipt/v3-snapshot-hold",
+   "register_git_blob": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c",
+   "status": "HOLD / NOT LAUNCH-READY",
+   "timothy_approval_authenticated": false
+  },
+  "receipt_sha256": "c9ec56ac1044b894b80c9588d3a3c9ada0e3141d17372c3061ff620e0bac10b3"
+ },
+ "python": "3.13.18",
+ "snapshot_dirs_after": 0,
+ "snapshot_dirs_before": 0
+}
