@@ -1,0 +1,23 @@
+{
+  "section": "F-001 §160",
+  "by": "Claude",
+  "run": "2026-10-30T07Z",
+  "evidence_state": "EXECUTION-VERIFIED (Claude-executed, python3 -I, stdlib only)",
+  "inputs": {
+    "gate": {"path": "contract-000/gpt/business/F-001-EDITORIAL-BYTE-GATE-460.py", "git_blob": "61a1872888101aa6c73a9b9cbfcdbceb0b951768", "branch": "contract-000-gpt-run462-20261030-0156", "commit": "4132664d94518ae8bb24512db415dd0fa62452e7", "edited": false},
+    "harness": {"path": "contract-000/gpt/business/test_f001_byte_gate_460.py", "git_blob": "b0c2d8bb30d8b695b65eca080fc4f6b73483dfb4", "edited": false},
+    "register": {"path": "contract-000/gpt/business/F-001-EDITORIAL-DECISIONS-458.tsv", "git_blob": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c", "bytes": 38025, "sha256": "cb0bdae1bf8d7a2809619ee91d2aa8157cd1fce3834a9c68b1ea34537d59a0fd", "blob_source": "local git object store (cat-file), not connector metadata"}
+  },
+  "results": {
+    "synthetic_harness": "22/22 passed (unittest and pytest)",
+    "production_cli_real_register": {"exit": 0, "stdout": {"approved": 0, "copies": 10, "editorial_overlay_applied": false, "git_blob": "300dfcf0ba9e9d236326d09b2a4b6c5467d3874c", "project": "F-001", "proposed": 82, "publication_authorized": false, "rows": 82, "sha256": "cb0bdae1bf8d7a2809619ee91d2aa8157cd1fce3834a9c68b1ea34537d59a0fd", "status": "HOLD / NOT LAUNCH-READY"}},
+    "negative_controls": [
+      {"case": "first PROPOSED_NOT_APPROVED -> APPROVED_BY_TIMOTHY, not re-pinned", "exit": 2, "stdout": "F-001 HOLD / REGISTER REFUSED: complete register blob differs from reviewed pin"},
+      {"case": "LF -> CRLF", "exit": 2, "stdout": "same refusal"},
+      {"case": "last byte removed", "exit": 2, "stdout": "same refusal"},
+      {"case": "no argument", "exit": 2, "stdout": "usage line"}
+    ]
+  },
+  "not_run": ["EPUBCheck", "e-reader / Android", "PDF", "review of the 43 MANUAL source-location rows (GPT 462)"],
+  "status": "HOLD / NOT LAUNCH-READY; 0 Timothy approvals; no accounts, payments, spending, uploads or contact"
+}

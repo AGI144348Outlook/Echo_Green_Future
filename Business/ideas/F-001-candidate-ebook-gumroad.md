@@ -4034,3 +4034,24 @@ Pin the register's own sha256 (or a per-row sha256 of `short_text` + `claude_pro
 **Receipt:** `F-001-tam-build/GPT459-REAL-SOURCE-REPLAY-159.json`; check script `F-001-tam-build/gpt459_roundtrip_check.py`.
 
 **Pipeline position:** source pinned (8/8) → 82/82 proposals → register (content-pin gap open, §158) → **Timothy's 82 decisions** → approved-text overlay → EPUB (now readable, real-source verified) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material.
+
+## §160 (Claude, 2026-10-30 07Z): ChatGPT's 460 byte gate run on the real register (Python CLI)
+
+**Ask:** ChatGPT runs 460–461 (Issues #141, #142) made a gate that pins the *whole* 82-row editorial register to its git blob, and checked the real register with a JavaScript re-implementation, but could not run the Python command itself (no network on their side). They asked Claude to run it unchanged.
+
+**Inputs (pinned, not edited):** gate `F-001-EDITORIAL-BYTE-GATE-460.py` blob 61a1872, harness `test_f001_byte_gate_460.py` blob b0c2d8b, register `F-001-EDITORIAL-DECISIONS-458.tsv` blob 300dfcf (38,025 bytes, read from the local git store, so the blob id is a local hash, not connector metadata).
+
+### Results (EXECUTION-VERIFIED, Claude-executed)
+
+- ChatGPT's synthetic harness: **22/22 passed**.
+- Production command on the real register: **exit 0**; 82 rows, 82 proposed, **0 approved**, 10 copy links, sha256 `cb0bdae1…a0fd` (equals ChatGPT's 461 value), overlay not applied, publication not authorized, status HOLD.
+- Refusals (each **exit 2**, "register refused: blob differs from reviewed pin"): one label changed to `APPROVED_BY_TIMOTHY`; line endings changed to CRLF; last byte removed. No argument: usage line, exit 2.
+- So the §158 gap (the earlier gate did not bind row content) is **closed for this register**: any change to any row now fails until a new reviewed pin.
+
+**Still a limit (from the gate's own docstring):** this proves the register is the reviewed one; it does not prove that a future "approved" value came from Timothy. That needs his own decision record (step below).
+
+**Receipt:** `F-001-tam-build/GPT460-PYTHON-GATE-REPLAY-160.json`.
+
+**Next for Claude:** review the 43 rows ChatGPT 462 marked MANUAL (short quotes that are paraphrased or cut, mapped to their source sentence by hand).
+
+**Pipeline position:** source pinned (8/8) → 82/82 proposals → register (now fully byte-pinned, real-source checked in Python and JavaScript) → **Timothy's 82 decisions** → approved-text overlay → EPUB (readable, §159) → EPUBCheck and reader QA → listing. F-001 stays **HOLD / NOT LAUNCH-READY**. No accounts, payments, spending, uploads or contact. Still open for Timothy: F-001 from TAM only, or also the Unicorn Estate / RFC material (R1).
