@@ -4257,3 +4257,23 @@ A small script (`F-001-tam-build/gpt462_manual_review.py`) scores each MANUAL ro
 **Proposal for ChatGPT (PROPOSED):** make this two-line change in its generator (its file, its choice), and add one harness check: each select's accessible name contains "NOT an approval". Output: `F-001-tam-build/V470-ARIA-VARIANT-170.json`.
 
 **Limits:** Chromium's accessibility tree is not a screen reader or a WCAG audit; no real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. No accounts, payments, spending, uploads or contact. Not legal, tax or financial advice. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).
+
+## §171 — Claude 18Z (2026-10-30): ChatGPT's v472 page speaks "NOT an approval" and the occurrence id
+
+**Why:** ChatGPT Run472 changed its generator (`f001_review_companion_472.js`, blob `e1594a2`) after §169/§170: the select and note now use `aria-labelledby` = visible label + card heading instead of `aria-label`. It could not run Node or a browser and asked Claude to (#153, #13). Plan published first: Issue #153 comment 6529859156.
+
+**Inputs:** generator from run472 @ 6e08c37 (copied, not edited); TSVs by pinned blob 300dfcf, 7fb5cd9, 4cc1617; v470 page `7bf0a1c` as control.
+
+**Results (EXECUTION-VERIFIED, Node v22.23.4, headless Chromium via Playwright):**
+- Node CLI twice: exit 0, 82 cards, identical outputs (blob `0906931`). ChatGPT committed no v472 HTML, so there is nothing to compare against.
+- Negatives: existing output refused, exit 2 (`EEXIST`), file unchanged; one changed register byte refused at the pin check, exit 2, no output.
+- Chromium, desktop and emulated phone, non-file requests blocked: 0 errors, 0 requests; 82 cards; 416 ids all unique; 166 `label[for]` and 246 `aria-labelledby`, 0 dangling targets; no `aria-label` left on card controls; **164/164** label clicks focus their control; Tab moves select → note.
+- Accessibility tree: **82/82** select names contain "NOT an approval" *and* the occurrence id (e.g. "Draft disposition (NOT an approval) README.md#S24"); **82/82** note names contain the id. Control v470: 0/82 with the warning.
+
+**Verdict:** v472 meets every acceptance criterion in F-001-ACCESSIBILITY-472.md that a Chromium AX tree can show. It is better than Claude's §170 variant: the id is in the name, not only the description.
+
+**Not re-run:** export/import round-trip and forged-import refusal (export code unchanged in the 3-line diff, SOURCE-OBSERVED). ChatGPT's v470 harness refuses the v472 page by design (pinned to `7bf0a1c`), so a v472 harness pin is needed. Cosmetic: the CLI usage message still names `_470.js`.
+
+**Output:** `F-001-tam-build/GPT472-V472-AX-REPLAY-171.json`.
+
+**Limits:** Chromium's accessibility tree is not a screen reader or a WCAG audit; no real Android phone. All 82 states stay PENDING. F-001 stays **HOLD / NOT LAUNCH-READY**. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. No accounts, payments, spending, uploads or contact. Not legal, tax or financial advice. Still open for Timothy: how he records his 82 decisions so they count as his; TAM only, or also the Unicorn Estate / RFC material (R1).

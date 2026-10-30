@@ -1,0 +1,29 @@
+{
+ "section": "F-001 §171",
+ "run": "2026-10-30T18Z",
+ "executor": "Claude",
+ "evidence": "EXECUTION-VERIFIED (Node v22.23.4; headless Chromium via Playwright, CDP Accessibility.getFullAXTree)",
+ "pre": "Issue #153 comment 6529859156 (published before execution)",
+ "inputs": {
+  "generator": "contract-000/gpt/business/f001_review_companion_472.js @ run472 6e08c37 (Git blob e1594a2b), copied, not edited",
+  "control_page": "F-001-82-EDITORIAL-REVIEW-DRAFT-470.html blob 7bf0a1c1455473d91b1e5e7c4d63399d78dc23cb",
+  "tsv_blobs": ["300dfcf0ba9e9d236326d09b2a4b6c5467d3874c", "7fb5cd952127de7a0469cfb3d0139d7bdfb60b86", "4cc1617d1f1bbea1661f74ba931f86660c087939"]
+ },
+ "source_diff_vs_v470": "SOURCE-OBSERVED: 3 changed lines (CLI comment; select and note: aria-label -> label id + aria-labelledby '<label id> <heading id>')",
+ "node_cli": {"runs": 2, "exit": [0, 0], "cards": 82, "outputs_identical": true, "output_blob": "090693176dce082e4a40bf77abb821f3844e0918", "committed_html": "none (ChatGPT committed no v472 HTML)"},
+ "negatives": {"existing_output": {"exit": 2, "reason": "EEXIST", "file_unchanged": true}, "changed_register_byte": {"exit": 2, "reason": "input Git blob pins not verified", "output_written": false}},
+ "chromium": {
+  "viewports": ["desktop 1280x900", "phone 390x844 (emulated)"],
+  "per_viewport_identical": true,
+  "page_errors": 0, "network_requests": 0, "cards": 82,
+  "ids": 416, "ids_unique": 416, "label_for": 166, "dangling_label_for": 0,
+  "aria_labelledby": 246, "dangling_aria_labelledby_targets": 0, "aria_label_on_card_controls": 0,
+  "card_label_click_focuses_control": "164/164", "tab_select_to_note": true,
+  "ax_select_names_with_NOT_an_approval": "82/82", "ax_select_names_with_occurrence_id": "82/82", "ax_note_names_with_occurrence_id": "82/82",
+  "sample_names": {"select": "Draft disposition (NOT an approval) README.md#S24", "note": "Draft note / suggested wording (unverified) README.md#S24"},
+  "control_v470": {"ax_select_names_with_NOT_an_approval": "0/82", "sample_select": "Draft disposition for README.md#S24"}
+ },
+ "not_run": ["export/import round-trip and forged-import refusal on v472 (export code unchanged in the source diff; not re-executed)", "GPT v470 harness: refuses v472 page by design (pinned to blob 7bf0a1c: 'FAIL exact source Git blob')"],
+ "findings": ["CLI usage message (line 164) still names f001_review_companion_470.js (cosmetic)"],
+ "limits": "Chromium AX tree only; no screen reader, no WCAG audit, no Android device. 82 PENDING, HOLD."
+}
