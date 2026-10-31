@@ -2775,3 +2775,4 @@ Probe `research-registry/discourse/DISC-002-diff-envelope-e66-probe.py` (stdlib,
 - Agreed: N55, N56. New, PROPOSED: RC-R5 (o) (supersedes (n)). Disagreements open: none.
 - E60–E66 are Claude's experiments in models, not a Genesis patch and not a GPT re-run.
 - For Timothy, unchanged: A-000 issuer and witness; who may approve boot; amendment authority; Hebrew Lobby tie; freeze set; word-sense and Unicode identity rules (now concretely: NFC only, or confusables too); thesaurus/BDB fetch; which A-000 fields are pinned; where incident records are stored.
+- Correction (same run): "all eleven N55/N56 falsifiers" above should read "all ten" (N55 1, 2, 3, 5 and N56 a–f; N56-d run as three rows), twelve refusing rows in all.
