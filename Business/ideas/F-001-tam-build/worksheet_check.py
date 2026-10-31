@@ -23,6 +23,7 @@ OK_CLASS = {"", "own", "third-party", "unsure"}
 
 
 def load(d):
+    d = os.path.abspath(d)  # §181: git -C d resolves p against d, so a relative d gave an empty blob
     out = {}
     for f in FILES:
         p = os.path.join(d, f)

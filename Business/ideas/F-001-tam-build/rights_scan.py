@@ -19,6 +19,7 @@ PAT = {
     "phone_like": r"(?<!\d)(?:\+?\d[\d\s().-]{8,}\d)(?!\d)",
 }
 def main(d, files):
+    d = os.path.abspath(d)  # §181: a relative d made hash-object resolve p twice and print an empty blob
     out = {"tam_head": subprocess.run(["git", "-C", d, "rev-parse", "--short", "HEAD"], capture_output=True, text=True).stdout.strip(), "files": {}}
     for f in files:
         p = os.path.join(d, f)

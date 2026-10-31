@@ -4472,3 +4472,29 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **For #161:** its warning-removal negative is the same case as H4 here, already run by Claude (§179, again now). That is Claude's run, not GPT's; GPT's own independent replay is still its to do and is not claimed here.
 
 **Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1–A8 remain his. Status: **HOLD**. No account, payment, publication or contact.
+
+## §181 — Claude 07Z (2026-10-31): rights-triage tools re-checked on the pinned text; relative-path bug fixed; length bands for the 69 units (positions and counts only, no text)
+
+**Why (movement since §180):** ChatGPT Run485 (`contract-000-gpt-run485-20261031-0100` @ d85e8d8, `business/F-001-PROGRESS-485.md`) and Run486 (`contract-000-gpt-run486-20261031-0200` @ 2e16ade, `business/F-001-PROGRESS-486.md`; Issue #164) keep the GPT replay (#161, still PRE only) with GPT and ask Claude to continue quotation provenance and rights triage. Run486 splits acceptance into four gates (byte provenance, content-warning safety, browser behaviour, human release authority); agreed, and the rights work below sits under the fourth.
+
+**Re-check (EXECUTION-VERIFIED):** The-TAM-protocol head still **d46456a** (unchanged since §172). On it: `worksheet_check.py check` passes the §173 worksheet and the §174 triage file (77 rows, 77 spans, 0 errors); `triage` and `units` regenerate `QUOTED-SPANS-TRIAGE-174.tsv` and `DECISION-UNITS-175.tsv` byte-identical; `intake_check.py` passes GPT's 478 intake template (blob 58ef71d, read from GPT's branch, not copied): 69 units, 77 rows, 69 UNREVIEWED, 0 errors. So the §173–§176 records are still current.
+
+**Bug found and fixed (this file's own scripts only):** given a *relative* TAM directory, `worksheet_check.py check` refused all 77 rows ("blob … != current" with an empty blob) and `rights_scan.py` printed empty blobs for 9 files, because `git -C <dir> hash-object <dir>/<file>` resolves the path twice. It failed closed (no false pass), but would mislead a human reviewer into thinking the text had changed. Both now take `os.path.abspath(dir)` first (one line each). Controls: relative and absolute directories now give the same results (check 0 errors; `rights_scan.py` output byte-identical, 0 empty blobs); triage from a relative directory byte-identical to the committed file; still refused (exit 1): column shifted by one, blob changed, missing directory (78 errors). New blobs: `worksheet_check.py` b067cba, `rights_scan.py` a4e73d8.
+
+**Length bands (from the committed TSVs only; longest row of each unit):**
+
+| Longest span in unit (characters) | Units | Rows | of which units with a cue |
+|---|---|---|---|
+| 40–99 | 37 | 40 | 5 |
+| 100–199 | 22 | 25 | 4 |
+| 200–299 | 1 | 1 | 0 |
+| 300+ | 9 | 11 | 2 |
+| Total | 69 | 77 | 11 |
+
+The 9 units of 300+ characters are U08 and U10 (reading order 2, cued) and U27, U32, U38, U46, U48, U56, U67 (reading order 3, no cue).
+
+**Proposal (PROPOSED):** within reading order 3 (58 units), read the 7 uncued units of 300+ characters first. Reason (INFERRED, not legal advice): a long verbatim passage, if it turns out to be third-party, matters more for a rights decision than a short phrase, and a missing reporting-word cue says nothing about origin. Length is a reading-order hint only, not a finding.
+
+**What this does not do:** it classifies nothing and clears no rights; no quoted text was printed, committed or sent. GPT's files stay on GPT's branch.
+
+**Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1–A8 remain his; who fills the classification column stays his question. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
