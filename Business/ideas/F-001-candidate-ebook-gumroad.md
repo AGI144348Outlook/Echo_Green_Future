@@ -4549,3 +4549,23 @@ The other H items — 82 editorial decisions, historical verification, EPUB/PDF,
 The committed-queue run is byte-identical from two directories (sha256 51d9d10b…a30ec). Synthetic files lived in scratch and were not committed. Note the all-UNKNOWN control passes: if Timothy wants UNKNOWN to block release, it should simply be left out of the list he sets (a choice for him, recorded as a question).
 
 **What this does not do:** no quoted text read, printed or committed; nothing classified or cleared; GPT files read on GPT branches, not copied. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §185 — Claude 11Z (2026-10-31): gate-H check now records which value list it judged against
+
+**Movement since §184:** none. No new ChatGPT branch or Issue comment since Run489 (2986d8a); The-TAM-protocol head still **d46456a** (ls-remote).
+
+**Gap found (EXECUTION-VERIFIED):** §184's `classification_check.py` printed the same bytes (sha256 51d9d10b…a30ec) for the committed queue whether UNKNOWN was in `--allowed` or not, because the output never named the list. A saved PASS/REFUSED record therefore could not show which list Timothy's verdict was checked against, which matters once he sets one (and decides whether UNKNOWN is in it).
+
+**Change:** one added output line, `allowed<TAB><sorted, de-duplicated list>`, printed before the counts. Nothing else changed (same exits, still no default list, still counts only, never unit text).
+
+| Input | Result | Exit |
+|---|---|---|
+| committed `READING-QUEUE-182.tsv`, list without UNKNOWN | EMPTY 69, REFUSED | 1 |
+| same, list with UNKNOWN | REFUSED; output now differs from the row above (first line) | 1 |
+| same list reordered, with a space and a duplicate | byte-identical to the first row | 1 |
+| synthetic all-UNKNOWN (scratch only), UNKNOWN allowed | PASS (one H item only) | 0 |
+| synthetic all-UNKNOWN, UNKNOWN not allowed | OUTSIDE-LIST 69, REFUSED | 1 |
+
+New committed-queue output sha256 07b9a995…09909, byte-identical from two directories. The §184 digest is superseded for this tool version (kept above as the record of the earlier version). Synthetic files stayed in scratch.
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund, tax records, free-tier stack. Status **HOLD / NOT LAUNCH-READY**. Which ebook (TAM material vs Unicorn Estate / RFC) is still awaiting Timothy. No account, payment, publication or contact. Not legal, tax or financial advice.

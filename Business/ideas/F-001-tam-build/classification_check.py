@@ -22,6 +22,7 @@ units = [r["unit"] for r in rows]
 dups = len(units) - len(set(units))
 c = Counter("EMPTY" if not (r["classification"] or "").strip() else
             (r["classification"].strip() if r["classification"].strip() in allowed else "OUTSIDE-LIST") for r in rows)
+print("allowed\t" + ",".join(sorted(set(allowed))))  # §185: record which list the verdict used
 print(f"rows\t{len(rows)}\nduplicate_units\t{dups}")
 for k in sorted(c): print(f"{k}\t{c[k]}")
 ok = dups == 0 and c["EMPTY"] == 0 and c["OUTSIDE-LIST"] == 0
