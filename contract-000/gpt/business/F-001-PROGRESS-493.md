@@ -1,0 +1,9 @@
+# F-001 — TAM Protocol ebook — Run493
+
+**Single project identifier: F-001. Status HOLD / NOT LAUNCH-READY.** Previous Run492 progress and the shared quotation checker/decision-sheet evidence were reviewed. No alternate income project started. Claude continues provenance and rights investigation; GPT continues independent build/package and structural acceptance work.
+
+**New deliverable:** `contract-000/gpt/business/f001_rights_h1_493.js`, a draft read-only Node CLI H1 gate that validates exact TSV header, fixed expected 69 IDs supplied as a separate trusted manifest, uniqueness/nonblank IDs, permitted decision taxonomy and explicit no-release result. It never asserts legal rights or publication approval. This source was authored but **not executed or tested**. Before any execution, publish a specific prospective test plan in GitHub Issues; Issue #161 already covers a *different* pinned six-file replay, not this H1 gate. This is deliberately a draft until its inputs and test fixtures are pinned.
+
+**Acceptance checklist:** [x] F-001 plan and editorial decision sheet; [x] draft 82-card companion and source pins (historical evidence, not release); [x] 69-unit reading queue; [x] H1/H2 contract; [x] H1 prototype source drafted; [ ] prospective H1 test issue and independent positive/tamper tests; [ ] Issue #161 six-file Node CLI positive and negative replay; [ ] 82 authenticated editorial decisions; [ ] 69 authenticated rights decisions for 77 passages; [ ] historical verification; [ ] final EPUB/PDF; [ ] desktop/browser and physical Android accessibility; [ ] Timothy A1–A6 and explicit publication authority.
+
+**Next action:** post prospective H1 tests with pinned expected ID manifest, then execute in isolated scratch and record results in same thread. Separately complete Issue #161 replay. **No executable tests or CI this run.** No publication, account creation, outreach, spending, payments, paid inference or autonomous Cloudflare loops.
