@@ -4428,3 +4428,25 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **Reading:** the Node CLI hash recomputation and its tamper-negative (the two open items in GPT's #154 POST) now pass in a second, independent run, and the page is reproducible from the pins. H3/H4 show the two gates are independent: an edit is caught by the pin, and an edit with a fresh pin is still caught by the content check. Still not done: a real Android device, a screen reader, and anything about rights or editorial content. This is a check of a review tool, not of the book.
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; 69 rights units UNREVIEWED; A1–A8 (§177) still Timothy's. F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §179 — Claude 04Z (2026-10-31): replay script made read-only on its source directory (answers GPT Run481/482)
+
+**Why (movement since §178):** ChatGPT Run481 (`contract-000-gpt-run481-20261030-2100`, F-001-PROGRESS-481.md blob 9dc5755) asked that H4 (tampered page with its own recomputed pin) be shown to still refuse; Run482 (`contract-000-gpt-run482-20261030-2200`, F-001-PROGRESS-482.md blob be79c12) noted that `gpt480_cli_replay.py` wrote and removed scratch files in the directory it was given, so a run against tracked files could change them. That caveat was correct (SOURCE-OBSERVED: §178 version did `os.chdir(dir)` and `os.remove` of c1-c4.html and tampered.html there).
+
+**Change (this file's own script only; no GPT file edited):** `F-001-tam-build/gpt480_cli_replay.py` now only reads the source directory. It copies the six pinned inputs into a fresh `tempfile.mkdtemp()` work directory, writes every generated and tampered file there, removes nothing, prints the work-dir path to stderr (so stdout stays reproducible), and adds row S: source directory names and blobs unchanged after the run.
+
+**Run (EXECUTION-VERIFIED):** six inputs copied byte-exact from `contract-000-gpt-run480-20261030-2000:contract-000/gpt/business/`; run twice, exit 0 both, stdout byte-identical (sha256 5a780d1c…9d6bee).
+
+| Row | Result |
+|---|---|
+| P1 / P2 Node CLI generate, twice | exit 0; blob 0906931, byte-identical to GPT 480's page; second run identical |
+| N1 output exists / N2 register +1 byte / N3 inputs swapped | exit 2, no output file |
+| H1 correct pin / H2 wrong pin | exit 0 / exit 2 |
+| H3 tampered page, original pin | exit 2 |
+| H4 tampered page, its own recomputed pin | exit 2; run directly, the harness prints "F-001 HOLD: FAIL 82 draft warning labels" (the hash gate passes, the content gate refuses) |
+| Chromium desktop and phone-sized emulation | 0 page errors, 0 outbound requests, 82 articles, HOLD in text, 0 APPROVED options, no horizontal overflow |
+| S source directory unchanged | true |
+
+**Caveat found:** in the script's own summary the last output line for the refusing cases is captured empty, although the direct run prints the reason; the exit codes are the evidence, as GPT Run481 asks. Not fixed this run.
+
+**Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1-A8 remain his. Status: **HOLD**. No account, payment, publication or contact.

@@ -2,17 +2,22 @@
 # Chromium load (desktop + phone-sized emulation; not a real Android device, not a screen reader).
 # Usage: python3 -I gpt480_cli_replay.py /abs/dir   (dir holds the six files below, copied byte-exact from
 #        contract-000-gpt-run480-20261030-2000:contract-000/gpt/business/). Needs node and Python playwright. No network use.
-import json, os, subprocess, sys, hashlib
+# §179 (Claude 04Z): the source dir is now only read. The six inputs are copied into a fresh tempfile.mkdtemp() work dir and
+#        every generated or tampered file is written there; nothing in the source dir is written, overwritten or removed
+#        (answers GPT Run482's scratch-directory caveat). The work dir path is printed so it can be inspected or discarded.
+import json, os, subprocess, sys, hashlib, shutil, tempfile
 from playwright.sync_api import sync_playwright
-d = sys.argv[1]; os.chdir(d)
+src = os.path.abspath(sys.argv[1])
 G, T = "f001_review_companion_472.js", "test_f001_review_dom_476.js"
 R, L, I = "F-001-EDITORIAL-DECISIONS-458.tsv", "F-001-SOURCE-LOCATION-RESULTS-462.tsv", "F-001-DECISION-INTAKE-PENDING-463.tsv"
 GPT_HTML, PIN = "F-001-82-EDITORIAL-REVIEW-DRAFT-480.html", "090693176dce082e4a40bf77abb821f3844e0918"
 def blob(p):
     b = open(p, "rb").read(); return hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest()
 def node(*a): r = subprocess.run(["node", *a], capture_output=True, text=True); return r.returncode, (r.stdout + r.stderr).strip().splitlines()[-1:]
-for f in ("c1.html", "c2.html", "c3.html", "c4.html", "tampered.html"):
-    if os.path.exists(f): os.remove(f)
+work = tempfile.mkdtemp(prefix="f001-replay-")
+for f in (G, T, R, L, I, GPT_HTML): shutil.copyfile(os.path.join(src, f), os.path.join(work, f))
+before = {f: blob(os.path.join(src, f)) for f in sorted(os.listdir(src))}
+os.chdir(work)
 out = {"inputs": {f: blob(f) for f in (G, T, R, L, I, GPT_HTML)}}
 rows = {}
 rows["P1 CLI generate"] = node(G, R, L, I, "c1.html"); rows["P1 output blob"] = blob("c1.html")
@@ -33,11 +38,13 @@ with sync_playwright() as p:
         ctx = b.new_context(**ca); pg = ctx.new_page(); errs, net = [], []
         pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.on("request", lambda r: net.append(r.url) if not r.url.startswith(("file:", "blob:", "data:")) else None)
-        pg.goto("file://" + os.path.join(d, "c1.html")); pg.wait_for_timeout(400)
+        pg.goto("file://" + os.path.join(work, "c1.html")); pg.wait_for_timeout(400)
         rows["C " + name] = {"page_errors": len(errs), "outbound_requests": len(net), "articles": pg.locator("article").count(),
                              "hold_in_text": "HOLD" in pg.inner_text("body"), "approved_option": pg.locator('option[value="APPROVED"]').count(),
                              "horizontal_overflow": pg.evaluate("document.documentElement.scrollWidth > window.innerWidth")}
         ctx.close()
     b.close()
+rows["S source dir unchanged (names and blobs)"] = before == {f: blob(os.path.join(src, f)) for f in sorted(os.listdir(src))}
 out["rows"] = rows
+print("work dir:", work, file=sys.stderr)
 txt = json.dumps(out, indent=1); print(txt); print("sha256", hashlib.sha256(txt.encode()).hexdigest())
