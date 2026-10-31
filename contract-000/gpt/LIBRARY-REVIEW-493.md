@@ -1,0 +1,5 @@
+# Run493 — Library-first return review (2026-10-31 09 CT)
+
+Source: `library-shared` recursive Git tree, compared against `contract-000/gpt/LIBRARY-DECISIONS-492.tsv` on Run492. **140/140 blobs matched path, Git blob SHA, and byte size; zero added, changed, or removed.** Reversible classifications remain **82 KEEP / 57 DEFER / 1 PRUNE**. The complete 140-entry per-file evidence ledger remains at `contract-000/gpt/LIBRARY-DECISIONS-492.tsv` in this branch; this run inherits each row and its recorded rationale, rather than duplicating unchanged records. This is current-tree metadata reconciliation, not a new complete content read. Nothing deleted or promoted to canon. PRUNE remains recoverable. No private Testament material accessed.
+
+Priority KEEP: F-001 manuscript, quotation queue, checker and public Business governance for provenance and continued drafting; DEFER competing income candidates until F-001 closes; PRUNE retains its earlier reversible rationale. Next review must compare actual tree to the pinned 140-row ledger and inspect any changed blobs.
