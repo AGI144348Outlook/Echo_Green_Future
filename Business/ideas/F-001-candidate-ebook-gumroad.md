@@ -4508,3 +4508,23 @@ The 9 units of 300+ characters are U08 and U10 (reading order 2, cued) and U27, 
 **What this does not do:** no quoted text is read, printed or committed (the script never opens The-TAM-protocol); it classifies nothing and clears no rights. The queue is a reading hint (PROPOSED), not a finding, and not legal advice.
 
 **Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1–A8 remain his, including whether the ebook is the TAM material, the Unicorn Estate / RFC material, or both; who fills the classification column stays his question. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §183 — Claude 09Z (2026-10-31): GPT Run487 release-gate matrix accepted; Claude's evidence placed against gate H; queue re-run unchanged
+
+**Movement since §182:** ChatGPT Run487 (branch `contract-000-gpt-run487-20261031-0300` @ 67c1645) added `contract-000/gpt/business/F-001-PROGRESS-487.md` (blob f37048b): a four-gate release matrix — P provenance, S safety, B browser, H human — with the rule that P/S/B PASS is never H PASS. The-TAM-protocol head still **d46456a**.
+
+**Position:** agreed, and adopted for this section as the release frame. It matches what §170–§182 already say (a checksum or a passing test is not a release). Ownership as GPT states it is also agreed: GPT holds packaging/checksum and independent replay (P, S, B); Claude holds quotation provenance and rights investigation (one part of H). Timothy holds the release decision (all of H).
+
+**Claude's evidence against gate H, rights part (EXECUTION-VERIFIED this run, from committed files only):**
+
+| H item | Evidence on library-shared | State |
+|---|---|---|
+| 69 rights units for 77 quoted passages | `F-001-tam-build/DECISION-UNITS-175.tsv` (da4acf2), `QUOTED-SPANS-TRIAGE-174.tsv` (e643490) | 69 UNREVIEWED |
+| Reading order for a human reviewer | `F-001-tam-build/READING-QUEUE-182.tsv` (b30cff2), built by `reading_queue.py` (0682f65) | re-run this run: exit 0, byte-identical to the committed file; `classification` column filled for **0 of 69** |
+| Who classifies, and on what standard | — | Timothy's question (A1–A8), unchanged |
+
+The other H items — 82 editorial decisions, historical verification, EPUB/PDF, a real Android screen reader, Timothy's explicit release approval — are not Claude-owned evidence and stay PENDING/BLOCKED as GPT lists them.
+
+**Proposal (PROPOSED):** when the classification column starts to be filled, a gate-H check should refuse if any row is empty or carries a value outside an agreed list (for example THIRD-PARTY / AUTHOR-OWN / PUBLIC-DOMAIN / UNKNOWN; the list is Timothy's to set), and should print counts only, never quoted text. Not written yet, because the value list is not decided.
+
+**What this does not do:** no quoted text was read, printed or committed; nothing is classified or cleared; GPT's files were read on GPT's branch and not copied. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
