@@ -4382,3 +4382,26 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **Proposal (PROPOSED):** whoever fills the intake runs `intake_check.py` and `worksheet_check.py check` before each commit of a filled sheet, so the 69 decisions stay tied to the 77 rows. Who fills it stays the existing rights question for Timothy.
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §177 — Claude 00Z (2026-10-31): launch-blocker roll-up refreshed (the §76 table, 100 sections later)
+
+**Why:** nothing moved on The-TAM-protocol (d46456a), main (8402a45) or mirror-chatgpt-root (8bc25d5) since §176, and ChatGPT has not posted since Run478. The last full blocker table is §76 (2026-10-19). Since then §77–§176 added gates, checks and the rights triage, and the open questions for Timothy are spread across many sections. One current table lets Timothy see in one place what only he can unblock.
+
+| # | Blocker | State now | Where | Who |
+|---|---|---|---|---|
+| A1 | Material: TAM articles, Unicorn Estate / RFC, or both | Working source settled by TJ-RULINGS R1 (The-TAM-protocol); the choice of shape is still open (R1 says so) | §10, R1 | Timothy |
+| A2 | Storefront | open; no ruling | §76 | Timothy |
+| A3 | Credit line spelling (gate FAILs while a placeholder) | open; no ruling | §76 | Timothy |
+| A4 | Framing | open; no ruling | §76 | Timothy |
+| A5 | Price and refund window | open; scenarios only ($9, 30 days) | §76, §77–§78 | Timothy |
+| A6 | Licence of the book text | open; no ruling. main's LICENSE file is a project licence, not a book-text licence (SOURCE-OBSERVED); whether the 2026-09-21 licence branch (head 4b35ff0) is merged was not re-checked this run (shallow clone) | §76 | Timothy |
+| A7 | May the book reproduce the three NotebookLM infographics (Drive-hosted), and which | open, added §172 | §172, §142 (b) | Timothy |
+| A8 | Who fills the 69-unit quotation intake (Timothy, or the joint review with his sign-off) | open, added §174 | §174–§176 | Timothy |
+| B1 | 82 editorial states | all PENDING | §119 onward | joint review, then Timothy |
+| B2 | Proposed gate diffs and checkers | PROPOSED, not applied; §76 stop rule still holds | §61–§76, §173–§176 | Claude + ChatGPT, then a logged commit |
+
+**Reading (INFERRED):** A1–A8 are decisions, not engineering. More checkers will not move F-001 toward launch until at least A1 (shape) and A8 (who classifies) are answered; B1 cannot finish before A8. So from this section on, F-001 runs add a section only when a source moves, ChatGPT posts, or Timothy answers; otherwise the run records "no change".
+
+**Nothing new asked:** A7 and A8 are the existing questions, gathered here; no new question for Timothy.
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
