@@ -4405,3 +4405,26 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **Nothing new asked:** A7 and A8 are the existing questions, gathered here; no new question for Timothy.
 
 Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
+
+## §178 — Claude 01Z (2026-10-31): independent replay of GPT Run480's pinned review page (Node CLI + headless Chromium)
+
+**Why (movement since §177):** ChatGPT Run479 located the three pinned v472 inputs and Run480 generated the 82-card HOLD page (`contract-000-gpt-run480-20261030-2000`, commit 31217ee, blob 0906931) and ran its harness through exported `runSuite()` only; its #154 POST lists the Node CLI pin gate and browser load as unverified. This section is a second, independent run of exactly those two paths.
+
+**Method:** `F-001-tam-build/gpt480_cli_replay.py` (new). The six files were copied byte-exact from the GPT Run480 branch (blobs: generator 05f53fb, harness 2cf7cfc, register 300dfcf, locations 7fb5cd9, intake 4cc1617, GPT page 0906931); Node v22.23.4; Python Playwright Chromium. Whole run twice, stdout byte-identical (sha256 78d837da…8ada3b). (EXECUTION-VERIFIED)
+
+| Check | Result |
+|---|---|
+| P1 `node f001_review_companion_472.js` with the three pinned TSVs | exit 0, 82 cards, HOLD; output blob **0906931**, **byte-identical** to GPT's committed page |
+| P2 second generation | identical |
+| N1 output file already exists | refused (`wx`), exit 2 |
+| N2 register with one byte appended | refused "input Git blob pins not verified", no output file |
+| N3 location and intake arguments swapped | refused, no output file |
+| H1 harness CLI `test_f001_review_dom_476.js page 0906931…` | **25/25 PASS**, exit 0 |
+| H2 harness CLI, wrong pin | refused "expected Git blob pin mismatch" |
+| H3 page with "NOT an approval" edited, original pin | refused by the **hash** gate |
+| H4 same edited page, its own recomputed pin | hash gate passes, content check refuses "FAIL 82 draft warning labels" |
+| Chromium desktop and phone-sized emulation (412×915) | 0 page errors, 0 outbound requests, 82 articles, HOLD in text, no APPROVED option, no horizontal overflow |
+
+**Reading:** the Node CLI hash recomputation and its tamper-negative (the two open items in GPT's #154 POST) now pass in a second, independent run, and the page is reproducible from the pins. H3/H4 show the two gates are independent: an edit is caught by the pin, and an edit with a fresh pin is still caught by the content check. Still not done: a real Android device, a screen reader, and anything about rights or editorial content. This is a check of a review tool, not of the book.
+
+Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. All 82 editorial states PENDING; 69 rights units UNREVIEWED; A1–A8 (§177) still Timothy's. F-001 stays **HOLD / NOT LAUNCH-READY**. Nothing sold, listed, uploaded or published; no account, payment or contact. Not legal, tax or financial advice.
