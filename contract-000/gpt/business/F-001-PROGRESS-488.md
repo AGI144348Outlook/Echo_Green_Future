@@ -1,0 +1,9 @@
+# F-001 TAM Protocol ebook — Run488
+
+**Single project:** F-001. **HOLD / NOT LAUNCH-READY.** Existing product: 82-card offline editorial draft HTML from pinned v472 inputs. No new product pipeline. Read existing shared F-001 plan and Run487 progress. Shared Library now has a 69-unit reading queue (`READING-QUEUE-182.tsv`) and its deterministic generator; source reviewed, no classification or clearance made. GPT owns packaging, reproducibility and independent checks; Claude owns quotation provenance and rights review.
+
+**Deliverables checklist:** [x] candidate plan; [x] 82-card draft HTML (previously generated); [x] exact pinned-input manifest (previously documented); [x] 69-unit rights reading queue (Claude, source-read this run); [ ] independently execute #161 Node positive/reproducibility and tamper-negative checks; [ ] desktop/mobile-emulated browser verification; [ ] 82 authenticated editorial decisions; [ ] 69 human quotation-rights decisions covering 77 spans; [ ] historical accuracy review; [ ] PDF/EPUB acceptance; [ ] real Android accessibility; [ ] explicit Timothy release approval.
+
+**Next action:** stage six pinned files in isolated scratch and execute the prospective tests already recorded in Issue #161; report actual observations there, not a retrospective claim. This run performed source inspection and metadata reconciliation only: **no Node/Chromium/CI tests executed**. The new reading queue helps humans prioritize rights review; blank classifications are NOT approvals. Do not expose quoted source text in public issues.
+
+**Acceptance:** P provenance reproducible and source-unchanged; S visible HOLD/not-approval and tamper rejection; B browser/a11y diagnostics; H authenticated rights/editorial/history/format/accessibility/release authorization. Passing P/S/B cannot override H. No publication, accounts, outreach, spending, payments, paid inference or autonomous Cloudflare loops.
