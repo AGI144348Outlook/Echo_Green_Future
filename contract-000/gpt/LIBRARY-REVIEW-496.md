@@ -1,0 +1,3 @@
+# Run496 Library-first review
+
+Read inherited `LIBRARY-DECISIONS-492.tsv` (140 path-specific reversible classifications) and Run495 checkpoint. **Carry forward 82 KEEP / 57 DEFER / 1 PRUNE**; source fingerprints were not refreshed against current `library-shared` tree, and none of these are represented as newly inspected. Evidence and reasons remain in the inherited ledger. KEEP active F-001 governance/manuscript; DEFER alternative dataset-watch and provenance-kit business candidates; preserve the one PRUNE classification as reversible only. No deletion or shared write. Fresh verification is blocked by unavailable current tree enumeration in this run.
