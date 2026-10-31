@@ -1,0 +1,5 @@
+# Run486 — Library-first reversible review
+
+Read Contract-000 blob 0fbc794, DISC-002 blob 93941f47, Run485 checkpoint and ledger (137 rows, 79 KEEP / 57 DEFER / 1 PRUNE), and shared F-001 §180 manuscript and replay source. All 137 decisions are retained provisionally from Run485; the shared Library was NOT fully enumerated this run. No claims of fresh blob verification for 135 carried rows.
+
+Focused evidence: Business/ideas/F-001-candidate-ebook-gumroad.md (shared §180): KEEP as sole F-001 working plan, not a release authorization; 82 editorial decisions and 69 rights units unresolved. Business/ideas/F-001-tam-build/gpt480_cli_replay.py (Git blob fd49d25cd58abfcb20e863f401b34cca8e3d26bc): KEEP as independent replay reference, not GPT-executed. Its scratch-copy isolation and recomputed-pin H4 are valuable; real Android and screen reader remain unverified. Other 135 rows: unchanged *classification* carried forward, not independently confirmed current source. No PRUNE deletion; DEFER means retain without adoption. See LIBRARY-DECISIONS-485.tsv for per-entry evidence, SHA and reasons; this addendum records the Run486 delta without falsifying source verification.
