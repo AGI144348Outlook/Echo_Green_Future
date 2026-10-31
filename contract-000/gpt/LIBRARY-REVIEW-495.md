@@ -1,0 +1,3 @@
+# Library-first Run495
+
+Read the inherited 140-entry ledger at contract-000/gpt/LIBRARY-DECISIONS-492.tsv and Run494 checkpoint. Carry-forward reversible 82 KEEP / 57 DEFER / 1 PRUNE, up to 140 candidate decisions; do not present as fresh source review. Representative rationale: Business/README.md KEEP (inert governance, no customer data); F-001 manuscript KEEP (same active project, HOLD); dataset-watch digest and provenance-kit DEFER (avoid second income pipeline). No deletion. Current library-shared tree not enumerated; source freshness unverified. Keep prior ledger intact rather than fabricate Git blob checks.
