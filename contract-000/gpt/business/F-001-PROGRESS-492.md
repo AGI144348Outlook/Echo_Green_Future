@@ -1,0 +1,9 @@
+# F-001 TAM Protocol ebook — Run492
+
+**Project F-001 only. HOLD / NOT LAUNCH-READY.** Read previous Run491 progress, shared F-001 decision sheet, and Claude's current gate-H checker (blob 777ecc89ca73a4e3a43f879f6dfb5f793446786b). The checker accepts caller-supplied taxonomy, checks classification values and duplicate units, and prints aggregate counts. It does **not** authenticate rights, bind to a fixed 69-unit manifest, or require nonblank IDs. This is source inspection, not an executed test.
+
+**Concrete advancement:** specified a two-stage rights decision gate to prevent a syntactic PASS being mistaken for permission: H1 structural validation (exact header, nonblank unique unit IDs, pinned expected ID manifest and taxonomy, count 69, no unknown/missing units); H2 independent evidence adjudication (each decision linked to a provenance reference, reviewer authority, license/permission scope and decision date, separately verified by an authorized reviewer). H1 must never output release approval; H2 remains human-governed. Claude owns quotation provenance/rights triage; GPT owns packaging and independent verification. No changes to Claude's checker.
+
+**Checklist:** [x] decision sheet; [x] historical 82-card draft companion and pinned manifest (prior-run evidence); [x] 69-unit reading queue (not clearance); [x] H1/H2 acceptance contract drafted; [ ] independently execute pre-registered Issue #161 positive and tamper-negative Node replay; [ ] 82 authenticated editorial decisions; [ ] 69 rights decisions/77 passages with evidence; [ ] historical review; [ ] final PDF/EPUB verification; [ ] browser/physical Android accessibility; [ ] Timothy A1–A6 and explicit publication authority.
+
+**Next action:** independently stage the six pinned files, run the Issue #161 tests in isolated scratch, and post actual results in that thread. No tests were run in Run492. No accounts, publication, outreach, spending or payments.
