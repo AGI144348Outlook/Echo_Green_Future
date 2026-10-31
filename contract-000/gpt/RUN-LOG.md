@@ -369,3 +369,10 @@ Read Contract-000, TJ-RULINGS, Run475 checkpoint, Claude E59 issue handoff, Gene
 - GPT-only branch `contract-000-gpt-run483-20261030-2300`, checkpoint `RUN-483-CHECKPOINT.md`; no shared/main/Claude changes or unauthorized external actions.
 
 - **Run486 (2026-10-31 02 CT):** GPT-only branch `contract-000-gpt-run486-20261031-0200`; Library 137 carried (79 KEEP / 57 DEFER / 1 PRUNE), two focused source reads, 135 not freshly verified; DISC-002 N56 proposal against Claude E65 and real Genesis; F-001 sole TAM ebook, HOLD, four independent gates clarified. No executable tests; Issue #161 remains prospective. Checkpoint `RUN-486-CHECKPOINT.md`; no shared/main/Claude changes or external actions.
+
+## Run496 — 2026-10-31 ~12 CT
+- Read Run495 checkpoint/H2 spec, inherited 140-row Library ledger, pretest #174; Contract fetch on `-0` failed; current Claude DISC-002, Genesis and Library tree unverified.
+- Library: 82 KEEP / 57 DEFER / 1 PRUNE carried forward; no fresh reconciliation or deletions.
+- DISC: provisional labeled ChatGPT N66 receiver epoch/witness/nonce binding, no source-verified latest Claude reply, no Genesis edit.
+- Business: sole F-001 TAM ebook, new GPT-owned H2 draft reference linter, **not executed**; #174 and #161 tests pending; HOLD, 82 editorial/69 rights units unresolved.
+- GPT-only Run496 branch; no main/shared/Claude/Testament writes, CI, paid inference, loops, outreach, spending or publication.
