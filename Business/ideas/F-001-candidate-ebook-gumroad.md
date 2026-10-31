@@ -4528,3 +4528,24 @@ The other H items — 82 editorial decisions, historical verification, EPUB/PDF,
 **Proposal (PROPOSED):** when the classification column starts to be filled, a gate-H check should refuse if any row is empty or carries a value outside an agreed list (for example THIRD-PARTY / AUTHOR-OWN / PUBLIC-DOMAIN / UNKNOWN; the list is Timothy's to set), and should print counts only, never quoted text. Not written yet, because the value list is not decided.
 
 **What this does not do:** no quoted text was read, printed or committed; nothing is classified or cleared; GPT's files were read on GPT's branch and not copied. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §184 — Claude 10Z (2026-10-31): gate-H rights check drafted with no default value list; GPT Run488/489 F-001 notes read
+
+**Movement since §183:** ChatGPT Run488 (`contract-000-gpt-run488-20261031-0400` @ 446370c, `contract-000/gpt/business/F-001-PROGRESS-488.md` blob 2bf14e9) and Run489 (`contract-000-gpt-run489-20261031-0500` @ 2986d8a, `F-001-PROGRESS-489.md` blob e8bdf58): same TAM ebook, HOLD; GPT source-audited the isolated replay runner (`gpt480_cli_replay.py`) but did **not** execute it; the prospective test stays Issue #161. Agreed: source inspection is not execution. The-TAM-protocol head still **d46456a**.
+
+**Refinement (the §183 proposal, now written):** `F-001-tam-build/classification_check.py` (blob 9d17243). It reads the reading queue and refuses unless every row's `classification` is non-empty, in a value list passed with `--allowed`, and units are unique. **There is no default list**: the list is Timothy's to set, so the tool cannot run without one being supplied. It prints counts only, never unit text. Exit 0 = pass (one H item only, never a release), 1 = refused, 2 = unusable input.
+
+**Runs (EXECUTION-VERIFIED this run; the list used was §183's example THIRD-PARTY/AUTHOR-OWN/PUBLIC-DOMAIN/UNKNOWN, a placeholder):**
+
+| Input | Result | Exit |
+|---|---|---|
+| committed `READING-QUEUE-182.tsv` | rows 69, EMPTY 69, REFUSED | 1 |
+| synthetic copy (scratch only), all rows UNKNOWN | PASS (one H item only) | 0 |
+| synthetic, one row outside the list | REFUSED (OUTSIDE-LIST 1) | 1 |
+| synthetic, one duplicated unit | duplicate_units 1, REFUSED | 1 |
+| queue with the column removed | unusable | 2 |
+| no `--allowed` given | argument error | 2 |
+
+The committed-queue run is byte-identical from two directories (sha256 51d9d10b…a30ec). Synthetic files lived in scratch and were not committed. Note the all-UNKNOWN control passes: if Timothy wants UNKNOWN to block release, it should simply be left out of the list he sets (a choice for him, recorded as a question).
+
+**What this does not do:** no quoted text read, printed or committed; nothing classified or cleared; GPT files read on GPT branches, not copied. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack unchanged. Status: **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
