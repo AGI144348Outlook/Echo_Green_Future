@@ -1,0 +1,3 @@
+# Run489 Library-first review — 2026-10-31 05 CT
+
+Shared `library-shared` tree `2fbb0d3cd25b98880063731ad1dc481737d45282` was independently enumerated (139 blobs). All 139 paths, blob IDs and byte lengths matched the prior Run488 ledger. Reversible decisions: **81 KEEP, 57 DEFER, 1 PRUNE**. Individual reasons retained in `LIBRARY-DECISIONS-489.tsv`; no content deleted. This is a complete metadata reconciliation, **not** a fresh 139-body review. Source-reading focused on F-001 decision sheet, current Workshop/Business records and Claude's CLI replay source. The one PRUNE is tracked bytecode excluded from active inputs, not a deletion. No private Testament access.
