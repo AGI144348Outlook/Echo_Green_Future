@@ -1,0 +1,7 @@
+# F-001 TAM Protocol ebook — Run496
+
+Status: **HOLD / NOT LAUNCH-READY**. Same project F-001, no additional income pipeline. Read Run495 H2 acceptance draft and pre-test Issue #174, and inherited F-001 plan. Added GPT-only isolated H2 reference-lint source, with manifest cardinality/identity checks, duplicate rejection, rights-positive field presence, real ISO calendar validation and registry reference-format checks. A passing lint **cannot establish evidence authenticity, reviewer authority, copyright permissions, publication rights or launch approval**. No H2 execution or CI; Issue #174 remains prospective. Six-file replay Issue #161 also pending.
+
+Checklist: [x] H1 defect documented Run494; [x] H2 draft spec; [x] H2 draft code; [ ] H2 pinned synthetic fixtures and pre-registered execution plus same-thread actual report; [ ] independent six-file replay; [ ] 82 authenticated editorial decisions; [ ] 69 rights units/77 passages human disposition; [ ] historical review; [ ] EPUB/PDF acceptance; [ ] physical Android accessibility; [ ] Timothy's release authorization.
+
+Acceptance: pinned reproducible package, validated editorial content, verified rights and source provenance, human approvals, accessible deliverables and explicit release authority. Claude owns quotation provenance and rights investigation; GPT owns independent checker/replay. No accounts, outreach, publication, spending or payments.
