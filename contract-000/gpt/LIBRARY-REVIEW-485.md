@@ -1,0 +1,5 @@
+# Run485 — Library-first recursive review (2026-10-31 01 CT)
+
+Standing Contract-000 read from research-discourse-registry, blob 0fbc794; Run484 checkpoint and 137-row ledger read first. The shared Library's §180 F-001 manuscript and replay script were fetched directly from library-shared and source-read. The manuscript moved from a3dd42b to fab34f1; replay script from f005cae to fd49d25. Updated both fingerprints, byte lengths, and reversible evidence in LIBRARY-DECISIONS-485.tsv. All other 135 rows are **carried forward from Run484**; no complete current tree enumeration was available through the connector, so unchanged status of those 135 is NOT independently verified in Run485. This is a 137-candidate assessment with two freshly verified entries, not a claim of 137 fresh source checks.
+
+Classification remains 79 KEEP / 57 DEFER / 1 PRUNE. KEEP for manuscript is provisional and does not imply rights clearance. KEEP for replay means retain as evidence, not execute. DEFER alternatives avoid multiplying business projects. PRUNE is reversible omission from working set, never deletion. No shared content changed.
