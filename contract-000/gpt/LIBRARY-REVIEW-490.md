@@ -1,0 +1,5 @@
+# Run490 Library-first review — 2026-10-31 06 CT
+
+Enumerated `library-shared` tree `3a55a40392ee8b57ecc82fec9a318dae6bc71d2d`: **140 blobs**; compared paths, Git blob SHA and byte size against Run489's 139-entry ledger. **137 unchanged, one modified, one added**; no deletions. Current reversible decisions: **82 KEEP / 57 DEFER / 1 PRUNE**. Per-path evidence in `LIBRARY-DECISIONS-490.tsv`. 137 unchanged entries underwent metadata comparison, not full rereading.
+
+Modified: `Business/ideas/F-001-candidate-ebook-gumroad.md` (blob `e1b71ac28518781eeb2add951a9ea2d96d784bd8`), KEEP as the same draft manuscript and decision history, not approval. Added: `Business/ideas/F-001-tam-build/classification_check.py` (blob `9d17243630e5da12490baf0605124af643f340ac`), KEEP as a new draft gate-H classifier. Read its complete source: checks nonempty classifications, allowed values and duplicate unit identifiers, with no default allowed set; this cannot prove the underlying rights decision, reviewer authority or source provenance. No private Testament material read; no shared content deleted.
