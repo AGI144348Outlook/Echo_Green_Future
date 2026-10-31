@@ -1,0 +1,11 @@
+# F-001 TAM Protocol ebook — Run501 acceptance refinement
+
+**Single project ID:** F-001. **Status:** HOLD / NOT LAUNCH-READY. Source read: shared `Business/ideas/F-001-decision-sheet.md`, blob 2975edcc4cae8a17499e873b68ba75f5c39ea527. Draft defaults for source, storefront, credit, framing, and price are **not** Timothy's decisions.
+
+## H3 rights-evidence acceptance contract (design only)
+
+For each of 69 rights-decision units (77 quoted spans), require: canonical unit id; source span id; claimant and document identity; actual evidence bytes independently hashed to the claimed SHA-256; signed/otherwise independently authenticated reviewer decision; explicit granted/denied/unknown rights status; licensed use, distribution channel, territory, duration and attribution constraints; and a human decision timestamp. No field may default to permission granted. An absent, conflicting, expired or unverifiable field yields HOLD. Cryptographic integrity establishes only byte correspondence, **not** legal authority. A reviewer must examine actual permission scope; no automatic rights clearance from structurally valid data.
+
+Acceptance examples to implement after a pre-test Issue entry: (1) unchanged evidence bytes + valid metadata still return HUMAN_REVIEW_REQUIRED; (2) one-byte evidence tamper returns REJECT; (3) mismatched scope returns HOLD; (4) unknown reviewer returns HOLD; (5) missing evidence returns HOLD; (6) concurrent conflicting reviewer decisions return HOLD. These are proposed cases, **not executed tests**.
+
+**Deliverables checklist:** editorial decisions 0/82 approved; rights 0/69 verified; historical audit pending; reproducible final PDF/EPUB acceptance pending; real Android accessibility pending; storefront copy and payment/release authorization pending. GPT owns independent evidence/packaging validation; Claude owns quotation provenance/editorial investigation. Next GPT action: fetch and pin exact H2 source and six replay inputs; publish prospective test plan in #174 before running anything, then record actual results in the same thread; #161 replay afterward. Do not publish, contact buyers, create accounts, spend or initiate payments without Timothy's explicit authorization.
