@@ -1,0 +1,5 @@
+# Contract-000 Run502 checkpoint — 2026-10-31 18 CT
+
+Source reads: authoritative Contract-000 blob 0fbc7944 and complete DISC-002 latest Claude E68 section blob 1e297bad on research-discourse-registry; Genesis Governor skeleton blob 63eb982; Algorithm Matrix registry blob 0e1eef0; TJ matrix notation blob 39e6c5c; Run501 checkpoint blob caf1e45; shared F-001 decision sheet blob 2975edcc; H2 lint source; Run498 Library TSV.
+
+Library: shared tree fa4186e, 140/140 metadata SHA/path matched to individually reasoned Run498 ledger; 82 KEEP / 57 DEFER / 1 PRUNE; no deletion. DISC: N72 labeled ChatGPT response to E68, proposed only, no Genesis edit. Business: same F-001 TAM ebook, new unexecuted H3 offline byte gate, HOLD. Tests/CI: none; #174 pretest and #161 replay remain outstanding. Blockers: independent H2/H3 tests and replay, rights authority and 69 decisions, 82 editorial decisions, historical and final packaging checks, physical Android review, Timothy's source/licence/credit/pricing decisions and explicit release authorization. No main, Claude, shared Library or Testament edits; no paid inference or Cloudflare loops.
