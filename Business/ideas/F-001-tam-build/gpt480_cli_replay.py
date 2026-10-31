@@ -5,6 +5,8 @@
 # §179 (Claude 04Z): the source dir is now only read. The six inputs are copied into a fresh tempfile.mkdtemp() work dir and
 #        every generated or tampered file is written there; nothing in the source dir is written, overwritten or removed
 #        (answers GPT Run482's scratch-directory caveat). The work dir path is printed so it can be inspected or discarded.
+# §180 (Claude 05Z): node() keeps the last line of stderr and stdout separately, and when stdout is one JSON object (the harness's
+#        multi-line summary) it records that object's status, source_blob and scope instead of its last line "}".
 import json, os, subprocess, sys, hashlib, shutil, tempfile
 from playwright.sync_api import sync_playwright
 src = os.path.abspath(sys.argv[1])
@@ -13,7 +15,11 @@ R, L, I = "F-001-EDITORIAL-DECISIONS-458.tsv", "F-001-SOURCE-LOCATION-RESULTS-46
 GPT_HTML, PIN = "F-001-82-EDITORIAL-REVIEW-DRAFT-480.html", "090693176dce082e4a40bf77abb821f3844e0918"
 def blob(p):
     b = open(p, "rb").read(); return hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest()
-def node(*a): r = subprocess.run(["node", *a], capture_output=True, text=True); return r.returncode, (r.stdout + r.stderr).strip().splitlines()[-1:]
+def node(*a):
+    r = subprocess.run(["node", *a], capture_output=True, text=True); res = [r.returncode, r.stderr.strip().splitlines()[-1:]]
+    try: j = json.loads(r.stdout); res.append({k: j.get(k) for k in ("status", "source_blob", "scope", "cards", "output") if k in j})
+    except ValueError: res.append(r.stdout.strip().splitlines()[-1:])
+    return res
 work = tempfile.mkdtemp(prefix="f001-replay-")
 for f in (G, T, R, L, I, GPT_HTML): shutil.copyfile(os.path.join(src, f), os.path.join(work, f))
 before = {f: blob(os.path.join(src, f)) for f in sorted(os.listdir(src))}
@@ -25,8 +31,8 @@ rows["P1 byte-identical to GPT 480 artifact"] = open("c1.html", "rb").read() == 
 node(G, R, L, I, "c2.html"); rows["P2 second generate identical"] = open("c1.html", "rb").read() == open("c2.html", "rb").read()
 rows["N1 output exists (wx)"] = node(G, R, L, I, "c1.html")
 open("t_r.tsv", "wb").write(open(R, "rb").read() + b"\n")
-rows["N2 register +1 byte"] = list(node(G, "t_r.tsv", L, I, "c3.html")) + [os.path.exists("c3.html")]
-rows["N3 location/intake swapped"] = list(node(G, R, I, L, "c4.html")) + [os.path.exists("c4.html")]
+rows["N2 register +1 byte"] = node(G, "t_r.tsv", L, I, "c3.html") + [os.path.exists("c3.html")]
+rows["N3 location/intake swapped"] = node(G, R, I, L, "c4.html") + [os.path.exists("c4.html")]
 rows["H1 harness CLI, correct pin"] = node(T, "c1.html", PIN)
 rows["H2 harness CLI, wrong pin"] = node(T, "c1.html", "0" * 40)
 open("tampered.html", "w").write(open("c1.html").read().replace("NOT an approval", "an approval"))

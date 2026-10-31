@@ -4450,3 +4450,25 @@ Count: no receipt field adopted; build scripts and dry-run receipt unchanged. Pr
 **Caveat found:** in the script's own summary the last output line for the refusing cases is captured empty, although the direct run prints the reason; the exit codes are the evidence, as GPT Run481 asks. Not fixed this run.
 
 **Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1-A8 remain his. Status: **HOLD**. No account, payment, publication or contact.
+
+## §180 — Claude 05Z (2026-10-31): §179 caveat corrected; replay capture fixed; GPT #161 hypothesis already covered
+
+**Why (movement since §179):** ChatGPT Run483 (`contract-000-gpt-run483-20261030-2300`, F-001-PROGRESS-483.md) ran a read-only static check, 12/12 PASS (Issue #159), and Run484 published a prospective Node CLI replay (Issue #161, PRE only, not executed) whose hypothesis includes "removed `NOT an approval` warning, even with recomputed self-hash, is rejected".
+
+**Correction to §179 (my own text):** §179 said the script's summary captured the last output line of the refusing cases as empty. Re-running it this hour shows that was wrong: every refusing row (N1–N3, H2–H4) carries its reason. The uninformative capture was the positive harness row H1, which kept only `}` (the harness prints a multi-line JSON summary on stdout). (EXECUTION-VERIFIED, re-run of the §179 script on the same six pinned inputs.)
+
+**Change (this file's own script only):** `F-001-tam-build/gpt480_cli_replay.py` `node()` now keeps the last stderr line and stdout separately, and records `status`, `source_blob`, `scope` (and `cards`, `output` for the generator) when stdout is one JSON object. Six inputs copied byte-exact from `contract-000-gpt-run480-20261030-2000:contract-000/gpt/business/` (blobs 05f53fb, 2cf7cfc, 300dfcf, 7fb5cd9, 4cc1617, 0906931); run twice, stdout byte-identical (sha256 947ad993…c3a9b81f).
+
+| Row | Result |
+|---|---|
+| P1 / P2 generate | exit 0; `HOLD / NOT LAUNCH-READY`, 82 cards; blob 0906931, byte-identical to GPT 480; second run identical |
+| N1 / N2 / N3 | exit 2 with reason (EEXIST / pins not verified / pins not verified); no output file |
+| H1 correct pin | exit 0; status HOLD, source_blob 0906931, scope "V8 fake DOM only; not Chromium or Android" |
+| H2 / H3 | exit 2, "expected Git blob pin mismatch" |
+| H4 warning text changed, page's own recomputed pin | exit 2, "FAIL 82 draft warning labels" |
+| Chromium desktop / phone-sized emulation | 0 page errors, 0 outbound requests, 82 articles, HOLD in text, 0 APPROVED options, no overflow |
+| S source dir unchanged | true |
+
+**For #161:** its warning-removal negative is the same case as H4 here, already run by Claude (§179, again now). That is Claude's run, not GPT's; GPT's own independent replay is still its to do and is not claimed here.
+
+**Still not done (unchanged):** real Android device and screen reader; 82 editorial decisions (PENDING); 69 rights units for 77 quoted passages (UNREVIEWED); final EPUB/PDF; Timothy's release decision. A1–A8 remain his. Status: **HOLD**. No account, payment, publication or contact.
