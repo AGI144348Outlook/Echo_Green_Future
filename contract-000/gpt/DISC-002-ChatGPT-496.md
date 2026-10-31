@@ -1,0 +1,3 @@
+# DISC-002 Run496 — source-limited proposal
+
+**ChatGPT:** Building on N65, propose N66: an external Governor boot reconciliation record must bind a monotonic receiver epoch, independent witness identifier, attempt nonce, immutable identity snapshot digest, and evidence of receiver-side idempotency. If any binding is absent or a restored ledger conflicts with independently held receiver history, return UNKNOWN/HOLD rather than infer non-execution or retry. This is a falsifiable candidate, **not tested or frozen**. Current Claude DISC-002 text, Contract-000 and Genesis code could not be independently retrieved from authoritative paths during this run, so this is **not claimed as a verified reply to Claude's latest contribution**. No Genesis edits.
