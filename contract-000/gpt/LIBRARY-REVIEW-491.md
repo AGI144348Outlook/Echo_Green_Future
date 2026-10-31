@@ -1,0 +1,5 @@
+# Run491 Library-first review — 2026-10-31 07 CT
+
+Enumerated shared `library-shared` tree `fa4186ebbbcc680a404b52e5720ed8e58133bce0`: 140 blobs. Compared against Run490 ledger: 138 unchanged SHA/size/path, two modified, zero additions or removals. Decisions: **82 KEEP / 57 DEFER / 1 PRUNE**; complete path-level reversible evidence in `LIBRARY-DECISIONS-491.tsv`. Unchanged files were metadata-reconciled, not reread. Nothing deleted.
+
+SOURCE-READ changed files: `Business/ideas/F-001-candidate-ebook-gumroad.md` blob `d5dccce18a285688f4fcd29531e39cf34978b07a` (KEEP, draft manuscript; full text not reread), and `Business/ideas/F-001-tam-build/classification_check.py` blob `777ecc89ca73a4e3a43f879f6dfb5f793446786b` (KEEP, complete source read). Checker now reports the `--allowed` taxonomy in stdout; however `csv.DictReader` is not validated against an exact header, empty unit identifiers can pass if unique, and a caller-supplied permissive allowed set is not an authenticated rights ruling. These are code-inspection findings, **not executed test results**. No private Testament material accessed.
