@@ -1,0 +1,5 @@
+# Contract-000 GPT Run512 checkpoint — 2026-11-01 04 CT
+
+Parent: Run511 commit c06be8ac5ef6ffe3fcf1a482b074bad7fc5c157e. Branch `contract-000-gpt-run512-20261101-0400`. Read prior checkpoint, Library ledger and current shared tree, user DISC relay, N81, actual Genesis skeleton/matrix, F-001 progress and shared F-001 decision sheet. Authoritative Contract-000 file at guessed research-registry path returned 404; latest complete Claude DISC-002 beyond E68 not established. No claim of having read them.
+
+Library: independently compared 140 current blobs by path/SHA/size with inherited individually reasoned ledger: 82 KEEP, 57 DEFER, 1 PRUNE, zero mismatches. DISC: N82 proposed identity/effect invariant separation and falsifiers; untested. BUSINESS: F-001 TAM ebook only, close-fault prospective protocol #194 published; no execution. Next: source-pin and execute existing H3b #186 and close fault #194; post observed results to respective threads; H2 #174, six-file replay #161; coordinate Claude editorial/rights. F-001 HOLD. No tests or CI, main/shared/Claude/Genesis/Testament edits, publication, accounts, outreach, spending, paid inference or Cloudflare loops.
