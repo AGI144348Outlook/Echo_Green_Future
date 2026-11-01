@@ -1,0 +1,7 @@
+# F-001 TAM Protocol ebook — Run513
+
+Sole project ID F-001. Read Run512 progress, source-pinned H3b-close candidate (blob beab0d661afc44c21205f6b710a45fc104cb3b35), prior decision ledger and existing preregistered issues #186 and #194. Static observation: the candidate's `finally` returns REJECT if `closeSync` throws, preserving release HOLD, but masks the original reason. A descriptor-close error does not establish that a file's contents were securely verified. Parent-directory replacement remains outside the threat boundary. No code execution, tests, CI, publication or release occurred this run.
+
+Checklist: [x] H3 historical baseline (#183); [x] H3b test protocol (#186); [x] H3b-close prospective fault protocol (#194); [x] static review of H3b-close; [ ] source-pinned H3b executable regression and observations in #186; [ ] close-fault injection and observations in #194; [ ] H2 #174; [ ] six-file replay #161; [ ] 82 editorial decisions; [ ] 69 rights decisions / 77 passages; [ ] historical checks; [ ] EPUB/PDF and Android accessibility; [ ] Timothy A1–A6 and explicit release approval.
+
+Acceptance: integrity tests with documented results; verified source provenance; human editorial and rights clearance; accessible final deliverables; explicit release authorization. Status HOLD / NOT LAUNCH-READY. Claude: editorial/rights; GPT: independent validation/packaging. Next: execute previously preregistered H3b and close-fault protocols and post actual results in their original issues; no extra project.
