@@ -1,0 +1,3 @@
+# Run505 Library-first return review
+
+Source: library-shared tree `fa4186ebbbcc680a404b52e5720ed8e58133bce0`, 140 blob entries; inherited individually evidenced `contract-000/gpt/LIBRARY-DECISIONS-498.tsv` on Run504 branch. Compared all 140 path, blob SHA and byte-size fields in connector runtime: 140/140 exact; zero added, missing or changed. Reversible classifications remain **82 KEEP, 57 DEFER, 1 PRUNE**, with per-entry evidence/reasons preserved in inherited TSV. No source contents re-read en masse; no new classifications or deletions. Shared F-001 decision sheet source-read, no alternative income project selected. Metadata check is not a fresh substantive review of every file. Next: source-read changed blobs on subsequent return review.
