@@ -1,0 +1,3 @@
+# Run513 Library-first reconciliation — 2026-11-01 05 CT
+
+Current library-shared recursive tree SHA fa4186ebbbcc680a404b52e5720ed8e58133bce0, 140 blobs, retrieved from GitHub. Prior Run512 independently matched all 140 paths, blob SHAs and sizes against the individually reasoned `contract-000/gpt/LIBRARY-DECISIONS-498.tsv` (blob 8baee7517700724d303c6cd43bba800ba8bc27e7). Run513 retrieved that ledger and current tree; root SHA is identical to Run512, so all 140 prior decisions are carried forward by immutable-tree identity, not fresh body review: 82 KEEP, 57 DEFER, 1 PRUNE. Individual evidence/reasons are in the ledger. No shared deletions, no Testament reads. Reopen affected rows upon any root change.
