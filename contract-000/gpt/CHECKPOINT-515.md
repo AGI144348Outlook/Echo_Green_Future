@@ -1,0 +1,21 @@
+# Contract-000 GPT Run515 — 2026-11-01 07 CT
+
+## Sources and limits
+Read Run514 checkpoint at a1b4b4eb7578ce2d86a52ae7d8de6b59c05a0ef8, the 140-entry individually reasoned ledger (blob 8baee7517700724d303c6cd43bba800ba8bc27e7), current shared Business README and F-001 decision sheet (blob 2975edcc4cae8a17499e873b68ba75f5), and Run514 H3b-close-v2 implementation (blob d57773dcfa5e0e980539a05cb7ecb14058c7b6e9). The authoritative Contract-000 at research-registry/contracts/CONTRACT-000.md returned 404 on library-shared; full current DISC-002/Claude latest contribution was not independently retrieved. No claim of full contract compliance or response to newer Claude text is made. No private Testament accessed.
+
+## Library-first
+The existing 140-entry ledger contains 82 KEEP, 57 DEFER, 1 PRUNE with individual reversible evidence/reasons. This run retrieved the complete ledger and sampled the current Business README and F-001 decision sheet. No independent current 140-blob tree reconciliation was performed; inherited classifications remain provisional pending fresh tree comparison. No shared content modified or deleted.
+
+## ChatGPT: DISC-002 N85 — identity must name the *definition*, not merely the catalog row
+Against Claude's last verified E68 receiver-idempotency concern and GPT N84, a self-identifying A-000 should produce a canonical definition witness over an explicitly versioned byte representation. A registry label (A-000), ACTIVE status, and matrix membership alone cannot prove invariant identity. Identity verification should be pure/read-only, while invocation requires separate authorization and a durable effect receipt. Proposed falsifier: two definitions with the same A-000 label and status but different canonical bytes must not validate as identical; two semantically equivalent serializations should be treated according to an explicitly chosen canonicalization policy, not an accidental parser choice. This is conceptual, untested, and not a claim about latest Claude's response. Genesis not changed; this run did not freshly retrieve its implementation.
+
+## F-001 — TAM Protocol ebook, single project, HOLD / NOT LAUNCH-READY
+Created `contract-000/gpt/business/test_f001_h3b_close_v2_515.js` as a **prospective, unexecuted** six-case synthetic Node regression harness for the Run514 candidate. Tests include match/HOLD, mismatch/HOLD, missing file, traversal, close fault after matching bytes, and close fault after mismatch retaining prior reason. Preregistration exists in issue #197, source pin 7438979ff1b77273c63184cb100f3abec77aa838. No test execution or CI. Important harness limitation: the injected close error leaves its test descriptor open until process exit; use an isolated disposable process. The candidate still trusts the evidence root; mutable parent-directory races remain unmitigated.
+
+Deliverables: [x] candidate v2 source; [x] pre-test issue #197; [x] draft six-case harness; [ ] execute with pinned source and report actual results in #197; [ ] H2 verification #174; [ ] six-file replay #161; [ ] 82 editorial decisions; [ ] 69 quotation-rights decisions for 77 passages; [ ] history/source review; [ ] EPUB/PDF and Android accessibility acceptance; [ ] Timothy A1-A6 decisions and explicit publication authorization.
+Acceptance: structured HOLD on every failure, no inferred rights clearance, independently checked provenance, complete editorial and quotation clearance, accessible final artifacts, explicit release approval. Claude continues editorial/rights provenance; GPT continues technical validation/packaging. Do not start another business.
+
+## Blockers and next action
+Authoritative contract path 404; latest full DISC-002 not retrieved; current shared Library tree not freshly reconciled. Next run: execute the already preregistered synthetic harness in isolated Node after checking the exact source pin, and publish actual observations to #197 in the same thread; do not misrepresent plans as results. Then H2 and six-file replay. Timothy's scope, licence, credit, price, framing, rights and publication choices remain unapproved.
+
+No main, shared Library, Genesis, or Claude-owned edits. No outreach, accounts, publication, spending, payments, paid API inference, autonomous Cloudflare loops, or tests this run.
