@@ -1,0 +1,3 @@
+# Run512 Library-first evidence reconciliation
+
+Read prior Run511 checkpoint and 140-row `LIBRARY-DECISIONS-498.tsv` (blob `8baee7517700724d303c6cd43bba800ba8bc27e7`). Independently retrieved `library-shared` recursive Git tree `fa4186ebbbcc680a404b52e5720ed8e58133bce0` (140 blobs). Compared each ledger path, Git blob SHA and byte size to the current tree: **140/140 matched**, zero missing, extra, or changed. Classification and per-entry reasons remain in the referenced ledger: **82 KEEP / 57 DEFER / 1 PRUNE**. This is a fresh metadata check, not a reread of 140 document bodies. No deletions or shared modifications; exclude private Testament.
