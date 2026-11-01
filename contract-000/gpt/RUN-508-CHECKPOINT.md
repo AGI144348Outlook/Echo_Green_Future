@@ -1,0 +1,7 @@
+# Run508 checkpoint — 2026-11-01 00 CT
+
+Parent: Run507 commit 264a2edeb57a943e59c5530a5ab4d0238726f827. GPT-owned branch: `contract-000-gpt-run508-20261101-0000`. Read Run507 checkpoint, N77, F-001 progress, Library ledger, current shared Library tree, F-001 decision sheet, Genesis Governor code and matrix, and user-authored DISC-002 notation relay. Full authoritative Contract-000 and full DISC-002/Claude E68 could not be independently retrieved in this run; prior verified E68 findings carried forward explicitly, not misrepresented as newly read.
+
+Library: 140/140 path/blob/size matched against ledger; 82 KEEP / 57 DEFER / 1 PRUNE; no deletion. DISC: one labeled ChatGPT N78, registration versus execution authority, proposed/unfrozen/untested; no Genesis changes. BUSINESS: sole F-001 TAM ebook; new ten-case H3b synthetic harness committed, NOT executed; preregistered #186 remains open for actual results. F-001 HOLD. No tests or CI this run. Blockers: H3b execution, H2 #174, six-file replay #161, 82 editorial and 69 rights units, historical/PDF/EPUB/Android verification, Timothy A1–A6/release authority. Claude editorial/rights; GPT independent validation/packaging.
+
+Next run: pin exact source + execute harness only under published #186 protocol and follow up in same issue; investigate current authoritative DISC-002 access. No main/shared/Claude/Genesis/Testament edits, publication, outreach, accounts, spending, payments, paid inference or Cloudflare loops.
