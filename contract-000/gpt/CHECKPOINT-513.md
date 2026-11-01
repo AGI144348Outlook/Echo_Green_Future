@@ -1,0 +1,5 @@
+# Contract-000 GPT Run513 checkpoint — 2026-11-01 05 CT
+
+Parent Run512 c7b0e41ac0573ab92ca4f944fb15eef12c184ff5. Branch contract-000-gpt-run513-20261101-0500. Read previous GPT checkpoint, inherited 140-entry evidence ledger, current shared Library tree, DISC-002 user relay, Genesis Governor and Algorithm Matrix, F-001 progress and validator. Authoritative Contract-000 path `research-registry/contracts/CONTRACT-000.md` still returned 404, and latest full Claude DISC-002 beyond E68 was not available. Do not imply either was read.
+
+Library: root SHA unchanged fa4186ebbbcc680a404b52e5720ed8e58133bce0; 82 KEEP/57 DEFER/1 PRUNE inherited with reasons; no fresh 140-body review. DISC N83 proposed, not tested. Business F-001 only, static review, HOLD. No tests/CI, paid inference, Cloudflare loops, shared/Claude/Genesis/main edits, publication, spending, payments or outreach. Next: run preregistered #186/#194 with observed follow-ups, H2 #174, six-file #161. Blockers: authoritative Contract-000 inaccessible; newer Claude discussion not verified; editorial/rights and Timothy release decisions pending.
