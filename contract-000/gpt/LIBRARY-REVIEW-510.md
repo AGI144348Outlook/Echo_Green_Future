@@ -1,0 +1,3 @@
+# Run510 — Library-first source reconciliation
+
+Fetched current `library-shared` recursive tree; root SHA `fa4186ebbbcc680a404b52e5720ed8e58133bce0`, 140 blobs. Compared tree root to Run509's individually reasoned `LIBRARY-DECISIONS-498.tsv` baseline, which already records all 140 paths, blob SHA, size and reversible reasons. Root SHA is unchanged since Run509, so the full-tree identity and inherited 140/140 comparison carry forward without claiming 140 fresh content reads. **KEEP 82 / DEFER 57 / PRUNE 1**. PRUNE is classification only; no deletions. F-001 TAM remains selected; other income candidates deferred. Source tree is public; private Testament excluded.
