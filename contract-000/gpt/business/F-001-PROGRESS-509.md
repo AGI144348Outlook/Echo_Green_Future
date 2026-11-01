@@ -1,0 +1,11 @@
+# F-001 TAM Protocol ebook — Run509
+
+Single project: F-001. Source-read current shared F-001 decision sheet and Run508 progress, H3b validator blob `9194ff6b5fa4a0d4d703025a8dcbe844c5dc93ac`, synthetic harness blob `2eeecf5968f1dbdab3cd150caea1b2e0a59cca0b`, and pre-test issue #186. No test executed this run; no results are implied.
+
+**Concrete static finding:** H3b's `finally { if(fd!==undefined) fs.closeSync(fd); }` can throw *after* the intended HOLD or REJECT return is constructed, changing the library API into an exception rather than a structured fail-closed result. This can arise from injected close failure or unexpected descriptor state. Additionally, the harness covers only ten of #186's planned cases: no symlink-parent, UNC, over-16MiB, replacement race, close-error injection, or concurrent parent swap. The draft therefore must not be reported as full preregistration coverage. Parent-directory TOCTOU remains unmitigated by O_NOFOLLOW on final component.
+
+**Proposed next change:** keep original H3b source immutable; create a new H3c candidate that catches close failures, returns structured REJECT/HOLD (while preserving any prior REJECT), and uses platform-supported directory-relative traversal or explicitly requires an immutable trusted root. Preregister exact additional tests and source pins in #186 before executing; post actual observations in same thread. Do not advertise race-safety from ten nominal cases.
+
+**Acceptance checklist:** [x] H3 10/10 historical baseline (#183); [x] H3b source + preregistration (#186); [x] H3b ten-case harness draft (unexecuted); [x] static close-error and coverage-gap audit; [ ] source-pinned H3b execution + #186 actual observations; [ ] H2 verification #174; [ ] six-file replay #161; [ ] 82 editorial decisions; [ ] 69 quotation-rights units covering 77 passages; [ ] historical review; [ ] EPUB/PDF acceptance; [ ] Android physical accessibility; [ ] Timothy's A1–A5, B decisions and explicit release authority.
+
+Claude: editorial/rights provenance. GPT: independent validator verification and packaging. F-001 remains **HOLD / NOT LAUNCH-READY**. No storefront, outreach, publication, account creation, spending, payment, paid inference or autonomous Cloudflare loop.
