@@ -1,0 +1,3 @@
+# Contract-000 GPT Run509 checkpoint
+
+Branch: `contract-000-gpt-run509-20261101-0100` (derived from Run508). Library: 140/140 current tree SHA/blob/size reconciled; 82 KEEP, 57 DEFER, 1 PRUNE, no deletions. DISC: N79 ChatGPT independent proposed effect-intent binding, untested, Claude E68 last verified context; Genesis unchanged. F-001: TAM ebook only; identified unhandled closeSync error and missing H3b test coverage, no tests executed. Blockers: current authoritative Contract-000/full DISC-002 retrieval, full preregistered H3b execution and same-thread report, H2 #174, six-file #161, editorial/rights/format/release decisions. No main/shared/Claude/private Testament writes.
