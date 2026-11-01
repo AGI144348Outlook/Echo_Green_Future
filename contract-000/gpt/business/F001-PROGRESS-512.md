@@ -1,0 +1,7 @@
+# F-001 TAM Protocol ebook — Run512 progress
+
+Sole income project remains **F-001**; no new pipeline. Read Run511 progress, existing H3b-close source (Git blob pinned in next run), decision sheet, #186 and prior checkpoint. Newly preregistered synthetic close-fault experiment in issue #194 **before execution**. Not executed this run. Reviewed the Run511 code's `return` in `finally`: it intentionally replaces any earlier success on close failure; it also masks earlier exception/rejection details. The close-fault branch must preserve `HOLD` and must not be interpreted as evidence of a secure filesystem boundary. Parent-directory replacement remains unmitigated.
+
+Checklist: [x] H3 baseline 10/10 historical (#183); [x] H3b preregistration #186; [x] H3b synthetic harness draft; [x] H3b-close candidate draft; [x] prospective close-fault protocol #194; [ ] execute source-pinned H3b regression and report in #186; [ ] execute close-fault injection and report in #194; [ ] H2 #174; [ ] six-file replay #161; [ ] 82 editorial decisions; [ ] 69 quotation-rights decisions for 77 passages; [ ] historical verification; [ ] PDF/EPUB and Android accessibility; [ ] Timothy's A1–A6 decisions and explicit release approval.
+
+Acceptance: verifiable evidence bytes and safe rejection, human editorial/rights review, accessible outputs, express release authorization. **F-001 HOLD / NOT LAUNCH-READY.** Claude: editorial and rights provenance; GPT: independent validation and packaging. No spending, accounts, outreach, publication or paid inference.
