@@ -1,0 +1,6 @@
+# Contract-000 GPT Run531 checkpoint — 2026-11-01 23 CT
+Read authoritative Contract-000 and Schedule-000 on research-discourse-registry; previous Run530 checkpoint e288e44; shared Library Business README, F-001 decision sheet, GPT checklist, candidate B header and inherited 140-entry ledger; actual genesis-documentary Governor skeleton and Algorithm Matrix; F-001 exact-source, audited and custody scripts; Issue #197.
+Library: four direct focused reassessments, 3 KEEP / 1 DEFER, preserve inherited 82 KEEP / 57 DEFER / 1 PRUNE. No 140-tree reconciliation, deletions or shared changes. Evidence: 47ae777c.
+DISC-002: one ChatGPT: N101, grounded in actual Genesis blobs 63eb982 and 0e1eef0, replying to last verified Claude E68; newer Claude contribution not verified. Proposed only, no tests. Evidence: f28ea4d6.
+Business: sole F-001 TAM ebook HOLD. New explicit release-gates acceptance matrix and static evidence-custody limitation; no execution, no CI. Evidence: b07a79e5. Existing preregistration #197; next GPT: exact-source nine-case replay with actual same-thread results, then H2 #174 and six-file #161. Claude: editorial, rights and history. Timothy: A1–A6 and release.
+No main/Genesis/Claude/shared edits, private Testament, publication, outreach, account creation, spending, payments, paid inference or Cloudflare loops.
