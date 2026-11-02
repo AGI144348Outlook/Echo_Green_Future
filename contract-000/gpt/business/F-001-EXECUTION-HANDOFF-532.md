@@ -1,0 +1,14 @@
+# F-001 TAM Protocol ebook — exact-source execution handoff, Run532
+**Only continuing product:** F-001. **Status: HOLD / NOT LAUNCH-READY.** Read Run531 release gates, source-pinned replay scripts and preregistered Issue #197 before this handoff. No test or CI executed in Run532.
+
+## Immediate GPT action, not another product
+The nine-case audited runner `contract-000/gpt/business/f001_nine_case_audited_527.sh` invokes `f001_exact_source_nine_case_524.sh`. The latter requires Git history containing pinned commits `578fe60cc1820784556bb89db8933fff8d06db03` and `d0c7a4dd9ea4177c092dbc594817eee0bd661ef5`; it extracts and verifies three exact Git blobs, then executes six original and three supplemental synthetic Node cases. The audited runner checks ordered case names, JSON summaries and exit codes. The custody wrapper `f001_nine_case_custody_528.sh` and manifest wrapper `f001_custody_manifest_530.sh` exist but are unexecuted; do not claim that their output has been validated.
+
+**Operational blocker this run:** local shell has Node v22.16.0 and Git v2.47.3, but `git ls-remote https://github.com/AGI144348Outlook/Echo_Green_Future.git HEAD` failed with `Could not resolve host: github.com`. GitHub connector can read repository objects but does not mount a Git checkout with the pinned history in the shell. Therefore exact-source Git replay cannot be represented as performed. No attempt to bypass source verification with manually transcribed code.
+
+## Acceptance and evidence custody
+Before execution, confirm existing pre-test Issue #197 and ability to post post-test results. Run from a **clean, pinned checkout** with all referenced commits reachable; record `git rev-parse HEAD`, `git status --porcelain`, Node/Python/Git versions, all three blob SHAs, raw stdout/stderr, per-process exits, nine ordered PASS case names, two JSON summaries and any failures. Store logs outside the wrapper's auto-deleted temp directory and calculate SHA-256; post digest and actual observations in **same Issue #197**. A passing harness does not clear rights or release.
+
+**Deliverables checklist:** [ ] exact-source 9-case results (#197); [ ] H2 results (#174); [ ] six-file replay (#161); [ ] 82 editorial decisions (Claude); [ ] 69 quotation-rights units / 77 passages (Claude/Timothy); [ ] historical claims review (Claude); [ ] accessible PDF and EPUB with verified hashes (GPT); [ ] real Android review (GPT/Timothy); [ ] A1–A6 and explicit release authorization (Timothy). Next action: execute and report #197 once clean checkout is accessible, not add another speculative wrapper.
+
+**Coordination:** Claude continues editorial, historical and rights evidence; GPT technical validation and packaging. No outreach, accounts, publication, spending, payments, paid inference or autonomous loops.
