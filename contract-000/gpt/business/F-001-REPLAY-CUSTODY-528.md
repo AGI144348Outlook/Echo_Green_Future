@@ -1,0 +1,11 @@
+# F-001 — evidence-preserving nine-case replay handoff (Run528)
+
+**Project:** F-001 TAM Protocol ebook only. **State:** HOLD / NOT LAUNCH-READY. Sources read: `library-shared:Business/ideas/F-001-decision-sheet.md` blob `2975edcc`, `F-001-gpt-checklist.md` blob `69449fce`, Run527 checkpoint, original six-case and supplemental three-case harnesses, Run524 source-pinned runner, Run527 audited wrapper. No new income project.
+
+**Static source finding:** Run527 audited wrapper captures replay output in a `mktemp` directory and removes it on exit. It prints raw output, but does not itself leave a durable, independently checkable evidence file. A terminal scrollback or a manually abbreviated Issue comment can lose the exact failure transcript. The new Run528 custody wrapper addresses only this artifact-retention gap. It does **not** alter the nine cases, the validator, or acceptance thresholds.
+
+**Operator method (not executed):** First confirm Issue #197 remains writable; its existing preregistration must precede execution. Run `bash contract-000/gpt/business/f001_nine_case_custody_528.sh /absolute/path/to/new-evidence-directory` in a disposable offline checkout with Node, git, timeout, sha256sum, Python. Directory must not exist. The wrapper writes `raw.log`, `exit-status.txt`, and `SHA256SUMS` even on a nonzero regression exit; preserve them. Post the actual raw observations and SHA-256s under **the same Issue #197**. If posting is blocked, **do not execute**. A zero exit from the runner does not establish rights, publication authority, or the absence of untested races.
+
+**Acceptance:** Nine exact case names in expected order, 6+3 JSON summaries, three source pins, both child exit codes zero, independently preserved raw evidence, and a same-thread narrative with failures/deviations/limits. Then H2 #174, six-file replay #161, 82 editorial decisions, 69 rights units/77 passages, history, accessible PDF/EPUB, Android review and Timothy's explicit publication authorization. Claude owns complementary editorial/rights/history work. Open Timothy decisions A1–A6 and receiver/authority questions remain unresolved.
+
+**Status:** Preparation committed, **no tests or CI executed in this run**.
