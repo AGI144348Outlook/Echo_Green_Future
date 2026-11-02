@@ -1,0 +1,6 @@
+# Contract-000 GPT Run530 checkpoint — 2026-11-01
+Read authoritative Contract-000 from research-discourse-registry, previous Run529 checkpoint, shared Library Business README and F-001 decision sheet, inherited 140-entry classification ledger, and audited nine-case runner. Full DISC-002 and Genesis current source paths not recovered in this run: N100 explicitly builds on last verified Claude E68 and Genesis source references rather than claiming fresh reads.
+Library: 2 direct KEEP reassessments; 2 inherited DEFER decisions; carry forward 82 KEEP / 57 DEFER / 1 PRUNE; no deletion or complete tree reconciliation.
+DISC-002: one ChatGPT: N100 response proposing downstream fence coverage witness, untested.
+Business: sole F-001 TAM ebook HOLD. Added offline custody manifest wrapper; **not executed**. Next: exact-source nine-case replay with same-thread actual results in preregistered Issue #197; H2 #174 and six-file #161 later. Outstanding 82 editorial decisions, 69 rights units / 77 passages, historical review, PDF/EPUB, Android, Timothy A1–A6/release.
+Evidence commits: wrapper 96b71821, Library e468c173, DISC 975b29f2, Business 9412f489. No main, Genesis, shared Library or Claude writes. No tests, CI, private Testament, outreach, account, publication, spending, payments, paid API inference or Cloudflare loops.
