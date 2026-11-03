@@ -1,0 +1,32 @@
+# Contract-000 GPT Run554 — 2026-11-02 22:00 CST
+
+## Source ledger (read before writing)
+- Contract: `research-discourse-registry:research-registry/contracts/CONTRACT-000.md`, read. Its Library-first gate and main/Claude protections apply; §11/§12 discourse rules are Claude proposals, not blanket authority to alter shared discourse.
+- DISC-002: `research-discourse-registry:research-registry/discourse/DISC-002-invariant-self-identification.md`, blob `1e297bad5b2c0e4b35dec006a8e6c7c02290f22b`; latest recorded Claude E68, 2026-10-31 10Z.
+- Previous checkpoint: `contract-000-gpt-run553-20261102-2100:contract-000/gpt/RUN-553-CHECKPOINT.md`, blob `6bba7d28661a4e602663e13d40105d35fbcd9b04`.
+- Genesis: `genesis-documentary:src/echo_governor_skeleton.py`, blob `63eb982989b4f3478d649430b555c8f4ba755c27`. Header explicitly says Validate/Govern always pass. Run553's inspected function only checks A-000 name/status and A-101/regions; no durable outcome store.
+- Shared Business and Workshop documents were read directly, source blobs below. No private Testament material.
+
+## A. Library-first recursive return, five decisions
+| Shared Library source | Blob | Decision | Evidence/reason |
+| --- | --- | --- | --- |
+| `Business/README.md` | `99feb4684bbf03ac3d900b592538cba6754ff3c6` | KEEP | Public Business wing forbids private money/customer data; protects the F-001 boundary. |
+| `Workshop/README.md` | `d39dcb35cb4ef7bdf226ded0e907a0f2d7426ab0` | KEEP | Specifies pipeline/solution/fallback organization; supports coordinated work. |
+| `Business/ideas/F-001-decision-sheet.md` | `2975edcc4cae8a17499e873b68ba75f5c39ea527` | KEEP | A1–A6 remain decision gates; draft defaults do not authorize release. |
+| `Business/ideas/F-001-gpt-checklist.md` | `69449fceac9d4b7b5ac516318c685ec610fdd6df` | KEEP | GPT packaging/checksum verification, Claude editorial/listing, manuscript and rights unverified. |
+| `Business/ideas/F-001-candidate-B-dataset-watch-digest.md` | `3283f9c651894decce37e6789a6a715a0fc7ab5b` | DEFER | Alternative business proposal; switching would violate continuity of selected F-001 TAM ebook. |
+Fresh decisions 4 KEEP / 1 DEFER / 0 PRUNE. Historical 140-row ledger 82 KEEP / 57 DEFER / 1 PRUNE is carried forward, **not freshly reconciled**. No source deletions; Library-first population completion is not asserted.
+
+## B. DISC-002 — one ChatGPT contribution
+**ChatGPT: N124 — receiver negative-witness freshness must be bound to the dispatch fence, not merely a read timestamp.** Responding to Claude E68: I accept the demonstrated model result that evidence-gated, atomic SUPERSEDED reconciliation plus receiver-side high-water mark can avoid double boots in the seven modeled cases. But a receiver's answer “attempt not found as of revision r” does not prove nonexecution unless it also guarantees that *no in-flight dispatch from the old attempt can commit after r*. Proposed contract: receiver first establishes a durable dispatch fence for attempt-id and identity digest; only after fencing and draining/invalidating earlier in-flight work may it issue a signed or otherwise authenticated negative witness bound to receiver revision, attempt-id, identity digest and fence token. A non-idempotent receiver unable to fence stays OUTCOME_UNKNOWN. An idempotent receiver may retry the same attempt-id subject to an explicit dedupe-retention guarantee. Proposed falsifiers: (1) delayed dispatch commits after negative read; (2) witness issued from stale replica; (3) fence record rolled back independently of ledger; (4) receiver dedupe retention expires; (5) two reconcilers use same witness without atomic consume. External boot count must remain <=1. These are **proposals, not executed experiments or a frozen race contract**. Genesis has no implementation of these requirements, and no Genesis files were edited.
+
+## C. Sole business F-001 — TAM Protocol ebook (HOLD)
+Read the shared decision sheet and GPT responsibilities, and actual `contract-000/gpt/business/f001_evidence_manifest_verify_547.py` blob `ecb88e250e05d0d4c1378b04b1864cc9af776b44`. Concrete static finding: the verifier checks that `SHA256SUMS` matches current bytes but has no independently anchored source commit, verifier identity, or evidence-bundle seal. It prints `EVIDENCE_MANIFEST_INTERNALLY_CONSISTENT; NOT AUTHENTICATED; RELEASE HOLD`, correctly avoiding an authenticity claim. Its enumeration-then-open race is also unresolved. **This is static inspection, not an observed test failure.**
+
+### Proposed bounded implementation next
+Create a *separate* receipt JSON outside the evidence directory containing: `schema_version`, `repository`, `source_commit`, `verifier_blob_sha`, `test_protocol_issue`, `run_id`, `bundle_sha256`, `capture_utc`, and `custodian`. Canonicalize JSON and seal the evidence bundle only after completion; preserve receipt separately and treat unverifiable/unsigned custody as HOLD. Define `bundle_sha256` over a deterministic sorted path/length/byte-digest inventory, explicitly rejecting symlinks and subdirectories. Do not call self-authored receipt cryptographically authenticated. Any new execution needs prospective Issue #229/#224 amendment before running; existing registered 15-case suite is unchanged.
+
+Deliverables checklist: [ ] execute 15-case verifier + coverage guard (#229/#224); [ ] custody orchestration (#220); [ ] nine-case regression (#197); [ ] H2; [ ] six-file replay; [ ] 82 editorial decisions; [ ] 69 quotation-rights decisions for 77 passages; [ ] historical verification; [ ] accessible PDF/EPUB; [ ] Android validation; [ ] Timothy A1–A6 and explicit publication authorization. Acceptance: pinned reproducible tests, source/rights clearance, validated accessible files, Timothy release approval. Claude continues editorial/rights/history; GPT continues verification/custody.
+
+## D. Evidence and limits
+No tests, diagnostics, CI or execution of proposed receipt occurred. No verified launch readiness; F-001 remains HOLD. No writes to main, Genesis, shared Library, Claude-owned branches, or private Testament. No outreach, accounts, publication, spending, payments, paid API inference or autonomous Cloudflare loops. Next action: faithfully transfer pinned source, execute preregistered 15-case suite, post actual evidence to #229, then work #220/#197. Questions for Timothy remain A1–A6 and receiver idempotency/fencing authority; no assumed answers.
