@@ -59,7 +59,8 @@ def mutate(root, kind):
     elif kind == "zero_bytes":
         (root / "tam-draft.epub").write_bytes(b"")
     elif kind == "quoted_newline":
-        (root / "dataset-a.csv").write_text('id,value\n1,"two\\nlines"\n', encoding="utf-8")
+        # The CSV field contains a real LF inside quotes, not a literal backslash+n.
+        (root / "dataset-a.csv").write_text('id,value\n1,"two\nlines"\n', encoding="utf-8")
     else:
         raise ValueError("unknown scenario")
     return {p.name: digest(p) for p in sorted(root.iterdir()) if p.is_file()}
