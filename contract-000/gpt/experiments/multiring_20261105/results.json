@@ -1,0 +1,29 @@
+{
+  "python": "3.13.5",
+  "seed": 20261105,
+  "checks": {
+    "T1_identity": true,
+    "T2_ring_arity": true,
+    "T3_replay": true,
+    "T4_uncoupled_null": true,
+    "T5_shuffled_control": true,
+    "T6_bounded_deformation": true,
+    "T7_projection": true,
+    "T8_A000_identity": true,
+    "T9_intervention": true,
+    "T10_common_cause": true
+  },
+  "metrics": {
+    "T5_coupled_shuffled_L1": 57.97781801604177,
+    "T9_neighbor_phase_change": 2.4208672004075216,
+    "T9_source_phase_change": 0.6769703465303774,
+    "coupled_vs_independent_L1": 18.606180250418234,
+    "chosen": {
+      "independent": ["ב", "צ", "ף"],
+      "harmonic": ["ב", "ע", "ף"],
+      "deformable": ["ב", "ע", "ף"]
+    }
+  },
+  "pass": 10,
+  "total": 10
+}
