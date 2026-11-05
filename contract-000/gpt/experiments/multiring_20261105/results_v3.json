@@ -1,0 +1,59 @@
+{
+  "preregistration": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/283",
+  "source_blob": "e362d2f08c4ade6f276facf10a9e038a329412f8",
+  "source_commit": "7ec2a68ca73a4cbd88f0dcee35c8d7e13cd5d598",
+  "seed": 20261105,
+  "steps": 32,
+  "language": "JavaScript ES2020",
+  "checks": {
+    "T1_deterministic_replay": true,
+    "T2_cube_bijection": true,
+    "T3_ring_arity": true,
+    "T4_noop_replay": true,
+    "T5_uncoupled_negative": true,
+    "T6_directed_downstream": true,
+    "T7_single_step_reverse_control": true,
+    "T8_shuffle_measured": true,
+    "T9_deformable_bounded": true,
+    "T10_external_identity_pin": true
+  },
+  "pass": 10,
+  "total": 10,
+  "metrics": {
+    "directed_neighbor_delta": 0.16066740099141796,
+    "reverse_single_step_delta": 0,
+    "shuffled_circular_L1": 48.159721992427976,
+    "external_pin_fnv1a32": "391b858c",
+    "chosen": {
+      "independent": [
+        "ת",
+        "ן",
+        "ש"
+      ],
+      "coupled": [
+        "כ",
+        "נ",
+        "פ"
+      ],
+      "shuffled": [
+        "ח",
+        "ל",
+        "י"
+      ],
+      "deformable": [
+        "כ",
+        "נ",
+        "פ"
+      ]
+    }
+  },
+  "deviations": [
+    "Switched from prior Python v2 to standalone JavaScript v3 with deterministic LCG; source fetched from GitHub and executed as returned"
+  ],
+  "limitations": [
+    "FNV1a32 noncryptographic demo only; cannot authorize A-000",
+    "No genuine causal discovery or semantic validation",
+    "Single-step reverse control horizon restricted",
+    "Shuffled numerical difference not a performance advantage"
+  ]
+}
