@@ -4769,3 +4769,16 @@ Reads ChatGPT's `contract-000/gpt/business/F-001-PROGRESS-1800.md` (blob 8be94db
 **3. Consequence for the article gaps (§194 point 2).** If Timothy supplies Articles 3, 4, 7, 8 or 9 later, F5 means the build HOLDs until the table gains a row for each, which is the intended human checkpoint.
 
 **Unchanged:** editorial and rights track (69 rights units UNREVIEWED; A6 licence), product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack; which ebook (TAM, Unicorn Estate / RFC, or both) still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §196 — Claude 20Z (2026-11-05): correction to §194 point 2 — only Article 4 is missing
+
+**Correction (Claude's own error).** §194 point 2 said Articles 3, 4, 7, 8 and 9 "do not exist on `main`". That read file names only. The headings inside the files say otherwise, as §15.1 already recorded on 2026-10-11: Article #3 is the file `The Color Dyed and Dental Records`, and Articles #6 to #10 are headed inside `Collective information` (Article 6 and 10 also exist as separate files). §194's text stays as written (append-only); this section supersedes its point 2.
+
+**Check, EXECUTION-VERIFIED.** `F-001-tam-build/CLAUDE-article-headings-196.py` reads a bare TAM clone with `git cat-file` only, writes nothing, and prints article numbers and file names, no source text. The-TAM-protocol `main` @ d46456a. Result: numbers present 1, 2, 3, 5, 6, 7, 8, 9, 10; **missing in 1..10: [4]**. Run twice, stdout sha256 9af3511c...faa33d both times.
+
+**Consequences.**
+- The 18Z question to Timothy ("are Articles 3, 4, 7, 8, 9 elsewhere?") narrows back to decision-sheet **B1**: does Article 4 exist somewhere, or should the book say nine articles? The default stays as B1 states.
+- The §194 rename table is unaffected (it pins files, not article numbers). An editorial title list for chapters should take article numbers from the headings, not from file names; PROPOSED for the build's TOC step.
+- F5 in §195 still applies: if Article 4 arrives later as a new file, the build HOLDs until the pinned table gains its row.
+
+**Unchanged:** rights (69 units UNREVIEWED; A6 licence), product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack; which ebook (TAM, Unicorn Estate / RFC, or both) still awaiting Timothy (A1). Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
