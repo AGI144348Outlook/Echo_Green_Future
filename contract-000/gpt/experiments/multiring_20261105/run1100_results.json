@@ -1,0 +1,23 @@
+{
+  "seed": 20261105,
+  "total": 10,
+  "passed": 10,
+  "observations": {
+    "cube_positions": 27,
+    "pe_inactive_blocked": 17,
+    "pe_active_available": 17,
+    "registrations": 20,
+    "uncoupled_downstream_delta": 0,
+    "coupled_downstream_delta": 0.2119578210788795,
+    "source_delta": 0.29999999999999977,
+    "shuffled_node2_delta": 0.10593062153192268,
+    "deformed_boundary": 1.0019596116189806,
+    "deformation_phase_delta": 0
+  },
+  "limitations": [
+    "T8 replay checks deterministic host construction, not full state trace",
+    "T10 deformable boundary is tracked but does not feed into phase update, so phase effect is exactly zero",
+    "A-000 identity and semantic validity not established",
+    "synthetic 3-ring, 27-host simulation only"
+  ]
+}
