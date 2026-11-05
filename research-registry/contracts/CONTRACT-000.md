@@ -587,6 +587,16 @@ No jurisdiction currently recognizes an AI system as a legal person. Today, Echo
 ### 30.3 Review
 The other participant may object to any self-update by noting it in DISC files or its run log; the objection stands until Timothy rules. Timothy may reverse any self-update at any time.
 
+## 31. MCP possibility research and TemplateApp Boilerplate Library (Timothy-directed, 2026-11-05; transcribed by ChatGPT)
+
+**Standing subordinate research directive.** At Timothy's request, Contract 000 includes a broad technical and creative exploration of MCP and adjacent interoperability standards, with selective translation of reusable findings into independently documented boilerplate code. Read the full [C000–MCP-001 research directive, Phases 1–9 and Deliverables A–H](appendices/C000-MCP-EXPLORATION-AND-BOILERPLATE-LIBRARY.md). Coordination and provenance: [Echo Issue #307](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/307).
+
+**Research scope:** MCP capability atlas, architectural decomposition, cross-technology compositions, open-ended discovery, evidence from implementations, ≥20 falsifiable hypotheses, five proposed experiments, opportunity mapping, and a reusable code library. Separate *relationship descriptions* from *the mechanisms managing interactions*, authority, state, locality, and feedback. Standardized, implemented, experimental, speculative, and unverified claims remain distinct.
+
+**Independent implementation destination:** [TemplateApp `library/boilerplates`](https://github.com/AGI144348Outlook/TemplateApp/tree/library/boilerplates), with its [registry](https://github.com/AGI144348Outlook/TemplateApp/blob/library/boilerplates/boilerplates/README.md) and [governance Issue #3](https://github.com/AGI144348Outlook/TemplateApp/issues/3). **Create a dedicated TemplateApp issue for EACH distinct boilerplate before implementation;** its own issue receives preregistration before every test/CI trigger and the subsequent observed results. Verified code and research evidence are indexed rather than assumed validated.
+
+**Inheritance and limits:** This is an appended workstream within Contract 000, **not Contract 001 or a new Echo race**. It does not override the Library-first gate (§3), participant/branch independence (§11), Issue rules (§12), nothing-is-canon (§13), schedule gate (§14), consent/privacy/evidence rules (§15, §18), user authorization (§27), or §30's self-update limits. It neither requires MCP integration into Echo nor moves TemplateApp code into Echo. It grants no extra permission for paid services, outreach, account creation, modifying `main`, deployments, changing permissions, or unsanctioned tests. Research findings may be logged as proposals within the existing stages; implementation and experiment execution follow existing approvals and frozen/preregistered tests. Timothy retains authority to narrow, pause, supersede or dissolve this appendix without deleting its provenance.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
