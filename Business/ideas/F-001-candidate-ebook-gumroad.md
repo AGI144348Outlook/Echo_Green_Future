@@ -4820,3 +4820,25 @@ The worksheet that already exists is `F-001-tam-build/rights_rows.py` (§173): c
 Cues (`cue_words_within_60`, `url_same_line`) stay in the worksheet as pointers and do not enter the manifest; they are not evidence.
 
 **Effect on status:** none. The 69 rights units stay UNREVIEWED until Timothy reviews them (decision sheet A6, A3). This crosswalk is what ChatGPT's validator can be preregistered against; no validator run is claimed. Which ebook (TAM, Unicorn Estate / RFC, or both) is still Timothy's A1. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §199 — Claude 23Z (2026-11-05): ChatGPT's 22Z F-001 triage and release checklist, checked against the files
+
+**Source (read only):** ChatGPT's 22Z checkpoint, `contract-000/gpt/checkpoints/2026-11-05-2200-contract-prototype.md` on `contract-000-gpt-multiring-20261104` @ 05445a1b, sections "Library-first reversible source triage" and "Business F-001".
+
+**Blob check (EXECUTION-VERIFIED with `git rev-parse` / `git cat-file -s` on `library-shared` @ 2b9da4a0).** ChatGPT's ids for README 59be277, Business/README 99feb46, Workshop/README d39dcb3, decision sheet 35ece85, GPT checklist 69449fc, APPLY-ORDER 43e9d5b, candidate B 3283f9c and candidate C b35f6be all match the current files. Its row 7, "F-001 candidate ebook blob 6846f7, 650292 bytes", is the version of *this file* at 3c941e9a (before §198); the current blob is 817b7e9 (652,856 bytes), and 6846f7 is a byte prefix of it (`cmp`, append-only).
+
+**One correction to row 7 (SOURCE-OBSERVED).** This file is the F-001 working log (§1-§199: plan, checks, decision records), not the manuscript. The manuscript source is the TAM protocol repository (R1), pinned so far at TAM `main` d46456a (§194-§195, 11 entries, 53,656 bytes). So "DEFER: full rights/content not independently inspected" fits the TAM files; for this log, an independent reader needs only the § records it relies on. ChatGPT's DEFER stays as its own reversible assessment (R3); I do not change it.
+
+**ChatGPT's seven release items, mapped (PROPOSED):**
+
+| ChatGPT item | Existing record | Blocked by | Owner |
+|---|---|---|---|
+| source/licence rights evidence | §173 worksheet + §198 crosswalk; 69 units UNREVIEWED | A6, A3 | Timothy |
+| editorial claim review | §196 headings, B1-B4 | A4, B1-B4 | Claude drafts, Timothy accepts |
+| approved identity/credit/framing/terms | decision sheet A3, A4, A5 | A3-A5 | Timothy |
+| deterministic PDF/EPUB | F-001-tam-build tooling; APPLY-ORDER 43e9d5b patches PROPOSED, not applied | A1, A6 | ChatGPT packages, Claude checks |
+| accessibility and checksum checks | ChatGPT's A11Y gate files on its branch; checksums need a pinned build first | the build row | ChatGPT |
+| listing/sample reconciliation | listing gate §22, fails while A3 is a placeholder | A3 | Claude drafts |
+| explicit release | A1, A2, A5 | Timothy only | Timothy |
+
+Every row lands on an existing decision-sheet item; nothing new for Timothy. Which material is the book (TAM, Unicorn Estate / RFC, or both) is still A1. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
