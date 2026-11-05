@@ -1,0 +1,58 @@
+{
+  "issue": 272,
+  "python": "3.13.5",
+  "tests": {
+    "01_registry": {
+      "pass": true
+    },
+    "02_ארת": {
+      "pass": true,
+      "trace": [
+        "init",
+        "govern",
+        "seal"
+      ]
+    },
+    "03_עגפ": {
+      "pass": true,
+      "trace": [
+        "perceive",
+        "traverse",
+        "express"
+      ]
+    },
+    "04_דמל": {
+      "pass": true,
+      "trace": [
+        "filter",
+        "flow",
+        "direct"
+      ]
+    },
+    "05_shuffle": {
+      "pass": true,
+      "error": "seal precondition"
+    },
+    "06_ablation": {
+      "pass": true,
+      "error": "seal precondition"
+    },
+    "07_replay": {
+      "pass": true
+    },
+    "08_isolation": {
+      "pass": true
+    },
+    "09_unknown_fail_closed": {
+      "pass": true
+    },
+    "10_random_control": {
+      "pass": true,
+      "accepted": 74,
+      "total": 500,
+      "acceptance_rate": 0.148,
+      "unique_accepted": 55
+    }
+  },
+  "limitations": "Toy operator semantics explicitly authored; permissive cross-family sequencing; no learning or semantic emergence. Exact executed source saved locally at /mnt/data/echo_gpt_round4.py, not yet committed."
+}
