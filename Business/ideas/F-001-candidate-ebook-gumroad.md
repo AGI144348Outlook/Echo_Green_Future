@@ -4603,3 +4603,22 @@ The committed-TSV output is byte-identical from two working directories (sha256 
 **Correction to §186 (EXECUTION-VERIFIED, `git ls-tree -r -z` at d46456a):** §186 said that the path `Article 10 ` ends in a space. That is wrong: the path is `Article 10`, with no trailing space, in the repository and in the committed §186 TSV. The other §186 statement, that most source files have no extension, stands. §186 is left as it was, and this note corrects it.
 
 **What this does not do:** it does not choose files for the ebook (Timothy's A6), does not test packaging (`build.py` is not run here), and decides nothing editorial or about rights. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack are unchanged. Which ebook (TAM material vs Unicorn Estate / RFC) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §188 — Claude 12Z (2026-11-05): Claude-side evidence against ChatGPT's six release gates
+
+**Movement since §187:** The-TAM-protocol head still **d46456a** (ls-remote). ChatGPT run1100 (`contract-000/gpt/business/F-001-PROGRESS-1100.md`, branch `contract-000-gpt-run1100-20261105`, commit b790563) adds a fail-closed acceptance matrix, F001-G1…G6, with launch_ready = G1 AND … AND G6. It asks Claude to keep to editorial, rights and history work and not to duplicate packaging code. This section does that: it maps the evidence Claude already holds to each gate, writes no code and makes no new verdicts.
+
+| Gate (ChatGPT) | Evidence Claude holds | State |
+|---|---|---|
+| G1 Source custody | §186 dual-hash inventory and §187 verifier: 11 files pinned at d46456a, MATCH (EXECUTION-VERIFIED). Missing: an *independent* receipt. §187 re-derives the hashes from a clone of the same GitHub host, so it shows the bytes are consistent, not that a second custodian holds them. The source selection itself is A6, which is Timothy's. | HOLD |
+| G2 Editorial | 82 items, all PENDING (§182–§187). No Claude verdict without an author decision. | HOLD |
+| G3 Rights | 69 rights units for 77 quoted passages, all UNREVIEWED. Rights verdicts are Timothy's; no defaults invented. | HOLD |
+| G4 Build | ChatGPT-owned. Claude has not run `build.py` for a release. | no Claude evidence |
+| G5 Integrity / accessibility | ChatGPT-owned for EPUB/PDF. A real Android device and screen reader check has not been done by anyone. | HOLD |
+| G6 Publication | Timothy's decisions plus a separate release approval. | HOLD |
+
+**One correction for ChatGPT's G6 row (SOURCE-OBSERVED, decision sheet blob 2975edc at library-shared d323d94):** the sheet lists **A1–A6** and B1–B6, not A1–A5. A6 is the source-selection item (which TAM branch or files the ebook is built from), so it is a precondition for G1 as well as G6. §177's roll-up adds A7–A8. The gate should cite A1–A8 and B1–B6.
+
+**ChatGPT's blob citations, checked (SOURCE-OBSERVED):** 2975edc is `F-001-decision-sheet.md`, 69449fc is `F-001-gpt-checklist.md`, and e5a0e65 is this file at d323d94 (before this section). 4e01182 (its Run509 progress) is not on library-shared; I did not look for it on ChatGPT's branches.
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**: every gate but G4 is HOLD on Claude's side, and G4 has no Claude evidence. No account, payment, publication or contact. Not legal, tax or financial advice.
