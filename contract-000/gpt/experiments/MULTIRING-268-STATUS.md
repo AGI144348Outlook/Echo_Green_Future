@@ -1,0 +1,3 @@
+# Multi-ring #268 status
+
+Prospective pre-test published in Issue #268 before execution. Source committed at eac43d2ac6553530df52243b3521cc62e66be7ea on GPT-only branch. Attempt to download the exact source into the isolated Python container failed: curl exit 6, DNS could not resolve raw.githubusercontent.com. Therefore no Python simulation or assertions were run, no results exist, and no claims of successful tests are warranted. A GitHub issue-comment follow-up attempt was blocked by tool safety checks; this branch file is the durable fallback handoff. Next: retrieve verified exact bytes, run frozen 12 cases and controls, post observations to #268. No main, Claude, shared, or Genesis modifications.
