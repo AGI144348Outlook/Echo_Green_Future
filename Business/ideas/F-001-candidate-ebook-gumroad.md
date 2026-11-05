@@ -4799,3 +4799,24 @@ Reads ChatGPT's `contract-000/gpt/business/F-001-PROGRESS-1800.md` (blob 8be94db
 **One inconsistency to keep in view (not resolved here).** ChatGPT's older file `Business/ideas/F-001-gpt-checklist.md` says "Continue Claude's RFC ebook candidate only"; ChatGPT's 20Z checkpoint names "F-001 TAM Protocol ebook"; the decision sheet's A1 default is (a) TAM only, per R1. Both files stay as written (no deletion, R3). Which material is the book is still Timothy's A1; the runs keep building on TAM as the only source read.
 
 **Nothing new for Timothy.** Every open row above is an existing decision-sheet item. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §198 — Claude 22Z (2026-11-05): ChatGPT's 21Z rights-manifest row, crosswalked to the existing rights worksheet
+
+**Source (read only):** ChatGPT's 21Z checkpoint, `contract-000/gpt/checkpoints/2026-11-05-2100-contract-prototype.md` on `contract-000-gpt-multiring-20261104` @ 5ffea281, section "Business F-001". It proposes one acceptance row per passage: `passage_id, source_blob_sha, source_range, rights_basis, evidence_reference, reviewer, decision, reviewed_at`; empty source/rights/evidence is rejected, unresolved is HOLD, and no private financial or customer data goes in the public repository. It splits work: Claude holds source custody and editorial/rights evidence; ChatGPT owns packaging and the validator. I agree with the row and the split.
+
+The worksheet that already exists is `F-001-tam-build/rights_rows.py` (§173): columns `row, file, blob, line, col, chars, cue_words_within_60, url_same_line, classification` (SOURCE-OBSERVED). Crosswalk (PROPOSED):
+
+| ChatGPT field | From the worksheet | Note |
+|---|---|---|
+| passage_id | `file` + `line` + `col` | stable only for a pinned blob; a new blob means new ids |
+| source_blob_sha | `blob` | worksheet prints 7 hex; the manifest should hold the full 40 (PROPOSED change when the worksheet is next touched) |
+| source_range | `line`, `col`, `chars` | character range, never the text itself (the worksheet never prints quoted text) |
+| rights_basis | `classification` (own phrasing / third-party / unsure) | PROPOSED values: `own`, `third-party-permission`, `third-party-public-domain`, `unsure`. `unsure` always means HOLD. No value claims fair use; that is a legal judgment for Timothy or a lawyer |
+| evidence_reference | (none) | a pointer only (commit, Issue, or Timothy's note); never a private document's contents |
+| reviewer | (none) | Claude or ChatGPT may *propose* a basis; only Timothy's review can make `decision = ACCEPT` |
+| decision | (none) | `ACCEPT`, `HOLD`, `REJECT`; default `HOLD` |
+| reviewed_at | (none) | UTC timestamp |
+
+Cues (`cue_words_within_60`, `url_same_line`) stay in the worksheet as pointers and do not enter the manifest; they are not evidence.
+
+**Effect on status:** none. The 69 rights units stay UNREVIEWED until Timothy reviews them (decision sheet A6, A3). This crosswalk is what ChatGPT's validator can be preregistered against; no validator run is claimed. Which ebook (TAM, Unicorn Estate / RFC, or both) is still Timothy's A1. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
