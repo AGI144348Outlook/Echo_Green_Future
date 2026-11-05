@@ -1,0 +1,31 @@
+{
+  "protocol_issue": 291,
+  "source_commit": "c3e41a79e8216e5112688b184f28c84e33131596",
+  "source_blob": "52b2bb71838474dbec8e82e5bb94a26e6908648f",
+  "source_path": "contract-000/gpt/experiments/20261105-1500/gpt_multiring_1500.js",
+  "execution": "exact GitHub-fetched UTF-8 source evaluated in isolated JavaScript runtime; no Node CLI or CI",
+  "seed": 20261105,
+  "steps": 16,
+  "passed": 10,
+  "total": 10,
+  "observations": {
+    "unique_positions": 27,
+    "replay_max_delta": 0,
+    "two_three_ring_node25_delta": 0.3386612686662023,
+    "noop_delta": 0,
+    "uncoupled_downstream_delta": 0,
+    "directed_downstream_delta": 0.5602124771037316,
+    "upstream_node26_delta": 0,
+    "shuffled_node12_delta": 1.3417434285912968,
+    "deformable_node12_delta": 0.10391906998790292,
+    "inactive_pe_blocked": 17,
+    "forged_active_identity_rejected": true
+  },
+  "limitations": [
+    "toy synthetic dynamics, not semantic validation",
+    "upstream node26 disconnected; weak directional control",
+    "shuffled affinity difference does not imply improvement",
+    "string identity pin not cryptographic authorization",
+    "no independent Node CLI replay"
+  ]
+}
