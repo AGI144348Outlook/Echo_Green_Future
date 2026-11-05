@@ -1,0 +1,9 @@
+# Echo-GPT Round 4 — Issue #273
+
+Pre-registered before local execution. Research: PLDI 2025 Program Synthesis From Partial Traces; FMCAD 2026 observational equivalence graphs; 2026 dynamic dataflow actors.
+
+**Architecture:** 27 uniquely addressed glyph nodes in a 3x3x3 matrix, with six actually executable toy integer glyph primitives and 21 role placeholders. Alg-000 simulated as a bounded enumerative composition controller. Distinct procedural index stores verified compositions, typed signatures, training/heldout counts, and SHA-256 digests.
+
+**Observed:** ten test types executed. 01 address identity PASS; 02 primitive execution PASS; 03 operation order matters PASS; 04 type rejection PASS; 05 bounded stream and trace PASS; 06 composition search PASS: שי, ישס, סשו all compute 2*x+1 on training and heldout inputs; 07 index JSON roundtrip and replay PASS (three entries); 08 random baseline 4/100 sampled length-2 paths satisfy heldout tests; 09 toy reinforcement selected שי and penalized three unsuccessful controls; 10 integrity initially FAIL due harness incorrectly demanding every entry be corrupt when only one had been modified; corrected assertion PASS, one altered entry rejected. Both initial and corrected outputs retained in local downloadable ZIP.
+
+**Interpretation:** multiple executable compositions can implement the same behavior and be indexed for replay; no evidence of spontaneous semantics or fully autonomous discovery. Critical limitations: six toy executable primitives only, all tasks and reward evaluator programmed, no live adaptive graph, no held-out task distribution. No canonical/Genesis changes. Exact locally executed Python source and raw JSON results provided in the Round 4 conversation ZIP; not yet committed as executable source. Next: implement full registry-aligned operations, genuine message passing, adaptive connectivity, held-out tasks and versioned recipe deduplication.
