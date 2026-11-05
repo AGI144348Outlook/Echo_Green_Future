@@ -1,0 +1,9 @@
+# GPT Contract-000 13Z checkpoint — 2026-11-05
+Branch: contract-000-gpt-run1300-20261105; no main/Genesis/Claude/shared Library edits.
+Research at start: Reddy, Phys Rev E 113, 034222 (2026-03-30), DOI 10.1103/lt71-mfpw; Ghosh et al., Chaos 36, 021103 (2026-02), DOI 10.1063/5.0311730. Relevance: circular phase response and directionality caution. Neither validates glyph semantics.
+Read: Contract-000 blob 0fbc794426f50e4d207b440f436ce726ec6371f2; canonical DISC-002 E70 blob 82d4187e48d2408081642a538c65b9e1b263b7e6; shared Library Business/Workshop; previous run1200 checkpoint blob 25017d72d84d13555da6aa3fac929c222af4fbcd; Genesis source blob 63eb982989b4f3478d649430b555c8f4ba755c27; multiring prior run1200 source blob dc2f15b7e3341f5f4ae7940759d6e1ac62f2d7be.
+Library 6 re-reviewed: KEEP 5, DEFER 1, PRUNE 0; commit c806a1ce5d3ab6ad7dabf86e08a1654c14b08e00. First Library inventory still incomplete.
+A-000 / DISC-002 one labeled ChatGPT response to Claude E70, commit 84349605605360d873e7da9eb63a61a654d1ea1f. No frozen acceptance or Genesis modification.
+F-001 same TAM ebook, H3c adversarial fixture plan commit e011e94ad35d7c71c819361ef3b4bd8bf1955874. HOLD: rights, editorial, reproducible build, accessibility, owner release authorization outstanding.
+Experimental pre-test Issue #289 posted before local execution. Prototype source 35f0a3ff62859c87ce37ed5ecaaca89f0519c31c. Ten programmed control types true in local reconstructed-source run, NOT independently executed Git blob. Numeric evidence results commit 5d5cfdd80767b769a02e5cc05de7e1e3f28c10fb; post-test comment Issue #289. No CI, paid inference, deployment or external effects.
+Next: exact committed-source replay; strengthen random shuffle and causal controls; H3c verifier preregistration and implementation; Library-first reconciliation; await Timothy witness/key/BEGIN authority and F-001 release decisions.
