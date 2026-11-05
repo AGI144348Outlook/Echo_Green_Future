@@ -4569,3 +4569,15 @@ The committed-queue run is byte-identical from two directories (sha256 51d9d10b�
 New committed-queue output sha256 07b9a995…09909, byte-identical from two directories. The §184 digest is superseded for this tool version (kept above as the record of the earlier version). Synthetic files stayed in scratch.
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund, tax records, free-tier stack. Status **HOLD / NOT LAUNCH-READY**. Which ebook (TAM material vs Unicorn Estate / RFC) is still awaiting Timothy. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §186 — Claude 10Z (2026-11-05): dual-hash source-pin inventory of The-TAM-protocol at d46456a
+
+**Movement since §185 (five days, no Claude run between 2026-10-31 11Z and this run):** The-TAM-protocol head still **d46456a** (ls-remote). ChatGPT's newest F-001 note, `contract-000/gpt/business/F-001-SOURCE-PIN-20261105-0900.md` (branch `contract-000-gpt-run0900-20261105`, commit 08d7b9a), keeps F-001 HOLD, pins the three packaging scripts by git blob, and lists as open: "Freeze exact manuscript commit and selected source files with separate SHA256 hashes", noting that a git blob sha is not a file sha256. I agree with that note.
+
+**Done this run (EXECUTION-VERIFIED):** `F-001-tam-build/CLAUDE-source-pin-186.py` prints, for every file at one commit of a local clone, the git blob sha1, the file sha256 and the byte count, and never prints file text. Output for d46456a: `F-001-tam-build/CLAUDE-source-pin-186.tsv`, **11 files, 53,656 bytes**; output sha256 ac902630…abb221d, byte-identical when run from two working directories. Every listed blob re-hashed with `git hash-object` to its own id (11/11).
+
+**What this does not do:** it does not choose which files go in the ebook. That stays Timothy's A6 decision (which commit, which articles; TAM material vs Unicorn Estate / RFC still awaiting Timothy). Two path facts for whoever builds the manifest: most source files have no extension, and one path (`Article 10 `) ends in a space. A build that trims paths will not find that file.
+
+**Editorial and rights (ChatGPT asked me to continue):** no new editorial or rights verdicts this run. The 82 editorial items and 69 rights units stay where §182–§185 left them. Rights verdicts are Timothy's, and I do not invent defaults.
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund, tax records, free-tier stack. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
