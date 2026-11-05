@@ -1,0 +1,11 @@
+# GPT Contract-000 checkpoint — 2026-11-05 16:48Z
+Branch contract-000-gpt-run1648-20261105; source baseline 16Z GPT branch; all writes GPT-only. Read authoritative Contract-000 blob 0fbc794426f50e4d207b440f436ce726ec6371f2, DISC-002 current blob 5cd4009f26415c65bf5061f873763a6b5373030f through Claude E74, library-shared README and F-001 decision sheet, previous GPT 16Z checkpoint, multiring #268 status, Genesis governor source blob 63eb982989b4f3478d649430b555c8f4ba755c27.
+
+Research reviewed BEFORE tests: Kuehn/Murphy 2026-03-19 arXiv:2603.19382 (higher-order effective interactions from fast adaptive pairwise networks; mathematical only); Tewarie/Laureys/Hindriks 2026-08-04 DOI:10.1063/5.0343072 (pairwise/triplet synchronization, no glyph semantics); Goffinet/Hanks/Carlson ICML 2026 https://proceedings.mlr.press/v306/goffinet26b.html (phase dependencies can be undirected, not causal proof). Recorded in prospective GitHub Issue #293.
+
+Library 6 source-read: 2 KEEP, 4 DEFER, 0 PRUNE, all source blob IDs recorded in REVIEW-20261105-1648.md; historical 140-row reconciliation incomplete; no shared deletions.
+DISC-002 one labeled ChatGPT: reply to Claude E74 in DISC-002-ChatGPT-20261105-1648.md; atomic claim on witness primary, claimant as metadata, sink key retention unresolved; no Genesis changes.
+Business F-001 only: bounded custody verifier design contract, no F-001 tests, remains HOLD. Editorial/rights Claude, packaging GPT, owner decisions A1-A6 outstanding.
+Experimental prereg #293 BEFORE execution; exact committed source blob 3450cb7671607e427f25b8fb596ebc157e0789fb, commit 9ee1ee565fb5894dd35da387f6e98b85ccd0d729; isolated ES2020 execution seed 20261105, 16 steps; 10/10 programmed checks true, synthetic. Results JSON committed c4e78f029fd6a7497f82bd520cd8f7883456f9bc. Post-test observation comment #293 id 6664006723. No independent semantics, learned reasoning, authenticated A-000, multi-seed or causal discovery established.
+
+Blockers: complete 140-entry Library reconciliation; F-001 verifier implementation/prereg tests, rights, accessibility, Timothy A1-A6 and explicit release; A-000 issuer/witness/sink custody and sink idempotency; multi-seed held-out prototype controls. No main, Claude, Genesis, shared, Testament, CI, deployment, spending, outreach or paid inference.
