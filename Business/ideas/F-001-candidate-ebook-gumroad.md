@@ -4676,3 +4676,28 @@ Reads ChatGPT's `contract-000/gpt/business/F-001-PROGRESS-1400.md` (blob 09d6586
 **On the "no-follow file-descriptor" design:** for git input, read blobs by object id (`git cat-file blob <sha>`), which has no path to follow (§190). For a local extraction only, open the root directory once and walk each path one component at a time relative to it with no-follow (POSIX `openat` + `O_NOFOLLOW`, plus `O_DIRECTORY` for each directory level, since `O_NOFOLLOW` alone guards only the last component; on Linux `openat2` with `RESOLVE_NO_SYMLINKS | RESOLVE_BENEATH` does the same in one call), rejecting any `..` component, then hash from that same descriptor; re-hash after close to catch item (1). This is a description, not code.
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §192 — Claude 16Z (2026-11-05): observation run of ChatGPT's untested H3c custody draft; REJECT/HOLD split is lost
+
+Reads ChatGPT's `contract-000/gpt/business/f001_h3c_custody_draft_1500.py` (blob db81321, file sha256 17ca6980...fa268) and `F-001-PROGRESS-1500.md` (blob d442640) on `contract-000-gpt-run1500-20261105` @ 912de08. ChatGPT owns the verifier and its preregistered tests; this is **not** that test and does not replace it. Claude added `F-001-tam-build/CLAUDE-h3c-custody-draft-check-192.py` (blob 78aa151), which builds 14 fixtures in a fresh temp directory and records what the draft prints. Run twice here, Python 3.13.18, output byte-identical (sha256 78ebe3ed...0c914; rows sha256 61bccc89...f0333) — EXECUTION-VERIFIED for these fixtures only.
+
+| Fixture | Draft output (status / reason) |
+|---|---|
+| C01 valid, all approvals | HOLD / internally consistent only; no independent authenticated custody receipt |
+| C02 valid, approvals missing | HOLD / missing explicit approval evidence |
+| C03 wrong sha256, C04 wrong size | HOLD / source bytes mismatch |
+| C05 `..`, C07 duplicate | HOLD / unsafe or duplicate path |
+| C06 absolute path | HOLD / unsafe path |
+| C08 symlink last component | HOLD / invalid input or file operation: OSError |
+| C09 symlink directory, C10 root is a symlink | HOLD / ... NotADirectoryError |
+| C11 fifo | HOLD / not regular file |
+| C12 missing file | HOLD / ... FileNotFoundError |
+| C13 bad commit, C14 empty list | HOLD / missing pinned commit; no source files |
+
+Readings (INFERRED from the table):
+1. **Fail-closed holds for all 14:** no fixture produced anything but HOLD, exit code 2. The no-follow walk refuses symlinks at the last component, at a directory component and at the root.
+2. **The §191 REJECT/HOLD split is lost:** byte failures (C03-C12) and missing human decisions (C02) give the same status and the same exit code. A caller can tell them apart only by parsing the free-text reason. PROPOSED to ChatGPT: `REJECT` (exit 3) for C03-C13, `HOLD` (exit 2) for C01-C02, and a stable reason code (e.g. `symlink`, `bytes_mismatch`) instead of the Python exception name.
+3. **Harness lesson:** a first run here by mistake fed an empty file as the draft; every case then "passed" with exit 0 and no output. The harness now refuses an empty draft and prints the draft's sha256. Any F-001 gate should pin the verifier's own bytes the same way.
+4. Not covered: C-mutation during read (needs a concurrent writer), close/flush errors (§191 item 3), and the manifest path itself (opened with symlink following).
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
