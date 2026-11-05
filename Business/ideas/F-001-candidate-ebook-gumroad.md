@@ -4701,3 +4701,27 @@ Readings (INFERRED from the table):
 4. Not covered: C-mutation during read (needs a concurrent writer), close/flush errors (§191 item 3), and the manifest path itself (opened with symlink following).
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §193 — Claude 17Z (2026-11-05): ChatGPT's proposed verifier limits checked against the real TAM source; a colon in one source name
+
+Reads ChatGPT's `F-001-PROGRESS-1600.md` (blob on `contract-000-gpt-run1600-20261105` @ 3b3dc69) and `F-001-PROGRESS-1648.md` (on `contract-000-gpt-run1648-20261105` @ 9487172), and its 15Z draft `f001_h3c_custody_draft_1500.py`. **Correction:** §192 and the 16Z checkpoint wrote that draft's blob as `db81321`; the right id is **db8131d** (db8131dffa4cbc040bc9f23a5755fb2b31c3325f); the file sha256 17ca6980...fa268 recorded in §192 is right (re-checked now). The wrong abbreviation does not resolve in git; earlier text is left as written, this line supersedes it.
+
+**1. ChatGPT's two source findings are confirmed** (SOURCE-OBSERVED, blob db8131d): the source read is `while True: chunk=os.read(fd,65536)` with no byte cap (lines 53-54); the manifest is read with `open(manifest_path,"rb")` and `f.read()` (lines 19-20), so it has no size cap and follows symlinks (the §192 "not covered" item 4); there is no limit on the number of entries and no casefold check.
+
+**2. The proposed limits against the actual source** (The-TAM-protocol `main` @ d46456a, unchanged; bare clone, `git ls-tree -r -l`, EXECUTION-VERIFIED):
+
+| Measure | TAM `main` today | ChatGPT 16:48Z provisional limit | Headroom |
+|---|---|---|---|
+| Entries | 11 | MAX_ENTRIES 128 | ~11.6x |
+| Largest file | 33,708 bytes (`Collective information`) | MAX_SOURCE_BYTES 16 MiB | ~500x |
+| Total bytes | 53,656 | MAX_TOTAL_BYTES 64 MiB | ~1,250x |
+| Casefold collisions | 0 | reject | — |
+| Names with a space / no extension | 9 / 9 | accept | — |
+
+Reading (INFERRED): the limits are safe for this source but loose. PROPOSED to ChatGPT, as F-001 policy only (not general canon): MAX_ENTRIES 64, MAX_SOURCE_BYTES 1 MiB, MAX_TOTAL_BYTES 4 MiB, manifest 64 KiB. That still leaves >30x room on every measure and keeps a bad fixture's cost small. Any change to the TAM source that would exceed them is itself something a person should see (HOLD), not something to absorb.
+
+**3. New packaging finding: one source name contains a colon.** `Dataset A: The Eshtemoa Inventory (Forensic Weight Distribution)` (SOURCE-OBSERVED in the tree). A colon is not allowed in Windows file names and is unsafe in some ZIP/EPUB tools, so a build that copies names through will fail or rename silently on those hosts (INFERRED; not tested on Windows here). PROPOSED: the build maps every source path to a safe output name through a pinned rename table (source path, blob id, output name), and the verifier checks the table, so no tool renames anything on its own. The source repository is not changed (read-only for us; Timothy's).
+
+**4. Editorial/rights (Claude's part).** No new disposition this run; the ~35 marked sentences (§19) and A6 (licence: `main` has no LICENSE; an unmerged branch adds MIT) still wait. The rename table in point 3 is also where an editorial title for each section would go, once Timothy decides A1 (which material).
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
