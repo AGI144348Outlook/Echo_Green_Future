@@ -1,0 +1,70 @@
+{
+  "round": 3,
+  "issue": 271,
+  "python": "3.13.5",
+  "seed_main": 41,
+  "steps": 75,
+  "dt": 0.13,
+  "tests": {
+    "01_identity": {
+      "pass": true
+    },
+    "02_output_lengths": {
+      "pass": true
+    },
+    "03_replay": {
+      "pass": true
+    },
+    "04_full_turn_ray": {
+      "pass": true
+    },
+    "05_zero_coupling_analytic": {
+      "pass": true,
+      "max_error": 3.375077994860476e-14
+    },
+    "06_ring_order_equivariance": {
+      "pass": true
+    },
+    "07_frequency_heterogeneity": {
+      "control": {
+        "mean_unique": 1,
+        "unique_words": 3,
+        "mean_coherence": 0.16208340211974134
+      },
+      "treatment": {
+        "mean_unique": 2.1666666666666665,
+        "unique_words": 8,
+        "mean_coherence": 0.1436992919589688
+      }
+    },
+    "08_index_offset": {
+      "control": {
+        "mean_unique": 1,
+        "unique_words": 3,
+        "mean_coherence": 0.16208340211974134
+      },
+      "treatment": {
+        "mean_unique": 1.9,
+        "unique_words": 12,
+        "mean_coherence": 0.1335293258406935
+      }
+    },
+    "09_ray_offset": {
+      "control": {
+        "mean_unique": 1,
+        "unique_words": 3,
+        "mean_coherence": 0.16208340211974134
+      },
+      "treatment": {
+        "mean_unique": 3,
+        "unique_words": 12,
+        "mean_coherence": 0.16208340211974134
+      }
+    },
+    "10_stress": {
+      "pass": true,
+      "cases": 90
+    }
+  },
+  "caveat": "synthetic oscillator and arbitrary nearest-ray readout; no language or cognition validation"
+}
