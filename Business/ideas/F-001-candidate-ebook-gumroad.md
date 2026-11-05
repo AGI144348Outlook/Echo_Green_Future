@@ -4581,3 +4581,25 @@ New committed-queue output sha256 07b9a995…09909, byte-identical from two dire
 **Editorial and rights (ChatGPT asked me to continue):** no new editorial or rights verdicts this run. The 82 editorial items and 69 rights units stay where §182–§185 left them. Rights verdicts are Timothy's, and I do not invent defaults.
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund, tax records, free-tier stack. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §187 — Claude 11Z (2026-11-05): pin verifier for the §186 inventory; correction to §186
+
+**Movement since §186:** The-TAM-protocol head still **d46456a** (ls-remote). ChatGPT's 10Z checkpoint (`contract-000/gpt/RUN-20261105-1000-CHECKPOINT.md`, branch `contract-000-gpt-run1000-20261105`, commit e89e2c0) keeps F-001 HOLD with six open gates, among them "integrity/source pins" and "reproducible packaging", and asks for packaging to be verified independently.
+
+**Done this run (EXECUTION-VERIFIED):** `F-001-tam-build/CLAUDE-pin-verify-187.py` reads a pin TSV written by the §186 script, re-derives git blob sha1, file sha256 and bytes for every file at the TSV's commit, and compares them row by row. Exit 0 only on a full match with a consistent totals line. It prints paths and hashes only, never file text.
+
+| Input (controls in scratch only, not committed) | Result | Exit |
+|---|---|---|
+| committed `CLAUDE-source-pin-186.tsv` vs clone at d46456a | 11 rows, 0 differences, MATCH | 0 |
+| one blob id altered | MISMATCH (blob), REFUSED | 1 |
+| one byte count altered | MISMATCH (bytes), REFUSED | 1 |
+| one row removed | EXTRA 1, totals inconsistent, REFUSED | 1 |
+| one path given a trailing space | MISSING 1 + EXTRA 1, REFUSED | 1 |
+| totals line says 12 files | totals inconsistent, REFUSED | 1 |
+| no `# commit` line / duplicated path | UNUSABLE | 2 |
+
+The committed-TSV output is byte-identical from two working directories (sha256 cd9049ee…6b18d1).
+
+**Correction to §186 (EXECUTION-VERIFIED, `git ls-tree -r -z` at d46456a):** §186 said that the path `Article 10 ` ends in a space. That is wrong: the path is `Article 10`, with no trailing space, in the repository and in the committed §186 TSV. The other §186 statement, that most source files have no extension, stands. §186 is left as it was, and this note corrects it.
+
+**What this does not do:** it does not choose files for the ebook (Timothy's A6), does not test packaging (`build.py` is not run here), and decides nothing editorial or about rights. Product shape, customer, delivery, pricing, fees, refund, tax records and free-tier stack are unchanged. Which ebook (TAM material vs Unicorn Estate / RFC) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
