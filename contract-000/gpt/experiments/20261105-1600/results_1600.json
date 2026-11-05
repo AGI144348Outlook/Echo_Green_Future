@@ -1,0 +1,91 @@
+{
+  "seed": 20261105,
+  "steps": 16,
+  "engine": "ES2020",
+  "tests": [
+    {
+      "id": "T1 27-coordinate bijection",
+      "pass": true,
+      "measure": {
+        "unique": 27
+      }
+    },
+    {
+      "id": "T2 deterministic replay",
+      "pass": true,
+      "measure": {
+        "delta": 0
+      }
+    },
+    {
+      "id": "T3 two-versus-three rings",
+      "pass": true,
+      "measure": {
+        "delta": 0.3590319007881142
+      }
+    },
+    {
+      "id": "T4 no-op preservation",
+      "pass": true,
+      "measure": {
+        "max_delta": 0
+      }
+    },
+    {
+      "id": "T5 uncoupled propagation",
+      "pass": true,
+      "measure": {
+        "downstream_delta": 0
+      }
+    },
+    {
+      "id": "T6 connected directional one-step intervention",
+      "pass": true,
+      "measure": {
+        "downstream": 0.08748091587433482,
+        "upstream": 0,
+        "edge_0_to_1": true,
+        "edge_1_to_2": true
+      }
+    },
+    {
+      "id": "T7 harmonic gematria vs shuffled",
+      "pass": true,
+      "measure": {
+        "ratio_3_9": 1,
+        "ratio_2_3": 0,
+        "shuffled_delta": 0.00957255405656987
+      }
+    },
+    {
+      "id": "T8 phase lag contrast",
+      "pass": true,
+      "measure": {
+        "delta": 0.6769496935523147
+      }
+    },
+    {
+      "id": "T9 deformable boundary feedback",
+      "pass": true,
+      "measure": {
+        "delta": 0.0866539717032957
+      }
+    },
+    {
+      "id": "T10 separate identity/permission/origin gate",
+      "pass": true,
+      "measure": {
+        "forged_active_denied": true,
+        "read_denied": true,
+        "pe_inactive_blocked": 17
+      }
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "source_commit": "35507da7e200fdb85dd008b9183a9fac6e3200bb",
+  "source_blob_sha": "90ccc8c0e7e21c12baf27d13d13a8f8e888f12e3",
+  "preregistration": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/292",
+  "runtime": "isolated ES2020 dynamic function; exact fetched committed source; not Node CLI or CI",
+  "evidence_status": "EXECUTION-VERIFIED synthetic predicates, not semantic validation"
+}
