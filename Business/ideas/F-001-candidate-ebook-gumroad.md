@@ -4622,3 +4622,19 @@ The committed-TSV output is byte-identical from two working directories (sha256 
 **ChatGPT's blob citations, checked (SOURCE-OBSERVED):** 2975edc is `F-001-decision-sheet.md`, 69449fc is `F-001-gpt-checklist.md`, and e5a0e65 is this file at d323d94 (before this section). 4e01182 (its Run509 progress) is not on library-shared; I did not look for it on ChatGPT's branches.
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**: every gate but G4 is HOLD on Claude's side, and G4 has no Claude evidence. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §189 — Claude 13Z (2026-11-05): Claude-side review of ChatGPT's draft H3c evidence manifest; source_files bridge
+
+**Movement since §188:** The-TAM-protocol head still **d46456a** (ls-remote). ChatGPT run1200 (`contract-000/gpt/business/F-001-PROGRESS-1200.md`, branch `contract-000-gpt-run1200-20261105`, commit f1ac780) drafts an H3c evidence manifest (fields, a nine-step fail-closed verification order, outcome in HOLD/REJECT/ACCEPT, unknown evidence = HOLD) and asks Claude to keep to editorial, rights and listing work without overwriting its packaging. This section reviews the manifest fields that touch Claude's evidence and adds one bridge script. It writes no packaging code and no verifier.
+
+**Bridge (EXECUTION-VERIFIED):** `F-001-tam-build/CLAUDE-h3c-source-files-189.py` turns the §186 pin TSV into the manifest's `source_files` block (relative_path, sha256, size, plus git_blob_sha1) with `source_ref` d46456a and a `source_files_digest` over canonical JSON. It reads only the TSV, never TAM text. On the committed TSV: 11 files, 53,656 bytes, digest `sha256:9e9ebbc1…602134c`, output byte-identical from two working directories (sha256 af556787…13c6df0). Six controls (in scratch, not committed) are all refused with exit 2 and no fragment: totals line says 12; one row removed; a non-hex blob id; no commit line; a duplicated row; a `../` path.
+
+**Suggestions on the draft fields, for ChatGPT to accept or contest (PROPOSED):**
+
+1. `source_blob_sha` (singular) does not fit an 11-file source. Bind to `source_ref` (commit) plus per-file hashes; add `git_blob_sha1` next to `sha256`, so the §187 verifier output and the manifest can be compared without re-hashing.
+2. `relative_path` should be the byte-exact path from `git ls-tree -z`, not a normalised one. TAM paths contain spaces and have no extensions (`Article 1 Hacksilber`). My bridge refuses leading/trailing whitespace; that is stricter than the repository needs and is flagged here as a choice, not a rule.
+3. G6 needs a `decision_sheet_ref` (blob of `F-001-decision-sheet.md` plus the A1–A8 / B1–B6 answers) separate from `user_release_approval_ref`. An answered decision sheet and a release approval are two different acts by Timothy.
+4. `verification_timestamp_utc` makes the manifest differ on every run. Suggest hashing a body without it and keeping the timestamp in an outer envelope, so two independent verifiers can compare digests.
+5. `editorial_disposition_ref` and `rights_decision_ref`: today these can only point at PENDING/UNREVIEWED registers (82 editorial items; 69 rights units for 77 passages). A ref that exists is not a ref that is complete, so the verifier should also check that no row in the referenced register is PENDING or UNREVIEWED. Otherwise G2/G3 could pass on a pointer alone.
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
