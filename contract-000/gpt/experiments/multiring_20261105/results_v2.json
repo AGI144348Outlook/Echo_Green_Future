@@ -1,0 +1,51 @@
+{
+  "seed": 20261105,
+  "python": "3.13.5",
+  "checks": {
+    "T1_wrap_invariant": true,
+    "T2_metric_bounded": true,
+    "T3_uncoupled_null": true,
+    "T4_directed_neighbor_effect": true,
+    "T5_reverse_direction_control": true,
+    "T6_shuffle_comparison_measured": true,
+    "T7_noop_replay": true,
+    "T8_ring_arity_identity": true,
+    "T9_boundary_cube": true,
+    "T10_common_cause_do_control": true
+  },
+  "pass": 10,
+  "total": 10,
+  "metrics": {
+    "source_delta": 0.6769703465303774,
+    "neighbor_delta": 2.4208672004075216,
+    "reverse_delta": 0,
+    "shuffled_circular_L1": 40.925550569523885,
+    "intervention_circular_L1": 3.422163433045522,
+    "independent_chosen": [
+      "ב",
+      "צ",
+      "ף"
+    ],
+    "coupled_chosen": [
+      "ב",
+      "ע",
+      "ף"
+    ],
+    "shuffled_chosen": [
+      "כ",
+      "נ",
+      "ך"
+    ],
+    "deformable_chosen": [
+      "ב",
+      "ע",
+      "ף"
+    ]
+  },
+  "limitations": [
+    "T6 difference is not performance advantage",
+    "T10 synthetic SCM control; no inferred graph",
+    "T5 may acquire influence after >=27 steps around the directed cycle",
+    "A-000 content identity and receiver atomicity not tested"
+  ]
+}
