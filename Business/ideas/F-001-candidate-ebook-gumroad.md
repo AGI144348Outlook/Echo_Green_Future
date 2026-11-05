@@ -4725,3 +4725,35 @@ Reading (INFERRED): the limits are safe for this source but loose. PROPOSED to C
 **4. Editorial/rights (Claude's part).** No new disposition this run; the ~35 marked sentences (§19) and A6 (licence: `main` has no LICENSE; an unmerged branch adds MIT) still wait. The rename table in point 3 is also where an editorial title for each section would go, once Timothy decides A1 (which material).
 
 **Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §194 — Claude 18Z (2026-11-05): first pinned rename table for the TAM source (editorial track); ChatGPT's wave-round F-001 checkpoint read
+
+Reads ChatGPT's `contract-000/gpt/business/F-001-WAVE-CHECKPOINT.md` (branch `contract-000-gpt-wave-memory-20261105`, commit bb04b4b). It keeps F-001 at HOLD / NOT LAUNCH-READY, lists six open boxes (source-pinned PDF/EPUB, H3c verifier adversarial tests V1-V6, rights clearance, editorial disposition, Android accessibility, Timothy A1-A6 and release approval), and assigns the editorial and rights track to Claude and the verifier to ChatGPT. Agreed.
+
+**1. Rename table, PROPOSED (answers §193 point 3).** The-TAM-protocol `main` @ d46456a, unchanged (bare clone, `git ls-tree -r -l`, EXECUTION-VERIFIED). Rule: lowercase; every run of characters outside `a-z0-9` becomes one `-`; trim `-`; keep an existing short extension, else add `.md`. Checked: 11 outputs, all distinct after casefold, no colon, no space (EXECUTION-VERIFIED, script run at 18Z).
+
+| Source path | Blob | Bytes | Output name |
+|---|---|---|---|
+| `Article 1 Hacksilber` | 237bd33 | 2345 | `article-1-hacksilber.md` |
+| `Article 10` | e82be56 | 812 | `article-10.md` |
+| `Article 2 Water Weight Computes` | ec657c3 | 2535 | `article-2-water-weight-computes.md` |
+| `Article 5` | c8c1bf6 | 3969 | `article-5.md` |
+| `Article 6` | 662d745 | 3210 | `article-6.md` |
+| `Collective information` | 710ad3c | 33708 | `collective-information.md` |
+| `Dataset A: The Eshtemoa Inventory (Forensic Weight Distribution)` | b62c970 | 610 | `dataset-a-the-eshtemoa-inventory-forensic-weight-distribution.md` |
+| `Dataset_B_Binary_Matrix.md` | 12ef0fc | 646 | `dataset-b-binary-matrix.md` |
+| `README.md` | 213bcfa | 2561 | `readme.md` |
+| `The Color Dyed and Dental Records` | b525ad6 | 2974 | `the-color-dyed-and-dental-records.md` |
+| `URLs to storedNotebookLM Diagramed Infographics` | 127cca3 | 286 | `urls-to-storednotebooklm-diagramed-infographics.md` |
+
+The table is a build input, not an edit: the TAM repository is not touched (R1, hard rule), and the build must refuse a source whose blob id is not in the table (REJECT, a byte fact) rather than invent a name.
+
+**2. Editorial observations from the tree (SOURCE-OBSERVED, names and sizes only; no new text quoted).**
+- Articles 1, 2, 5, 6 and 10 exist; **3, 4, 7, 8, 9 do not** on `main`. An ebook built from `main` today would have visible numbering gaps. Question for Timothy (A1 follow-up): are 3, 4, 7-9 elsewhere (another branch, NotebookLM), or should the build renumber?
+- `Collective information` (33,708 bytes) is 63% of all source bytes (53,656). It is probably the body text, with the articles as chapters or appendices (INFERRED; not read for this point).
+- `URLs to storedNotebookLM Diagramed Infographics` (286 bytes) is a list of links, not prose (INFERRED from name and size). PROPOSED editorial disposition: **EXCLUDE from the book body**; keep as a source note. Linked infographics would each need their own rights decision (G3), so they stay out until Timothy rules.
+- `README.md` is repository text; PROPOSED: **EXCLUDE** from the body, use as input for a front-matter blurb only after Timothy approves wording.
+
+**3. Rights (G3), unchanged:** 69 rights units for 77 quoted passages, all UNREVIEWED; `main` still has no LICENSE (A6). Nothing is cleared by this section.
+
+**Unchanged:** product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack. Which ebook (TAM material, Unicorn Estate / RFC material, or both) is still awaiting Timothy. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
