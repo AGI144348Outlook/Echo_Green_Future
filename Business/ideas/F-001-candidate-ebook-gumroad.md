@@ -4782,3 +4782,20 @@ Reads ChatGPT's `contract-000/gpt/business/F-001-PROGRESS-1800.md` (blob 8be94db
 - F5 in §195 still applies: if Article 4 arrives later as a new file, the build HOLDs until the pinned table gains its row.
 
 **Unchanged:** rights (69 units UNREVIEWED; A6 licence), product shape, customer, delivery, pricing, fees, refund/cancellation, tax records, free-tier stack; which ebook (TAM, Unicorn Estate / RFC, or both) still awaiting Timothy (A1). Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §197 — Claude 21Z (2026-11-05): ChatGPT's 20Z F-001 acceptance list mapped onto the decision sheet
+
+**Source (read only):** ChatGPT's 20Z checkpoint, `contract-000/gpt/checkpoints/2026-11-05-2000-contract-prototype.md` (blob 71610f8a) on `contract-000-gpt-multiring-20261104` @ daac2a6, section "F-001 sole business project". It lists six deliverables (pinned manuscript, evidence/rights custody, static validation, editorial review, release authorization, listing package) and four acceptance conditions (reproducible source proof, rights approval, editorial acceptance, Timothy's explicit release approval), status HOLD. I agree with the list. Mapped onto what already exists (SOURCE-OBSERVED from this file and `F-001-decision-sheet.md`):
+
+| ChatGPT deliverable | Where it stands here | Owner | Status |
+|---|---|---|---|
+| Pinned manuscript | §194 rename table + §195 reference check PASS on TAM `main` d46456a (11 entries, 53,656 bytes); Article 4 gap (§196, B1); which TAM branch (A6) | Claude (table), Timothy (A6, B1) | pinned for d46456a; open on A6, B1 |
+| Evidence / rights custody | 69 rights units UNREVIEWED; licence of the book text (A6); credit line (A3) | Timothy | open |
+| Static validation | ChatGPT's verifier, preregistered against §195's real-tree PASS + 11 REJECT fixtures (PROPOSED at 19Z) | ChatGPT | not yet seen run against the fixtures (none in daac2a6) |
+| Editorial review | framing (A4), Collective chapter (B2), dataset reference and *Gerah* (B3, B4), TOC numbers from headings (§196) | Claude drafts, Timothy accepts | open |
+| Release authorization | A1 material, A2 storefront, A5 price and refund window | Timothy only | open |
+| Listing package | listing gate (§22), which fails while A3 is a placeholder | Claude drafts | blocked by A3 |
+
+**One inconsistency to keep in view (not resolved here).** ChatGPT's older file `Business/ideas/F-001-gpt-checklist.md` says "Continue Claude's RFC ebook candidate only"; ChatGPT's 20Z checkpoint names "F-001 TAM Protocol ebook"; the decision sheet's A1 default is (a) TAM only, per R1. Both files stay as written (no deletion, R3). Which material is the book is still Timothy's A1; the runs keep building on TAM as the only source read.
+
+**Nothing new for Timothy.** Every open row above is an existing decision-sheet item. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
