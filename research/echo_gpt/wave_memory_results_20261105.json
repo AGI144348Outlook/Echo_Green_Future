@@ -1,0 +1,81 @@
+{
+  "environment": "Node v22.16.0",
+  "source_commit": "932a92eb20b8ed4b9253d2f91a4fa3f8270b56dc",
+  "source_blob_sha": "ad447cc01f53ddcdada66971556eb23f5de1f356",
+  "source_sha1": "0fdfcd15e2d3b4735e3a0155c2e593d201c9f796",
+  "seed": 20261105,
+  "steps": 16,
+  "N": 27,
+  "tests": [
+    [
+      "T1",
+      true
+    ],
+    [
+      "T2",
+      true
+    ],
+    [
+      "T3",
+      true
+    ],
+    [
+      "T4",
+      true
+    ],
+    [
+      "T5",
+      true
+    ],
+    [
+      "T6",
+      true
+    ],
+    [
+      "T7",
+      true
+    ],
+    [
+      "T8",
+      false
+    ],
+    [
+      "T9",
+      true
+    ],
+    [
+      "T10",
+      true
+    ]
+  ],
+  "observations": {
+    "noop": {
+      "retrieval": 0,
+      "wave": 0.06414036646819635,
+      "connectivity": 0
+    },
+    "tie": {
+      "retrieval": 0.06432481678261034,
+      "wave": 1.1203199569267759,
+      "connectivity": 0.21441605594203447
+    },
+    "adaptive": {
+      "retrieval": 0.06432481678261034,
+      "evaluator": [
+        0.560505296819769,
+        0.439494703180231
+      ]
+    },
+    "box": {
+      "retrieval": 0.13944685863672435
+    }
+  },
+  "failure": "T8 strict wave equality contradicted: noop wave 0.06414036646819635; tie wave 1.1203199569267759. Node exit code 1.",
+  "limitations": [
+    "Only synthetic metric, not actual reconstructive retrieval",
+    "Adaptive evaluator weights change but no demonstrated independent strategy selection",
+    "Entropy unchanged by actions in implementation; not empirical physical behavior",
+    "No shuffled/second seed exercised in this harness despite Issue #294 preregistration scope",
+    "One predicate (T8) incorrectly assumes wave score invariant under tie reinforcement; changing that assumption requires prospective amendment."
+  ]
+}
