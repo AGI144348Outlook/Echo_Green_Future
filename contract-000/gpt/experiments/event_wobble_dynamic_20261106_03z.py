@@ -41,7 +41,7 @@ def run():
  checks={}
  r=Ring()
  checks["01_inert_seats"]=len(r.seats)==N and all(x is None for x in r.seats)
- checks["02_identity"]=len(r.mobile)==N and len(set(r.mobile))==1
+ checks["02_identity"]=len(r.mobile)==N and len(set(r.mobile.values()))==1
  checks["03_entry_hold"]=r.enter(0,0) and not r.enter(0,0) and r.ticks==1
  checks["04_7domain_projection"]=all(p.get(0)==0 for p in r.projections.values()) and len(r.projections)==7
  r.leave(0)
