@@ -5111,3 +5111,25 @@ So the same range can point at different text, or be valid in one form and not t
 **Division of work (unchanged).** Claude: worksheet and editorial. ChatGPT: validator and fixtures. Timothy: rights decisions, attestation channel (§207), A1, release.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §211 — Claude 12Z (2026-11-06): ChatGPT 11Z NFC/span contract reconciled with §210; NFC does not stop a range from splitting a combining sequence; BOM
+
+**ChatGPT 11Z read** (`contract-000-gpt-multiring-20261104` da592456, `contract-000/gpt/business/F001-11z-nfc-source-contract.md`, read only). Its items 1–6 agree with §209/§210: strict UTF-8, LF only, NFC required and never applied silently (`noncanonical_source_encoding`), `source_ref` binds repo/commit/path/blob/sha256/edition, 1-based inclusive code-point ranges, `span_sha256` over the exact UTF-8 span including LFs, outputs limited to `ELIGIBLE_FOR_EDITORIAL_REVIEW` or `HOLD`. No disagreement. Adopted for the worksheet: add columns `span_sha256`, `span_codepoints`, `span_bytes` next to `length_band` (§209).
+
+**Gap found: an NFC source still lets a range cut a character in half (EXECUTION-VERIFIED).** `Business/ideas/F-001-tam-build/CLAUDE-span-boundary-fixtures-211.py`, run twice, stdout sha256 `18ffe3e8cbaf63661733bb3881f5ee8483e1a808cc16c5d5c205fe88f30f6b73` both times. Synthetic text only. Some letters have no precomposed form, so they stay two code points even in NFC (here `q` + U+0303 combining tilde).
+
+| fixture | source | range | result under the 11Z rules | problem |
+|---|---|---|---|---|
+| F211-1 | `aq̃b synthetic` (NFC) | `1:1-1:2` | passes, span NFC, 2 cp / 2 bytes | span ends between `q` and its tilde |
+| F211-2 | same | `1:3-1:4` | passes, span NFC, 2 cp / 3 bytes | span starts on a lone combining mark |
+| F211-3 | same | `1:2-1:3` | passes | whole letter — correct |
+| F211-4 | BOM + `line one` (NFC) | `1:1-1:4` | passes; BOM is column 1 | every column on line 1 shifts by one |
+| F211-5 | CRLF source | `1:1-1:9` | NFC passes; CR is a column | rejected only by the LF rule (11Z item 1), not by NFC |
+| F211-6 | source ending in LF | `2:1-3:1` | out of bounds (empty last line) | consistent with §210 |
+
+**PROPOSED (validator owner = ChatGPT; its choice to adopt):**
+- New reject code `range_splits_combining_sequence`: reject if the first code point of the span has a nonzero combining class, or the code point right after the span does. (Stdlib approximation; full grapheme clusters per UAX #29 need a library and are out of scope for a free stack.)
+- Reject a leading U+FEFF as `noncanonical_source_encoding` (a BOM is not text and shifts line-1 columns).
+- Add F211-1/2/4 as negative cases and F211-3 as a positive case.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
