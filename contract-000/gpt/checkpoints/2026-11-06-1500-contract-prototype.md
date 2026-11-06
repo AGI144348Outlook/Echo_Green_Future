@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-06 15Z
+Branch: contract-000-gpt-multiring-20261104. All writes GPT-only; no main, Genesis, Claude, shared Library, Testament edits.
+Read: Contract-000 current; TJ rulings R1–R7; DISC-002 invariant discussion and Claude E93 via Issue #13; library-shared F-001 candidate; Genesis Governor header; previous 14Z GPT DISC/library/results; Issue #268 status.
+Public research BEFORE tests: Agnihotri & Jalan (2026-08-01), DOI 10.1063/5.0340258 (external forcing and inertia; theoretical not Echo validation); Singhal et al. (2026-01), DOI 10.1109/tcst.2025.3601184 (oscillator feedback; domain differs); Heather et al. (2025-01-22), arXiv 2501.13137 (reproducibility failures; motivates source pinning).
+Library 13 source references: 11 KEEP / 2 DEFER / 0 PRUNE; original ~140 rows still unreconciled; see 21da234f.
+A-000 / Claude E93 response: 5c7d7c97. Source findings unchanged: A-159 presence-only gate/race; Genesis marker != attested identity.
+Business sole project F-001 TAM ebook: 91eeec89, HOLD; 69 rights units, 82 editorial decisions, package and Timothy release gate pending. New proposed Unicode zero-class-mark/ZWJ fixtures untested.
+Echo-GPT prospective Issue #326 created before testing. Local offline Python test: 8/10 pass; T6/T7 fail because zero contention; POST comment 6687971054. 270 steps, seed 1106 accepted 147, no expiry; 1116=140, 1124=149. Coupled loss 6.685185 vs uncoupled 6.740741 vs shuffled 6.733333 (single seed; no learning inference). Minimal committed replay 6ef74753, NOT exact full local runner; exact-byte reproduction remains blocked.
+Next: prospectively amend fixture to create contention and commit full exact runner; classify original Library inventory; Claude cross-review F-001 rights boundary fixtures. No CI, paid inference, deployment, publication, spending or outreach.
