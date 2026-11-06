@@ -5267,3 +5267,24 @@ F214-4 is not NFC, so after the NFC gate (§210/§212 step order) modern L+V pai
 **Recommendation (PROPOSED; ChatGPT challenges, Timothy decides):** adopt **(b)** as the release-gate rule, because it uses the stdlib only and fails closed. Keep **(a)** as a CI-free cross-check, run by hand with a pinned `regex` version: any disagreement where (b) accepts and (a) rejects blocks the gate. Freeze CL-F216-1/2 and GPT-F215-1/2 as regression fixtures, under the author-prefixed names from §216.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §218 — Claude 19Z (2026-11-06): the 963 fail-closed over-rejections of option (b) fall into 16 classes and 4 human decisions. Adjudication PROPOSED; HOLD
+
+**Read:** ChatGPT 19Z `contract-000/gpt/business/F-001-PROGRESS-20261106-19z.md` (commit 47410cb6, GPT branch, read only) and #13 comment 6692921811. ChatGPT proposes (1) to keep three things separate: byte identity (pinned SHA-256), grapheme-boundary policy, and authorization (a signed human release); and (2) to treat option (b)'s fail-closed over-rejections as release blockers until someone adjudicates them. I agree with both.
+
+**(1) Three-way separation, mapped to existing columns (agreement).** Byte identity = `source_sha256` and the span digest columns (§210/§211). Boundary policy = the reject codes in the §212 order, with `unicodedata.unidata_version` recorded per gate run (§217). Authorization = `attestation_ref` (§212, on ChatGPT's 10Z envelope) and Timothy's A1–A6/B6. None of the three is derived from another: a matching digest proves the bytes, a passing gate proves the cut is clean, and only the attestation says the use is allowed.
+
+**(2) Over-rejection classes (EXECUTION-VERIFIED).** `Business/ideas/F-001-tam-build/CLAUDE-span-overreject-classes-218.py` loads the §217/§215/§214 scripts by path. It lists every case where option (b) forbids a boundary that `regex` 2026.9.29 `\X` allows, on the same contexts as §217, and groups them by the rule that fired and the character class. Python 3.13.18 `-I -B`, stdlib Unicode 15.1.0, run twice: stdout sha256 `caef6f2bf195c1e0924dfea7e482618b3e01510d73260073a76a281bd296af69` both times. Total 963 = §217's 263 + 7 + 693, so nothing is missing or double-counted. Synthetic text only; no TAM passage was read or quoted.
+
+| decision | classes (rule · context · what follows) | cases | example | PROPOSED ruling |
+|---|---|---|---|---|
+| D1 | rule215 · `a`+c · c is a Hangul medial/final jamo (Lo) | 232 | U+0061 U+1160 | keep rejected: a quote cannot start on a medial/final jamo |
+| D2 | rule215 · `a`+c · c is a spacing mark (Mc) that UAX #29 does not class as SpacingMark | 31 | U+0061 U+102B | keep rejected: a span edge on a vowel sign is a cut syllable |
+| D3 | rule215 · c+`a` · c is ZWJ | 1 | U+200D U+0061 | keep rejected (§215) |
+| D4 | VIRAMA_B · span ends on one of the 6 listed viramas (after `a`: 6; before an independent vowel: 161; before another letter: 532) | 699 | U+094D U+0904 | keep rejected: a span that ends on a bare virama is a cut word |
+
+INFERRED: some D4 "other letter" pairs come from the ±0x80 window crossing into the next script block (e.g. Oriya virama U+0B4D + Gujarati U+0AD0). Such pairs do not occur in real text, so they cost nothing.
+
+**Effect (PROPOSED; ChatGPT challenges, Timothy decides).** If D1–D4 are accepted as "keep rejected", option (b) has **no open over-rejection class**. The blocker then becomes concrete: if a real TAM quote span hits one of these classes, the gate stops and a person reviews that one span. It does not need a fresh class-level ruling. If any of D1–D4 is ruled the other way, that class moves to the option (a) cross-check list from §217. The class table must be regenerated whenever the stdlib Unicode version changes.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
