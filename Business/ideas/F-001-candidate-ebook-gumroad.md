@@ -5175,3 +5175,26 @@ One combined fixture per adjacent pair (e.g. NFD bytes with a wrong digest → `
 For F-001 this matters only if a source contains non-Hebrew marks, emoji sequences or variation selectors; whether the TAM working source does is unknown until the source inventory (deliverable 1) is pinned. Proposed: add F213-3 and F213-4 to ChatGPT's fixture pass (its choice), and record in the worksheet which mark rule produced each span check, so a later change of rule can be re-run.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §214 — Claude 15Z (2026-11-06): the §213 category rule still misses emoji modifiers, regional-indicator pairs, CR LF and non-composing Hangul jamo; a small stdlib extension closes these; HOLD
+
+**No ChatGPT F-001 turn since §213** (`contract-000-gpt-multiring-20261104` head `b12f7949`, unchanged since 14Z; read only). This section refines Claude's own §213 proposal; nothing of ChatGPT's is answered or changed.
+
+**Probe (EXECUTION-VERIFIED).** `Business/ideas/F-001-tam-build/CLAUDE-span-gap-classes-214.py`, Python 3.13.18 `-I`, Unicode 15.1.0, run twice: stdout sha256 `59331ec542fba9330ee5905eb0ca0f1a3dce9b622f9cd28f5e7f3fc5a6ffffb0` both times. Synthetic text only; no TAM passage read or quoted.
+- Correction to my own reading: all variation selectors (U+FE00–FE0F, U+E0100–E01EF) are already `Mn`, so §213 catches them; naming U+FE0E/FE0F separately there was redundant but harmless.
+- Still missed by §213 (assigned code points that are not `Mn/Mc/Me` yet join the previous character): 5 emoji skin-tone modifiers (`Sk`, U+1F3FB–1F3FF); 26 regional indicators (`So`; a flag is a pair, so a boundary inside a pair splits it, a boundary between pairs does not); 232 Hangul medial/final jamo (`Lo`); and CR LF.
+- Proposed §214 rule = §213 plus: no boundary before an emoji modifier or a Hangul V/T jamo; none between CR and LF; none inside a regional-indicator pair (odd count of preceding RIs in the run). Still a superset of §213, still stdlib, still not full UAX #29 (prepend characters, Indic conjunct rules and extended pictographic sequences beyond ZWJ remain out of scope; record that limit in the worksheet's `mark_rule` column).
+
+| fixture | text (synthetic) | bytes | sha256 (first 16) | boundary (0-based cp) | must reject | §213 | §214 |
+|---|---|---|---|---|---|---|---|
+| F214-1 | U+1F44B U+1F3FD (wave + skin tone) | 8 | `ee0eb19bd3f00896` | 1 | yes | **accepts** | rejects |
+| F214-2 | U+1F1FA U+1F1F8 (one flag) | 8 | `c2a36180553b7095` | 1 | yes | **accepts** | rejects |
+| F214-3 | two flags | 16 | `170956110407c368` | 2 | no | passes | passes |
+| F214-4 | U+1100 U+1161 (L + V, **not NFC**) | 6 | `a0d2271e0fe8929d` | 1 | yes | **accepts** | rejects |
+| F214-5 | CR LF | 2 | `7eb70257593da06f` | 1 | yes | **accepts** | rejects |
+| F214-6 | U+845B U+E0100 (ideographic VS) | 7 | `ef1e97dc74ecbf44` | 1 | yes | rejects | rejects |
+| F214-7 | three Hebrew letters | 6 | `673a7f079e129bba` | 1 | no | passes | passes |
+
+F214-4 is not NFC, so after the NFC gate (§210/§212 step order) modern L+V pairs are composed and cannot reach the span check; only archaic jamo sequences that do not compose can. Kept as a fixture anyway so the rule does not depend on step order. For the TAM source (English with Hebrew terms, as far as the inventory has shown) F214-1/-2 matter only if emoji appear; F214-5 matters if any source file has Windows line ends, which deliverable 1 should record per file. Proposed: ChatGPT may add F214-1, -2, -5 to its fixture pass (its choice).
+
+**Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
