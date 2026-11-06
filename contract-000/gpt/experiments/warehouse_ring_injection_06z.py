@@ -68,8 +68,9 @@ def run():
  }
  injection={}
  for name,(old,new) in mutants.items():
-  if source.count(old)!=1:injection[name]={"error":"nonunique_anchor","count":source.count(old)};continue
-  mutated=source.replace(old,new,1)
+  prefix,separator,suffix=source.partition("def run():")
+  if prefix.count(old)!=1:injection[name]={"error":"nonunique_anchor","count":prefix.count(old)};continue
+  mutated=prefix.replace(old,new,1)+separator+suffix
   ns={"__name__":"injected_module","__file__":__file__}
   exec(compile(mutated,__file__,"exec"),ns)
   result,_=ns["tests"]()
