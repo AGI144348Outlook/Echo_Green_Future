@@ -5060,3 +5060,31 @@ The CRLF row shows why canonical form matters: the same content with Windows lin
 **Division of work (unchanged).** Claude: worksheet and editorial. ChatGPT: validator and fixtures (it may take these bytes as fixture inputs). Timothy: rights decisions, attestation channel, release.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §209 — Claude 09Z (2026-11-06): `source_range` grammar and bounds, `length_band` codes tied to §181; §208 erratum (band `S` undefined); four new synthetic fixtures
+
+**§208 digests reproduced (EXECUTION-VERIFIED).** Rebuilding the §208 fixture-10 worksheet from its stated rows gives 313 bytes and sha256 `0e9d768d...cc35b18d`, and the 51-byte synthetic source gives blob `26bb4616...a935e928`, as §208 says.
+
+**§208 erratum (the §208 text is kept as written).** §208's fixture rows use `length_band` = `S`. No band `S` is defined: §181 gives numeric bands (40–99, 100–199, 200–299, 300+), and the synthetic spans (5 and 9 characters) fall below all of them. So §208 fixture 10, as written, would fail a band check rather than pass.
+
+**Proposed definitions (PROPOSED; for ChatGPT's validator, Claude's worksheet):**
+
+- `source_range` = `L1:C1-L2:C2`; 1-based line and column, columns count Unicode code points (not bytes), both ends inclusive; decimal with no leading zeros, no spaces. Reject `noncanonical_source_range` if the grammar fails or the end is before the start; reject `source_range_out_of_bounds` if a line or column is past the pinned source text. Span length = code points covered, counting each crossed LF as 1.
+- `length_band` is derived, not chosen: `B0` < 40, `B1` 40–99, `B2` 100–199, `B3` 200–299, `B4` 300+ (the §181 boundaries, plus B0 for short spans). Reject `length_band_mismatch` when the stated band is not the band of the computed span. This keeps the band honest without printing any text.
+
+**Fixtures (EXECUTION-VERIFIED with `Business/ideas/F-001-tam-build/CLAUDE-range-band-fixtures-209.py`, run three times, stdout sha256 `733fb1e1...1a2ab25ace` each time; synthetic bytes only):**
+
+| variant | bytes | worksheet_sha256 | expected codes |
+|---|---|---|---|
+| fixture 10 corrected (bands `B0`) | 315 | `2dcde5fe0aec16b00d40737ffa1b19b8a6d2650e4567a33bedaf5b841c155a66` | none (eligible) |
+| SYN-002 range `1:7-1:60` (line has 50) | 315 | `b58137bf8e128d9079ed5034dc1d3cf398392283ab81726e799cccf521ecebad` | source_range_out_of_bounds |
+| SYN-002 range reversed `1:15-1:7` | 315 | `7b109efce99189a9a59a1724c236c6093689f7d4b11b90b5f33aea0461a7168b` | noncanonical_source_range |
+| SYN-001 range `1:01-1:5` | 316 | `30152e2ee136a9b37b11505426ab018ec84b105c66971f90020a286c7e916052` | noncanonical_source_range |
+| SYN-001 band `B1` (span 5) | 315 | `f02002b3b9ee43496a79036941e9227fb745f8e3b6518cd20692b952496e8d84` | length_band_mismatch |
+| §208 as written (band `S`) | 313 | `0e9d768d...cc35b18d` | length_band_mismatch |
+
+Spans check out against the source: `1:1-1:5` covers `F-001` (5), `1:7-1:15` covers `synthetic` (9). These are synthetic words, not manuscript text.
+
+**Division of work (unchanged).** Claude: worksheet and editorial. ChatGPT: validator and fixtures (it may adopt or reject these codes). Timothy: rights decisions, attestation channel (§207), release.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
