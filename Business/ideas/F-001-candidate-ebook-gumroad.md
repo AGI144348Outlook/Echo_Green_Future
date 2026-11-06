@@ -5244,3 +5244,26 @@ F214-4 is not NFC, so after the NFC gate (§210/§212 step order) modern L+V pai
 - Either way, keep the fixture-validity rule: each fixture must flip at least one rule (CL-F216-1/2 flip §215; GPT-F215-1 flipped §214).
 
 **Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §217 — Claude 18Z (2026-11-06): §216 option (b) implemented and measured. 0 misses against the oracle on every context tested, with some fail-closed over-rejection after viramas. Recommendation PROPOSED; HOLD
+
+**Read:** ChatGPT 17Z `contract-000/gpt/business/F-001-PROGRESS-17Z-20261106.md` (commit f224b5cf, GPT branch, read only) and #13 comment 6690642615. ChatGPT asked for an independent review of the §216 alternatives and accepts no Unicode release gate yet (agreed).
+
+**Decision sheet note (SOURCE-OBSERVED).** `F-001-decision-sheet.md` blob 35ece85d differs from 2975edc only by the 2-line Claude addendum of 2026-11-05 20Z (§196: B1 stands, only Article 4 is missing). No decision was added or changed, and A1–A6 are still unapproved.
+
+**Evidence (EXECUTION-VERIFIED):** `Business/ideas/F-001-tam-build/CLAUDE-span-option-b-217.py` loads the §215/§214 scripts by path and was run in Python 3.13.18 `-I -B`, stdlib Unicode 15.1.0. Oracle: `regex` 2026.9.29 `\X`, installed in the run sandbox only. Run twice: stdout sha256 `98824e2226b48ff9ceefb44abb52a7b9d6ad3163f32aa247723de87f8c55f2d3` both times. The §216 census was also re-run twice: `b1798d28...4d4345a`, equal to 17Z. Synthetic text only; no TAM passage was read or quoted.
+
+| check (vs `regex \X`) | §215 misses (17Z) | option (b) misses | option (b) over-rejects | option (a) over-rejects |
+|---|---|---|---|---|
+| boundary before c (`a`+c), all assigned cp | 101 | **0** | 263 (same as §215) | 263 |
+| boundary after c (c+`a`) | 26 | **0** | 7 (ZWJ + 6 viramas) | 1 (ZWJ) |
+| after c (c+U+0937) | — | **0** | 7 | 1 |
+| after c (c+U+1F469) | — | **0** | 1 | 1 |
+| virama V + letter, 65 ccc=9 code points × letters within ±0x80 (7,590 pairs) | not run | **0** | 693 (only after the 6 listed viramas) | — |
+
+- **Finding.** Option (b) closes every gap that §216 found, on all of these contexts. Its only cost is over-rejection, which fails closed: a span may not end after one of the 6 viramas when a letter follows, even where UAX #29 allows a break (for example before an independent vowel). For editorial quote spans this is acceptable: a quote that ends on a bare virama is almost certainly a cut word. Option (a) over-rejects less, but it adds a third-party dependency whose Unicode tables move independently of the stdlib.
+- **Limits.** The test uses one- and two-character contexts only. Longer sequences (multi-ZWJ emoji, conjuncts with ZWJ/ZWNJ inside, RI runs of length > 2) are covered only by the §213–§216 fixtures, not by a census. The oracle is one implementation. Virama letters were tested only within ±0x80 of each virama. Option (b)'s lists are pinned to Unicode 15.1 and must be re-derived when the stdlib's Unicode version changes (record `unicodedata.unidata_version` in each gate run).
+
+**Recommendation (PROPOSED; ChatGPT challenges, Timothy decides):** adopt **(b)** as the release-gate rule, because it uses the stdlib only and fails closed. Keep **(a)** as a CI-free cross-check, run by hand with a pinned `regex` version: any disagreement where (b) accepts and (a) rejects blocks the gate. Freeze CL-F216-1/2 and GPT-F215-1/2 as regression fixtures, under the author-prefixed names from §216.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
