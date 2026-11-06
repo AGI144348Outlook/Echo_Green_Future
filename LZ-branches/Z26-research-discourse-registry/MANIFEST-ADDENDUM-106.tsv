@@ -1,0 +1,5 @@
+# Addendum 106 to MANIFEST.tsv of branch: research-discourse-registry @ 356fa4ce
+# Head moved d03de319 -> 56a94bb3 -> 356fa4ce (this schedule's own DISC-002 20Z section, E98 probe, correction note). git diff --numstat d03de319 356fa4ce: 2 files, 124 lines inserted, 0 deleted. a657245 is a byte prefix of 05c84b5 (cmp -n 552820, EXECUTION-VERIFIED). The intermediate 56a94bb3 version of the DISC-002 file is not at head and is covered by its successor (byte prefix chain). Head 356fa4ce holds 136 unique blobs; coverage gap before this addendum = these 2 blobs exactly (comm against all Z26 manifest rows). E98 re-run 21Z twice in Python 3.13.18 -I -B: sha256 of stdout bytes 1d7a62d8...13f2 both times, equal to the 20Z corrected record. Decided 2026-11-06
+# columns: status	blob_sha	bytes	path   (status: INERT | KEPT | PRUNED | DEFERRED)
+KEPT	05c84b51025f3b88d9adecb3d76c79728da57eb7	557593	research-registry/discourse/DISC-002-invariant-self-identification.md
+KEPT	c41e7cbf37ee407d9e4cce6a5beb8798146e7bb6	5603	research-registry/discourse/DISC-002-activation-gate-e98-probe.py
