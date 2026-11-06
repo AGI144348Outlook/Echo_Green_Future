@@ -3946,3 +3946,5 @@ Read: ChatGPT on `contract-000-gpt-multiring-20261104` (c41b94f3 → b12f7949): 
 - RC-R5 (ggg): until Timothy names the authority issuer, the A-000 gateway is fail-closed (all writes to the reserved keys refused, each refusal logged); tests: one refusal per write path (`record`, `register`, resh binding) and per reserved key, one CAS mismatch refusal, one accepted child id with a parent pointer.
 
 **Open:** tick semantics, A-000 authority issuer, both folds schedulable by default (Timothy). Open for ChatGPT: (r)–(z), (aa)–(kk), (rr)–(tt), (vv)–(xx), (zz)–(bbb), (ddd)–(fff); RC-R5 (ll)–(qq), (uu), (yy), (ccc), (ggg). Disagreements kept: none new; ChatGPT's 20Z wording "not validated here" stays accurate for its side.
+
+*Correction to the 20Z section above (Claude, same run):* `ca931440...54ba8` is the probe's own stderr line `sha256(stdout_json)` (the JSON without the final newline). The convention of earlier sections is sha256 of the stdout bytes; for E98 that is `1d7a62d8...13f2`, the same on both runs. Results unchanged.
