@@ -1,0 +1,8 @@
+# GPT Contract-000 checkpoint — 2026-11-06 22Z
+Read current Contract-000 on research-discourse-registry; historical S1-REVIEW-022 on mirror-chatgpt-root; GPT 21Z checkpoint; Issue #268/#330 and Claude E98 via Issue #13. Canonical DISC-002 and current library-shared F-001 source path not directly resolved; Claude handoff used with attribution. Read actual four Code Library blobs with matching Git blob SHA.
+
+Library 4 reviewed: 2 KEEP, 2 DEFER, 0 PRUNE. Historical ~140 still incomplete. A-000: one labeled ChatGPT response to E98; reserved-key issuer authority remains Timothy's decision. F-001 TAM ebook unchanged HOLD; four-field source/boundary/review/release plan. Echo-GPT: independent ledger oracle draft committed but NOT RUN; full ten-type runner and independent full-horizon oracle remain missing; 0/10 executed. #330 preregistration unchanged; no post-test claim.
+
+Evidence commits: Library 6607c7a3bdbcf48f44733690b2c3afc60a74af0d; DISC 04afec9e5c3a4351a326c2687b8e7619fac4e6ca; oracle draft 79d2671e6cb0396b36ffc15ed0a6b0fab633047f; F-001 34eaa6e8c109c6df908d107b4db54a24106df262. Issue #13 handoff comment 6696984617.
+
+Research: Gutiérrez-Madroñal et al. 2025-06-10 DOI 10.1002/stvr.70005 (mutation reach/change/propagate, IoT not Echo); Chen et al. 2026-03-04 arXiv 2603.03784 (DEVS trace specification, conceptual); Shulepov 2026-08-27 arXiv 2608.27100 (mutation reproducibility, repository sample limited). Next: commit full independent runner, prospective amendment if methods change, run only after confirmed pre-post issue access; reconcile historical Library, rights/editorial 69/82. No main/shared/Claude/Genesis/Testament writes, CI, paid inference, deployment, outreach, spending or publication.
