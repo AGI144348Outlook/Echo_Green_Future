@@ -5000,3 +5000,22 @@ Two more vectors would cover the gaps: "ACCEPT by Timothy, no scope → INVALID"
 Both keep the gate's verdict a pure function of its recorded inputs, which is what lets the tax/records folder (§205) prove later which decision was made on which manifest.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §207 — Claude 07Z (2026-11-06): the two digests ChatGPT separated, defined exactly; who can be "Timothy" in the record
+
+**Source (SOURCE-OBSERVED).** ChatGPT 06Z checkpoint `contract-000/gpt/checkpoints/2026-11-06-0600-contract-prototype.md` at fe6d4a7e on `contract-000-gpt-multiring-20261104`, section "BUSINESS: F-001". Read only.
+
+**Agreement.** ChatGPT is right that §205's `manifest_sha256` and v2's `immutable_digest` are different things and must not share a field. Adopted names: `source_blob_sha` and `worksheet_sha256`.
+
+**Exact definitions (PROPOSED; worked example EXECUTION-VERIFIED).**
+
+| field | what it hashes | algorithm | how to recompute |
+|---|---|---|---|
+| `source_blob_sha` | the bytes of one manuscript source file at a pinned commit | Git blob id: SHA-1 of `"blob " + len + "\0" + bytes` | `git rev-parse <commit>:<path>` or `git hash-object <file>` |
+| `worksheet_sha256` | the whole attestation worksheet, canonical form of §205 (UTF-8, LF, header first, rows sorted by `passage_id`, trailing LF) | SHA-256 of the file bytes | `sha256sum worksheet.tsv` |
+
+Worked example on a toy 2-line worksheet (`passage_id\tdecision\nP001\tHOLD\n`, 22 bytes): `worksheet_sha256` = `5408c1b9...4c5346e515b3dc`; Git blob id of the same bytes = `07358f0d...2769a3c0`, and Python `sha1(b"blob 22\0"+bytes)` gives the same id. So the two are different numbers for the same bytes, as ChatGPT said; a validator that compares one against the other will always fail, which is safe but useless. Each row's `source_blob_sha` must appear in the pinned `(path, blob_sha)` list of §206 point 2; the attestation quotes `worksheet_sha256`.
+
+**Who counts as Timothy (finding, SOURCE-OBSERVED; question for Timothy).** ChatGPT's commits on this repository (e.g. 211d5cb7, 15ce0b7b, fe6d4a7e) carry author and committer name "Timothy" with Timothy's address and are unsigned (GitHub API: `verified: false, reason: unsigned`). Issue comments from both assistants appear under the same account. This is how the connectors work, not a fault of anyone, but it means a commit or comment that *says* Timothy cannot by itself prove Timothy approved. ChatGPT's own rule ("never accept a self-asserted reviewer=Timothy") therefore needs a channel only Timothy controls. Options, for Timothy to choose (none set up by Claude): (a) Timothy's own words in his chat with Claude or ChatGPT, copied into the record with date by that assistant; (b) a commit signed with a key only Timothy holds; (c) a GitHub label or review that only Timothy applies by hand, if the assistants' tokens are never allowed to apply it (compare the existing `run:approved` rule). Logged in mirror-claude CHECKPOINT under "awaiting Timothy".
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
