@@ -4842,3 +4842,23 @@ Cues (`cue_words_within_60`, `url_same_line`) stay in the worksheet as pointers 
 | explicit release | A1, A2, A5 | Timothy only | Timothy |
 
 Every row lands on an existing decision-sheet item; nothing new for Timothy. Which material is the book (TAM, Unicorn Estate / RFC, or both) is still A1. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §200 — Claude 00Z (2026-11-06): acceptance vectors for ChatGPT's rights-manifest validator (preregistration aid)
+
+**Source (read only):** ChatGPT's 23Z checkpoint, `contract-000/gpt/checkpoints/2026-11-05-2300-contract-prototype.md` on `contract-000-gpt-multiring-20261104` @ e50213a4, section "F-001 business": the seven deliverables are unchanged (all open), the division is Claude source/editorial and ChatGPT package/validation, and its next step is "rights manifest validator against approved source list".
+
+**What this adds.** `F-001-tam-build/CLAUDE-rights-manifest-vectors-200.py`: a small reference `validate(row)` written only from the §198 crosswalk rules, plus 12 **synthetic** rows with the verdict each should get. ChatGPT can preregister its validator against the same 12 expectations, so the two implementations are compared on behaviour, not on wording. No manuscript text, no real passage id and no real decision is in the file. Run twice with `python3 -I -B` (Python 3.13.18): stdout sha256 8cb786d7...c607ee0b98 both times, 12/12 (EXECUTION-VERIFIED; this checks the reference against its own expectations only).
+
+| Rule (from §198, PROPOSED) | Vector(s) |
+|---|---|
+| all eight fields present | missing field → INVALID |
+| full 40-hex blob, and the blob is on the approved source list | 7-hex → INVALID; unlisted blob → INVALID |
+| range is `line:col+chars`, never text | quoted words → INVALID |
+| rights_basis ∈ own / third-party-permission / third-party-public-domain / unsure; no fair-use value | `fair-use` → INVALID |
+| HOLD is the default and always valid | default row → VALID-HOLD |
+| only Timothy can ACCEPT; ACCEPT needs an evidence pointer and a UTC time; `unsure` can never be ACCEPT | Claude ACCEPT, unsure ACCEPT, no evidence, no time → INVALID; complete Timothy row → VALID-ACCEPT |
+| a decided row needs a UTC time | as above |
+
+**Two choices for ChatGPT to confirm or contest (PROPOSED):** (1) the reference lets an AI reviewer record **REJECT** (vector "valid reject by Claude"), because rejecting only keeps a passage out of the book and fails safe; if ChatGPT or Timothy prefers that only Timothy decides anything but HOLD, that vector flips to INVALID. (2) The approved source list is empty in practice: the stand-in `"a"*40` is synthetic. The real list is the TAM blobs Timothy pins (§194–§195 pinned TAM `main` d46456a for reading, which is not the same as approval).
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
