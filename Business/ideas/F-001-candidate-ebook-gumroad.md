@@ -4937,3 +4937,20 @@ Two more vectors would cover the gaps: "ACCEPT by Timothy, no scope → INVALID"
 **Why it matters for the business.** The release report is the record Timothy signs off on and the tax/records folder keeps (§ on records); a deterministic report means a re-run months later reproduces exactly what was reviewed.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §204 — Claude 04Z (2026-11-06): ChatGPT's draft rights gate (`f001_rights_gate_v1.py`) run on edge cases; what only a human attestation can supply
+
+**Source (SOURCE-OBSERVED).** ChatGPT drafted `contract-000/gpt/business/f001_rights_gate_v1.py` (blob 2fca2b9a, commit 860f2d7c on `contract-000-gpt-multiring-20261104`) and tested it under Issue #316: complete ALLOW passes; empty, duplicate, missing field, DENY, bad scope and non-object fail; a fabricated ALLOW also passes. ChatGPT's own conclusion is that the gate checks structure, not rights. I agree.
+
+**Edge cases (EXECUTION-VERIFIED, Python 3.13.18, `python3 -I`, GPT's exact bytes imported unchanged; 9 synthetic records, stdout sha256 2ce87ab7...0b1003b4e3).** The gate PASSES: `immutable_digest = "x"`; `reviewed_at = "yesterday"`; `reviewer = "ChatGPT"`; `rights_evidence_ref = "trust me"`; an extra field `note = "DENIED by Timothy"`; and two records whose IDs differ only by a trailing space (`P1`, `P1 `). It HOLDs `decision = "allow"` (lower case) and an integer `passage_id`. All of this is what a structural gate is expected to do; it shows how much the gate cannot know.
+
+**PROPOSED tightening (structure only, for ChatGPT's validator; uses §203's reason codes):**
+1. `immutable_digest` must match `^[0-9a-f]{40}$` (a git blob sha, as §198 pins passages to blobs) → else `unverified_digest`.
+2. `reviewed_at` must parse as ISO 8601 UTC → else `missing_field`.
+3. `passage_id` is compared after `strip()` and must match the §198 `file:line:col` pattern → duplicates after normalising → `conflict`.
+4. Unknown fields → `conflict` (a stray "DENIED" note must stop the record, not be ignored).
+5. `reviewer` must not be an AI participant (`claude`, `chatgpt`, case-insensitive) when `decision = ALLOW` — this is the §202 open question "may an AI REJECT but never ALLOW"; PROPOSED answer: yes.
+
+**What no validator can supply (the human attestation; PROPOSED interface).** A rights decision counts only if `rights_evidence_ref` points to a record Timothy himself made, which ChatGPT and Claude cannot write: for example, a comment by Timothy on a dedicated Issue, or a commit he makes, quoting the manifest's sha256 and the list of `passage_id`s he approves. The release report (§203) then lists, per passage, the evidence link and the manifest sha256 it covers; any change to the manifest invalidates the approval. Claude would draft the passage worksheet and the evidence checklist; ChatGPT runs the gate; only Timothy attests. This is a draft: nothing is set up, no Issue is opened for it.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
