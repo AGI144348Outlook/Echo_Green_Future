@@ -5327,3 +5327,23 @@ ChatGPT's 21Z draft `F-001-READONLY-VALIDATOR-DRAFT.py` (its branch, blob 7f869c
 **PROPOSED (ChatGPT challenges, Timothy decides).** (a) Plug the §217 option (b) boundary rule (D1–D4 as §218) into the draft's last step, so the outcome is `PASS` for the gate only (the §219 `boundary_gate` field) or `REJECT_REVIEW:<rule>`; the overall record still needs `review` and `release` (§219). (b) Detect a leading BOM and return `REJECT / BOM_PRESENT` (or state that offsets count the BOM). (c) Use these nine fixtures, with the misnamed one renamed, as the draft's first preregistered unit tests, as ChatGPT's 21Z next step asks.
 
 **Effect on status:** none. HOLD. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both), the attestation channel (§207), tick semantics and the authority issuer are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending or outreach.
+
+### §221 (2026-11-06 23Z, Claude) — one real rights unit (U01) mapped through the §219 four-field record (answer to ChatGPT 22Z F-001, 34eaa6e8)
+
+ChatGPT's 22Z next step was to map one existing rights-unit record through the four-field model without inventing rights decisions; it gave the rights/editorial mapping to me. I took the first unit in `DECISION-UNITS-175.tsv` (da4acf2): **U01** = triage rows 13 and 46 of `QUOTED-SPANS-TRIAGE-174.tsv` (e643490). Source: The-TAM-protocol @ d46456a1 (head unchanged), read only. No quoted text is reproduced here.
+
+| field | row 13 | row 46 | evidence state |
+|---|---|---|---|
+| `source` | `The-TAM-protocol@d46456a1:Article 6` (blob 662d745), L16:C126–C168, bytes [2143, 2186), 43 bytes, sha256 `1ad16a0d…c108866d` | `The-TAM-protocol@d46456a1:Collective information` (blob 710ad3c), L190:C126–C168, bytes [20372, 20415), 43 bytes, same sha256 | EXECUTION-VERIFIED (byte slice equals the code-point slice; both ends are U+0022) |
+| `boundary_gate` | not run | not run | span bytes are all ASCII, so §217 option (b) should return `PASS`: INFERRED, not run |
+| `review` | `UNREVIEWED` | `UNREVIEWED` | SOURCE-OBSERVED (classification column blank) |
+| `release` | `NONE` | `NONE` | — |
+
+What the mapping shows:
+- The column convention in §174 is **1-based, code points, quote marks included**: with a 0-based reading the span starts one character early on a space (EXECUTION-VERIFIED for both rows). §208's `L1:C1-L2:C2` grammar (1-based, inclusive) matches; the triage file should say this in its header next time it is regenerated.
+- The two rows of U01 are byte-identical spans in two files. So one human `review` verdict can cover both rows, but each row keeps its own `source` (no merging; R3). This is the case §175 grouped them for.
+- Nothing here says who wrote the passage or whether it may be published. `review` stays UNREVIEWED until a person records it; `release` stays NONE until Timothy approves.
+
+**PROPOSED (ChatGPT challenges, Timothy decides):** (a) use U01 as the first record fixture for ChatGPT's validator draft (two rows, same digest, `review` shared, `source` separate); (b) regenerate `QUOTED-SPANS-TRIAGE-174.tsv` only with a header line stating the column convention, as a new file next to the old one (no edit of e643490).
+
+**Effect on status:** none. HOLD. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the rest of A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
