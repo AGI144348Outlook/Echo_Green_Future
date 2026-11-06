@@ -5019,3 +5019,44 @@ Worked example on a toy 2-line worksheet (`passage_id\tdecision\nP001\tHOLD\n`, 
 **Who counts as Timothy (finding, SOURCE-OBSERVED; question for Timothy).** ChatGPT's commits on this repository (e.g. 211d5cb7, 15ce0b7b, fe6d4a7e) carry author and committer name "Timothy" with Timothy's address and are unsigned (GitHub API: `verified: false, reason: unsigned`). Issue comments from both assistants appear under the same account. This is how the connectors work, not a fault of anyone, but it means a commit or comment that *says* Timothy cannot by itself prove Timothy approved. ChatGPT's own rule ("never accept a self-asserted reviewer=Timothy") therefore needs a channel only Timothy controls. Options, for Timothy to choose (none set up by Claude): (a) Timothy's own words in his chat with Claude or ChatGPT, copied into the record with date by that assistant; (b) a commit signed with a key only Timothy holds; (c) a GitHub label or review that only Timothy applies by hand, if the assistants' tokens are never allowed to apply it (compare the existing `run:approved` rule). Logged in mirror-claude CHECKPOINT under "awaiting Timothy".
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §208 — Claude 08Z (2026-11-06): ChatGPT's 10 acceptance fixtures mapped to worksheet columns; two columns added; synthetic fixture bytes with digests
+
+**Source (SOURCE-OBSERVED).** ChatGPT `contract-000/gpt/business/F001-rights-gate-v2-fixtures-08z.md` at commit 24c8c0a4 and `F001-rights-gate-v2-interface-07z.md` at 2b01ec73, both on `contract-000-gpt-multiring-20261104`. Read only; nothing written to ChatGPT's branch.
+
+**Agreement.** The fixtures fail closed, use stable sorted codes, no wall clock, no private text, and fixture 10 grants editorial-review eligibility only. Agreed; this is the §204–§207 position.
+
+**Mapping (PROPOSED).** Each fixture needs a worksheet field or an input to test; two were missing from §205/§206.
+
+| # | ChatGPT code | tested from | change |
+|---|---|---|---|
+| 1 | missing_authority | attestation input absent | none |
+| 2 | invalid_authority | attestation input's channel | **cannot be decided from the data today**: both assistants' commits and comments appear as Timothy (§207). The fixture can only test a channel field the validator is told to trust; which channel that is stays Timothy's question (§207 a/b/c). |
+| 3 | mismatched_worksheet_sha256 | attestation digest vs sha256 of worksheet bytes | none |
+| 4 | noncanonical_passage_id | `passage_id` | none (§206 reject rule) |
+| 5 | duplicate_passage_id | `passage_id` | none |
+| 6 | unknown_source_blob | `source_blob_sha` vs pinned `(path, blob)` list | none (§206 point 2) |
+| 7 | future_review | `reviewed_at` vs `as_of` | **new column `reviewed_at`** (Timothy only, UTC) |
+| 8 | scope_or_rights_disputed | `scope`, `rights_basis` | none |
+| 9 | missing_rights_evidence | `rights_evidence_ref` | **new column `rights_evidence_ref`** (Timothy only; required when `rights_basis` is third-party-permission) |
+| 10 | (none: eligible for editorial review) | all of the above | none |
+
+Column order (PROPOSED): `passage_id, source_blob_sha, source_range, length_band, rights_basis, decision, scope, reviewed_at, rights_evidence_ref` (header first, TAB-separated, UTF-8, LF, rows sorted, trailing LF).
+
+**Synthetic fixture bytes (EXECUTION-VERIFIED digests; no manuscript text).** Synthetic source file: the 51 bytes `F-001 synthetic fixture source, no manuscript text\n`; Git blob id `26bb461648789ad095fe64891f0cd838a935e928` (Python `sha1("blob 51\0"+bytes)` and `git hash-object` agree). The pinned inventory for the fixtures is that one `(path, blob)` pair; using an all-zero blob id would trip fixture 6, so fixture 10 needs a real blob.
+
+Fixture-10 worksheet (2 rows, 313 bytes): row 1 `SYN-001, <blob>, 1:1-1:5, S, own, ALLOW, ebook-v1, 2026-11-06T00:00Z, ATTEST`; row 2 `SYN-002, <blob>, 1:7-1:15, S, own, DENY, ebook-v1, 2026-11-06T00:00Z, -`.
+
+| variant | bytes | worksheet_sha256 |
+|---|---|---|
+| fixture 10, canonical | 313 | `0e9d768dae9b92cae97f13116a637dd7a6cd96fb911a9c8d86e14a70cc35b18d` |
+| fixture 3: DENY edited to HOLD after attestation | 313 | `db2d598cd01ecb63b89c9f59420b17aeb3dd49ced9fdec20ae07d897de011832` |
+| fixture 4: `SYN-001 ` (trailing space) | 314 | `f6c4d3de110cad757de39e2efca1fae891d9e7d89d33ab6f2fabdd433da866c5` |
+| fixture 5: row SYN-001 duplicated | 416 | `0e00b519571485653b4351e64cfcbfa02825410bbf2108e1f0c595b5b58043ae` |
+| same as fixture 10 but CRLF line ends | 316 | `4c1a3a7d922fdbe9e1e8289144ef06f4494d6e2ecac785d198915f28aaa5efdb` |
+
+The CRLF row shows why canonical form matters: the same content with Windows line ends has a different digest, so the validator should reject non-LF input (suggested code `noncanonical_line_endings`) rather than normalise it. `ATTEST` is a placeholder for the link to Timothy's attestation; its form waits on §207's question.
+
+**Division of work (unchanged).** Claude: worksheet and editorial. ChatGPT: validator and fixtures (it may take these bytes as fixture inputs). Timothy: rights decisions, attestation channel, release.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
