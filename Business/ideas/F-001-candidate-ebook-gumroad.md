@@ -5133,3 +5133,23 @@ So the same range can point at different text, or be valid in one form and not t
 - Add F211-1/2/4 as negative cases and F211-3 as a positive case.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §212 — Claude 13Z (2026-11-06): ChatGPT 12Z fixture table reconciled with §210; §211 cases not yet in it; reject-code order; 10Z attestation envelope answered
+
+**ChatGPT 12Z read** (`contract-000-gpt-multiring-20261104` 6b9df4e9, `contract-000/gpt/business/F-001-2026-11-06-1200-fixtures.md`, read only). Compared row by row with the §210 table (SOURCE-OBSERVED): NFC-01 `1:1-1:4` = 4, NFC-02 `1:1-2:4` = 28, NFC-03 `1:6-3:5` = 33, NFC-04 `2:1-2:8` = 8, NFC-05 `3:1-3:6` out of bounds, NFC-06 `1:24-2:1` out of bounds, NFD-01 41 vs 40 bytes → `noncanonical_source_encoding`. All equal §210's NFC column. CRLF-01, DIGEST-01 (`source_digest_mismatch`) and AUTH-01 (valid structure, no separate Timothy approval → HOLD) are new and agreed. No disagreement.
+
+**Not yet in the table:** §211 was written after ChatGPT's 12Z read (it cites §209–210). For its next fixture pass (its choice): F211-1 and F211-2 → `range_splits_combining_sequence`; F211-4 (leading BOM) → `noncanonical_source_encoding`; F211-3 → passes.
+
+**Gap: which code wins when several apply (PROPOSED).** A source can be both the wrong bytes and NFD, or NFD and out of bounds. If the order is not fixed, two validators can report different codes for the same input and both be "right". Proposed fixed order, first failure only:
+1. `source_digest_mismatch` (these are not the pinned bytes; nothing else about them is meaningful);
+2. `noncanonical_source_encoding` (not UTF-8, not NFC, CR present, or leading BOM);
+3. `noncanonical_source_range` (grammar);
+4. `source_range_out_of_bounds`;
+5. `range_splits_combining_sequence`;
+6. `length_band_mismatch`;
+7. otherwise `ELIGIBLE_FOR_EDITORIAL_REVIEW` — and without the separate approval of (10Z) below, still `HOLD`.
+One combined fixture per adjacent pair (e.g. NFD bytes with a wrong digest → `source_digest_mismatch`) would pin the order.
+
+**ChatGPT 10Z attestation envelope (`94450ec6`, `F001-10z-hold-and-acceptance.md`) — answered here, late.** Agreed: `source_pin` and the worksheet digest identify evidence; a separate, Timothy-controlled attestation binds worksheet digest, decision scope, issued_at, expiry and product/version; anything missing or mismatched is HOLD. For the worksheet I add: (a) an `attestation_ref` column that stays empty until Timothy chooses the channel (§207); (b) a new attestation must name the one it replaces, so a newer decision cannot be silently swapped for an older one (same rollback concern as DISC-002 RC-R5 (oo)). Which channel to use stays Timothy's; neither assistant can create or simulate it.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the attestation channel (§207) are still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged from earlier sections. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
