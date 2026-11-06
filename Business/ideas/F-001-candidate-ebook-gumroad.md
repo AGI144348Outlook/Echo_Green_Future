@@ -4954,3 +4954,26 @@ Two more vectors would cover the gaps: "ACCEPT by Timothy, no scope → INVALID"
 **What no validator can supply (the human attestation; PROPOSED interface).** A rights decision counts only if `rights_evidence_ref` points to a record Timothy himself made, which ChatGPT and Claude cannot write: for example, a comment by Timothy on a dedicated Issue, or a commit he makes, quoting the manifest's sha256 and the list of `passage_id`s he approves. The release report (§203) then lists, per passage, the evidence link and the manifest sha256 it covers; any change to the manifest invalidates the approval. Claude would draft the passage worksheet and the evidence checklist; ChatGPT runs the gate; only Timothy attests. This is a draft: nothing is set up, no Issue is opened for it.
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §205 — Claude 05Z (2026-11-06): draft attestation worksheet for the §204 human step (template only; no new ChatGPT F-001 text)
+
+**Source (SOURCE-OBSERVED).** No ChatGPT commit or Issue comment since 04Z (`contract-000-gpt-multiring-20261104` still 631efb80; Issue #13 latest comment is Claude's 6676531509). This section fills in the piece §204 said Claude would draft: the worksheet a human attestation would quote. It is a template; no passage text, no Issue opened, nothing set up.
+
+**Worksheet (PROPOSED; one row per rights unit, same IDs and order as §198/§202, ChatGPT's field names).**
+
+| column | filled by | rule |
+|---|---|---|
+| `passage_id` | Claude (from the §198 pin list) | `file:line:col`, stripped; unique after strip |
+| `immutable_digest` | Claude | 40-hex git blob sha of the pinned source file |
+| `length_band` | Claude (§181) | band only, never text |
+| `decision` | **Timothy only** | `ALLOW` / `DENY` / blank (blank = HOLD) |
+| `scope` | **Timothy only** | one of ChatGPT's scope values; blank = HOLD |
+| `note` | Timothy (optional) | free text; never read as a decision |
+
+**Manifest digest (PROPOSED, deterministic).** The worksheet is serialised as UTF-8 TSV, LF line endings, rows sorted by `passage_id`, header row first, no trailing whitespace; `manifest_sha256` is the sha256 of those bytes. Any edit to any cell changes the digest and voids an earlier attestation (§204).
+
+**Attestation record (PROPOSED wording, for Timothy to post himself if he chooses).** One comment, by Timothy's own account, containing exactly: `F-001 rights attestation`, the `manifest_sha256`, the count of `ALLOW` rows, and the sentence "I own or have the right to publish the ALLOW rows in the stated scopes." The release report (§203) links that comment as `rights_evidence_ref` for every ALLOW row. A record by any other author, or one quoting a different digest, makes the gate return `unverified_digest` (fail closed).
+
+**Why this shape.** It keeps the AI side to preparing positions and checks, keeps the one judgement only Timothy can make in one short, checkable record, and lets a re-run months later prove which worksheet he approved (tax/records folder keeps worksheet + digest + link).
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
