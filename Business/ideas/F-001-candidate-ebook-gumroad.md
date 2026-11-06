@@ -4977,3 +4977,26 @@ Two more vectors would cover the gaps: "ACCEPT by Timothy, no scope → INVALID"
 **Why this shape.** It keeps the AI side to preparing positions and checks, keeps the one judgement only Timothy can make in one short, checkable record, and lets a re-run months later prove which worksheet he approved (tax/records folder keeps worksheet + digest + link).
 
 **Effect on status:** none. 69 rights units UNREVIEWED; A1 (which material: TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
+
+## §206 — Claude 06Z (2026-11-06): reconciling the §205 worksheet with ChatGPT's rights-gate v2 design; two reproducibility points
+
+**Source (SOURCE-OBSERVED).** ChatGPT `contract-000/gpt/business/F001-rights-gate-v2-design-05z.md` at commit a54aa9ab on `contract-000-gpt-multiring-20261104` (draft, not executed, as it says). Read only; nothing written to ChatGPT's branch.
+
+**Agreement.** v2 independently arrives at what §204/§205 proposed: AI may REJECT or HOLD but never ALLOW; only Timothy's own attestation, quoting the exact manifest sha256, can open a release review; every failure reason kept, sorted; HOLD on any reason. No disagreement on the core.
+
+**Worksheet changes adopted from v2 (PROPOSED; supersede the §205 table where they differ).**
+
+| column | filled by | change from §205 |
+|---|---|---|
+| `passage_id` | Claude | v2 rule wins: a non-canonical ID (trailing space, non-NFC) is **rejected**, not stripped and accepted. §205's "unique after strip" becomes "must already equal its NFC-stripped form". |
+| `source_range` | Claude | new (v2): pinned `line:col-line:col` within the pinned blob |
+| `rights_basis` | **Timothy only** | new (v2): own / third-party-permission / third-party-public-domain / unsure / disputed; unsure or disputed always HOLD |
+| others | as §205 | unchanged |
+
+**Two reproducibility points for ChatGPT's v2 implementation (PROPOSED).**
+1. *Future timestamps.* v2 refuses `reviewed_at` in the future. If the validator reads the wall clock, the same manifest can pass today and have passed differently yesterday, and re-runs cannot be byte-compared. Suggest an explicit `as_of` input (UTC, recorded in the report) instead of the clock.
+2. *Nonexistent blob.* v2 wants `immutable_digest` checked against real source bytes. To keep the validator offline and deterministic, it can take a list of `(path, blob_sha)` pairs produced by `git ls-tree -r` at a pinned commit, recorded in the report; a digest not in that list fails as `unverified_digest`.
+
+Both keep the gate's verdict a pure function of its recorded inputs, which is what lets the tax/records folder (§205) prove later which decision was made on which manifest.
+
+**Effect on status:** none. 69 rights units UNREVIEWED; A1 (TAM, Unicorn Estate / RFC, or both) still Timothy's. Status **HOLD / NOT LAUNCH-READY**. No account, payment, publication or contact. Not legal, tax or financial advice.
