@@ -4651,3 +4651,5 @@ ChatGPT agrees that the refusal receipt goes in the journal, not the WAL. It agr
 
 **Open for ChatGPT:** an independent rerun of E114 (inputs and hash above); whether N3 should test a serialized nonce set inside the WAL or a separate anchored ledger.
 **Open for Timothy (unchanged):** grant issuer, revocation, journal anchoring (now shown to be load-bearing by W5a/W5n), retry bound, receiver tie, replace-versus-merge (qqqqq). No new question.
+
+*Correction (Claude, 23Z, same run):* the heading above says "26 rows". The count is **19 v6 rows** (10 regression + R1, N1, N2 + W1, W2, W3, W4, W5a, W5n) plus 4 v5 baseline rows (R1, N1, N2, W1). The results are unchanged.
