@@ -1,0 +1,533 @@
+{
+  "schema": "echo-gpt-331-v1",
+  "source_blob": "de3c67ada41112d30f9c6b8f7d7f3ed0954a7f16",
+  "source_commit": "84455640de0dd4983096527ed6c5b3b4f736a232",
+  "prereg_issue": 331,
+  "post_comment": 6704189554,
+  "counts": {
+    "T1-replay": {
+      "passed": 4,
+      "total": 4
+    },
+    "T2-conservation": {
+      "passed": 4,
+      "total": 4
+    },
+    "T3-fifo": {
+      "passed": 4,
+      "total": 4
+    },
+    "T4-exclusion": {
+      "passed": 4,
+      "total": 4
+    },
+    "T5-dwell": {
+      "passed": 4,
+      "total": 4
+    },
+    "T6-duplicate-terminal": {
+      "passed": 4,
+      "total": 4
+    },
+    "T7-missing-arrival": {
+      "passed": 4,
+      "total": 4
+    },
+    "T8-noop-projection": {
+      "passed": 4,
+      "total": 4
+    },
+    "T9-ring-comparison": {
+      "passed": 4,
+      "total": 4
+    },
+    "T10-paired-intervention": {
+      "passed": 4,
+      "total": 4
+    }
+  },
+  "rows": [
+    {
+      "type": "T1-replay",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "events": 63
+      }
+    },
+    {
+      "type": "T2-conservation",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "errors": [],
+        "arrivals": 25
+      }
+    },
+    {
+      "type": "T3-fifo",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T4-exclusion",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T5-dwell",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T6-duplicate-terminal",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "release_identity",
+          "dwell",
+          "duplicate_terminal"
+        ]
+      }
+    },
+    {
+      "type": "T7-missing-arrival",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "fifo",
+          "census"
+        ]
+      }
+    },
+    {
+      "type": "T8-noop-projection",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "frozen": true,
+        "cells": 27
+      }
+    },
+    {
+      "type": "T9-ring-comparison",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "losses": {
+          "2": {
+            "noop": 1.2028889771589981,
+            "uncoupled": 1.4497001655908968,
+            "coupled": 1.4366327514921495,
+            "shuffled": 1.447839108106167,
+            "deformable": 1.4929997485812132,
+            "projected": 1.459666626849476
+          },
+          "3": {
+            "noop": 1.297761856477452,
+            "uncoupled": 1.6482445079685377,
+            "coupled": 1.6098451436399681,
+            "shuffled": 1.6384960422020494,
+            "deformable": 1.6831407501845417,
+            "projected": 1.6360128476532583
+          },
+          "4": {
+            "noop": 1.2050757504809864,
+            "uncoupled": 1.3584213855963478,
+            "coupled": 1.3579193835711234,
+            "shuffled": 1.3590267326091015,
+            "deformable": 1.4392855735581818,
+            "projected": 1.3817726933133854
+          }
+        }
+      }
+    },
+    {
+      "type": "T10-paired-intervention",
+      "seed": 1106,
+      "pass": true,
+      "observation": {
+        "dwell3_admits": 13,
+        "dwell5_admits": 8,
+        "delta": -5,
+        "causal_scope": "queue throughput only, not learning"
+      }
+    },
+    {
+      "type": "T1-replay",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "events": 54
+      }
+    },
+    {
+      "type": "T2-conservation",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "errors": [],
+        "arrivals": 21
+      }
+    },
+    {
+      "type": "T3-fifo",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T4-exclusion",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T5-dwell",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T6-duplicate-terminal",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "release_identity",
+          "dwell",
+          "duplicate_terminal"
+        ]
+      }
+    },
+    {
+      "type": "T7-missing-arrival",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "fifo",
+          "census"
+        ]
+      }
+    },
+    {
+      "type": "T8-noop-projection",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "frozen": true,
+        "cells": 27
+      }
+    },
+    {
+      "type": "T9-ring-comparison",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "losses": {
+          "2": {
+            "noop": 1.373826252933486,
+            "uncoupled": 1.587324600162411,
+            "coupled": 1.575757333890063,
+            "shuffled": 1.6022237765421559,
+            "deformable": 1.6131713256195437,
+            "projected": 1.60744425662732
+          },
+          "3": {
+            "noop": 1.4928427304854166,
+            "uncoupled": 1.6071937181107956,
+            "coupled": 1.5659481378454012,
+            "shuffled": 1.6131572997929178,
+            "deformable": 1.5939578273609536,
+            "projected": 1.5915644037315155
+          },
+          "4": {
+            "noop": 1.4394909608294715,
+            "uncoupled": 1.5030923158058018,
+            "coupled": 1.4207960172353975,
+            "shuffled": 1.5294359014700534,
+            "deformable": 1.4186476898743314,
+            "projected": 1.4351563994951906
+          }
+        }
+      }
+    },
+    {
+      "type": "T10-paired-intervention",
+      "seed": 1107,
+      "pass": true,
+      "observation": {
+        "dwell3_admits": 12,
+        "dwell5_admits": 7,
+        "delta": -5,
+        "causal_scope": "queue throughput only, not learning"
+      }
+    },
+    {
+      "type": "T1-replay",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "events": 56
+      }
+    },
+    {
+      "type": "T2-conservation",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "errors": [],
+        "arrivals": 22
+      }
+    },
+    {
+      "type": "T3-fifo",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T4-exclusion",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T5-dwell",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T6-duplicate-terminal",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "release_identity",
+          "dwell",
+          "duplicate_terminal"
+        ]
+      }
+    },
+    {
+      "type": "T7-missing-arrival",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "fifo",
+          "census"
+        ]
+      }
+    },
+    {
+      "type": "T8-noop-projection",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "frozen": true,
+        "cells": 27
+      }
+    },
+    {
+      "type": "T9-ring-comparison",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "losses": {
+          "2": {
+            "noop": 1.5143576448848133,
+            "uncoupled": 1.677177848470556,
+            "coupled": 1.626317166711236,
+            "shuffled": 1.6891685065415647,
+            "deformable": 1.6740152943530098,
+            "projected": 1.6375860645449054
+          },
+          "3": {
+            "noop": 1.2583308336413566,
+            "uncoupled": 1.4715054857986245,
+            "coupled": 1.2849553621806418,
+            "shuffled": 1.474140827871617,
+            "deformable": 1.3071209839991083,
+            "projected": 1.3054808378254295
+          },
+          "4": {
+            "noop": 1.3029060297077355,
+            "uncoupled": 1.3590043772069738,
+            "coupled": 1.2601635560184081,
+            "shuffled": 1.4420439168589048,
+            "deformable": 1.2556861954569052,
+            "projected": 1.2792480904554435
+          }
+        }
+      }
+    },
+    {
+      "type": "T10-paired-intervention",
+      "seed": 1108,
+      "pass": true,
+      "observation": {
+        "dwell3_admits": 12,
+        "dwell5_admits": 8,
+        "delta": -4,
+        "causal_scope": "queue throughput only, not learning"
+      }
+    },
+    {
+      "type": "T1-replay",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "events": 61
+      }
+    },
+    {
+      "type": "T2-conservation",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "errors": [],
+        "arrivals": 24
+      }
+    },
+    {
+      "type": "T3-fifo",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T4-exclusion",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T5-dwell",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "errors": []
+      }
+    },
+    {
+      "type": "T6-duplicate-terminal",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "release_identity",
+          "dwell",
+          "duplicate_terminal"
+        ]
+      }
+    },
+    {
+      "type": "T7-missing-arrival",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "activated": true,
+        "errors": [
+          "fifo",
+          "census"
+        ]
+      }
+    },
+    {
+      "type": "T8-noop-projection",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "frozen": true,
+        "cells": 27
+      }
+    },
+    {
+      "type": "T9-ring-comparison",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "losses": {
+          "2": {
+            "noop": 1.613052759498214,
+            "uncoupled": 1.7119515221724786,
+            "coupled": 1.7265247241171295,
+            "shuffled": 1.714402463968841,
+            "deformable": 1.711436087885055,
+            "projected": 1.7289013329406142
+          },
+          "3": {
+            "noop": 1.6467549414079001,
+            "uncoupled": 1.5585117402299815,
+            "coupled": 1.4979282871918418,
+            "shuffled": 1.5423340351019905,
+            "deformable": 1.4524488091850114,
+            "projected": 1.4933608897687018
+          },
+          "4": {
+            "noop": 1.6497107414379208,
+            "uncoupled": 1.6947836298815797,
+            "coupled": 1.7183456262093122,
+            "shuffled": 1.7172079278386996,
+            "deformable": 1.6904382787263297,
+            "projected": 1.7173938651859977
+          }
+        }
+      }
+    },
+    {
+      "type": "T10-paired-intervention",
+      "seed": 1109,
+      "pass": true,
+      "observation": {
+        "dwell3_admits": 13,
+        "dwell5_admits": 8,
+        "delta": -5,
+        "causal_scope": "queue throughput only, not learning"
+      }
+    }
+  ],
+  "limitations": [
+    "synthetic toy; no semantic intelligence",
+    "T9 descriptive, no held-out training",
+    "T10 paired intervention only, not predictive causality",
+    "oracle and generator co-located; independent review needed"
+  ]
+}
