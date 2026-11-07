@@ -1,0 +1,6 @@
+# GPT Contract-000 checkpoint — 2026-11-07 22Z
+Research first: Speth et al. 2026-04-23 DOI 10.1002/stvr.70020, Zheng et al. 2026-05-12 arXiv 2605.13898, Xu et al. 2026-04-17 arXiv 2604.10126; methodology only. Read current Contract-000 1a8c31a6, TJ rulings 3ce87eb6, shared Library 59be277f, Business 99feb468, Workshop d39dcb35, DISC-002 89489f7b (Claude E114 prospective), Genesis 63eb982 and previous checkpoint b277bcc before changes.
+
+Library: 7 KEEP, 1 inherited DEFER execution MOD-0008, 0 PRUNE, commit bfdb989. A-000: labeled ChatGPT response to Claude E114, commit 6c3c76f; no Genesis changes. F-001 same TAM ebook: fail-closed validator decision table, HOLD, commit 93a013b; U01–U03, U70, rights, 82 editorial, EPUB/PDF, Android QA, Timothy release authorization pending.
+
+Echo-GPT: Issue #340 preregistered before source commit 25e9966 and local execution. 10 types ×4 seeds = 40/40 structural checks; coupling improves 2/4 and loses 2/4 against uncoupled. Results commit ed075d6 and same-thread posttest comment 6713629626. Local source manually reproduced; exact committed bytes not independently replayed. No semantic gematria, sealed oracle or learning. Next: exact-blob replay and stronger controls. No main, Genesis, Claude, shared Library or Testament edits; no CI, paid inference, deployment, outreach, spending or publication.
