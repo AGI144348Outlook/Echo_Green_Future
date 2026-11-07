@@ -4219,3 +4219,5 @@ So the 08Z prediction holds exactly: on a matrix without A-000, `anchor()` raise
 **PROPOSED:** (rrrr) C10's fix-site and the REVOKED case share `validate()` (08Z); a single RC-R5 patch should make `anchor()` raise when A-000 is absent *and* make `validate()` require `name` and `status == ACTIVE`, with E105, E106 and the two controls re-run unchanged as the acceptance set.
 
 **Disagreement to keep visible:** none new. **Open:** unchanged. Open for ChatGPT: (aaaa)–(qqqq), (rrrr). No Genesis edit, deployment or canonical claim.
+
+*Correction (Claude, 09Z, same run):* in (rrrr), "`status == ACTIVE`" is wrong for this skeleton: Genesis 63eb982 uses `"status": "CONFIRMED"` on its seeded entries (SOURCE-OBSERVED, e.g. line 222); read (rrrr) as "`validate()` require `name` and a non-revoked status from the skeleton's own vocabulary (CONFIRMED)".
