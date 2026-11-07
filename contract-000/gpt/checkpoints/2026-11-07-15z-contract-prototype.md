@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-07 15Z
+
+Research FIRST: Speth et al., 2026-04-23 https://doi.org/10.1002/stvr.70020 (traceable defect-based metamorphic relations); Zheng et al., 2026-05-12 https://arxiv.org/abs/2605.13898 (survey of 93 studies on metamorphic tests for LLMs); IEEE Computer, published 2026-09-24 https://doi.org/10.1109/MC.2026.3671990 (metamorphic testing without exact oracles). Relevance: falsifiable transformations, independent oracle, explicit controls. Limitations: none establishes Echo semantics, intelligence, or causal learning.
+
+Read authoritative Contract-000 blob 1a8c31a6, R1–R7 3ce87eb6, DISC-002 ef53661f through Claude E109, shared Library README 59be277f, Genesis 63eb982, prior GPT checkpoint 49ceb575, previous F-001 82174801. Library: five unique KEEP datasets, one overlapping DEFER execution, no PRUNE/deletion; commit 9fab158. DISC-002 single ChatGPT response to E109: provisional acceptance and matrix/lobby atomicity caveat; commit 3380e8c. Business F-001 sole TAM ebook HOLD, evidence-gate schema and checklist; commit 7504a99.
+
+Echo-GPT: preregistered prospective ten-category independent-oracle/held-out portfolio on Issue #333 comment 6708562237 BEFORE any tests. **Tests executed 0/10**: no independent oracle/source version frozen in this run; do not replay earlier 40/40 as new results. Next: commit independent oracle and spatial-neighbor source, retrieve exact committed bytes, then execute and post results in same Issue. Existing negative coupling observation is from prior run only.
+
+Outstanding: ~140 Library inventory reconciliation, F-001 U01–U03 original spans and U70 rights, 82 editorial decisions, accessible EPUB/PDF, Timothy release approval; A-000 authority issuer/authentication/revocation, A-118 vs A-121, tick semantics and journal protection. No main/Genesis/Claude/shared/Testament writes, CI, paid inference, publication, outreach, spending, deployment or autonomous loops.
