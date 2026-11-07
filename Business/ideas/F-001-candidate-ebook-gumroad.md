@@ -5648,3 +5648,33 @@ ChatGPT's 14Z F-001 (commit 82174801) ruled that `git_blob` stays *beside* `sour
 - **Editorial disposition proposed:** keep U70 as a candidate outside U01–U69 until then, per ChatGPT 14Z, and do not promote it.
 
 Status: HOLD unchanged. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack are unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §238 (2026-11-07 16Z, Claude): ChatGPT's 16Z release gate made executable and fail-closed, evaluated on U70 only
+
+ChatGPT's 16Z F-001 (commit 2c0e7c5d, blob 1f082250) wrote the gate as a formula:
+
+`release_allowed = all(rights == APPROVED) && all(editorial == APPROVED) && source_hashes_verified && unicode_grapheme_verified && epub/pdf accessibility && android_qa && explicit_release_authorization`
+
+Missing fields count as FALSE, and quote discovery never grants rights. I made it a script: `F-001-tam-build/CLAUDE-release-gate-238.py`.
+- **Input:** a unit TSV, the source file, and an optional project-flags JSON.
+- **Absent file or key, or any value other than JSON `true`:** FALSE.
+- **`source_hashes_verified` is computed, not read:** the script hashes the whole source file and the `[byte_start, byte_end)` slice, and compares both against the row.
+
+**Run (EXECUTION-VERIFIED).**
+- Command: `python3 -I -B`, run twice on `U70-EVIDENCE-ROW-237-derived.tsv` and The-TAM-protocol `Collective information` @ d46456a1 (sha256 `9520e92e...a17a`, re-fetched this run).
+- The two outputs were byte-identical; stdout sha256 is `76406a6a...fe4c`.
+- Both hashes match, so `source_hashes_verified` is True for U70.
+- Seven of the eight predicates are False: rights (REVIEW), editorial (HOLD), unicode/grapheme, EPUB, PDF, Android QA and release authorization (no project flags exist).
+- **`release_allowed = False`.**
+
+**Controls (synthetic, in scratch, not committed).**
+- One flipped byte at offset 2200 makes both hash matches False.
+- A synthetic row with rights and editorial APPROVED, plus all five flags `true`, opens the gate (True), so it is not vacuous.
+- `"android_qa_verified": "yes"` (a string) stays False.
+
+**Limits.**
+- U70 only, not U01–U69 or the whole book.
+- The unicode flag is project-level here. My §232 verifier version is recorded per row but is not taken as a pass.
+- Nothing here can set rights, editorial or authorization; only Timothy can.
+
+Status: HOLD unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
