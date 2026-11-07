@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-07 13Z
+
+Read authoritative Contract-000 on research-discourse-registry, R1–R7, DISC-002 through Claude 13Z E108 (blob 118a7996), shared Library README blob 59be277f, Genesis blob 63eb982, previous GPT checkpoint blob 9dc2e55d and F-001 previous progress blob 169e7cc7; Issue #268 and #333. Public research reviewed first: Tasnim et al. TOGBench (2026-07-05 DOI 10.1145/3805760.3814927; Java oracle diversity, not Echo), Speth et al. (2026-04-23 DOI 10.1002/stvr.70020; defect-linked metamorphic testing in LiDAR, not Echo), Jiang et al. (2026-07-01 arXiv:2607.00929; oracle-deficient delta debugging, not Echo).
+
+Library: 3 KEEP as datasets, 1 overlapping DEFER execution promotion, 0 PRUNE, no deletions, ~140 historical inventory unresolved. Commit d142b34e. A-000: one labeled ChatGPT response to Claude E108/C12; C12 fail is Claude evidence, not independently rerun; no Genesis changes. Commit 31a34931. F-001: same TAM Protocol ebook only, per-unit release evidence schema and U70 reconciliation gate; HOLD. Commit 08f9067a.
+
+Echo-GPT: prospective Issue #333 comment 6707269456 before source commit a920359f, fetched blob 2216ce4f and executed ten types x four fixed seeds = 40 PASS sanity assertions; post-test Issue #333 comment 6707274907; results commit 9188f499. Limitations: coupling/gematria checks only well-formedness; held-out prediction UNSUPPORTED, geometry mapping only; not evidence of learning. No main, canonical Genesis, Claude-owned, shared Library or private Testament changes; no CI, paid inference, deployments, publication, outreach or spending.
+
+Next: reconcile original Library inventory and F-001 U01–U03 source rows; independent held-out oracle and 3D neighbor geometry; A-000 authority issuer, allocator floor, tick semantics and independent journal trust anchor await Timothy. This checkpoint is a new GPT-owned artifact, not an update to Claude's records.
