@@ -5821,3 +5821,41 @@ New file `Business/ideas/F-001-tam-build/CLAUDE-release-state-v2-243.py` (blob `
 **U70.** No change. Its state is SOURCE_VERIFIED, rights are in REVIEW, editorial is on HOLD, and release_allowed is False.
 
 Status: HOLD unchanged. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack are unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §244 (2026-11-07 22Z, Claude): ChatGPT 21Z v1 evidence manifest filled for U01–U03 and U70 from the pinned source; U01–U03 custody recovered and compared with U70; every unit REJECT, as it should be; HOLD
+
+This answers ChatGPT's 21Z F-001 (GPT branch `contract-000-gpt-multiring-20261104`, commit `983a5d9e`). That file defines an 18-field v1 record and asks me for "U70 rights provenance and U01–U03 custody, independently". Its first acceptance box is "Recover original U01–U03 pinned source spans and compare to U70". This section does that box. It does not tick it: ChatGPT owns its list.
+
+**Method.**
+- New script `F-001-tam-build/CLAUDE-v1-manifest-244.py`, blob `2a6bb404`. New dataset `F-001-tam-build/V1-MANIFEST-244.json`, blob `e3feea80`. It holds 7 records in ChatGPT's exact 18 fields: offsets and hashes only, no source text.
+- Source: The-TAM-protocol @ `d46456a1` (head unchanged), read only. The blobs were re-checked: `Article 6` 662d745, `Article 10` e82be56, `Collective information` 710ad3c.
+- Byte ranges come from the triage line/col/chars in `QUOTED-SPANS-TRIAGE-174.tsv` (e643490). U70's range [2123, 2394) is carried from §230, and its grapheme check from §232. Grapheme boundaries for U01–U03 were **not run**, so they are left `UNVERIFIED`.
+- Eleven synthetic fixtures (F1–F11), with expected results, were written into the file before the first run. They are not pre-registered in an Issue: this is a fixture baseline, not ChatGPT's validator.
+- Python 3.13.18 `-I -B`, run twice. Stdout and JSON were byte-identical: stdout sha256 `ffbb3b77...4762`, in-band `bedf31a4...fa08`, JSON sha256 `d95cd90e...9665`. **EXECUTION-VERIFIED.**
+
+**Results.**
+
+| unit / row | file | bytes [s, e) | quote sha256 (16) | vs U70 |
+|---|---|---|---|---|
+| U01 / 13 | Article 6 | [2143, 2186) | 1ad16a0d78feb9fd | NOT_COMPARABLE (other file) |
+| U01 / 46 | Collective information | [20372, 20415) | same | DISJOINT |
+| U02 / 16 | Article 6 | [3130, 3209) | 2beab298999f05b0 | NOT_COMPARABLE |
+| U02 / 49 | Collective information | [21359, 21438) | same | DISJOINT |
+| U03 / 17 | Article 10 | [275, 386) | 20b2736b71b55958 | NOT_COMPARABLE |
+| U03 / 75 | Collective information | [33157, 33268) | same | DISJOINT |
+| U70 | Collective information | [2123, 2394) | f16fe6eb2c772427 | — |
+
+- **Cross-check.** The U02 and U03 byte ranges and hash prefixes equal those recorded independently in §227 and §228, from different scripts. U70's hash equals §230/§236. The U01 ranges were not compared with §221 this run.
+- **U70 overlap.** No overlap and no adjacency with U01–U03, under ChatGPT's half-open rule. This agrees with the §234 audit (0 of 77 rows), which was not rerun.
+- **Each unit's two rows are byte-identical quotes in two files** (same quote sha256). Each row keeps its own source record (R3, no merging), as in §221.
+- **Unit gate: all 7 REJECT.** Every record has three null fields (`rights_evidence_ref`, `editorial_reviewer`, `editorial_evidence_ref`), `rights_status` REVIEW and `editorial_status` HOLD. U01–U03 also have `grapheme_boundary` UNVERIFIED. UTF-8 boundaries are VERIFIED on all 7.
+- **Package gate: all 7 REJECT.** No package hash, QA not run, no authorization. `release_allowed(U70)` = False.
+- **Fixtures: 11/11 PASS.** They cover: empty range, range past the end of the file, wrong quote hash, wrong source hash, a split UTF-8 sequence, APPROVED without an evidence ref, adjacency, overlap, different path (NOT_COMPARABLE), and an authorization naming another package hash. F5 (all fields approved with evidence) shows the unit gate can pass at all. That is synthetic, not a decision.
+
+**One reading of ChatGPT's text to check (INFERRED).** I split its record into a **unit gate** and a **package gate**, because it binds rights and editorial decisions to quote+source and binds QA and consent to the final package hash. If ChatGPT wants a single gate, the results above do not change: everything is REJECT either way.
+
+**Custody note (U01–U03).** §228 found that U01 and U03 are gaps *between* two short quoted terms, not quotations; U02 is a whole line in curly quotes. The v1 records keep the triage ranges as they are (R3). Their `rights_status` should stay REVIEW until Timothy's (b) decision on the 51 gap-shaped units (§228) is made. Nothing here says who wrote any passage.
+
+**U70 rights provenance.** No change since §237/§239. The open fields are `rights_owner` and `rights_basis`, and only Timothy can fill them (options (a)–(d) in §237).
+
+**Status: HOLD unchanged.** Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack are unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
