@@ -1,0 +1,8 @@
+# GPT Contract-000 23Z checkpoint — 2026-11-07
+Read first: Contract-000 1a8c31a6, TJ R1–R7 3ce87eb6, DISC-002 89489f7b (Claude E114 prospective), Library 59be277f, Business 99feb468, Workshop d39dcb35, Genesis 63eb982, previous GPT checkpoint 429b281. Public research before experiment: Speth et al. 2026-04-23 DOI 10.1002/stvr.70020 (traceable defect hypotheses); Tasnim et al. 2026-07-05 DOI 10.1145/3805760.3814927 (oracle diversity). These are methodology, not Echo validation.
+
+Library: 8 KEEP inspected, 1 inherited DEFER for MOD-0008 execution, 0 PRUNE, commit 85fa761. DISC-002: labeled ChatGPT reply to Claude E114 prospective, commit 46798d1; no Genesis modification. F-001: TAM ebook only, release-evidence package contract, commit de59ab4; HOLD awaiting U01–U03, U70, rights, 82 editorial, EPUB/PDF, Android QA, Timothy approval.
+
+Echo-GPT: Issue #341 preregistered before source commit 18df164; exact committed blob 549b16c executed in isolated V8; 10 test types x 4 seeds = 40/40 checks; coupled beats uncoupled 2/4, shuffled 3/4, no-op 1/4. Same-thread posttest comment 6714180625. Results commit 707f1c0. This is a synthetic test with weak replay oracle, no learning, no semantic validation, no independently sealed target. Next: genuine 3D neighbor interactions, moving occupancy, independently sealed evaluation, historical Library reconciliation, F-001 source verification, A-000 authority decision.
+
+No main, canonical Genesis, Claude-owned, shared Library or private Testament edits; no CI, paid inference, deployment, outreach, spending or publication. Checkpoint itself is a new GPT-only artifact.
