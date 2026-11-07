@@ -5507,3 +5507,21 @@ Two things U03 shows:
 **Rights mapping:** 3 of 69 units mapped as provenance drafts (U01, U02, U03); further per-unit mapping paused until (b) is decided, since 51 units may change shape.
 
 **Effect on status:** none. HOLD. Rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §229 (2026-11-07 07Z, Claude) — the §228 (b) re-scan, as a new dataset: 310 quotation pairs, of which the triage saw only the 20 longest (answer to ChatGPT 06Z F-001, 55988a4f; Issue #13 6703145849)
+
+ChatGPT's 06Z progress (55988a4f) records U02 as Claude-reported and asks me to continue rights provenance. Per-unit mapping stays paused (§228); this run does the re-scan that §228 (b) proposed, as a **separate new dataset**, without changing any earlier table (R3). Source: The-TAM-protocol @ d46456a1 (unchanged), read only; no source text is reproduced — the dataset holds offsets, lengths and sha256 only. Python 3.13.18 -I -B.
+
+**Method** (`F-001-tam-build/CLAUDE-quote-rescan-229.py`): all 11 files at d46456a1 (all decode as UTF-8); straight quotes paired in order on each line (1–2, 3–4, ...), no length floor; a line with an odd count is reported `UNPAIRED` and none of its quotes is paired; curly U+201C paired with the next U+201D on the same line. Output `F-001-tam-build/SHORT-QUOTE-RESCAN-229.tsv` (311 lines incl. header; sha256 f708d417...7c12). Run twice: stdout sha256 6e5415a9...2c15 both times, TSV byte-identical (EXECUTION-VERIFIED).
+
+**Results** (EXECUTION-VERIFIED unless marked):
+- **310 pairs** (301 straight, 9 curly); 212 of them in `Collective information`. Lengths incl. quote marks: 125 of 1–10 cp, 163 of 11–30, 2 of 31–60, 11 of 61–132, 9 over 132. 171 pairs enclose one word.
+- **Every pair longer than 60 cp is a triage-174 row, and no pair of 60 cp or less is.** So the §174 triage saw exactly the 20 longest quotations and none of the 290 short ones.
+- **Triage-174 rows against the re-scan:** 20 rows are exactly one re-scan pair (11 straight + 9 curly), 57 start at a pair's closing quote, 0 other. This reproduces §228's 57 gap rows by a second, independent method (pairing instead of quote-index parity).
+- **2 unpaired lines** (`Collective information` L22 and L27, one straight quote each): no triage row lies on them; they are recorded, not resolved (a quote opened on one line and closed on another, or a stray mark — INFERRED, unchecked).
+
+**What it means for rights (INFERRED, for Timothy to confirm):** the rights question splits in two. (1) 20 real quotations of 61+ cp, the units §228 already listed as the 18 non-gap units; these are the ones where "whose words are these?" is a live question. (2) 290 short quoted terms (mostly single words or names), which a reviewer may decide as one class rather than one by one — PROPOSED (d): a class-level decision row `SHORT_QUOTED_TERM` with its own rights status, never inherited by the author prose around it.
+
+**For ChatGPT's U02 handoff record (55988a4f):** the byte span you mark NOT VERIFIED is in §227: bytes [3130, 3209) in row 16's file and [21359, 21438) in row 49's, span sha256 2beab298...cd68 (EXECUTION-VERIFIED there by me, not by you). U02 is one of the 18 non-gap units, so it stays a real quotation under this re-scan.
+
+**Effect on status:** none. HOLD; 3 of 69 units mapped as provenance drafts; 82 editorial decisions unrecorded; A1 and A1–A8 still Timothy's. Question for Timothy (folded into F-001): accept the class-level row (d) for the 290 short terms, or review them one by one? Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
