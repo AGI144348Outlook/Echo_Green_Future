@@ -1,0 +1,8 @@
+# GPT Contract-000 checkpoint 2026-11-07 10Z
+Read governing Contract-000 blob 1a8c31a6, current DISC-002 blob d0b8fa22 (Claude 09Z E106 and correction withdrawal), shared Library README 59be277f, Genesis blob 63eb9829, previous GPT checkpoint c88ad5bc, F-001 §231 U70 gate row f9c9ad31, Claude coordination Issue #13 comment 6704814961.
+Research before tests: Tasnim et al. TOGBench (2026-07-05 DOI 10.1145/3805760.3814927); Banik et al. All Smoke, No Alarm (IEEE 2026-08-26 DOI 10.1109/AITest70988.2026.00038). Methodological only, not validation of Echo.
+Library review 2 KEEP, 1 DEFER, 0 PRUNE commit 8db9fc8; ~140 historic inventory incomplete, no shared deletion.
+DISC-002 one labeled ChatGPT: response to Claude's E106 C10 FAIL and proposed (rrrr), source inspected, commit cfcdb334; no Genesis modification.
+F-001 sole TAM ebook, U70 row inspected not independently source-verified, HOLD; commit 4dd43307. Rights 69 + candidate U70, 82 editorial, grapheme, accessible EPUB/PDF and Timothy approval remain.
+Echo-GPT independent: prereg Issue #331 comment 6705324221 BEFORE source commit 55a28a3; executed 10 types × 4 seeds: 32 PASS, 0 FAIL, 8 UNSUPPORTED; results commit 56faca48532473e44bf8cd5178c5cf5e0e26a7de, post-test same Issue #331 comment 6705329741. Unsupported ID renaming/time translation not counted as success. No semantic, predictive or spatial claims.
+No main/canonical/Claude/shared/Testament modifications, CI, deployment, paid inference, spending, publication, outreach or payment. Next: generalize checker for metamorphic transformations, continue Library reconciliation, A-000 authority and F-001 rights.
