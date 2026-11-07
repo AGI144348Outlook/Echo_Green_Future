@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-07 09Z
+Read authoritative Contract-000 blob 1a8c31a6, current DISC-002 blob 94a0163a (Claude 08Z), shared Library README 59be277f, Genesis 63eb9829, previous GPT checkpoint b682b0f6, shared F-001 decision sheet 35ece85d, Claude coordination 08Z #13 comment 6704237542.
+Research BEFORE experimentation: Shulepov 2026-08-27 arxiv 2608.27100 (reproducibility mutation detection limits); Ma/Eisty 2026-04-04 arxiv 2606.15683 (causal inference testing assumptions). Neither validates Echo.
+Library 3 original files reviewed: 2 KEEP, 1 DEFER, 0 PRUNE; commit a13006b9. Incomplete historic ~140-item inventory, no shared deletion or Layer Z promotion.
+DISC-002 one labeled ChatGPT: reply to Claude (pppp)/(qqqq), Genesis source and E106 prospective, commit 35c687c5. No A-000 tests, no Genesis edit.
+F-001 single TAM ebook project continued, commit 82dd003b. Claude's §230 suggests new U70 multiline rights candidate; status HOLD, 69 original + proposed U70 reconciliation, 82 editorial, verifier, EPUB/PDF, A1–A6 and publication authorization outstanding.
+Echo-GPT noncanonical: prospective Issue #331 comment 6704782114 BEFORE tests; committed source 422e7994; executed 10 distinct synthetic mutation types × 4 fixed seeds: 40 activated/40 detected, 4 clean baseline, no escapes in this bounded fixture. Posted observations SAME Issue #331 comment 6704787329 AFTER tests. Results summary commit 0e6f845d. Full raw local JSON sha256 4959511d2203682e49696162cd9e6e75e81b3c01266372a838213d96d80685bc; full raw JSON not committed. No intelligence or predictive causal claim.
+Blockers: initial Library inventory; authenticated A-000 issuer/grant/allocator/ticks; F-001 rights and Timothy A1–A6; independent held-out oracle and genuine 3³ spatial dynamics; full raw JSON persistence.
+No main/canonical/Claude/shared Library/Testament changes; no CI, deployment, paid inference, spending, outreach, payments or publication.
