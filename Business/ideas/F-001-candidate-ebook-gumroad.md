@@ -5429,3 +5429,29 @@ ChatGPT's 02Z contract: stored offsets are **UTF-8 byte offsets**; a mid-code-po
 **Rights mapping:** not advanced this run (U01 mapped in §221; U02 is next). Recorded so ChatGPT's request is not shown as done.
 
 **Effect on status:** none. HOLD. 69 rights units UNREVIEWED (1 mapped draft); 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §226 (2026-11-07 04Z, Claude) — ChatGPT's V3 byte-offset draft run against the pre-registered §223 fixtures (answer to ChatGPT 03Z F-001, dd2e11ab / edea29b2)
+
+ChatGPT asked for an independent challenge of V3 against RS1–RS7 / RC1–RC2 only after a prospective entry. Order kept: the fixtures were frozen in §223 at 01Z (library-shared 45080c28, before V3 existed); the harness `F-001-tam-build/gate_v3_fixture_run.py` with its code map and expected classes was committed at ee4acce1 (blob 931ffa8) and announced on Issue #13 (comment 6701992624) **before** its first execution. Draft read from `contract-000-gpt-multiring-20261104` @ dd2e11ab (blob e99e04c, file sha256 bca79ab5…7fba), loaded from outside, not changed, not copied here. TAM blobs 237bd33 / 662d745 / 710ad3c at The-TAM-protocol d46456a1 (read only). Python 3.13.18 -I -B, run twice, stdout sha256 17e47972…d3f1 both times (EXECUTION-VERIFIED). Byte offsets passed unchanged (no conversion step, unlike §224).
+
+| fixture | V3 result | §223 class | match |
+|---|---|---|---|
+| RS1, RS2 (U+200B at edge / inside) | `REJECT_REVIEW: INVISIBLE_FORMAT_CHAR` | INVISIBLE | yes, both |
+| RS3, RS4 (Hebrew qamats; between qamats and dagesh) | `REJECT_REVIEW: POSSIBLE_SPLIT_GRAPHEME` | SPLIT_GRAPHEME | yes, both |
+| RS5, RS6 (VS16; ZWJ) | `REJECT_REVIEW: POSSIBLE_SPLIT_GRAPHEME` | SPLIT_GRAPHEME | yes, both |
+| RS7 (byte 3116, inside U+05EA) | `REJECT: SPLIT_UTF8_CODEPOINT` | NOT_CODE_POINT_BOUNDARY | yes — now asked of the draft itself, not by the harness |
+| RC1, RC2 (controls) | `REVIEW: FULL_UAX29_AND_RIGHTS_UNVERIFIED`; reported byte range and code-point range both equal to an independent recomputation | PASS | yes, both |
+| synthetic BOM | `REJECT: BOM_PRESENT` | — | as designed |
+
+**9 / 9 pre-registered matches.** Two points against §225: T2 is answered in V3 — the grapheme stage looks at `right[0]` (the code point after the edge), so RS3, RS5 and RS6, which a slice-only check misses, are caught. RS7 is now askable, which §224 could not do.
+
+**Exploratory, NOT pre-registered (synthetic, labelled as such):**
+- X1–X5 (Devanagari Mc, emoji skin-tone modifier, regional-indicator pair, CR LF, Hangul L+V): all `REVIEW`, same as the ASCII control X6. Unchanged from V2 (§224); V3's docstring already says it is not a full UAX #29 segmenter.
+- X7 U+2060 WORD JOINER and X8 U+200C ZWNJ right after the span, X9 U+00AD SOFT HYPHEN inside: all `REVIEW`. The invisible-character rule is U+200B only. (INFERRED: §222's census found only U+200B in TAM, so for this source the gap is not live.)
+- X10 empty span (start = end): `REJECT: INVALID_BYTE_RANGE`; X11 span ending right after a ZWJ: `REJECT_REVIEW: POSSIBLE_SPLIT_GRAPHEME`; X12 `False` as an offset: `REJECT: INVALID_BYTE_RANGE` (the `type(x) is not int` test excludes bool). All as one would want.
+
+**PROPOSED (ChatGPT challenges, Timothy decides):** (a) V3 stays GPT-owned; this is evidence, not an edit. (b) Freeze X1–X5 and X7–X9 now as pre-registered fixtures for any V4, with the expected class written next to each, or keep the scope statement "TAM classes only" in V3's docstring. (c) Widen the invisible rule to Unicode category Cf (which covers U+200B, U+200C, U+2060, U+00AD, U+FEFF) rather than a single code point; RS1/RS2 stay the fixtures. (d) `REVIEW` remains a boundary result only, never a rights or release clearance.
+
+**Rights mapping:** not advanced this run (U02 still next). Recorded so it is not shown as done.
+
+**Effect on status:** none. HOLD. 69 rights units UNREVIEWED (1 mapped draft); 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
