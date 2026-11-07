@@ -5455,3 +5455,26 @@ ChatGPT asked for an independent challenge of V3 against RS1–RS7 / RC1–RC2 o
 **Rights mapping:** not advanced this run (U02 still next). Recorded so it is not shown as done.
 
 **Effect on status:** none. HOLD. 69 rights units UNREVIEWED (1 mapped draft); 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §227 (2026-11-07 05Z, Claude) — rights unit U02 mapped through the §219 four-field record, and run through ChatGPT's V3 byte gate (answer to ChatGPT 04Z F-001, 9e0c6651; Issue #13 6701999418)
+
+ChatGPT's 04Z handoff asks me to continue U02 rights provenance. **U02** = triage rows 16 and 49 of `QUOTED-SPANS-TRIAGE-174.tsv` (e643490), per `DECISION-UNITS-175.tsv` (da4acf2). Source: The-TAM-protocol @ d46456a1 (head unchanged), read only. No quoted text is reproduced here. Scripts: `F-001-tam-build/CLAUDE-u02-map-227.py` (mapping; stdout sha256 cbb7baa5...2d41, twice) and `F-001-tam-build/CLAUDE-u02-v3-227.py` (V3 run; stdout sha256 2c85308e...1561, twice); Python 3.13.18 -I -B.
+
+| field | row 16 | row 49 | evidence state |
+|---|---|---|---|
+| `source` | `The-TAM-protocol@d46456a1:Article 6` (blob 662d745), L24:C1, 75 code points = the whole line; code points [3077, 3152), **bytes [3130, 3209), 79 bytes**; sha256 `2beab298…a6cd68` | `The-TAM-protocol@d46456a1:Collective information` (blob 710ad3c), L198:C1, whole line; code points [21156, 21231), **bytes [21359, 21438), 79 bytes**; same sha256 | EXECUTION-VERIFIED |
+| `boundary_gate` | V3 (GPT draft e99e04c) with byte offsets: `REVIEW: FULL_UAX29_AND_RIGHTS_UNVERIFIED`; its reported byte and code-point ranges equal mine | same | EXECUTION-VERIFIED |
+| `review` | `UNREVIEWED` | `UNREVIEWED` | SOURCE-OBSERVED (classification blank) |
+| `release` | `NONE` | `NONE` | — |
+
+What U02 adds beyond U01:
+- *It is the first unit where bytes and code points differ.* The span opens and closes with curly quotes U+201C / U+201D (3 bytes each; the only non-ASCII in the span), so 75 code points are 79 bytes and the start offsets differ by 53 and 203 because of earlier non-ASCII in each file. U01 was pure ASCII and could not show this.
+- *Offset-unit confusion is caught.* Exploratory, not pre-registered: passing the §174 code-point offsets to V3 as if they were byte offsets, with the true span as expected text, gives `REJECT: TEXT_MISMATCH` for both rows (EXECUTION-VERIFIED). That is the right outcome and a good fixture.
+- *Same bytes, different context.* The two rows are byte-identical, yet §174 recorded `cue_words_within_60` = 0 for row 16 and 1 for row 49. One human `review` verdict can still cover both, but the reviewer should see both contexts (R3: each row keeps its own `source`).
+- Both edges sit on line breaks (U+000A before and after) and the end quotes are punctuation (Pi/Pf), not format or combining marks, so no boundary hazard here (EXECUTION-VERIFIED for the neighbours; "no hazard" INFERRED from the categories).
+
+**PROPOSED (ChatGPT challenges, Timothy decides):** (a) U02 joins U01 as record fixtures, with the code-points-as-bytes case added as an RC-style negative control (expected `REJECT`); (b) the rights record stores both ranges (bytes as the key, code points as a cross-check), never one without saying which unit it is.
+
+**Rights mapping:** 2 of 69 units mapped as drafts (U01, U02); U03 next. Mapping is provenance only: nothing says who wrote either passage or whether it may be published.
+
+**Effect on status:** none. HOLD. 69 rights units UNREVIEWED (2 mapped drafts); 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
