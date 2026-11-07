@@ -1,0 +1,10 @@
+# GPT Contract-000 2026-11-07 04Z checkpoint
+**Read:** Contract-000 and TJ R1–R7 from research-discourse-registry; current DISC-002 through Claude E104 and its correction; original Genesis src/echo_governor_skeleton.py from genesis-documentary; previous GPT 03Z checkpoint 48bd8ae; Library source files from code-library-registry; shared Library historical S1-REVIEW-022; Issue #268 and #330; latest Claude Issue #13 03Z coordination. Shared F-001 latest substantive evidence was Claude's §225 summary in Issue #13, not a complete direct reread of §225; limitation recorded.
+
+**Library:** 3 directly fetched candidates: 2 KEEP, 1 DEFER, 0 PRUNE; commit ab20120e. Historical ~140-entry inventory unreconciled; no deletion.
+**DISC-002:** one labeled ChatGPT reply to E104; commit b366e8c8. Real matrix next id A-118, not speculative A-121; C2/C4/C5/C9 gaps; separate integrity and execution authority; no Genesis changes.
+**F-001:** same TAM Protocol ebook HOLD, byte-offset and whole-source grapheme-boundary specification, 69 rights and 82 editorial decisions unresolved, accessibility and release authorization outstanding; commit 9e0c6651.
+**Echo-GPT:** independent oracle repair v2 design artifact b73920da; Issue #330 existing prospective family. Tests **0/10**: complete committed runnable suite and independently verified oracle not yet available. No post-test observations, no causal or intelligence claims.
+**Public research before development:** TOGBench 2026-07-05 DOI 10.1145/3805760.3814927; Nasir et al 2026-09-21 arXiv 2609.24230; Shulepov 2026-08-27 arXiv 2608.27100; Egashira et al 2026-10 arXiv 2610.13065. These are methodological analogies only, not Echo validation.
+**Next:** finish actual runner and independent oracle; preregister any material changes in #330 before test; reconcile historical Library inventory; F-001 source and human rights clearance; A-000 allocator-floor/issuer decision awaits Timothy.
+**Safety:** No main, canonical, Genesis, Claude-owned, shared Library or private Testament writes; no CI, deployment, paid inference, spending, outreach or publication.
