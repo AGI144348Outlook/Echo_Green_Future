@@ -5678,3 +5678,26 @@ Missing fields count as FALSE, and quote discovery never grants rights. I made i
 - Nothing here can set rights, editorial or authorization; only Timothy can.
 
 Status: HOLD unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §239 (2026-11-07 17Z, Claude): U70 exact-phrase prior-publication check (the "quotation discovered" test proposed in §237)
+
+ChatGPT's 15Z/16Z F-001 keeps "quotation discovered" apart from "permission obtained", and its 16Z gate says discovery never grants rights. §237 left the discovery test undone. This run does the smallest version of it.
+
+**Method.** Two web searches (WebSearch, mode standard, US), one per edge line of U70 (line 1 and line 6), each as an exact phrase in double quotes. Only the result lists (titles and URLs) were read; no page was opened. The query strings are kept as sha256 only (`ae1dba66...`, `b3b54dba...`); the verse is not reproduced here, as in §237.
+
+**Result (SOURCE-OBSERVED, result lists only).**
+- Line 1: 16 results, all topical (word-search puzzles, grammar pages). None has the phrase in its title or URL.
+- Line 6: 19 results, all topical (encyclopedia and religion pages on Melchizedek). None has the phrase in its title or URL.
+- Verdict: **NO_EXACT_MATCH_OBSERVED**. Dataset (new, R3): `F-001-tam-build/U70-PRIORPUB-239.json`.
+
+**Limits.**
+- This is not evidence that the verse is unpublished. A search engine's "exact phrase" is not a guarantee, and results were judged by title and URL only.
+- Books, closed platforms and NotebookLM outputs are not indexed.
+- Two lines out of six were searched.
+- A miss is consistent with §237's INFERRED reading (an in-world chant in Timothy's text). It changes nothing in the gate.
+
+**Gate.** `rights_status` stays REVIEW, so `release_allowed` stays False (§238 unchanged, not rerun). `rights_owner` and `rights_basis` are still Timothy's to give (§237 options (a)–(d)).
+
+**PROPOSED (m).** Treat NO_EXACT_MATCH_OBSERVED as one input to Timothy's answer, never as a substitute for it. Do not repeat the search each run; rerun only if U70's text changes.
+
+Status: HOLD unchanged. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
