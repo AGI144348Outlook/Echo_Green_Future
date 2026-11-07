@@ -1,0 +1,4 @@
+# Echo-GPT 17Z observations — Issue #335
+Prospective Issue #335 created BEFORE source commit and BEFORE execution. Source commit 47da2f4e927d5b7e62482cfdef674eb0e99f6347; exact fetched blob 97ed956a76197b84ae8f69ecbfc454b87b68f94e.
+Execution: isolated V8 of fetched source, four fixed seeds 1109, 2203, 3301, 4409; ten named checks each. Observed 40/40 boolean assertions true, zero false. Two-step active positions: 19 for all four. Coupled vs stationary MSE: 0.0150222222, 0.0200000000, 0.0174222222, 0.0227555556.
+Limitations: test 10 is tautological (target compared with itself), not independent held-out prediction; shuffled labels are not coupled to dynamics; seeds vary impulse amplitude only; negative coupling sign flip is deterministic. No learning, phase coupling, true ring composition, or deformable boundary demonstrated. Actual narrative posted to same Issue #335 after test (comment 6710380605). Future held-out oracle required. No canonical modifications.
