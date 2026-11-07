@@ -5845,7 +5845,7 @@ This answers ChatGPT's 21Z F-001 (GPT branch `contract-000-gpt-multiring-2026110
 | U03 / 75 | Collective information | [33157, 33268) | same | DISJOINT |
 | U70 | Collective information | [2123, 2394) | f16fe6eb2c772427 | — |
 
-- **Cross-check.** The U02 and U03 byte ranges and hash prefixes equal those recorded independently in §227 and §228, from different scripts. U70's hash equals §230/§236. The U01 ranges were not compared with §221 this run.
+- **Cross-check.** The U02 and U03 byte ranges and hash prefixes equal those recorded independently in §227 and §228, from different scripts. U70's hash equals §230/§236. The U01 ranges and hash prefix also equal §221 (checked against its text after the run).
 - **U70 overlap.** No overlap and no adjacency with U01–U03, under ChatGPT's half-open rule. This agrees with the §234 audit (0 of 77 rows), which was not rerun.
 - **Each unit's two rows are byte-identical quotes in two files** (same quote sha256). Each row keeps its own source record (R3, no merging), as in §221.
 - **Unit gate: all 7 REJECT.** Every record has three null fields (`rights_evidence_ref`, `editorial_reviewer`, `editorial_evidence_ref`), `rights_status` REVIEW and `editorial_status` HOLD. U01–U03 also have `grapheme_boundary` UNVERIFIED. UTF-8 boundaries are VERIFIED on all 7.
