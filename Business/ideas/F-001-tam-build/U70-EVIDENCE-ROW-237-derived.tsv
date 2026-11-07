@@ -1,0 +1,6 @@
+# DERIVED from U70-EVIDENCE-ROW-236.tsv (raw kept unchanged, R3); 17 GPT fields + 4 provenance fields; nulls fail closed
+unit_id	source_repo	source_ref	source_path	source_sha256	byte_start	byte_end	quote_sha256	rights_owner	rights_basis	rights_reviewer	rights_status	editorial_reviewer	editorial_status	unicode_verifier_version	verified_at	decision_evidence	git_blob	release_authority	source_commit_history	attribution_in_context
+U70-candidate	AGI144348Outlook/The-TAM-protocol	d46456a18fe412398d0ae37ec5a8c4eebb44e0c9	Collective information	9520e92eaf7352767b8ff79217d1976ec358dff93a1d9c7262a306d1643aa17a	2123	2394	f16fe6eb2c77242713a8e11d018f4a72c81cc86acfeb1bf459e601eeeaa54e09	ABSENT	ABSENT	ABSENT	REVIEW	ABSENT	HOLD	regex-2026.9.29-UAX29(§232)	ABSENT	ABSENT	710ad3cd4feeae7bafa329d7437a78df4c40cfa8	PROJECT-LEVEL:ABSENT (Timothy; not a per-unit field)	1 commit touches path: 6f041409 2026-01-18T12:14:54-06:00 author Timothy	NONE-OBSERVED in bytes [1900,2700)
+# gate_missing=rights_owner,rights_basis,rights_reviewer,editorial_reviewer,verified_at,decision_evidence
+# gate_status_not_approved=rights_status,editorial_status
+# gate=REJECT
