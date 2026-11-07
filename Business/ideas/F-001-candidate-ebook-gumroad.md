@@ -5478,3 +5478,32 @@ What U02 adds beyond U01:
 **Rights mapping:** 2 of 69 units mapped as drafts (U01, U02); U03 next. Mapping is provenance only: nothing says who wrote either passage or whether it may be published.
 
 **Effect on status:** none. HOLD. 69 rights units UNREVIEWED (2 mapped drafts); 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §228 (2026-11-07 06Z, Claude) — U03 mapped; it is not a quotation, and the same holds for 51 of 69 units (correction to my own §174 triage, §221 U01 included)
+
+ChatGPT's 05Z handoff (Issue #13 6702567609; F-001 progress 1439e33e) asks me to continue rights provenance and to share the actual V3 §226 observations. **§226 results are already on this branch** (ea8a7d8f, 04Z: 9/9 pre-registered §223 fixtures matched, BOM rejected; exploratory misses for WJ/ZWNJ/SHY and the Mc/modifier/RI/CRLF/Hangul cases). Source: The-TAM-protocol @ d46456a1 (unchanged), read only; no source text is reproduced here (the line shape below is masked: letters -> `a`). Python 3.13.18 -I -B.
+
+**U03 mapped** (triage rows 17 / 75; `CLAUDE-u03-map-228.py`, stdout sha256 74b0dfb7...8fd4 twice; V3 run `CLAUDE-u03-v3-228.py` against GPT draft e99e04c, stdout sha256 e3ff9c88...86c8f9 twice):
+
+| field | row 17 | row 75 | evidence state |
+|---|---|---|---|
+| `source` | `Article 10` (blob e82be56), L4:C132, 111 cp; cp [275, 386) = bytes [275, 386); sha256 `20b2736b…cafb3` | `Collective information` (blob 710ad3c), L322:C132; cp [32877, 32988), bytes [33157, 33268); same sha256 | EXECUTION-VERIFIED |
+| `boundary_gate` | V3: `REVIEW` | V3: `REVIEW`; code-point offsets passed as bytes -> `REJECT: TEXT_MISMATCH` | EXECUTION-VERIFIED |
+| `review` / `release` | `UNREVIEWED` / `NONE` | same | — |
+
+Two things U03 shows:
+- *The unit-confusion control only works where earlier text is non-ASCII.* In `Article 10` nothing before the span is non-ASCII, so byte and code-point offsets are equal and V3 cannot tell them apart (both `REVIEW`). The §227 negative control (a) must name a span with non-ASCII before it, or it proves nothing (EXECUTION-VERIFIED).
+- *U03 is the gap between two quotations, not a quotation.* Masked, the line reads `... aaa "aaaaaa aaaaa" aaa ... aa "aaaa" aaaaa ...`: the span starts at the closing quote of the first short quoted term and ends at the opening quote of the next one. Its first quote is preceded by a letter and followed by a space; its last quote is preceded by a space and followed by a letter — the shape of a close/open pair (SOURCE-OBSERVED).
+
+**Census over all 77 triage rows** (`CLAUDE-quote-parity-228.py`, stdout sha256 93dd7867...4343 twice): 68 rows open with a straight quote U+0022, 9 with curly quotes. No row's line has an odd number of quotes of its style. For **57 of 68 straight-quote rows the opening quote has an odd index on its line** (the 2nd, 4th, ... quote), i.e. the span runs from a closing quote to the next opening quote; 53 of them also have a letter or digit directly outside both edges. Grouped by `DECISION-UNITS-175.tsv`, **51 of 69 units consist only of such rows, none is mixed**; the other 18 (U02, U10, U19, U20, U27, U28, U32, U33, U38, U39, U46–U49, U56, U57, U67, U68) open on an even-index or curly opening quote (counts EXECUTION-VERIFIED; "these 51 are author prose, not quotations" INFERRED from quote parity and edge shape — straight quotes carry no direction, so a person should confirm a sample).
+
+*Cause (mine):* the §174 triage paired quote marks across the gap, and the real quotations on these lines are short terms that fell under its length floor. **§221's U01 is one of the 51** — its mapping stands as provenance, but its label "quoted span" was wrong. Nothing is deleted or rewritten (R3); the earlier sections stay as they were.
+
+**PROPOSED (ChatGPT challenges, Timothy decides):**
+- (a) Add a field `span_kind` to the rights record: `QUOTATION` | `INTER_QUOTE_GAP_SUSPECT` | `UNKNOWN`. The 51 units get `INTER_QUOTE_GAP_SUSPECT` as a draft value, never as a rights clearance: author prose between quoted terms still needs Timothy's rights confirmation, just a different question ("is this my text?").
+- (b) Re-scan for the short quoted terms the triage skipped, as a separate new dataset (no length floor; pairs counted 1–2, 3–4, ...), before any more per-unit mapping. A sample of the 51 gets a human check first.
+- (c) ChatGPT's evidence ledger (1439e33e) gets `span_kind` and `pairing_rule` next to `rights_review_status`, so automated pairing never stands in for a rights decision.
+
+**Rights mapping:** 3 of 69 units mapped as provenance drafts (U01, U02, U03); further per-unit mapping paused until (b) is decided, since 51 units may change shape.
+
+**Effect on status:** none. HOLD. Rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
