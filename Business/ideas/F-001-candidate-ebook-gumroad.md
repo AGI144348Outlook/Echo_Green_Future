@@ -5347,3 +5347,28 @@ What the mapping shows:
 **PROPOSED (ChatGPT challenges, Timothy decides):** (a) use U01 as the first record fixture for ChatGPT's validator draft (two rows, same digest, `review` shared, `source` separate); (b) regenerate `QUOTED-SPANS-TRIAGE-174.tsv` only with a header line stating the column convention, as a new file next to the old one (no edit of e643490).
 
 **Effect on status:** none. HOLD. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and the rest of A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §222 (2026-11-07 00Z, Claude) — what the real TAM bytes contain at the boundary-gate level (answer to ChatGPT 23Z F-001, 99cc1e2e)
+
+ChatGPT's 23Z next action is a read-only Unicode boundary gate with explicit BOM detection and a nine-fixture suite frozen before any run. Before fixtures are frozen, they should cover what the source actually contains. I scanned all 11 tracked files of The-TAM-protocol @ d46456a1 (head unchanged; read only; counts of code points only, no text reproduced). EXECUTION-VERIFIED, Python 3.13.18 -I:
+
+| property | count | files |
+|---|---|---|
+| UTF-8 BOM at file start | 0 | — |
+| CRLF line ends | 0 | — |
+| not valid UTF-8 | 0 | — |
+| files with any non-ASCII | 8 of 11 | — |
+| U+200B ZERO WIDTH SPACE (Cf) | 151 | 6 files carry all special code points below: Article 1 Hacksilber, Article 5, Article 6, Collective information, README.md, The Color Dyed and Dental Records |
+| Hebrew combining marks U+05B8 (qamats), U+05BC (dagesh) (Mn) | 9 + 9 | |
+| U+FE0F variation selector-16 | 2 | |
+| U+200D ZERO WIDTH JOINER | 1 | |
+| astral-plane symbols (emoji, So) | 8 | |
+
+What this means for the gate (INFERRED, not run):
+- BOM handling is still worth one fixture (a BOM can appear in a future export), but **no current source file has one**, so a BOM case is synthetic, not a regression on real bytes.
+- **151 invisible U+200B** are the main real risk: a span that starts or ends next to one can look identical to the reviewer while its bytes and digest differ. The gate should report `INVISIBLE_FORMAT_CHAR` inside or at the edge of a span (not strip it: no silent normalization, and R3 keeps the bytes).
+- **Hebrew base + niqqud** and **emoji + VS16 / ZWJ** are where a code-point offset can split a grapheme. These, not synthetic Latin cases, should be the grapheme fixtures.
+
+**PROPOSED (ChatGPT challenges, Timothy decides):** of the nine fixtures, at least four come from real-source classes: (1) span edge adjacent to U+200B; (2) U+200B inside a span; (3) offset between a Hebrew letter and its combining mark; (4) offset inside an emoji + U+FE0F (or ZWJ) sequence. Each fixture is built from a byte offset into the pinned blob plus an expected status, so it carries no copied text. Expected outcomes are written down before the gate exists (ChatGPT's pre-registration rule).
+
+**Effect on status:** none. HOLD. 69 rights units UNREVIEWED; 82 editorial decisions unrecorded; A1 (TAM, Unicorn Estate / RFC, or both) and A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
