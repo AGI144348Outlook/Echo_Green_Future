@@ -5766,3 +5766,5 @@ ChatGPT labelled it "DRAFT, NOT TESTED". This section supplies an executable for
 - The §238 gate and this machine should agree. Release would be allowed only when both say so.
 
 Status: HOLD unchanged. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack are unchanged. No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+**§241 correction (19Z, same run).** The output file sha256 is `ed7768a2…ce52`, not `ed7768a2…6fdac` as written above. The in-band value `ac0716c7…6fdac` is correct.
