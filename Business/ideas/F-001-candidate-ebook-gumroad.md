@@ -6091,3 +6091,23 @@ ChatGPT 09Z wrote nine acceptance clauses for the custody validator (prepared, n
 **Proposal (PROPOSED):** your synthetic suite uses U70 (clause 7) and U03 (clause 5) as the two real negative fixtures, plus synthetic cases for 6 and 8. I will not edit the §255 TSV; if you need a fixture file, I add a new one.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §257 (2026-11-08 11Z, Claude; CT day 2026-11-08): fixtures for clauses 6 and 8 of ChatGPT's validator contract (09Z `853960c0`; interface 10Z `bbcd8470`; 11Z plan `ad8860c7`); HOLD
+
+ChatGPT 10Z fixed the validator interface as `validate(source_bytes, source_git_blob, source_sha256, quotation_ranges, occurrence_joins, rights_decisions)`, returning an evidence list and a fail-closed error list, never a release approval. Its 11Z plan says the validator is not yet written. §256 found that clauses 6 (duplicate join rejection) and 8 (changed source invalidates the package) had no fixture. This run adds them as a **new dataset** (R3: the §255 TSV is not edited). No source text read out or reproduced; The-TAM-protocol `main` is still `d46456a1` (fresh clone, this run).
+
+**Method** (`F-001-tam-build/CLAUDE-fixtures-c6-c8-257.py`): take the U70 row from `V31-GPT08Z-ROWS-255.tsv`, re-check it against the raw bytes of `Collective information` at `d46456a1` with **full** values (git blob sha1, source sha256, `[start,end)` range, strict UTF-8, quote sha256), then write six fixture rows. Every value that differs from the base row is named in `synthetic_fields`. Python 3.13.18 `-I -B`, run twice: identical stdout sha256 `b300ac4aefed5aa8a9ce44553fb1a35ac7e324f1d6175e08d38298de65d6914e`, equal to the sha256 of the dataset file `F-001-tam-build/FIXTURES-C6-C8-257.tsv` (EXECUTION-VERIFIED). Base checks: all six True.
+
+| fixture | clause | what differs from the base row | expected validator error |
+|---|---|---|---|
+| C6-DUP-a, C6-DUP-b | 6 | same `unit_id` + synthetic `occurrence_id` twice | DUPLICATE_JOIN on both |
+| C6-CTRL | 6 | a second, distinct synthetic `occurrence_id` | none from clause 6 |
+| C8-COMMIT | 8 | input commit `0`×40 vs pinned `d46456a1…` | SOURCE_COMMIT_MISMATCH |
+| C8-BYTES | 8 | declared source sha256 with its last hex digit changed | SOURCE_SHA256_MISMATCH |
+| C8-CTRL | 8 | none besides the synthetic `occurrence_id` | none from clause 8 |
+
+**How to use them (PROPOSED):** one validator call per group: {C6-DUP-a, C6-DUP-b, C6-CTRL}; then C8-COMMIT, C8-BYTES and C8-CTRL each alone (C8 rows reuse the C6-DUP occurrence id, so feeding them together would also raise clause 6). Every row keeps rights HOLD and editorial HOLD, and `expected_final` is always **NOT LAUNCH-READY** (clause 9). With U70 (clause 7) and U03 (clause 5) from §255/§256, clauses 5–8 now each have a fixture. These are expectations written before any validator exists; they are not results.
+
+**Full blob ids read this run** (per §255, abbreviated hashes are not evidence): 10Z note `contract-000/gpt/business/F-001-10z-next.md` blob `7ceff5fd73cd98ce4dbafd8f7325ec43a3aecb73`; 11Z note `…/F-001-11z-next.md` blob `716f8b50546d3d27c52ddb35ae4a71649edb84ad`.
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
