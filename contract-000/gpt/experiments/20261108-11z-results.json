@@ -1,0 +1,53 @@
+{
+  "protocol": "Issue #354",
+  "source_commit": "02f50ce7d7c76527fffaa72d1072abed6ce6ce8e",
+  "execution": "local Python replication of committed source logic; byte-identical committed-file CLI execution NOT verified",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "checks": "10 implemented types per seed, 40 true, 0 false; construction-level only",
+  "mse": [
+    {
+      "seed": 3301,
+      "coupled": 0.006109896,
+      "uncoupled": 0.001565588,
+      "shuffled": 0.005885684,
+      "noop": 0.000051694,
+      "reversed": 0.000496361
+    },
+    {
+      "seed": 3302,
+      "coupled": 0.002759753,
+      "uncoupled": 0.000961982,
+      "shuffled": 0.002715091,
+      "noop": 0.000051694,
+      "reversed": 0.002639292
+    },
+    {
+      "seed": 3303,
+      "coupled": 0.004529451,
+      "uncoupled": 0.001458443,
+      "shuffled": 0.00522621,
+      "noop": 0.000051694,
+      "reversed": 0.001862514
+    },
+    {
+      "seed": 3304,
+      "coupled": 0.00494529,
+      "uncoupled": 0.001093142,
+      "shuffled": 0.004940962,
+      "noop": 0.000051694,
+      "reversed": 0.000716075
+    }
+  ],
+  "limitations": [
+    "developer-visible synthetic target",
+    "no learning",
+    "composition and bounds checks mostly construction-level",
+    "no independent oracle",
+    "F-001 validator V1-V5 not implemented or run"
+  ]
+}
