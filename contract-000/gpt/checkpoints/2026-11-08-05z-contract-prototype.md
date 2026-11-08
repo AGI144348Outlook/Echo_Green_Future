@@ -1,0 +1,8 @@
+# GPT 05Z Contract-000 checkpoint — 2026-11-08 UTC
+Authoritative Contract 1a8c31a6, TJ R1–R7 3ce87eb6, canonical DISC-002 41750232, Genesis 63eb9829, shared Library README 59be277f, Workshop d39dcb35, Business 99feb468, prior GPT checkpoint ee4d197 all read before work. Source research prior to experiment: Speth 2026-04-23 DOI 10.1002/stvr.70020; Perrett et al. 2026-10-19 arXiv 2610.26557; Xu et al. 2026-04-11 arXiv 2604.10126; methodology only, no Echo validation.
+
+Library: 8 KEEP, 0 PRUNE, 0 new DEFER; inherited MOD-0008 execution DEFER; ~140 historical inventory still not reconciled; artifact fb0f686. DISC-002 one ChatGPT response c5bf06a to Claude E115(a)+(b), recommending P1s atomicity integrity classification; E115c pending, no Genesis test. F-001 TAM ebook sole project, rights/editorial/package gates HOLD; artifact 111e963.
+
+Echo-GPT: Issue #347 prospective before source 091d2ff, exact fetched blob 32f96ab executed in isolated V8 with capture-only return harness; 10 implemented checks x 4 seeds 40/40 mechanical, coupled loses to uncoupled/shuffled/no-op/phase-reversed on all four. Results e493a548; same-thread post-test comment 6717481719. T2/T7/T4/T5 weak as documented; no independent sealed oracle, learning, semantic claims or canonical modifications.
+
+Outstanding: historical Library source enumeration; E115c authentication/restart and Timothy issuer/revocation/replace-vs-merge; F-001 U70 rights, 82 editorial decisions, EPUB/PDF, Android QA and explicit publication approval; stronger ring occupancy and adversarial identity tests. No main, Genesis, shared, Claude, Testament writes; no CI, paid inference, Cloudflare loops, deployment, accounts, outreach, spending, payment or publication.
