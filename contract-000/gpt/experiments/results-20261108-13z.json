@@ -1,0 +1,77 @@
+{
+  "issue": 356,
+  "execution": "python3 stdlib local source corresponding to committed Python experiment and validator; no CI",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "echo": {
+    "passed": 37,
+    "total": 40,
+    "failed": [
+      [
+        3302,
+        "T3_3_order"
+      ],
+      [
+        3303,
+        "T3_3_order"
+      ],
+      [
+        3304,
+        "T3_3_order"
+      ]
+    ],
+    "mse": [
+      {
+        "seed": 3301,
+        "coupled": 0.000157784313,
+        "uncoupled": 0.00000724573,
+        "no_op": 0.000008188378,
+        "rigid": 0.000108954564,
+        "detuned": 0.000154021841
+      },
+      {
+        "seed": 3302,
+        "coupled": 0.000155670562,
+        "uncoupled": 0.000007733539,
+        "no_op": 0.00000842796,
+        "rigid": 0.000107886033,
+        "detuned": 0.000157455421
+      },
+      {
+        "seed": 3303,
+        "coupled": 0.00017046571,
+        "uncoupled": 0.000007440262,
+        "no_op": 0.000008371621,
+        "rigid": 0.000117206239,
+        "detuned": 0.000165243687
+      },
+      {
+        "seed": 3304,
+        "coupled": 0.00015433581,
+        "uncoupled": 0.000007282684,
+        "no_op": 0.000008017728,
+        "rigid": 0.000107043546,
+        "detuned": 0.000153928651
+      }
+    ],
+    "local_delta": 0.01,
+    "remote_delta": 0
+  },
+  "validator": {
+    "passed": 8,
+    "total": 8,
+    "failed": [],
+    "synthetic_only": true
+  },
+  "limitations": [
+    "T2 composition check is tautological; T3 palindrome rejection is an unjustified semantic requirement and failed 3/4",
+    "Independent target is generated from separate deterministic formula, but source developer knows it",
+    "Ring positions change but no agent learning",
+    "No actual U70 or U03 source byte verification",
+    "Exact GitHub-blob-to-local-byte parity not independently checked"
+  ]
+}
