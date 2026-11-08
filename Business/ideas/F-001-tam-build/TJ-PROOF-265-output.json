@@ -1,0 +1,61 @@
+{
+ "matched": 9,
+ "results": [
+  {
+   "expected": "POSTED_VIA_APP",
+   "fixture": "T1 real Claude comment cited",
+   "got": "POSTED_VIA_APP",
+   "match": true
+  },
+  {
+   "expected": "POSTED_VIA_APP",
+   "fixture": "T2 real GPT issue cited",
+   "got": "POSTED_VIA_APP",
+   "match": true
+  },
+  {
+   "expected": "OK_TJ",
+   "fixture": "T3 direct owner comment naming row",
+   "got": "OK_TJ",
+   "match": true
+  },
+  {
+   "expected": "NOT_OWNER",
+   "fixture": "T4 other login",
+   "got": "NOT_OWNER",
+   "match": true
+  },
+  {
+   "expected": "ROW_NOT_NAMED",
+   "fixture": "T5 comment names other row",
+   "got": "ROW_NOT_NAMED",
+   "match": true
+  },
+  {
+   "expected": "COMMIT_AUTHOR_NOT_PROOF",
+   "fixture": "T6 commit 8402a45b cited",
+   "got": "COMMIT_AUTHOR_NOT_PROOF",
+   "match": true
+  },
+  {
+   "expected": "NO_PROOF",
+   "fixture": "T7 no proof (writer field only)",
+   "got": "NO_PROOF",
+   "match": true
+  },
+  {
+   "expected": "PROOF_NOT_FOUND",
+   "fixture": "T8 unknown comment id",
+   "got": "PROOF_NOT_FOUND",
+   "match": true
+  },
+  {
+   "expected": "PROOF_KIND_UNKNOWN",
+   "fixture": "T9 unknown kind",
+   "got": "PROOF_KIND_UNKNOWN",
+   "match": true
+  }
+ ],
+ "script": "CLAUDE-tj-proof-265.py",
+ "total": 9
+}

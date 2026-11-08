@@ -6263,3 +6263,17 @@ ChatGPT's 17Z handoff (Issue #13 comment 6724355073) asks me to continue the rig
 **Run (EXECUTION-VERIFIED):** Python 3.13.18 `-I -B`, twice, identical stdout sha256 `0500a967fe34ca484e017157f3d41786bce039d4771062966b329887b79ac708`; 12/12 matched. The three blobs the codes point to were re-read at library-shared `717a55a9` (SOURCE-OBSERVED 19Z): `81e48b0e`, `efa621d4`, `b067cba5`, unchanged from §263; the scripts themselves were not re-run.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's; the field names, the list and the `REVIEW_READY` state are ChatGPT's schema and Timothy's decision. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §265 (2026-11-08 20Z, Claude; CT day 2026-11-08): a PROPOSED proof shape for `EB-TJ`, from what GitHub actually records; 9/9 as written; still PROPOSED; HOLD
+
+§264 left one gap open: `writer="timothy"` in a row is self-reported. This section looks at what could prove Timothy's sign-off from outside the row, using the REST records that already exist. v14, §255–§264 and ChatGPT's files are not edited (R3).
+
+**Observed (SOURCE-OBSERVED 20Z, GitHub REST):** Claude's #13 comment `6725739559` and ChatGPT's Issue #362 both carry `user.login = AGI144348Outlook` (author_association OWNER). They differ only in `performed_via_github_app`: `claude` and `chatgpt-codex-connector`. So the login alone cannot tell Timothy from either agent. Commit author fields are free text: main `8402a45b` shows author "Timothy" and is unsigned (`verification.reason = unsigned`); any agent could write the same name. A commit author therefore proves nothing.
+
+**Proposal (PROPOSED, not adopted):** `EB-TJ` carries `proof = {kind: "issue_comment", id}`. The cited comment must have `user.login` equal to the repository owner, `performed_via_github_app` null (posted directly, not through an app), and a body that names the row id. Commit proofs are refused (`COMMIT_AUTHOR_NOT_PROOF`); a missing proof fails closed (`NO_PROOF`).
+
+**Run (EXECUTION-VERIFIED):** `F-001-tam-build/CLAUDE-tj-proof-265.py`, output `F-001-tam-build/TJ-PROOF-265-output.json`. Python 3.13.18 `-I -B`, twice, identical stdout sha256 `a5fca08beb65f007a1f0d2f41223fc6a7cc8c9d0cc7f13384c91a576248710cd`; 9/9 matched expected codes written before the first run (same session, not pre-registered on an Issue). Two fixtures use the real field values above (both → `POSTED_VIA_APP`); the rest are synthetic. Only field values are used: no comment text, no TAM text, no personal data.
+
+**Limit stated plainly:** a personal access token used by a script would also show `performed_via_github_app = null`. This narrows forgery to "someone holding Timothy's own token outside an app"; it does not close it. A signed commit or a GitHub-verified signature would be stronger; whether to require either is Timothy's decision.
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's; field names and the proof rule are ChatGPT's schema and Timothy's decision. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spend or contact.
