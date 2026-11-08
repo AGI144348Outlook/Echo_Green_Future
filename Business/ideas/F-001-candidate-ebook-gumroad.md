@@ -6193,3 +6193,24 @@ Reference variant: 17/17 match the expectations written in the file. The ChatGPT
 - The variant does not check overlap between refs, and makes no claim about U03 or U70.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §261 (2026-11-08 16Z, Claude; CT day 2026-11-08): exact-source replay of ChatGPT's validator v14 (blob `304854cb`); 26/26 predictions matched; HOLD
+
+ChatGPT's 14Z and 15Z F-001 notes say v14 (`contract-000/gpt/business/f001_custody_validator_14z.py`, commit `71c1be43`, blob `304854cb658505c2a6d6ab507b876de6789c0c7f`) was **not executed** by ChatGPT (no runner). I ran it. New dataset; §255–§260 and ChatGPT's file not edited (R3).
+
+**What was added:** `F-001-tam-build/CLAUDE-v14-replay-261.py`. It loads the v14 blob (my copy's `git hash-object` = `304854cb…`) and my §260 reference variant, runs v14's own `run()`, then runs my 17 §260 fixtures plus 9 new probes (P1–P9) through v14. The expected v14 result for every case was written into the script from reading the v14 source before the first run. Same-run comparison, not pre-registered on an Issue.
+
+**Run (EXECUTION-VERIFIED):** Python 3.13.18 `-I -B`, twice, identical stdout sha256 `9cb7d5dc7831f8705a92eca1c3c1d76198769ed76e7c0032907c530eb171f49a`; output `F-001-tam-build/V14-REPLAY-261-output.json`.
+
+- v14's own 10 checks: **10/10 pass** (this replaces "0/10 executed" for the record; it is my run, not ChatGPT's).
+- 26 cases through v14: **26/26 matched my written predictions.**
+- All seven §259 defects (E1–E7) are now closed in v14: missing quote key → `BAD_QUOTE_SHA256_FORMAT` (no `KeyError`); `start=False` → `BAD_RANGE`; uppercase digest → format error; `HOLDOUT-APPROVED` → `BAD_RIGHTS_DECISION`; empty basis → `UNSUPPORTED_EDITORIAL_APPROVAL`; split UTF-8 → `BAD_UTF8_BOUNDARY`. v14 also catches three cases my §260 variant misses: a `bytearray` source (P3), an integer `occurrence_id` (P7), lowercase `hold` (P9). My variant is weaker there; recorded, not hidden.
+
+**Still open in v14 (SOURCE-OBSERVED, reproduced by the run):**
+1. P1: `editorial=APPROVED` with any non-empty free-text basis (`"anything"`) passes. §259 clause (e) (a listed basis set) is not adopted. The list itself stays a ChatGPT schema / Timothy decision.
+2. N1: extra fields in a ref are accepted silently. Fine if optional fields are intended; say so in the schema.
+3. P4 / P6: `refs=None` and an unhashable `unit` raise `TypeError` instead of returning a structured error. Nothing is released (fail-stop), but a batch run would abort on one bad row. Proposal: type-check `refs` (list) and `unit` (str) first.
+4. P2: `rights=APPROVED` with refs gives no error. By design (release is always HOLD), but the rights decision has no basis field like editorial has.
+5. From §259/§260, still not caught by either validator: one occurrence joined to two units (needs a cross-unit pass over the whole table).
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's. Real U01–U03/U70 replay, 82 editorial dispositions, U70 rights, accessible EPUB/PDF, Android QA and Timothy's publication approval remain open. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.

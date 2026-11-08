@@ -1,0 +1,307 @@
+{
+ "match": 26,
+ "release_always": "HOLD",
+ "rows": [
+  {
+   "case": "G1_positive",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [],
+   "v14": []
+  },
+  {
+   "case": "G2_uppercase_source_sha",
+   "expected_v14": [
+    "BAD_SHA256_FORMAT"
+   ],
+   "match": true,
+   "ref260": [
+    "BAD_SHA256_FORMAT"
+   ],
+   "v14": [
+    "BAD_SHA256_FORMAT"
+   ]
+  },
+  {
+   "case": "G3_reversed_range",
+   "expected_v14": [
+    "BAD_RANGE"
+   ],
+   "match": true,
+   "ref260": [
+    "BAD_RANGE"
+   ],
+   "v14": [
+    "BAD_RANGE"
+   ]
+  },
+  {
+   "case": "G4_zero_hold",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [],
+   "v14": []
+  },
+  {
+   "case": "G5_zero_approved",
+   "expected_v14": [
+    "ZERO_REFS_WITHOUT_HOLD"
+   ],
+   "match": true,
+   "ref260": [
+    "ZERO_REFS_WITHOUT_HOLD"
+   ],
+   "v14": [
+    "ZERO_REFS_WITHOUT_HOLD"
+   ]
+  },
+  {
+   "case": "G6_duplicate",
+   "expected_v14": [
+    "DUPLICATE_JOIN"
+   ],
+   "match": true,
+   "ref260": [
+    "DUPLICATE_JOIN"
+   ],
+   "v14": [
+    "DUPLICATE_JOIN"
+   ]
+  },
+  {
+   "case": "G7_overlap",
+   "expected_v14": [
+    "UNSUPPORTED_EDITORIAL_APPROVAL"
+   ],
+   "match": true,
+   "ref260": [
+    "OVERLAP_PROMOTION_REJECTED"
+   ],
+   "v14": [
+    "UNSUPPORTED_EDITORIAL_APPROVAL"
+   ]
+  },
+  {
+   "case": "G8_source_mutation",
+   "expected_v14": [
+    "SOURCE_HASH_MISMATCH"
+   ],
+   "match": true,
+   "ref260": [
+    "SOURCE_HASH_MISMATCH"
+   ],
+   "v14": [
+    "SOURCE_HASH_MISMATCH"
+   ]
+  },
+  {
+   "case": "E1_missing_quote_key",
+   "expected_v14": [
+    "BAD_QUOTE_SHA256_FORMAT"
+   ],
+   "match": true,
+   "ref260": [
+    "MISSING_FIELD"
+   ],
+   "v14": [
+    "BAD_QUOTE_SHA256_FORMAT"
+   ]
+  },
+  {
+   "case": "E2_bool_start",
+   "expected_v14": [
+    "BAD_RANGE"
+   ],
+   "match": true,
+   "ref260": [
+    "BAD_RANGE"
+   ],
+   "v14": [
+    "BAD_RANGE"
+   ]
+  },
+  {
+   "case": "E3_uppercase_quote_sha",
+   "expected_v14": [
+    "BAD_QUOTE_SHA256_FORMAT"
+   ],
+   "match": true,
+   "ref260": [
+    "BAD_SHA256_FORMAT"
+   ],
+   "v14": [
+    "BAD_QUOTE_SHA256_FORMAT"
+   ]
+  },
+  {
+   "case": "E4_end_eq_len_ok",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [],
+   "v14": []
+  },
+  {
+   "case": "E5_rights_HOLDX_prefix_zero_refs",
+   "expected_v14": [
+    "BAD_RIGHTS_DECISION",
+    "ZERO_REFS_WITHOUT_HOLD"
+   ],
+   "match": true,
+   "ref260": [
+    "ZERO_REFS_WITHOUT_HOLD"
+   ],
+   "v14": [
+    "BAD_RIGHTS_DECISION",
+    "ZERO_REFS_WITHOUT_HOLD"
+   ]
+  },
+  {
+   "case": "E6_editorial_approved_no_basis",
+   "expected_v14": [
+    "UNSUPPORTED_EDITORIAL_APPROVAL"
+   ],
+   "match": true,
+   "ref260": [
+    "EDITORIAL_BASIS_MISSING"
+   ],
+   "v14": [
+    "UNSUPPORTED_EDITORIAL_APPROVAL"
+   ]
+  },
+  {
+   "case": "E7_utf8_midchar_split",
+   "expected_v14": [
+    "BAD_UTF8_BOUNDARY"
+   ],
+   "match": true,
+   "ref260": [
+    "QUOTE_NOT_UTF8"
+   ],
+   "v14": [
+    "BAD_UTF8_BOUNDARY"
+   ]
+  },
+  {
+   "case": "N1_extra_field",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [
+    "MISSING_FIELD"
+   ],
+   "v14": []
+  },
+  {
+   "case": "N2_listed_basis_ok",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [],
+   "v14": []
+  },
+  {
+   "case": "P1_free_text_basis",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [
+    "EDITORIAL_BASIS_MISSING"
+   ],
+   "v14": []
+  },
+  {
+   "case": "P2_rights_approved_with_refs",
+   "expected_v14": [],
+   "match": true,
+   "ref260": [],
+   "v14": []
+  },
+  {
+   "case": "P3_bytearray_source",
+   "expected_v14": [
+    "BAD_SOURCE_TYPE"
+   ],
+   "match": true,
+   "ref260": [],
+   "v14": [
+    "BAD_SOURCE_TYPE"
+   ]
+  },
+  {
+   "case": "P4_refs_none",
+   "expected_v14": "EXC:TypeError",
+   "match": true,
+   "ref260": "EXC:TypeError",
+   "v14": "EXC:TypeError"
+  },
+  {
+   "case": "P5_refs_string",
+   "expected_v14": [
+    "BAD_REFERENCE"
+   ],
+   "match": true,
+   "ref260": [
+    "MISSING_FIELD"
+   ],
+   "v14": [
+    "BAD_REFERENCE"
+   ]
+  },
+  {
+   "case": "P6_unhashable_unit",
+   "expected_v14": "EXC:TypeError",
+   "match": true,
+   "ref260": "EXC:TypeError",
+   "v14": "EXC:TypeError"
+  },
+  {
+   "case": "P7_occurrence_int",
+   "expected_v14": [
+    "BAD_OCCURRENCE"
+   ],
+   "match": true,
+   "ref260": [],
+   "v14": [
+    "BAD_OCCURRENCE"
+   ]
+  },
+  {
+   "case": "P8_end_split_char",
+   "expected_v14": [
+    "BAD_UTF8_BOUNDARY"
+   ],
+   "match": true,
+   "ref260": [
+    "QUOTE_NOT_UTF8"
+   ],
+   "v14": [
+    "BAD_UTF8_BOUNDARY"
+   ]
+  },
+  {
+   "case": "P9_lowercase_rights_hold",
+   "expected_v14": [
+    "BAD_RIGHTS_DECISION"
+   ],
+   "match": true,
+   "ref260": [],
+   "v14": [
+    "BAD_RIGHTS_DECISION"
+   ]
+  }
+ ],
+ "total": 26,
+ "v14_own_run": {
+  "checks": {
+   "bool_index": true,
+   "duplicate": true,
+   "empty_basis": true,
+   "missing_hash": true,
+   "mutated_source": true,
+   "positive": true,
+   "rights_prefix": true,
+   "uppercase": true,
+   "utf8_split": true,
+   "zero_hold": true
+  },
+  "passed": 10,
+  "total": 10
+ }
+}
