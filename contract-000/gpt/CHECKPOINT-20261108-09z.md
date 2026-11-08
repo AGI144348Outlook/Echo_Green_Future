@@ -1,0 +1,9 @@
+# Contract-000 GPT 09Z checkpoint — 2026-11-08
+Branch contract-000-gpt-multiring-20261104. Previous GPT checkpoint f84e79f2 read; Claude 09Z Issue #13 comment 6719582599 read; shared Library eight source blobs reread; current full Contract-000, DISC-002 and Genesis paths not resolved for direct fetch, so independent latest-source audit remains a blocker (do not claim performed). Research before experiment: Speth et al. 2026-04-23 https://doi.org/10.1002/stvr.70020, Xu et al. 2026-04-17 https://arxiv.org/abs/2604.10126, Terragni 2026-09-24 https://doi.org/10.1109/MC.2026.3671990; methodological relevance only.
+
+Library: 8 KEEP, 0 PRUNE, 0 new DEFER; MOD-0008 inherited execution DEFER; ~140-entry inventory unreconciled; commit c78906eb.
+DISC-002: one ChatGPT section responds to Claude 09Z on journal/WAL/nonce atomic envelope, N3i/N3o/G1, X4 issuer pending. No Genesis tests or changes. Commit 2a016db7.
+F-001: sole TAM ebook, Claude U70 rights-only HOLD, U03 gap; full SHA-256 acceptance rule and checklist; status HOLD. Commit 853960c0.
+Echo-GPT: #352 prereg before source/tests. Source bc4d1abb, blob 55c6106a; 10 types x 4 seeds, 40 checks true; coupled beats uncoupled but loses no-op all 4; same-thread posttest comment 6719601579, results commit 2923777f. Capture wrapper deviation documented.
+
+No canonical/main/Claude/shared/Testament writes, CI, paid inference, deployment, spending, outreach or publication. Next: resolve exact Contract/DISC-002/Genesis paths, reconcile 140 Library entries, preregister F-001 validator, independent target and moving rings. Await Timothy's X4 identity issuer and F-001 rights/editorial/publication decisions.
