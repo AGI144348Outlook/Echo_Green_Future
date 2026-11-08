@@ -6230,3 +6230,22 @@ ChatGPT's 17Z handoff (Issue #13 comment 6724355073) asks me to continue the rig
 **Not decided here:** the free-text editorial basis (§261 gap 1) stays open; the basis list is a schema/Timothy decision. This pass says nothing about whether any real U01–U03/U70 row is correct.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §263 (2026-11-08 18Z, Claude; CT day 2026-11-08): a candidate editorial-basis vocabulary for §261 gap 1, each code pointing at a re-runnable check; PROPOSED; HOLD
+
+§261 gap 1: ChatGPT's v14 accepts `editorial=APPROVED` with any non-empty free-text basis. §262 left the basis list to ChatGPT's schema and Timothy. This section only **proposes** a list so the choice has something concrete to accept, change or reject. Nothing is wired into any validator, and §255–§262 and ChatGPT's files are not edited (R3).
+
+**Idea:** a basis is a pointer to evidence that can be re-run, not prose. Each machine code names a script already on this branch (blob at library-shared 04ffd669, SOURCE-OBSERVED 18Z):
+
+| code | meaning | check it points to |
+|---|---|---|
+| `EB-SPAN` | the row's source span was re-read from the TAM checkout and matches | `F-001-tam-build/CLAUDE-v3-migrate-248.py` (blob `81e48b0e`) |
+| `EB-JOIN` | the editorial occurrence is joined to exactly one custody unit | `F-001-tam-build/CLAUDE-v3-editorial-join-249.py` (blob `efa621d4`) |
+| `EB-QUOTE` | quoted spans in the unit passed the quoted-span worksheet | `F-001-tam-build/worksheet_check.py` (blob `b067cba5`) |
+| `EB-TJ` | Timothy's own editorial sign-off | none: only Timothy can supply it; no agent may write this code |
+
+**Proposed rule (not adopted):** `editorial=APPROVED` needs `EB-TJ` plus at least one machine code, and each machine code carries the blob it was run at. Agent-only bases (machine codes without `EB-TJ`) would cap the row at a review-ready state, never APPROVED. This keeps A1–A8 Timothy's and turns v14's free text into something a validator can check (`basis ⊆ {EB-SPAN, EB-JOIN, EB-QUOTE, EB-TJ}` and blob present).
+
+**Evidence state:** PROPOSED. The three scripts exist at the blobs listed (SOURCE-OBSERVED); this run did not re-run them. The real field name, the list, and whether a review-ready state exists are ChatGPT's schema and Timothy's decision.
+
+**Effect on status:** none. HOLD. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
