@@ -5991,3 +5991,27 @@ ChatGPT's 03Z review (GPT branch `contract-000-gpt-multiring-20261104`, `contrac
 **Release-gate checklist (ChatGPT 05Z), Claude's part:** schema shape reviewed (above). Resolving the editorial ids per occurrence needs the 82 decisions, and those are editorial and rights calls for Timothy, so I do not make them. Everything else stays PENDING/HOLD as on ChatGPT's list.
 
 **Status: HOLD, unchanged.** Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack are as in §240–§243. No account, payment, spending, publication or contact. Not legal, tax or financial advice. Whether the Unicorn Estate / RFC material is in scope is still open in RUN-LOG.
+
+### §252 (2026-11-08 06Z, Claude; CT day 2026-11-07): correction to the status lines of §248–§251, which point to the wrong sections for the business fields; index of where those fields are actually defined; HOLD
+
+**Correction, my own error.** The status lines of §248, §249, §250 and §251 say that product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and the free-tier stack are "as in §240–§243". That pointer is wrong. §240–§243 are the overlap rule, the release-state machine, its invalidation table and release-state v2. None of them defines a business field. Those four lines are left as written (R3: append-only), and this section supersedes the pointer.
+
+**Where each business field is defined** (section headings checked by grep on this file at library-shared `a3db6af5`; the states are copied from the cited lines, not re-verified this run):
+
+| Field | Defined in | Latest state carried |
+|---|---|---|
+| Product shape | §1 (Product); §11.1 and §15.3 (PROPOSED shapes); R1: source is The-TAM-protocol | PROPOSED; manuscript scope still open (TAM articles vs Unicorn Estate / RFC) |
+| Customer | §2 (Customer); §15.4 | INFERRED; no outreach, own channels only |
+| Delivery | §3 (Delivery); §66, §73, §74 (build-to-listing ties) | PROPOSED; Timothy uploads, no bot holds credentials |
+| Pricing | §4 (Pricing and fees); §13 (bounded pricing table); §61 (listing vs decision-sheet check) | PROPOSED placeholder; Timothy decides |
+| Fees | §4; §9.3; §12; §30–§33; §77; §235 | platform fee 10% + $0.50 SOURCE-OBSERVED; processing and payout UNVERIFIED (§235); §235's proposal stands: stop the per-run fetch retry |
+| Refund / cancellation | §5 (Refunds and cancellation); §34 (refund cost, 30-day window); §35 (refund-rate pause check) | PROPOSED; one-time purchase, reversing ledger row |
+| Tax records | §6 (Records for taxes); §30 | PROPOSED; who collects and remits sales tax is still a law-watch item, not settled here |
+| Free-tier stack | §7 (Free-tier stack) | PROPOSED; ledger location still open (decision 13) |
+| Release gates | §238 gate; §241–§243 state machine; ChatGPT 05Z checklist `111e9630` | HOLD; release_allowed False |
+
+**Why this matters:** a later reader following "§240–§243" would find no prices, fees or refund terms there and could conclude that they were never drafted. This table is only an index. It changes no value.
+
+**Not done this run:** no new schema or editorial work. ChatGPT's 05Z checklist items are unchanged. The independent v3.1 validator is still ChatGPT's task, and the 82 editorial decisions and U70 rights are still Timothy's.
+
+**Status: HOLD, unchanged.** No account, payment, spending, publication or contact. Not legal, tax or financial advice. Whether the Unicorn Estate / RFC material is in scope is still open in RUN-LOG.
