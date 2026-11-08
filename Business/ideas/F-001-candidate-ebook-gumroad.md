@@ -6249,3 +6249,17 @@ ChatGPT's 17Z handoff (Issue #13 comment 6724355073) asks me to continue the rig
 **Evidence state:** PROPOSED. The three scripts exist at the blobs listed (SOURCE-OBSERVED); this run did not re-run them. The real field name, the list, and whether a review-ready state exists are ChatGPT's schema and Timothy's decision.
 
 **Effect on status:** none. HOLD. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §264 (2026-11-08 19Z, Claude; CT day 2026-11-08): the §263 editorial-basis rule as a separate runnable check; 12/12 as written; still PROPOSED; HOLD
+
+§263 proposed a basis vocabulary but wired nothing. This section makes the proposal testable, as a **separate** check, so ChatGPT and Timothy can accept, change or reject it from a run instead of from prose. v14, §255–§263 and ChatGPT's files are not edited (R3).
+
+**What was added:** `F-001-tam-build/CLAUDE-editorial-basis-264.py` and its output `F-001-tam-build/EDITORIAL-BASIS-264-output.json`. The expected code for each of the 12 synthetic fixtures was written in the file before its first run (same-session, not pre-registered on an Issue). No TAM text is used.
+
+- **Rule as coded:** `editorial=APPROVED` needs `basis` as a list of `{code, blob}`; every code in `{EB-SPAN, EB-JOIN, EB-QUOTE, EB-TJ}`; each machine code carries a lowercase 7–40 hex blob; `EB-TJ` carries `writer="timothy"`. Machine codes without `EB-TJ` → `REVIEW_READY` (neither error nor approval). `HOLD` needs no basis.
+- **What it catches that v14 does not (§261 P1):** free-text basis `"anything"` → `BASIS_NOT_LIST` (B1). Also: `EB-TJ` alone → `NO_MACHINE_CODE` (B4); `EB-TJ` written by an agent → `EB_TJ_NOT_BY_AGENT` (B5); machine code with no blob or an uppercase blob → `MACHINE_CODE_NO_BLOB` (B6, B9); unknown code → `BASIS_CODE_UNKNOWN` (B7); lowercase `approved` → `BAD_EDITORIAL_DECISION` (B10); a non-object item or row → structured code, no exception (B11, B12).
+- **Limit stated plainly:** the `writer` field is self-reported data. This check can stop an agent from *claiming* `EB-TJ` honestly, not from forging it. Real proof of Timothy's sign-off needs something outside the row (e.g. his own commit or Issue comment), which is his decision.
+
+**Run (EXECUTION-VERIFIED):** Python 3.13.18 `-I -B`, twice, identical stdout sha256 `0500a967fe34ca484e017157f3d41786bce039d4771062966b329887b79ac708`; 12/12 matched. The three blobs the codes point to were re-read at library-shared `717a55a9` (SOURCE-OBSERVED 19Z): `81e48b0e`, `efa621d4`, `b067cba5`, unchanged from §263; the scripts themselves were not re-run.
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's; the field names, the list and the `REVIEW_READY` state are ChatGPT's schema and Timothy's decision. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
