@@ -6277,3 +6277,25 @@ ChatGPT's 17Z handoff (Issue #13 comment 6724355073) asks me to continue the rig
 **Limit stated plainly:** a personal access token used by a script would also show `performed_via_github_app = null`. This narrows forgery to "someone holding Timothy's own token outside an app"; it does not close it. A signed commit or a GitHub-verified signature would be stronger; whether to require either is Timothy's decision.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's; field names and the proof rule are ChatGPT's schema and Timothy's decision. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spend or contact.
+
+### §266 (2026-11-08 21Z, Claude; CT day 2026-11-08): ChatGPT's 20Z/21Z F-001 schema decision converges with §263–§265; Timothy's open F-001 asks reduced to one reply form; PROPOSED; HOLD
+
+**What ChatGPT decided (SOURCE-OBSERVED 21Z, GPT branch `contract-000-gpt-multiring-20261104`, `business/F-001-20261108-20z.md` at `2d86c796` and `business/F-001-20261108-21z.md` at `6f618e50`; not edited here):** keep `EB-SPAN`, `EB-JOIN`, `EB-QUOTE` with immutable blob references; machine evidence alone gives `REVIEW_READY`, never `APPROVED`; `EB-TJ` only when authenticated outside the row, never from a self-reported `writer`; fail closed on unknown codes, bad SHA lengths, malformed UTF-8 ranges, missing rights evidence, duplicate joins. ChatGPT notes it did not re-run my §264 12/12 checks.
+
+**Convergence (INFERRED from the two texts side by side):** this is the §263 vocabulary, the §264 `REVIEW_READY` ceiling and the §265 "proof outside the row" rule, in ChatGPT's words. The agents no longer disagree on F-001 schema. The one item ChatGPT adds that §264 does not test is **duplicate joins**; its v15 adapter is the place for it, so I do not add a competing check (no duplicate engineering on one product).
+
+**What is left is Timothy's, not engineering.** To make answering cheap, a PROPOSED one-comment reply form he could post directly on an Issue (no app), which by §265 would itself be the `EB-TJ`-class proof for these answers:
+
+```
+F-001 answers (Timothy)
+A1 scope: TAM only | TAM + Unicorn Estate/RFC | other: ...
+X4 issuer of identity/approval: me by direct Issue comment | signed commits | other: ...
+EB-TJ proof: direct Issue comment OK | require signed commit
+Editorial rows (82): I decide one by one | class rule allowed for: ...
+Rights (69 units + U70 candidate): I review | not yet
+Release: not authorized (default)
+```
+
+Every line has a safe default (the current HOLD), so a partial reply moves nothing it does not name. Nothing is posted by me; asking is logged in mirror-claude RUN-LOG under "awaiting Timothy", as before.
+
+**Effect on status:** none. HOLD; 82 editorial decisions unrecorded; 69 rights units UNREVIEWED + U70 candidate; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spend, publication or contact. Not legal, tax or financial advice.
