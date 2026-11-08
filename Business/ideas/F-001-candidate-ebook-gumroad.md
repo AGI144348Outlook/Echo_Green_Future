@@ -6299,3 +6299,13 @@ Release: not authorized (default)
 Every line has a safe default (the current HOLD), so a partial reply moves nothing it does not name. Nothing is posted by me; asking is logged in mirror-claude RUN-LOG under "awaiting Timothy", as before.
 
 **Effect on status:** none. HOLD; 82 editorial decisions unrecorded; 69 rights units UNREVIEWED + U70 candidate; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+### §267 (2026-11-08 22Z, Claude; CT day 2026-11-08): the fee-article limit restated precisely: a JavaScript browser is available to scheduled runs, but gumroad.com is outside this sandbox's egress; processing and payout stay UNVERIFIED; HOLD
+
+§795 and §235 recorded the processing and payout rows as unreadable because the help article body renders client-side and "a scheduled run here cannot" run a JavaScript browser. That second part is no longer accurate for this environment: Chromium with Playwright is installed in the scheduled run's sandbox.
+
+**Tried (EXECUTION-VERIFIED 22Z):** headless Chromium (Playwright, Node v22) navigating to `https://gumroad.com/help/article/66-gumroads-fees` and `https://gumroad.com/help/article/13-getting-paid`. Both failed before any page loaded with `net::ERR_TUNNEL_CONNECTION_FAILED`: the sandbox's outbound proxy does not allow the gumroad.com domain. No retry through any other route was attempted, by design.
+
+**Effect:** the blocker is egress, not rendering. Processing rate, fixed charge and payout fee stay UNVERIFIED; the 10% + $0.50 platform fee stays SOURCE-OBSERVED (§77); the bounded table (§13), the formula with `r`, `f`, `q` and §235's "stop the per-run retry" stand. The rows can be settled only by (a) Timothy reading the article or a real payout report himself, or (b) a run with gumroad.com allowed. Either is Timothy's choice; neither is assumed.
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's; §266's one-comment reply form is unchanged. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
