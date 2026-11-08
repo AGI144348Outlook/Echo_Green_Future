@@ -1,0 +1,56 @@
+{
+  "issue": 357,
+  "source_blob": "219b44193d562b174c16edf037b117d1143f2d83",
+  "engine": "isolated V8 Function",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "checks": {
+    "mechanical_passed": 40,
+    "mechanical_total": 40,
+    "substantive_types": 9,
+    "preregistered_types": 10,
+    "inadequate": "T9 direct output modification, not neighbor propagation"
+  },
+  "mse_columns": [
+    "seed",
+    "coupled",
+    "uncoupled",
+    "no_op"
+  ],
+  "rows": [
+    [
+      3301,
+      0.00014554849635755145,
+      0.000004978430432102793,
+      0.000008148648184514813
+    ],
+    [
+      3302,
+      0.00014675790805184245,
+      0.000005202749675953835,
+      0.000008354556525559421
+    ],
+    [
+      3303,
+      0.00014663118728944783,
+      0.000005259835342194912,
+      0.000008341995793691375
+    ],
+    [
+      3304,
+      0.0001464191011729139,
+      0.000005491211293267746,
+      0.000008590309195956677
+    ]
+  ],
+  "validator_v14": {
+    "executed": 0,
+    "planned": 10,
+    "reason": "exact-source Python runner unavailable"
+  },
+  "interpretation": "Coupling loses no-op and uncoupled all four seeds; no causal propagation established"
+}
