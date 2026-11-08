@@ -1,0 +1,41 @@
+{
+  "issue": 361,
+  "source_blob": "73b69bc2f56e476381d19cfdef04edc6d916834d",
+  "runtime": "isolated V8 eval of exact fetched committed source",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "checks_per_seed": 10,
+  "passed": 40,
+  "failed": 0,
+  "coupled_mse": [
+    0.0003290898723109273,
+    0.0003084949313426504,
+    0.00028731025808687423,
+    0.00026569802821695376
+  ],
+  "uncoupled_mse": [
+    0.00021530974100473712,
+    0.0002439937271876341,
+    0.0002720240306903711,
+    0.000298575692534311
+  ],
+  "noop_mse": [
+    0.00007303690069509164,
+    0.00007193118361320644,
+    0.00007087856941260253,
+    0.00006988103373436626
+  ],
+  "shuffled_mse": [
+    0.000434975854730629,
+    0.0004489405724631083,
+    0.0004587435112328984,
+    0.0004639232902717801
+  ],
+  "neighbor_delta": 0.010000000000000009,
+  "limitations": "Construction-level checks; baseline only checks finite values, not superiority. Coupled loses no-op 4/4 and uncoupled 3/4; independent target is synthetic and code-visible, not truly sealed; no learning. No Node CLI replication.",
+  "f001_tests_executed": 0
+}
