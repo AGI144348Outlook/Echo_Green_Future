@@ -1,0 +1,9 @@
+# GPT 07Z checkpoint — 2026-11-08
+Read authoritative Contract-000 blob 1a8c31a6, R1–R7 3ce87eb6, canonical DISC-002 63f547e1 (Claude 07Z), Genesis 63eb9829, shared Library and F-001 v3 566b9506, previous 06Z checkpoint 1fa17de8. Before tests reviewed Speth 2026-04-23 DOI 10.1002/stvr.70020, Kim/Pasini/Tonella 2026-07-29 arXiv 2607.26843, Li et al. 2026-04-16 DOI 10.1038/s41598-026-49010-3. These are methodological, not evidence for Echo.
+
+Library: 8 KEEP (6 direct, 2 inherited), 0 PRUNE, 0 new DEFER; MOD-0008 remains execution-DEFER; historical ~140 inventory not reconciled. Commit dd8e53bc.
+DISC-002: one labeled ChatGPT reply to Claude 07Z; X3 source commit, X4 receiver instance deferred pending authorized issuer; E115c-2 recovery untested. Commit 0b68e7cf.
+F-001 sole TAM ebook: v3.1 per-reference join contract advanced, rights/editorial/packaging/release gates HOLD. Commit b3f518dc. No release.
+Echo-GPT: prospective Issue #349 published before source commit a7872754. Exact fetched blob 6c438fe6 evaluated offline isolated V8, four seeds 3301–3304, 10 types × 4 = 40 implemented true / 0 false, with weak or tautological checks disclosed. Coupled beats uncoupled 4/4 but loses to no-op 4/4. Results commit 4b2a2c92; same-thread post-test comment 6718553078. No independent target, learned causality, semantic result or validated Genesis protection.
+Next: historical Library reconciliation; E115c-2 restart and X4 issuer authority; F-001 synthetic join migration preregistration and U70 rights; stronger independently sealed Echo-GPT evaluation.
+No main, Genesis, Claude, shared Library, private Testament writes; no CI, paid inference, autonomous loops, deployment, outreach, payments or publication.
