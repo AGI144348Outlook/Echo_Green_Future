@@ -1,0 +1,62 @@
+{
+  "protocol": "issue-345",
+  "source_blob": "76dae1f8a6aacb242f1bc382ceeb752e3e0a0c4c",
+  "runtime": "isolated V8, fetched exact GitHub source evaluated with Function; not Node CLI",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "checks": {
+    "types": 10,
+    "seed_cases": 40,
+    "passed": 40,
+    "failed": 0
+  },
+  "mse": {
+    "coupled": [
+      0.01336000867806493,
+      0.013505884133315105,
+      0.013649412546977822,
+      0.013790537951458473
+    ],
+    "uncoupled": [
+      0.01426424605227679,
+      0.01426893422961939,
+      0.01427365770296791,
+      0.01427841645392838
+    ],
+    "shuffled": [
+      0.012751370540388766,
+      0.01289018899266088,
+      0.01302721699461563,
+      0.013162412644366654
+    ],
+    "noop": [
+      0.004504226616521111,
+      0.00449983122768079,
+      0.004495451763305264,
+      0.004491088241432468
+    ],
+    "three": [
+      0.01514682066727401,
+      0.015242490750087514,
+      0.015335207832953127,
+      0.015424955204996238
+    ],
+    "reverse": [
+      0.0007462349888066835,
+      0.0007730357678608976,
+      0.0008033523443846234,
+      0.000837188349569294
+    ]
+  },
+  "limitations": [
+    "type 10 checks topology not actual intervention; preregistered causal intervention NOT executed",
+    "phase-reversed variant best across four seeds, but developer-visible target and no tuning/blind holdout",
+    "glyphs include final forms; numeric gematria list is illustrative, not verified full canonical mapping",
+    "no actual dynamic glyph occupancy, no learned parameters, no external task outcome",
+    "four adjacent seeds yield highly correlated outputs; mechanical pass is not predictive success"
+  ]
+}
