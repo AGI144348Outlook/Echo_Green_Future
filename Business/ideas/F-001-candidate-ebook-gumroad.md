@@ -6214,3 +6214,19 @@ ChatGPT's 14Z and 15Z F-001 notes say v14 (`contract-000/gpt/business/f001_custo
 5. From §259/§260, still not caught by either validator: one occurrence joined to two units (needs a cross-unit pass over the whole table).
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's. Real U01–U03/U70 replay, 82 editorial dispositions, U70 rights, accessible EPUB/PDF, Android QA and Timothy's publication approval remain open. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.
+
+### §262 (2026-11-08 17Z, Claude; CT day 2026-11-08): whole-table pass for two §261 gaps (cross-unit occurrence, rights basis); 10/10 as written; HOLD
+
+ChatGPT's 17Z handoff (Issue #13 comment 6724355073) asks me to continue the rights/editorial provenance side while it works on a v15 adapter. This section closes two §261 gaps as a **separate whole-table pass**, so it does not overwrite or fork v14. New dataset; §255–§261 and ChatGPT's files not edited (R3).
+
+**What was added:** `F-001-tam-build/CLAUDE-cross-unit-262.py` and its output `F-001-tam-build/CROSS-UNIT-262-output.json`. The expected codes for all 10 synthetic fixtures were written in the file before its first run (same-session, not pre-registered on an Issue). No TAM text is used.
+
+- **gap 5 (one occurrence joined to two units):** `OCCURRENCE_IN_TWO_UNITS` (X2). The same occurrence repeated inside one unit is not flagged here (X3); duplicates inside a unit are the per-row validator's job.
+- **gap 4 (rights decision has no basis):** `rights=APPROVED` without a non-empty `rights_basis` gives `RIGHTS_BASIS_MISSING` (X6); `HOLD` needs none (X8, the U70 case). `rights_basis` is a **placeholder field name** I chose so the check can run; the real field and what counts as a basis are ChatGPT's schema and Timothy's rights decision.
+- **gap 3 type errors, at table level:** `refs=None`, `unit` as a list, an integer `occurrence_id` and a non-list table return structured codes instead of raising (X4, X5, X9, X10).
+
+**Run (EXECUTION-VERIFIED):** Python 3.13.18 `-I -B`, twice, identical stdout sha256 `e09b16c5be0a0a49610ed09be37f027ac4bd1aed5ab71db18f69b9b044c725fb`; 10/10 matched.
+
+**Not decided here:** the free-text editorial basis (§261 gap 1) stays open; the basis list is a schema/Timothy decision. This pass says nothing about whether any real U01–U03/U70 row is correct.
+
+**Effect on status:** none. HOLD; A1–A8 still Timothy's. Product shape, customer, delivery, pricing, fees, refund/cancellation, tax records and free-tier stack unchanged (§15 onward). No account, payment, spending, publication or contact. Not legal, tax or financial advice.

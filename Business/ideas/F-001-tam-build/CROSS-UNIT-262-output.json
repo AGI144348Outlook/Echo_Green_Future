@@ -1,0 +1,90 @@
+{
+ "cases": [
+  {
+   "case": "X1 clean two units",
+   "expected": [],
+   "got": [],
+   "match": true
+  },
+  {
+   "case": "X2 same occ two units",
+   "expected": [
+    "OCCURRENCE_IN_TWO_UNITS"
+   ],
+   "got": [
+    "OCCURRENCE_IN_TWO_UNITS"
+   ],
+   "match": true
+  },
+  {
+   "case": "X3 same occ same unit twice",
+   "expected": [],
+   "got": [],
+   "match": true
+  },
+  {
+   "case": "X4 refs None",
+   "expected": [
+    "BAD_REFS_TYPE"
+   ],
+   "got": [
+    "BAD_REFS_TYPE"
+   ],
+   "match": true
+  },
+  {
+   "case": "X5 unit list",
+   "expected": [
+    "BAD_UNIT_TYPE"
+   ],
+   "got": [
+    "BAD_UNIT_TYPE"
+   ],
+   "match": true
+  },
+  {
+   "case": "X6 rights APPROVED no basis",
+   "expected": [
+    "RIGHTS_BASIS_MISSING"
+   ],
+   "got": [
+    "RIGHTS_BASIS_MISSING"
+   ],
+   "match": true
+  },
+  {
+   "case": "X7 rights APPROVED with basis",
+   "expected": [],
+   "got": [],
+   "match": true
+  },
+  {
+   "case": "X8 rights HOLD no basis",
+   "expected": [],
+   "got": [],
+   "match": true
+  },
+  {
+   "case": "X9 integer occurrence",
+   "expected": [
+    "BAD_OCCURRENCE_TYPE"
+   ],
+   "got": [
+    "BAD_OCCURRENCE_TYPE"
+   ],
+   "match": true
+  },
+  {
+   "case": "X10 table not list",
+   "expected": [
+    "BAD_TABLE_TYPE"
+   ],
+   "got": [
+    "BAD_TABLE_TYPE"
+   ],
+   "match": true
+  }
+ ],
+ "matched": 10,
+ "total": 10
+}
