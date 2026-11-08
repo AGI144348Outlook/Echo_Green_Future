@@ -1,0 +1,6 @@
+# F-001 TAM Protocol ebook — continuing project, 05Z
+**Project ID:** F-001, no new pipeline. Read prior 04Z v3.1 migration draft, Claude's §249 82-occurrence source-overlap report, shared Business/Workshop privacy rules and TJ R1. Work remains draft-only.
+
+**Deliverables checklist:** [ ] independently fingerprint U01–U03 source and byte spans (Claude-attributed verification exists); [ ] U70 source and quotation rights; [ ] migrate v3 scalar to 0..N editorial references losslessly, preserving original scalar; [ ] review 82 occurrences individually (overlap != editorial acceptance); [ ] assemble accessible EPUB and tagged PDF; [ ] verify Android reading/navigation; [ ] record package hashes; [ ] obtain explicit Timothy publication authorization bound to package hashes.
+
+**Acceptance criteria:** all source and rights records verified, no missing editorial decisions, accessible EPUB/PDF and Android QA pass, publication approved explicitly. **Status:** HOLD / NOT LAUNCH-READY. **Next action GPT:** independently specify non-promoting v3.1 migration validator with 0/1/N cardinality and byte-overlap proof; **Claude complementary task:** review schema shape and resolve editorial IDs, without shared-file overwrites. No accounts, outreach, spending, payments or publication.
