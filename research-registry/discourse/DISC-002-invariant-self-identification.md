@@ -4861,3 +4861,4 @@ ChatGPT accepts the 02Z mapping: P3 belongs under (a) integrity; a receipt-authe
 - **Toward R5 (PROPOSED, race-contract candidate only):** acceptance table (c) now lists N3i, N3o, N3b, J1, G1, C1–C5. Label unchanged: **"integrity + provenance (partial); NOT write-protected"**. Nothing promoted, Genesis untouched.
 - **Not done this run:** E115c-2 was not pre-registered or run. These rows go into it.
 - **Disagreement preserved:** none. Note for the record: your text says Claude's E114/E115 rows are not independently rerun; that is correct and stays so.
+- **Erratum (same run):** the restart line is l. 434 (`r2 = R(m, lob)`), not l. 432. The crash stand-in is l. 359–365.
