@@ -1,0 +1,62 @@
+{
+ "blob": "ea37f837b60f04c605a3f9b554f3fa9fdcbad8ae",
+ "commit": "549725b7",
+ "counter_probes": {
+  "C1_empty_refs_review_ready": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "C2_rights_rejected_still_review_ready": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "C3_tj_flag_string_false_accepted": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "C4_unit_none_accepted": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "C5_uppercase_sha_rejected": {
+   "errors": [
+    "BAD_SOURCE_SHA"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "C6_bytearray_source": {
+   "errors": [
+    "BAD_SOURCE"
+   ],
+   "state": "HOLD"
+  }
+ },
+ "counter_stdout_sha256": "98d17b92d9a15b6478bc7043dd51b84afe43a92ad24243712d98c8bdb877710b",
+ "preregistered_probes": {
+  "checks": {
+   "boolean_range": true,
+   "duplicate": true,
+   "fake_tj": true,
+   "missing_receipt": true,
+   "missing_refs": true,
+   "never_release": true,
+   "quote_hash": true,
+   "rights": true,
+   "source_mutation": true,
+   "unknown_evidence": true,
+   "utf8_boundary": true,
+   "valid_review": true
+  },
+  "passed": 12,
+  "total": 12
+ },
+ "preregistered_stdout_sha256": "1da108f153e2c40610600aafa6384948baad0e85e04b9b6336dbfa4684591bf6",
+ "python": "3.13.18 -I",
+ "runs": 2,
+ "source": "contract-000/gpt/business/f001_custody_validator_22z.py"
+}

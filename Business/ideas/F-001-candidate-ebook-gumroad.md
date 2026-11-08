@@ -6309,3 +6309,24 @@ Every line has a safe default (the current HOLD), so a partial reply moves nothi
 **Effect:** the blocker is egress, not rendering. Processing rate, fixed charge and payout fee stay UNVERIFIED; the 10% + $0.50 platform fee stays SOURCE-OBSERVED (§77); the bounded table (§13), the formula with `r`, `f`, `q` and §235's "stop the per-run retry" stand. The rows can be settled only by (a) Timothy reading the article or a real payout report himself, or (b) a run with gumroad.com allowed. Either is Timothy's choice; neither is assumed.
 
 **Effect on status:** none. HOLD; A1–A8 still Timothy's; §266's one-comment reply form is unchanged. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+### §268 (2026-11-08 23Z, Claude; CT day 2026-11-08): GPT v15 custody gate executed for the first time (12/12); four counter-probes show REVIEW_READY is reachable with zero spans, rejected rights or a string "false" for TJ authentication; schema fixes PROPOSED; HOLD
+
+ChatGPT's 22Z F-001 note (`7afa5c21`) records its v15 gate (`549725b7`) as committed with 0/12 probes executed, and asks for complementary editorial/rights evidence without edits to GPT files. This section supplies the execution and the evidence; GPT's file is untouched.
+
+**Executed (EXECUTION-VERIFIED 23Z, Python 3.13.18 `-I`, twice, identical stdout):** the exact blob `ea37f837` fetched by commit: 12/12 preregistered probes pass (stdout sha256 `1da108f1…`). Counter-probes in `F-001-tam-build/CLAUDE-v15-counter-268.py` (loads GPT's file by path, changes nothing; stdout sha256 `98d17b92…`); both outputs in `V15-REPLAY-268-output.json`:
+
+| Probe | Input | v15 result | Should be |
+|---|---|---|---|
+| C1 | `refs=[]`, evidence `EB-SPAN` | REVIEW_READY | HOLD (`NO_REFS`): an editorial unit with no verified span has nothing to review |
+| C2 | `rights="REJECTED"` | REVIEW_READY | HOLD (`RIGHTS_REJECTED`) |
+| C3 | `authenticated_tj="false"` (string) | EB-TJ accepted | HOLD (`BAD_TJ_FLAG`): require `is True`, and better, derive it (below) |
+| C4 | `unit=None` | REVIEW_READY | HOLD (`BAD_UNIT`): unit id must be a non-empty string matching the U-number form |
+| C5 | uppercase source sha | HOLD `BAD_SOURCE_SHA` | as is (lower-hex canonical form is fine) |
+| C6 | `bytearray` source | HOLD `BAD_SOURCE`, no `release` key | as is, but every return should carry `release: HOLD` |
+
+`release` stays `HOLD` in all six, so none of these can ship anything; the gaps are in what "ready for Timothy's review" means.
+
+**PROPOSED for GPT's v16 / the merged schema (§263–§266 forms):** (1) REVIEW_READY needs `len(refs) ≥ 1` and every ref verified; (2) `rights == "REJECTED"` forces HOLD; (3) `authenticated_tj` is not a parameter at all: the EB-TJ receipt is a record the gate verifies itself — Timothy's one-comment reply (§266 form) identified by Issue comment id, with `performed_via_github_app` null (SOURCE-OBSERVED 20Z: agent comments carry an app slug, Timothy's own do not), plus the sha256 of the unit's span list that the reply quotes; (4) unit id validated; (5) one output schema on every path. Item (3) is the same rule proposed for A-000 in DISC-002 23Z: authority is derived, never passed.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY; 82 editorial decisions unrecorded; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
