@@ -1,0 +1,9 @@
+# Issue #358 observations — 15Z
+Preregistered before execution. Source commit 45f08eabbdd0dd28623eda7cc9ec4a1155f93bd2; fetched blob b9c5e395b332be5197e05cf4dc6d085ce1f41e35. Executed the fetched JS in isolated V8 with the final console-print expression replaced by a return of the same results object (deviation from Node CLI). Seeds 3301,3302,3303,3304. **40/40 boolean construction checks true**.
+| seed | coupled MSE | uncoupled | shuffled | no-op | neighbor delta |
+|3301|0.000292692351|0.000003796385|0.000337453349|0.000205962833|0.0100000000|
+|3302|0.000284822132|0.000003795231|0.000329868220|0.000200699144|0.0100000000|
+|3303|0.000277636788|0.000003793992|0.000326580828|0.000195388459|0.0100000000|
+|3304|0.000271564843|0.000003794455|0.000312743935|0.000190387762|0.0100000000|
+
+Observations: neighbor *input* at cell 13 is perturbed +0.4; coupled output at cell 12 moves +0.01, distant cell 0 stays fixed; uncoupled cell 12 stays fixed. This repairs the previous direct-output-edit defect, but is a programmed dependency, not learned causality. Coupling loses uncoupled and no-op 4/4; beats shuffled 4/4. **Limitations:** two-ring check is tautological and three-ring check only verifies range/length, not independent reference composition; predictive target remains developer-visible; no parameter learning, independent external target or semantic evidence. Thus 40/40 booleans must not be interpreted as 10 strong scientific validations; substantive types **8/10** (T2/T3 weak). F-001 v14 exact-source Python test **0/10 executed**: connector fetched source, but local runtime cannot retrieve public GitHub raw URL (DNS failure), and no verified byte transfer path to Python was established. No claim of validator regression pass. No Genesis tests. Next: replace T2/T3 with independent reference oracle, run byte-identical Node and Python validators, keep controls, and seek held-out target.
