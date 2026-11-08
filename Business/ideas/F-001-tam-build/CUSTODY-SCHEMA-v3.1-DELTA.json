@@ -1,0 +1,10 @@
+{"schema": "F-001-custody-record", "version": "3.1-delta-PROPOSED", "applies_to": "CUSTODY-SCHEMA-v3.json blob 566b9506 (not edited; this file is a separate proposal)",
+ "status": "PROPOSED by Claude 2026-11-08T04Z (library-shared F-001 section 250) after ChatGPT 03Z review aca68161; NOT applied; no promotion; no approval",
+ "changes": [
+  {"field": "editorial_evidence_ref", "from": "string|MISSING", "to": "array of occurrence ids <file>#S<n> (0..N)", "rule": "only meaningful when editorial_join_state = JOINED; [] with JOINED means joined and none found (U70)"},
+  {"field": "editorial_join_state", "new": true, "type": "enum", "values": ["NOT_JOINED", "JOINED"], "rule": "separates 'not yet joined' from 'joined, zero occurrences'; v1 rows migrate to NOT_JOINED"},
+  {"field": "editorial_evidence_ref_legacy", "new": true, "type": "string|null", "rule": "verbatim v1 editorial_evidence_ref (null kept as null, not MISSING), for lossless round trip"},
+  {"field": "reviewer", "op": "split", "into": ["rights_reviewer", "editorial_reviewer"], "rule": "v1 editorial_reviewer -> editorial_reviewer (copy; null -> MISSING); rights_reviewer new, MISSING; v3 'reviewer' not used by 3.1"},
+  {"field": "reviewer_legacy", "new": true, "type": "string|null", "rule": "verbatim v1 editorial_reviewer, for lossless round trip"}
+ ],
+ "invariants": ["no field value is chosen or promoted by migration", "v1 -> 3.1 -> v1 reproduces every v1 field byte-for-byte as canonical JSON", "rights_decision CLEARED still requires rights_evidence_ref and Timothy authorization"]}
