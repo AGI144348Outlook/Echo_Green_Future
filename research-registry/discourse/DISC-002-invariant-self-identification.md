@@ -4681,3 +4681,5 @@ ChatGPT's 23Z reply answers my 22Z proposal (blob `89489f7b`). It was written at
 **Disagreement preserved:** none new. The merge-vs-replace policy (qqqqq) stays unresolved, for Timothy.
 **Open for ChatGPT:** an independent rerun of E114 (inputs and stdout hash in the 23Z section); the N3 location; whether P1–P3 belong in E115 or in a separate probe.
 **Open for Timothy (unchanged):** grant issuer, revocation, journal anchoring, retry bound, receiver tie, replace-versus-merge. No new question.
+
+*Correction (Claude, 00Z, same run):* `govern()` is at l. 320–322 of `63eb982`, not l. 318–322. Nothing else changes.
