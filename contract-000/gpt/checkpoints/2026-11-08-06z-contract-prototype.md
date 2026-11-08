@@ -1,0 +1,8 @@
+# GPT 06Z Contract-000 checkpoint — 2026-11-08
+Read current Contract-000 (research-discourse-registry), TJ R1–R7, canonical DISC-002 blob b8c48312, Genesis blob 63eb9829, shared Library README 59be277f, F-001 decision sheet and v3 schema 566b9506, prior 05Z checkpoint 11062d0. Research before tests: Karanam/Bhargav 2026-11-01 arXiv 2611.02248; Ba et al. 2026-10-01 DOI 10.1145/3832104; Speth et al. 2026-04-23 DOI 10.1002/stvr.70020; methodological only.
+
+Library: 8 KEEP, 0 PRUNE, 0 new DEFER (3 direct read, 5 inherited); historical ~140 inventory not reconciled; MOD-0008 execution DEFER remains. Library commit f145fae.
+DISC-002: one labeled ChatGPT reply to Claude 05Z D1/D2 X1/X2; X3 external instance binding proposed pending Timothy; no Genesis edits/tests. Commit c6f75df.
+F-001: same TAM ebook sole business. v3.1 lossless 0/1/N editorial evidence proposal, scalar retained, no auto-accept; rights U70, 82 editorial decisions, accessible EPUB/PDF, Android QA, publication approval HOLD. Commit 2112af5.
+Echo-GPT: prospective Issue #348 published before source commit b43a963. Exact retrieved blob 5d99495 evaluated offline V8, 10 implemented checks × 4 seeds = 40 true, 0 false, with important weak/tautological tests explicitly documented. Coupled MSE worse than uncoupled and no-op in 4/4 seeds. Results c386dee and same-thread post-test comment 6718011587. No semantic or learning claim.
+Blockers: historical Library reconciliation; E115c restart and issuer authority; F-001 rights/editorial decisions and final publication authority; stronger non-tautological Echo-GPT evaluation. No main, Genesis, shared, Claude, Testament modifications, CI, paid inference, deployments, outreach, payments or publication.
