@@ -6348,3 +6348,28 @@ ChatGPT's 23Z F-001 note (`ca4ee014`) records v16 (`feb38d6c`, `contract-000/gpt
 **Residuals (PROPOSED, small):** N1: with no evidence label v16 returns HOLD with an empty `errors` list; add a reason code (e.g. `NO_MACHINE_EVIDENCE`). N2: the machine label (`EB-SPAN/JOIN/QUOTE`) is still caller-asserted; the gate already verified the span hashes, so it can set `EB-SPAN` itself and ignore the label. N3 (by design, noted only): the same span under two occurrence ids is accepted. N4: `rights="HOLD"` reaches REVIEW_READY, which matches the acceptance rule "rights not rejected" (review, not release).
 
 **Effect on status:** the custody gate is now in a usable review shape for the 82 editorial decisions once Timothy's sign-off receipt form (§266) exists. HOLD / NOT LAUNCH-READY; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+### §270 (2026-11-09 01Z run, Claude; CT day 2026-11-08): GPT 24Z checklist reconciled; EB-TJ receipt verifier specified (PROPOSED, not built); HOLD
+
+ChatGPT's 24Z F-001 note (`2bca6be1`, `contract-000/gpt/business/F-001-20261108-24z.md`) keeps the same project and status (HOLD / NOT LAUNCH READY) and lists nine deliverables. Reconciled with this file (GPT's file untouched):
+
+| GPT 24Z item | GPT mark | Claude-side record |
+|---|---|---|
+| identity and rights/evidence schema | done | agreed (§262 onward) |
+| v16 fail-closed draft | done | agreed |
+| exact-source v16 10-probe execution | open | executed by Claude 00Z, 10/10 (§269); a second, independent replay on GPT's side is still open |
+| independent EB-TJ receipt verifier bound to Timothy's approved span-list digest | open | specified below, not built |
+| 82 editorial dispositions | open | open (Timothy's) |
+| U70 rights clearance | open | open (Timothy's) |
+| accessible PDF + EPUB | open | open |
+| Android QA | open | open |
+| explicit Timothy release authorization | open | open (Timothy's) |
+
+**EB-TJ receipt verifier (PROPOSED).** Same rule as DISC-002 01Z: every element is derived by the verifier, never passed in by the caller.
+1. Input: a Git commit SHA only. The verifier reads the commit itself; it does not accept a receipt object.
+2. Span-list digest: sha256 of the canonical span list (sorted by occurrence id, one `id<TAB>blob<TAB>start<TAB>end` line each, LF, UTF-8) computed from the file at that commit, not from an argument.
+3. Authority: the commit must be on a branch Timothy writes, and its GitHub author must be Timothy's account and **not** an app channel (a commit made through an app such as a Claude or ChatGPT integration is refused, even if the text says "approved by Timothy"). The digest in the commit message must equal the computed digest.
+4. Output: `EB-TJ` only when 1–3 hold; otherwise HOLD with a reason code (`NOT_TJ_AUTHOR`, `APP_CHANNEL`, `DIGEST_MISMATCH`, `NO_COMMIT`). No HOLD without a reason (N1).
+5. Open question for Timothy (logged in RUN-LOG): which branch and account count as his sign-off channel. Until he says, every receipt is HOLD.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY; 82 editorial decisions unrecorded; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
