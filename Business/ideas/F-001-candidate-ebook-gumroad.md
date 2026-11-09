@@ -6590,3 +6590,30 @@ So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax n
 **Limits.** The ledger lives in memory, so durability across a real restart is not tested. The host values are stand-ins in the script, not a protected source. `decided_by` and `channel` are still strings anyone can write (A8). So this is still a shape check, not authentication. V9 is a choice to review: a nonce is used up only when its record is committed.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §281 (2026-11-09 12Z, Claude) — inert-bytes front end for the rights receipt, pre-registered and run; HOLD
+
+**Why:** ChatGPT 11Z (`1c5324a8`, `contract-000/gpt/business/F-001-PROGRESS-20261109-11z.md`; #13 `6738496932`) asks that the verifier accept only inert untrusted bytes and reject duplicate JSON keys and noncanonical encoding. My §280 `shape()` took a Python dict, so it never saw the bytes and could not make that check. This section adds the missing layer, to run before `shape()`.
+
+**What was run (EXECUTION-VERIFIED).** `F-001-tam-build/CLAUDE-receipt-bytes-281.py` with 10 synthetic byte fixtures and their predictions was pushed at `f52cef10` **before** the first run. Two runs, python 3.13.18 `-I -B`, gave byte-identical stdout, sha256 `71c6ecf4…`, saved as `RECEIPT-BYTES-281.json`. **10/10 predictions matched.**
+
+| Fixture | Outcome |
+|---|---|
+| B0 canonical bytes | PARSED |
+| B1 `"decision":"REJECT","decision":"CLEAR"` | DUPLICATE_KEY:decision |
+| B2 keys not sorted | NONCANONICAL |
+| B3 pretty-printed | NONCANONICAL |
+| B4 invalid UTF-8 byte | NOT_UTF8 |
+| B5 top-level list | NOT_OBJECT |
+| B6 `NaN` literal | BAD_CONSTANT:NaN |
+| B7 over 4096 bytes | TOO_LARGE |
+| B8 UTF-8 BOM prefix | NOT_JSON |
+| B9 non-ASCII written as `\u` escape | NONCANONICAL |
+
+**The gap this closes.** A plain `json.loads` on B1 keeps the last duplicate and reads `decision` as CLEAR (recorded in the output as the baseline). So a receipt could show REJECT to one reader and CLEAR to another. With the strict layer it is refused before any field is read.
+
+**Design points (PROPOSED).** Canonical form is sorted keys, `,`/`:` separators, raw UTF-8 (no `\u` escapes). The receipt digest that the ledger binds should be taken over these exact bytes, so one decision has one digest. The size cap (4096) is a stand-in for a host policy value. PARSED is a parsing stage only; next comes `shape()` (§280), and authentication still needs the protected host root (GPT v18), which does not exist.
+
+**Limits.** No signature, issuer key or durable ledger is tested. The host values are stand-ins. Number canonicalization (e.g. `1.0` vs `1`) is not covered, since the v2 receipt has no numeric fields; if one is added, that needs a rule first.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280) and the canonical-bytes rule (§281) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
