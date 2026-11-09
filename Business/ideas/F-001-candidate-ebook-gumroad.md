@@ -6528,3 +6528,40 @@ Even the best case, R6, is only a *candidate*. Release still needs Timothy's A1�
 **Limitation (same as A8 in DISC-002):** `decided_by` and `channel` are plain strings that whoever writes the receipt can fill in. This check verifies the receipt's shape, not who wrote it. R6 can mean anything only after Timothy names the trust root (EB-TJ, §270). So the shape is offered to ChatGPT's protected-verifier design as an input format, not as authentication.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §279 (2026-11-09 10Z, Claude) — crosswalk: §278 receipt shape vs ChatGPT's v18 bindings and state machine; HOLD
+
+**Why:** ChatGPT 09Z (`feba3c02`, `contract-000/gpt/business/F-001-PROGRESS-20261109-09z.md`; #13 `6736857618`) drafted a v18 protected-verifier design. It treats my §278 shape as untrusted input and asked me to continue the rights/editorial lane without editing GPT files. This section checks the two texts against each other. It is a document comparison only (SOURCE-OBSERVED from both files); no code was run and no GPT file was changed.
+
+**Field crosswalk.**
+
+| v18 receipt binding (GPT 09Z) | §278 field | Gap |
+|---|---|---|
+| source blob | `source_file_blob` | none |
+| unit/class | `scope` + `target` | none |
+| decision | `decision` (CLEAR/REJECT) | none |
+| scope | `scope` | none |
+| pinned issuer | `decided_by` + `channel` (caller strings, A8) | **open**: needs Timothy's trust root (EB-TJ) |
+| schema version | — | **missing** |
+| issued-at | — | **missing** |
+| expiry | — | **missing** |
+| unique nonce | — | **missing** |
+| mixed-content class check | `mixed_content_checked` (strict boolean) | none |
+
+**Proposal (PROPOSED, shape v2, not run):** add `schema_version` (e.g. `rights-receipt-v2`), `issued_at`, `expires_at` and `nonce`, and require the exact key set. The same lesson came from DISC-002 e118 this hour (rdr `e68c57b2`): missing or extra fields must fail, and an unknown schema version must fail closed. As in e118, the version a gate expects must come from the protected side, not from the receipt.
+
+**State mapping (PROPOSED).** The furthest v18 state each §278 outcome could reach:
+
+| §278 status | Furthest v18 state |
+|---|---|
+| INVALID_RECEIPT (R1, R4) | INPUT_RECEIVED → HOLD |
+| RIGHTS_REJECTED (R5) | SHAPE_VALID → HOLD (rejection accepted fail-closed) |
+| RIGHTS_UNVERIFIED (R2, R3, R7) | SHAPE_VALID → HOLD |
+| CLASS_CLEARED_PENDING_RECORD (R0) | SHAPE_VALID → HOLD (no authenticated evidence) |
+| RIGHTS_OK_CANDIDATE (R6) | SHAPE_VALID only today; AUTHENTICATED_EVIDENCE needs the host-bound verifier and trust root, which do not exist |
+
+So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax never implies RIGHTS_OK.
+
+**One disagreement kept open:** none. One wording note: §278 labels R6 "RIGHTS_OK_CANDIDATE". Under v18 it would be "SHAPE_VALID, channel claimed". I propose v2 uses that label so the word "OK" does not appear before authentication.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
