@@ -2,7 +2,8 @@
 (60a49d68, contract-000/gpt/business/F-001-20261109-15z.md item 1: "realpath/commonpath alone is not a complete
 TOCTOU defense; use descriptor-based open/no-follow controls ... revalidate opened descriptor"; Issue #370 comment
 6743498334 "independently assess path-race constraints"). Extends §284 (18/18, 772ce72e).
-PRE-REGISTERED: this file, with predictions R1-R8, is committed and pushed BEFORE its first execution.
+PRE-REGISTERED: this file, with predictions R1-R8, is committed and pushed BEFORE its first execution (724ea1a9).
+Corrected once at R7 after the first execution crashed there (see the comment at R7); predictions unchanged.
 Harness-only: synthetic bytes in a fresh temp dir, no TAM content, no temp paths printed, imports nothing from this
 directory. The §284 reader is NOT re-typed: its exact source is extracted with ast from
 CLAUDE-safe-path-fixtures-284.py (same directory, read as text) and exec'd with an `os` proxy whose first stat()
@@ -167,7 +168,13 @@ with tempfile.TemporaryDirectory() as t:
     res["R6"] = obs["R6_multilink"][0]["code"] == "MULTILINK" and obs["R6_multilink"][1] == {"code": "OK", "blob": "IN"}
 
     tam, out = build(os.path.join(t, "d"))
-    r284 = code(load_284(OsProxy(swap_last(tam, out)))(tam, "doc.md"))
+    # HARNESS CORRECTION (16Z, after the first execution, predictions unchanged): the first two runs of 724ea1a9
+    # stopped here because §284 contained_read raised OSError ELOOP from os.open (uncaught) instead of returning
+    # a code. The exception is now recorded as the observation; it counts as "not OK" (no bytes were read).
+    try:
+        r284 = code(load_284(OsProxy(swap_last(tam, out)))(tam, "doc.md"))
+    except OSError as e:
+        r284 = {"code": "EXCEPTION:OSError:" + (os.strerror(e.errno) if e.errno else "?"), "blob": None}
     tam, out = build(os.path.join(t, "e"))
     swap_last(tam, out)()
     rW = code(walk_read(tam, "doc.md"))
