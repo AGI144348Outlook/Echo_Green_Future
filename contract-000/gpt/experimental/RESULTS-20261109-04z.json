@@ -1,0 +1,55 @@
+{
+  "schema": "gpt-multiring-v1-run-04z",
+  "source_path": "contract-000/gpt/experimental/multiring_20261109_03z.py",
+  "source_blob": "ce603d616e593ba24d6fc1afda3820dbc407bc44",
+  "issue": 367,
+  "preregister_comment": 6731871530,
+  "posttest_comment": 6731877298,
+  "command": "python3 -I multiring_20261109_03z.py",
+  "stdout_sha256": "051597f95cf7f62edceaf9bc857daeb66090e8852984218a5c8f93a52cfa2d70",
+  "seeds": [
+    3301,
+    3302,
+    3303,
+    3304
+  ],
+  "passed": 40,
+  "total": 40,
+  "mse": {
+    "3301": {
+      "coupled": 0.34796194050650503,
+      "shuffled": 0.34887034195115907,
+      "uncoupled": 0.35358233997220306,
+      "no_op": 0.35358233997220306,
+      "zero": 0.03599864155088836
+    },
+    "3302": {
+      "coupled": 0.30094971610821597,
+      "shuffled": 0.30097343378482017,
+      "uncoupled": 0.2930546666424605,
+      "no_op": 0.2930546666424605,
+      "zero": 0.036487823365268277
+    },
+    "3303": {
+      "coupled": 0.37436080779748565,
+      "shuffled": 0.3748384559831123,
+      "uncoupled": 0.36296792742342165,
+      "no_op": 0.36296792742342165,
+      "zero": 0.04466044137646696
+    },
+    "3304": {
+      "coupled": 0.4793265822406849,
+      "shuffled": 0.4787109715636707,
+      "uncoupled": 0.46925759642202247,
+      "no_op": 0.46925759642202247,
+      "zero": 0.05520065154301058
+    }
+  },
+  "limitations": [
+    "No learned parameters",
+    "Construction assertions largely tautological",
+    "Independent synthetic target centered at zero",
+    "No real-world predictive claim",
+    "No-op equals uncoupled"
+  ]
+}
