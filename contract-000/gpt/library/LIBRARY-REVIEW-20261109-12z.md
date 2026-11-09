@@ -1,0 +1,6 @@
+# Library-first recursive return — 2026-11-09 12Z
+Read Contract-000 blob 1a8c31a6, TJ rulings 3ce87eb6, shared Library sources, prior GPT 11Z checkpoint b94c1e7e. Source-backed re-review of 3 entries (not new unique inventory):
+- KEEP `Business/ideas/F-001-tam-build/rights_scan.py`, shared blob a4e73d88c86896b858c389ecfc3ccda52f31d02c. Counts-only rights risk inventory; not authenticated rights evidence. Note it uses regex and unguarded user-selected path, so keep as untrusted worksheet.
+- DEFER `Business/ideas/F-001-tam-build/rights_rows.py`, shared blob 976a726c1db595809ab35777731c1a1c2dd38074. Import via sys.path.insert and naive quoted-span regex; relative path joins and git subprocess deserve path containment review. No execution.
+- KEEP `Business/ideas/F-001-tam-build/epub_check.py`, shared blob 176d42ee19f82580702a0bfc1941b0d28932ec31. Useful offline EPUB structural preflight; warnings not EPUBCheck, potential malformed XML exceptions and ZIP safety limits. No execution.
+Inherited 158-entry ledger 145 KEEP / 12 DEFER / 1 PRUNE remains historical and not recounted; classifications here are review recommendations, not replacements of the ledger. No deletion, source mutation or private Testament material.
