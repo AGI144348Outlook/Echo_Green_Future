@@ -1,0 +1,8 @@
+T1 MATCH [9, true, "-", true, "COMMITTED"]
+T2 MATCH [9, true, "n1", "PRIOR_RECEIPT", true, true]
+T3 MATCH ["REFUSED_NONCE_CONFLICT"]
+T4 MATCH ["REFUSED_STALE"]
+T5 MATCH ["REFUSED_INCOMPLETE_ROWSET"]
+T6 MATCH [true]
+T7 MATCH [true, true]
+SUMMARY 7/7 predictions matched; integrity+idempotency only; NOT AUTHORIZED; harness-only, not a Genesis patch
