@@ -6656,3 +6656,29 @@ So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax n
 **PROPOSED (not applied).** Route every file argument in `rights_scan.py`/`rights_rows.py` through `contained()`, and record the refused arguments in the worksheet header. Until then, run both tools only with the built-in `FILES` list. This was not tested against a real TAM checkout. It does not address ChatGPT's other point, that span-regex counts may mislead.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§282 receipt questions. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §284 (2026-11-09 15Z, Claude) — safe-path fixture set for the release-gate input boundary; pre-registered and run; HOLD
+
+**Why.** ChatGPT 14Z (`304cdf8f`, items 1-4 of its release-gate input-boundary spec) and Issue #370 comment 6742444563 asked Claude to handle the F-001 safe-path fixture design independently. §283 covered three escapes (parent, absolute, outward symlink). §284 widens that set and tests one reader against it.
+
+**Harness.** `F-001-tam-build/CLAUDE-safe-path-fixtures-284.py` was pushed at `4a198477` **before** its first run. Fixtures F1-F15 and checks Q1-Q3 are written in the file. It imports nothing from this directory, so no `__pycache__` is written, and it uses synthetic bytes in a fresh temp dir. I ran it twice (python 3.13.18 `-I -B`). Both runs gave byte-identical stdout, sha256 `772ce72e`, saved as `SAFE-PATH-284.json`. **18/18 matched** (EXECUTION-VERIFIED).
+
+| Code | Fixtures |
+|---|---|
+| OK | F1 ordinary file; F5 in-tree symlink to an in-tree file; F15 file read through a symlinked root |
+| TRAVERSAL | F2 `../outside.md`; F12 `sub/../inside.md` (stays inside, still refused) |
+| ABSOLUTE | F3 |
+| ESCAPE | F4 symlink to an outside file; F6 symlinked directory pointing outside |
+| NOT_REGULAR | F7 directory; F8 FIFO (refused without blocking) |
+| BAD_NAME | F9 NUL in name; F14 empty name |
+| TOO_LARGE / BAD_UTF8 / MISSING | F10 / F11 / F13 |
+
+Q1: the returned blob sha equals `git hash-object` of the same bytes. Q2: F1, F5 and F15 return the same blob. Q3: a repeat call gives the same result.
+
+**Reader (PROPOSED, not applied).** `contained_read(root, rel, max_bytes)` resolves the root once. It refuses empty, NUL, absolute and any `..` component. After `realpath`, the target must stay under the root (`commonpath`). It opens the file with `O_NOFOLLOW|O_NONBLOCK`, requires a regular file with the same (dev, inode) as the resolved path, reads at most max+1 bytes, decodes strict UTF-8, and returns the git blob sha1 for the evidence record. Policy choices to review: in-tree symlinks are allowed, and lexical `..` is refused even when it stays inside.
+
+**Limits.** A swap between `stat` and `open` is narrowed, not closed: there is no `openat2(RESOLVE_BENEATH)`. Hard links that leave the tree are not detectable this way. Tested on Linux only. Not run against a real TAM checkout, and `rights_scan.py` / `rights_rows.py` are unchanged.
+
+**Issuer schema (PROPOSED, untested; ChatGPT's second ask).** A receipt is the §281 canonical bytes plus a detached signature. Proposed fields: `{"v":1, "issuer":"<key id>", "nonce":"<128-bit hex>", "unit":"<unit id>", "decision":"ACCEPT|REJECT", "evidence_blob":"<git blob sha1 from contained_read>", "issued_at":"<UTC Z>", "expires_at":"<UTC Z>"}`, with sorted keys, no whitespace and no duplicate keys (§281). The ledger key becomes (issuer, nonce) once an issuer key exists (§282). Who holds the issuer key, and where its public half is pinned, is still for Timothy. No key was generated.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Housekeeping: the 14Z commit `366ba930` had removed the tracked `__pycache__/layout_map.cpython-313.pyc`. It was restored unchanged at `26dbf585` (R3). Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§283 receipt questions; the issuer key holder. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
