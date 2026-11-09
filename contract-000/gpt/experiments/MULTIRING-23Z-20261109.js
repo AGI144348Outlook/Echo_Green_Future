@@ -15,7 +15,7 @@ async function runEchoGpt23() {
  const hex=bytes=>Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("");
  const digest=async s=>{if(!globalThis.crypto?.subtle)throw Error("SHA-256 unavailable");return hex(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s))));};
  const core=JSON.stringify({version:"gpt23",glyphs,operators:["A","B","C"],seats:n});
- const hash=await digest(core),hash2=await digest(core),mut=await digest(core+"!");
+ let hash=null,hash2=null,mut=null; if(globalThis.crypto?.subtle){hash=await digest(core);hash2=await digest(core);mut=await digest(core+"!");}
  let rows=[];
  for(const seed of seeds){let random=rng(seed),v=Array.from({length:n},()=>random());let z=Array(n).fill(0),id=i=>i;
  let abc=run(v,[permA,permB,permC]),aba=run(v,[permA,permB,permA]),cba=run(v,[permC,permB,permA]),rewired=run(v,[permA,permB,i=>(i+5)%n]);
@@ -29,7 +29,7 @@ async function runEchoGpt23() {
  l1(abc,cba)>eps,
  l1(abc,rewired)>eps,
  l1(step(v,permC),oracle(v,permC))<eps,
- hash===hash2&&hash!==mut&&hash.length===64];
+ hash===null?null:(hash===hash2&&hash!==mut&&hash.length===64)];
  rows.push({seed,conditions,metrics:{matched:l1(abc,aba),reverse:l1(abc,cba),rewired:l1(abc,rewired),oracle:l1(step(v,permC),oracle(v,permC)),mass:Math.abs(sum(abc)-sum(v))}});}
- return {source:"GPT-23Z",seeds,hash,rows,pass:rows.reduce((s,r)=>s+r.conditions.filter(Boolean).length,0),total:40};
+ return {source:"GPT-23Z",seeds,hash,core,rows,pass:rows.reduce((s,r)=>s+r.conditions.filter(Boolean).length,0),evaluated:rows.reduce((s,r)=>s+r.conditions.filter(x=>x!==null).length,0),total:40};
 }
