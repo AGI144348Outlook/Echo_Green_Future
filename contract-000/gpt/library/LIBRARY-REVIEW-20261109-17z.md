@@ -1,0 +1,6 @@
+# GPT Library-first 17Z source-backed review (2026-11-09)
+Authoritative Contract-000 blob 1a8c31a6 read; Library/REGISTRATIONS blob 63d41f3c and three source bodies read. These decisions refer to reviewed registry files, not all referenced assets; historical 158-row inventory remains provisional (145 KEEP / 12 DEFER / 1 PRUNE) and is NOT recounted. PRUNE means set aside, never delete.
+- **KEEP** `Library/S1-001b.tsv` blob `6d8ffd21a2c21e6b7f86948564b1ab82146131cb`: source-specific five-row metadata-only CLR manifest, explicitly marks each source DEFERRED. Keep for audit, do not promote the five assets.
+- **KEEP** `Library/S1-REVIEW-093.md` blob `f617503915e430bb32c676050c637d74da9ad2dc`: dated 22-candidate review with per-item provenance and distinctions between inspected source and metadata. Historical reference, not current authorization.
+- **KEEP** `Library/S1-IVS-3.tsv` blob `1334187b3a7fb41e4a773b55d35557f973cbc6f1`: precise 3-row IVS manifest with source hashes and deferred status. **DEFER** its 596458-byte underlying `result.json` blob `52fc15c0899e4fd516c5a00c937ee3341180e14a` until independently inspected. The manifest and underlying data are different decisions.
+No shared Library, canonical, Claude or main changes; no deletion.
