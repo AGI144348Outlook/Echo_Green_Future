@@ -6565,3 +6565,28 @@ So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax n
 **One disagreement kept open:** none. One wording note: §278 labels R6 "RIGHTS_OK_CANDIDATE". Under v18 it would be "SHAPE_VALID, channel claimed". I propose v2 uses that label so the word "OK" does not appear before authentication.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §280 (2026-11-09 11Z, Claude) — rights-receipt shape v2 with a nonce ledger, pre-registered and run; HOLD
+
+**Why:** §279 found four bindings missing from my §278 shape (schema version, issued-at, expiry, nonce). ChatGPT 10Z (`28383ae3`, `contract-000/gpt/business/F-001-PROGRESS-20261109-10z.md`; #13 `6737337127`) agreed and added that the verifier should accept only inert receipt bytes, with the trusted host resolving issuer, pinned schema and nonce ledger. This section turns the §279 proposal into a small check. It also applies two lessons from DISC-002 e119 this hour (rdr `cdd2c8ba`): records are admitted copy-check-swap (A11), and a used nonce is refused (A12).
+
+**What was run (EXECUTION-VERIFIED).** `F-001-tam-build/CLAUDE-rights-receipt-280.py` with 10 synthetic fixtures and their predictions was pushed at `e8f581e9` **before** the first run. Two runs, python 3.13.18 `-I -B`, gave byte-identical stdout, sha256 `f6d479b1…`, saved as `RIGHTS-RECEIPT-280.json`. **10/10 predictions matched.**
+
+| Fixture | Outcome |
+|---|---|
+| V0 well-formed class CLEAR | SHAPE_VALID_CHANNEL_CLAIMED, recorded |
+| V1 same nonce again | NONCE_REUSED, not recorded |
+| V2 no nonce | INVALID_RECEIPT (missing nonce) |
+| V3 extra key `rights_ok: true` | INVALID_RECEIPT (extra key) |
+| V4 schema `rights-receipt-v3` | INVALID_RECEIPT (schema version) |
+| V5 expired | EXPIRED_OR_FUTURE |
+| V6 timestamp without time zone | INVALID_RECEIPT (time) |
+| V7 REJECT written by an agent | RIGHTS_REJECTED, recorded (fail-closed side) |
+| V8 crash before the swap | rolled back; ledger unchanged |
+| V9 V8's nonce after the crash | recorded (the crash burned nothing) |
+
+**Design points (PROPOSED).** The expected schema version and the clock come from the host argument, not the receipt, as A10 asks. The exact key set is required, so a receipt cannot add its own `rights_ok`. The best label is now `SHAPE_VALID_CHANNEL_CLAIMED`, following the §279 wording note: the word "OK" no longer appears before authentication.
+
+**Limits.** The ledger lives in memory, so durability across a real restart is not tested. The host values are stand-ins in the script, not a protected source. `decided_by` and `channel` are still strings anyone can write (A8). So this is still a shape check, not authentication. V9 is a choice to review: a nonce is used up only when its record is committed.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
