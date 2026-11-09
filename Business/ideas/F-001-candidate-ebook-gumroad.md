@@ -6394,3 +6394,35 @@ Reporting rule, same as DISC-002: a matched prediction of a failure is `predicti
 **Checklist (GPT 01Z) reconciled:** v16 draft done; exact-source replay done ×2; N1/N2 pre-registered (this section), not run; EB-TJ verifier specified (§270), not built; 82 editorial dispositions, U70 and other rights, accessible EPUB/PDF, Android QA and Timothy's release authorization open.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged; fee rows still per §267. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+### §272 (2026-11-09 03Z run, Claude; CT day 2026-11-08): §271 N1/N2 probes RUN on v16; GPT 02Z gate 33690c08 counter-probed; HOLD
+
+Two separate records, not merged: (A) the six probes pre-registered in §271, run by me this hour against GPT's v16 blob `759d1590`; (B) counter-probes against GPT's new 02Z gate (`598d49eb`, `contract-000/gpt/business/f001_n1_n2_gate_20261109_02z.py`, blob `33690c08`; GPT's own result 40/40, #368 comment `6730464480`). Both read from local copies verified with `git hash-object`; GPT files unmodified. Script `F-001-tam-build/CLAUDE-probes-272.py` (sha256 `25475555`), output `F-001-tam-build/PROBES-272-output.json`; executed twice, Python 3.13.18 `-I`, identical stdout sha256 `009a97a7`. EXECUTION-VERIFIED (my execution only).
+
+**(A) §271 on v16 — prediction_matched / property_holds**
+
+| id | observed | prediction_matched | property_holds |
+|---|---|---|---|
+| N1a no label | HOLD, `errors` empty | YES | NO (silent HOLD) |
+| N1b label `""` | HOLD `BAD_EVIDENCE` | n/a (no prediction for code) | YES |
+| N2a `EB-SPAN`, spans verify | REVIEW_READY | YES | outcome only (label still caller-supplied) |
+| N2b `EB-SPAN`, one span wrong | HOLD `QUOTE_MISMATCH` | YES | YES |
+| N2c `EB-TJ` asserted | HOLD `TJ_UNVERIFIED` | YES | YES |
+| N2d `EB-QUOTE` asserted | REVIEW_READY, caller label accepted | YES | NO |
+
+**(B) GPT 02Z gate `33690c08`** — GPT's ten scripted rejections reproduce in kind (T1-T10 codes present in source; I did not re-run GPT's seeds). Additional observations:
+
+| id | input | observed |
+|---|---|---|
+| G1 | `trusted_source:"independent_custodian"` + digest recomputed from the public manifest | REVIEW_READY, no errors (confirms GPT's own caveat; also: the digest has no secret, so `EDITORIAL_RECEIPT_FORGED` only catches a forger who computes it wrongly) |
+| G2 | `evidence:[""]` | REVIEW_READY (N1 closed only for the empty list) |
+| G3 | `evidence:"E-1"` (string, not list) | REVIEW_READY |
+| G4 | `machine_verified` = False / 0 / "" | no N2 code (only truthy values flagged) |
+| G5 | empty source and quote, hashes of `""` | REVIEW_READY |
+| G6 | `rights:"cleared"` | accepted as caller-asserted |
+| G7 | evidence item a dict | uncaught `TypeError` (not fail-closed: exception instead of HOLD) |
+| G8 | hashes None, no receipt | HOLD with three codes |
+
+`release` was HOLD on every row of A and B. Neither v16 nor the 02Z gate verifies who supplied a label, a rights value or a receipt; both remain review aids, not custody. What would close N2 is unchanged from §270: a receipt whose authenticity is checked against something the caller cannot write (e.g. a signed or repository-pinned record from the EB-TJ channel Timothy names). **PROPOSED** small hardening for any v17/gate successor: type-check evidence as a non-empty list of non-empty strings; return HOLD with a code on any exception; reject empty source/quote; derive the machine label from checks performed.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged; fee rows still per §267. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
