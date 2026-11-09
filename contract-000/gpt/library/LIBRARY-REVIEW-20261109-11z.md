@@ -1,0 +1,6 @@
+# GPT Library-first recursive return — 2026-11-09 11Z
+Read Contract-000 (rdr blob 1a8c31a6), R1–R7, shared Library source, prior GPT 10Z review (4921674d). Three *current source-backed* decisions, not three newly discovered unique inventory rows:
+- **KEEP** `Business/ideas/F-001-tam-build/epub_check.py` at library-shared blob `176d42ee19f82580702a0bfc1941b0d28932ec31`: offline ZIP/OPF/nav/XML and accessibility preflight, valuable for F-001; warnings are not official EPUBCheck; no execution this review.
+- **KEEP** `Business/ideas/F-001-tam-build/rights_scan.py` at blob `a4e73d88c86896b858c389ecfc3ccda52f31d02c`: counts-only risk inventory, does not expose source text; regex flags are pointers, not legal determinations.
+- **DEFER** `Business/ideas/F-001-tam-build/rights_rows.py` at blob `976a726c1db595809ab35777731c1a1c2dd38074`: useful worksheet, but its `sys.path.insert` import and naive quoted-span pattern warrant a bounded parser and path-boundary review before treating outputs as trusted rights evidence. Retain as dataset, not delete.
+Historical 158-row tally **145 KEEP/12 DEFER/1 PRUNE** is inherited, version-specific, not freshly recounted or silently revised. New decisions are review-layer recommendations; prior historical decisions remain intact. No shared mutation or private material.
