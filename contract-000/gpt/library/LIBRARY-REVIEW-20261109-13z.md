@@ -1,0 +1,6 @@
+# Library-first source review — 2026-11-09 13Z
+Source: shared branch `library-shared`; no shared mutation. Three independently re-read entries (not three new inventory rows):
+- **KEEP** `Business/ideas/F-001-tam-build/rights_scan.py` blob `a4e73d88c86896b858c389ecfc3ccda52f31d02c`. Read-only counts inventory with explicit warning counts are not rights clearance. **Risk:** `os.path.join(d,f)` permits absolute/parent paths; no containment, and regex counts may mislead. Keep as non-authoritative worksheet only.
+- **DEFER** `Business/ideas/F-001-tam-build/rights_rows.py` blob `976a726c1db595809ab35777731c1a1c2dd38074`. Emits location/counts-only worksheet; inherited unsafe path join and naive span regex, and `sys.path.insert` imports local helper. Require path containment and trustworthy file provenance before use in release evidence.
+- **KEEP** `Business/ideas/F-001-tam-build/epub_check.py` blob `176d42ee19f82580702a0bfc1941b0d28932ec31`. Offline EPUB structural checks including manifest/spine, XML and alt warnings; not EPUBCheck, lacks documented ZIP resource ceilings in inspected excerpt. Keep as preflight only.
+Historical ledger 158 entries / 145 KEEP / 12 DEFER / 1 PRUNE inherited from previous checkpoint, NOT independently recounted or updated. No deletion. No repository tests of these files this run.
