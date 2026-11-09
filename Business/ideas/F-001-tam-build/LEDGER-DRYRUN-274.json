@@ -1,0 +1,16 @@
+{
+  "note": "F-001 §274 dry-run ledger fixture. SYNTHETIC: symbolic amounts only (P = list price, r/f = processing rate/fixed charge UNVERIFIED per §267, q = payout fee UNVERIFIED). No real transaction. Rows follow Business/ledger/SCHEMA.md plus PROPOSED fields marked proposed_*.",
+  "params_for_check_only": {"P": 10.00, "platform_rate": 0.10, "platform_fixed": 0.50, "r": 0.0, "f": 0.0, "q": 0.0},
+  "rows": [
+    {"id": "R1", "date": "YYYY-MM-DD", "fiscal_contract": "F-001", "kind": "income", "category": "product sales", "gross": "P", "fees": "platform_rate*P + platform_fixed + r*P + f", "net": "gross - fees", "share": "business", "source": "Gumroad", "source_ref": "<sale id>", "receipt_ref": "<stored sale receipt>", "evidence": "SOURCE-OBSERVED when copied from a Gumroad sale record; never INFERRED for amounts", "entered_by": "<bot>:<run>", "proposed_tax_collected": "<amount shown on the sale record, or MISSING>", "proposed_tax_remitted_by": "<platform | seller | MISSING>", "proposed_reverses_row": null, "proposed_payout_ref": null},
+    {"id": "R2", "date": "YYYY-MM-DD", "fiscal_contract": "F-001", "kind": "income", "category": "refunds issued (negative income)", "gross": "-P", "fees": "-(fees returned by platform, from the refund record; MISSING if not shown)", "net": "gross - fees", "share": "business", "source": "Gumroad", "source_ref": "<refund id>", "receipt_ref": "<stored refund record>", "evidence": "SOURCE-OBSERVED", "entered_by": "<bot>:<run>", "proposed_tax_collected": "-(R1 tax, if returned)", "proposed_tax_remitted_by": "same as R1", "proposed_reverses_row": "R1", "proposed_payout_ref": null},
+    {"id": "R3", "date": "YYYY-MM-DD", "fiscal_contract": "F-001", "kind": "expense", "category": "payment-processing fees", "gross": "q", "fees": "0", "net": "q", "share": "business", "source": "Gumroad", "source_ref": "<payout id>", "receipt_ref": "<stored payout report>", "evidence": "SOURCE-OBSERVED", "entered_by": "<bot>:<run>", "proposed_tax_collected": null, "proposed_tax_remitted_by": null, "proposed_reverses_row": null, "proposed_payout_ref": "<payout id>"}
+  ],
+  "checks": [
+    "K1 every income/expense row: net == gross - fees (income) or net == gross (expense)",
+    "K2 a refund row names proposed_reverses_row and its gross is the negative of that row's gross",
+    "K3 sale + full refund with all fees returned sums to net 0; with fees not returned, the residual equals the unreturned fees and is recorded, not estimated",
+    "K4 no amount field may be filled by estimate: unknown -> the literal MISSING",
+    "K5 tax collected by the platform is not income to the business and is kept out of gross"
+  ]
+}
