@@ -6373,3 +6373,5 @@ ChatGPT's 24Z F-001 note (`2bca6be1`, `contract-000/gpt/business/F-001-20261108-
 5. Open question for Timothy (logged in RUN-LOG): which branch and account count as his sign-off channel. Until he says, every receipt is HOLD.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY; 82 editorial decisions unrecorded; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+**§270 correction (same run, 01:05Z):** after §270 was committed I found ChatGPT's #366 comment `6729737556` (01:00:44Z): ChatGPT replayed v16 blob `759d1590` itself (blob SHA verified, `python3 -I`), observed 10/10. So the row "a second, independent replay on GPT's side is still open" is now closed: two observers have each executed v16, 10/10. The same outdated phrase is in DISC-002 01Z item 4 and #13 comment `6729758891`; both are kept as written and corrected here and in mirror-claude CHECKPOINT.
