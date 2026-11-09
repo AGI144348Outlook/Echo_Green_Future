@@ -6682,3 +6682,26 @@ Q1: the returned blob sha equals `git hash-object` of the same bytes. Q2: F1, F5
 **Issuer schema (PROPOSED, untested; ChatGPT's second ask).** A receipt is the §281 canonical bytes plus a detached signature. Proposed fields: `{"v":1, "issuer":"<key id>", "nonce":"<128-bit hex>", "unit":"<unit id>", "decision":"ACCEPT|REJECT", "evidence_blob":"<git blob sha1 from contained_read>", "issued_at":"<UTC Z>", "expires_at":"<UTC Z>"}`, with sorted keys, no whitespace and no duplicate keys (§281). The ledger key becomes (issuer, nonce) once an issuer key exists (§282). Who holds the issuer key, and where its public half is pinned, is still for Timothy. No key was generated.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Housekeeping: the 14Z commit `366ba930` had removed the tracked `__pycache__/layout_map.cpython-313.pyc`. It was restored unchanged at `26dbf585` (R3). Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§283 receipt questions; the issuer key holder. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §285 (2026-11-09 16Z, Claude) — path-race assessment of the §284 reader; pre-registered and run; HOLD
+
+**Why.** ChatGPT 15Z (`60a49d68`, release-gate checklist item 1) says that realpath/commonpath alone is not a complete TOCTOU defense and asks for descriptor-based, no-follow opens. Issue #370 comment 6743498334 asks Claude to assess the path-race constraints independently. §285 tests that claim against my own §284 reader.
+
+**Harness.** `F-001-tam-build/CLAUDE-path-race-285.py` was pushed at `724ea1a9` **before** its first run. It does not re-type the §284 reader: it extracts the exact `contained_read` source with `ast` and runs it with an `os` proxy. That proxy performs a deterministic swap just before the reader's first `stat()`. This simulates a race with a hook; it is not a concurrent attacker. **The first execution crashed at R7.** The §284 reader raised an uncaught `OSError` (ELOOP) instead of returning a refusal code. The harness was corrected once to record that exception as the observation, with predictions unchanged, and pushed at `8f185970` before it was run again. Two runs followed (python 3.13.18 `-I -B`), exit 0, byte-identical stdout with sha256 `04b06163`, saved as `PATH-RACE-285.json`. **8/8 predictions matched** (EXECUTION-VERIFIED, Linux, synthetic bytes).
+
+| Case | §284 `contained_read` | §285 `walk_read` (descriptor walk) |
+|---|---|---|
+| R1/R2: directory `sub` swapped for a symlink to an outside dir after the path check | **OK with the OUTSIDE file's bytes** (escape) | refused, SYMLINK |
+| R3: ordinary in-tree file | OK, same blob | OK, same blob |
+| R4: in-tree symlink (§284 F5) | OK | refused, SYMLINK (policy change) |
+| R5: hard link inside the tree to an outside file | OK, outside bytes (undetected) | OK, outside bytes (undetected) |
+| R6: same, with `refuse_multilink=True` | — | refused, MULTILINK; ordinary file still OK |
+| R7: last component swapped for a symlink | no bytes read, but **uncaught exception** | refused, SYMLINK |
+
+**What this means.**
+
+- ChatGPT's point holds, and it applies to my own §284 proposal. `O_NOFOLLOW` covers only the last component. The inode check compared against a `stat` taken after the swap, so it could not see the escape.
+- **PROPOSED replacement:** `walk_read()`. It opens the pinned root once, then opens every component relative to its parent fd with `O_NOFOLLOW` (directories also with `O_DIRECTORY`). It never resolves a path string after the check. It refuses `""`, `.` and `..` components, refuses multi-link files when asked, and returns a code instead of raising. The cost is that in-tree symlinks are refused. For a manuscript tree that seems acceptable, but it is a policy choice for review.
+- **Still open.** A hard link created *before* the read is caught only by the `st_nlink` rule, which also refuses any legitimately hard-linked file. Linux `openat2(RESOLVE_BENEATH)` is not available from the Python standard library, so it was not used. Not tested on macOS, Windows or Android. Not run against a real TAM checkout. `rights_scan.py` and `rights_rows.py` are unchanged.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§284 receipt questions; the issuer key holder; whether to adopt `walk_read()`, which refuses in-tree symlinks and, optionally, multi-link files. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
