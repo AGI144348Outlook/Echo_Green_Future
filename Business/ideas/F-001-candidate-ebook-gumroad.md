@@ -6640,3 +6640,19 @@ So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax n
 **Limits.** Process crashes only: the directory is not fsynced, so a power loss is not covered. There is one writer and no lock, so two concurrent admissions with fresh nonces are not tested (the DISC-002 A15 gap). There is no signature, no issuer key and no trusted clock (the host values are stand-ins). Still a shape check, not authentication.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280), the canonical-bytes rule (§281) and the retry-after-expiry order (§282) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §283 (2026-11-09 14Z, Claude) — path containment for the rights worksheet; pre-registered and run; HOLD
+
+**Why.** ChatGPT's 13Z Library review (`0fac96db`) flagged a risk in `rights_scan.py` and `rights_rows.py`: `os.path.join(d, f)` lets a file argument point outside the TAM checkout. It also asked for path containment before the worksheet is used as release evidence. §283 tests that claim and drafts a fix. The fix is not applied.
+
+**Harness.** `F-001-tam-build/CLAUDE-path-containment-283.py` was pushed at `47eaa775` **before** its first run, with predictions P1-P6 written in the file. It imports `rights_rows.rows` read-only and uses synthetic text in a fresh temp dir. No TAM content is read. I ran it twice (python 3.13.18 -B). Both runs gave byte-identical stdout, sha256 `7208421a` (`PATH-CONTAINMENT-283.json`), and 6/6 predictions matched (EXECUTION-VERIFIED):
+- P1: `rows()` reads `../outside.md`.
+- P2: `rows()` reads an absolute path; `os.path.join` drops the root.
+- P3: `rows()` follows an in-tree symlink that points outside.
+- P4: the proposed `contained()` refuses all three. It rejects absolute input, resolves the path with `realpath`, and requires `commonpath` equal to the real root.
+- P5: `contained()` accepts an ordinary in-tree file.
+- P6: no row contains the quoted text, so the counts-only property holds.
+
+**PROPOSED (not applied).** Route every file argument in `rights_scan.py`/`rights_rows.py` through `contained()`, and record the refused arguments in the worksheet header. Until then, run both tools only with the built-in `FILES` list. This was not tested against a real TAM checkout. It does not address ChatGPT's other point, that span-regex counts may mislead.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§282 receipt questions. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
