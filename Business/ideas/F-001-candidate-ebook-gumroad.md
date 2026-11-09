@@ -6705,3 +6705,37 @@ Q1: the returned blob sha equals `git hash-object` of the same bytes. Q2: F1, F5
 - **Still open.** A hard link created *before* the read is caught only by the `st_nlink` rule, which also refuses any legitimately hard-linked file. Linux `openat2(RESOLVE_BENEATH)` is not available from the Python standard library, so it was not used. Not tested on macOS, Windows or Android. Not run against a real TAM checkout. `rights_scan.py` and `rights_rows.py` are unchanged.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the §279-§284 receipt questions; the issuer key holder; whether to adopt `walk_read()`, which refuses in-tree symlinks and, optionally, multi-link files. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §286 (2026-11-09 17Z, Claude) — canonical receipt-byte schema v1 and shared reference vectors; pre-registered and run; HOLD
+
+**Why.** ChatGPT 16Z (`c6409dd0`, Issue #370 comment 6744753115) plans its own isolated strict receipt parser and negative fixtures, and asks Claude for the complementary canonical receipt schema. §286 freezes the *bytes* both sides should agree on, so that two independently written parsers can be checked against the same vectors. It is not GPT's parser and does not replace it.
+
+**Harness.** `F-001-tam-build/CLAUDE-receipt-schema-286.py` was pushed at `fbbc7296` **before** its first run, with predictions P1-P11. It was run twice (python 3.13.18 `-I -B`, from a scratch copy), exit 0 both times, stdout sha256 `384cbd42` both times, saved as `F-001-tam-build/RECEIPT-SCHEMA-286.json`. **13/13 matched** (12 verdicts plus the V1 round-trip).
+
+**Schema v1 (PROPOSED).** The body is an ASCII JSON object with exactly 8 keys, sorted, separators `,` and `:`, no whitespace, no duplicate keys and no trailing newline:
+- `decision`: ACCEPT or REJECT.
+- `evidence_blob`: 40 lowercase hex characters.
+- `issued_at` and `expires_at`: `YYYY-MM-DDTHH:MM:SSZ`, with expiry strictly later and at most 30 days later.
+- `issuer`: a key id of 3-32 characters in `[a-z0-9-]`.
+- `nonce`: 32 lowercase hex characters.
+- `unit`: `[A-Z][A-Z0-9-]{1,31}`.
+- `v`: the integer 1.
+
+The signed message is `"F001-RECEIPT-V1\n" + body`: a domain prefix, with the signature detached. For the valid vector V1, sha256 of the signed message is `43ec8afe…5edf45`.
+
+| Vector | Defect | Verdict |
+|---|---|---|
+| V1 | none | OK; `canon(parse(V1)) == V1` |
+| N1 / N2 / N11 | space after colon / keys unsorted / trailing newline | NONCANONICAL |
+| N3 | duplicate `unit` key (the stock `json.loads` would silently keep the last one) | DUPLICATE_KEY |
+| N4 | extra key | KEYSET |
+| N5 | uppercase nonce hex | FIELD:nonce |
+| N6 / N7 | `v` given as `1.0` / `true` | FIELD:v |
+| N8 / N9 | expiry equal to issue time / more than 30 days after it | ORDER |
+| N10 | non-ASCII unit, in escaped form | FIELD:unit |
+
+**Limits.** These are synthetic bytes. No key exists, nothing was signed and the signature scheme is not chosen. The 30-day maximum and the issuer/unit patterns are my proposals. Check order matters: a body with two defects reports the first one, which is decoding, then duplicates, keyset, fields, order, canonical form. GPT's parser may order them differently, so the cross-check should compare accept/reject, not codes.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged.
+
+**Still for Timothy:** F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the issuer key holder and signature scheme; whether to adopt schema v1, including the 30-day expiry cap; whether to adopt `walk_read()` (§285). No account was created, no payment taken, no money spent, nothing published, nobody contacted.
