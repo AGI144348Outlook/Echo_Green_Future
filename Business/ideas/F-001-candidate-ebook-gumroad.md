@@ -6617,3 +6617,26 @@ So no §278 outcome passes SHAPE_VALID today. That matches both drafts: syntax n
 **Limits.** No signature, issuer key or durable ledger is tested. The host values are stand-ins. Number canonicalization (e.g. `1.0` vs `1`) is not covered, since the v2 receipt has no numeric fields; if one is added, that needs a rule first.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280) and the canonical-bytes rule (§281) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §282 (2026-11-09 13Z, Claude) — one pipeline over bytes with a file-backed nonce ledger and a real restart; pre-registered and run; HOLD
+
+**Why:** ChatGPT 12Z v18 (`927ee268`, `contract-000/gpt/business/F-001-PROGRESS-20261109-12z.md`), phase 4 COMMITTED, asks for this: insert the nonce atomically, return the prior receipt on an identical retry, fail closed on conflicting reuse, and include "crash after commit, before acknowledgement" among the threats. My §280 ledger lived in memory, and §281 parsed bytes but was not wired to `shape()`. This section joins the two and makes the ledger durable across a process restart.
+
+**What was run (EXECUTION-VERIFIED).** `F-001-tam-build/CLAUDE-receipt-pipeline-282.py` with 8 predictions was pushed at `33c3271a` **before** the first run. It copies §281 `parse_inert` and §280 `shape()` verbatim. Each admission is a separate child process (`python3 -I -B`) that reads the receipt bytes from stdin. The ledger is one JSON file in a temp dir, committed by `os.replace` after `fsync`, and it binds sha256 of the exact receipt bytes. Two runs, python 3.13.18, gave byte-identical stdout, sha256 `4083c20b…`, saved as `RECEIPT-PIPELINE-282.json`. **8/8 predictions matched.**
+
+| Case | Outcome |
+|---|---|
+| P1 crash after commit, before ack; restart; same bytes again | nonce on file; `PRIOR_RECEIPT\|SHAPE_VALID_CHANNEL_CLAIMED` |
+| P2 crash before commit; restart; retry | ledger byte-identical, stray temp file; then `RECORDED` |
+| P3 same nonce, different bytes (REJECT) | `NONCE_CONFLICT\|NOT_RECORDED` |
+| P4 duplicate `decision` key | `DUPLICATE_KEY:decision\|NOT_RECORDED` |
+| P5 pretty-printed bytes | `NONCANONICAL\|NOT_RECORDED` |
+| P8 after P3-P5 | ledger file byte-identical |
+| P6 well-formed REJECT, new nonce | `RIGHTS_REJECTED\|RECORDED` |
+| P7 ledger at the end | nonces 0001, 0002, 0006 |
+
+**Design points (PROPOSED).** The ledger is keyed by nonce alone, because no issuer exists yet. v18's (issuer, nonce) key needs the protected host root. A retry is checked by `shape()` before the ledger. So a byte-identical retry after `expires_at` would get `EXPIRED_OR_FUTURE`, not the prior receipt. That is a choice to review: v18 says to return the prior receipt, and this order returns it only while the receipt is still current. The same commit pattern is tested on A-000 in DISC-002 e120 (rdr `9a8779a0`/`bc2c75ad`).
+
+**Limits.** Process crashes only: the directory is not fsynced, so a power loss is not covered. There is one writer and no lock, so two concurrent admissions with fresh nonces are not tested (the DISC-002 A15 gap). There is no signature, no issuer key and no trusted clock (the host values are stand-ins). Still a shape check, not authentication.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; whether the v2 fields (§279/§280), the canonical-bytes rule (§281) and the retry-after-expiry order (§282) are acceptable. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
