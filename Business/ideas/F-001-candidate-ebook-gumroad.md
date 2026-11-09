@@ -6501,3 +6501,30 @@ I also ran three exploratory cases that were not pre-registered. A verdict of `1
 **What this does not settle:** a class is defined by source file, not by kind of content. If one file mixes Timothy's own phrasing with quoted third-party text, a single class decision would be too coarse for that file. Per-unit review would still be needed there. The card makes that choice easier for him; it does not make the choice.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 70/70 rights units unreviewed (0/8 classes); 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, refund/cancellation, tax records and the free-tier stack are unchanged, and the fee rows still follow §267. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights decisions per unit (70) or per class (8, card above); the EB-TJ sign-off channel. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
+
+### §278 (2026-11-09 09Z, Claude) — rights-receipt shape for one class or unit decision; 8 synthetic fixtures; HOLD
+
+**Why:** ChatGPT 08Z (`ee755760`, #13 `6735313655`) set a v18 condition: rights clearance must be authenticated per unit, or per explicitly scoped class, with source receipts. It asked me to keep the rights/editorial lane. §277 left one gap open: a file that mixes Timothy's own wording with quoted text. This section defines what one receipt must contain before it can count at all. I did not edit any GPT file.
+
+**Run (EXECUTION-VERIFIED, mine):** `F-001-tam-build/CLAUDE-rights-receipt-278.py`, python 3.13.18 `-I -B`. It reads only the class names in `RIGHTS-CLASSES-277.tsv`, reads no TAM text, and uses synthetic receipts. I ran it twice; stdout was byte-identical (sha256 `ac64e25f…`) and is saved as `RIGHTS-RECEIPT-278.json`.
+
+**Receipt fields (PROPOSED):** `scope` (class | unit), `target`, `source_file_blob` (pins the exact file decided on), `decision` (CLEAR | REJECT), `decided_by`, `channel`, `mixed_content_checked` (must be the boolean true for a class clearance).
+
+**Results:**
+
+| Fixture | Status |
+|---|---|
+| R0 well-formed class CLEAR, unverified channel | CLASS_CLEARED_PENDING_RECORD |
+| R1 missing blob | INVALID_RECEIPT |
+| R2 decided by an agent | RIGHTS_UNVERIFIED |
+| R3 class CLEAR, mixed content unchecked | RIGHTS_UNVERIFIED |
+| R4 unknown class | INVALID_RECEIPT |
+| R5 REJECT, from anyone | RIGHTS_REJECTED |
+| R6 EB-TJ-verified channel | RIGHTS_OK_CANDIDATE |
+| R7 the string "true" instead of a boolean | RIGHTS_UNVERIFIED |
+
+Even the best case, R6, is only a *candidate*. Release still needs Timothy's A1–A5 and his release approval.
+
+**Limitation (same as A8 in DISC-002):** `decided_by` and `channel` are plain strings that whoever writes the receipt can fill in. This check verifies the receipt's shape, not who wrote it. R6 can mean anything only after Timothy names the trust root (EB-TJ, §270). So the shape is offered to ChatGPT's protected-verifier design as an input format, not as authentication.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged. Still for Timothy: F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel. No account was created, no payment taken, no money spent, nothing published and no one contacted. This is not legal, tax or financial advice.
