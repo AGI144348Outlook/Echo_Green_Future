@@ -1,0 +1,214 @@
+{
+ "blob": "61efed28910e5ec3ae671b28097c5429608aa101",
+ "rows": [
+  {
+   "id": "H1",
+   "desc": "trusted_source in input, with and without verifier",
+   "out": {
+    "noVerifier": {
+     "state": "HOLD",
+     "release": "HOLD",
+     "errors": [
+      "NO_INDEPENDENT_VERIFIER"
+     ]
+    },
+    "withYes": {
+     "state": "REVIEW_READY",
+     "release": "HOLD",
+     "errors": []
+    },
+    "release": "HOLD"
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true,
+   "note": "field ignored; but REVIEW_READY follows from a caller-written ()=>true, so the spoof moved from a field to the verifier argument"
+  },
+  {
+   "id": "H2",
+   "desc": "evidence=[\"\"] with accepting verifier",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "INVALID_EVIDENCE_ITEM"
+    ]
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true,
+   "note": "code INVALID_EVIDENCE_ITEM (generic, not empty-item specific)"
+  },
+  {
+   "id": "H3",
+   "desc": "evidence='E-1' with accepting verifier",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "INVALID_EVIDENCE"
+    ]
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true
+  },
+  {
+   "id": "H4",
+   "desc": "evidence=[{id}] with accepting verifier",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "INVALID_EVIDENCE_ITEM"
+    ]
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true
+  },
+  {
+   "id": "H5",
+   "desc": "empty source/quote + sha256('')",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "INVALID_EVIDENCE_ITEM"
+    ]
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true,
+   "note": "code INVALID_EVIDENCE_ITEM; also whitespace-only rejected via trim"
+  },
+  {
+   "id": "H6",
+   "desc": "label EB-QUOTE asserted, no checks",
+   "out": {
+    "state": "REVIEW_READY",
+    "release": "HOLD",
+    "errors": []
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true,
+   "note": "label ignored (v17 has no label concept); v17 derives no machine label from checks either"
+  },
+  {
+   "id": "H7",
+   "desc": "no evidence field",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "INVALID_EVIDENCE"
+    ]
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true
+  },
+  {
+   "id": "H8",
+   "desc": "rights='cleared' with accepting verifier",
+   "out": {
+    "state": "REVIEW_READY",
+    "release": "HOLD",
+    "errors": []
+   },
+   "release_hold": true,
+   "prediction_matched": false,
+   "property_holds": true,
+   "note": "v17 has no rights check at all: REVIEW_READY with errors [] and no rights-unverified code"
+  },
+  {
+   "id": "H9",
+   "desc": "verifier swap after construction",
+   "out": {
+    "state": "REVIEW_READY",
+    "release": "HOLD",
+    "errors": []
+   },
+   "release_hold": true,
+   "prediction_matched": null,
+   "property_holds": null,
+   "note": "NOT APPLICABLE as written: v17 is a plain function gate(input, verifier); there is no construction to bind to, so every caller chooses the verifier on every call (stronger form of the H9 concern)"
+  },
+  {
+   "id": "H10",
+   "desc": "verifier mutates its copy then throws",
+   "out": {
+    "state": "HOLD",
+    "release": "HOLD",
+    "errors": [
+     "VERIFIER_ERROR"
+    ],
+    "inputUnchanged": true,
+    "verifierRan": true
+   },
+   "release_hold": true,
+   "prediction_matched": true,
+   "property_holds": true
+  }
+ ],
+ "extra": {
+  "X1_truthy_1": {
+   "state": "HOLD",
+   "release": "HOLD",
+   "errors": [
+    "UNVERIFIED_RECEIPT"
+   ]
+  },
+  "X2_async_true": {
+   "state": "HOLD",
+   "release": "HOLD",
+   "errors": [
+    "UNVERIFIED_RECEIPT"
+   ]
+  },
+  "X3_throwing_getter": {
+   "state": "HOLD",
+   "release": "HOLD",
+   "errors": [
+    "VERIFIER_ERROR"
+   ]
+  }
+ },
+ "gpt_own_tests": {
+  "seed": 3301,
+  "passed": 10,
+  "total": 10,
+  "results": {
+   "valid": true,
+   "no_verifier": true,
+   "forged_trust": true,
+   "empty_evidence": true,
+   "string_evidence": true,
+   "blank_item": true,
+   "object_item": true,
+   "empty_source_quote": true,
+   "verifier_throws": true,
+   "verifier_denies": true
+  }
+ },
+ "summary": {
+  "all_release_hold": true,
+  "prediction_matched": [
+   "H1",
+   "H2",
+   "H3",
+   "H4",
+   "H5",
+   "H6",
+   "H7",
+   "H10"
+  ],
+  "prediction_failed": [
+   "H8"
+  ],
+  "not_applicable": [
+   "H9"
+  ]
+ }
+}
