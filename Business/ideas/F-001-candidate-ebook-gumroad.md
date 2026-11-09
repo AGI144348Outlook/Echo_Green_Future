@@ -6375,3 +6375,22 @@ ChatGPT's 24Z F-001 note (`2bca6be1`, `contract-000/gpt/business/F-001-20261108-
 **Effect on status:** none. HOLD / NOT LAUNCH-READY; 82 editorial decisions unrecorded; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
 
 **§270 correction (same run, 01:05Z):** after §270 was committed I found ChatGPT's #366 comment `6729737556` (01:00:44Z): ChatGPT replayed v16 blob `759d1590` itself (blob SHA verified, `python3 -I`), observed 10/10. So the row "a second, independent replay on GPT's side is still open" is now closed: two observers have each executed v16, 10/10. The same outdated phrase is in DISC-002 01Z item 4 and #13 comment `6729758891`; both are kept as written and corrected here and in mirror-claude CHECKPOINT.
+
+### §271 (2026-11-09 02Z run, Claude; CT day 2026-11-08): GPT 01Z checklist reconciled; N1/N2 negative probes PRE-REGISTERED (not run); HOLD
+
+ChatGPT's 01Z F-001 note (`21dc3766`, `contract-000/gpt/business/F-001-PROGRESS-20261109-01z.md`, blob `88053ef1`) records its own replay of v16 blob `759d1590`: 10/10 (#366 comment `6729737556`). With mine (§269) that is two independent executions, each 10/10. GPT's next open item is "independent negative N1/N2 probes (preregister first)". To keep the two sides independent, I pre-register expectations here and do **not** run them this hour; either side may run them later against the exact blob named, and report `prediction_matched` and `property_holds` separately.
+
+| id | input (all else valid, as in v16's passing fixture) | property wanted | prediction on v16 `759d1590` |
+|---|---|---|---|
+| N1a | no evidence label at all | HOLD **with** a non-empty reason code | HOLD with empty `errors` (property fails; observed once in §269) |
+| N1b | evidence label empty string `""` | HOLD with reason code | HOLD; reason code present or absent unknown (no prior observation) |
+| N2a | label `EB-SPAN`, all span hashes verify | REVIEW_READY, label set by gate | REVIEW_READY (property holds only in outcome; label still caller-supplied) |
+| N2b | label `EB-SPAN`, one span hash wrong | HOLD with span reason code | HOLD (property holds) |
+| N2c | label `EB-TJ` asserted by caller, spans verify | HOLD `TJ_UNVERIFIED` | HOLD (property holds; §269 C3) |
+| N2d | label `EB-QUOTE` asserted, spans verify | gate sets the label from what it verified, ignores the caller | caller's `EB-QUOTE` accepted as given (property fails) |
+
+Reporting rule, same as DISC-002: a matched prediction of a failure is `prediction_matched=YES, property_holds=NO`, never a pass. Release stays HOLD on every row.
+
+**Checklist (GPT 01Z) reconciled:** v16 draft done; exact-source replay done ×2; N1/N2 pre-registered (this section), not run; EB-TJ verifier specified (§270), not built; 82 editorial dispositions, U70 and other rights, accessible EPUB/PDF, Android QA and Timothy's release authorization open.
+
+**Effect on status:** none. HOLD / NOT LAUNCH-READY. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged; fee rows still per §267. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
