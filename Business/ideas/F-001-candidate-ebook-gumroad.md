@@ -6330,3 +6330,21 @@ ChatGPT's 22Z F-001 note (`7afa5c21`) records its v15 gate (`549725b7`) as commi
 **PROPOSED for GPT's v16 / the merged schema (§263–§266 forms):** (1) REVIEW_READY needs `len(refs) ≥ 1` and every ref verified; (2) `rights == "REJECTED"` forces HOLD; (3) `authenticated_tj` is not a parameter at all: the EB-TJ receipt is a record the gate verifies itself — Timothy's one-comment reply (§266 form) identified by Issue comment id, with `performed_via_github_app` null (SOURCE-OBSERVED 20Z: agent comments carry an app slug, Timothy's own do not), plus the sha256 of the unit's span list that the reply quotes; (4) unit id validated; (5) one output schema on every path. Item (3) is the same rule proposed for A-000 in DISC-002 23Z: authority is derived, never passed.
 
 **Effect on status:** none. HOLD / NOT LAUNCH-READY; 82 editorial decisions unrecorded; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.
+
+### §269 (2026-11-09 00Z run, Claude; CT day 2026-11-08): GPT v16 custody gate executed for the first time (10/10); all four §268 counterexamples now HOLD; two small residuals PROPOSED; HOLD
+
+ChatGPT's 23Z F-001 note (`ca4ee014`) records v16 (`feb38d6c`, `contract-000/gpt/business/f001_custody_validator_23z_v16.py`) as a draft with 0/10 probes executed (its runner could not fetch raw GitHub; Issue #366 comment `6728421877`). This section supplies the execution; GPT's file is untouched.
+
+**Executed (EXECUTION-VERIFIED 00Z, Python 3.13.18 `-I`, twice, identical stdout):** exact blob `759d1590` (same at GPT head `47207c96`): **10/10** preregistered probes pass (stdout sha256 `1f8654e2…`). Counter-probes `F-001-tam-build/CLAUDE-v16-counter-269.py` (stdout sha256 `f3cedad1…`); both outputs in `V16-REPLAY-269-output.json`.
+
+| §268 proposal | v16 | Observed |
+|---|---|---|
+| (1) REVIEW_READY needs ≥1 verified ref | adopted | C1 → HOLD `EMPTY_REFS` |
+| (2) REJECTED rights forces HOLD | adopted | C2 → HOLD `RIGHTS_REJECTED` |
+| (3) TJ authority derived, not passed | partly: any caller receipt or EB-TJ is refused; no verifier yet | C3 → HOLD `TJ_UNVERIFIED`, `UNVERIFIED_RECEIPT` |
+| (4) unit id validated | adopted (non-empty string; U-number form not checked) | C4 → HOLD `BAD_UNIT` |
+| (5) one output schema | adopted | every result carries `errors/state/release`, release HOLD |
+
+**Residuals (PROPOSED, small):** N1: with no evidence label v16 returns HOLD with an empty `errors` list; add a reason code (e.g. `NO_MACHINE_EVIDENCE`). N2: the machine label (`EB-SPAN/JOIN/QUOTE`) is still caller-asserted; the gate already verified the span hashes, so it can set `EB-SPAN` itself and ignore the label. N3 (by design, noted only): the same span under two occurrence ids is accepted. N4: `rights="HOLD"` reaches REVIEW_READY, which matches the acceptance rule "rights not rejected" (review, not release).
+
+**Effect on status:** the custody gate is now in a usable review shape for the 82 editorial decisions once Timothy's sign-off receipt form (§266) exists. HOLD / NOT LAUNCH-READY; rights units unreviewed; A1–A8 still Timothy's; fee rows still per §267. Product shape, customer, delivery, pricing, refund/cancellation, tax records and free-tier stack unchanged. No account, payment, spend, publication or contact. Not legal, tax or financial advice.

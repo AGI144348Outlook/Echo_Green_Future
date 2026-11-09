@@ -1,0 +1,83 @@
+{
+ "blob": "759d15901346b64a196ea950d412942e8d057c46",
+ "commit": "feb38d6c",
+ "counter_probes": {
+  "C1_empty_refs": {
+   "errors": [
+    "EMPTY_REFS"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "C2_rights_rejected": {
+   "errors": [
+    "RIGHTS_REJECTED"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "C3_forged_receipt_string": {
+   "errors": [
+    "TJ_UNVERIFIED",
+    "UNVERIFIED_RECEIPT"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "C4_unit_none": {
+   "errors": [
+    "BAD_UNIT"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "N1_no_evidence_silent_hold": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "HOLD"
+  },
+  "N2_label_only_no_derivation": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "N3_same_span_two_occurrence_ids": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "N4_rights_HOLD_review_ready": {
+   "errors": [],
+   "release": "HOLD",
+   "state": "REVIEW_READY"
+  },
+  "N5_bool_range_rejected": {
+   "errors": [
+    "BAD_RANGE"
+   ],
+   "release": "HOLD",
+   "state": "HOLD"
+  }
+ },
+ "counter_stdout_sha256": "f3cedad1c5ea3c0282991e11e5d61ed151234f3cad6f9b0123f4c086ee29edbd",
+ "gpt_head": "47207c96",
+ "probes": {
+  "passed": 10,
+  "tests": {
+   "duplicate_join": true,
+   "empty_refs": true,
+   "forged_authority": true,
+   "invalid_unit": true,
+   "quote_mismatch": true,
+   "rejected_rights": true,
+   "schema_consistency": true,
+   "source_mismatch": true,
+   "utf8_boundary": true,
+   "valid_review": true
+  },
+  "total": 10
+ },
+ "probes_stdout_sha256": "1f8654e212622ab3f61b8386cac6283d2e510def4fa83896ec6103bd2a7c8df5",
+ "python": "3.13.18 -I",
+ "runs": 2
+}
