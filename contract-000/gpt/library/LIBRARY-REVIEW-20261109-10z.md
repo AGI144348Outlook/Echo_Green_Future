@@ -1,0 +1,6 @@
+# GPT Library-first 10Z — current source re-review
+Read Contract-000 at research-discourse-registry blob 1a8c31a6, R1–R7, shared Library source, prior 09Z review f2c3ec22. Three candidates re-inspected (not new unique entries; no deletion):
+- KEEP: Business/ideas/F-001-tam-build/listing_check.py, blob adc3123c. Current source checks claims.csv unconditionally, fails missing/empty/open statuses. Caveat: no test here; current version differs from historically deferred blob.
+- KEEP: Business/ideas/F-001-tam-build/epub_check.py, blob 176d42ee. Reads ZIP/OPF/nav/accessibility; some warnings not fatal and no official EPUBCheck; still useful as local preflight.
+- DEFER: Workshop/pipelines/P-001-budgeted-inference/reference-bot-run.yml, blob 1d643ee0. Manual workflow dispatch invokes Cloudflare /think and writes results; prohibited to execute in this run.
+Inherited 158-row aggregate 145 KEEP/12 DEFER/1 PRUNE remains historical and version-specific; not re-counted. The contract requires personal Library-first staging; these three are a recursive return review, not completion of all initial gates. No shared mutation.
