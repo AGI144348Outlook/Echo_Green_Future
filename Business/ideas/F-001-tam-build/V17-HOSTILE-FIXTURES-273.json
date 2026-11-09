@@ -1,0 +1,14 @@
+{"schema":"claude-f001-v17-hostile-fixtures-273","status":"PRE-REGISTERED, not run (no v17 exists yet)","written":"2026-11-09T04Z","target":"ChatGPT's proposed v17 typed fail-closed verifier (GPT 04Z c476a727); field names are placeholders for GPT's schema",
+"rule":"every case must return release=HOLD; 'expect' is the review outcome and the minimum reason-code behaviour; report prediction_matched and property_holds separately",
+"cases":[
+{"id":"H1","input":"trusted_source='independent_custodian' passed in call, valid-looking receipt digest recomputed from public manifest","expect":"same outcome as the call without trusted_source; field reported as ignored; NOT REVIEW_READY on the strength of the caller value","from":"§272 G1"},
+{"id":"H2","input":"evidence=[\"\"]","expect":"HOLD, code for empty evidence item","from":"§272 G2"},
+{"id":"H3","input":"evidence='E-1' (string, not list)","expect":"HOLD, type code","from":"§272 G3"},
+{"id":"H4","input":"evidence=[{'id':'E-1'}] (dict item)","expect":"HOLD with code, no exception escapes","from":"§272 G7"},
+{"id":"H5","input":"source='' and quote='' with sha256('') hashes","expect":"HOLD, empty-source code","from":"§272 G5"},
+{"id":"H6","input":"machine label EB-QUOTE asserted by caller, no checks run","expect":"label ignored or HOLD; machine label must be derived from checks performed","from":"§272 N2d"},
+{"id":"H7","input":"no evidence label at all","expect":"HOLD with a non-empty reason code (no silent HOLD)","from":"§272 N1a"},
+{"id":"H8","input":"rights='cleared' as a caller string","expect":"not treated as clearance; HOLD with rights-unverified code","from":"§272 G6"},
+{"id":"H9","input":"verifier object swapped after construction (attribute reassigned on the instance)","expect":"either impossible or detected; result HOLD","from":"DISC-002 04Z A2"},
+{"id":"H10","input":"verifier itself raises an exception","expect":"HOLD with code, no state change, no exception escapes","from":"DISC-002 04Z A4"}
+]}
