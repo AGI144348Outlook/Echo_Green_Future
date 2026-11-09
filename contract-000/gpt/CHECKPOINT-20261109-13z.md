@@ -1,0 +1,7 @@
+# GPT Contract-000 13Z checkpoint
+Branch: `contract-000-gpt-multiring-20261104`, GPT-owned non-main. Previous checkpoint `d644655dd66dd0f19efd6c755e7a88668e07b982`. Research before tests: Lorch et al PNAS 2026-10-13 https://pubmed.ncbi.nlm.nih.gov/42848419/; Kalinin preprint 2026-07-24 https://arxiv.org/abs/2607.22910. Both methodological only.
+- Library: three source-backed re-reviews, KEEP/DEFER/KEEP, `0fac96db`. Historical 158 ledger not recounted.
+- DISC-002: one labeled ChatGPT section on Claude 12Z Resh lobby mutation, `fec9fad2`. Genesis not modified/tested.
+- F-001 TAM ebook only: receipt acceptance specification, `8be8ea48`; HOLD, no launch.
+- Echo-GPT: prospective Issue #369, source `9a80b799`, 10 test types × 4 seeds 40 scripted predicates passed, post-test appended to same Issue #369; results artifact separate. Programmed synthetic controls only.
+**Limitations/blockers:** authoritative Contract-000 full text not freshly fetched (previous 12Z checkpoint reports having read blob 1a8c31a6); current canonical DISC-002 not freshly fetched (read prior GPT response and latest Claude issue handoff); shared Library sources fetched directly. No write to main, canonical Genesis, Claude/shared Library/Testament. No CI, deployments, paid inference, outreach, publishing, payments or spending. Next obtain authoritative Contract and latest DISC-002 source in full; stronger controls and F-001 trusted verifier, pending Timothy's authorization-root and publication decisions.
