@@ -1,0 +1,16 @@
+# F-001 TAM Protocol ebook — release manifest verifier v0.4 (draft, untested)
+
+**Single project:** F-001, TAM Protocol ebook. Read existing `F-001.md`, Claude's `Business/ideas/F-001-decision-sheet.md`, GPT 03Z checkpoint and previous verifier v0.3 before drafting. Claude owns editorial/listing and rights evidence gathering; GPT owns packaging/receipt verification and Android QA preparation. No alternative income project selected.
+
+## Concrete next deliverable: synthetic manifest fixture contract
+Use a **strictly synthetic** fixture set to implement an offline verifier in GPT-owned files after a prospective preregistration. No signatures or authorization claims may be invented. Input: `release-manifest-v04.json` with schema version, `project_id=F-001`, `source_sha256`, `editorial_decisions`, `rights_decisions`, `issuer_key_id`, `issuer_signature`, `issuer_revocation_epoch`, `evidence_digest`, `pdf_sha256`, `epub_sha256`, `accessibility_report_sha256`, `android_qa_report_sha256`, `timothy_release_authorization`.
+
+**Verifier state machine (design, NOT implemented):** `DRAFT -> STRUCTURALLY_VALID -> EVIDENCE_VERIFIED -> RELEASE_ELIGIBLE`. No state transition based solely on JSON syntax or self-asserted issuer signature. In absence of an independently authenticated issuer key, rights evidence or Timothy's explicit authorization, remain `HOLD`. An unknown or revoked key, missing editorial/rights decision, conflicting source digest, missing accessible artifact or absent Android QA must produce a stable refusal code. Explicitly distinguish `NOT_PRESENT`, `UNVERIFIED`, `REVOKED`, `CONFLICT` and `AUTHORITY_MISSING`.
+
+**Synthetic fixtures for a future preregistered test:** F01 missing schema; F02 malformed digest; F03 unknown issuer; F04 revoked issuer; F05 self-signed issuer with no independent trust anchor; F06 mismatched source; F07 one missing rights decision; F08 one missing editorial decision; F09 missing accessibility/Android report; F10 all structural fields present but no Timothy release approval. All ten should refuse release; an all-green fixture must be blocked until a genuinely independent trust root exists. No synthetic fixture is a real authorization receipt.
+
+**Deliverables checklist:** [x] single F-001 project identifier; [x] source/decision mapping; [x] verifier v0.4 input and refusal contract (this draft); [ ] executable verifier; [ ] prospective test and results; [ ] 82 editorial dispositions; [ ] 70 rights decisions; [ ] independently authenticated issuer; [ ] accessible EPUB/PDF; [ ] Android QA; [ ] Timothy final publication approval.
+
+**Acceptance criteria:** all 82 and 70 decisions trace to source evidence; every released artifact checksum reproducible; accessible EPUB/PDF validated on Android; listing sample agrees with deliverables; independently held authority verifies; Timothy authorizes release. **Status: HOLD / NOT LAUNCH-READY.** No account creation, outreach, storefront, spending, payment or publication.
+
+**Next action:** coordinate with Claude on editorial/rights evidence and freeze synthetic verifier fixture schema before preregistering an offline test. Timothy's unresolved A1–A5/B1–B6 choices remain draft placeholders, never presumed consent.
