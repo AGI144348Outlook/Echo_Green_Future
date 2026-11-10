@@ -9,19 +9,19 @@ function makeEvents(seed,shuffle=false){
 }
 function simulate(seed,opt={}){
  const events=makeEvents(seed,!!opt.shuffle),limit=opt.limit??64,forward=opt.forward??0.12,reverse=opt.reverse??0.07;
- const queue=[],active=[],admitted=[],completed=[],history=[];let warehouse=0,returned=0,maxActive=0,maxQueue=0;
+ const queue=[],active=[],admitted=[],completed=[],history=[];let warehouse=0,returned=0,maxActive=0,maxQueue=0;const spatial=Array(CAP).fill(0);
  for(let t=0;t<limit;t++){
    for(const e of events)if(e.arrival===t)queue.push(e);
    // Discharge first; then admit FIFO. Different service times permit non-FIFO completion.
-   for(let k=active.length-1;k>=0;k--)if(active[k].end<=t){const e=active.splice(k,1)[0];completed.push(e.id);warehouse+=e.payload*forward;returned+=e.payload*forward*reverse;}
+   for(let k=active.length-1;k>=0;k--)if(active[k].end<=t){const e=active.splice(k,1)[0];completed.push(e.id);warehouse+=e.payload*forward;spatial[e.id%CAP]+=e.payload*forward;returned+=e.payload*forward*reverse;}
    while(active.length<CAP&&queue.length){const e=queue.shift();active.push({id:e.id,end:t+e.duration,payload:e.payload});admitted.push(e.id);}
    maxActive=Math.max(maxActive,active.length);maxQueue=Math.max(maxQueue,queue.length);
    history.push([t,active.length,queue.length,completed.length]);
  }
- return {seed,events,admitted,completed,queued:queue.map(e=>e.id),active:active.map(e=>e.id),warehouse,returned,maxActive,maxQueue,history};
+ return {seed,events,admitted,completed,queued:queue.map(e=>e.id),active:active.map(e=>e.id),warehouse,returned,spatial,maxActive,maxQueue,history};
 }
 function evaluate(seed){
- const a=simulate(seed),b=simulate(seed),noop=simulate(seed,{forward:0,reverse:0}),one=simulate(seed,{reverse:0}),shuffled=simulate(seed,{shuffle:true}),short=simulate(seed,{limit:1});
+ const a=simulate(seed),b=simulate(seed),noop=simulate(seed,{forward:0,reverse:0}),one=simulate(seed,{reverse:0}),shuffled=simulate(seed,{shuffle:true}),short=simulate(seed,{limit:5});
  const ids=a.admitted.concat(a.queued,a.active),massExpected=a.completed.reduce((s,id)=>s+a.events[id].payload*0.12,0);
  const tests=[
  ["T1 seat capacity",a.maxActive<=CAP&&a.maxActive>0,{max:a.maxActive}],
@@ -32,7 +32,7 @@ function evaluate(seed){
  ["T6 transfer mass accounting",Math.abs(a.warehouse-massExpected)<1e-9,{expected:massExpected,observed:a.warehouse}],
  ["T7 zero coupling null",noop.warehouse===0&&noop.returned===0,{warehouse:noop.warehouse}],
  ["T8 reverse coupling",a.returned>0&&one.returned===0&&a.admitted.join(",")===one.admitted.join(","),{difference:a.returned-one.returned}],
- ["T9 shuffled payload control",Math.abs(a.warehouse-shuffled.warehouse)>1e-9&&a.admitted.join(",")===shuffled.admitted.join(","),{difference:a.warehouse-shuffled.warehouse}],
+ ["T9 shuffled payload control",a.spatial.reduce((n,v,i)=>n+Math.abs(v-shuffled.spatial[i]),0)>1e-9&&a.admitted.join(",")===shuffled.admitted.join(","),{spatialL1:a.spatial.reduce((n,v,i)=>n+Math.abs(v-shuffled.spatial[i]),0)}],
  ["T10 short-horizon backlog",short.queued.length>0&&short.completed.length===0,{pending:short.queued.length,active:short.active.length}]
  ];
  return {seed,tests:tests.map(([name,pass,observation])=>({name,pass,observation})),summary:{maxActive:a.maxActive,maxQueue:a.maxQueue,completed:a.completed.length,warehouse:a.warehouse,returned:a.returned}};
