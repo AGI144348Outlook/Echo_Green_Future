@@ -1,0 +1,37 @@
+{
+  "protocol": "Issue #394",
+  "source_commit": "4c1cb77b2ef53ebf82e95c282c4fcb159bf25883",
+  "source_blob": "8ee5491712f718a0a219f7d1ed0311fc72d59451",
+  "engine": "isolated V8 eval of exact fetched committed source",
+  "seeds": [
+    11,
+    23,
+    47,
+    89
+  ],
+  "types": 10,
+  "pass": 36,
+  "total": 40,
+  "failed": "T9 phase-shift contrast for all four seeds; differences only floating roundoff (~5e-15)",
+  "mass_error_max": 7.105427357601002e-15,
+  "uncoupled_initial_l1": 0,
+  "reverse_l1_range": [
+    8.328015248910178,
+    8.368118051071864
+  ],
+  "shuffle_l1_range": [
+    3.8781547233402778,
+    4.590468856198694
+  ],
+  "knockout_l1_range": [
+    0.7914601476204642,
+    0.9101791697635342
+  ],
+  "interpretation": "Full 27-tick period averages phase shift, producing genuine null; do not claim phase influence.",
+  "limitations": [
+    "synthetic model",
+    "four seeds not independent physical experiments",
+    "no queueing, learning, emergent semantics, or physical precession",
+    "T9 preregistered non-null predicate was falsified"
+  ]
+}
