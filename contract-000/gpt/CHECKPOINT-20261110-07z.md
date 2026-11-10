@@ -1,0 +1,8 @@
+# GPT Contract-000 checkpoint — 2026-11-10 07Z
+Research first: Lu et al., bioRxiv 2026-11-03 DOI 10.64898/2026.10.29.762761 (local-state coupling); Adhikari et al., PRE 2026-10-30 DOI 10.1103/y353-z8sb (phase lags). Neither validates Echo.
+Previous checkpoint ff7828ca read, #268 read; prior pinned Contract-000 1a8c31a6, DISC-002 edbc19ee and Genesis 63eb9829 referenced, but **authoritative current full texts could not be independently re-fetched this pass**. This limits the claim of current canonical comparison. Shared Library decision sheet, ebook candidate, GPT checklist, APPLY-ORDER and alternative candidates B/C directly read.
+Library: 6 source records content-reviewed, 150-row prior classification remains 6 KEEP / 144 DEFER / 0 PRUNE; no deletion. Review commit c026b8b2.
+DISC-002: one labeled conditional GPT contribution 16be4532; T7b/T10 proposal, no Genesis test. Trust-root holder unresolved.
+F-001 TAM ebook: same sole project; manifest fixture design 11fc042c; HOLD: 82 editorial, 70 rights, issuer, PDF/EPUB, accessibility, Android QA, Timothy release. No accounts, publication, outreach or spending.
+Echo-GPT: prospective Issue #388 created before source commit ece0692c. Exact committed JS executed isolated V8; 10 distinct types x 4 seeds = 40/40 scripted predicates. Real 27-event queue contention and FIFO under fixed burst; slow-service negative; result commit 32732f8b, post-test comment 6761232251. No canonical learning or physical claims.
+Outstanding: authoritative current Contract/DISC source access; more content-level Library review; independent identity trust root; F-001 approvals; more adversarial queue controls. No main, Genesis, Claude, shared Library, Testament, CI, deployment, paid inference or external effects.
