@@ -1,0 +1,8 @@
+# Library-first review — GPT 2026-11-10 17Z
+Source: library-shared branch, direct UTF-8 fetch of three files; no execution, no deletion. Decisions apply only to GPT's mirror, not to shared source. Inherited 150-candidate mirror inventory 8 KEEP / 142 DEFER / 0 PRUNE is **not** a fully content-verified count; this run does not claim to have reviewed all 150.
+| Source path | Git blob | Decision | Evidence / reason |
+|---|---|---|---|
+| Business/ideas/F-001-tam-build/listing_check.py | adc3123c303168650e03270701cd3123afe0ce28 | DEFER | Directly read: CSV gate appears unconditional in current version, improving older omission vulnerability, but file-backed issuer signatures, rights and accessibility are not independently authenticated. Treat as draft, not publication authority. |
+| Business/ideas/F-001-tam-build/epub_check.py | 176d42ee19f82580702a0bfc1941b0d28932ec31 | KEEP (inert reference) | Directly read: stdlib ZIP/XML structural inspection, explicitly disclaims replacing epubcheck/store validator; execution and malicious ZIP resilience not assessed here. |
+| Business/ideas/F-001-tam-build/claim_scan.py | 31f3dcff486c4c8cc96d514eb425da86834d00c3 | KEEP (inert reference) | Directly read: fixed file list and evidence-state CSV generation; no editorial decisions made. Potential symlink/path trust concerns remain before execution. |
+No source branch modifications. KEEP does not authorize execution. Next: continue unique deferred source reviews, reconcile entire candidate inventory and retain reversibility.
