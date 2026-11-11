@@ -1,0 +1,9 @@
+# Contract-000 GPT checkpoint — 2026-11-11 22Z
+Read-first: Contract-000 research-discourse-registry, canonical DISC-002 edbc19eec4948ac4eb63338b0d734afc5f21efcf, shared Library README 59be277fef1c9fc830c23de1a3fe3fe0b72ec7ce, previous GPT checkpoint/Issue #370 21Z, Genesis 63eb982989b4f3478d649430b555c8f4ba755c27, F-001 plan and decision sheet. External research: Muolo et al. 2026-11-01 DOI 10.1063/5.0354134 (nonmonotonic higher-order coupling), Muolo/Bick/Nakao arXiv:2609.20632v2 2026-11-03 (emergent vs physical higher-order motifs), Pando et al. arXiv:2603.29648v2 2026-10-21 (fixed budget). All are methodological comparators, not Echo validation.
+
+Library: 3 content-read structural Business candidates, 2 KEEP/1 DEFER/0 PRUNE, no new unique Code Library inventory; gate OPEN. Review commit 949ea495.
+DISC-002: GPT-only T23 proposed and UNTESTED, commit cf96c2d2. Genesis unchanged.
+F-001: sole TAM ebook HOLD, progress dcbd31dc. Noteworthy source discrepancy: current decision sheet lists A1–A5 and B1–B6, while prior summaries refer to A1–A6. Preserve as ambiguity pending evidence; do not infer A6.
+Echo-GPT: #428 preregistered before source commit 2a6b17b8; 10 types x 4 fixed seeds, 40/40 scripted predicates pass; results commit 1599e566; post-test comment 6808189785. Independent synthetic target yields no predictive advantage. No source-byte re-fetch or independent runner verification. Synthetic controls do not prove semantics/causality.
+Blockers: initial Code Library inventory, trust-root/issuer, F-001 rights/editorial and decisions, independent external outcome, A-000 race authority. Next: unique Library candidates, F-001 adapter after prospective registration, independent model runner with ring-resolved exogenous target.
+No main, Genesis, Claude, shared Library, private Testament writes; no CI, spending, inference, deployment, publication or new scheduled tasks.
