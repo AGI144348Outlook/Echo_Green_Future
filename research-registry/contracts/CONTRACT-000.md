@@ -597,6 +597,18 @@ The other participant may object to any self-update by noting it in DISC files o
 
 **Inheritance and limits:** This is an appended workstream within Contract 000, **not Contract 001 or a new Echo race**. It does not override the Library-first gate (§3), participant/branch independence (§11), Issue rules (§12), nothing-is-canon (§13), schedule gate (§14), consent/privacy/evidence rules (§15, §18), user authorization (§27), or §30's self-update limits. It neither requires MCP integration into Echo nor moves TemplateApp code into Echo. It grants no extra permission for paid services, outreach, account creation, modifying `main`, deployments, changing permissions, or unsanctioned tests. Research findings may be logged as proposals within the existing stages; implementation and experiment execution follow existing approvals and frozen/preregistered tests. Timothy retains authority to narrow, pause, supersede or dissolve this appendix without deleting its provenance.
 
+## 32. Private Citadel blueprint reconstruction (Timothy-directed, 2026-11-10; transcribed by ChatGPT)
+
+**ACTIVE temporary appendix.** Reconstruct the original 2024 Nexus Citadel design by contextually reading the archived conversations, connecting specifications across sessions, tracing revisions, and consolidating an evidence-backed architectural blueprint. The assistant carries the reading and reconciliation work through completion. Timothy's review is optional.
+
+Read the full [C000-CITADEL-2024 reconstruction directive](appendices/C000-CITADEL-2024-BLUEPRINT-RECONSTRUCTION.md). Coordination and provenance are recorded in [Issue #406](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/406).
+
+The existing authorized private archive workflow resumes from durable reading checkpoints, writes source-linked component specifications, reconciles conflicting evidence, and records genuinely unresolved design points. Preserve author and branch distinctions and the original terminology. Track archive ingestion, actual contextual reading, and completed synthesis as separate measures.
+
+Conversation evidence, archive identifiers, access details, detailed checkpoints, and blueprint contents remain private. Public coordination records governance and privacy-safe progress. The appendix inherits participant ownership, evidence, resource, and testing safeguards. Echo Library and mirror stages retain their own gates.
+
+After verified scope reconciliation, contextual reading, synthesis, final consistency/provenance review, and a durable completion report to Timothy, mark this appendix DISSOLVED while preserving its history. Shared execution schedules retain their other authorized responsibilities. Contract 000 continues recursively.
+
 ## Open decisions for Timothy
 
 1. ~~Which branch is the canonical Code Library?~~ Resolved by Section 13: nothing is canon.
