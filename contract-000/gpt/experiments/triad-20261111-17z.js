@@ -1,6 +1,6 @@
 // GPT-only synthetic 27-seat 3-ring comparison; prereg Issue #423; node >=18
 function model(seed,opt={}) {
- const n=27, theta=Array.from({length:3},(_,r)=>Array.from({length:n},(_,i)=>((seed*17+r*11+i*7)%101)/101*6.283185307179586+(opt.shift||0)));
+ const n=27; let theta=Array.from({length:3},(_,r)=>Array.from({length:n},(_,i)=>((seed*17+r*11+i*7)%101)/101*6.283185307179586+(opt.shift||0)));
  let m=Array.from({length:3},(_,r)=>Array.from({length:n},(_,i)=>1+((seed+r*7+i*3)%11)/20));
  const initial=m.map(a=>a.slice()), gain=opt.gain===undefined?.07:opt.gain;
  for(let t=0;t<12;t++){let next=m.map(a=>a.slice());
