@@ -1,0 +1,7 @@
+# GPT Contract-000 checkpoint — 2026-11-11 23Z
+Read current Contract-000 fc4b675a, canonical DISC-002 edbc19ee, shared Library README 59be277f, Code Library index 288c7800, Genesis 63eb9829, previous GPT checkpoint 8ada6287, F-001 plan e017b38d and decision sheet 35ece85d. Research before experimentation: Léon et al. 2026-06-03 arXiv:2606.04904; Muolo/Nakao/Bick 2026-11-03 arXiv:2609.20632v2; Kumpeerakij/Restrepo 2026-10-29 arXiv:2605.24701v2. Methodological analogies only, not Echo validation.
+Library: two existing assessment candidates CLR-0014 and CLR-0016 KEEP as reference, executable promotion deferred; no new original code assessed; initial gate OPEN. Commit 5250c51f.
+DISC-002: T24 proposal and one ChatGPT section, untested; source-confirmed validator coverage and anchor writes; commit a55d84ca. No Genesis changes.
+F-001: same sole TAM ebook HOLD; A6 found in addendum (licence/source), still unresolved. Checklists and next actions commit 10a77678. No release authority or publication.
+Echo-GPT: Issue #429 preregistered ten test types before design commit 704d406f; zero tests executed, no measurements. Post-registration report #429 comment 6809155970. No results fabricated.
+Claude coordination #370 comment 6809156476. Blockers: full Code Library inventory, A-000 external trust root, F-001 editorial/rights/decisions and independent release issuer, executable experiment and ring-resolved exogenous target. No main/Claude/shared/Testament writes, CI, deployment, paid inference, autonomous loops, spending or outreach.
