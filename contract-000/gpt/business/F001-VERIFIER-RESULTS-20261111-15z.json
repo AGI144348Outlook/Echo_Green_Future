@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-11T15:00Z",
+  "preregistration": "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/421",
+  "source_git_blob": "f63749b1d8a53b8282923d6c41ee156ff4fad1ab",
+  "source_commit": "df47dbfaef94f07c2fb6f468bc3d33d69c5d92ca",
+  "execution": "Local Python 3 offline; exact verifier Git blob verified via git hash-object after reconstruction from connector fetch; synthetic fixtures; harness committed after execution is a separate reproduction implementation and was NOT executed.",
+  "passed": 10,
+  "total": 10,
+  "exit_code_all": 2,
+  "status_all": "HOLD",
+  "types": [
+    [
+      "valid-looking evidence",
+      "independent issuer authorization not implemented"
+    ],
+    [
+      "missing artifact",
+      "missing/unsafe artifact: book.pdf"
+    ],
+    [
+      "symlink",
+      "missing/unsafe artifact: book.pdf"
+    ],
+    [
+      "duplicate JSON key",
+      "duplicate JSON key: sha256"
+    ],
+    [
+      "tampered EPUB",
+      "sha256 mismatch: book.epub"
+    ],
+    [
+      "bad digest syntax",
+      "bad sha256 syntax"
+    ],
+    [
+      "duplicate editorial ID",
+      "duplicate item_id"
+    ],
+    [
+      "missing editorial evidence",
+      "incomplete editorial.csv"
+    ],
+    [
+      "69 rights rows",
+      "incomplete rights.csv"
+    ],
+    [
+      "malformed QA JSON",
+      "Expecting property name enclosed in double quotes"
+    ]
+  ],
+  "interpretation": "Only fail-closed behavior on synthetic fixtures. Does not validate actual PDF/EPUB, rights, approvals, authenticity, accessibility, or sale readiness.",
+  "deviations": "Fixture generator used local script /mnt/data/f001_fixture_tests.py; committed reproduction harness was written afterward and remains unexecuted; no CI."
+}
