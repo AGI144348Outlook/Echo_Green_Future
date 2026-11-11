@@ -1,0 +1,137 @@
+{
+  "source_commit": "ba88c6e34c66fba8fc9c5cd8a5b7c48222dfb0d0",
+  "source_blob": "d26308715cafb2625bfc570693cfecd56a4c3b72",
+  "execution": "exact fetched committed JS executed in isolated V8",
+  "issue": 420,
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "types": 10,
+  "rows": [
+    {
+      "seed": 11,
+      "metrics": {
+        "replay": 0,
+        "mass": 7.105427357601002e-15,
+        "min": 0.25566494051264205,
+        "zero": 0,
+        "gauge": 6.106226635438361e-16,
+        "relative": 0.9329308484570471,
+        "frequency": 0.7661139805279424,
+        "boundary": 5.571021234967046,
+        "shuffle": 1.2096553621405106,
+        "localEffect": 0.30229922238675516,
+        "localProjection": 2.220446049250313e-16,
+        "offTarget": 0,
+        "placebo": 0
+      },
+      "checks": {
+        "replay": true,
+        "conservation": true,
+        "nonnegative": true,
+        "zeroGain": true,
+        "gauge": true,
+        "relative": true,
+        "frequency": true,
+        "boundary": true,
+        "shuffle": true,
+        "localCausal": true
+      }
+    },
+    {
+      "seed": 23,
+      "metrics": {
+        "replay": 0,
+        "mass": 0,
+        "min": 0.2654006411905174,
+        "zero": 0,
+        "gauge": 1.0547118733938987e-15,
+        "relative": 0.9620158977121546,
+        "frequency": 0.7928451613023746,
+        "boundary": 5.61249085755785,
+        "shuffle": 1.2651404523032819,
+        "localEffect": 0.20993001554635754,
+        "localProjection": 4.440892098500626e-16,
+        "offTarget": 0,
+        "placebo": 0
+      },
+      "checks": {
+        "replay": true,
+        "conservation": true,
+        "nonnegative": true,
+        "zeroGain": true,
+        "gauge": true,
+        "relative": true,
+        "frequency": true,
+        "boundary": true,
+        "shuffle": true,
+        "localCausal": true
+      }
+    },
+    {
+      "seed": 37,
+      "metrics": {
+        "replay": 0,
+        "mass": 2.1316282072803006e-14,
+        "min": 0.24113762939900477,
+        "zero": 0,
+        "gauge": 8.604228440844963e-16,
+        "relative": 0.9332149227071875,
+        "frequency": 0.7535142860076895,
+        "boundary": 5.519926774010409,
+        "shuffle": 1.2360270610703952,
+        "localEffect": 0.2351216174119206,
+        "localProjection": 0,
+        "offTarget": 0,
+        "placebo": 0
+      },
+      "checks": {
+        "replay": true,
+        "conservation": true,
+        "nonnegative": true,
+        "zeroGain": true,
+        "gauge": true,
+        "relative": true,
+        "frequency": true,
+        "boundary": true,
+        "shuffle": true,
+        "localCausal": true
+      }
+    },
+    {
+      "seed": 53,
+      "metrics": {
+        "replay": 0,
+        "mass": 0,
+        "min": 0.2677779127666726,
+        "zero": 0,
+        "gauge": 9.992007221626409e-16,
+        "relative": 0.9888922078313235,
+        "frequency": 0.8060271361318336,
+        "boundary": 5.646131820044971,
+        "shuffle": 1.3077944670146564,
+        "localEffect": 0.21832721616821193,
+        "localProjection": 4.440892098500626e-16,
+        "offTarget": 0,
+        "placebo": 0
+      },
+      "checks": {
+        "replay": true,
+        "conservation": true,
+        "nonnegative": true,
+        "zeroGain": true,
+        "gauge": true,
+        "relative": true,
+        "frequency": true,
+        "boundary": true,
+        "shuffle": true,
+        "localCausal": true
+      }
+    }
+  ],
+  "passed": 40,
+  "total": 40
+}
