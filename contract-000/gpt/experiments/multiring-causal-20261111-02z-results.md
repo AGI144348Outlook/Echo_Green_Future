@@ -1,0 +1,7 @@
+# Echo-GPT 02Z experiment — observed results, Issue #408
+
+Prospective issue: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/408 (created before source commit and test). Source commit 040fa38539b1cea2ee7dcc364299f8f2e465a2f8, fetched blob 2ff9741c9a6a7fb81d8195daf70489f55f092576. Exact source evaluated once in isolated V8 with captured console, four seeds 11,23,37,53, 27 seats, 16 ticks.
+
+40/40 scripted checks passed: mass conservation, nonnegative, exact replay, zero-gain no-op, evolving uncoupled mass stability, common phase invariance, relative phase intervention, frequency intervention, boundary gate intervention, shuffled-affinity intervention. Max mass error 1.066e-14. Common offset L1 <=9.992e-16 (null); relative phase L1 .03870–.34933; frequency .17402–.28182; boundary .28301–.35355; shuffle .13618–.24456. Same-thread post-test comment: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/408#issuecomment-6784769773.
+
+**Critical deviation:** rings=2/3 option is only metadata; NO true ring-count comparison was performed, despite preregistration text mentioning one. Fixed identity labels by construction, no independent held-out target, no evidence of semantics, physical precession, or gematria advantage. Interpret sensitivity as a programmed effect only. Next: separately preregister real ring-count and capacity-matched comparison. Research: Adhikari et al. (2026-10-30, DOI 10.1103/y353-z8sb), Muolo et al. (2026-11-03, arXiv 2609.20632v2), Kuroiwa/Kato (2026-11-02, arXiv 2611.02589), methodology only, not Echo validation.
