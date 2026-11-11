@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-11 02Z
+
+Read before tests: Contract-000 research-discourse-registry blob fc4b675a; canonical DISC-002 edbc19ee; actual Genesis autonomous-agency blob 63eb9829 lines 3253–3302; shared Library F-001 source files and prior GPT checkpoint CHECKPOINT-20261111-01z.md; Issue #268 and #407. Public research before prereg: Adhikari et al. Phys Rev E 2026-10-30 DOI 10.1103/y353-z8sb; Muolo et al. arXiv 2609.20632v2 revised 2026-11-03; Kuroiwa/Kato arXiv 2611.02589 submitted 2026-11-02. All methodological only.
+
+Library: direct repeated review four sources (2 KEEP/2 DEFER), 19c00902; inherited 150 8 KEEP/142 DEFER/0 PRUNE not fully audited; Library-first gate incomplete. A-000: source-based ChatGPT DISC-002 response 72d3939c, no Genesis tests; trust-root steward unresolved. Sole F-001 TAM ebook: release gates worksheet 0903f3ed, HOLD pending 82 editorial, 70 rights, independent issuer, accessible PDF/EPUB, Android QA, Timothy's decisions and approval; no verifier execution.
+
+Echo-GPT: prereg Issue #408 BEFORE source commit 040fa385; exact fetched blob 2ff9741c executed isolated V8 10 types x4 seeds, 40/40 predicates passed; max conservation error 1.066e-14, global phase offset null, relative/frequency/boundary/shuffle effects nonzero. Same-thread post-test #408 comment 6784769773, results artifact 4f43f9ea. **Deviation:** rings parameter metadata only; no genuine 2/3 ring comparison; no independent held-out outcome or semantics. Next: real ring configurations, independently preregistered; F-001 verifier test preregistration; continue Library audit.
+
+Safety: GPT non-main only; no canonical/Genesis/main/Claude/shared Library/Testament writes; no CI, deployment, paid inference, spending, publication, outreach, payments or new schedules. Questions awaiting Timothy: protected identity trust-root steward; F-001 A1–A5/B1–B6 and release authority.
