@@ -7,7 +7,7 @@ function run(seed,opt={}){
  for(let r=0;r<rings;r++){let a=[],p=[],f=[];for(let i=0;i<N;i++){a.push(.4+rand()+.15*r+.03*Math.sin(i+r));p.push(TAU*rand()+(opt.common||0)+(opt.relative&&r===1?opt.relative:0));f.push(.2+.15*rand()+(opt.freq&&r===1?opt.freq:0));}mass.push(a);phase.push(p);freq.push(f);}
  const initial=mass.flat().reduce((a,b)=>a+b,0),scale=27/initial;
  mass.forEach(a=>a.forEach((v,i)=>a[i]=v*scale));
- const original=mass.map(a=>a.slice()), base=mass.flat().reduce((a,b)=>a+b,0);
+ const original=mass.map(a=>a.slice()), initialPhase=phase.map(a=>a.slice()), base=mass.flat().reduce((a,b)=>a+b,0);
  const val=Array.from({length:N},(_,i)=>1+(i*7)%N);if(opt.shuffle)val.reverse();
  for(let t=0;t<STEPS;t++){
    const d=mass.map(()=>Array(N).fill(0));
@@ -24,7 +24,7 @@ function run(seed,opt={}){
    }
    for(let r=0;r<rings;r++)for(let i=0;i<N;i++){mass[r][i]+=d[r][i];phase[r][i]+=freq[r][i];}
  }
- return {mass,original,base,total:mass.flat().reduce((a,b)=>a+b,0),min:Math.min(...mass.flat()),ids:Array.from({length:N},(_,i)=>i),phase};
+ return {mass,original,initialPhase,base,total:mass.flat().reduce((a,b)=>a+b,0),min:Math.min(...mass.flat()),ids:Array.from({length:N},(_,i)=>i),phase};
 }
 function l1(a,b){return a.reduce((s,v,i)=>s+Math.abs(v-b[i]),0);}
 function project(x){return Array.from({length:N},(_,i)=>x.mass.reduce((s,r)=>s+r[i],0));}
@@ -35,7 +35,7 @@ function tests(seed){
  ["T2_nonnegative_identity",a.min>=0&&b.min>=0&&new Set(a.ids).size===N,Math.min(a.min,b.min)],
  ["T3_replay",JSON.stringify(a.mass)===JSON.stringify(run(seed).mass),0],
  ["T4_zero_gain",l1(zero.mass.flat(),zero.original.flat())<1e-12,l1(zero.mass.flat(),zero.original.flat())],
- ["T5_uncoupled_evolves",l1(unc.mass.flat(),unc.original.flat())>1e-6&&unc.phase[0][0]!==a.phase[0][0]===false,l1(unc.mass.flat(),unc.original.flat())],
+ ["T5_uncoupled_evolves",l1(unc.mass.flat(),unc.original.flat())>1e-6&&Math.abs(unc.phase[0][0]-unc.initialPhase[0][0])>1e-6,l1(unc.mass.flat(),unc.original.flat())],
  ["T6_common_phase_null",l1(a.mass.flat(),com.mass.flat())<1e-8,l1(a.mass.flat(),com.mass.flat())],
  ["T7_relative_phase",l1(a.mass.flat(),rel.mass.flat())>1e-7,l1(a.mass.flat(),rel.mass.flat())],
  ["T8_frequency",l1(a.mass.flat(),fr.mass.flat())>1e-7,l1(a.mass.flat(),fr.mass.flat())],
