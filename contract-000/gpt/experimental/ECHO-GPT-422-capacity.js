@@ -7,7 +7,7 @@ function edges(mode){return mode==="path"?[[0,1],[1,2]]:mode==="triangle"?[[0,1]
 function simulate(seed,mode="triangle",opt={}) {
  const state=initial(seed), start=initial(seed), phases=[0.1,0.7,1.5], freq=[0.02,0.04,0.07], gain=opt.zero?0:budget;
  const e=edges(mode), each=gain/e.length, affine=Array.from({length:n},(_,i)=>opt.shuffle?glyphs[(i*7+3)%n]:glyphs[i]);
- for(let t=0;t<steps;t++){for(let i=0;i<n;i++){let moves=[];for(let k=0;k<e.length;k++){let [a,b]=e[k];let delta=(phases[b]+(opt.relative&&b===2?0.37:0)+freq[b]*(opt.frequency&&b===2?1.6:1)*t)-(phases[a]+freq[a]*t);
+ for(let t=0;t<steps;t++){for(let i=0;i<n;i++){let moves=[];for(let k=0;k<e.length;k++){let [a,b]=e[k];let delta=((opt.commonPhase||0)+phases[b]+(opt.relative&&b===2?0.37:0)+freq[b]*(opt.frequency&&b===2?1.6:1)*t)-((opt.commonPhase||0)+phases[a]+freq[a]*t);
  let c=Math.cos(delta), affinity=0.4+affine[i]/54, deform=opt.boundary?1+0.2*Math.sin(i+t):1;
  let flux=each*c*affinity*deform*(state[a][i]-state[b][i]);
  moves.push([a,b,flux]);}
