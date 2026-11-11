@@ -1,0 +1,43 @@
+{
+  "issue": 425,
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "test_types": 10,
+  "passed": 40,
+  "failed": 0,
+  "triad_pair_l1": [
+    0.1590264227772049,
+    0.1590264227772029,
+    0.1590264227772027,
+    0.15902642277720402
+  ],
+  "triad_mae": [
+    0.4168720238226765,
+    0.41687202382267646,
+    0.41687202382267646,
+    0.41687202382267646
+  ],
+  "uncoupled_mae": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "all_types": [
+    "replay",
+    "mass",
+    "phase",
+    "noop",
+    "shuffle",
+    "triad_pair",
+    "projection",
+    "local",
+    "positive",
+    "forecast_negative"
+  ],
+  "limitations": "Synthetic target exactly equals uncoupled ring-0 initialization; baseline zero error is guaranteed by construction. Deterministic phase and affinity schedule can yield identical results across seeds. Locally transcribed source visually matches committed source but byte identity not independently checked. These are programmed dynamics, not learning or physical proof."
+}
