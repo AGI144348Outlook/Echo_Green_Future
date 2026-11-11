@@ -1,0 +1,253 @@
+{
+  "source_blob": "24dd4b19bfb3f4eb97e9bb211bf5fb203e18d7cb",
+  "source_commit": "fcb2907f69c2f2be2805717d0f35f7c6da5d1be4",
+  "prereg_issue": 410,
+  "amendment_comment": 6786651189,
+  "execution": "isolated V8 exact fetched UTF-8 committed source",
+  "protocol": "Issue #410",
+  "version": "04z-v1",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "results": [
+    {
+      "seed": 11,
+      "tests": [
+        [
+          "T1_mass",
+          true,
+          1.4210854715202004e-14
+        ],
+        [
+          "T2_nonnegative_identity",
+          true,
+          0.1950668387154419
+        ],
+        [
+          "T3_replay",
+          true,
+          0
+        ],
+        [
+          "T4_zero_gain",
+          true,
+          0
+        ],
+        [
+          "T5_uncoupled_evolves",
+          true,
+          3.2118020814784756
+        ],
+        [
+          "T6_common_phase_null",
+          true,
+          1.6653345369377348e-16
+        ],
+        [
+          "T7_relative_phase",
+          true,
+          0.13044383739790444
+        ],
+        [
+          "T8_frequency",
+          true,
+          0.18237525407270144
+        ],
+        [
+          "T9_boundary",
+          true,
+          0.7707812262413554
+        ],
+        [
+          "T10_two_three",
+          true,
+          1.5981560695927004
+        ]
+      ],
+      "aux_shuffle_l1": 0.0570866878230164,
+      "triadic_l1": 0.0003228911314079319
+    },
+    {
+      "seed": 23,
+      "tests": [
+        [
+          "T1_mass",
+          true,
+          7.105427357601002e-15
+        ],
+        [
+          "T2_nonnegative_identity",
+          true,
+          0.20845617934576408
+        ],
+        [
+          "T3_replay",
+          true,
+          0
+        ],
+        [
+          "T4_zero_gain",
+          true,
+          0
+        ],
+        [
+          "T5_uncoupled_evolves",
+          true,
+          4.537919914174252
+        ],
+        [
+          "T6_common_phase_null",
+          true,
+          3.885780586188048e-16
+        ],
+        [
+          "T7_relative_phase",
+          true,
+          0.09458670214005743
+        ],
+        [
+          "T8_frequency",
+          true,
+          0.19971642720567806
+        ],
+        [
+          "T9_boundary",
+          true,
+          0.7662457925110293
+        ],
+        [
+          "T10_two_three",
+          true,
+          1.5176844842064305
+        ]
+      ],
+      "aux_shuffle_l1": 0.08276850733388691,
+      "triadic_l1": 0.0010770751149807856
+    },
+    {
+      "seed": 37,
+      "tests": [
+        [
+          "T1_mass",
+          true,
+          3.552713678800501e-15
+        ],
+        [
+          "T2_nonnegative_identity",
+          true,
+          0.205172879655227
+        ],
+        [
+          "T3_replay",
+          true,
+          0
+        ],
+        [
+          "T4_zero_gain",
+          true,
+          0
+        ],
+        [
+          "T5_uncoupled_evolves",
+          true,
+          3.857083242959678
+        ],
+        [
+          "T6_common_phase_null",
+          true,
+          3.3306690738754696e-16
+        ],
+        [
+          "T7_relative_phase",
+          true,
+          0.12030547017185822
+        ],
+        [
+          "T8_frequency",
+          true,
+          0.15287985624101103
+        ],
+        [
+          "T9_boundary",
+          true,
+          0.7398458439572402
+        ],
+        [
+          "T10_two_three",
+          true,
+          1.5780747688894345
+        ]
+      ],
+      "aux_shuffle_l1": 0.06906156624547766,
+      "triadic_l1": 0.0005451843019298463
+    },
+    {
+      "seed": 53,
+      "tests": [
+        [
+          "T1_mass",
+          true,
+          3.552713678800501e-15
+        ],
+        [
+          "T2_nonnegative_identity",
+          true,
+          0.19960349517849124
+        ],
+        [
+          "T3_replay",
+          true,
+          0
+        ],
+        [
+          "T4_zero_gain",
+          true,
+          0
+        ],
+        [
+          "T5_uncoupled_evolves",
+          true,
+          3.1180400322685284
+        ],
+        [
+          "T6_common_phase_null",
+          true,
+          2.7755575615628914e-16
+        ],
+        [
+          "T7_relative_phase",
+          true,
+          0.17459795225592767
+        ],
+        [
+          "T8_frequency",
+          true,
+          0.25853761359280786
+        ],
+        [
+          "T9_boundary",
+          true,
+          0.8315014168442331
+        ],
+        [
+          "T10_two_three",
+          true,
+          1.5761391312378057
+        ]
+      ],
+      "aux_shuffle_l1": 0.06700883897914733,
+      "triadic_l1": 0.0010177548181942164
+    }
+  ],
+  "passed": 40,
+  "total": 40,
+  "limitations": [
+    "Four deterministic seeds are not independent validation.",
+    "T10 compares equal total initial mass but ring-specific random initial profiles and within-ring dynamics differ; topology is not isolated causally.",
+    "Triadic effect is small; no semantic evaluation.",
+    "No production, canonical Echo or physical interpretation."
+  ]
+}
