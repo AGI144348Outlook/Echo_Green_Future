@@ -1,0 +1,115 @@
+{
+  "source_blob_sha": "6cb6422a72eb64ee3304ba509326eead54daf8de",
+  "source_commit": "691dc82268417eebd3e11c69642af8b37668b00d",
+  "prereg_issue": 423,
+  "first_attempt": "TypeError const reassignment, 0 tests completed",
+  "correction": "const theta -> let theta, amendment posted before retry",
+  "execution": "isolated V8 eval of exact fetched committed source, no CI",
+  "test_types": 10,
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "pass": 40,
+  "total": 40,
+  "rows": [
+    {
+      "seed": 11,
+      "checks": {
+        "replay": true,
+        "mass": true,
+        "nonnegative": true,
+        "gauge": true,
+        "zero": true,
+        "nonpairwise": true,
+        "shuffled": true,
+        "frequency": true,
+        "boundary": true,
+        "projection": true
+      },
+      "metrics": {
+        "triad_pair_l1": 0.15902642277720436,
+        "shuffle_l1": 0.21832574761135282,
+        "frequency_l1": 0.10310174098779679,
+        "boundary_l1": 2.07933448666368,
+        "ring_uncoupled_l1": 22.511089286424582,
+        "projection_uncoupled_l1": 5.417888360170764e-14,
+        "mass_error": 5.684341886080802e-14
+      }
+    },
+    {
+      "seed": 23,
+      "checks": {
+        "replay": true,
+        "mass": true,
+        "nonnegative": true,
+        "gauge": true,
+        "zero": true,
+        "nonpairwise": true,
+        "shuffled": true,
+        "frequency": true,
+        "boundary": true,
+        "projection": true
+      },
+      "metrics": {
+        "triad_pair_l1": 0.1590264227772028,
+        "shuffle_l1": 0.3378214271508445,
+        "frequency_l1": 0.1031017409877989,
+        "boundary_l1": 2.0840598194433957,
+        "ring_uncoupled_l1": 22.511089286424586,
+        "projection_uncoupled_l1": 5.10702591327572e-14,
+        "mass_error": 1.4210854715202004e-14
+      }
+    },
+    {
+      "seed": 37,
+      "checks": {
+        "replay": true,
+        "mass": true,
+        "nonnegative": true,
+        "gauge": true,
+        "zero": true,
+        "nonpairwise": true,
+        "shuffled": true,
+        "frequency": true,
+        "boundary": true,
+        "projection": true
+      },
+      "metrics": {
+        "triad_pair_l1": 0.1590264227772029,
+        "shuffle_l1": 0.11949567953949614,
+        "frequency_l1": 0.10310174098779878,
+        "boundary_l1": 2.07452526886852,
+        "ring_uncoupled_l1": 22.511089286424586,
+        "projection_uncoupled_l1": 4.8405723873656825e-14,
+        "mass_error": 2.842170943040401e-14
+      }
+    },
+    {
+      "seed": 53,
+      "checks": {
+        "replay": true,
+        "mass": true,
+        "nonnegative": true,
+        "gauge": true,
+        "zero": true,
+        "nonpairwise": true,
+        "shuffled": true,
+        "frequency": true,
+        "boundary": true,
+        "projection": true
+      },
+      "metrics": {
+        "triad_pair_l1": 0.15902642277720447,
+        "shuffle_l1": 0.3283793283791052,
+        "frequency_l1": 0.10310174098779956,
+        "boundary_l1": 2.0760124618160862,
+        "ring_uncoupled_l1": 22.511089286424586,
+        "projection_uncoupled_l1": 5.062616992290714e-14,
+        "mass_error": 1.4210854715202004e-14
+      }
+    }
+  ]
+}
