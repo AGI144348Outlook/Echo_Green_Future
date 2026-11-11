@@ -1,0 +1,120 @@
+{
+  "protocol": "issue-417",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "ticks": 12,
+  "types": 10,
+  "rows": [
+    {
+      "seed": 11,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "conservation": -1.4210854715202004e-14,
+      "relativeL1": 0.6548811505415243,
+      "frequencyL1": 1.1657341758564144e-15,
+      "boundaryL1": 5.326085360020468,
+      "projectedTwoThreeL1": 4.440892098500626e-15,
+      "mae": {
+        "two": 0.01922658775662753,
+        "three": 0.019226587756627448,
+        "uncoupled": 0.019226587756627497
+      }
+    },
+    {
+      "seed": 23,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "conservation": -1.4210854715202004e-14,
+      "relativeL1": 0.660765833537404,
+      "frequencyL1": 1.4988010832439613e-15,
+      "boundaryL1": 5.373944920380086,
+      "projectedTwoThreeL1": 3.774758283725532e-15,
+      "mae": {
+        "two": 0.018956265023186418,
+        "three": 0.018956265023186508,
+        "uncoupled": 0.01895626502318646
+      }
+    },
+    {
+      "seed": 37,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "conservation": -2.842170943040401e-14,
+      "relativeL1": 0.6489964675456439,
+      "frequencyL1": 9.992007221626409e-16,
+      "boundaryL1": 5.278225799660849,
+      "projectedTwoThreeL1": 5.10702591327572e-15,
+      "mae": {
+        "two": 0.01897505659553858,
+        "three": 0.018975056595538574,
+        "uncoupled": 0.018975056595538557
+      }
+    },
+    {
+      "seed": 53,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "conservation": -1.4210854715202004e-14,
+      "relativeL1": 0.6674911855326962,
+      "frequencyL1": 1.4432899320127035e-15,
+      "boundaryL1": 5.428641560791081,
+      "projectedTwoThreeL1": 3.9968028886505635e-15,
+      "mae": {
+        "two": 0.018999249414817437,
+        "three": 0.018999249414817305,
+        "uncoupled": 0.018999249414817395
+      }
+    }
+  ],
+  "passed": 36,
+  "total": 40,
+  "limitations": [
+    "third ring allocated but inactive in two-ring case; active state dimension differs",
+    "synthetic held-out target not an empirical observation",
+    "frequency effect requires nonzero relative phase; no semantics or physical precession"
+  ]
+}
