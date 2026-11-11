@@ -1,0 +1,156 @@
+{
+  "source_blob": "4d818d0afc6d3b3b006d3916bfbd89f09778c5ea",
+  "source_commit": "a1ce24da072d6562e4840a35eda05bd0aecdf4dd",
+  "runtime": "isolated V8 eval of exact GitHub-fetched UTF-8 source",
+  "run_expression": "evaluate()",
+  "research": [
+    {
+      "date": "2026-10-30",
+      "doi": "10.1103/y353-z8sb",
+      "limitation": "not Echo validation"
+    },
+    {
+      "date": "2026-11-01",
+      "doi": "10.1063/5.0354134",
+      "limitation": "not Echo validation"
+    }
+  ],
+  "observations": {
+    "protocol": "Issue #419",
+    "seeds": [
+      11,
+      23,
+      37,
+      53
+    ],
+    "types": 10,
+    "rows": [
+      {
+        "seed": 11,
+        "metrics": {
+          "replay": 0,
+          "mass": 7.105427357601002e-15,
+          "minimum": 0.25566494051264205,
+          "zero": 0,
+          "global": 1.4432899320127035e-15,
+          "relative": 0.9329308484570471,
+          "frequency": 0.7661139805279424,
+          "boundary": 5.571021234967046,
+          "topology": 2.378221234787478,
+          "shuffle": 1.2096553621405106,
+          "projectionRelative": 5.551115123125783e-15,
+          "projectionTopology": 4.218847493575595e-15,
+          "heldoutMAE": 0.032555291743756994,
+          "uncoupledMAE": 0.03255529174375701
+        },
+        "checks": {
+          "replay": true,
+          "conservation": true,
+          "nonnegative": true,
+          "zeroGain": true,
+          "globalPhase": true,
+          "relative": true,
+          "frequency": true,
+          "boundary": true,
+          "topology": true,
+          "shuffle": true
+        }
+      },
+      {
+        "seed": 23,
+        "metrics": {
+          "replay": 0,
+          "mass": 0,
+          "minimum": 0.2654006411905174,
+          "zero": 0,
+          "global": 7.216449660063518e-16,
+          "relative": 0.9620158977121546,
+          "frequency": 0.7928451613023746,
+          "boundary": 5.61249085755785,
+          "topology": 2.411227501725362,
+          "shuffle": 1.2651404523032819,
+          "projectionRelative": 4.440892098500626e-15,
+          "projectionTopology": 3.885780586188048e-15,
+          "heldoutMAE": 0.03259589822185955,
+          "uncoupledMAE": 0.03259589822185953
+        },
+        "checks": {
+          "replay": true,
+          "conservation": true,
+          "nonnegative": true,
+          "zeroGain": true,
+          "globalPhase": true,
+          "relative": true,
+          "frequency": true,
+          "boundary": true,
+          "topology": true,
+          "shuffle": true
+        }
+      },
+      {
+        "seed": 37,
+        "metrics": {
+          "replay": 0,
+          "mass": 2.1316282072803006e-14,
+          "minimum": 0.24113762939900477,
+          "zero": 0,
+          "global": 8.049116928532385e-16,
+          "relative": 0.9332149227071875,
+          "frequency": 0.7535142860076895,
+          "boundary": 5.519926774010409,
+          "topology": 2.3611963936166447,
+          "shuffle": 1.2360270610703952,
+          "projectionRelative": 4.107825191113079e-15,
+          "projectionTopology": 4.773959005888173e-15,
+          "heldoutMAE": 0.03113000119795621,
+          "uncoupledMAE": 0.031130001197956256
+        },
+        "checks": {
+          "replay": true,
+          "conservation": true,
+          "nonnegative": true,
+          "zeroGain": true,
+          "globalPhase": true,
+          "relative": true,
+          "frequency": true,
+          "boundary": true,
+          "topology": true,
+          "shuffle": true
+        }
+      },
+      {
+        "seed": 53,
+        "metrics": {
+          "replay": 0,
+          "mass": 0,
+          "minimum": 0.2677779127666726,
+          "zero": 0,
+          "global": 1.3877787807814457e-15,
+          "relative": 0.9888922078313235,
+          "frequency": 0.8060271361318336,
+          "boundary": 5.646131820044971,
+          "topology": 2.463877880969517,
+          "shuffle": 1.3077944670146564,
+          "projectionRelative": 4.773959005888173e-15,
+          "projectionTopology": 3.552713678800501e-15,
+          "heldoutMAE": 0.03132053034941671,
+          "uncoupledMAE": 0.03132053034941672
+        },
+        "checks": {
+          "replay": true,
+          "conservation": true,
+          "nonnegative": true,
+          "zeroGain": true,
+          "globalPhase": true,
+          "relative": true,
+          "frequency": true,
+          "boundary": true,
+          "topology": true,
+          "shuffle": true
+        }
+      }
+    ],
+    "passed": 40,
+    "total": 40
+  }
+}
