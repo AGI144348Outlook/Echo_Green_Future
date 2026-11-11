@@ -1,0 +1,53 @@
+{
+  "issue": 422,
+  "source_blob": "ff0ecd41bd386d908ea5ae9d3a4879cdbc49ae0e",
+  "source_commit": "a96379c469159412a84a6bda34f1e435aeca771c",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "test_types": 10,
+  "predicates_passed": 40,
+  "predicates_total": 40,
+  "observations": {
+    "max_mass_error": 4.440892098500626e-16,
+    "common_phase_max_l1": 4.423544863740858e-17,
+    "shuffle_l1": [
+      0.011270677159237765,
+      0.013973597746461688
+    ],
+    "relative_l1": [
+      0.05582902399880052,
+      0.05725473208505775
+    ],
+    "frequency_l1": [
+      0.03218670763182038,
+      0.03303950890932518
+    ],
+    "boundary_l1": [
+      0.0009395975471599037,
+      0.0009584317978024266
+    ],
+    "path_triangle_l1": [
+      0.030901255622410823,
+      0.031190125392731475
+    ],
+    "triad_triangle_l1": 0,
+    "heldout_mae_uncoupled": [
+      0.006100030976719798,
+      0.00621959332195213
+    ],
+    "heldout_mae_path": [
+      0.005157639397198416,
+      0.005273001924242659
+    ],
+    "heldout_mae_triangle": [
+      0.005508695484013222,
+      0.005630204386502106
+    ]
+  },
+  "limitation": "triad is alias of triangle pairwise edges; no genuine higher-order comparison; heldout synthetic and not independent generalization; no learning claim",
+  "post_test_issue_comment": 6800628615
+}
