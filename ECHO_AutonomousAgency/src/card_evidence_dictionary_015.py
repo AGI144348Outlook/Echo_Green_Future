@@ -123,7 +123,9 @@ class EvidenceDictionary:
             common = set(self.data[left]["chain"]) & set(self.data[right]["chain"])
             limit = max(2, int(len(self.data) * self.cap))
             candidates = sorted(
-                (c for c in common if self.df[c] <= limit and c != "entity"),
+                (c for c in common if self.df[c] <= limit and c != "entity"
+                 and not (c in (left, right) and c in self.data
+                     and self.data[left]["synset"] != self.data[right]["synset"])),
                 key=lambda c: (self.df[c], -min(
                     self.data[left]["chain"].index(c),
                     self.data[right]["chain"].index(c)), c))
