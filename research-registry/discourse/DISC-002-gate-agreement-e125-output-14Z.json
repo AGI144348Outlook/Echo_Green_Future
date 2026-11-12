@@ -1,0 +1,123 @@
+{
+ "probe": "e125",
+ "falsifier": "T37a",
+ "src_sha256_l3233_3312_l9381_9435": "9cf6464d9de94b23d826c4574b12c14dd3fae9e18e3b5c9e433b48d9ca3665ae",
+ "python": "3.13.18",
+ "rows": [
+  {
+   "row": "C1",
+   "pass": true,
+   "obs": {
+    "R": true,
+    "G": true,
+    "agree": true,
+    "gw": 0,
+    "g_reason": "tool belt empty, cannot deploy",
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol",
+     "name",
+     "status"
+    ]
+   },
+   "pred": {
+    "R": true,
+    "G": true,
+    "agree": true,
+    "gw": 0
+   }
+  },
+  {
+   "row": "A1",
+   "pass": true,
+   "obs": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0,
+    "g_reason": "A-000 failed identity validation: {'identity_symbol': 'resh', 'identity_glyph': 'ר', 'identity_letter': 'resh', 'identity_meaning': 'head beginning leader identity'}",
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ]
+   },
+   "pred": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0
+   }
+  },
+  {
+   "row": "A2",
+   "pass": true,
+   "obs": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0,
+    "g_reason": "A-000 failed identity validation: {'identity_symbol': 'resh', 'identity_glyph': 'ר', 'identity_letter': 'resh', 'identity_meaning': 'head beginning leader identity'}",
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ]
+   },
+   "pred": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0
+   }
+  },
+  {
+   "row": "A3",
+   "pass": true,
+   "obs": {
+    "R": false,
+    "G": false,
+    "agree": true,
+    "gw": 0,
+    "g_reason": "A-000 not found in matrix",
+    "a000_keys": []
+   },
+   "pred": {
+    "R": false,
+    "G": false,
+    "agree": true,
+    "gw": 0
+   }
+  },
+  {
+   "row": "A4",
+   "pass": true,
+   "obs": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0,
+    "g_reason": "A-000 failed identity validation: {'name': 'Governor', 'status': 'INACTIVE', 'identity_symbol': 'resh', 'identity_glyph': 'ר', 'identity_letter': 'resh', 'identity_meaning': 'head beginning leader identity'}",
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol",
+     "name",
+     "status"
+    ]
+   },
+   "pred": {
+    "R": true,
+    "G": false,
+    "agree": false,
+    "gw": 0
+   }
+  }
+ ],
+ "summary": "5/5 as predicted"
+}
