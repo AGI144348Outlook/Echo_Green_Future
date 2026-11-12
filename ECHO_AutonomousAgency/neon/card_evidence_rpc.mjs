@@ -60,7 +60,7 @@ export function createCardEvidenceRpc(manifest, adapter, authorization) {
       const visible = [];
       for (const t of tools.values()) {
         if (await authorization(trustedContext, t.name, "discover")) {
-          visible.push({name:t.name, description:t.title, inputSchema:t.inputSchema});
+          visible.push({name:t.name, description:t.description || t.title, title:t.title, inputSchema:t.inputSchema});
         }
       }
       return result(id, {tools:visible, ttlMs:0, cacheScope:"private"});
