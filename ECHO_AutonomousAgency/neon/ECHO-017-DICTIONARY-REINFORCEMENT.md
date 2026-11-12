@@ -66,3 +66,30 @@ Two separate invocations of `SELECT echo_study.study_round(96)` completed on the
 A limited **hourly study cadence** should invoke the same Neon child-branch procedure without clearing the policy. Each session's outcomes should be recorded in [Issue #438](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438) as observations, not truth. Pause if there is a permission anomaly, repeated failure, a saturated 231-pair candidate space, or stagnation. Never promote proposed claims automatically.
 
 Success requires independent measurements of *source-grounded relation quality, coverage, refusal correctness, retained selection policy and novelty* against a frozen non-learning control. An increased total-step counter is not evidence of independent understanding.
+
+## ECHO-017-T300 — actual five-minute study (2026-11-12)
+
+**Pretest published before execution:** [Issue #438 plan and 300-second amendment](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438#issuecomment-6819972092).  
+**Post-test actual result and limitations:** [Issue #438 actual-results report](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438#issuecomment-6820286482).  
+**Reproducibility:** [passing GitHub Actions run 43192860740](https://github.com/AGI144348Outlook/Echo_Green_Future/actions/runs/43192860740) and downloadable artifact `echo017-300-second-study-evidence`.
+
+A paced Node runner loaded the restricted four-tool dictionary/catalog/evidence manifest, seeded aggregate UCB/EMA state and observation history from the existing Neon child branch, and used an **in-process JSON-RPC application handler** with a frozen, source-shaped lexical dataset. This was **not** a 300-second live connection to the Neon database, a deployed MCP-over-HTTP endpoint, or the full 3³ neuroplastic runtime.
+
+**Observed elapsed monotonic time:** `300.000083491` seconds. **300 actual study actions** at approximately one per second. All 9 preregistered restricted-access and clock-bound tests passed.
+
+| Action | Calls in timed trial |
+|---|---:|
+| `dictionary.lexical_path` | 54 |
+| `catalog.card.get` | 57 |
+| `evidence.edge.trace` | 57 |
+| `evidence.edge.propose` | 132 |
+
+The trial logged **11 provisional lexical candidate relationships**, **121 generic/unrelated abstentions**, **161 revisits** and **7 first-time source encounters**. No vocabulary words were admitted and no claims were promoted.
+
+After execution, all 11 candidate common ancestors were **independently checked against actual Neon development-branch** dictionary chains, both exact `lex:word@1` cards and complete source edge counts. Eleven new **proposed** evidence cards, 11 proposed edges, and 22 derivation links were appended to that child Neon database alongside an experiment report card and source observation. No production/default branch was modified.
+
+The timed run's final **simulated** policy state was stored in the GitHub JSON artifact and `echo017:t300:trial-report@1`. **The active native Neon study policy was intentionally not overwritten**, so its true native history still reads 192 steps. Blindly treating an in-process simulation as a native Neon execution would compromise provenance.
+
+**Interpretation:** positive evidence for restricted, algorithmic, source-aware tool employment over an actual five-minute wall-clock interval; no independent demonstration of improved general contextual understanding. The high proportion of evidence proposal attempts also raises a potential intrinsic-reward imbalance for future evaluation.
+
+**Open next question:** Can the same policy operate over an authenticated *live* MCP/Neon service with equally strong restrictions, and outperform a nonlearning selector on independently adjudicated lexical tasks without reward inflation?
