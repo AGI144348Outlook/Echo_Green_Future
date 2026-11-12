@@ -1,0 +1,78 @@
+name: ECHO-020 grade-one 300-second study and held-out year-end assessment
+on:
+  push:
+    branches: [feature/echo-two-interface-contact-018]
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echo020_*"
+      - ".github/workflows/echo020-grade1.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  study-grade-one:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - name: Checkout source and frozen exam
+        uses: actions/checkout@v4
+      - name: Prepare Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source corpus and PDF/HTML extractors
+        run: |
+          python -m pip install 'nltk==3.9.2' 'pymupdf==1.26.6' 'requests==2.32.5' 'beautifulsoup4==4.14.2'
+          python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+      - name: Pretest issue and key-isolated unit checks
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          echo "Published before experiment: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/448"
+          git rev-parse HEAD
+          python -m unittest discover -s ECHO_AutonomousAgency/experiments -p 'test_echo020_grade1_protocol.py' -v
+          python -m py_compile ECHO_AutonomousAgency/experiments/echo020_grade1_study.py ECHO_AutonomousAgency/experiments/echo020_grade1_score.py
+      - name: Download Echo's last full-source checkpoint
+        uses: actions/download-artifact@v4
+        with:
+          name: echo019-resumed-wordnet-300s
+          run-id: '43316542221'
+          github-token: ${{ github.token }}
+          path: echo019-parent
+      - name: Verify checkpoint and prepare question-only input
+        run: |
+          test -s echo019-parent/echo019_resumed_summary.json
+          test -s echo019-parent/echo017_full_wordnet_episodes.jsonl.gz
+          test -s echo019-parent/parent_echo017_episodes.jsonl.gz
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("ECHO_AutonomousAgency/experiments/echo020_grade1_heldout_exam.json")
+          data=json.loads(path.read_text())
+          safe={"exam_id":data["exam_id"],"questions":[
+            {k:q[k] for k in ("id","strand","passage","question")}
+            for q in data["questions"]]}
+          assert all("acceptable" not in q for q in safe["questions"])
+          Path("echo020_public_exam_prompts.json").write_text(json.dumps(safe))
+          print("Exam prompts isolated from grade key",len(safe["questions"]))
+          PY
+      - name: Restore full WordNet Echo, study curriculum for actual 300 seconds
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          python -u ECHO_AutonomousAgency/experiments/echo020_grade1_study.py \
+            --parent echo019-parent \
+            --out echo020-results \
+            --prompts echo020_public_exam_prompts.json \
+            --seconds 300
+      - name: Administer and grade locked year-end assessment
+        run: |
+          python ECHO_AutonomousAgency/experiments/echo020_grade1_score.py echo020-results
+      - name: Preserve all evidence, raw answers, and grade distribution
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo020-grade1-300s-yearend-results
+          path: echo020-results/
+          if-no-files-found: warn
+          retention-days: 30
