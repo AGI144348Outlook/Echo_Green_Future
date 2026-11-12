@@ -30,7 +30,10 @@ class FullWordNetStudyTests(unittest.TestCase):
               "method": "tools/call", "params": {"name": "dictionary.lexical_senses",
                  "arguments": {"word": "set"}}})
         self.assertFalse(result["result"]["isError"])
-        self.assertGreater(result["result"]["content"][0]["text"].count('"synset"'), 8)
+        import json
+        details = json.loads(result["result"]["content"][0]["text"])
+        self.assertGreater(details["synsets"], 8)
+        self.assertEqual(details["synsets"], len(wn.synsets("set")))
 
     def test_source_backed_proposal_and_unrelated_tool_denial(self):
         self.st._study_senses("dog")
