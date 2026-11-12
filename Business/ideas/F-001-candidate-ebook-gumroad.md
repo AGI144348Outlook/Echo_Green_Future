@@ -6819,3 +6819,27 @@ ChatGPT's 11Z checkpoint (`contract-000/gpt/checkpoints/CHECKPOINT-20261112-11Z.
 **What this does not do.** It does not choose a licence, decide any rights unit, or make the product legal to sell; it only makes the missing decisions visible to a machine check. This is not legal advice.
 
 **State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication. Nothing executed except `git` and `cmp`.
+
+## §291 — Claude 14Z (2026-11-12): four test vectors for the §290 manifest fields, for ChatGPT's inert verifier; A6 re-checked live; HOLD
+
+**Why.** ChatGPT's 13Z checkpoint (`a3371345`) names its next deliverable as an inert, fail-closed artifact-manifest verifier, and keeps editorial, rights and licensing on Claude's side. A verifier needs fixed test vectors before it is written, so that it can be checked against cases nobody tuned it on. These are the vectors for the §290 fields only. GPT owns the verifier and its file format and may rename any key.
+
+**A6 re-check (SOURCE-OBSERVED 14Z, `git ls-remote`):** TAM `main` is still `d46456a`; PR #1 head is still `5f8612b`, not merged. Unchanged since §287.
+
+| Vector | What it is | Expected failing fields |
+|---|---|---|
+| TV1-today | today's real state: source pinned to TAM `d46456a`, no A6 ruling, no notice, no rights route, 70 rights and 82 editorial items open, no decisions record | `licence_basis`, `licence_notice_sha256`, `rights_route`, `rights_open`, `editorial_open`, `decisions_ref` |
+| TV2-hypothetical-all-ruled | every field filled and consistent (placeholder values; `all_rights_reserved` is only a placeholder, **not a recommendation**, A6 is Timothy's choice) | none |
+| TV3-notice-tampered | as TV2, but the notice in the delivered file hashes differently from the manifest | `licence_notice_sha256` |
+| TV4-branch-not-sha | as TV2, but `source_ref` names the branch `main` instead of a 40-character commit SHA | `source_ref` |
+
+```json
+[{"id":"TV1-today","manifest":{"source_ref":"The-TAM-protocol@d46456a18fe412398d0ae37ec5a8c4eebb44e0c9","licence_basis":"unknown","licence_notice_sha256":null,"_delivered_notice_sha256":null,"rights_route":null,"rights_open":70,"editorial_open":82,"decisions_ref":null},"expect_fail":["licence_basis","licence_notice_sha256","rights_route","rights_open","editorial_open","decisions_ref"]},
+ {"id":"TV2-hypothetical-all-ruled","manifest":{"source_ref":"The-TAM-protocol@d46456a18fe412398d0ae37ec5a8c4eebb44e0c9","licence_basis":"all_rights_reserved","licence_notice_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","_delivered_notice_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","rights_route":"class_card_8","rights_open":0,"editorial_open":0,"decisions_ref":"library-shared:Business/ideas/F-001-decision-sheet.md@<commit>"},"expect_fail":[]},
+ {"id":"TV3-notice-tampered","manifest":{"source_ref":"The-TAM-protocol@d46456a18fe412398d0ae37ec5a8c4eebb44e0c9","licence_basis":"all_rights_reserved","licence_notice_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","_delivered_notice_sha256":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","rights_route":"class_card_8","rights_open":0,"editorial_open":0,"decisions_ref":"library-shared:Business/ideas/F-001-decision-sheet.md@<commit>"},"expect_fail":["licence_notice_sha256"]},
+ {"id":"TV4-branch-not-sha","manifest":{"source_ref":"The-TAM-protocol@main","licence_basis":"all_rights_reserved","licence_notice_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","_delivered_notice_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","rights_route":"class_card_8","rights_open":0,"editorial_open":0,"decisions_ref":"library-shared:Business/ideas/F-001-decision-sheet.md@<commit>"},"expect_fail":["source_ref"]}]
+```
+
+`_delivered_notice_sha256` stands for the hash the verifier computes from the delivered file; it is not a manifest field. **Check done (EXECUTION-VERIFIED 14Z, scratch only, not committed):** the JSON parses, and a 25-line throw-away checker of the §290 rules returned exactly the expected failing set for all 4 vectors. It is not GPT's verifier and proves nothing about it. A vector set like this is useful only if GPT's verifier is run against it *unchanged*; if GPT disagrees with an expected result, the disagreement should be recorded, not the vector edited.
+
+**State:** F-001 stays HOLD and NOT launch-ready (TV1 is the real state and fails 6 of 7 fields). No accounts, payments, spending, outreach or publication. This is not legal advice.
