@@ -1,0 +1,87 @@
+{
+  "issue": 447,
+  "status": "offline local source executed, GitHub committed source not byte-replayed",
+  "local_source_sha256": "1a994af7035af9b36b259979d28b48a022e9291c50733e499676c90fd127b16b",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "steps": 16,
+  "checks_per_seed": 10,
+  "passed": 40,
+  "failed": 0,
+  "columns": [
+    "seed",
+    "shuffle_L1phase",
+    "triad_ablation",
+    "fourbody_ablation",
+    "detune",
+    "global_phase_error",
+    "seed_contrast"
+  ],
+  "rows": [
+    [
+      11,
+      0.6663702472511043,
+      0.5114390315936808,
+      0.23775340475223639,
+      0.1823284492159739,
+      6.106226635438361e-16,
+      15.79994621787108
+    ],
+    [
+      23,
+      0.6415377501814373,
+      0.45678978808301984,
+      0.21834563145284547,
+      0.18454892853381819,
+      3.885780586188048e-16,
+      15.658242022053457
+    ],
+    [
+      37,
+      1.163282346308153,
+      0.5058254044428279,
+      0.21470745477869863,
+      0.19240208806934253,
+      1.1657341758564144e-15,
+      15.596789555448726
+    ],
+    [
+      53,
+      0.6189969060040877,
+      0.4983759083232284,
+      0.15178415005720472,
+      0.18538403873664064,
+      4.996003610813204e-16,
+      15.866690436350902
+    ]
+  ],
+  "events_per_seed": [
+    [
+      "out",
+      3
+    ],
+    [
+      "return",
+      5
+    ],
+    [
+      "out",
+      8
+    ],
+    [
+      "return",
+      10
+    ]
+  ],
+  "limitations": [
+    "All 27 IDs move together at fixed scheduled ticks; no autonomous border detection or bidirectional causal influence",
+    "No-op comparison uses identical zero-strength invocations and is weak",
+    "Projection invertibility is arithmetic, not a dynamic spatial model",
+    "No genuine semantic learning, physical precession or measured prediction",
+    "Committed source was retyped with formatting changes; exact-byte committed-source replay not performed"
+  ]
+}
