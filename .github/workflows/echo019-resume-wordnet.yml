@@ -1,0 +1,59 @@
+name: ECHO-019 resume full WordNet source study from archived state
+on:
+  push:
+    branches: [feature/echo-two-interface-contact-018]
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echo019_resume_wordnet.py"
+      - ".github/workflows/echo019-resume-wordnet.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  recover-and-study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install complete Princeton WordNet
+        run: |
+          python -m pip install 'nltk==3.9.2'
+          python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+      - name: Recover original ECHO-017 exact action and edge archive
+        uses: actions/download-artifact@v4
+        with:
+          name: echo017-full-wordnet-300s
+          run-id: '43295960761'
+          github-token: ${{ github.token }}
+          path: parent-echo017
+      - name: Confirm pre-test issue and runner syntax
+        run: |
+          echo "Pre-test study continuation: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438"
+          echo "Before running, verify both the 204144-episode and 9195-edge original archives"
+          python -m py_compile ECHO_AutonomousAgency/experiments/echo019_resume_wordnet.py
+          test -s parent-echo017/echo017_full_wordnet_episodes.jsonl.gz
+          test -s parent-echo017/echo017_full_wordnet_proposed_edges.jsonl.gz
+          test -s parent-echo017/echo017_full_wordnet_summary.json
+      - name: Restore prior dictionary, cards, graph, policy, then study 300 seconds unpaced
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          python -u ECHO_AutonomousAgency/experiments/echo019_resume_wordnet.py \
+            --parent parent-echo017 \
+            --out echo019-results \
+            --seconds 300
+      - name: Preserve prior evidence and new session separately
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo019-resumed-wordnet-300s
+          path: echo019-results/
+          if-no-files-found: warn
+          retention-days: 30
