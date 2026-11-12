@@ -1,0 +1,141 @@
+{
+  "schema_version": "ECHO-017-1",
+  "study": "Independent dictionary reinforcement study",
+  "status": "experimental nondeployed MCP tool list; persistent activity runs through a restricted Neon stored procedure (not live MCP HTTP)",
+  "intended_source_neon_project": "lexicon-catalog",
+  "intended_source_neon_branch": "echo-card-evidence-dictionary-dev-20261112",
+  "allowed_namespaces": [
+    "dictionary",
+    "catalog",
+    "evidence"
+  ],
+  "discoverable_tool_count": 4,
+  "dictionary_purpose": "Continuous, positive contextual development—not a deficiency-triggered requirement.",
+  "tools": [
+    {
+      "name": "dictionary.lexical_path",
+      "title": "Read a pre-admitted WordNet sense and its recorded hypernym path",
+      "mode": "read",
+      "sql": "echo_dictionary.wordnet_context (view over genesis.wordnet_chain)",
+      "guard": "trusted Echo runtime must enforce Lobby-admitted word before invocation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Dictionary — Contextual Understanding Resource. Purpose: continuous development, expansion, and refinement of contextual understanding. Use it for gaining additional meaning, expanding vocabulary, distinguishing lexical senses, grounding concepts, and building semantic relationships through definitions and hypernym pathways. Admitted words only; read-only; no automatic vocabulary admission."
+    },
+    {
+      "name": "catalog.card.get",
+      "title": "Read one versioned contextual card",
+      "mode": "read",
+      "sql": "card_protocol.card_revisions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "card_id",
+          "revision"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Use it for examining exact versioned index cards, their recorded content, original provenance, and revision-specific contextual meaning. Read-only."
+    },
+    {
+      "name": "evidence.edge.trace",
+      "title": "Read proposed evidence relations and sources for one node",
+      "mode": "read",
+      "sql": "evidence_net.edges + evidence_net.edge_sources",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string"
+          },
+          "max_edges": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Use it for relating evidence-network nodes, tracing directed semantic relationships and source-backed lexical links, and investigating conceptual connections. Read-only."
+    },
+    {
+      "name": "evidence.edge.propose",
+      "title": "Propose source-attributed evidence relation without promotion",
+      "mode": "proposal_only",
+      "sql": "evidence_net.edges",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "edge_id": {
+            "type": "string"
+          },
+          "source_node": {
+            "type": "string"
+          },
+          "target_node": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string"
+          },
+          "relation_domain": {
+            "type": "string",
+            "enum": [
+              "lexical",
+              "empirical",
+              "operational"
+            ]
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "supporting_card_id": {
+            "type": "string"
+          },
+          "supporting_card_revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "edge_id",
+          "source_node",
+          "target_node",
+          "relation_type",
+          "relation_domain",
+          "source_ref"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Use it for proposing and attributing a provisional evidence-network relationship. It never proves a claim or grants an action."
+    }
+  ],
+  "description_security": "Tool metadata does not grant rights. The restricted study proc and backend must enforce permissions independently.",
+  "restricted_discovery_mode": true,
+  "unrelated_tools": false,
+  "automatic_vocabulary_admission": false,
+  "verified_knowledge_promotion": false,
+  "external_network_tools": false
+}
