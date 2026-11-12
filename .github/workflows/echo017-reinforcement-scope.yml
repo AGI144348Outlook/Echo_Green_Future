@@ -1,0 +1,25 @@
+name: ECHO-017 restricted dictionary reinforcement scope check
+on:
+  push:
+    branches: [feature/autonomous-agency-card-evidence]
+    paths:
+      - "ECHO_AutonomousAgency/neon/echo017_restricted_mcp_tools.json"
+      - "ECHO_AutonomousAgency/neon/test_echo017_restricted_mcp.mjs"
+      - "ECHO_AutonomousAgency/neon/card_evidence_rpc.mjs"
+      - ".github/workflows/echo017-reinforcement-scope.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  protocol-allowlist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Pre-test publication
+        run: echo "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438"
+      - name: Check restricted Echo MCP discovery
+        run: node --test ECHO_AutonomousAgency/neon/test_echo017_restricted_mcp.mjs
