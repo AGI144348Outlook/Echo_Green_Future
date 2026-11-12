@@ -1,0 +1,119 @@
+{
+ "probe": "e127",
+ "proposal": "ChatGPT T41 8b9f45b3 (falsifier as written)",
+ "src_sha256_l3233_3312_l9381_9435": "9cf6464d9de94b23d826c4574b12c14dd3fae9e18e3b5c9e433b48d9ca3665ae",
+ "python": "3.13.18",
+ "rows": [
+  {
+   "row": "F1",
+   "pass": true,
+   "obs": {
+    "gov": "refuse",
+    "gov_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "resh": "admit",
+    "resh_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "disagree": true,
+    "T41_falsified": true
+   },
+   "pred": {
+    "gov": "refuse",
+    "gov_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "resh": "admit",
+    "resh_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "disagree": true,
+    "T41_falsified": true
+   }
+  },
+  {
+   "row": "F2",
+   "pass": true,
+   "obs": {
+    "gov": "refuse",
+    "gov_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "resh": "refuse",
+    "resh_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "disagree": false,
+    "snapshot_unchanged": true,
+    "T41_falsified": false
+   },
+   "pred": {
+    "gov": "refuse",
+    "gov_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "resh": "refuse",
+    "resh_ev": {
+     "k": 0,
+     "a": 0,
+     "g": 0,
+     "net": 0
+    },
+    "disagree": false,
+    "snapshot_unchanged": true,
+    "T41_falsified": false
+   }
+  },
+  {
+   "row": "F3",
+   "pass": true,
+   "obs": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 0
+   }
+  },
+  {
+   "row": "F4",
+   "pass": true,
+   "obs": {
+    "same_snapshot": true,
+    "verdict_depends_on_object": true
+   },
+   "pred": {
+    "same_snapshot": true,
+    "verdict_depends_on_object": true
+   }
+  }
+ ],
+ "summary": "4/4 as predicted"
+}
