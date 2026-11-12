@@ -18,3 +18,7 @@ This does **not** make every dictionary definition true in ECHO's VGM and does n
 - inspect/save the resulting matrix
 
 During Recess, the 22 glyph documents remain blocks. The matrix environment is the dictionary's cover/work surface: ECHO can use the blocks as index handles to matrices it constructs.
+
+## Evidence-network and index-card development extension (2026-11-12)
+
+The experimental [three-system Neon bridge](../neon/README.md) makes the original dictionary/matrix idea explicit as a **dictionary + revisioned index-card catalog + source-linked evidence network**, without replacing or rewriting this module. Echo's word-only/glyph-index boundaries and homework/classroom admission restrictions remain operative. The new graph links are provisional and source-attributed; card revisions are exact; admission, validation and factual correctness require separate authorized checks. This extension is on a child feature branch, not deployed in Echo's operational environment.
