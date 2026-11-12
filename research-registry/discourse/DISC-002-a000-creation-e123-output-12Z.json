@@ -1,0 +1,101 @@
+{
+ "probe": "e123",
+ "src_sha256_l3233_3312": "0c2eac98a28b99198e10b471c36da71f66ed26eed80094a844327db52e5cb688",
+ "python": "3.13.18",
+ "rows": [
+  {
+   "row": "C1",
+   "pass": true,
+   "obs": {
+    "validate_before": true,
+    "anchor_called": false,
+    "a000_present": true,
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol",
+     "name",
+     "status"
+    ],
+    "validate_after": true,
+    "writes": 0,
+    "refused": false
+   },
+   "pred": {
+    "validate_before": true,
+    "anchor_called": false,
+    "writes": 0
+   },
+   "known_before": "c14ef213d030ca7aa40b849ad8a0ee4005e4fb2f4741f9c5ed66a65f70c37d14",
+   "known_after": "c14ef213d030ca7aa40b849ad8a0ee4005e4fb2f4741f9c5ed66a65f70c37d14"
+  },
+  {
+   "row": "T36c-a",
+   "pass": true,
+   "obs": {
+    "validate_before": false,
+    "anchor_called": true,
+    "a000_present": true,
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ],
+    "validate_after": true,
+    "writes": 2,
+    "refused": false
+   },
+   "pred": {
+    "validate_before": false,
+    "anchor_called": true,
+    "a000_present": true,
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ],
+    "validate_after": true,
+    "refused": false
+   },
+   "known_before": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "known_after": "8fcd8d340064df71029879acab32ebb65429b4f3eb06f880df079bcc7e80e172"
+  },
+  {
+   "row": "T36c-b",
+   "pass": true,
+   "obs": {
+    "validate_before": false,
+    "anchor_called": true,
+    "a000_present": true,
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ],
+    "validate_after": true,
+    "writes": 1,
+    "refused": false
+   },
+   "pred": {
+    "validate_before": false,
+    "anchor_called": true,
+    "a000_present": true,
+    "a000_keys": [
+     "identity_glyph",
+     "identity_letter",
+     "identity_meaning",
+     "identity_symbol"
+    ],
+    "validate_after": true,
+    "refused": false
+   },
+   "known_before": "bc9783d917dcb3903127146969f2a74a0461ac5799ad1aa89f166f54fdb8e2d0",
+   "known_after": "8fcd8d340064df71029879acab32ebb65429b4f3eb06f880df079bcc7e80e172"
+  }
+ ],
+ "summary": "3/3 as predicted"
+}
