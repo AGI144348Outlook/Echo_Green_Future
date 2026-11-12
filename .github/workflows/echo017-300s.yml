@@ -1,0 +1,42 @@
+name: ECHO-017 real 300-second dictionary reinforcement study
+
+on:
+  push:
+    branches: [feature/autonomous-agency-card-evidence]
+    paths:
+      - 'ECHO_AutonomousAgency/experiments/echo017_timed_300s.mjs'
+      - 'ECHO_AutonomousAgency/experiments/test_echo017_timed_300s.mjs'
+      - 'ECHO_AutonomousAgency/experiments/echo017_neon_study_seed.json'
+      - 'ECHO_AutonomousAgency/neon/echo017_restricted_mcp_tools.json'
+      - '.github/workflows/echo017-300s.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  five-minute-study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Confirm pre-test publication
+        run: |
+          echo "Published before test: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438#issuecomment-6819972092"
+          git rev-parse HEAD
+      - name: Validate restricted policy and fast monotonic-clock checks
+        run: |
+          node --test ECHO_AutonomousAgency/neon/test_echo017_restricted_mcp.mjs
+          node --test ECHO_AutonomousAgency/experiments/test_echo017_timed_300s.mjs
+      - name: Run actual 300-second reinforcement study
+        run: |
+          node ECHO_AutonomousAgency/experiments/echo017_timed_300s.mjs --out echo017-300s.json
+      - name: Retain complete replayable findings
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo017-300-second-study-evidence
+          path: echo017-300s.json
+          retention-days: 30
