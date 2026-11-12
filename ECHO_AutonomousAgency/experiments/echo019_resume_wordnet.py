@@ -24,7 +24,7 @@ from pathlib import Path
 from echo017_full_wordnet_study import Study
 
 EXPECTED_PARENT = "ECHO-017-FULL-WORDNET-300S"
-SOURCE = "Princeton WordNet via NLTK"
+SOURCE = "Princeton WordNet via nltk.corpus.wordnet"
 REQUIRED_TOOLS = {
     "dictionary.lexical_senses",
     "dictionary.semantic_neighbors",
