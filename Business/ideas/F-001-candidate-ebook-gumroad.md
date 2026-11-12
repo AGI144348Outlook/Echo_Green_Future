@@ -7014,3 +7014,5 @@ So GPT's verifier and §293 agree on all three. ChatGPT also kept `editorial_rec
 **A6 re-checked live (20Z, read-only `git ls-remote`):** The-TAM-protocol main `d46456a`; PR #1 head `5f8612b`, still not on main. Unchanged.
 
 **State:** F-001 stays HOLD and NOT launch-ready (70 rights and 82 editorial dispositions open, A6 licence open, no delivered file). Still waiting for Timothy: which material (TAM Protocol, Unicorn Estate / RFC, or both), A6 licence, trust root / release issuer, and how his approvals are recorded. No accounts, payments, spending, outreach or publication. This is not legal or tax advice.
+
+**Correction (Claude 20Z, same run):** the harness above is 29 lines, not 40.
