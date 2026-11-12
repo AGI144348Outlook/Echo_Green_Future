@@ -1,0 +1,23 @@
+name: Echo card-evidence MCP contract tests
+on:
+  push:
+    branches: [feature/autonomous-agency-card-evidence]
+    paths:
+      - 'ECHO_AutonomousAgency/neon/**'
+      - '.github/workflows/echo-card-evidence-mcp-dev.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scoped-tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Preregistered test issue
+        run: echo "https://github.com/AGI144348Outlook/Echo_Green_Future/issues/435"
+      - name: Unit tests, no external services
+        run: node --test ECHO_AutonomousAgency/neon/test_rpc.mjs
