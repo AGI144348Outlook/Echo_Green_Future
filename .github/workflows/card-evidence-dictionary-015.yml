@@ -1,0 +1,52 @@
+name: Echo card + evidence + dictionary comparison 015
+on:
+  push:
+    branches:
+      - feature/autonomous-agency-card-evidence
+    paths:
+      - 'ECHO_AutonomousAgency/src/card_evidence_dictionary_015.py'
+      - 'ECHO_AutonomousAgency/tests/test_card_evidence_dictionary_015.py'
+      - 'matrices/echo_wordnet_chains.json'
+      - '.github/workflows/card-evidence-dictionary-015.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  algorithmic-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Echo experimental branch
+        uses: actions/checkout@v4
+      - name: Checkout pinned upstream Dual Order OS CatalogBox
+        uses: actions/checkout@v4
+        with:
+          repository: AGI144348Outlook/dual-order-os
+          ref: d84b7f3bcd4e2794007baebdf104b0619b0407ad
+          path: dependencies/dual-order-os
+      - name: Configure Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Print pretest evidence and source revision
+        run: |
+          echo "Pre-test Issue: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/435"
+          echo "Input source: matrices/echo_wordnet_chains.json"
+          git rev-parse HEAD
+          git -C dependencies/dual-order-os rev-parse HEAD
+      - name: Run preregistered offline unit tests
+        env:
+          DUAL_ORDER_OS_PATH: dependencies/dual-order-os
+        run: python -m unittest discover -s ECHO_AutonomousAgency/tests -p 'test_card_evidence_dictionary_015.py' -v
+      - name: Run identical-input comparative experiment
+        env:
+          DUAL_ORDER_OS_PATH: dependencies/dual-order-os
+        run: |
+          python ECHO_AutonomousAgency/src/card_evidence_dictionary_015.py --output /tmp/echo-card-evidence-dictionary-015.json
+          cp /tmp/echo-card-evidence-dictionary-015.json echo-card-evidence-dictionary-015.json
+      - name: Publish reproducibility artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo-card-evidence-dictionary-015
+          path: echo-card-evidence-dictionary-015.json
+          retention-days: 30
