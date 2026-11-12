@@ -1,0 +1,140 @@
+{
+ "probe": "e124",
+ "falsifier": "T38/T39 zero-write-events instrument",
+ "src_sha256_l3233_3312_l9381_9435": "9cf6464d9de94b23d826c4574b12c14dd3fae9e18e3b5c9e433b48d9ca3665ae",
+ "python": "3.13.18",
+ "rows": [
+  {
+   "row": "E1",
+   "pass": true,
+   "obs": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 1
+   },
+   "pred": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 1
+   }
+  },
+  {
+   "row": "E2",
+   "pass": true,
+   "obs": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 2,
+    "a": 4,
+    "g": 0,
+    "net": 0
+   }
+  },
+  {
+   "row": "E3",
+   "pass": true,
+   "obs": {
+    "k": 2,
+    "a": 4,
+    "g": 1,
+    "net": 1
+   },
+   "pred": {
+    "k": 2,
+    "a": 4,
+    "g": 1,
+    "net": 1
+   }
+  },
+  {
+   "row": "E4",
+   "pass": true,
+   "obs": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "returned": true
+  },
+  {
+   "row": "E5",
+   "pass": true,
+   "obs": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "reason": "tool belt empty, cannot deploy"
+  },
+  {
+   "row": "E6",
+   "pass": true,
+   "obs": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "reason": "A-000 failed identity validation: {'identity_symbol': 'resh', 'identity_glyph': 'ר', 'identity_letter': 'resh', 'identity_meaning': 'head beginning leader identity'}"
+  },
+  {
+   "row": "E7",
+   "pass": true,
+   "obs": {
+    "k": 2,
+    "a": 0,
+    "g": 0,
+    "net": 1
+   },
+   "pred": {
+    "k": 2,
+    "a": 0,
+    "g": 0,
+    "net": 1
+   }
+  },
+  {
+   "row": "E8",
+   "pass": true,
+   "obs": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   },
+   "pred": {
+    "k": 0,
+    "a": 0,
+    "g": 0,
+    "net": 0
+   }
+  }
+ ],
+ "summary": "8/8 as predicted"
+}
