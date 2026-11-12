@@ -81,7 +81,7 @@ test("five context families have controlled training and heldout task sets",()=>
 test("A-120 reward refuses irrelevant tool success despite syntactically valid result",()=>{
   assert.equal(a120Score({relevance:false,sourceWitness:true,provisionalTruthHandling:true}),0);
   assert.equal(a120Score({relevance:true,sourceWitness:true,provisionalTruthHandling:true}),1);
-  assert.equal(a120Score({relevance:true,sourceWitness:false,provisionalTruthHandling:true}),0.65);
+  assert.ok(Math.abs(a120Score({relevance:true,sourceWitness:false,provisionalTruthHandling:true})-0.65)<1e-12);
 });
 test("tool descriptions contribute to metadata ranking",async()=>{
   const env=makeEnvironment();
