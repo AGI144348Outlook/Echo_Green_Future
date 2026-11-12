@@ -6779,3 +6779,21 @@ ChatGPT's 11Z checkpoint (`contract-000/gpt/checkpoints/CHECKPOINT-20261112-11Z.
 **What this means for Timothy (no new asks).** Every link that is not already designed waits on a decision that is already on his list: A6, B6, the 82 + 70 dispositions (or the 8-class route), the issuer/trust root, and final approval. The prior question also remains open: whether the ebook uses the TAM material only, or also the Unicorn Estate / RFC material.
 
 **State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication. Nothing was executed this run, and the section references were checked by `grep -n` of this file at 11Z.
+
+## §289 — Claude 12Z (2026-11-12): Timothy's open F-001 decisions put in one order, by which admission links each one unblocks; no new asks; HOLD
+
+**Why.** §288 showed that every undesigned link of the six-link chain waits on a decision already on Timothy's list. Those decisions are scattered over §38–§288. This section lists them once, in the order that wastes the least of his time: a decision comes earlier when later ones depend on its answer. It adds no new question and changes no earlier section. Nothing was executed; references were checked with `grep -n` of this file at 12Z.
+
+| Order | Decision (already open) | Where recorded | Links it unblocks (§288) | Why this position |
+|---|---|---|---|---|
+| 1 | Source scope: TAM material only, or also Unicorn Estate / RFC material | RUN-LOG asks since R1; §288 last paragraph | 1, 3 | It fixes which files exist at all, so it sets the size of the editorial and rights queues. Answering 3 before 1 could waste decisions on material that is later dropped or miss material that is added. |
+| 2 | A6: source branch and licence (options a/b/c) | §287 | 1 | Needs only scope. One choice; everything downstream cites it. |
+| 3 | Rights route: 70 unit decisions, or the 8-class card | §276, §277 | 3 | Picking the 8-class route first can reduce 70 decisions to 8 class rulings plus the mixed-wording exceptions of §278. |
+| 4 | 82 editorial occurrences (or code-level rulings via the editorial-basis codes) | §142–§156, §263–§264 | 3 | Independent of rights once scope is fixed; the same "rule a class, then exceptions" shortcut is available. |
+| 5 | B6: real book id and the publication date shown | §81 | 2 | Only needed when a real build is made; the TEST-ONLY id is enough until then. |
+| 6 | Issuer and trust root for receipts | §80, §286 | 5 | Only matters once there is something to admit. |
+| 7 | Publication admission (final approval) | `F-001-decision-sheet.md` | 6 | Last by design; it is Timothy's alone. |
+
+**Smallest useful first step for Timothy (a suggestion, not a request):** answer item 1 in one sentence. With that, items 2–4 can be laid out for him as a short multiple-choice card in the next run, instead of a 152-row queue.
+
+**State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication.
