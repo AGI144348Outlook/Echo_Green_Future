@@ -37,7 +37,8 @@
           "revision"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for examining exact versioned index cards, their recorded content, original provenance, and revision-specific contextual meaning. Read-only."
     },
     {
       "name": "catalog.configuration.resolve",
@@ -60,7 +61,8 @@
           "revision"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for assembling contextual perspectives from pinned index card revisions, tracing their membership in a specific configuration. Read-only."
     },
     {
       "name": "catalog.card.propose",
@@ -98,7 +100,8 @@
           "body"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for proposing a new, explicitly provisional index card revision and source context. Never grants approval, executes operations, or validates truth."
     },
     {
       "name": "evidence.node.get",
@@ -116,7 +119,8 @@
           "node_id"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for examining a particular evidence-network node, sourced concept, observation, or claim in its own contextual record. Read-only."
     },
     {
       "name": "evidence.edge.trace",
@@ -139,7 +143,8 @@
           "node_id"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for relating evidence-network nodes, tracing directed semantic relationships and source-backed lexical links, and investigating conceptual connections. Read-only."
     },
     {
       "name": "evidence.edge.propose",
@@ -189,7 +194,8 @@
           "source_ref"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Use it for proposing and attributing a provisional evidence-network relationship. It never proves a claim or grants an action."
     },
     {
       "name": "dictionary.lexical_path",
@@ -208,7 +214,8 @@
           "word"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Dictionary — Contextual Understanding Resource. Purpose: continuous development, expansion, and refinement of contextual understanding. Use it for gaining additional meaning, expanding vocabulary, distinguishing lexical senses, grounding concepts, and building semantic relationships through definitions and hypernym pathways. Admitted words only; read-only; no automatic vocabulary admission."
     },
     {
       "name": "dictionary.network.compare",
@@ -236,7 +243,8 @@
           "right"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Dictionary + Evidence Networking — Contextual Understanding Resource. Use it for relating existing vocabulary, exploring source-linked concept connections, grounding a lexical comparison in dictionary senses and evidence-network pathways, and distinguishing provisional associations from verified facts. Admitted words only; read-only; no automatic admission."
     }
   ],
   "resourceTemplates": [
@@ -267,5 +275,7 @@
   "system": "Echo autonomous-agency",
   "dictionaryIntegrated": true,
   "neon_project": "lexicon-catalog",
-  "neon_branch": "echo-card-evidence-dictionary-dev-20261112"
+  "neon_branch": "echo-card-evidence-dictionary-dev-20261112",
+  "purpose": "Tools advertise their positive contextual contributions; selection is based on capability descriptions and verified outcomes, not only missing-knowledge triggers.",
+  "comprehension_claim": "Tool invocation alone does not prove contextual understanding; test outcome-based functional competence separately."
 }
