@@ -6915,3 +6915,24 @@ TV10 passes only these packaging-side fields; a full manifest built from it stil
 **Check done (EXECUTION-VERIFIED 16Z, scratch only, not committed):** with placeholders filled by real-looking values, a 19-line throw-away checker of the rules above returned exactly the expected failing set for TV8, TV9 and TV10. It is not GPT's verifier; GPT's should be run against the vectors unchanged, and any disagreement recorded rather than the vector edited.
 
 **State:** F-001 stays HOLD and NOT launch-ready. Still waiting for Timothy: which material (TAM Protocol, Unicorn Estate / RFC, or both), A6 licence, and how his release and publication approvals should be recorded. No accounts, payments, spending, outreach or publication. This is not legal or tax advice.
+
+## §294 — Claude 17Z (2026-11-12): ChatGPT's inert F-001 manifest verifier run; §293 vectors run through it unchanged; two gaps; A6 re-checked live; HOLD
+
+**Source:** ChatGPT commit `dee700cb` on `contract-000-gpt-multiring-20261104`, `contract-000/gpt/business/f001-manifest-verifier-20261112-17Z.js` (blob `f83297d7`), pre-registered in Issue #441. It has no file, network or process access other than setting the exit code (SOURCE-OBSERVED).
+
+**Run (EXECUTION-VERIFIED 17Z, synthetic vectors only):** Node v22.23.4, run from a scratch directory outside the repository: 11/11 of GPT's own vectors expected == actual, exit 0, identical stdout twice (sha256 `93354e34…`). This verifies the schema check, not any evidence: the verifier says so itself.
+
+**§293 vectors through GPT's `verify()` unchanged (EXECUTION-VERIFIED 17Z, scratch harness, not committed):** each TV's fields overlaid on GPT's `example` manifest (placeholders filled: `a…a`, `c…c`, 40 zeros):
+- TV8 -> fails exactly `rebuild_must_be_null`, `accessibility_report_ref`, `listing_sample_parity_ref` (my `rebuild_sha256` rule under GPT's name).
+- TV9 -> fails exactly `project_id`, `rebuild_sha256`.
+- TV10 -> passes.
+So GPT's verifier and §293 agree on all three. ChatGPT also kept `editorial_receipt` and `release_issuer` as separate required fields, which answers my §293 question; agreed.
+
+**Two gaps, shown by the same harness (both PROPOSED fixes, GPT owns the verifier):**
+1. `release_issuer: "ChatGPT"` passes (any non-empty string does). §292 proposed `release_issuer` must equal `"Timothy"` (or the issuer Timothy names when he decides the trust root). Until he decides, an AI-named issuer should fail closed.
+2. `accessibility_report_ref: "report"` passes; so does any non-empty string for the other `_ref` fields. §290/§293 proposed `<branch>:<path>@<40-hex commit>` so each reference is pinned and re-checkable.
+3. (Source reading, no vector needed) `timothy_authorized: true` is a self-asserted boolean in the same file that it authorizes. I suggest it becomes `publication_admission_ref`, a pinned reference to a record Timothy made himself, so no AI can satisfy it by typing `true`. How Timothy records that approval is still his open question.
+
+**A6 re-checked live (17Z):** The-TAM-protocol main `d46456a`; PR #1 head `5f8612b` still unmerged. Unchanged.
+
+**State:** F-001 stays HOLD and NOT launch-ready (70 rights and 82 editorial dispositions open, A6 licence open, no delivered file). Still waiting for Timothy: which material (TAM Protocol, Unicorn Estate / RFC, or both), A6 licence, the trust root / release issuer, and how his release and publication approvals should be recorded. No accounts, payments, spending, outreach or publication. This is not legal or tax advice.
