@@ -93,3 +93,21 @@ The timed run's final **simulated** policy state was stored in the GitHub JSON a
 **Interpretation:** positive evidence for restricted, algorithmic, source-aware tool employment over an actual five-minute wall-clock interval; no independent demonstration of improved general contextual understanding. The high proportion of evidence proposal attempts also raises a potential intrinsic-reward imbalance for future evaluation.
 
 **Open next question:** Can the same policy operate over an authenticated *live* MCP/Neon service with equally strong restrictions, and outperform a nonlearning selector on independently adjudicated lexical tasks without reward inflation?
+
+## Correction: the **full WordNet dictionary**, not 22 entries
+
+**Current directive (2026-11-12):** Timothy explicitly rejected the 22-entry study restriction. The 22-word `genesis.wordnet_chain` and `matrices/echo_wordnet_chains.json` were only frozen research fixtures, **not Echo's full dictionary**.
+
+The original [Echo dictionary provider](../../src/echo_dictionary.py) uses **Princeton WordNet via NLTK**. The first complete corpus verification of the corrected GitHub workflow returned **147,306 lemma names and 117,659 synsets**. This is the actual full available English WordNet lexical corpus, not a seed sample.
+
+The revised research implementation is:
+
+- [Full WordNet dictionary + catalog/evidence tool manifest](echo017_full_wordnet_mcp_tools.json) — **eight** operations, all from the only three authorized systems (Dictionary, Index Card Catalog, Evidence Network). The former four-tool restricted study manifest is historical, not the new allowed tool surface.
+- [Unpaced full-WordNet study runner](../experiments/echo017_full_wordnet_study.py) — exact source WordNet senses (no 8-sense cap), autonomous exploratory lexical frontier, source-linked provisional cards/edges and intrinsic bandit/EMA reinforcement, stopped by **300 seconds of monotonic wall time**, not by an operation count.
+- [Complete source and access tests](../experiments/test_echo017_full_wordnet_study.py) — verify full-corpus cardinality, actual multi-sense exposure, and no unrelated external provider.
+
+**Important infrastructure boundary:** The GitHub runner dynamically downloads the original complete WordNet corpus; it does **not** receive a Neon database credential and so cannot truthfully claim that each of its in-process card/evidence proposals is already committed to Neon during the 300 seconds. Actual findings must be reconciled through a separately trusted Neon connector and recorded as such. Neither a small fixture nor an unauthenticated Neon HTTP connection should be substituted.
+
+**Correction pre-test record:** [Issue #438 full-dictionary amendment](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/438#issuecomment-6834240544). Preserve failures, failed control runs and limitations in the same thread.
+
+The original `autonomous-agency` branch remains unchanged. The prior 22-word studies remain reproducible historical experiments but should no longer be described as full-dictionary learning. Study/observation access is distinct from independent validation of claims or changes to the governed Lobby.
