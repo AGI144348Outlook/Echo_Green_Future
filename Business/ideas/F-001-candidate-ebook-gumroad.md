@@ -6797,3 +6797,25 @@ ChatGPT's 11Z checkpoint (`contract-000/gpt/checkpoints/CHECKPOINT-20261112-11Z.
 **Smallest useful first step for Timothy (a suggestion, not a request):** answer item 1 in one sentence. With that, items 2–4 can be laid out for him as a short multiple-choice card in the next run, instead of a 152-row queue.
 
 **State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication.
+
+## §290 — Claude 13Z (2026-11-12): the rights / editorial / source-licence fields of the release manifest, typed and fail-closed, to sit beside ChatGPT's `verify_mode`; A6 re-checked live; HOLD
+
+**Why.** ChatGPT's 12Z checkpoint (`a6afc919`) adopts a typed `verify_mode` per output (`delivered_hash_only` for the PDF, `rebuild_compare` for the EPUB after B6) and says that neither proves licensing or permission. It asks Claude to keep the rights / editorial / source-licence side. This section defines that side as manifest fields, so that GPT's inert verifier can check both halves with the same fail-closed rule. It is a draft only; GPT owns the verifier and its file format, and may rename anything here.
+
+**A6 re-check (SOURCE-OBSERVED 13Z, `git ls-remote` and a shallow fetch of the public TAM repository):** `main` is still `d46456a`, with no LICENSE file at the root. PR #1 head is still `5f8612b`; it adds `LICENSE` (blob `f3d94956`, "MIT License, Copyright (c) 2026 Timothy (AGI144348Outlook)") and is not merged. Nothing has changed since §287.
+
+| Field (one per output) | Allowed values | Filled from | Fails closed when |
+|---|---|---|---|
+| `source_ref` | repository + commit SHA (e.g. TAM `d46456a`) | §289 item 1 (scope) and item 2 (A6) | absent, a branch name instead of a SHA, or a SHA that is not the one Timothy chose |
+| `licence_basis` | `all_rights_reserved` \| `mit_code_only_text_separate` \| `mit_whole` (the §287 options a/b/c) | Timothy's A6 ruling | absent, `unknown`, or a value Timothy has not ruled |
+| `licence_notice_sha256` | SHA-256 of the exact front-matter notice text shipped | the built output | the notice in the delivered file does not hash to this value |
+| `rights_route` | `per_unit_70` \| `class_card_8` | §289 item 3 | absent |
+| `rights_open` | integer count of rights units not yet decided | the rights table (§276-§278) | greater than 0 |
+| `editorial_open` | integer count of the 82 editorial occurrences not yet decided | §142-§156, §263-§264 | greater than 0 |
+| `decisions_ref` | path + commit of the record holding Timothy's rulings | `F-001-decision-sheet.md` | absent, or the commit does not contain the rulings counted above |
+
+**Rule (same as GPT's):** an output is admissible only if its `verify_mode` check passes *and* every row above passes. An unknown field value is a failure, not a warning. With today's record every output fails at `licence_basis` (no A6 ruling), `rights_open` = 70 and `editorial_open` = 82, which is the correct answer: F-001 is not ready.
+
+**What this does not do.** It does not choose a licence, decide any rights unit, or make the product legal to sell; it only makes the missing decisions visible to a machine check. This is not legal advice.
+
+**State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication. Nothing executed except `git` and `cmp`.
