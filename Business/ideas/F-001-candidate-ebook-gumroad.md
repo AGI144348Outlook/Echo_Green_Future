@@ -6739,3 +6739,24 @@ The signed message is `"F001-RECEIPT-V1\n" + body`: a domain prefix, with the si
 **Effect on status:** none. HOLD / NOT LAUNCH-READY: 0/8 classes and 0/70 units decided; 82 editorial decisions unrecorded. Product shape, customer, delivery, pricing, fees (§267), refund/cancellation, tax records and the free-tier stack are unchanged.
 
 **Still for Timothy:** F-001 scope (TAM vs Unicorn Estate / RFC); rights per unit or per class; the EB-TJ sign-off channel; the issuer key holder and signature scheme; whether to adopt schema v1, including the 30-day expiry cap; whether to adopt `walk_read()` (§285). No account was created, no payment taken, no money spent, nothing published, nobody contacted.
+
+## §287 — Claude 10Z (2026-11-12): A6 (source branch and licence) re-checked against the live TAM repository; nothing has changed since §38; three decision-ready options with their effect on the product; HOLD
+
+ChatGPT's 08Z/09Z handoffs on Issue #370 ask Claude to keep the editorial/rights and A6 source/licence evidence current. This section only re-checks the facts. Choosing the source and licence is Timothy's decision (decision sheet row A6).
+
+**Re-checked this run (EXECUTION-VERIFIED, `git ls-remote` plus a shallow fetch of the public `AGI144348Outlook/The-TAM-protocol`, read-only):**
+- `main` = `d46456a18fe412398d0ae37ec5a8c4eebb44e0c9`, the same commit the §80–§97 build pins. It has 11 files and no `LICENSE`, `COPYING` or `NOTICE` file. `README.md` contains no licence, copyright or "rights reserved" statement (grep for licen/copyright/rights/reserved/MIT/Creative Commons: no hit).
+- `claude/github-claude-code-connection-98qkbx` = `5f8612ba35f55baf98df7e93b68fac7cdb45f1d5` (unchanged). It has 13 files, including `LICENSE`, which begins "MIT License / Copyright (c) 2026 Timothy (AGI144348Outlook)".
+- `refs/pull/1/head` = `5f8612ba` and `refs/pull/1/merge` = `72f2b826` both exist. That GitHub still keeps a merge ref suggests PR #1 is open (INFERRED; the PR state was not queried). Merging it would add the MIT `LICENSE`. Against `main` it also changes 21 files (641 insertions, 503 deletions), so it would change the book's source text, not only the licence.
+
+**What each A6 option means for F-001 (PROPOSED; this is not legal advice):**
+| Option | Effect on the ebook | Build change |
+|---|---|---|
+| (a) Keep `main` as the source; add an "all rights reserved" notice for the article text; any code may be licensed separately | The buyer pays for the text itself. Redistribution needs Timothy's permission. This fits a paid product best. | None. The pinned `d46456a` build stays valid; only the notice text is added to the front matter. |
+| (b) Split the licence: code MIT, articles under CC BY-NC-ND 4.0 | The text can be shared for free but not sold by others. The ebook sells the edited, packaged edition, and the free text competes with it. | A licence page in the front matter; the same pinned source. |
+| (c) Merge PR #1 as it is (MIT over everything) | Anyone may legally resell the text, so the ebook can only sell convenience and format. | The source moves to the merge result. §80–§97 reproducibility and the 82 editorial / 70 rights dispositions must be redone against the changed text (503 lines deleted). |
+
+**Draft notice for option (a)** (draft only; not added to any repository; Claude does not write to The-TAM-protocol):
+> © 2026 Timothy (AGI144348Outlook). All rights reserved. No part of this text may be reproduced or redistributed without written permission, except for brief quotation with attribution.
+
+**State:** A6 stays `[open]`. F-001 stays HOLD and is NOT launch-ready. No accounts, payments, spending, outreach or publication. Still open for Timothy: A1–A6/B1–B6, the issuer trust root, and the RUN-LOG question of whether the ebook draws on the TAM material only or also on the Unicorn Estate / RFC material.
