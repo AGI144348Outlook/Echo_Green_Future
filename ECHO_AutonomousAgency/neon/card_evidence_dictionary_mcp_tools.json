@@ -1,0 +1,271 @@
+{
+  "version": "0.1.0-draft",
+  "transport": "MCP Streamable HTTP via authenticated parent gateway (future runtime)",
+  "status": "contract-and-Neon-schema-implemented; no live MCP listener deployed",
+  "neon_schemas": [
+    "card_protocol",
+    "evidence_net"
+  ],
+  "memory": "Neon evidence and Cloudflare per-agent state remain authoritative",
+  "security": {
+    "ingress": "authenticated operator/service; strip untrusted caller seat headers",
+    "discovery": "tools and resources filtered by server-trusted actor, mission, charter and ticket",
+    "operation": "owning office authorizes at callee; cards never confer authority",
+    "writes": "proposal only; trusted service fixes review_state='proposed', no end-user SQL",
+    "approvals": "read-only approval references; execution and stamp validation are separate protected functions",
+    "defaults": "no anonymous tools, no general SQL, no full-mesh discovery, no arbitrary execution"
+  },
+  "tools": [
+    {
+      "name": "catalog.card.get",
+      "title": "Read one versioned contextual card",
+      "mode": "read",
+      "sql": "card_protocol.card_revisions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "card_id",
+          "revision"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "catalog.configuration.resolve",
+      "title": "Resolve an exact versioned card configuration",
+      "mode": "read",
+      "sql": "card_protocol.configuration_members + card_protocol.card_revisions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "config_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "config_id",
+          "revision"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "catalog.card.propose",
+      "title": "Propose a new inert card revision",
+      "mode": "proposal_only",
+      "sql": "card_protocol.card_revisions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "expected_revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "card_kind": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "object"
+          },
+          "provenance": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "card_id",
+          "expected_revision",
+          "card_kind",
+          "title",
+          "body"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.node.get",
+      "title": "Read one evidence node",
+      "mode": "read",
+      "sql": "evidence_net.nodes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.edge.trace",
+      "title": "Read proposed evidence relations and sources for one node",
+      "mode": "read",
+      "sql": "evidence_net.edges + evidence_net.edge_sources",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string"
+          },
+          "max_edges": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.edge.propose",
+      "title": "Propose source-attributed evidence relation without promotion",
+      "mode": "proposal_only",
+      "sql": "evidence_net.edges",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "edge_id": {
+            "type": "string"
+          },
+          "source_node": {
+            "type": "string"
+          },
+          "target_node": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string"
+          },
+          "relation_domain": {
+            "type": "string",
+            "enum": [
+              "lexical",
+              "empirical",
+              "operational"
+            ]
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "supporting_card_id": {
+            "type": "string"
+          },
+          "supporting_card_revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "edge_id",
+          "source_node",
+          "target_node",
+          "relation_type",
+          "relation_domain",
+          "source_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "dictionary.lexical_path",
+      "title": "Read a pre-admitted WordNet sense and its recorded hypernym path",
+      "mode": "read",
+      "sql": "echo_dictionary.wordnet_context (view over genesis.wordnet_chain)",
+      "guard": "trusted Echo runtime must enforce Lobby-admitted word before invocation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "dictionary.network.compare",
+      "title": "Preview sourced lexical relation paths without admission",
+      "mode": "read",
+      "sql": "echo_dictionary.wordnet_context + evidence_net.edges + card_protocol.card_revisions",
+      "guard": "both words must already be admitted; results remain provisional",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "left": {
+            "type": "string"
+          },
+          "right": {
+            "type": "string"
+          },
+          "max_hops": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          }
+        },
+        "required": [
+          "left",
+          "right"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "resourceTemplates": [
+    {
+      "uriTemplate": "echo://catalog/cards/{card_id}/revisions/{revision}",
+      "name": "Pinned Context Card",
+      "mimeType": "application/json"
+    },
+    {
+      "uriTemplate": "echo://evidence/nodes/{node_id}",
+      "name": "Evidence Node",
+      "mimeType": "application/json"
+    },
+    {
+      "uriTemplate": "echo://evidence/edges/{edge_id}",
+      "name": "Evidence Edge with provenance",
+      "mimeType": "application/json"
+    }
+  ],
+  "forbiddenToolClasses": [
+    "deployment execution",
+    "credential issuance",
+    "approval signing",
+    "RLS mutation",
+    "direct SQL",
+    "automatic vocabulary admission"
+  ],
+  "system": "Echo autonomous-agency",
+  "dictionaryIntegrated": true,
+  "neon_project": "lexicon-catalog",
+  "neon_branch": "echo-card-evidence-dictionary-dev-20261112"
+}
