@@ -1,0 +1,89 @@
+name: ECHO-021 300-second open-ended text and diagram assessment
+on:
+  push:
+    branches: [feature/echo-021-diagram-expression]
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echo021_*"
+      - ".github/workflows/echo021-openended-300s.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  open-ended:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install full WordNet and original grade-one PDF readers
+        run: |
+          python -m pip install 'nltk==3.9.2' 'pymupdf==1.26.6' 'requests==2.32.5' 'beautifulsoup4==4.14.2'
+          python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+      - name: Confirm pre-test records and protocol tests
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          echo "Original: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/450"
+          echo "Preregistered new open-ended test: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/450#issuecomment-6838830081"
+          echo "OpenDiagram: https://github.com/AGI144348Outlook/Open_Diagram/issues/12"
+          python -m unittest discover -s ECHO_AutonomousAgency/experiments -p 'test_echo021_diagram_port.py' -v
+          python -m py_compile ECHO_AutonomousAgency/experiments/echo021_score_openended.py
+      - name: Download prior full WordNet Echo research checkpoint
+        uses: actions/download-artifact@v4
+        with:
+          name: echo019-resumed-wordnet-300s
+          run-id: '43316542221'
+          github-token: ${{ github.token }}
+          path: echo019-parent
+      - name: Give study runner only questions, never held-out scoring keys
+        run: |
+          mkdir -p echo021-results
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('ECHO_AutonomousAgency/experiments/echo021_openended_exam.json')
+          raw=json.loads(p.read_text())
+          assert len(raw['questions'])==18
+          minimal=[{k:q[k] for k in ('id','strand','question','passage')} for q in raw['questions']]
+          assert all(set(q)=={'id','strand','question','passage'} for q in minimal)
+          Path('echo021_question_only.json').write_text(json.dumps({'questions':minimal}))
+          print('Locked 18-item exam: answer concepts and numeric results excluded from study input')
+          PY
+      - name: Independently study full Core Knowledge curriculum for 300 wall-clock seconds
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          python -u ECHO_AutonomousAgency/experiments/echo020_grade1_study.py \
+            --parent echo019-parent \
+            --out echo021-results \
+            --prompts echo021_question_only.json \
+            --seconds 300
+      - name: Translate only authentic raw outputs into structurally honest diagrams
+        run: |
+          python ECHO_AutonomousAgency/experiments/echo021_diagram_port.py \
+            --input echo021-results/before_raw_answers.json \
+            --output echo021-results/before_diagrams.json \
+            --run-id ECHO-021-BASELINE
+          python ECHO_AutonomousAgency/experiments/echo021_diagram_port.py \
+            --input echo021-results/after_raw_answers.json \
+            --output echo021-results/after_diagrams.json \
+            --run-id ECHO-021-POSTSTUDY
+      - name: Grade independent open-ended text, diagram, and combined output
+        run: |
+          python ECHO_AutonomousAgency/experiments/echo021_score_openended.py \
+            --before echo021-results/before_raw_answers.json \
+            --after echo021-results/after_raw_answers.json \
+            --before-diagrams echo021-results/before_diagrams.json \
+            --after-diagrams echo021-results/after_diagrams.json \
+            --out echo021-results/echo021_openended_assessment.json
+      - name: Preserve raw answers and actual Echo diagram evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo021-openended-300s-and-diagram-evidence
+          path: echo021-results/
+          if-no-files-found: warn
+          retention-days: 30
