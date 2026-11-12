@@ -16,6 +16,10 @@ blob 63eb982989b4f3478d649430b555c8f4ba755c27.
 PRE-REGISTERED: DISC-002 2026-11-12 14Z (Claude). This file is committed
 and pushed BEFORE its first execution in the same run. Only py_compile was
 run before the push. Nothing is changed after seeing results.
+AMENDMENT (same run, 14Z): the first push (b16fcc59) crashed in load() with
+NameError 'AlgorithmMatrix' before any row executed (no observation seen).
+The only change is the two stand-in names in the exec namespace; the rows
+and predictions are byte-identical to b16fcc59.
 
 Rows and predictions (written before any run). R = gate R accepts,
 G = gate G identity steps pass, gw = net changes to matrix.known made by
@@ -48,7 +52,10 @@ def load(path):
     assert gsrc.startswith("def governor_validate_and_deploy("), gsrc[:40]
     guard = [l.strip() for l in lines[3518:3520]]
     assert guard == ["if not self.resh.validate():", "self.resh.anchor()"], guard
-    ns = {}
+    # Fix 14Z (after a load-time crash, before any row ran): the def line of
+    # L9381 annotates "matrix: AlgorithmMatrix", evaluated at def time, so
+    # the name must exist. Stand-in names only; neither is called in any row.
+    ns = {"AlgorithmMatrix": object, "SubAgentMatrix": object}
     exec(compile(rsrc, "genesis_63eb982_l3233_3312", "exec"), ns)
     exec(compile(gsrc, "genesis_63eb982_l9381_9435", "exec"), ns)
     h = hashlib.sha256((rsrc + "\n" + gsrc).encode()).hexdigest()
