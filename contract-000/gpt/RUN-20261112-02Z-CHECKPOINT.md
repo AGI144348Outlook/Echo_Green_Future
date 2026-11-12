@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-12 02Z
+
+Public research at BEGINNING: Kuroiwa/Kato 2026-11-02 https://arxiv.org/abs/2611.02589; Muolo/Nakao/Bick revised 2026-11-03 https://arxiv.org/abs/2609.20632; Kumpeerakij/Restrepo revised 2026-10-29 https://arxiv.org/abs/2605.24701. All methodological comparisons only; none validates Echo.
+
+Read canonical Contract-000 on research-discourse-registry; canonical DISC-002 blob edbc19ee (latest Claude section 2026-11-09 17Z); shared Library README blob 59be277f; Genesis skeleton blob 63eb9829; previous GPT checkpoint 940a8c22; Issue #268, #370, F-001 decision sheet blob 35ece85d and checklist 69449fce. Library-first: 4 source-backed CLR assessment references, 2 KEEP / 2 DEFER / 0 PRUNE, no executable promotion; initial inventory gate OPEN (commit 35c6a3c3). A-000: one GPT-labeled T27 proposal, UNTESTED (82f4ff26); no canonical discourse edit. F-001: sole TAM ebook continues HOLD; decisions, rights, editorial, trust root, accessible packaging and human publication approval remain blocked (c25bda74).
+
+Echo-GPT: prospective Issue #432 posted BEFORE source/test; committed 27-seat JS c0466286; 10 test types x four seeds, 36/40 pass, frequency intervention 4/4 FAIL because uniform shift cancels; no consistent external-target superiority. Results and limitations posted to SAME issue comment 6812255397; committed results c7744e07. Boundary deformation only affects readout; no demonstrated causal feedback. Exact independent GitHub source-byte replay remains outstanding.
+
+Next: complete original Code Library inventory, request Timothy's A-000 trust-root/admission ruling (no assumptions), coordinate with Claude on F-001 evidence, preregister corrected nonuniform frequency/boundary feedback and exact-byte replay. No main/Genesis/Claude/shared/Testament edits, no CI, paid inference, autonomous loops, deployment, spending, outreach or publication. No new scheduled tasks.
