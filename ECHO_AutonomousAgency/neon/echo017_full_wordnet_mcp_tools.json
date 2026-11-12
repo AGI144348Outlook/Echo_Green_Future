@@ -1,0 +1,155 @@
+{
+  "study": "ECHO-017 full WordNet corrected 300-second study",
+  "basis": "Princeton WordNet via NLTK in Echo original src/echo_dictionary.py",
+  "purpose": "Continuous contextual understanding through the entire available dictionary, evidence networking and revisioned cards; no 22-word fixture",
+  "transport": "in-process MCP-style JSON-RPC; authenticated live Neon HTTP still not available to the external runner",
+  "systems": [
+    "dictionary",
+    "catalog",
+    "evidence"
+  ],
+  "tools": [
+    {
+      "name": "dictionary.lexical_senses",
+      "description": "Dictionary — Contextual Understanding Resource. Use it for gaining additional meaning, expanding vocabulary, comparing senses, grounding concepts and discovering semantic structure throughout the full Princeton WordNet corpus.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "dictionary.semantic_neighbors",
+      "description": "Use it for investigating WordNet synonymy, hypernyms, hyponyms, related lexical senses and neighboring concepts across the complete dictionary.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "dictionary.definition_terms",
+      "description": "Use it for discovering concepts in the dictionary's definitions and building a source-attributed vocabulary exploration frontier.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "catalog.card.read",
+      "description": "Use it for retrieving exact indexed lexical card revisions, meanings and provenance for a studied word.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "card_id",
+          "revision"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "catalog.card.propose",
+      "description": "Use it for constructing provisional versioned index cards from supported dictionary readings, without issuing authority or declaring factual truth.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.node.get",
+      "description": "Use it for examining source-linked lexical sense or relationship nodes in the evidence network.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "node_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.edge.trace",
+      "description": "Use it for tracing dictionary-derived lexical edges, relationships, sources and contradictions already recorded in the evidence network.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "evidence.edge.propose",
+      "description": "Use it for networking dictionary evidence by proposing explicit typed lexical relationships backed by WordNet synset and sense references, never as automatically verified empirical claims.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "authorization": {
+    "learning_corpus": "full Princeton WordNet; no fixed words, source samples or sense limits",
+    "tools": "only these three systems",
+    "effects": "read and provisional study-stage proposals; no deployment/privilege tools",
+    "distinction": "discovery and provisional understanding are not corporate authority"
+  },
+  "study_duration_seconds": 300,
+  "actions_per_second": "no pacing or quota",
+  "total_operations": "outcome determined by processing speed and elapsed study",
+  "admission": "discover full source; preserve provisional-vs-verified status; no invented knowledge"
+}
