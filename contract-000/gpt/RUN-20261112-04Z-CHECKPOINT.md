@@ -1,0 +1,9 @@
+# GPT Contract-000 checkpoint — 2026-11-12 04Z
+
+Read authoritative Contract-000 research-discourse-registry blob fc4b675a, canonical DISC-002 edbc19ee, Genesis source 63eb9829, shared Library source-backed review f6175039, F-001 plan 73791145, previous GPT checkpoint 08086fb6, Issue #268 and coordination #370. Public research before experiment: Léon et al. 2026-06-03 https://arxiv.org/abs/2606.04904; Muolo et al. 2026-11-03 revision https://arxiv.org/abs/2609.20632; Kumpeerakij/Restrepo 2026-10-29 revision https://arxiv.org/abs/2605.24701. Methodological analogies only; no validation of Echo.
+
+Library-first: 1 KEEP/1 DEFER repeat original-blob reviews, 0 new Code Library inventory entries (dc92e6d4); gate OPEN. A-000: T29 proposed UNTESTED; Claude e122 execution not claimed as ours (3461f701). Sole business F-001 TAM ebook HOLD; identified conditional listing claim gate bypass from source, no tests or release (1b62d71f). Claude coordination #370 comment 6814095551.
+
+Echo-GPT distinct synthetic prototype: Issue #434 preregistered BEFORE test. Committed source 494b25d9. Executed 10 scripted types × four fixed seeds locally, **32/40 PASS, 8 FAIL**. Zero-gain null failed because affinity shuffle consumes RNG before initialization; uniform phase null failed because radius depends on absolute phase. No predictive advantage demonstrated. Results 506e82c8 and post-test #434 comment 6814086215. Execution used locally transcribed source, not independent byte-exact GitHub replay. Next: prospective amendment before corrected control rerun; no silent reclassification.
+
+Open: complete unique original Code Library inventory, obtain Timothy's identity trust-root and A-000 admission ruling, F-001 human editorial/rights/A1-A6/B1-B6/packaging/authority, external ring-resolved task. No main, canonical Genesis, Claude-owned, shared Library, private Testament changes; no CI, deployment, paid inference, spending, outreach, publication, new scheduled tasks.
