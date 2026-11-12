@@ -66,4 +66,4 @@ The original \`autonomous-agency\` branch remains intact. Development is on \`fe
 - [Pre-test/research Issue #435](https://github.com/AGI144348Outlook/Echo_Green_Future/issues/435)
 - [Algorithmic comparison CI](https://github.com/AGI144348Outlook/Echo_Green_Future/actions/runs/43170950499): **7/7 unit tests**, 14-pair comparison.
 - [MCP contract CI](https://github.com/AGI144348Outlook/Echo_Green_Future/actions/runs/43171846641): **8/8 unit tests**.
-- Neon development branch: two new isolated schemas, **8 RLS-enabled tables**, read-only dictionary view and provisional source-linked graph.
+- Neon development branch: two new isolated schemas, **8 RLS-enabled tables**, dictionary lookup view (future SELECT-only role required) and provisional source-linked graph.
