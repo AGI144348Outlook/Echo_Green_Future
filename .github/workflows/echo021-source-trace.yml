@@ -1,0 +1,49 @@
+name: ECHO-021 preserved-answer diagram baseline
+on:
+  push:
+    branches: [feature/echo-021-diagram-expression]
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echo021_diagram_port.py"
+      - "ECHO_AutonomousAgency/experiments/test_echo021_diagram_port.py"
+      - ".github/workflows/echo021-source-trace.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect-real-echo-output:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pre-test research plan
+        run: |
+          echo "Pre-test: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/450"
+          echo "Renderer pre-test: https://github.com/AGI144348Outlook/Open_Diagram/issues/12"
+          git rev-parse HEAD
+      - name: Source-only diagram emission tests
+        run: python -m unittest discover -s ECHO_AutonomousAgency/experiments -p 'test_echo021_diagram_port.py' -v
+      - name: Retrieve real Echo-020 experiment answers, not synthetic exam solutions
+        uses: actions/download-artifact@v4
+        with:
+          name: echo020-grade1-300s-yearend-results
+          run-id: '43321854720'
+          github-token: ${{ github.token }}
+          path: echo020-parent
+      - name: Convert only Echo's actual recorded claims to diagram traces
+        run: |
+          python ECHO_AutonomousAgency/experiments/echo021_diagram_port.py \
+            --input echo020-parent/after_raw_answers.json \
+            --output echo021-results/echo021_real_echo_answer_diagrams.json \
+            --run-id ECHO-020-G1-300S
+      - name: Retain raw source-aware diagram traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo021-real-answer-diagram-baseline
+          path: echo021-results/
+          if-no-files-found: warn
+          retention-days: 30
