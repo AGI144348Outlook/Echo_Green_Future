@@ -1,0 +1,48 @@
+name: ECHO-016 Algorithm Matrix MCP neuroplastic tool-selection trial
+on:
+  push:
+    branches:
+      - feature/autonomous-agency-card-evidence
+    paths:
+      - "ECHO_AutonomousAgency/experiments/mcp_neuroplastic_016.mjs"
+      - "ECHO_AutonomousAgency/experiments/test_mcp_neuroplastic_016.mjs"
+      - "ECHO_AutonomousAgency/neon/card_evidence_rpc.mjs"
+      - "ECHO_AutonomousAgency/neon/neon_pg_adapter.mjs"
+      - "ECHO_AutonomousAgency/neon/card_evidence_dictionary_mcp_tools.json"
+      - "ECHO_AutonomousAgency/matrices/echo_algorithm_matrix.json"
+      - "matrices/echo_wordnet_chains.json"
+      - ".github/workflows/echo-mcp-neuroplastic-016.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  echo016:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Read exact source revision
+        uses: actions/checkout@v4
+      - name: Node 24 algorithmic runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Record preregistration and git inputs
+        run: |
+          echo "Pre-test and frozen task design: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/437"
+          git rev-parse HEAD
+          echo "No Neon production credentials or model/API keys used."
+      - name: Run preregistered algorithmic and permission tests
+        run: |
+          node --test ECHO_AutonomousAgency/experiments/test_mcp_neuroplastic_016.mjs
+          node --test ECHO_AutonomousAgency/neon/test_rpc.mjs
+      - name: Run bounded comparative trial
+        run: |
+          node ECHO_AutonomousAgency/experiments/mcp_neuroplastic_016.mjs --out echo016-results.json
+      - name: Preserve machine-readable full results
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo016-algorithm-mcp-context-feedback
+          path: echo016-results.json
+          retention-days: 30
