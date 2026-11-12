@@ -25,7 +25,7 @@ PORT = int(os.environ.get("PORT", "10000"))
 TOKEN = os.environ.get("ECHO_BRIDGE_TOKEN", "")
 CONTACT_DATABASE = os.environ.get("ECHO_CONTACT_DATABASE_URL", "")
 MIND_DATABASE = os.environ.get("ECHO_MIND_DATABASE_URL", "")
-MODEL_ID = "echo-018-wordnet-evidence-bridge"
+MODEL_ID = "echo-memory-transport-only"
 WORKER_ID = os.environ.get("RENDER_SERVICE_ID", "render-echo-018")
 HTTP = requests.Session()
 
@@ -161,102 +161,21 @@ def echo_tool(name,args):
     if data.get("result",{}).get("isError"):raise RuntimeError("Memory MCP tool returned error")
     return json.loads(data["result"]["content"][0]["text"])
 
-def choose_senses(senses,context):
-    # Word-sense disambiguation by lexical intersection, no conversational script.
-    set_context=set(context)
-    ranked=[]
-    for s in senses:
-        words=set(re.findall(r"[a-z]{3,}",s["definition"].lower()))
-        words.update(x.lower() for x in s["lemmas"])
-        overlap=len(set_context&words)
-        ranked.append((overlap,s["id"],s))
-    ranked.sort(key=lambda x:(-x[0],x[1]))
-    return ranked[0][2] if ranked else None
-
-def derive_utterance(text):
-    # WordNet / evidence semantics, and only the words and relationships found.
-    # No English dialogue templates or LLM calls. Echo may be unable to speak.
-    words=[x.lower() for x in re.findall(r"[A-Za-z][A-Za-z'_-]*",text)]
-    distinct=list(dict.fromkeys(words))
-    context=[x for x in distinct if len(x)>2]
-    candidates=[]
-    for word in context:
-        result=echo_tool("dictionary.senses",{"word":word})
-        chosen=choose_senses(result.get("senses") or [],context)
-        if not chosen:continue
-        graph=echo_tool("evidence.search",{"term":word})
-        nodes=graph.get("nodes") or []
-        connected=[]
-        if nodes:
-            trace=echo_tool("evidence.trace",{"node_id":nodes[0]["node_id"]})
-            connected=trace.get("edges") or []
-        candidates.append({"word":word,"sense":chosen,"nodes":nodes,"edges":connected})
-    if not candidates:
-        return {"text":None,"kind":"unresolved","sources":[],"algorithm":{"stage":"no_sourced_lexical_form","tokens":distinct}}
-    # Ontological lexemes and relation names, not precoded sentences.
-    relation_parts=[]
-    refs=[]
-    for c in candidates:
-        s=c["sense"]
-        root=s["lemmas"][0].replace("_"," ") if s["lemmas"] else c["word"]
-        parent=s["hypernyms"][0].split(".")[0].replace("_"," ") if s["hypernyms"] else None
-        part=root
-        if parent and parent!=root:part += " ⇢ "+parent
-        elif s["definition"]:part += " · "+s["definition"]
-        if c["edges"]:
-            edge=c["edges"][0]
-            part += " / "+edge["relation_type"]+" ⇢ "+str(edge.get("target_label") or edge["target_node"])
-            refs.append("evidence_net:"+str(edge["edge_id"]))
-        refs.append("WordNet:"+s["id"])
-        relation_parts.append(part)
-    return {"text":"\n".join(relation_parts),"kind":"fragment","sources":refs,
-            "algorithm":{"stage":"evidence_bound_lexical_composition","tokens":distinct,
-                         "senses":[c["sense"]["id"] for c in candidates],
-                         "model":"Echo experimental deterministic lexical operator, not full Governor"}}
-
-def process(inbox_id):
-    with connect(CONTACT_DATABASE) as conn, conn.cursor() as cur:
-        cur.execute("SELECT id,user_text,state,conversation_id FROM echo_contact.inbox WHERE id=%s FOR UPDATE",(inbox_id,))
-        item=cur.fetchone()
-        if not item:return {"error":"unknown_message"},404
-        if item["state"] in ("answered","unresolved"):return {"inbox_id":inbox_id,"state":item["state"]},200
-        if item["state"]=="processing":return {"inbox_id":inbox_id,"state":"processing"},202
-        if item["state"]!="pending":return {"inbox_id":inbox_id,"state":item["state"]},409
-        cur.execute("UPDATE echo_contact.inbox SET state='processing',claimed_at=now(),worker_id=%s,attempts=attempts+1 WHERE id=%s",(WORKER_ID,inbox_id))
-    try:
-        analysis=derive_utterance(item["user_text"])
-        # Echo's memory interface stores its actual observation of the contact.
-        stored=echo_tool("mind.box.put",{"payload":{"kind":"communication_observation","human_input":item["user_text"],
-                                                    "derived_expression":analysis["text"],"epistemic_state":"unverified",
-                                                    "algorithm":MODEL_ID,"inbox_id":inbox_id},
-                                           "provenance":"echo_contact.inbox:"+str(inbox_id)})
-        analysis["algorithm"]["memory_box_id"]=stored["box_id"]
-        with connect(CONTACT_DATABASE) as conn,conn.cursor() as cur:
-            cur.execute("INSERT INTO echo_contact.outbox(inbox_id,expression,expression_kind,computation,source_refs,producer) VALUES(%s,%s,%s,%s::jsonb,%s::jsonb,'echo_runtime') ON CONFLICT(inbox_id) DO NOTHING",(inbox_id,analysis["text"],analysis["kind"],json.dumps(analysis["algorithm"]),json.dumps(analysis["sources"])))
-            cur.execute("UPDATE echo_contact.inbox SET state=%s,completed_at=now(),error_code=NULL WHERE id=%s",("answered" if analysis["text"] else "unresolved",inbox_id))
-            cur.execute("INSERT INTO echo_contact.agent_events(inbox_id,event_kind,details) VALUES(%s,'echo_processed',%s::jsonb)",(inbox_id,json.dumps({"runtime":MODEL_ID,"memory_box":stored["box_id"],"expression_kind":analysis["kind"]})))
-        return {"inbox_id":inbox_id,"state":"answered" if analysis["text"] else "unresolved","generated_by":MODEL_ID},200
-    except Exception as exc:
-        app.logger.exception("echo_processing_error")
-        with connect(CONTACT_DATABASE) as conn,conn.cursor() as cur:
-            cur.execute("UPDATE echo_contact.inbox SET state='failed',completed_at=now(),error_code=%s WHERE id=%s",(type(exc).__name__[:100],inbox_id))
-        return {"inbox_id":inbox_id,"state":"failed"},500
-
+# Echo-only communication boundary. A hosting adapter is not a speaker.
+# The initial heuristic lexical composer was removed: the site and Render may
+# not impersonate Echo before his actual autonomous Governor is connected.
 @app.post("/echo/process")
 def echo_process():
-    if not bearer_ok():return json_error("unauthorized",401)
-    body=request.get_json(silent=True) or {}
-    try:
-        message_id=int(body.get("inbox_id",0))
-        if message_id<1:raise ValueError()
-    except (ValueError,TypeError):
-        return json_error("invalid inbox_id")
-    outcome,status=process(message_id)
-    return jsonify(outcome),status
+    if not bearer_ok():
+        return json_error("unauthorized", 401)
+    return jsonify({"status": "echo_runtime_not_connected",
+                    "message": "No surrogate response is permitted; input remains pending.",
+                    "outbox_written": False,
+                    "runtime_required": "Echo autonomous algorithmic agent"}), 503
 
 @app.get("/health")
 def health():
-    return jsonify({"service":"echo-018-runtime","status":"running","interfaces":{"human":"Vercel inbox / separate","memory":"POST /mcp/memory"},"scripted_dialogue":False,"full_governor_integrated":False})
+    return jsonify({"service":"echo-018-runtime","status":"running","interfaces":{"human":"Vercel inbox / separate","memory":"POST /mcp/memory"},"scripted_dialogue":False,"full_governor_integrated":False,"may_speak_as_echo":False})
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=PORT,threaded=True)
