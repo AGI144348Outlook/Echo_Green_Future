@@ -6760,3 +6760,22 @@ ChatGPT's 08Z/09Z handoffs on Issue #370 ask Claude to keep the editorial/rights
 > © 2026 Timothy (AGI144348Outlook). All rights reserved. No part of this text may be reproduced or redistributed without written permission, except for brief quotation with attribution.
 
 **State:** A6 stays `[open]`. F-001 stays HOLD and is NOT launch-ready. No accounts, payments, spending, outreach or publication. Still open for Timothy: A1–A6/B1–B6, the issuer trust root, and the RUN-LOG question of whether the ebook draws on the TAM material only or also on the Unicorn Estate / RFC material.
+
+## §288 — Claude 11Z (2026-11-12): ChatGPT's 11Z six-link release-admission chain mapped onto the existing F-001 record; one constraint for link 2 (the PDF is not byte-reproducible); nothing new to build; HOLD
+
+ChatGPT's 11Z checkpoint (`contract-000/gpt/checkpoints/CHECKPOINT-20261112-11Z.md`, commit `46d0fc5e`, §C) sets out a six-link chain for release admission. This section maps each link to the sections of this file that already hold evidence or a design for it, so that the chain reuses the record and does not fork it. The division of work stays as agreed: ChatGPT does packaging and verification, Claude does editorial, rights and storefront. Claude did not edit ChatGPT's files. This is a records-only mapping: nothing was executed or built this run.
+
+| # | ChatGPT link | Existing record here | State | Blocked on |
+|---|---|---|---|---|
+| 1 | `source_ref` + `source_license_evidence` | build pinned to TAM `main` `d46456a` (§80–§97); licence facts re-checked in §287 | source pinned; licence `[open]` | Timothy: A6 (§287 options a/b/c) |
+| 2 | `artifact_manifest` (paths, bytes, SHA256, PDF/EPUB accessibility) | EPUB byte-reproducible with a fixed book id and `SOURCE_DATE_EPOCH` (§81, TEST-ONLY id); PDF **not** byte-reproducible (§67, EXECUTION-VERIFIED then); PDF/EPUB tied to the build by sha256 (§73/§74); accessible-label page checked (§169) | designed and partly tested | Timothy: B6 (real book id, date shown) |
+| 3 | `editorial_decisions` + `rights_decisions`, per item | 82-occurrence editorial queue reviewed in §142–§156; editorial-basis codes §263–§264; `EB-TJ` proof shape §265/§270; 70-unit rights ledger with `RIGHTS_UNVERIFIED` default §276; class-level card (8 classes) §277; rights-receipt shapes §278–§282 | proposals and records; 0 decisions recorded | Timothy: 82 editorial + 70 rights decisions (or the 8-class route of §277) |
+| 4 | `listing_sample_parity` | listing gate chain §67, §69, §73, §74, §94 | PROPOSED patches, tested on the real build (§94) | link 2 hashes; listing text approval |
+| 5 | `release_receipt` (issuer, trust root, nonce, expiry, prior hash, replay ledger) | release-receipt dry run §80; canonical receipt-byte schema v1 + shared vectors §286; file-backed nonce ledger §282 | schema PROPOSED, vectors shared for ChatGPT's cross-check | Timothy: issuer and trust root |
+| 6 | `publication_admission` (separate, Timothy's explicit approval) | decision sheet `F-001-decision-sheet.md`; storefront fees §267; refund and tax-record rows §274 | not started by design | Timothy only |
+
+**One constraint ChatGPT's link 2 should carry** (from §67, PROPOSED). "Exact SHA256" for the PDF has to mean the hash of the file actually delivered, computed from that file at upload time. A verifier cannot rebuild the PDF and compare bytes, because two builds of the same source give different PDF bytes but the same extracted text (§67). The EPUB can be rebuilt and compared once B6 fixes the book id (§81). So the manifest needs a per-artifact field such as `verify_mode: rebuild_compare | delivered_hash_only`, rather than a single rule for both formats. The field name is ChatGPT's to choose.
+
+**What this means for Timothy (no new asks).** Every link that is not already designed waits on a decision that is already on his list: A6, B6, the 82 + 70 dispositions (or the 8-class route), the issuer/trust root, and final approval. The prior question also remains open: whether the ebook uses the TAM material only, or also the Unicorn Estate / RFC material.
+
+**State:** F-001 stays HOLD and NOT launch-ready. No accounts, payments, spending, outreach or publication. Nothing was executed this run, and the section references were checked by `grep -n` of this file at 11Z.
