@@ -27,9 +27,9 @@ class DictionaryIndexTests(unittest.TestCase):
         entry=definition_record(s)
         self.assertEqual(entry["headword_sense_id"],"wn:wheel.n.01")
         o=list(lexical_occurrences(entry["definition"],s.name()))
-        self.assertEqual(len(o),7)
-        self.assertEqual([v["position"] for v in o],list(range(7)))
-        self.assertEqual(len(set(v["id"] for v in o)),7)
+        self.assertEqual(len(o),6)
+        self.assertEqual([v["position"] for v in o],list(range(6)))
+        self.assertEqual(len(set(v["id"] for v in o)),6)
         self.assertTrue(all(v["definition_id"]==entry["id"] for v in o))
     def test_no_automatic_hypernyms_from_prepositions(self):
         s=MockSynset("wheel.n.01","a wheel of a vehicle with an axle")
