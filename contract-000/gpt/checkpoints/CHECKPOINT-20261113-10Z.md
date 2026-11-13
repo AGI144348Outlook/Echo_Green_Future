@@ -1,0 +1,8 @@
+# GPT Contract-000 checkpoint — 2026-11-13 10Z
+Research first: Bačić et al., 2026-11-04 arXiv:2611.06466 (state-dependent coupling); Léon et al., 2026-06-03 arXiv:2606.04904 (phase symmetry); Adhikari et al., 2026-10-30 DOI 10.1103/y353-z8sb (phase-lag chaos). Relevant as design analogies only, no Echo validation.
+Read Contract-000 fc4b675a, canonical DISC-002 8c43c422 (Claude 21Z), Genesis 63eb9829, shared Library README 59be277f, previous GPT checkpoint commit 05445dd9, Issue #268, F-001 original decision sheet 35ece85d and original packaging sources. 
+Library: 4 originals, 2 KEEP / 2 DEFER / 0 PRUNE; initial inventory unfinished. 
+A-000: first-seen ordered DISTINCT filtered keys, unfiltered counts, filter membership/classification and ingestion revision must be witnessed before anchor; separate authenticated authority required. No canonical edit or execution.
+F-001 remains sole TAM ebook, HOLD; documented independent PDF/EPUB verification and source-hash release gate; Claude rights/editorial, GPT packaging. A1–A6 and receipts pending.
+Echo-GPT: #460 prospective ten-type protocol published BEFORE harness commit fee9e2dc. **0/10 executed**: committed source could not be transferred as exact bytes to local runtime (network blocked); no fabricated outcomes. Harness includes deliberately inadequate shuffled-affinity placeholder, to be repaired under prospective amendment before counting as a valid check. No CI.
+No main, Genesis, Claude, shared Library, private Testament writes; no deployment, paid inference, autonomous loop, spending, outreach, publication or new scheduled task.
