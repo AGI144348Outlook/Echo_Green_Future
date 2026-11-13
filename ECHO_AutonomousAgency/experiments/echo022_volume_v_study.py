@@ -7,7 +7,7 @@ PRE-TEST: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/461
 from __future__ import annotations
 import argparse, gzip, hashlib, json, time
 from pathlib import Path
-from echo020_grade1_study import EchoSchool, evaluate_prompts, read_educational_sources, restore_echo019
+from echo020_grade1_study import EchoSchool, evaluate_prompts, read_educational_sources, restore_echo019, words
 
 HERE=Path(__file__).resolve().parent
 def digest(s:bytes): return hashlib.sha256(s).hexdigest()
@@ -29,6 +29,55 @@ def source_pages(path:Path):
     if len(manifest)!=6 or len({p["id"] for p in pages})!=len(pages):
         raise RuntimeError("Volume V source identity collision or missing source")
     return pages,manifest,digest(raw)
+
+class VolumeVSchool(EchoSchool):
+    """Two additional source-bounded inspection actions; not a language model.
+
+    The existing Echo UCB study policy still selects from all available
+    dictionary/catalog/evidence tools. The new actions identify documentary
+    constraints and contrasts while refusing to assert semantic entailment.
+    """
+    def __init__(self,wordnet_agent,pages,seed=22022):
+        super().__init__(wordnet_agent,pages,seed=seed)
+        for tool in ("evidence.constraint.inspect","evidence.source.compare"):
+            self.policy[tool]={"n":0,"reward":0.0,"ema":0.0}
+        self.constraint_candidates={}
+        self.source_comparisons={}
+
+    def action(self,tool):
+        if tool=="evidence.constraint.inspect":
+            if not self.sentences:
+                return super().action("catalog.source.read")
+            s=self.rng.choice(self.sentences)
+            tokens=set(s["tokens"])
+            cue=sorted(tokens.intersection({"not","only","must","requires","without",
+                                           "deny","denied","revoked","never","unless"}))
+            if not cue:
+                return ("no_explicit_constraint_cue",0.0,{"source":s["source"]})
+            key=s["id"]
+            if key in self.constraint_candidates:
+                return ("constraint_revisited",0.0,{"source":s["source"]})
+            self.constraint_candidates[key]={"source_ref":s["source"],"witness_sentence_id":key,
+                 "lexical_cues":cue,"evidence_state":"candidate",
+                 "epistemic_warning":"Lexical cue does not prove authorization, negation scope or truth"}
+            return ("constraint_candidate_observed",0.13,{"source":s["source"],"lexical_cues":cue})
+        if tool=="evidence.source.compare":
+            if len(self.sentences)<2:
+                return super().action("catalog.source.read")
+            a,b=self.rng.sample(self.sentences,2)
+            aa=set(a["tokens"]);bb=set(b["tokens"])
+            overlap=sorted(aa.intersection(bb))
+            key="|".join(sorted([a["id"],b["id"]]))
+            if key in self.source_comparisons:
+                return ("comparison_revisited",0.0,{"sources":[a["source"],b["source"]]})
+            self.source_comparisons[key]={
+                 "left_source":a["source"],"right_source":b["source"],
+                 "shared_orthography":overlap,
+                 "evidence_state":"observed_co_occurrence_only",
+                 "independent_inference":False}
+            return ("source_pair_compared",0.08 if overlap else 0.01,
+                    {"sources":[a["source"],b["source"]],"overlap_count":len(overlap)})
+        return super().action(tool)
 
 def main():
     a=argparse.ArgumentParser()
@@ -65,7 +114,7 @@ def main():
     print("ECHO022_START "+json.dumps({"volume_v_lesson_pages":len(vpages),
         "prior_grade1_pages":len(prior_pages),"parent_state":startstate,
         "corpus_sha256":corpus_sha,"wall_clock_target_seconds":args.seconds}),flush=True)
-    learner=EchoSchool(parent,pages,seed=22022)
+    learner=VolumeVSchool(parent,pages,seed=22022)
     prior_words=set(parent.words_studied)
     performance=learner.study(args.seconds,args.out)
     after=evaluate_prompts(learner,questions["questions"])
@@ -76,6 +125,8 @@ def main():
         json.dump({"source_digest":corpus_sha,"source_pages":[{k:v for k,v in p.items() if k!="text"} for p in pages],
                    "recorded_sentences":learner.sentences,"proposed_cards":list(learner.cards.values()),
                    "proposed_edges":list(learner.links.values()),
+                   "constraint_candidates":list(learner.constraint_candidates.values()),
+                   "source_comparisons":list(learner.source_comparisons.values()),
                    "policy":learner.policy,"effects":dict(learner.events),
                    "new_wordnet_senses_explored":sorted(set(parent.words_studied)-prior_words),
                    "prior_parent":startstate,
@@ -89,6 +140,8 @@ def main():
         "elapsed_study_seconds":performance["elapsed_seconds"],"work":performance,
         "volume_v_pdf_refs":vmanifest,"volume_v_lesson_sha256":corpus_sha,
         "volume_v_coverage":sorted(coverage.intersection({v["source_id"] for v in vmanifest})),
+        "constraint_candidate_count":len(learner.constraint_candidates),
+        "source_pair_comparisons":len(learner.source_comparisons),
         "prior_grade1_sources_available":len(prev_manifest),
         "prior_grade1_source_error":previous_error,
         "baseline_nonempty":sum(bool(x["raw_answer"]) for x in before),
