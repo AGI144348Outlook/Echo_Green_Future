@@ -14,8 +14,6 @@ jobs:
   reconstruct-dictionary:
     runs-on: ubuntu-latest
     timeout-minutes: 25
-    env:
-      NLTK_DATA: ${{ runner.temp }}/nltk_data
     steps:
       - name: Checkout the isolated Echo feature branch
         uses: actions/checkout@v4
@@ -26,7 +24,9 @@ jobs:
       - name: Install pinned full WordNet reader
         run: |
           python -m pip install "nltk==3.9.2"
+          mkdir -p "$RUNNER_TEMP/nltk_data"
           python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+          echo "NLTK_DATA=$RUNNER_TEMP/nltk_data" >> "$GITHUB_ENV"
       - name: Cite published pretest and check source-only invariants
         run: |
           echo "PRETEST: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/454"
