@@ -63,6 +63,12 @@ A new runtime should retain exact action-state provenance, episode digests, RNG 
 
 **No actual ECHO-023 experiment was conducted by creating this document. Publish a prospective pre-test issue before modifying/testing runtime behavior.**
 
+## 2026-11-13 — Proposed Solitaire-deck recursive return reward economy
+
+Timothy proposes that each **recursive return** to already studied source material be treated like **recycling a Solitaire deck**: cards are redealt face down for a new pass, and the redeal **docks points from the accumulated learning-progress score**. A return does not destroy acquired evidence or impose a fixed study cap. The next pass can recover more than its cost only through independently grounded new understanding, more accurate uncertainty, or well-justified transfer.
+
+See the full protocol and experiment comparison: [ECHO-023-RL-001 Solitaire Redeal Scoring](./ECHO023_SOLITAIRE_REDEAL_SCORING.md). This is **a documented hypothesis, not a tested reward update**. It explicitly counters ECHO-022's observation that all proposed sources and links saturated by 30 seconds while many millions of subsequent actions continued. The policy must separately measure verified novelty and guard against penalty-induced guessing or tool avoidance.
+
 ## ECHO-023 proposed educational assessment series (not yet executed)
 
 These ten tests are **independent lesson/test types**, not a fixed operational or dictionary-work quota. Distinct source and held-out versions are required. Run each only after a new **prospective GitHub pre-test issue** and preserve counterexamples and raw output. Avoid evaluating a drawing or copied paragraph as autonomous inference.
