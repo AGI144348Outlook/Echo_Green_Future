@@ -21,3 +21,10 @@ This is a chronologically appended record; the GitHub issue #454 is the discussi
 - Exact MCP transport / policy for authenticated Echo runtime and Vercel browser host, event idempotency, graph revision conflicts.
 - How to expose higher-order graph-as-node object types without mutating the existing `evidence_net.nodes` enum; needs a schema migration under branch.
 - The full dictionary ingestion into Neon, visual availability through OpenDiagram and assessment of independently *inferred* grammar/semantic relations are separate future milestones.
+
+## 2026-11-13 UTC — First full-corpus source-indexing execution (MEASURED)
+- Pre-test record: #454; actual post-test comment: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/454#issuecomment-6845338820
+- First workflow config failed validation before any job; corrected workflow completed successfully in [run 43374286466](https://github.com/AGI144348Outlook/Echo_Green_Future/actions/runs/43374286466) at commit `7134d2d2`.
+- Tests: 6/6 passed. All 117,659 installed Princeton WordNet synsets indexed, with 1,176,365 definition-word occurrences, 49,467 unique lexical spellings and 165,332 WordNet-native semantic links. All source token counts reconciled. Source graph artifact ID 14014046825 (five files, 33,807,876 bytes).
+- **Important distinction:** a complete source-only reconstruction was accomplished; *not* independent contextual inference by Echo Governor, and *not* a Neon or OpenDiagram live graph update. The corpus was indexed without a 22-word/operation cap; definition-sharing is not proof of a `part_of` or `is_a` relation. Evidence state remains source-only.
+- The skill is portable and committed to GitHub; ChatGPT installed-skills catalog registration remains uncompleted. Next: authenticated Neon ingestion, Vercel MCP tools and OpenDiagram projection, separately evidenced and preregistered.
