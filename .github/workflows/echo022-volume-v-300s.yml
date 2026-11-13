@@ -1,0 +1,62 @@
+name: ECHO-022 Volume V lessons and 300-second independent study
+on:
+  push:
+    branches: [feature/echo022-volume-v-300s]
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echo022_*"
+      - ".github/workflows/echo022-volume-v-300s.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  echo022-study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Preregistered research and source reader dependencies
+        run: |
+          echo "Prospective pretest: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/461"
+          python -m pip install 'nltk==3.9.2' 'pymupdf==1.26.6' 'requests==2.32.5' 'beautifulsoup4==4.14.2'
+          python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+      - name: Verify sources, held-out isolation, and provenance-safe scoring
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          python -m unittest discover -s ECHO_AutonomousAgency/experiments -p 'test_echo022_volume_v.py' -v
+          python -m py_compile ECHO_AutonomousAgency/experiments/echo022_volume_v_study.py ECHO_AutonomousAgency/experiments/echo022_score.py
+      - name: Recover last exact ECHO-019 full WordNet checkpoint
+        uses: actions/download-artifact@v4
+        with:
+          name: echo019-resumed-wordnet-300s
+          run-id: '43316542221'
+          github-token: ${{ github.token }}
+          path: echo019-parent
+      - name: Run Echo's original algorithmic learner for 300 real wall-clock seconds
+        env:
+          NLTK_DATA: ${{ runner.temp }}/nltk_data
+        run: |
+          mkdir -p echo022-results
+          python -u ECHO_AutonomousAgency/experiments/echo022_volume_v_study.py \
+            --parent echo019-parent \
+            --out echo022-results \
+            --prompts ECHO_AutonomousAgency/experiments/echo022_holdout_questions.json \
+            --seconds 300
+      - name: Independently assess raw pre/post response evidence
+        run: |
+          python ECHO_AutonomousAgency/experiments/echo022_score.py \
+            --before echo022-results/before_raw_answers.json \
+            --after echo022-results/after_raw_answers.json \
+            --out echo022-results/echo022_heldout_assessment.json
+      - name: Preserve complete 300s source evidence and actual raw answers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echo022-volume-v-300s-research
+          path: echo022-results/
+          if-no-files-found: warn
+          retention-days: 30
