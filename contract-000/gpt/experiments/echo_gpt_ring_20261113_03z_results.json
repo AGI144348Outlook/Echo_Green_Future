@@ -1,0 +1,61 @@
+{
+  "model": "echo-gpt-ring-03z-v1",
+  "execution": "local Python after prospective Issue #451; source typed into GitHub separately; exact committed-byte replay pending",
+  "python_source_sha256": "d55c8474518b9ac050573231fa0ba0aaf8f0fc254f782dac1e67e15563987ee9",
+  "local_output_sha256": "400e1d14247a8050b3bdd6fd6a3e3a51a41ae0901b25f2a0fc442f2113f52ef2",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "test_types": 10,
+  "checks_passed": 36,
+  "checks_total": 40,
+  "failed": "covariance_capacity in all 4 seeds; compared globally shifted phases without subtracting the imposed 0.7 shift, so test definition is invalid for covariance",
+  "metrics": [
+    {
+      "seed": 11,
+      "contacts": 27,
+      "border_L1": 0.04306775635800614,
+      "shuffle_L1": 1.2280111271606746,
+      "triadic_L1": 0.14543658023850892,
+      "fourbody_L1": 0.06255408460886627,
+      "raw_phase_shift_L1": 0.6999999999999991
+    },
+    {
+      "seed": 23,
+      "contacts": 27,
+      "border_L1": 0.05899543978566554,
+      "shuffle_L1": 1.50230046098805,
+      "triadic_L1": 0.1408953419558466,
+      "fourbody_L1": 0.05350424307349276,
+      "raw_phase_shift_L1": 0.7000000000000015
+    },
+    {
+      "seed": 37,
+      "contacts": 27,
+      "border_L1": 0.0564170818370901,
+      "shuffle_L1": 1.7675332581027803,
+      "triadic_L1": 0.10241774179860491,
+      "fourbody_L1": 0.05467872123424449,
+      "raw_phase_shift_L1": 0.7000000000000013
+    },
+    {
+      "seed": 53,
+      "contacts": 27,
+      "border_L1": 0.05999835054397383,
+      "shuffle_L1": 1.9007899288821437,
+      "triadic_L1": 0.12078984605395121,
+      "fourbody_L1": 0.06313436526923279,
+      "raw_phase_shift_L1": 0.7000000000000022
+    }
+  ],
+  "limitations": [
+    "27 contacts all occur over 54 steps, not simultaneous, but occupancy never drains",
+    "no independent warehouse state, so feedback is a seat-occupancy switch, not warehouse computation",
+    "gematria surrogate is integers 1..27, not canonical Hebrew gematria",
+    "phase covariance is untested due to invalid assertion",
+    "local source and committed source were independently typed, exact-byte replay unverified"
+  ]
+}
