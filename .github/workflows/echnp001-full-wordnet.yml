@@ -1,0 +1,46 @@
+name: ECHNP-001 full WordNet definition-occurrence evidence assignment
+on:
+  push:
+    branches:
+      - feature/echnp-001-dictionary-evidence
+    paths:
+      - "ECHO_AutonomousAgency/experiments/echnp001_*"
+      - "ECHO_AutonomousAgency/experiments/test_echnp001_*"
+      - ".github/workflows/echnp001-full-wordnet.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reconstruct-dictionary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NLTK_DATA: ${{ runner.temp }}/nltk_data
+    steps:
+      - name: Checkout the isolated Echo feature branch
+        uses: actions/checkout@v4
+      - name: Python 3.12 for reproducible source reader
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned full WordNet reader
+        run: |
+          python -m pip install "nltk==3.9.2"
+          python -m nltk.downloader -d "$RUNNER_TEMP/nltk_data" wordnet
+      - name: Cite published pretest and check source-only invariants
+        run: |
+          echo "PRETEST: https://github.com/AGI144348Outlook/Echo_Green_Future/issues/454"
+          python -m unittest discover \
+            -s ECHO_AutonomousAgency/experiments \
+            -p "test_echnp001_wordnet_index.py" -v
+      - name: Execute entire installed WordNet definition-evidence pass
+        run: |
+          python -u ECHO_AutonomousAgency/experiments/echnp001_wordnet_index.py --output echnp001-results
+      - name: Preserve all source-only dictionary networks and verification receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: echnp001-full-wordnet-definition-evidence
+          path: echnp001-results/
+          if-no-files-found: warn
+          retention-days: 30
