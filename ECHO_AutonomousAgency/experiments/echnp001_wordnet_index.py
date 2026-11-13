@@ -188,10 +188,11 @@ def verify_index(output: Path):
             measured["occurrences"] += 1
             if o["surface"].casefold() in {"of", "the", "in", "with", "for", "through", "between", "and", "a", "an", "to"}:
                 measured["function_word_occurrences"] += 1
+    known_sense_ids = {d.replace("def:", "", 1) for d in seen_definitions}
     with gzip.open(output / "native_relations.jsonl.gz", "rt", encoding="utf-8") as handle:
         for line in handle:
             edge = json.loads(line)
-            if edge["source_node"] not in {r.replace("def:", "", 1) for r in seen_definitions}:
+            if edge["source_node"] not in known_sense_ids:
                 raise AssertionError("Unknown source synset: " + edge["id"])
             measured["native_relations"] += 1
     if measured["raw_gloss_tokens"] != measured["occurrences"]:
