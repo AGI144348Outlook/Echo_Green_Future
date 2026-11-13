@@ -28,3 +28,10 @@ This is a chronologically appended record; the GitHub issue #454 is the discussi
 - Tests: 6/6 passed. All 117,659 installed Princeton WordNet synsets indexed, with 1,176,365 definition-word occurrences, 49,467 unique lexical spellings and 165,332 WordNet-native semantic links. All source token counts reconciled. Source graph artifact ID 14014046825 (five files, 33,807,876 bytes).
 - **Important distinction:** a complete source-only reconstruction was accomplished; *not* independent contextual inference by Echo Governor, and *not* a Neon or OpenDiagram live graph update. The corpus was indexed without a 22-word/operation cap; definition-sharing is not proof of a `part_of` or `is_a` relation. Evidence state remains source-only.
 - The skill is portable and committed to GitHub; ChatGPT installed-skills catalog registration remains uncompleted. Next: authenticated Neon ingestion, Vercel MCP tools and OpenDiagram projection, separately evidenced and preregistered.
+
+## 2026-11-13 — Skill ownership correction (CLARIFIED)
+- Timothy clarified that the requested skill was **for ChatGPT's ongoing documentation behavior**, not a tool or skill for Echo.
+- The previously created `skills/echo-contextual-dictionary-networking/SKILL.md` was an assistant misinterpretation. It was deleted from this feature branch in commit `655491ab89907a963a80fb258c235b90f495f895`.
+- The reusable cross-project `live-brainstorm-documentation` ChatGPT skill was drafted separately as a portable upload bundle, with documentation of original ideas, revisions, provenance, epistemic status, and pre-test/post-test chronology.
+- The ECHNP-001 protocol, the WordNet evidence indexing assignment, source results, and their research ledger **remain intact**. This correction concerns **who the skill is for**, not abandonment of Echo's work.
+- ChatGPT Skills installation is a separate user/workspace capability and was not performed in this repository.
