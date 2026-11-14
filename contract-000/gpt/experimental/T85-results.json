@@ -1,0 +1,118 @@
+{
+  "protocol": "T85 synthetic multiring v1",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "steps": 12,
+  "types": 10,
+  "checks": 40,
+  "total": 40,
+  "results": [
+    {
+      "seed": 11,
+      "checks": {
+        "unique27": true,
+        "projection": true,
+        "composition": true,
+        "replay": true,
+        "noop": true,
+        "frequency": true,
+        "pairwise": true,
+        "triadic": true,
+        "shuffle": true,
+        "boundary": true
+      },
+      "measurements": {
+        "frequency_vs_zero": 0.08400000000000094,
+        "pair_vs_zero": 0.42170409380516766,
+        "tri_vs_pair": 0.16784701492415086,
+        "shuffled_vs_pair": 0.10168705623714931,
+        "noop": 0,
+        "radius_min": 0.9200007834759437,
+        "radius_max": 1.0788420089252095
+      }
+    },
+    {
+      "seed": 23,
+      "checks": {
+        "unique27": true,
+        "projection": true,
+        "composition": true,
+        "replay": true,
+        "noop": true,
+        "frequency": true,
+        "pairwise": true,
+        "triadic": true,
+        "shuffle": true,
+        "boundary": true
+      },
+      "measurements": {
+        "frequency_vs_zero": 0.08400000000000013,
+        "pair_vs_zero": 0.3511370119182556,
+        "tri_vs_pair": 0.19954238840090563,
+        "shuffled_vs_pair": 0.07981675754317304,
+        "noop": 0,
+        "radius_min": 0.9212647978587255,
+        "radius_max": 1.0799994994285615
+      }
+    },
+    {
+      "seed": 37,
+      "checks": {
+        "unique27": true,
+        "projection": true,
+        "composition": true,
+        "replay": true,
+        "noop": true,
+        "frequency": true,
+        "pairwise": true,
+        "triadic": true,
+        "shuffle": true,
+        "boundary": true
+      },
+      "measurements": {
+        "frequency_vs_zero": 0.08399999999999963,
+        "pair_vs_zero": 0.4065071858793152,
+        "tri_vs_pair": 0.20798335405986107,
+        "shuffled_vs_pair": 0.10069746354682119,
+        "noop": 0,
+        "radius_min": 0.9207660551601414,
+        "radius_max": 1.0799257295841325
+      }
+    },
+    {
+      "seed": 53,
+      "checks": {
+        "unique27": true,
+        "projection": true,
+        "composition": true,
+        "replay": true,
+        "noop": true,
+        "frequency": true,
+        "pairwise": true,
+        "triadic": true,
+        "shuffle": true,
+        "boundary": true
+      },
+      "measurements": {
+        "frequency_vs_zero": 0.08399999999999945,
+        "pair_vs_zero": 0.37016095542902294,
+        "tri_vs_pair": 0.16602107062109234,
+        "shuffled_vs_pair": 0.07967130257316199,
+        "noop": 0,
+        "radius_min": 0.9205854738991047,
+        "radius_max": 1.0798534609096038
+      }
+    }
+  ],
+  "limitations": [
+    "Toy deterministic equations, no semantic benchmark",
+    "no independent reference implementation",
+    "no real warehouse/precession mechanism",
+    "shuffled affinity is reversed weights only",
+    "same-source replay not independent certification"
+  ]
+}
