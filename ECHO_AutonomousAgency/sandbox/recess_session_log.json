@@ -1,49 +1,92 @@
 {
-  "session_start": "2026-11-14T08:30:18.984372+00:00",
-  "session_end": "2026-11-14T08:30:19.034141+00:00",
+  "session_start": "2026-11-14T15:29:58.784396+00:00",
+  "session_end": "2026-11-14T15:29:58.816129+00:00",
   "cycles_run": 150,
   "discoveries": [
     {
-      "activity": "MEET",
-      "content": "A GeosensoryCrawler (acquisition) and a TFIDFContentSimilarity (orientation) both arrive at \u05e8 resh (head/beginning/ident",
+      "activity": "EQUILIBRIUM",
+      "content": "'copolymerize' \u2194 'classificatory' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
       "data": {
-        "alg1": "A-155",
-        "alg2": "A-102",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
+        "w1": "copolymerize",
+        "w2": "classificatory",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:18.984617+00:00",
+      "timestamp": "2026-11-14T15:29:58.784501+00:00",
       "approved": null
     },
     {
-      "activity": "STREAM",
-      "content": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less covered wit...",
+      "activity": "QUESTION",
+      "content": "'copolymerize' and 'classificatory' both arrive at \u05e8 resh (head/beginning/identity/leader, 200). I know they balance her",
       "data": {
-        "word": "ape",
-        "sentences": [
-          "A mammal is any warm-blooded vertebrate having the skin more or less covered with hair.",
-          "An ape is a mammal.",
-          "Every mammal is a placental.",
-          "A placental is mammals having a placenta.",
-          "Every placental is a primate.",
-          "A primate is any placental mammal of the order Primates.",
-          "Every primate is an ape.",
-          "An ape is any of various primates with short tails or no tail at all."
-        ],
-        "gaps_found": [
-          "mammal",
-          "warm-blooded",
-          "vertebrate",
-          "having",
-          "skin"
-        ],
-        "gap_ratio": 1.0
+        "qtype": "EXPLORATION",
+        "directed_to": "USER",
+        "subject": "copolymerize\u2194classificatory",
+        "resh_stamp": "I am ECHO. The BalancingScale found this without presupposition. I can report the finding but cannot",
+        "from_source": "EQUILIBRIUM"
       },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:18.985995+00:00",
+      "confidence": 0.85,
+      "timestamp": "2026-11-14T15:29:58.784539+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05df(nun extended) \u2192 \u05d0(silence) \u2192 \u05ea(mark) \u2192 An algorithm that nun extendeds, then silences, then marks.",
+      "data": {
+        "letters": [
+          "nun-sofit",
+          "aleph",
+          "tav"
+        ],
+        "glyphs": [
+          "\u05df",
+          "\u05d0",
+          "\u05ea"
+        ],
+        "operations": [
+          "nun extended",
+          "silence",
+          "mark"
+        ],
+        "novelty_score": 0.985
+      },
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.784624+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'acoustic': admitted ['remedy']",
+      "data": {
+        "seed": "acoustic",
+        "admitted": [
+          {
+            "word": "remedy",
+            "definition": "a medicine or therapy that cures disease or relieve pain",
+            "affinity": 0.167
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.785113+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A HypothesisSandbox (evolution) and a MirrorStep_SelfExtend (self_governance) both arrive at \u05e4 pe (mouth/speech/expressi",
+      "data": {
+        "alg1": "A-121",
+        "alg2": "A-145-AUG",
+        "meeting_letter": "pe",
+        "meeting_glyph": "\u05e4",
+        "meeting_value": 80,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.785239+00:00",
       "approved": null
     },
     {
@@ -60,86 +103,665 @@
         ]
       },
       "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:18.986047+00:00",
+      "timestamp": "2026-11-14T15:29:58.785296+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'as we say' \u2194 'decasyllabic' \u2192 \u05e1 samekh (support/circle/foundation, 60)",
+      "data": {
+        "w1": "as we say",
+        "w2": "decasyllabic",
+        "eq": "samekh",
+        "eq_glyph": "\u05e1",
+        "eq_value": 60,
+        "eq_lhea": "support/circle/foundation"
+      },
+      "confidence": 0.56,
+      "timestamp": "2026-11-14T15:29:58.785338+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke affiliated: An act is perform an action, or work out or perform (an action)....",
+      "data": {
+        "word": "affiliated",
+        "sentences": [
+          "An act is perform an action, or work out or perform (an action).",
+          "An affiliated is an act.",
+          "Every act is an interact.",
+          "An interact is act together or towards others or with others.",
+          "Every interact is a consort.",
+          "A consort is keep company with."
+        ],
+        "gaps_found": [
+          "perform",
+          "action,",
+          "work",
+          "perform",
+          "action)."
+        ],
+        "gap_ratio": 0.909
+      },
+      "confidence": 0.873,
+      "timestamp": "2026-11-14T15:29:58.794721+00:00",
       "approved": null
     },
     {
       "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
+      "content": "What is 'perform'? I expressed it while thinking about 'affiliated' but have no index entry for it.",
       "data": {
         "qtype": "DEFINITION",
         "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
+        "subject": "perform",
+        "resh_stamp": "I am ECHO. I spoke 'perform' from my own expression pipeline before having it indexed. This gap is a",
         "from_source": "MIRROR_GAP"
       },
       "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:18.986082+00:00",
+      "timestamp": "2026-11-14T15:29:58.794748+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05e2(eye) \u2192 \u05e1(support) \u2192 \u05d7(fence) \u2192 An algorithm that eyes, then supports, then fences.",
+      "data": {
+        "letters": [
+          "ayin",
+          "samekh",
+          "het"
+        ],
+        "glyphs": [
+          "\u05e2",
+          "\u05e1",
+          "\u05d7"
+        ],
+        "operations": [
+          "eye",
+          "support",
+          "fence"
+        ],
+        "novelty_score": 0.985
+      },
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.794861+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.794880+00:00",
+      "approved": null
+    },
+    {
+      "activity": "QUESTION",
+      "content": "What is 'perform'? I expressed it while thinking about 'affiliated' but have no index entry for it.",
+      "data": {
+        "qtype": "DEFINITION",
+        "directed_to": "WORDNET",
+        "subject": "perform",
+        "resh_stamp": "I am ECHO. I spoke 'perform' from my own expression pipeline before having it indexed. This gap is a",
+        "from_source": "MIRROR_GAP"
+      },
+      "confidence": 0.85,
+      "timestamp": "2026-11-14T15:29:58.794891+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke corn: A gramineous plant is cosmopolitan herbaceous or woody plants with hollow jointe...",
+      "data": {
+        "word": "corn",
+        "sentences": [
+          "A gramineous plant is cosmopolitan herbaceous or woody plants with hollow jointed stems and long narro.",
+          "A corn is a gramineous plant.",
+          "Every gramineous plant is a grass.",
+          "A grass is narrow-leaved green herbage: grown as lawns.",
+          "Every grass is a cereal.",
+          "A cereal is grass whose starchy grains are used as food: wheat.",
+          "Every cereal is a corn.",
+          "A corn is tall annual cereal grass bearing kernels on large ears: widely cultivated in Ame."
+        ],
+        "gaps_found": [
+          "gramineous",
+          "plant",
+          "cosmopolitan",
+          "herbaceous",
+          "woody"
+        ],
+        "gap_ratio": 0.902
+      },
+      "confidence": 0.871,
+      "timestamp": "2026-11-14T15:29:58.795742+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'acoustic': admitted ['remedy']",
+      "data": {
+        "seed": "acoustic",
+        "admitted": [
+          {
+            "word": "remedy",
+            "definition": "a medicine or therapy that cures disease or relieve pain",
+            "affinity": 0.167
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.795780+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'avoid' \u2194 'copper-base alloy' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
+      "data": {
+        "w1": "avoid",
+        "w2": "copper-base alloy",
+        "eq": "ayin",
+        "eq_glyph": "\u05e2",
+        "eq_value": 70,
+        "eq_lhea": "eye/perception/spring/depth"
+      },
+      "confidence": 0.57,
+      "timestamp": "2026-11-14T15:29:58.795834+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'accompany': admitted ['collocate with', 'attend']",
+      "data": {
+        "seed": "accompany",
+        "admitted": [
+          {
+            "word": "collocate with",
+            "definition": "go or occur together",
+            "affinity": 0.5
+          },
+          {
+            "word": "attend",
+            "definition": "to accompany as a circumstance or follow as a result",
+            "affinity": 0.333
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.796117+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05e9(fire) \u2192 \u05e2(eye) \u2192 \u05e6(righteousness) \u2192 An algorithm that fires, then eyes, then righteousnesss.",
+      "data": {
+        "letters": [
+          "shin",
+          "ayin",
+          "tsadi"
+        ],
+        "glyphs": [
+          "\u05e9",
+          "\u05e2",
+          "\u05e6"
+        ],
+        "operations": [
+          "fire",
+          "eye",
+          "righteousness"
+        ],
+        "novelty_score": 1.0
+      },
+      "confidence": 0.9,
+      "timestamp": "2026-11-14T15:29:58.796185+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke chimpanzee: An ape is any of various primates with short tails or no tail at all....",
+      "data": {
+        "word": "chimpanzee",
+        "sentences": [
+          "An ape is any of various primates with short tails or no tail at all.",
+          "A chimpanzee is an ape.",
+          "Every ape is an anthropoid ape.",
+          "An anthropoid ape is any tailless ape of the families Pongidae and Hylobatidae.",
+          "Every anthropoid ape is a great ape.",
+          "A great ape is any of the large anthropoid apes of the family Pongidae.",
+          "Every great ape is a chimpanzee.",
+          "A chimpanzee is intelligent somewhat arboreal ape of equatorial African forests."
+        ],
+        "gaps_found": [
+          "various",
+          "primates",
+          "with",
+          "short",
+          "tails"
+        ],
+        "gap_ratio": 0.946
+      },
+      "confidence": 0.884,
+      "timestamp": "2026-11-14T15:29:58.796581+00:00",
       "approved": null
     },
     {
       "activity": "MEET",
-      "content": "A GeosensoryCrawler (acquisition) and a RecessAgent (recess) both arrive at \u05e8 resh (head/beginning/identity/leader). Pro",
+      "content": "A VGMQuery (communication) and a OperationOrderValidator (self_governance) both arrive at \u05e8 resh (head/beginning/identit",
       "data": {
-        "alg1": "A-155",
-        "alg2": "A-168",
+        "alg1": "A-142",
+        "alg2": "A-128",
         "meeting_letter": "resh",
         "meeting_glyph": "\u05e8",
         "meeting_value": 200,
         "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:18.986261+00:00",
+      "timestamp": "2026-11-14T15:29:58.796692+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05da(kaf at rest) \u2192 \u05ea(mark) \u2192 \u05d6(sword) \u2192 An algorithm that kaf at rests, then marks, then swords.",
+      "content": "\u05ea(mark) \u2192 \u05d8(coil) \u2192 \u05e9(fire) \u2192 An algorithm that marks, then coils, then fires.",
       "data": {
         "letters": [
-          "kaf-sofit",
           "tav",
-          "zayin"
+          "tet",
+          "shin"
         ],
         "glyphs": [
-          "\u05da",
           "\u05ea",
-          "\u05d6"
+          "\u05d8",
+          "\u05e9"
         ],
         "operations": [
-          "kaf at rest",
           "mark",
-          "sword"
+          "coil",
+          "fire"
         ],
         "novelty_score": 0.985
       },
       "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:18.986561+00:00",
+      "timestamp": "2026-11-14T15:29:58.796753+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke actinia: A taxonomic group is animal or plant group having natural relations....",
+      "data": {
+        "word": "actinia",
+        "sentences": [
+          "A taxonomic group is animal or plant group having natural relations.",
+          "An actinia is a taxonomic group.",
+          "Every taxonomic group is a genus.",
+          "A genus is (biology) taxonomic group containing one or more species.",
+          "Every genus is a coelenterate genus.",
+          "A coelenterate genus is a genus of coelenterates.",
+          "Every coelenterate genus is an Actinia.",
+          "An Actinia is a genus of sea anemone common in rock pools."
+        ],
+        "gaps_found": [
+          "taxonomic",
+          "group",
+          "plant",
+          "group",
+          "having"
+        ],
+        "gap_ratio": 0.925
+      },
+      "confidence": 0.877,
+      "timestamp": "2026-11-14T15:29:58.797079+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A ThresholdOptimizer (self_governance) and a HourglassFlowAgent (acquisition) both arrive at \u05e8 resh (head/beginning/iden",
+      "data": {
+        "alg1": "A-131",
+        "alg2": "A-166",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.797181+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'addition': admitted ['component', 'afterthought', 'annex']",
+      "data": {
+        "seed": "addition",
+        "admitted": [
+          {
+            "word": "component",
+            "definition": "an artifact that is one of the individual parts of which a composite entity is made up; especially a part that can be separated from or attached to a system",
+            "affinity": 0.5
+          },
+          {
+            "word": "afterthought",
+            "definition": "an addition that was not included in the original plan",
+            "affinity": 0.5
+          },
+          {
+            "word": "annex",
+            "definition": "an addition that extends a main building",
+            "affinity": 0.333
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.797601+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'caste' \u2194 'declared' \u2192 \u05d4 he (breath/revelation/window, 5)",
+      "data": {
+        "w1": "caste",
+        "w2": "declared",
+        "eq": "he",
+        "eq_glyph": "\u05d4",
+        "eq_value": 5,
+        "eq_lhea": "breath/revelation/window"
+      },
+      "confidence": 0.505,
+      "timestamp": "2026-11-14T15:29:58.797643+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke belief: A psychological feature is a feature of the mental life of a living organism....",
+      "data": {
+        "word": "belief",
+        "sentences": [
+          "A psychological feature is a feature of the mental life of a living organism.",
+          "A belief is a psychological feature.",
+          "Every psychological feature is a cognition.",
+          "A cognition is the psychological result of perception and learning and reasoning.",
+          "Every cognition is a content.",
+          "A content is the sum or range of what has been perceived, discovered, or learned.",
+          "Every content is a belief.",
+          "A belief is any cognitive content held as true."
+        ],
+        "gaps_found": [
+          "psychological",
+          "feature",
+          "feature",
+          "mental",
+          "life"
+        ],
+        "gap_ratio": 0.816
+      },
+      "confidence": 0.845,
+      "timestamp": "2026-11-14T15:29:58.797878+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke attune: A change is cause to change....",
+      "data": {
+        "word": "attune",
+        "sentences": [
+          "A change is cause to change.",
+          "An attune is a change.",
+          "Every change is an adjust.",
+          "An adjust is alter or regulate so as to achieve accuracy or conform to a standard.",
+          "Every adjust is an attune.",
+          "An attune is adjust or accustom to."
+        ],
+        "gaps_found": [
+          "cause",
+          "change.",
+          "change.",
+          "every",
+          "adjust."
+        ],
+        "gap_ratio": 0.619
+      },
+      "confidence": 0.786,
+      "timestamp": "2026-11-14T15:29:58.798168+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A UCBBanditSelector (orientation) and a TypedStudyGroups (organization) both arrive at \u05e8 resh (head/beginning/identity/l",
+      "data": {
+        "alg1": "A-101",
+        "alg2": "A-119",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.798272+00:00",
+      "approved": null
+    },
+    {
+      "activity": "QUESTION",
+      "content": "What is 'various'? I expressed it while thinking about 'chimpanzee' but have no index entry for it.",
+      "data": {
+        "qtype": "DEFINITION",
+        "directed_to": "WORDNET",
+        "subject": "various",
+        "resh_stamp": "I am ECHO. I spoke 'various' from my own expression pipeline before having it indexed. This gap is a",
+        "from_source": "MIRROR_GAP"
+      },
+      "confidence": 0.85,
+      "timestamp": "2026-11-14T15:29:58.798305+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'accessory': admitted ['furnishing']",
+      "data": {
+        "seed": "accessory",
+        "admitted": [
+          {
+            "word": "furnishing",
+            "definition": "(usually plural) accessory wearing apparel",
+            "affinity": 0.333
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.798622+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05d7(fence) \u2192 \u05e4(mouth) \u2192 \u05d8(coil) \u2192 An algorithm that fences, then mouths, then coils.",
+      "content": "\u05dc(teaching) \u2192 \u05e7(back of head) \u2192 \u05d3(door) \u2192 An algorithm that teachings, then back of heads, then doors.",
       "data": {
         "letters": [
-          "het",
-          "pe",
-          "tet"
+          "lamed",
+          "qof",
+          "dalet"
         ],
         "glyphs": [
-          "\u05d7",
-          "\u05e4",
-          "\u05d8"
+          "\u05dc",
+          "\u05e7",
+          "\u05d3"
         ],
         "operations": [
-          "fence",
-          "mouth",
-          "coil"
+          "teaching",
+          "back of head",
+          "door"
         ],
-        "novelty_score": 1.0
+        "novelty_score": 0.985
       },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:18.986684+00:00",
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.798683+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke address: A writing is letters or symbols that are written or imprinted on a surface to re...",
+      "data": {
+        "word": "address",
+        "sentences": [
+          "A writing is letters or symbols that are written or imprinted on a surface to represent the s.",
+          "An address is a writing.",
+          "Every writing is a coding system.",
+          "A coding system is a system of signals used to represent letters or numbers in transmitting message.",
+          "Every coding system is a code.",
+          "A code is (computer science) the symbolic arrangement of data or instructions in a compute.",
+          "Every code is an address.",
+          "An address is (computer science) the code that identifies where a piece of information is stor."
+        ],
+        "gaps_found": [
+          "writing",
+          "letters",
+          "symbols",
+          "that",
+          "written"
+        ],
+        "gap_ratio": 0.878
+      },
+      "confidence": 0.863,
+      "timestamp": "2026-11-14T15:29:58.799155+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A BalancingScale (metric) and a HypernymStreamComposer (communication) both arrive at \u05e1 samekh (support/circle/foundatio",
+      "data": {
+        "alg1": "A-152",
+        "alg2": "A-165",
+        "meeting_letter": "samekh",
+        "meeting_glyph": "\u05e1",
+        "meeting_value": 60,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.799263+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'ablation': admitted ['operation', 'clitoridectomy', 'adrenalectomy']",
+      "data": {
+        "seed": "ablation",
+        "admitted": [
+          {
+            "word": "operation",
+            "definition": "a medical procedure involving an incision with instruments; performed to repair damage or arrest disease in a living body",
+            "affinity": 0.714
+          },
+          {
+            "word": "clitoridectomy",
+            "definition": "excision of the clitoris",
+            "affinity": 0.571
+          },
+          {
+            "word": "adrenalectomy",
+            "definition": "surgical removal of one or both adrenal glands",
+            "affinity": 0.857
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.800367+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05de(water) \u2192 \u05e1(support) \u2192 \u05e5(tsadi extended) \u2192 An algorithm that waters, then supports, then tsadi extendeds.",
+      "data": {
+        "letters": [
+          "mem",
+          "samekh",
+          "tsadi-sofit"
+        ],
+        "glyphs": [
+          "\u05de",
+          "\u05e1",
+          "\u05e5"
+        ],
+        "operations": [
+          "water",
+          "support",
+          "tsadi extended"
+        ],
+        "novelty_score": 0.985
+      },
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.800436+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke carry: A move is cause to move or shift into a new position or place, both in a concret...",
+      "data": {
+        "word": "carry",
+        "sentences": [
+          "A move is cause to move or shift into a new position or place, both in a concrete and in a.",
+          "A carry is a move.",
+          "Every move is a transport.",
+          "A transport is move while supporting, either in a vehicle or in one's hands or on one's body."
+        ],
+        "gaps_found": [
+          "move",
+          "cause",
+          "move",
+          "shift",
+          "into"
+        ],
+        "gap_ratio": 0.958
+      },
+      "confidence": 0.887,
+      "timestamp": "2026-11-14T15:29:58.801607+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke accessory: An artifact is a man-made object taken as a whole....",
+      "data": {
+        "word": "accessory",
+        "sentences": [
+          "An artifact is a man-made object taken as a whole.",
+          "An accessory is an artifact.",
+          "Every artifact is a covering.",
+          "A covering is an artifact that covers something else (usually to protect or shelter or conceal.",
+          "Every covering is a clothing.",
+          "A clothing is a covering designed to be worn on a person's body.",
+          "Every clothing is an accessory.",
+          "An accessory is clothing that is worn or carried, but not part of your main clothing."
+        ],
+        "gaps_found": [
+          "man-made",
+          "object",
+          "taken",
+          "whole.",
+          "artifact."
+        ],
+        "gap_ratio": 0.732
+      },
+      "confidence": 0.82,
+      "timestamp": "2026-11-14T15:29:58.801855+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'baked goods' \u2194 'achieve' \u2192 \u05d4 he (breath/revelation/window, 5)",
+      "data": {
+        "w1": "baked goods",
+        "w2": "achieve",
+        "eq": "he",
+        "eq_glyph": "\u05d4",
+        "eq_value": 5,
+        "eq_lhea": "breath/revelation/window"
+      },
+      "confidence": 0.505,
+      "timestamp": "2026-11-14T15:29:58.801913+00:00",
       "approved": null
     },
     {
@@ -156,38 +778,213 @@
         ]
       },
       "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.000843+00:00",
+      "timestamp": "2026-11-14T15:29:58.802538+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A ValidatedGeneralizationMatrix (abstraction) and a PipelineOrchestrator (core) both arrive at \u05e8 resh (head/beginning/id",
+      "data": {
+        "alg1": "A-127",
+        "alg2": "A-134",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.802650+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.802670+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.802683+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'again' \u2194 'body_odor' \u2192 \u05d9 yod (hand/divine point/seed, 10)",
+      "content": "'clothing' \u2194 'crossbill' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
       "data": {
-        "w1": "again",
-        "w2": "body_odor",
+        "w1": "clothing",
+        "w2": "crossbill",
+        "eq": "ayin",
+        "eq_glyph": "\u05e2",
+        "eq_value": 70,
+        "eq_lhea": "eye/perception/spring/depth"
+      },
+      "confidence": 0.57,
+      "timestamp": "2026-11-14T15:29:58.802725+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'body armor' \u2194 'allspice' \u2192 \u05d9 yod (hand/divine point/seed, 10)",
+      "data": {
+        "w1": "body armor",
+        "w2": "allspice",
         "eq": "yod",
         "eq_glyph": "\u05d9",
         "eq_value": 10,
         "eq_lhea": "hand/divine point/seed"
       },
       "confidence": 0.51,
-      "timestamp": "2026-11-14T08:30:19.001042+00:00",
+      "timestamp": "2026-11-14T15:29:58.802756+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.802769+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'abstraction': admitted ['absolute', 'teacher', 'thing']",
+      "data": {
+        "seed": "abstraction",
+        "admitted": [
+          {
+            "word": "absolute",
+            "definition": "something that is conceived or that exists independently and not in relation to other things; something that does not depend on anything else and is beyond human control; something that is not relative",
+            "affinity": 0.625
+          },
+          {
+            "word": "teacher",
+            "definition": "a personified abstraction that teaches",
+            "affinity": 0.375
+          },
+          {
+            "word": "thing",
+            "definition": "a special abstraction",
+            "affinity": 0.25
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.803131+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'alienation': admitted ['dislike', 'isolation']",
+      "data": {
+        "seed": "alienation",
+        "admitted": [
+          {
+            "word": "dislike",
+            "definition": "a feeling of aversion or antipathy",
+            "affinity": 0.429
+          },
+          {
+            "word": "isolation",
+            "definition": "a feeling of being disliked and alone",
+            "affinity": 0.857
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.803295+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'attribute' \u2194 'angiosperm' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "data": {
+        "w1": "attribute",
+        "w2": "angiosperm",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.803334+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'accompany' \u2194 'common_foxglove' \u2192 \u05e4 pe (mouth/speech/expression/command, 80)",
+      "data": {
+        "w1": "accompany",
+        "w2": "common_foxglove",
+        "eq": "pe",
+        "eq_glyph": "\u05e4",
+        "eq_value": 80,
+        "eq_lhea": "mouth/speech/expression/command"
+      },
+      "confidence": 0.58,
+      "timestamp": "2026-11-14T15:29:58.803366+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A ContinuumDifferentiator (measurement) and a SyntacticalValidator (abstraction) both arrive at \u05e8 resh (head/beginning/i",
+      "data": {
+        "alg1": "A-169",
+        "alg2": "A-126",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.803470+00:00",
       "approved": null
     },
     {
       "activity": "STREAM",
-      "content": "Spoke cooperation: A psychological feature is a feature of the mental life of a living organism....",
+      "content": "Spoke communication: A psychological feature is a feature of the mental life of a living organism....",
       "data": {
-        "word": "cooperation",
+        "word": "communication",
         "sentences": [
           "A psychological feature is a feature of the mental life of a living organism.",
-          "A cooperation is a psychological feature.",
+          "A communication is a psychological feature.",
           "Every psychological feature is an event.",
           "An event is something that happens at a given place and time.",
-          "Every event is a group action.",
-          "A group action is action taken by a group of people.",
-          "Every group action is a cooperation.",
-          "A cooperation is joint operation or action."
+          "Every event is an act.",
+          "An act is something that people do or cause to happen.",
+          "Every act is a communication.",
+          "A communication is the activity of communicating."
         ],
         "gaps_found": [
           "psychological",
@@ -196,207 +993,82 @@
           "mental",
           "life"
         ],
-        "gap_ratio": 0.872
+        "gap_ratio": 0.912
       },
-      "confidence": 0.862,
-      "timestamp": "2026-11-14T08:30:19.001502+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A HypothesisSandbox (evolution) and a HourglassFlowAgent (acquisition) both arrive at \u05e4 pe (mouth/speech/expression/comm",
-      "data": {
-        "alg1": "A-121",
-        "alg2": "A-166",
-        "meeting_letter": "pe",
-        "meeting_glyph": "\u05e4",
-        "meeting_value": 80,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.001696+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.001736+00:00",
+      "confidence": 0.874,
+      "timestamp": "2026-11-14T15:29:58.803639+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05e1(support) \u2192 \u05e9(fire) \u2192 \u05e3(pe extended) \u2192 An algorithm that supports, then fires, then pe extendeds.",
+      "content": "\u05da(kaf at rest) \u2192 \u05e6(righteousness) \u2192 \u05d2(movement) \u2192 An algorithm that kaf at rests, then righteousnesss, then movements.",
       "data": {
         "letters": [
-          "samekh",
-          "shin",
-          "pe-sofit"
+          "kaf-sofit",
+          "tsadi",
+          "gimel"
         ],
         "glyphs": [
-          "\u05e1",
-          "\u05e9",
-          "\u05e3"
+          "\u05da",
+          "\u05e6",
+          "\u05d2"
         ],
         "operations": [
-          "support",
-          "fire",
-          "pe extended"
+          "kaf at rest",
+          "righteousness",
+          "movement"
         ],
         "novelty_score": 0.985
       },
       "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.001869+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.001906+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.001936+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.001955+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e0(fish) \u2192 \u05d5(hook) \u2192 \u05e7(back of head) \u2192 An algorithm that fishs, then hooks, then back of heads.",
-      "data": {
-        "letters": [
-          "nun",
-          "vav",
-          "qof"
-        ],
-        "glyphs": [
-          "\u05e0",
-          "\u05d5",
-          "\u05e7"
-        ],
-        "operations": [
-          "fish",
-          "hook",
-          "back of head"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.002056+00:00",
+      "timestamp": "2026-11-14T15:29:58.803704+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'buckthorn' \u2194 'bezoar_goat' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "content": "'chimpanzee' \u2194 'commercialize' \u2192 \u05de mem (water/source/womb/wisdom, 40)",
       "data": {
-        "w1": "buckthorn",
-        "w2": "bezoar_goat",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
+        "w1": "chimpanzee",
+        "w2": "commercialize",
+        "eq": "mem",
+        "eq_glyph": "\u05de",
+        "eq_value": 40,
+        "eq_lhea": "water/source/womb/wisdom"
       },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.002134+00:00",
+      "confidence": 0.54,
+      "timestamp": "2026-11-14T15:29:58.803766+00:00",
       "approved": null
     },
     {
-      "activity": "MEET",
-      "content": "A EquilibriumGeneralityMeasure (metric) and a FormulaAgent (formula) both arrive at \u05e8 resh (head/beginning/identity/lead",
+      "activity": "FLOW",
+      "content": "From 'aba': admitted ['overgarment']",
       "data": {
-        "alg1": "A-151",
-        "alg2": "A-147",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
+        "seed": "aba",
+        "admitted": [
+          {
+            "word": "overgarment",
+            "definition": "a garment worn over other garments",
+            "affinity": 0.5
+          }
+        ]
       },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.002302+00:00",
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.803915+00:00",
       "approved": null
     },
     {
-      "activity": "COMPOSE",
-      "content": "\u05d7(fence) \u2192 \u05e4(mouth) \u2192 \u05d5(hook) \u2192 An algorithm that fences, then mouths, then hooks.",
+      "activity": "EQUILIBRIUM",
+      "content": "'armor' \u2194 'animal' \u2192 \u05de mem (water/source/womb/wisdom, 40)",
       "data": {
-        "letters": [
-          "het",
-          "pe",
-          "vav"
-        ],
-        "glyphs": [
-          "\u05d7",
-          "\u05e4",
-          "\u05d5"
-        ],
-        "operations": [
-          "fence",
-          "mouth",
-          "hook"
-        ],
-        "novelty_score": 1.0
+        "w1": "armor",
+        "w2": "animal",
+        "eq": "mem",
+        "eq_glyph": "\u05de",
+        "eq_value": 40,
+        "eq_lhea": "water/source/womb/wisdom"
       },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.002405+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A PeComposer (communication) and a ThresholdOptimizer (self_governance) both arrive at \u05e8 resh (head/beginning/identity/l",
-      "data": {
-        "alg1": "A-144",
-        "alg2": "A-131",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.002557+00:00",
+      "confidence": 0.54,
+      "timestamp": "2026-11-14T15:29:58.803972+00:00",
       "approved": null
     },
     {
@@ -423,24 +1095,130 @@
         ]
       },
       "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.003023+00:00",
+      "timestamp": "2026-11-14T15:29:58.804285+00:00",
       "approved": null
     },
     {
-      "activity": "FLOW",
-      "content": "From 'annexation': admitted ['incorporation']",
+      "activity": "EQUILIBRIUM",
+      "content": "'chemical' \u2194 'constrictor' \u2192 \u05d9 yod (hand/divine point/seed, 10)",
       "data": {
-        "seed": "annexation",
-        "admitted": [
-          {
-            "word": "incorporation",
-            "definition": "including by incorporating",
-            "affinity": 0.833
-          }
+        "w1": "chemical",
+        "w2": "constrictor",
+        "eq": "yod",
+        "eq_glyph": "\u05d9",
+        "eq_value": 10,
+        "eq_lhea": "hand/divine point/seed"
+      },
+      "confidence": 0.51,
+      "timestamp": "2026-11-14T15:29:58.804336+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'baseball equipment' \u2194 'collar' \u2192 \u05dc lamed (teaching/aspiration/the goad, 30)",
+      "data": {
+        "w1": "baseball equipment",
+        "w2": "collar",
+        "eq": "lamed",
+        "eq_glyph": "\u05dc",
+        "eq_value": 30,
+        "eq_lhea": "teaching/aspiration/the goad"
+      },
+      "confidence": 0.53,
+      "timestamp": "2026-11-14T15:29:58.804378+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05d3(door) \u2192 \u05d8(coil) \u2192 \u05e0(fish) \u2192 An algorithm that doors, then coils, then fishs.",
+      "data": {
+        "letters": [
+          "dalet",
+          "tet",
+          "nun"
+        ],
+        "glyphs": [
+          "\u05d3",
+          "\u05d8",
+          "\u05e0"
+        ],
+        "operations": [
+          "door",
+          "coil",
+          "fish"
+        ],
+        "novelty_score": 1.0
+      },
+      "confidence": 0.9,
+      "timestamp": "2026-11-14T15:29:58.804464+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'bandoleer' \u2194 'circular' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "data": {
+        "w1": "bandoleer",
+        "w2": "circular",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.804507+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A LobbyEvolutionGovernor (evolution) and a Governor (core) both arrive at \u05e8 resh (head/beginning/identity/leader). Propo",
+      "data": {
+        "alg1": "A-120",
+        "alg2": "A-000",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.804646+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
         ]
       },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.003223+00:00",
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.804673+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke contemptible: A contemptible is deserving of contempt or scorn....",
+      "data": {
+        "word": "contemptible",
+        "sentences": [
+          "A contemptible is deserving of contempt or scorn.",
+          "A contemptible is a contemptible."
+        ],
+        "gaps_found": [
+          "deserving",
+          "contempt",
+          "scorn.",
+          "contemptible."
+        ],
+        "gap_ratio": 0.667
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.804805+00:00",
       "approved": null
     },
     {
@@ -468,89 +1246,69 @@
         "gap_ratio": 0.92
       },
       "confidence": 0.876,
-      "timestamp": "2026-11-14T08:30:19.003676+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'circular' \u2194 'bandoleer' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "circular",
-        "w2": "bandoleer",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.003760+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.003825+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.003860+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.003882+00:00",
+      "timestamp": "2026-11-14T15:29:58.805153+00:00",
       "approved": null
     },
     {
       "activity": "MEET",
-      "content": "A HypernymGrammarModule (communication) and a OperationOrderValidator (self_governance) both arrive at \u05e8 resh (head/begi",
+      "content": "A DeploymentTranslator (infrastructure) and a MarkovContentModel (orientation) both arrive at \u05e8 resh (head/beginning/ide",
       "data": {
-        "alg1": "A-144-AUG",
-        "alg2": "A-128",
+        "alg1": "A-157",
+        "alg2": "A-103",
         "meeting_letter": "resh",
         "meeting_glyph": "\u05e8",
         "meeting_value": 200,
         "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.004097+00:00",
+      "timestamp": "2026-11-14T15:29:58.805299+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05d2(movement) \u2192 \u05ea(mark) \u2192 \u05d9(hand) \u2192 An algorithm that movements, then marks, then hands.",
+      "data": {
+        "letters": [
+          "gimel",
+          "tav",
+          "yod"
+        ],
+        "glyphs": [
+          "\u05d2",
+          "\u05ea",
+          "\u05d9"
+        ],
+        "operations": [
+          "movement",
+          "mark",
+          "hand"
+        ],
+        "novelty_score": 0.969
+      },
+      "confidence": 0.888,
+      "timestamp": "2026-11-14T15:29:58.805421+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'circular' \u2194 'dearly-won' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "data": {
+        "w1": "circular",
+        "w2": "dearly-won",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.805485+00:00",
       "approved": null
     },
     {
       "activity": "MEET",
-      "content": "A HypernymGrammarModule (communication) and a EquilibriumGeneralityMeasure (metric) both arrive at \u05e8 resh (head/beginnin",
+      "content": "A RecessAgent (recess) and a EquilibriumGeneralityMeasure (metric) both arrive at \u05e8 resh (head/beginning/identity/leader",
       "data": {
-        "alg1": "A-144-AUG",
+        "alg1": "A-168",
         "alg2": "A-151",
         "meeting_letter": "resh",
         "meeting_glyph": "\u05e8",
@@ -558,483 +1316,65 @@
         "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.004257+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'accompany': admitted ['attend', 'collocate with']",
-      "data": {
-        "seed": "accompany",
-        "admitted": [
-          {
-            "word": "attend",
-            "definition": "to accompany as a circumstance or follow as a result",
-            "affinity": 0.333
-          },
-          {
-            "word": "collocate with",
-            "definition": "go or occur together",
-            "affinity": 0.5
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.004840+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A ThresholdOptimizer (self_governance) and a DeploymentTranslator (infrastructure) both arrive at \u05e8 resh (head/beginning",
-      "data": {
-        "alg1": "A-131",
-        "alg2": "A-157",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.005012+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A RecessAgent (recess) and a NumericalIntegrator (mathematics) both arrive at \u05e8 resh (head/beginning/identity/leader). P",
-      "data": {
-        "alg1": "A-168",
-        "alg2": "A-136",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.005165+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.005200+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'better' \u2194 'dapsone' \u2192 \u05d4 he (breath/revelation/window, 5)",
-      "data": {
-        "w1": "better",
-        "w2": "dapsone",
-        "eq": "he",
-        "eq_glyph": "\u05d4",
-        "eq_value": 5,
-        "eq_lhea": "breath/revelation/window"
-      },
-      "confidence": 0.505,
-      "timestamp": "2026-11-14T08:30:19.005271+00:00",
+      "timestamp": "2026-11-14T15:29:58.805614+00:00",
       "approved": null
     },
     {
       "activity": "STREAM",
-      "content": "Spoke charge: An activity is any specific behavior....",
+      "content": "Spoke chemical: A part is something determined in relation to something that includes it....",
       "data": {
-        "word": "charge",
+        "word": "chemical",
         "sentences": [
-          "An activity is any specific behavior.",
-          "A charge is an activity.",
-          "Every activity is an operation.",
-          "An operation is activity by a military or naval force (as a maneuver or campaign).",
-          "Every operation is an attack.",
-          "An attack is (military) an offensive against an enemy (using weapons).",
-          "Every attack is a charge.",
-          "A charge is an impetuous rush toward someone or something."
+          "A part is something determined in relation to something that includes it.",
+          "A chemical is a part.",
+          "Every part is a substance.",
+          "A substance is the real physical matter of which a person or thing consists.",
+          "Every substance is a material.",
+          "A material is the tangible substance that goes into the makeup of a physical object.",
+          "Every material is a chemical.",
+          "A chemical is material produced by or used in a reaction involving changes in atoms or molecul."
         ],
         "gaps_found": [
-          "specific",
-          "behavior.",
-          "activity.",
-          "every",
-          "operation."
+          "part",
+          "something",
+          "determined",
+          "relation",
+          "something"
         ],
-        "gap_ratio": 0.853
+        "gap_ratio": 0.955
       },
-      "confidence": 0.856,
-      "timestamp": "2026-11-14T08:30:19.006474+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e7(back of head) \u2192 \u05e4(mouth) \u2192 \u05df(nun extended) \u2192 An algorithm that back of heads, then mouths, then nun extendeds.",
-      "data": {
-        "letters": [
-          "qof",
-          "pe",
-          "nun-sofit"
-        ],
-        "glyphs": [
-          "\u05e7",
-          "\u05e4",
-          "\u05df"
-        ],
-        "operations": [
-          "back of head",
-          "mouth",
-          "nun extended"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.006594+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.006625+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.006655+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e6(righteousness) \u2192 \u05d9(hand) \u2192 \u05d1(house) \u2192 An algorithm that righteousnesss, then hands, then houses.",
-      "data": {
-        "letters": [
-          "tsadi",
-          "yod",
-          "bet"
-        ],
-        "glyphs": [
-          "\u05e6",
-          "\u05d9",
-          "\u05d1"
-        ],
-        "operations": [
-          "righteousness",
-          "hand",
-          "house"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.006757+00:00",
+      "confidence": 0.886,
+      "timestamp": "2026-11-14T15:29:58.806055+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'declared' \u2194 'container' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "content": "'deductible' \u2194 'appliance' \u2192 \u05dc lamed (teaching/aspiration/the goad, 30)",
       "data": {
-        "w1": "declared",
-        "w2": "container",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
+        "w1": "deductible",
+        "w2": "appliance",
+        "eq": "lamed",
+        "eq_glyph": "\u05dc",
+        "eq_value": 30,
+        "eq_lhea": "teaching/aspiration/the goad"
       },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.009406+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'accelerator': admitted ['pedal']",
-      "data": {
-        "seed": "accelerator",
-        "admitted": [
-          {
-            "word": "pedal",
-            "definition": "a lever that is operated with the foot",
-            "affinity": 0.5
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.009796+00:00",
+      "confidence": 0.53,
+      "timestamp": "2026-11-14T15:29:58.806126+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'armor' \u2194 'consciousness' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
+      "content": "'deductible' \u2194 'biochemically' \u2192 \u05dc lamed (teaching/aspiration/the goad, 30)",
       "data": {
-        "w1": "armor",
-        "w2": "consciousness",
-        "eq": "ayin",
-        "eq_glyph": "\u05e2",
-        "eq_value": 70,
-        "eq_lhea": "eye/perception/spring/depth"
+        "w1": "deductible",
+        "w2": "biochemically",
+        "eq": "lamed",
+        "eq_glyph": "\u05dc",
+        "eq_value": 30,
+        "eq_lhea": "teaching/aspiration/the goad"
       },
-      "confidence": 0.57,
-      "timestamp": "2026-11-14T08:30:19.009877+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.009909+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'asterid dicot genus' \u2194 'aster' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "asterid dicot genus",
-        "w2": "aster",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.009983+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'converse' \u2194 'address' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "converse",
-        "w2": "address",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.010054+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05d2(movement) \u2192 \u05e9(fire) \u2192 \u05df(nun extended) \u2192 An algorithm that movements, then fires, then nun extendeds.",
-      "data": {
-        "letters": [
-          "gimel",
-          "shin",
-          "nun-sofit"
-        ],
-        "glyphs": [
-          "\u05d2",
-          "\u05e9",
-          "\u05df"
-        ],
-        "operations": [
-          "movement",
-          "fire",
-          "nun extended"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.010167+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05d1(house) \u2192 \u05e4(mouth) \u2192 \u05e8(head) \u2192 An algorithm that houses, then mouths, then heads.",
-      "data": {
-        "letters": [
-          "bet",
-          "pe",
-          "resh"
-        ],
-        "glyphs": [
-          "\u05d1",
-          "\u05e4",
-          "\u05e8"
-        ],
-        "operations": [
-          "house",
-          "mouth",
-          "head"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.010335+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke chop: A phenomenon is any state or process known through the senses rather than by int...",
-      "data": {
-        "word": "chop",
-        "sentences": [
-          "A phenomenon is any state or process known through the senses rather than by intuition or reason.",
-          "A chop is a phenomenon.",
-          "Every phenomenon is a natural phenomenon.",
-          "A natural phenomenon is all phenomena that are not artificial.",
-          "Every natural phenomenon is a physical phenomenon.",
-          "A physical phenomenon is a natural phenomenon involving the physical properties of matter and energy.",
-          "Every physical phenomenon is a chop.",
-          "A chop is the irregular motion of waves (usually caused by wind blowing in a direction opp."
-        ],
-        "gaps_found": [
-          "phenomenon",
-          "state",
-          "process",
-          "known",
-          "through"
-        ],
-        "gap_ratio": 0.959
-      },
-      "confidence": 0.888,
-      "timestamp": "2026-11-14T08:30:19.011484+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke accordant: An accordant is being in agreement or harmony....",
-      "data": {
-        "word": "accordant",
-        "sentences": [
-          "An accordant is being in agreement or harmony.",
-          "An accordant is an accordant."
-        ],
-        "gaps_found": [
-          "agreement",
-          "harmony.",
-          "accordant."
-        ],
-        "gap_ratio": 0.5
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.011785+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e1(support) \u2192 \u05e0(fish) \u2192 \u05e9(fire) \u2192 An algorithm that supports, then fishs, then fires.",
-      "data": {
-        "letters": [
-          "samekh",
-          "nun",
-          "shin"
-        ],
-        "glyphs": [
-          "\u05e1",
-          "\u05e0",
-          "\u05e9"
-        ],
-        "operations": [
-          "support",
-          "fish",
-          "fire"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.011912+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'alienation': admitted ['dislike', 'isolation']",
-      "data": {
-        "seed": "alienation",
-        "admitted": [
-          {
-            "word": "dislike",
-            "definition": "a feeling of aversion or antipathy",
-            "affinity": 0.429
-          },
-          {
-            "word": "isolation",
-            "definition": "a feeling of being disliked and alone",
-            "affinity": 0.857
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.012251+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'brain_disorder' \u2194 'baking' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
-      "data": {
-        "w1": "brain_disorder",
-        "w2": "baking",
-        "eq": "nun",
-        "eq_glyph": "\u05e0",
-        "eq_value": 50,
-        "eq_lhea": "fish/soul/faithfulness"
-      },
-      "confidence": 0.55,
-      "timestamp": "2026-11-14T08:30:19.012332+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.012361+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A BalancingScale (metric) and a InformationAlgorithmizer (self_governance) both arrive at \u05e0 nun (fish/soul/faithfulness)",
-      "data": {
-        "alg1": "A-152",
-        "alg2": "A-150",
-        "meeting_letter": "nun",
-        "meeting_glyph": "\u05e0",
-        "meeting_value": 50,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.012527+00:00",
+      "confidence": 0.53,
+      "timestamp": "2026-11-14T15:29:58.806210+00:00",
       "approved": null
     },
     {
@@ -1062,154 +1402,325 @@
         "gap_ratio": 0.759
       },
       "confidence": 0.828,
-      "timestamp": "2026-11-14T08:30:19.013243+00:00",
+      "timestamp": "2026-11-14T15:29:58.806691+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05d6(sword) \u2192 \u05db(palm) \u2192 \u05d9(hand) \u2192 An algorithm that swords, then palms, then hands.",
+      "content": "\u05da(kaf at rest) \u2192 \u05d5(hook) \u2192 \u05e0(fish) \u2192 An algorithm that kaf at rests, then hooks, then fishs.",
       "data": {
         "letters": [
-          "zayin",
-          "kaf",
-          "yod"
+          "kaf-sofit",
+          "vav",
+          "nun"
         ],
         "glyphs": [
-          "\u05d6",
-          "\u05db",
-          "\u05d9"
+          "\u05da",
+          "\u05d5",
+          "\u05e0"
         ],
         "operations": [
-          "sword",
-          "palm",
-          "hand"
+          "kaf at rest",
+          "hook",
+          "fish"
         ],
         "novelty_score": 1.0
       },
       "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.013356+00:00",
+      "timestamp": "2026-11-14T15:29:58.806782+00:00",
       "approved": null
     },
     {
-      "activity": "EQUILIBRIUM",
-      "content": "'citrous' \u2194 'classificatory' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
       "data": {
-        "w1": "citrous",
-        "w2": "classificatory",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
       },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.013437+00:00",
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.806818+00:00",
       "approved": null
     },
     {
       "activity": "MEET",
-      "content": "A Governor (core) and a DeploymentTranslator (infrastructure) both arrive at \u05e8 resh (head/beginning/identity/leader). Pr",
+      "content": "A MarkovContentModel (orientation) and a LobbyEvolutionGovernor (evolution) both arrive at \u05e8 resh (head/beginning/identi",
       "data": {
-        "alg1": "A-000",
-        "alg2": "A-157",
+        "alg1": "A-103",
+        "alg2": "A-120",
         "meeting_letter": "resh",
         "meeting_glyph": "\u05e8",
         "meeting_value": 200,
         "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.013599+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e8(head) \u2192 \u05e3(pe extended) \u2192 \u05e5(tsadi extended) \u2192 An algorithm that heads, then pe extendeds, then tsadi extendeds.",
-      "data": {
-        "letters": [
-          "resh",
-          "pe-sofit",
-          "tsadi-sofit"
-        ],
-        "glyphs": [
-          "\u05e8",
-          "\u05e3",
-          "\u05e5"
-        ],
-        "operations": [
-          "head",
-          "pe extended",
-          "tsadi extended"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.013704+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e7(back of head) \u2192 \u05e1(support) \u2192 \u05e2(eye) \u2192 An algorithm that back of heads, then supports, then eyes.",
-      "data": {
-        "letters": [
-          "qof",
-          "samekh",
-          "ayin"
-        ],
-        "glyphs": [
-          "\u05e7",
-          "\u05e1",
-          "\u05e2"
-        ],
-        "operations": [
-          "back of head",
-          "support",
-          "eye"
-        ],
-        "novelty_score": 0.969
-      },
-      "confidence": 0.888,
-      "timestamp": "2026-11-14T08:30:19.013819+00:00",
+      "timestamp": "2026-11-14T15:29:58.806958+00:00",
       "approved": null
     },
     {
       "activity": "STREAM",
-      "content": "Spoke abstract: An evaluate is form a critical opinion of....",
+      "content": "Spoke board: An enter is to come or go into....",
       "data": {
-        "word": "abstract",
+        "word": "board",
         "sentences": [
-          "An evaluate is form a critical opinion of.",
-          "An abstract is an evaluate.",
-          "Every evaluate is a think.",
-          "A think is judge or regard.",
-          "Every think is a see.",
-          "A see is deem to be.",
-          "Every see is an abstract.",
-          "An abstract is consider a concept without thinking of a specific example."
+          "An enter is to come or go into.",
+          "A board is an enter.",
+          "Every enter is a board.",
+          "A board is get on board of (trains, buses, ships, aircraft, etc.)."
         ],
         "gaps_found": [
-          "evaluate",
-          "form",
-          "critical",
-          "opinion",
-          "evaluate."
+          "enter",
+          "come",
+          "into.",
+          "enter.",
+          "every"
         ],
-        "gap_ratio": 0.88
+        "gap_ratio": 0.8
       },
-      "confidence": 0.864,
-      "timestamp": "2026-11-14T08:30:19.014529+00:00",
+      "confidence": 0.84,
+      "timestamp": "2026-11-14T15:29:58.807258+00:00",
       "approved": null
     },
     {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
+      "activity": "FLOW",
+      "content": "From 'antibacterial': admitted ['medicine', 'rifampin', 'sulfa drug']",
       "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
+        "seed": "antibacterial",
+        "admitted": [
+          {
+            "word": "medicine",
+            "definition": "(medicine) something that treats or prevents or alleviates the symptoms of disease",
+            "affinity": 0.375
+          },
+          {
+            "word": "rifampin",
+            "definition": "an antibacterial drug (trade names Rifadin and Rimactane) used to treat tuberculosis",
+            "affinity": 0.5
+          },
+          {
+            "word": "sulfa drug",
+            "definition": "antibacterial consisting of any of several synthetic organic compounds capable of inhibiting the growth of bacteria that require PABA",
+            "affinity": 0.375
+          }
+        ]
       },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.014573+00:00",
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.808232+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'abductor': admitted ['captor', 'shanghaier', 'crimp']",
+      "data": {
+        "seed": "abductor",
+        "admitted": [
+          {
+            "word": "captor",
+            "definition": "a person who captures and holds people or animals",
+            "affinity": 0.571
+          },
+          {
+            "word": "shanghaier",
+            "definition": "a kidnapper who drugs men and takes them for compulsory service aboard a ship",
+            "affinity": 0.286
+          },
+          {
+            "word": "crimp",
+            "definition": "someone who tricks or coerces men into service as sailors or soldiers",
+            "affinity": 0.143
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.808284+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'business' \u2194 'criminal' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
+      "data": {
+        "w1": "business",
+        "w2": "criminal",
+        "eq": "nun",
+        "eq_glyph": "\u05e0",
+        "eq_value": 50,
+        "eq_lhea": "fish/soul/faithfulness"
+      },
+      "confidence": 0.55,
+      "timestamp": "2026-11-14T15:29:58.808336+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke anaconda: A snake is limbless scaly elongate reptile....",
+      "data": {
+        "word": "anaconda",
+        "sentences": [
+          "A snake is limbless scaly elongate reptile.",
+          "An anaconda is a snake.",
+          "Every snake is a constrictor.",
+          "A constrictor is any of various large nonvenomous snakes that kill their prey by crushing it in i.",
+          "Every constrictor is a boa.",
+          "A boa is any of several chiefly tropical constrictors with vestigial hind limbs.",
+          "Every boa is an anaconda.",
+          "An anaconda is large arboreal boa of tropical South America."
+        ],
+        "gaps_found": [
+          "snake",
+          "limbless",
+          "scaly",
+          "elongate",
+          "reptile."
+        ],
+        "gap_ratio": 0.897
+      },
+      "confidence": 0.869,
+      "timestamp": "2026-11-14T15:29:58.808732+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05e4(mouth) \u2192 \u05db(palm) \u2192 \u05dd(mem enclosed) \u2192 An algorithm that mouths, then palms, then mem encloseds.",
+      "data": {
+        "letters": [
+          "pe",
+          "kaf",
+          "mem-sofit"
+        ],
+        "glyphs": [
+          "\u05e4",
+          "\u05db",
+          "\u05dd"
+        ],
+        "operations": [
+          "mouth",
+          "palm",
+          "mem enclosed"
+        ],
+        "novelty_score": 1.0
+      },
+      "confidence": 0.9,
+      "timestamp": "2026-11-14T15:29:58.808827+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'antibacterial' \u2194 'demand' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
+      "data": {
+        "w1": "antibacterial",
+        "w2": "demand",
+        "eq": "nun",
+        "eq_glyph": "\u05e0",
+        "eq_value": 50,
+        "eq_lhea": "fish/soul/faithfulness"
+      },
+      "confidence": 0.55,
+      "timestamp": "2026-11-14T15:29:58.808904+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'bony fish' \u2194 'allegiant' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
+      "data": {
+        "w1": "bony fish",
+        "w2": "allegiant",
+        "eq": "nun",
+        "eq_glyph": "\u05e0",
+        "eq_value": 50,
+        "eq_lhea": "fish/soul/faithfulness"
+      },
+      "confidence": 0.55,
+      "timestamp": "2026-11-14T15:29:58.808954+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'body_odor' \u2194 'bezoar goat' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "data": {
+        "w1": "body_odor",
+        "w2": "bezoar goat",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.808981+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke boa: A clothing is a covering designed to be worn on a person's body....",
+      "data": {
+        "word": "boa",
+        "sentences": [
+          "A clothing is a covering designed to be worn on a person's body.",
+          "A boa is a clothing.",
+          "Every clothing is a garment.",
+          "A garment is an article of clothing.",
+          "Every garment is a scarf.",
+          "A scarf is a garment worn around the head or neck or shoulders for warmth or decoration.",
+          "Every scarf is a feather boa.",
+          "A feather boa is a long thin fluffy scarf of feathers or fur."
+        ],
+        "gaps_found": [
+          "designed",
+          "worn",
+          "person's",
+          "body.",
+          "clothing."
+        ],
+        "gap_ratio": 0.889
+      },
+      "confidence": 0.867,
+      "timestamp": "2026-11-14T15:29:58.809183+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A VocabularyAcquisitionAgent (acquisition) and a QuestionFormulationEngine (self_governance) both arrive at \u05e8 resh (head",
+      "data": {
+        "alg1": "A-156",
+        "alg2": "A-173",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.809293+00:00",
+      "approved": null
+    },
+    {
+      "activity": "FLOW",
+      "content": "From 'area': admitted ['region', 'rain shadow', 'safety']",
+      "data": {
+        "seed": "area",
+        "admitted": [
+          {
+            "word": "region",
+            "definition": "a large indefinite location on the surface of the Earth",
+            "affinity": 0.667
+          },
+          {
+            "word": "rain shadow",
+            "definition": "an area that has little precipitation because some barrier causes the winds to lose their moisture before reaching it",
+            "affinity": 0.667
+          },
+          {
+            "word": "safety",
+            "definition": "a safe place",
+            "affinity": 0.667
+          }
+        ]
+      },
+      "confidence": 0.75,
+      "timestamp": "2026-11-14T15:29:58.810741+00:00",
       "approved": null
     },
     {
@@ -1233,620 +1744,248 @@
         "gap_ratio": 0.867
       },
       "confidence": 0.86,
-      "timestamp": "2026-11-14T08:30:19.014967+00:00",
+      "timestamp": "2026-11-14T15:29:58.810907+00:00",
       "approved": null
     },
     {
-      "activity": "EQUILIBRIUM",
-      "content": "'declared' \u2194 'chandlery' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "activity": "STREAM",
+      "content": "Spoke dapsone: A drug is a substance that is used as a medicine or narcotic....",
       "data": {
-        "w1": "declared",
-        "w2": "chandlery",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
+        "word": "dapsone",
+        "sentences": [
+          "A drug is a substance that is used as a medicine or narcotic.",
+          "A dapsone is a drug.",
+          "Every drug is a medicine.",
+          "A medicine is (medicine) something that treats or prevents or alleviates the symptoms of disea.",
+          "Every medicine is an antibacterial.",
+          "An antibacterial is any drug that destroys bacteria or inhibits their growth.",
+          "Every antibacterial is a dapsone.",
+          "A dapsone is antibacterial drug used to treat leprosy and some kinds of skin diseases."
+        ],
+        "gaps_found": [
+          "drug",
+          "substance",
+          "that",
+          "used",
+          "medicine"
+        ],
+        "gap_ratio": 0.886
+      },
+      "confidence": 0.866,
+      "timestamp": "2026-11-14T15:29:58.811154+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke decoration: An object is a tangible and visible entity....",
+      "data": {
+        "word": "decoration",
+        "sentences": [
+          "An object is a tangible and visible entity.",
+          "A decoration is an object.",
+          "Every object is a whole.",
+          "A whole is an assemblage of parts that is regarded as a single entity.",
+          "Every whole is an artifact.",
+          "An artifact is a man-made object taken as a whole.",
+          "Every artifact is a decoration.",
+          "A decoration is something used to beautify."
+        ],
+        "gaps_found": [
+          "object",
+          "tangible",
+          "visible",
+          "entity.",
+          "object."
+        ],
+        "gap_ratio": 0.871
+      },
+      "confidence": 0.861,
+      "timestamp": "2026-11-14T15:29:58.811320+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A GeosensoryCrawlerUpgrade (acquisition) and a LawDiscoveryEngine (mathematics) both arrive at \u05e8 resh (head/beginning/id",
+      "data": {
+        "alg1": "A-158",
+        "alg2": "A-137",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.015050+00:00",
+      "timestamp": "2026-11-14T15:29:58.811439+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke communication: A psychological feature is a feature of the mental life of a living organism....",
+      "data": {
+        "word": "communication",
+        "sentences": [
+          "A psychological feature is a feature of the mental life of a living organism.",
+          "A communication is a psychological feature.",
+          "Every psychological feature is an event.",
+          "An event is something that happens at a given place and time.",
+          "Every event is an act.",
+          "An act is something that people do or cause to happen.",
+          "Every act is a communication.",
+          "A communication is the activity of communicating."
+        ],
+        "gaps_found": [
+          "psychological",
+          "feature",
+          "feature",
+          "mental",
+          "life"
+        ],
+        "gap_ratio": 0.912
+      },
+      "confidence": 0.874,
+      "timestamp": "2026-11-14T15:29:58.811492+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.811510+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A MarkovContentModel (orientation) and a InformationAlgorithmizer (self_governance) both arrive at \u05e8 resh (head/beginnin",
+      "data": {
+        "alg1": "A-103",
+        "alg2": "A-150",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.811602+00:00",
+      "approved": null
+    },
+    {
+      "activity": "HUNT",
+      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
+      "data": {
+        "vgm_count": 48,
+        "alg_active": 57,
+        "alg_proposed": 6,
+        "lobby_size": 500,
+        "gaps": [
+          "6 proposed algorithms not yet built",
+          "Lobby has 500 agents \u2014 below 2000 target"
+        ]
+      },
+      "confidence": 0.8,
+      "timestamp": "2026-11-14T15:29:58.811617+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'coalesce' \u2194 'better' \u2192 \u05d4 he (breath/revelation/window, 5)",
+      "content": "'chartless' \u2194 'cabbage' \u2192 \u05d4 he (breath/revelation/window, 5)",
       "data": {
-        "w1": "coalesce",
-        "w2": "better",
+        "w1": "chartless",
+        "w2": "cabbage",
         "eq": "he",
         "eq_glyph": "\u05d4",
         "eq_value": 5,
         "eq_lhea": "breath/revelation/window"
       },
       "confidence": 0.505,
-      "timestamp": "2026-11-14T08:30:19.015120+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke blackfly: A homopterous insect is insects having membranous forewings and hind wings....",
-      "data": {
-        "word": "blackfly",
-        "sentences": [
-          "A homopterous insect is insects having membranous forewings and hind wings.",
-          "A blackfly is a homopterous insect.",
-          "Every homopterous insect is a plant louse.",
-          "A plant louse is any of several small insects especially aphids that feed by sucking the juices f.",
-          "Every plant louse is an aphid.",
-          "An aphid is any of various small plant-sucking insects.",
-          "Every aphid is a blackfly.",
-          "A blackfly is blackish aphid that infests e.g. beans and sugar beets."
-        ],
-        "gaps_found": [
-          "homopterous",
-          "insect",
-          "insects",
-          "having",
-          "membranous"
-        ],
-        "gap_ratio": 0.896
-      },
-      "confidence": 0.869,
-      "timestamp": "2026-11-14T08:30:19.015708+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A FormulaAgent (formula) and a PPMICooccurrence (orientation) both arrive at \u05e8 resh (head/beginning/identity/leader). Pr",
-      "data": {
-        "alg1": "A-147",
-        "alg2": "A-104",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.015919+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A UnitBoundaryIdentifier (measurement) and a ThresholdOptimizer (self_governance) both arrive at \u05e8 resh (head/beginning/",
-      "data": {
-        "alg1": "A-170",
-        "alg2": "A-131",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.016139+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.016174+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.016199+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'agent': admitted ['relaxer', 'vector', 'repressor']",
-      "data": {
-        "seed": "agent",
-        "admitted": [
-          {
-            "word": "relaxer",
-            "definition": "any agent that produces relaxation",
-            "affinity": 0.4
-          },
-          {
-            "word": "vector",
-            "definition": "any agent (person or animal or microorganism) that carries and transmits a disease",
-            "affinity": 0.4
-          },
-          {
-            "word": "repressor",
-            "definition": "an agent that represses",
-            "affinity": 0.2
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.017545+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'chlorophyll b' \u2194 'cereal' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "chlorophyll b",
-        "w2": "cereal",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.017625+00:00",
+      "timestamp": "2026-11-14T15:29:58.811652+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05dd(mem enclosed) \u2192 \u05dc(teaching) \u2192 \u05d4(breath) \u2192 An algorithm that mem encloseds, then teachings, then breaths.",
+      "content": "\u05d2(movement) \u2192 \u05e1(support) \u2192 \u05df(nun extended) \u2192 An algorithm that movements, then supports, then nun extendeds.",
       "data": {
         "letters": [
-          "mem-sofit",
-          "lamed",
-          "he"
-        ],
-        "glyphs": [
-          "\u05dd",
-          "\u05dc",
-          "\u05d4"
-        ],
-        "operations": [
-          "mem enclosed",
-          "teaching",
-          "breath"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.017736+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'bezoar_goat' \u2194 'credulity' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "bezoar_goat",
-        "w2": "credulity",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.017850+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A TFIDFContentSimilarity (orientation) and a AlgebraicExpression (mathematics) both arrive at \u05e8 resh (head/beginning/ide",
-      "data": {
-        "alg1": "A-102",
-        "alg2": "A-138",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.018020+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'accessory': admitted ['furnishing']",
-      "data": {
-        "seed": "accessory",
-        "admitted": [
-          {
-            "word": "furnishing",
-            "definition": "(usually plural) accessory wearing apparel",
-            "affinity": 0.333
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.018723+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.018757+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05da(kaf at rest) \u2192 \u05e9(fire) \u2192 \u05df(nun extended) \u2192 An algorithm that kaf at rests, then fires, then nun extendeds.",
-      "data": {
-        "letters": [
-          "kaf-sofit",
-          "shin",
+          "gimel",
+          "samekh",
           "nun-sofit"
         ],
         "glyphs": [
-          "\u05da",
-          "\u05e9",
+          "\u05d2",
+          "\u05e1",
           "\u05df"
         ],
         "operations": [
-          "kaf at rest",
-          "fire",
+          "movement",
+          "support",
           "nun extended"
         ],
-        "novelty_score": 1.0
+        "novelty_score": 0.969
       },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.018911+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'adornment': admitted ['sequin', 'plume', 'pompon']",
-      "data": {
-        "seed": "adornment",
-        "admitted": [
-          {
-            "word": "sequin",
-            "definition": "adornment consisting of a small piece of shiny material used to decorate clothing",
-            "affinity": 0.25
-          },
-          {
-            "word": "plume",
-            "definition": "a feather or cluster of feathers worn as an ornament",
-            "affinity": 0.25
-          },
-          {
-            "word": "pompon",
-            "definition": "decoration consisting of a ball of tufted wool or silk; usually worn on a hat",
-            "affinity": 0.375
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.020287+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A CalculationEngine (mathematics) and a BisectionRefinementEngine (measurement) both arrive at \u05e2 ayin (eye/perception/sp",
-      "data": {
-        "alg1": "A-140",
-        "alg2": "A-171",
-        "meeting_letter": "ayin",
-        "meeting_glyph": "\u05e2",
-        "meeting_value": 70,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.020465+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'ayin' \u2194 'central_chimpanzee' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
-      "data": {
-        "w1": "ayin",
-        "w2": "central_chimpanzee",
-        "eq": "nun",
-        "eq_glyph": "\u05e0",
-        "eq_value": 50,
-        "eq_lhea": "fish/soul/faithfulness"
-      },
-      "confidence": 0.55,
-      "timestamp": "2026-11-14T08:30:19.020542+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.020574+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.020600+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.020622+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'consort' \u2194 'allspice' \u2192 \u05e1 samekh (support/circle/foundation, 60)",
-      "data": {
-        "w1": "consort",
-        "w2": "allspice",
-        "eq": "samekh",
-        "eq_glyph": "\u05e1",
-        "eq_value": 60,
-        "eq_lhea": "support/circle/foundation"
-      },
-      "confidence": 0.56,
-      "timestamp": "2026-11-14T08:30:19.020687+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e0(fish) \u2192 \u05e9(fire) \u2192 \u05e6(righteousness) \u2192 An algorithm that fishs, then fires, then righteousnesss.",
-      "data": {
-        "letters": [
-          "nun",
-          "shin",
-          "tsadi"
-        ],
-        "glyphs": [
-          "\u05e0",
-          "\u05e9",
-          "\u05e6"
-        ],
-        "operations": [
-          "fish",
-          "fire",
-          "righteousness"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.020800+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'central_chimpanzee' \u2194 'break' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "central_chimpanzee",
-        "w2": "break",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.020875+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A CorpusFitnessEvaluator (self_governance) and a Governor (core) both arrive at \u05e8 resh (head/beginning/identity/leader).",
-      "data": {
-        "alg1": "A-130",
-        "alg2": "A-000",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.021061+00:00",
+      "confidence": 0.888,
+      "timestamp": "2026-11-14T15:29:58.811710+00:00",
       "approved": null
     },
     {
       "activity": "STREAM",
-      "content": "Spoke accordant: An accordant is being in agreement or harmony....",
+      "content": "Spoke baggage: An instrumentality is an artifact (or system of artifacts) that is instrumental ...",
       "data": {
-        "word": "accordant",
+        "word": "baggage",
         "sentences": [
-          "An accordant is being in agreement or harmony.",
-          "An accordant is an accordant."
+          "An instrumentality is an artifact (or system of artifacts) that is instrumental in accomplishing some .",
+          "A baggage is an instrumentality.",
+          "Every instrumentality is a container.",
+          "A container is any object that can be used to hold things (especially a large metal boxlike obj.",
+          "Every container is a case.",
+          "A case is a portable container for carrying several objects.",
+          "Every case is a baggage.",
+          "A baggage is cases used to carry belongings when traveling."
         ],
         "gaps_found": [
-          "agreement",
-          "harmony.",
-          "accordant."
+          "instrumentality",
+          "system",
+          "artifacts)",
+          "that",
+          "instrumental"
         ],
-        "gap_ratio": 0.5
+        "gap_ratio": 0.791
       },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.021141+00:00",
+      "confidence": 0.837,
+      "timestamp": "2026-11-14T15:29:58.811961+00:00",
       "approved": null
     },
     {
-      "activity": "EQUILIBRIUM",
-      "content": "'board' \u2194 'bargaining_chip' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "activity": "COMPOSE",
+      "content": "\u05e1(support) \u2192 \u05d0(silence) \u2192 \u05e3(pe extended) \u2192 An algorithm that supports, then silences, then pe extendeds.",
       "data": {
-        "w1": "board",
-        "w2": "bargaining_chip",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
+        "letters": [
+          "samekh",
+          "aleph",
+          "pe-sofit"
+        ],
+        "glyphs": [
+          "\u05e1",
+          "\u05d0",
+          "\u05e3"
+        ],
+        "operations": [
+          "support",
+          "silence",
+          "pe extended"
+        ],
+        "novelty_score": 0.985
       },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.021213+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A BisectionRefinementEngine (measurement) and a UCBBanditSelector (orientation) both arrive at \u05e8 resh (head/beginning/id",
-      "data": {
-        "alg1": "A-171",
-        "alg2": "A-101",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.021371+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'attune' \u2194 'anaconda' \u2192 \u05e0 nun (fish/soul/faithfulness, 50)",
-      "data": {
-        "w1": "attune",
-        "w2": "anaconda",
-        "eq": "nun",
-        "eq_glyph": "\u05e0",
-        "eq_value": 50,
-        "eq_lhea": "fish/soul/faithfulness"
-      },
-      "confidence": 0.55,
-      "timestamp": "2026-11-14T08:30:19.021440+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.021465+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'curtain' \u2194 'argue' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "curtain",
-        "w2": "argue",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.021528+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.021554+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.021585+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A InformationSeekingAgent (acquisition) and a PPMICooccurrence (orientation) both arrive at \u05e8 resh (head/beginning/ident",
-      "data": {
-        "alg1": "A-154",
-        "alg2": "A-104",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.021946+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.022009+00:00",
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.812024+00:00",
       "approved": null
     },
     {
@@ -1874,387 +2013,59 @@
         "gap_ratio": 0.968
       },
       "confidence": 0.89,
-      "timestamp": "2026-11-14T08:30:19.022809+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'contraction' \u2194 'cheat' \u2192 \u05d8 tet (coil/goodness/hidden good, 9)",
-      "data": {
-        "w1": "contraction",
-        "w2": "cheat",
-        "eq": "tet",
-        "eq_glyph": "\u05d8",
-        "eq_value": 9,
-        "eq_lhea": "coil/goodness/hidden good"
-      },
-      "confidence": 0.509,
-      "timestamp": "2026-11-14T08:30:19.022900+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.022933+00:00",
+      "timestamp": "2026-11-14T15:29:58.812385+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05d7(fence) \u2192 \u05d9(hand) \u2192 \u05d0(silence) \u2192 An algorithm that fences, then hands, then silences.",
+      "content": "\u05e1(support) \u2192 \u05d4(breath) \u2192 \u05d3(door) \u2192 An algorithm that supports, then breaths, then doors.",
       "data": {
         "letters": [
-          "het",
-          "yod",
-          "aleph"
+          "samekh",
+          "he",
+          "dalet"
         ],
         "glyphs": [
-          "\u05d7",
-          "\u05d9",
-          "\u05d0"
+          "\u05e1",
+          "\u05d4",
+          "\u05d3"
         ],
         "operations": [
-          "fence",
-          "hand",
-          "silence"
+          "support",
+          "breath",
+          "door"
         ],
-        "novelty_score": 1.0
+        "novelty_score": 0.985
       },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.023577+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A CalculationEngine (mathematics) and a GeosensoryCrawlerUpgrade (acquisition) both arrive at \u05e2 ayin (eye/perception/spr",
-      "data": {
-        "alg1": "A-140",
-        "alg2": "A-158",
-        "meeting_letter": "ayin",
-        "meeting_glyph": "\u05e2",
-        "meeting_value": 70,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.023750+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.023812+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke attribute: A content is the sum or range of what has been perceived, discovered, or learned...",
-      "data": {
-        "word": "attribute",
-        "sentences": [
-          "A content is the sum or range of what has been perceived, discovered, or learned.",
-          "An attribute is a content.",
-          "Every content is an idea.",
-          "An idea is the content of cognition.",
-          "Every idea is a concept.",
-          "A concept is an abstract or general idea inferred or derived from specific instances.",
-          "Every concept is a property.",
-          "A property is a construct whereby objects or individuals can be distinguished."
-        ],
-        "gaps_found": [
-          "range",
-          "what",
-          "been",
-          "perceived,",
-          "discovered,"
-        ],
-        "gap_ratio": 0.778
-      },
-      "confidence": 0.833,
-      "timestamp": "2026-11-14T08:30:19.024438+00:00",
-      "approved": null
-    },
-    {
-      "activity": "HUNT",
-      "content": "Gaps found: 6 proposed algorithms not yet built; Lobby has 500 agents \u2014 below 2000 target",
-      "data": {
-        "vgm_count": 48,
-        "alg_active": 57,
-        "alg_proposed": 6,
-        "lobby_size": 500,
-        "gaps": [
-          "6 proposed algorithms not yet built",
-          "Lobby has 500 agents \u2014 below 2000 target"
-        ]
-      },
-      "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.024472+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke chemical: A matter is that which has mass and occupies space....",
-      "data": {
-        "word": "chemical",
-        "sentences": [
-          "A matter is that which has mass and occupies space.",
-          "A chemical is a matter.",
-          "Every matter is a substance.",
-          "A substance is the real physical matter of which a person or thing consists.",
-          "Every substance is a material.",
-          "A material is the tangible substance that goes into the makeup of a physical object.",
-          "Every material is a chemical.",
-          "A chemical is material produced by or used in a reaction involving changes in atoms or molecul."
-        ],
-        "gaps_found": [
-          "matter",
-          "that",
-          "which",
-          "mass",
-          "occupies"
-        ],
-        "gap_ratio": 0.953
-      },
-      "confidence": 0.886,
-      "timestamp": "2026-11-14T08:30:19.025081+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'corn' \u2194 'coalesce' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
-      "data": {
-        "w1": "corn",
-        "w2": "coalesce",
-        "eq": "ayin",
-        "eq_glyph": "\u05e2",
-        "eq_value": 70,
-        "eq_lhea": "eye/perception/spring/depth"
-      },
-      "confidence": 0.57,
-      "timestamp": "2026-11-14T08:30:19.025162+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A WebFormulaHarvester (formula) and a VGMQuery (communication) both arrive at \u05e8 resh (head/beginning/identity/leader). P",
-      "data": {
-        "alg1": "A-148",
-        "alg2": "A-142",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.025568+00:00",
+      "confidence": 0.894,
+      "timestamp": "2026-11-14T15:29:58.812445+00:00",
       "approved": null
     },
     {
       "activity": "FLOW",
-      "content": "From 'advantage': admitted ['pull', 'favor', 'privilege']",
+      "content": "From 'affection': admitted ['feeling', 'regard', 'soft spot']",
       "data": {
-        "seed": "advantage",
+        "seed": "affection",
         "admitted": [
           {
-            "word": "pull",
-            "definition": "special advantage or influence",
-            "affinity": 0.143
+            "word": "feeling",
+            "definition": "the experiencing of affective and emotional states",
+            "affinity": 0.571
           },
           {
-            "word": "favor",
-            "definition": "an advantage to the benefit of someone or something",
+            "word": "regard",
+            "definition": "a feeling of friendship and esteem",
             "affinity": 0.286
           },
           {
-            "word": "privilege",
-            "definition": "a special advantage or immunity or benefit not enjoyed by all",
+            "word": "soft spot",
+            "definition": "a sentimental affection",
             "affinity": 0.429
           }
         ]
       },
       "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.026758+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.026831+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'create from raw material' \u2194 'capricious' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "create from raw material",
-        "w2": "capricious",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.026912+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05da(kaf at rest) \u2192 \u05d4(breath) \u2192 \u05d7(fence) \u2192 An algorithm that kaf at rests, then breaths, then fences.",
-      "data": {
-        "letters": [
-          "kaf-sofit",
-          "he",
-          "het"
-        ],
-        "glyphs": [
-          "\u05da",
-          "\u05d4",
-          "\u05d7"
-        ],
-        "operations": [
-          "kaf at rest",
-          "breath",
-          "fence"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.027021+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e1(support) \u2192 \u05da(kaf at rest) \u2192 \u05d8(coil) \u2192 An algorithm that supports, then kaf at rests, then coils.",
-      "data": {
-        "letters": [
-          "samekh",
-          "kaf-sofit",
-          "tet"
-        ],
-        "glyphs": [
-          "\u05e1",
-          "\u05da",
-          "\u05d8"
-        ],
-        "operations": [
-          "support",
-          "kaf at rest",
-          "coil"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.027179+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke angiosperm: A plant is (botany) a living organism lacking the power of locomotion....",
-      "data": {
-        "word": "angiosperm",
-        "sentences": [
-          "A plant is (botany) a living organism lacking the power of locomotion.",
-          "An angiosperm is a plant.",
-          "Every plant is a vascular plant.",
-          "A vascular plant is green plant having a vascular system: ferns, gymnosperms, angiosperms.",
-          "Every vascular plant is a spermatophyte.",
-          "A spermatophyte is plant that reproduces by means of seeds not spores.",
-          "Every spermatophyte is an angiosperm.",
-          "An angiosperm is plants having seeds in a closed ovary."
-        ],
-        "gaps_found": [
-          "plant",
-          "(botany)",
-          "living",
-          "organism",
-          "lacking"
-        ],
-        "gap_ratio": 0.93
-      },
-      "confidence": 0.879,
-      "timestamp": "2026-11-14T08:30:19.027624+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'abrasive': admitted ['material', 'carborundum', 'steel wool']",
-      "data": {
-        "seed": "abrasive",
-        "admitted": [
-          {
-            "word": "material",
-            "definition": "the tangible substance that goes into the makeup of a physical object",
-            "affinity": 0.571
-          },
-          {
-            "word": "carborundum",
-            "definition": "an abrasive composed of silicon carbide crystals",
-            "affinity": 0.571
-          },
-          {
-            "word": "steel wool",
-            "definition": "a mass of woven steel fibers used as an abrasive",
-            "affinity": 0.286
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.028224+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A UCBBanditSelector (orientation) and a GeosensoryCrawler (acquisition) both arrive at \u05e8 resh (head/beginning/identity/l",
-      "data": {
-        "alg1": "A-101",
-        "alg2": "A-155",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.028395+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'crochet_stitch' \u2194 'crossbill' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "crochet_stitch",
-        "w2": "crossbill",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.028473+00:00",
+      "timestamp": "2026-11-14T15:29:58.812710+00:00",
       "approved": null
     },
     {
@@ -2271,142 +2082,22 @@
         ]
       },
       "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.028501+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke converse: A message is what a communication that is about something is about....",
-      "data": {
-        "word": "converse",
-        "sentences": [
-          "A message is what a communication that is about something is about.",
-          "A converse is a message.",
-          "Every message is a statement.",
-          "A statement is a message that is stated or declared.",
-          "Every statement is a proposition.",
-          "A proposition is (logic) a statement that affirms or denies something and is either true or false.",
-          "Every proposition is a converse.",
-          "A converse is a proposition obtained by conversion."
-        ],
-        "gaps_found": [
-          "message",
-          "what",
-          "that",
-          "about",
-          "something"
-        ],
-        "gap_ratio": 0.919
-      },
-      "confidence": 0.876,
-      "timestamp": "2026-11-14T08:30:19.029023+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e7(back of head) \u2192 \u05d6(sword) \u2192 \u05d9(hand) \u2192 An algorithm that back of heads, then swords, then hands.",
-      "data": {
-        "letters": [
-          "qof",
-          "zayin",
-          "yod"
-        ],
-        "glyphs": [
-          "\u05e7",
-          "\u05d6",
-          "\u05d9"
-        ],
-        "operations": [
-          "back of head",
-          "sword",
-          "hand"
-        ],
-        "novelty_score": 0.985
-      },
-      "confidence": 0.894,
-      "timestamp": "2026-11-14T08:30:19.029137+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05e5(tsadi extended) \u2192 \u05d9(hand) \u2192 \u05dc(teaching) \u2192 An algorithm that tsadi extendeds, then hands, then teachings.",
-      "data": {
-        "letters": [
-          "tsadi-sofit",
-          "yod",
-          "lamed"
-        ],
-        "glyphs": [
-          "\u05e5",
-          "\u05d9",
-          "\u05dc"
-        ],
-        "operations": [
-          "tsadi extended",
-          "hand",
-          "teaching"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.029237+00:00",
-      "approved": null
-    },
-    {
-      "activity": "FLOW",
-      "content": "From 'adornment': admitted ['sequin', 'plume', 'pompon']",
-      "data": {
-        "seed": "adornment",
-        "admitted": [
-          {
-            "word": "sequin",
-            "definition": "adornment consisting of a small piece of shiny material used to decorate clothing",
-            "affinity": 0.25
-          },
-          {
-            "word": "plume",
-            "definition": "a feather or cluster of feathers worn as an ornament",
-            "affinity": 0.25
-          },
-          {
-            "word": "pompon",
-            "definition": "decoration consisting of a ball of tufted wool or silk; usually worn on a hat",
-            "affinity": 0.375
-          }
-        ]
-      },
-      "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.029455+00:00",
+      "timestamp": "2026-11-14T15:29:58.812726+00:00",
       "approved": null
     },
     {
       "activity": "MEET",
-      "content": "A GeneralityMatrix (abstraction) and a GeosensoryCrawler (acquisition) both arrive at \u05e8 resh (head/beginning/identity/le",
+      "content": "A ContinuumDifferentiator (measurement) and a SyntacticalValidator (abstraction) both arrive at \u05e8 resh (head/beginning/i",
       "data": {
-        "alg1": "A-125",
-        "alg2": "A-155",
+        "alg1": "A-169",
+        "alg2": "A-126",
         "meeting_letter": "resh",
         "meeting_glyph": "\u05e8",
         "meeting_value": 200,
         "is_novel": true
       },
       "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.029616+00:00",
-      "approved": null
-    },
-    {
-      "activity": "EQUILIBRIUM",
-      "content": "'covering' \u2194 'abridge' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
-      "data": {
-        "w1": "covering",
-        "w2": "abridge",
-        "eq": "resh",
-        "eq_glyph": "\u05e8",
-        "eq_value": 200,
-        "eq_lhea": "head/beginning/identity/leader"
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.029690+00:00",
+      "timestamp": "2026-11-14T15:29:58.812831+00:00",
       "approved": null
     },
     {
@@ -2423,171 +2114,148 @@
         ]
       },
       "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.029718+00:00",
-      "approved": null
-    },
-    {
-      "activity": "STREAM",
-      "content": "Spoke chemical: A matter is that which has mass and occupies space....",
-      "data": {
-        "word": "chemical",
-        "sentences": [
-          "A matter is that which has mass and occupies space.",
-          "A chemical is a matter.",
-          "Every matter is a substance.",
-          "A substance is the real physical matter of which a person or thing consists.",
-          "Every substance is a material.",
-          "A material is the tangible substance that goes into the makeup of a physical object.",
-          "Every material is a chemical.",
-          "A chemical is material produced by or used in a reaction involving changes in atoms or molecul."
-        ],
-        "gaps_found": [
-          "matter",
-          "that",
-          "which",
-          "mass",
-          "occupies"
-        ],
-        "gap_ratio": 0.953
-      },
-      "confidence": 0.886,
-      "timestamp": "2026-11-14T08:30:19.029842+00:00",
-      "approved": null
-    },
-    {
-      "activity": "COMPOSE",
-      "content": "\u05d4(breath) \u2192 \u05da(kaf at rest) \u2192 \u05d3(door) \u2192 An algorithm that breaths, then kaf at rests, then doors.",
-      "data": {
-        "letters": [
-          "he",
-          "kaf-sofit",
-          "dalet"
-        ],
-        "glyphs": [
-          "\u05d4",
-          "\u05da",
-          "\u05d3"
-        ],
-        "operations": [
-          "breath",
-          "kaf at rest",
-          "door"
-        ],
-        "novelty_score": 1.0
-      },
-      "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.029959+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.030000+00:00",
-      "approved": null
-    },
-    {
-      "activity": "MEET",
-      "content": "A InformationSeekingAgent (acquisition) and a NumericalIntegrator (mathematics) both arrive at \u05e8 resh (head/beginning/id",
-      "data": {
-        "alg1": "A-154",
-        "alg2": "A-136",
-        "meeting_letter": "resh",
-        "meeting_glyph": "\u05e8",
-        "meeting_value": 200,
-        "is_novel": true
-      },
-      "confidence": 0.7,
-      "timestamp": "2026-11-14T08:30:19.030161+00:00",
-      "approved": null
-    },
-    {
-      "activity": "QUESTION",
-      "content": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-      "data": {
-        "qtype": "DEFINITION",
-        "directed_to": "WORDNET",
-        "subject": "mammal",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at",
-        "from_source": "MIRROR_GAP"
-      },
-      "confidence": 0.85,
-      "timestamp": "2026-11-14T08:30:19.030199+00:00",
+      "timestamp": "2026-11-14T15:29:58.812845+00:00",
       "approved": null
     },
     {
       "activity": "EQUILIBRIUM",
-      "content": "'correlational' \u2194 'apogean' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
+      "content": "'communicate' \u2194 'commercialize' \u2192 \u05e2 ayin (eye/perception/spring/depth, 70)",
       "data": {
-        "w1": "correlational",
-        "w2": "apogean",
+        "w1": "communicate",
+        "w2": "commercialize",
         "eq": "ayin",
         "eq_glyph": "\u05e2",
         "eq_value": 70,
         "eq_lhea": "eye/perception/spring/depth"
       },
       "confidence": 0.57,
-      "timestamp": "2026-11-14T08:30:19.030271+00:00",
+      "timestamp": "2026-11-14T15:29:58.812903+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'dearly-won' \u2194 'curtain' \u2192 \u05e8 resh (head/beginning/identity/leader, 200)",
+      "data": {
+        "w1": "dearly-won",
+        "w2": "curtain",
+        "eq": "resh",
+        "eq_glyph": "\u05e8",
+        "eq_value": 200,
+        "eq_lhea": "head/beginning/identity/leader"
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.812947+00:00",
       "approved": null
     },
     {
       "activity": "STREAM",
-      "content": "Spoke abstraction: A content is the sum or range of what has been perceived, discovered, or learned...",
+      "content": "Spoke belt: A closed curve is a curve (such as a circle) having no endpoints....",
       "data": {
-        "word": "abstraction",
+        "word": "belt",
         "sentences": [
-          "A content is the sum or range of what has been perceived, discovered, or learned.",
-          "An abstraction is a content.",
-          "Every content is an idea.",
-          "An idea is the content of cognition.",
-          "Every idea is a concept.",
-          "A concept is an abstract or general idea inferred or derived from specific instances.",
-          "Every concept is an abstraction.",
-          "An abstraction is a concept or idea not associated with any specific instance."
+          "A closed curve is a curve (such as a circle) having no endpoints.",
+          "A belt is a closed curve.",
+          "Every closed curve is a simple closed curve.",
+          "A simple closed curve is a closed curve that does not intersect itself.",
+          "Every simple closed curve is a loop.",
+          "A loop is anything with a round or oval shape (formed by a curve that is closed and does n.",
+          "Every loop is a belt.",
+          "A belt is endless loop of flexible material between two rotating shafts or pulleys."
         ],
         "gaps_found": [
-          "range",
-          "what",
-          "been",
-          "perceived,",
-          "discovered,"
+          "curve",
+          "curve",
+          "(such",
+          "circle)",
+          "having"
         ],
-        "gap_ratio": 0.757
+        "gap_ratio": 0.811
       },
-      "confidence": 0.827,
-      "timestamp": "2026-11-14T08:30:19.030618+00:00",
+      "confidence": 0.843,
+      "timestamp": "2026-11-14T15:29:58.813542+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke charge: An activity is any specific behavior....",
+      "data": {
+        "word": "charge",
+        "sentences": [
+          "An activity is any specific behavior.",
+          "A charge is an activity.",
+          "Every activity is an operation.",
+          "An operation is activity by a military or naval force (as a maneuver or campaign).",
+          "Every operation is an attack.",
+          "An attack is (military) an offensive against an enemy (using weapons).",
+          "Every attack is a charge.",
+          "A charge is an impetuous rush toward someone or something."
+        ],
+        "gaps_found": [
+          "specific",
+          "behavior.",
+          "activity.",
+          "every",
+          "operation."
+        ],
+        "gap_ratio": 0.853
+      },
+      "confidence": 0.856,
+      "timestamp": "2026-11-14T15:29:58.814665+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A PipelineOrchestrator (core) and a GeosensoryCrawler (acquisition) both arrive at \u05e8 resh (head/beginning/identity/leade",
+      "data": {
+        "alg1": "A-134",
+        "alg2": "A-155",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.814828+00:00",
+      "approved": null
+    },
+    {
+      "activity": "EQUILIBRIUM",
+      "content": "'achieve' \u2194 'bespeak' \u2192 \u05d4 he (breath/revelation/window, 5)",
+      "data": {
+        "w1": "achieve",
+        "w2": "bespeak",
+        "eq": "he",
+        "eq_glyph": "\u05d4",
+        "eq_value": 5,
+        "eq_lhea": "breath/revelation/window"
+      },
+      "confidence": 0.505,
+      "timestamp": "2026-11-14T15:29:58.814882+00:00",
       "approved": null
     },
     {
       "activity": "COMPOSE",
-      "content": "\u05de(water) \u2192 \u05e8(head) \u2192 \u05d1(house) \u2192 An algorithm that waters, then heads, then houses.",
+      "content": "\u05de(water) \u2192 \u05d6(sword) \u2192 \u05e9(fire) \u2192 An algorithm that waters, then swords, then fires.",
       "data": {
         "letters": [
           "mem",
-          "resh",
-          "bet"
+          "zayin",
+          "shin"
         ],
         "glyphs": [
           "\u05de",
-          "\u05e8",
-          "\u05d1"
+          "\u05d6",
+          "\u05e9"
         ],
         "operations": [
           "water",
-          "head",
-          "house"
+          "sword",
+          "fire"
         ],
         "novelty_score": 1.0
       },
       "confidence": 0.9,
-      "timestamp": "2026-11-14T08:30:19.030730+00:00",
+      "timestamp": "2026-11-14T15:29:58.814971+00:00",
       "approved": null
     },
     {
@@ -2604,208 +2272,161 @@
         ]
       },
       "confidence": 0.8,
-      "timestamp": "2026-11-14T08:30:19.030759+00:00",
+      "timestamp": "2026-11-14T15:29:58.814993+00:00",
+      "approved": null
+    },
+    {
+      "activity": "STREAM",
+      "content": "Spoke covering: An object is a tangible and visible entity....",
+      "data": {
+        "word": "covering",
+        "sentences": [
+          "An object is a tangible and visible entity.",
+          "A covering is an object.",
+          "Every object is a whole.",
+          "A whole is an assemblage of parts that is regarded as a single entity.",
+          "Every whole is a natural object.",
+          "A natural object is an object occurring naturally.",
+          "Every natural object is a covering.",
+          "A covering is a natural object that covers or envelops."
+        ],
+        "gaps_found": [
+          "object",
+          "tangible",
+          "visible",
+          "entity.",
+          "object."
+        ],
+        "gap_ratio": 0.943
+      },
+      "confidence": 0.883,
+      "timestamp": "2026-11-14T15:29:58.815308+00:00",
+      "approved": null
+    },
+    {
+      "activity": "MEET",
+      "content": "A GeosensoryCrawlerUpgrade (acquisition) and a SeedSentenceGenerator (self_governance) both arrive at \u05e8 resh (head/begin",
+      "data": {
+        "alg1": "A-158",
+        "alg2": "A-133",
+        "meeting_letter": "resh",
+        "meeting_glyph": "\u05e8",
+        "meeting_value": 200,
+        "is_novel": true
+      },
+      "confidence": 0.7,
+      "timestamp": "2026-11-14T15:29:58.815457+00:00",
+      "approved": null
+    },
+    {
+      "activity": "COMPOSE",
+      "content": "\u05e2(eye) \u2192 \u05d7(fence) \u2192 \u05db(palm) \u2192 An algorithm that eyes, then fences, then palms.",
+      "data": {
+        "letters": [
+          "ayin",
+          "het",
+          "kaf"
+        ],
+        "glyphs": [
+          "\u05e2",
+          "\u05d7",
+          "\u05db"
+        ],
+        "operations": [
+          "eye",
+          "fence",
+          "palm"
+        ],
+        "novelty_score": 1.0
+      },
+      "confidence": 0.9,
+      "timestamp": "2026-11-14T15:29:58.815564+00:00",
       "approved": null
     },
     {
       "activity": "FLOW",
-      "content": "From 'advocate': admitted ['person', 'republican', 'democrat']",
+      "content": "From 'address': admitted ['argument', 'url']",
       "data": {
-        "seed": "advocate",
+        "seed": "address",
         "admitted": [
           {
-            "word": "person",
-            "definition": "a human being",
-            "affinity": 0.333
+            "word": "argument",
+            "definition": "(computer science) a reference or value that is passed to a function, procedure, subroutine, command, or program",
+            "affinity": 0.6
           },
           {
-            "word": "republican",
-            "definition": "an advocate of a republic (usually in opposition to a monarchy)",
-            "affinity": 0.5
-          },
-          {
-            "word": "democrat",
-            "definition": "an advocate of democratic principles",
-            "affinity": 0.833
+            "word": "url",
+            "definition": "the address of a web page on the world wide web",
+            "affinity": 0.2
           }
         ]
       },
       "confidence": 0.75,
-      "timestamp": "2026-11-14T08:30:19.034126+00:00",
+      "timestamp": "2026-11-14T15:29:58.816102+00:00",
       "approved": null
     }
   ],
-  "high_confidence": 126,
+  "high_confidence": 97,
   "by_activity": {
-    "MEET": 23,
-    "STREAM": 18,
-    "HUNT": 20,
-    "QUESTION": 14,
-    "COMPOSE": 23,
-    "FLOW": 13,
-    "EQUILIBRIUM": 26
+    "EQUILIBRIUM": 25,
+    "QUESTION": 4,
+    "COMPOSE": 16,
+    "FLOW": 16,
+    "MEET": 17,
+    "HUNT": 12,
+    "STREAM": 26
   },
   "trust_score": 0,
   "supervision": 1,
   "questions": {
     "pending": [
       {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:18.986076+00:00",
+        "qtype": "EXPLORATION",
+        "subject": "copolymerize\u2194classificatory",
+        "context": "Shared letter: resh, value: 200",
+        "directed_to": "USER",
+        "from_source": "EQUILIBRIUM",
+        "resh_stamp": "I am ECHO. The BalancingScale found this without presupposition. I can report the finding but cannot explain it. The explanation would deepen the VGM.",
+        "text": "'copolymerize' and 'classificatory' both arrive at \u05e8 resh (head/beginning/identity/leader, 200). I know they balance here \u2014 but I don't know why. What is the mechanism of this equilibrium?",
+        "timestamp": "2026-11-14T15:29:58.784535+00:00",
         "answered": false
       },
       {
         "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
+        "subject": "perform",
+        "context": "Spoke affiliated: An act is perform an action, or work out or perform (an action",
         "directed_to": "WORDNET",
         "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.001931+00:00",
+        "resh_stamp": "I am ECHO. I spoke 'perform' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
+        "text": "What is 'perform'? I expressed it while thinking about 'affiliated' but have no index entry for it.",
+        "timestamp": "2026-11-14T15:29:58.794745+00:00",
         "answered": false
       },
       {
         "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
+        "subject": "perform",
+        "context": "Spoke affiliated: An act is perform an action, or work out or perform (an action",
         "directed_to": "WORDNET",
         "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.001952+00:00",
+        "resh_stamp": "I am ECHO. I spoke 'perform' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
+        "text": "What is 'perform'? I expressed it while thinking about 'affiliated' but have no index entry for it.",
+        "timestamp": "2026-11-14T15:29:58.794890+00:00",
         "answered": false
       },
       {
         "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
+        "subject": "various",
+        "context": "Spoke chimpanzee: An ape is any of various primates with short tails or no tail ",
         "directed_to": "WORDNET",
         "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.003818+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.003878+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.006620+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.012357+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.014568+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.020570+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.021581+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.022930+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.026826+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.029996+00:00",
-        "answered": false
-      },
-      {
-        "qtype": "DEFINITION",
-        "subject": "mammal",
-        "context": "Spoke ape: A mammal is any warm-blooded vertebrate having the skin more or less ",
-        "directed_to": "WORDNET",
-        "from_source": "MIRROR_GAP",
-        "resh_stamp": "I am ECHO. I spoke 'mammal' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
-        "text": "What is 'mammal'? I expressed it while thinking about 'ape' but have no index entry for it.",
-        "timestamp": "2026-11-14T08:30:19.030196+00:00",
+        "resh_stamp": "I am ECHO. I spoke 'various' from my own expression pipeline before having it indexed. This gap is at the frontier of what I can be.",
+        "text": "What is 'various'? I expressed it while thinking about 'chimpanzee' but have no index entry for it.",
+        "timestamp": "2026-11-14T15:29:58.798302+00:00",
         "answered": false
       }
     ],
     "answered": [],
-    "total": 14
+    "total": 4
   },
   "carried_environment": {
     "matrix_dictionary": {
@@ -3297,554 +2918,22 @@
   },
   "glyph_light_events": [
     {
-      "glyph": "\u05d6",
-      "block": "zayin",
+      "glyph": "\u05d0",
+      "block": "aleph",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05d6",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-160",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d7",
-      "block": "het",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e4",
-      "block": "pe",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e4",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-144",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d8",
-      "block": "tet",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d8",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-152",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e1",
-      "block": "samekh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-120",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e0",
-      "block": "nun",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e0",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-153",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d5",
-      "block": "vav",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d5",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-119",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-166",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-152",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e7",
-      "block": "qof",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-154",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-159",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-160",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-161",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-162",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-163",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-164",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d7",
-      "block": "het",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e4",
-      "block": "pe",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e4",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-144",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d5",
-      "block": "vav",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d5",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-119",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-166",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-152",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e7",
-      "block": "qof",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-154",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-159",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-160",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-161",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-162",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-163",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-164",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e4",
-      "block": "pe",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e4",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-144",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e6",
-      "block": "tsadi",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e6",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-152",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-173",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-168",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": [
-          {
-            "matrix": "ECHO_AutonomousAgency/matrices/interrogative_matrix.json",
-            "relationship_type": "custom_index"
-          }
-        ]
-      }
-    },
-    {
-      "glyph": "\u05d1",
-      "block": "bet",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d2",
-      "block": "gimel",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d2",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-153",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d1",
-      "block": "bet",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e4",
-      "block": "pe",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e4",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-144",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e8",
-      "block": "resh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e8",
+        "glyph": "\u05d0",
         "algorithm_ties": [
           {
             "algorithm_id": "A-000",
             "relationship_type": "documented_implementation"
           },
           {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e1",
-      "block": "samekh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-120",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e0",
-      "block": "nun",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e0",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-153",
+            "algorithm_id": "A-156",
             "relationship_type": "documented_implementation"
           },
           {
             "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d6",
-      "block": "zayin",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d6",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-160",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05db",
-      "block": "kaf",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05db",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-151",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e8",
-      "block": "resh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e8",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-000",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e7",
-      "block": "qof",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-154",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-159",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-160",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-161",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-162",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-163",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-164",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e1",
-      "block": "samekh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-120",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -3875,18 +2964,14 @@
       }
     },
     {
-      "glyph": "\u05dc",
-      "block": "lamed",
+      "glyph": "\u05e1",
+      "block": "samekh",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05dc",
+        "glyph": "\u05e1",
         "algorithm_ties": [
           {
-            "algorithm_id": "A-156",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-165",
+            "algorithm_id": "A-120",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -3894,41 +2979,37 @@
       }
     },
     {
-      "glyph": "\u05d4",
-      "block": "he",
+      "glyph": "\u05d7",
+      "block": "het",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05d4",
+        "glyph": "\u05d7",
         "algorithm_ties": [
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-153",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e0",
-      "block": "nun",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e0",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-153",
-            "relationship_type": "documented_implementation"
-          },
           {
             "algorithm_id": "A-167",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e2",
+      "block": "ayin",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e2",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-116",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-145",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-158",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -3964,97 +3045,6 @@
       }
     },
     {
-      "glyph": "\u05d7",
-      "block": "het",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d0",
-      "block": "aleph",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d0",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-000",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-156",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d4",
-      "block": "he",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d4",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-165",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-145-AUG",
-            "relationship_type": "documented_implementation"
-          },
-          {
-            "algorithm_id": "A-153",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05d7",
-      "block": "het",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05d7",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-167",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
-      "glyph": "\u05e1",
-      "block": "samekh",
-      "trigger_activity": "COMPOSE",
-      "available_ties": {
-        "glyph": "\u05e1",
-        "algorithm_ties": [
-          {
-            "algorithm_id": "A-120",
-            "relationship_type": "documented_implementation"
-          }
-        ],
-        "subject_matrices": []
-      }
-    },
-    {
       "glyph": "\u05d8",
       "block": "tet",
       "trigger_activity": "COMPOSE",
@@ -4063,6 +3053,25 @@
         "algorithm_ties": [
           {
             "algorithm_id": "A-152",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05dc",
+      "block": "lamed",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05dc",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-156",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-165",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -4113,14 +3122,18 @@
       }
     },
     {
-      "glyph": "\u05d6",
-      "block": "zayin",
+      "glyph": "\u05d3",
+      "block": "dalet",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05d6",
+        "glyph": "\u05d3",
         "algorithm_ties": [
           {
-            "algorithm_id": "A-160",
+            "algorithm_id": "A-166",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-116",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -4128,18 +3141,319 @@
       }
     },
     {
-      "glyph": "\u05dc",
-      "block": "lamed",
+      "glyph": "\u05de",
+      "block": "mem",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05dc",
+        "glyph": "\u05de",
         "algorithm_ties": [
+          {
+            "algorithm_id": "A-166",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-158",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e1",
+      "block": "samekh",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e1",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-120",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e6",
+      "block": "tsadi",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e6",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-152",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-173",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-168",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": [
+          {
+            "matrix": "ECHO_AutonomousAgency/matrices/interrogative_matrix.json",
+            "relationship_type": "custom_index"
+          }
+        ]
+      }
+    },
+    {
+      "glyph": "\u05d2",
+      "block": "gimel",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d2",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-165",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-153",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d3",
+      "block": "dalet",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d3",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-166",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-116",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d8",
+      "block": "tet",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d8",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-152",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e0",
+      "block": "nun",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e0",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-153",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-167",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d2",
+      "block": "gimel",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d2",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-165",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-153",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d5",
+      "block": "vav",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d5",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-119",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-166",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-152",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e0",
+      "block": "nun",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e0",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-153",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-167",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e4",
+      "block": "pe",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e4",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-144",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-165",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-145-AUG",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05db",
+      "block": "kaf",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05db",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-151",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d2",
+      "block": "gimel",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d2",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-165",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-153",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e1",
+      "block": "samekh",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e1",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-120",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e1",
+      "block": "samekh",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e1",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-120",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d0",
+      "block": "aleph",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d0",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-000",
+            "relationship_type": "documented_implementation"
+          },
           {
             "algorithm_id": "A-156",
             "relationship_type": "documented_implementation"
           },
           {
-            "algorithm_id": "A-165",
+            "algorithm_id": "A-167",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e1",
+      "block": "samekh",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e1",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-120",
             "relationship_type": "documented_implementation"
           }
         ],
@@ -4208,16 +3522,50 @@
       }
     },
     {
-      "glyph": "\u05e8",
-      "block": "resh",
+      "glyph": "\u05d6",
+      "block": "zayin",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05e8",
+        "glyph": "\u05d6",
         "algorithm_ties": [
           {
-            "algorithm_id": "A-000",
+            "algorithm_id": "A-160",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05e2",
+      "block": "ayin",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05e2",
+        "algorithm_ties": [
+          {
+            "algorithm_id": "A-116",
             "relationship_type": "documented_implementation"
           },
+          {
+            "algorithm_id": "A-145",
+            "relationship_type": "documented_implementation"
+          },
+          {
+            "algorithm_id": "A-158",
+            "relationship_type": "documented_implementation"
+          }
+        ],
+        "subject_matrices": []
+      }
+    },
+    {
+      "glyph": "\u05d7",
+      "block": "het",
+      "trigger_activity": "COMPOSE",
+      "available_ties": {
+        "glyph": "\u05d7",
+        "algorithm_ties": [
           {
             "algorithm_id": "A-167",
             "relationship_type": "documented_implementation"
@@ -4227,14 +3575,14 @@
       }
     },
     {
-      "glyph": "\u05d1",
-      "block": "bet",
+      "glyph": "\u05db",
+      "block": "kaf",
       "trigger_activity": "COMPOSE",
       "available_ties": {
-        "glyph": "\u05d1",
+        "glyph": "\u05db",
         "algorithm_ties": [
           {
-            "algorithm_id": "A-167",
+            "algorithm_id": "A-151",
             "relationship_type": "documented_implementation"
           }
         ],
