@@ -1,0 +1,48 @@
+{
+  "experiment": "T78",
+  "environment": "Python 3.13.5",
+  "seeds": [
+    11,
+    23,
+    37,
+    53
+  ],
+  "test_types": 11,
+  "checks": 44,
+  "passed": 44,
+  "replay_identical": true,
+  "local_source_sha256": "deadbe6ff0db835eb1563f9317c354cac21cc07f59bf42d13e75f09d6db7ae34",
+  "local_output_sha256": "585ce1366aba96849bd49b92478ecd3c5fcb38d56a909e8319eed80333de2507",
+  "note": "Local executed source included an unused hashlib import; committed source omits it. Committed source not independently replayed; this is not byte-certified repository execution.",
+  "metrics": [
+    {
+      "seed": 11,
+      "affinity_difference": 0.016956377221,
+      "triad_difference": -0.062071692143
+    },
+    {
+      "seed": 23,
+      "affinity_difference": -0.121448537588,
+      "triad_difference": -0.007095714595
+    },
+    {
+      "seed": 37,
+      "affinity_difference": 0.093234497843,
+      "triad_difference": 0.107331955557
+    },
+    {
+      "seed": 53,
+      "affinity_difference": 0.066765263659,
+      "triad_difference": 0.084330578796
+    }
+  ],
+  "relative_shift_error": 0,
+  "sham_difference": 0,
+  "limitations": [
+    "synthetic analytic assertions, not a complete dynamic multiring simulation",
+    "two composition tests are structural tautologies",
+    "shuffled and ablation checks only require finite outputs, not nonzero effects",
+    "same four seeds not independent validation",
+    "no semantic, intelligence or real-world causal inference"
+  ]
+}
