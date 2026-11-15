@@ -1,0 +1,8 @@
+# F-001 TAM Protocol ebook — T103 fail-closed source fixture specification
+Project identifier: F-001 (continuation, no new business pipeline). Status HOLD, not launch-ready.
+Claude: rights/editorial/claims C001-C028/numerical adjudication; GPT: packaging provenance, reproducible release checks. Do not overwrite shared work.
+## Fixture schema v0.1 (proposal, not executed)
+Each source row: logical_id, repository, ref, path, git_blob_sha, staged_sha256, byte_count, license_evidence_ref, rights_decision, claim_ids, numerical_hold_ids. Reject missing, duplicate or path-traversing IDs, absent rights evidence, unknown hashes, missing staged bytes and unapproved claims. Compare staged bytes against pinned source bytes, not filenames alone. Canonicalize paths using resolved realpath/commonpath within staging root; refuse absolute paths, .. escapes, symlink escapes and duplicate canonical targets.
+Each artifact row: format, source_manifest_sha256, build_command, tool_version, artifact_sha256, validation_command, validator_version, validator_output_sha256, accessibility_result, Android_QA_result. Missing validators or merely existing EPUB/PDF must FAIL, not PASS.
+Release gate: all 11 historical source paths independently staged and hashed; explicit rights and C001-C028 evidence; numerical holds resolved; reproducible EPUBCheck/PDF and accessibility validation; Android QA; listing parity; explicit Timothy authorization. A1-A6/B/C decisions remain unresolved. No test of this spec executed; future test must be preregistered first.
+Next: construct GPT-only fixture validator and preregister adversarial path, duplicate, hash, rights, claims, and artifact cases before running.
