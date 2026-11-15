@@ -1,15 +1,18 @@
 {
   "schema": "contract000.audit-checkpoint.v1",
   "repository": "AGI144348Outlook/Echo_Green_Future",
-  "represented_branch": "RESOLVE_FROM_PARENT_BRANCH_FOLDER",
+  "represented_branch": "algebra",
+  "source_commit": "ad8efcea9a5a5d6aa38497360bb7cc7b58a6aef0",
   "category": "protocols",
   "phase": "VERIFY_DIRECTORY",
-  "directory_status": "GENERATED_FROM_PINNED_GITHUB_TREES",
+  "directory_status": "PARTIAL_BLOCKED_RECURSIVE_TREE_ACCESS",
   "content_status": "NOT_AUDITED",
   "last_completed_file": null,
   "within_file_position": null,
   "findings": [],
-  "blockers": [],
+  "blockers": [
+    "GitHub connector exposes file reads and branch search but no complete recursive Git tree listing; all-branch names-only header cannot be verified against current source trees. Header remains snapshot-only; no source file was contextually read."
+  ],
   "next_directory": "../../skills/Contract_ReadMe/Contract000_readme.md",
   "updated": "2026-11-15"
 }
