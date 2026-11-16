@@ -5,14 +5,17 @@
   "source_commit": "ad8efcea9a5a5d6aa38497360bb7cc7b58a6aef0",
   "category": "protocols",
   "phase": "VERIFY_DIRECTORY",
-  "directory_status": "PARTIAL_BLOCKED_RECURSIVE_TREE_ACCESS",
+  "directory_status": "PARTIAL_1_OF_363_PINNED_TREES_FETCHED",
   "content_status": "NOT_AUDITED",
   "last_completed_file": null,
   "within_file_position": null,
   "findings": [],
   "blockers": [
-    "GitHub connector exposes file reads and branch search but no complete recursive Git tree listing; all-branch names-only header cannot be verified against current source trees. Header remains snapshot-only; no source file was contextually read."
+    "All-branch directory verification unfinished: only algebra pinned recursive tree fetched (344 entries, truncated=false); 362 represented branch trees and current main remain to be reconciled. No source file was contextually read."
   ],
   "next_directory": "../../skills/Contract_ReadMe/Contract000_readme.md",
-  "updated": "2026-11-15"
+  "updated": "2026-11-16",
+  "last_run_id": "automation-turn-11-2026-11-16T11:00:00-06:00",
+  "note": "GitHub REST tree fetch works; previous connector-access blocker superseded. Resume all-branch inventory verification from branch index 1. Algebra tree was fetched but its names-only header membership was not fully reconciled.",
+  "next_verification_branch_index": 1
 }
