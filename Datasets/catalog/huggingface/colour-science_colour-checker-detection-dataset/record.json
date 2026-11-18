@@ -1,0 +1,1901 @@
+{
+ "id": "huggingface:colour-science/colour-checker-detection-dataset",
+ "title": "colour-science/colour-checker-detection-dataset",
+ "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tColour - Checker Detection - Dataset\n\t\n\nAn image dataset of colour rendition charts.\nThis dataset is structured according to Ultralytics YOLO format and ready to use with YOLOv8.\nThe colour-science/colour-checker-detection-models models resulting from the YOLOv8 segmentation training are supporting colour rendition charts detection in the Colour Checker Detection Python package.\n\n\t\n\t\t\n\t\n\t\n\t\tClasses\n\t\n\n\nColorCheckerClassic24: Calibrite / X-Rite ColorCheckerClassic 24… See the full description on the dataset page: https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset.",
+ "found_by_keywords": [
+  "science"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "4b055b67631af010c8fa5805651735d83c5eee8d",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2024-01-03T04:00:39.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'science'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:6714266123f98796d4e7681059688b8393ad6ea580c20da4b5bd40f8df1760c4",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-11-18T14:20:22+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/.gitattributes",
+   "declared_size": 2307,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": ".gitignore",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/.gitignore",
+   "declared_size": 10,
+   "declared_checksum": null,
+   "format": null,
+   "stored": "files/huggingface/colour-science_colour-checker-detection-dataset/gitignore",
+   "bytes": 10,
+   "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+   "checksum_check": "no checksum published by source",
+   "provenance_checksum_status": "unverified"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/README.md",
+   "declared_size": 1999,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data.yml",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/data.yml",
+   "declared_size": 92,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0015.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0015.png",
+   "declared_size": 6806126,
+   "declared_checksum": "sha256:99d5d2730387d620561c383d12ee2e705efca89b4fdeb058d5fe251848277f83",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0018.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0018.png",
+   "declared_size": 7545722,
+   "declared_checksum": "sha256:607c3a4f3f923278721b5e26b978424c3ab37106ea74ad5501f90ec3944aa193",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0022.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0022.png",
+   "declared_size": 9009315,
+   "declared_checksum": "sha256:2fec107784738b4a49aafbe5d8a66000ddc1b5775d5b46bbd97f8299a3af5738",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0032.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0032.png",
+   "declared_size": 6895890,
+   "declared_checksum": "sha256:4ccc363168c69ce72f6818e2cf9be9563861b01ae045b01035a8e17aace75f4c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0036.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0036.png",
+   "declared_size": 7970462,
+   "declared_checksum": "sha256:9fae441b98ed05c585a1935ae8b503485822dd3997b9b1536230483de05ac055",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0049.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0049.png",
+   "declared_size": 9511709,
+   "declared_checksum": "sha256:38b0869fdfea5c422e1c6281427505e68e9cfb52dd8f0c169768765a95288318",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0052.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0052.png",
+   "declared_size": 10316389,
+   "declared_checksum": "sha256:544a35a3a89561a24483b3eed9545ac124eaa52bb56f7588475d8fe9cbbb640c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0057.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0057.png",
+   "declared_size": 7709658,
+   "declared_checksum": "sha256:26773465de9b0b9effb007f571eb01f95c418c449dfa11fcc8765f5739f50959",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0062.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0062.png",
+   "declared_size": 9558775,
+   "declared_checksum": "sha256:7b3c101a718c57768c277cf277958a256ce17cbb34981c60359c501c6ce035fe",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0066.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0066.png",
+   "declared_size": 8069356,
+   "declared_checksum": "sha256:6d464208eac4233366b5876a391dd5eb33b217cb8b737bf896ef6afd511aec86",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0071.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0071.png",
+   "declared_size": 10193764,
+   "declared_checksum": "sha256:79833f3ba9337c87e0770d9ab92e36356bf5a6f749823a60f91c22c8c3a226fc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0072.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0072.png",
+   "declared_size": 8914891,
+   "declared_checksum": "sha256:6c351b482f4fc9480b7e1122671d82da3a4a50aba144c3bc2e293f1c8e386c15",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0073.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0073.png",
+   "declared_size": 9557580,
+   "declared_checksum": "sha256:8f748c27f0ff38c32931b51330930ea821924a6476bb3abdb38b5210d904f317",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0090.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0090.png",
+   "declared_size": 7254271,
+   "declared_checksum": "sha256:40f3f827f5c9890a0e6e2b14d282e3551cfb7d5c05785abd5c313f0d5b62882a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/images/0095.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/images/0095.png",
+   "declared_size": 5974442,
+   "declared_checksum": "sha256:1184ddfa0c15586b8b44311c8702a4575fb76da0fb4f2210e0b4d6a6b9bc4249",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0015.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0015.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0018.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0018.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0022.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0022.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0032.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0032.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0036.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0036.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0049.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0049.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0052.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0052.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0057.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0057.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0062.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0062.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0066.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0066.txt",
+   "declared_size": 71,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0071.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0071.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0072.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0072.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0073.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0073.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0090.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0090.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "test/labels/0095.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/test/labels/0095.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0001.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0001.png",
+   "declared_size": 7682443,
+   "declared_checksum": "sha256:4ca57f5b4f73d545a213769a5bfe01bdc0122ade4831874d3bdf84723220310b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0002.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0002.png",
+   "declared_size": 8938900,
+   "declared_checksum": "sha256:33c8377b60f8c474760c52dba42eb0ab3c1732c84f79af1ffb7ecf4237291256",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0005.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0005.png",
+   "declared_size": 8925234,
+   "declared_checksum": "sha256:4ec5841697872bf032a84847092070f8d12ba6c305be2e1f3b76bb647cd1c7a7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0006.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0006.png",
+   "declared_size": 8478508,
+   "declared_checksum": "sha256:49ecbe1428bdd052f3586b1b474530350cc24b1b7b7a0888dfe685773e0f7a4d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0009.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0009.png",
+   "declared_size": 7835624,
+   "declared_checksum": "sha256:32cb709a569af01827c97371b2f27bf5baa69efc41a6eac43d179f062ba942f4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0010.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0010.png",
+   "declared_size": 7600701,
+   "declared_checksum": "sha256:5ad5b503a2a62d4e8b4c62059a2372ed5a2bfe9c7b7e6d28bb987c92233e93e3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0011.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0011.png",
+   "declared_size": 7904815,
+   "declared_checksum": "sha256:178d2b422b00a04a4617dbe9989f440fe991c17a674d1ba031f967f8067b9844",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0012.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0012.png",
+   "declared_size": 9200194,
+   "declared_checksum": "sha256:72dc1d5de047471d868f4ac07b58c0dd0b077e8432e69bb27c22bf5ad5686b5d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0013.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0013.png",
+   "declared_size": 6316407,
+   "declared_checksum": "sha256:4b305ced2c15ed380e633d967091fe1e1adb30f03908b4771039ac155ec59c9b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0014.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0014.png",
+   "declared_size": 9689576,
+   "declared_checksum": "sha256:09686d564238cf344a1dfbcfdd187227b1fd5348bbb2607fc3db5c98f5091dcd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0016.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0016.png",
+   "declared_size": 8179945,
+   "declared_checksum": "sha256:edfdf58a36082fd618fdd5686c9ba50caebe859dfd539802488e595fd219dffc",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0017.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0017.png",
+   "declared_size": 9565946,
+   "declared_checksum": "sha256:b0ab58bfa130718852666cdf613f47bb300f8c8cc45cd8226439aaeb02ff854e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0019.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0019.png",
+   "declared_size": 5805614,
+   "declared_checksum": "sha256:2cf19aad5ec16e37adad62baae3d49e81eb5e7d075e953d01ab850d5e49e9ed0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0020.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0020.png",
+   "declared_size": 7927010,
+   "declared_checksum": "sha256:ec7ee8809e0baf0abc1beb551a0e1252efd81c8c7f8390d6b2d86a0ce264cc57",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0021.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0021.png",
+   "declared_size": 8196988,
+   "declared_checksum": "sha256:b903c150c8a60ff42d32478dc58836cc99515284df08c769bbebc68626d7d6f9",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0023.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0023.png",
+   "declared_size": 8956626,
+   "declared_checksum": "sha256:36537c69c8591c6cf6884b25bb4b344d5bc71f52ba03211f55f575405eaad7ea",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0024.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0024.png",
+   "declared_size": 10584835,
+   "declared_checksum": "sha256:f3b7c16f86d925972ad0c86e5b6b34fce47d43335b8cb32a5f4317eb0a36ef13",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/images/0025.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0025.png",
+   "declared_size": 7500740,
+   "declared_checksum": "sha256:e6ccf86c5834c2811c30e773458fe71de9fffc7b87ea109f6464a39f99563680",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0026.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0026.png",
+   "declared_size": 8201138,
+   "declared_checksum": "sha256:0f10f974c02f1877e4fe86337643c2c4d24e38d0164f2835a579d13f4b3198a4",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0027.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0027.png",
+   "declared_size": 7936482,
+   "declared_checksum": "sha256:3207dde6f8301a16a89826184d5b248f950d3741948aaf2a5cf3728fecefe2db",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0028.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0028.png",
+   "declared_size": 10056472,
+   "declared_checksum": "sha256:d80258c0b8a7bd7956dbfcfb6040e846bc879b1c7d6cd85b0f7eca1bb96722f0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0029.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0029.png",
+   "declared_size": 7522751,
+   "declared_checksum": "sha256:fa6794ea8cc4f3348a4e469a246444c43dfd3f287a7cbf1467b5f7cdf5f68a3b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0030.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0030.png",
+   "declared_size": 5096135,
+   "declared_checksum": "sha256:fdac7e6bbb26d3ceabe6129185dbc5766021bddf602d7f53c134cfccc1bf5669",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0031.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0031.png",
+   "declared_size": 10363628,
+   "declared_checksum": "sha256:d750e99d6825da41795738bdf2e2f2eab3637c421df07bb302727e176f43bdd6",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0033.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0033.png",
+   "declared_size": 7931204,
+   "declared_checksum": "sha256:f781ead181f552ac76b62c1dd5cfd3049cf52a4276aae974d3279b1c4e6f36de",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0034.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0034.png",
+   "declared_size": 9375116,
+   "declared_checksum": "sha256:99cd2d2f30c4d1292c5d1d11d29ed45fa5e53c55f3cb080cc23558890ce75fcb",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0035.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0035.png",
+   "declared_size": 10117058,
+   "declared_checksum": "sha256:f6dd134bfba72e99672226cf25a8e2189ad9027e4dafca307eaf69a07dd35b85",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0037.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0037.png",
+   "declared_size": 7321908,
+   "declared_checksum": "sha256:7723c7295255c58cbf9eeb0abd452f2ba9f974626095958df79da1b2e8149f1c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0038.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0038.png",
+   "declared_size": 8284289,
+   "declared_checksum": "sha256:7e6d9f5f858748effe7f4eecf885e5ffc724466d3baa52b2143a0aa6f612ff98",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0040.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0040.png",
+   "declared_size": 9268464,
+   "declared_checksum": "sha256:141f269c021106b0fbf1e49461b40a560129e6e6f78135d6f2a40b1ff69c20e8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0041.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0041.png",
+   "declared_size": 8089555,
+   "declared_checksum": "sha256:1db05a4d5c3f7add79acc9ffbd12cb0e7987fee289b9cdd8d110623399e0a8ff",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0042.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0042.png",
+   "declared_size": 8519298,
+   "declared_checksum": "sha256:06815a7af55d9c2a13c18e4e667e60a193b37b4c964b1a53ae14bac2e8db055c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0043.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0043.png",
+   "declared_size": 9122047,
+   "declared_checksum": "sha256:d07ab8866a35218e698345bdc539b5d40ca1d399a1e382803f93f0c304160cb5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0044.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0044.png",
+   "declared_size": 9579232,
+   "declared_checksum": "sha256:56239b590b729ee303f13ffe3130b847c6cf85da3738107d7613183c4e69fc25",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0045.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0045.png",
+   "declared_size": 8285466,
+   "declared_checksum": "sha256:b3556d74a0a0a0bbf3f69ca2fd80944b82b9401f4b77a6745ea350d0eab6e505",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0046.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0046.png",
+   "declared_size": 9437639,
+   "declared_checksum": "sha256:e6b74f59ae76b6e5ed9458b17d3537e312044a0d4b81efdf5d8e2edf9e200504",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0047.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0047.png",
+   "declared_size": 8571354,
+   "declared_checksum": "sha256:a28f123aff3ad94aee9ee4f46482cf655909dd5ccc8d03e925ef5dca21d63f9e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0048.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0048.png",
+   "declared_size": 7930321,
+   "declared_checksum": "sha256:3079e2d43ba2ff3530caea32ac212ac37091ce0effc825b7b82189d3953ec646",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0050.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0050.png",
+   "declared_size": 9597788,
+   "declared_checksum": "sha256:9fed72bef0412a419fc9af45a9a6ac38512f51c1b5126ed938899925b8bcfcca",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0051.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0051.png",
+   "declared_size": 7650545,
+   "declared_checksum": "sha256:90f87ae332972fcafb6ee013e6dbb526f9ef2439acf5c1aaddcc91ff9cf1b341",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0053.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0053.png",
+   "declared_size": 9013301,
+   "declared_checksum": "sha256:2d7a9a7c46b2fbce545128af8039b3e15e58c19d0ccbe45fc3febe2f2e85097c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0054.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0054.png",
+   "declared_size": 8111811,
+   "declared_checksum": "sha256:35280c163aa9cd338d99c4cc25f9bb271515025e224b212578e2ca03ba58e030",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0055.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0055.png",
+   "declared_size": 9576229,
+   "declared_checksum": "sha256:9da5faf1865f49f9e663d48da4ccf064b67ba7d1237c61b19d45bb573f05c352",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0056.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0056.png",
+   "declared_size": 10311809,
+   "declared_checksum": "sha256:cfde051341260df5bef92d5095c14fe56dbdf30bb11a4fe49ba1f5fb505b250d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0058.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0058.png",
+   "declared_size": 9009490,
+   "declared_checksum": "sha256:e6a665a6b0504c2001312728cee19d5df79b64fc1ba0d1a9b6d6bfcaf7ecdae3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0059.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0059.png",
+   "declared_size": 9573716,
+   "declared_checksum": "sha256:1873e0cf6aa289ace64764c420cc39b6b0ebf178490d6cd3c14dc40be6f41141",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0060.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0060.png",
+   "declared_size": 9935226,
+   "declared_checksum": "sha256:232d4b7c40d23e4f418cf43d1e22e0970e90bbd2cffe8feee1c305d26cd3815e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0061.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0061.png",
+   "declared_size": 9792648,
+   "declared_checksum": "sha256:2a4422651cb65727b5a4fedf4fdafb7550f6c767259b4fde44829305e51e73ed",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0067.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0067.png",
+   "declared_size": 9137021,
+   "declared_checksum": "sha256:f894f2e839e82a1e9f071fbd82b439a881f728d651da05add72f7be78395c62e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0068.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0068.png",
+   "declared_size": 8837389,
+   "declared_checksum": "sha256:89febb0a8be5522b64c27c6010a233343a240b64f290c77bcc17639a03ff3eea",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0070.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0070.png",
+   "declared_size": 9466416,
+   "declared_checksum": "sha256:4c15a18634fc724a77e88ed4e472b5390bf7879a9225de83f2a53646ecedfd95",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0075.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0075.png",
+   "declared_size": 10881924,
+   "declared_checksum": "sha256:94c6b4348ed016abbf1764d47bc1d932f752d071e8bb5dd97916457f43ed7e3a",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train/images/0076.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0076.png",
+   "declared_size": 8327026,
+   "declared_checksum": "sha256:da41378816870da49791f70c430c836825d0868a32e3fe513c25a185d35c3987",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0077.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0077.png",
+   "declared_size": 7361553,
+   "declared_checksum": "sha256:fda58f62aeeb4300733257a429f24b11d99291faa794a2b02ea0e3f5ea7992d3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0078.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0078.png",
+   "declared_size": 8589821,
+   "declared_checksum": "sha256:ded95f57db16bbd9f09973649c2d3d6aefdbf05432559d6066630419f2a91a9b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0081.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0081.png",
+   "declared_size": 7319248,
+   "declared_checksum": "sha256:a579215fd158c0510d40530b7078a6c0785501faf9e96f20b69a0c1f1d294631",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0082.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0082.png",
+   "declared_size": 9705885,
+   "declared_checksum": "sha256:2634a927d490f59bfa38ac59266bd072c01d4fbbb005b0e8533953b2caa93bb3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0084.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0084.png",
+   "declared_size": 7883052,
+   "declared_checksum": "sha256:613cfe29f58c18b607870cc87fda1c86f82bbb29c2f4d255787b8cb3707a0ba7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0085.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0085.png",
+   "declared_size": 8576716,
+   "declared_checksum": "sha256:d9a5735edbf71df33bb268e467f75c8eb718d74f313d7c61e3e994e242dec9b7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0086.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0086.png",
+   "declared_size": 8232400,
+   "declared_checksum": "sha256:e55b97101c92d0d6d82ed67e18ef1a242ed370f5a4ba7b374169607d8829d9bd",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0087.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0087.png",
+   "declared_size": 7823499,
+   "declared_checksum": "sha256:21edcb31d5fec7ce986ca09134fa192b06630f9a6234e0416d71b222f3f047a0",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0088.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0088.png",
+   "declared_size": 5558670,
+   "declared_checksum": "sha256:25473f453d598aef4049ebac9976644b8e6f01f59cd68d792aa4d6a95855097a",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0089.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0089.png",
+   "declared_size": 7079184,
+   "declared_checksum": "sha256:263d9c25910f3bbf226779b4f298f2b22743d4e0cf8cbb257af4dfbe69d73249",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0092.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0092.png",
+   "declared_size": 7476515,
+   "declared_checksum": "sha256:700867db33b25be935e1549af2b9b7adf23f898ae6df30acf499dc29b74d92b5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0093.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0093.png",
+   "declared_size": 7483799,
+   "declared_checksum": "sha256:445559335a20fe25f724e73918b1270d7a034c07747d4c052bee96c2b6b08c42",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0094.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0094.png",
+   "declared_size": 8361248,
+   "declared_checksum": "sha256:ea46318be6cb6b77e19376d5075def9d222f5bb031e8406a2a348fca325129ba",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0096.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0096.png",
+   "declared_size": 6622056,
+   "declared_checksum": "sha256:2ff14c19c926c9c0f76f12b270f933067697a36cb86d1f7c968d18a73a104d6d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0097.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0097.png",
+   "declared_size": 7689232,
+   "declared_checksum": "sha256:04db6d0974c016a6204b2b50b6ca1bd63d06c632684103a0f48ec39001b06fb5",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0098.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0098.png",
+   "declared_size": 8780409,
+   "declared_checksum": "sha256:94820e77442d8925415f61cc0f427736874820c4ec88c8576238516a79f11e7b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/images/0099.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/images/0099.png",
+   "declared_size": 9028309,
+   "declared_checksum": "sha256:7e8d1571e8fb366fa65abcce36f77ef32e1e9705f5475a93ce69c6bc10cbc102",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels.cache",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels.cache",
+   "declared_size": 27464,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0001.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0001.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0002.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0002.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0005.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0005.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0006.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0006.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0009.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0009.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0010.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0010.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0011.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0011.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0012.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0012.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0013.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0013.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0014.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0014.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0016.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0016.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0017.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0017.txt",
+   "declared_size": 76,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0019.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0019.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0020.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0020.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0021.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0021.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0023.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0023.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0024.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0024.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0025.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0025.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0026.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0026.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0027.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0027.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0028.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0028.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0029.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0029.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0030.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0030.txt",
+   "declared_size": 71,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0031.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0031.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0033.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0033.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0034.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0034.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0035.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0035.txt",
+   "declared_size": 71,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0037.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0037.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0038.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0038.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0040.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0040.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0041.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0041.txt",
+   "declared_size": 71,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0042.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0042.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0043.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0043.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0044.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0044.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0045.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0045.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0046.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0046.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0047.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0047.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0048.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0048.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0050.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0050.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0051.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0051.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0053.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0053.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0054.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0054.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0055.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0055.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0056.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0056.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0058.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0058.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0059.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0059.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0060.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0060.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0061.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0061.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0067.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0067.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0068.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0068.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0070.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0070.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0075.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0075.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0076.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0076.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0077.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0077.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0078.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0078.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0081.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0081.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0082.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0082.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0084.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0084.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0085.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0085.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0086.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0086.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0087.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0087.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0088.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0088.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0089.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0089.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0092.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0092.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0093.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0093.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0094.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0094.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0096.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0096.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0097.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0097.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0098.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0098.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train/labels/0099.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/train/labels/0099.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0003.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0003.png",
+   "declared_size": 9005867,
+   "declared_checksum": "sha256:c135e30050028ca14277686078a2651edeb0ee9ff0cd5811cc940af0a14d4a2c",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0004.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0004.png",
+   "declared_size": 8609836,
+   "declared_checksum": "sha256:7e355bc0382a77b464dd1c3803915b047602bc1a17181caf8c3658d2daefab23",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0007.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0007.png",
+   "declared_size": 8589506,
+   "declared_checksum": "sha256:d17595f4d21422be12f695f7ec5acd41456e07a3c8959bc897f10a2734f04e7b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0008.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0008.png",
+   "declared_size": 8232159,
+   "declared_checksum": "sha256:7a47e6a90282fbae37b473f0e4951318105727ed66948c8dfee050485597862b",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0039.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0039.png",
+   "declared_size": 7732963,
+   "declared_checksum": "sha256:4b345dc217325504cf24025f50fcd00c5f24e1ea5a7d054ae3884cc97ca67557",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0063.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0063.png",
+   "declared_size": 9320253,
+   "declared_checksum": "sha256:9ade6a6e82d8a5a15d5cc014ba7c494720ad7721d85c661b3ad6ced784322b1d",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0064.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0064.png",
+   "declared_size": 8972792,
+   "declared_checksum": "sha256:da4e612b82698308477eca828baeaecfc1fb17b20a5c0ac102accba4f89485e3",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0065.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0065.png",
+   "declared_size": 7010829,
+   "declared_checksum": "sha256:a924894fa6799638466ea3fdc8f9be25e8ea54303bd972518bc7808e9cfc2067",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0069.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0069.png",
+   "declared_size": 10400390,
+   "declared_checksum": "sha256:2192a6dba3ebb182534503fcf5b8e4e0a7450632a123a7a380bb5e408a6e5c61",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0074.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0074.png",
+   "declared_size": 8916658,
+   "declared_checksum": "sha256:ba8f45181dc00a160632abe7268c593ebc5ba7f3e733c07e3548d1326a8efa37",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0079.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0079.png",
+   "declared_size": 8821031,
+   "declared_checksum": "sha256:a138334c8761538cef896e41926ee4bebae3edd3780a02cd2c6d3a2de548752e",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0080.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0080.png",
+   "declared_size": 6850958,
+   "declared_checksum": "sha256:90010b8ce1caeb88ab3c5cc25f2a9590f56dbaf930d0f7dd2bb8dd6bdffdda37",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0083.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0083.png",
+   "declared_size": 6943929,
+   "declared_checksum": "sha256:504d044664c470a245fb05433b0e23bb65a1876f485896c4fe82d95751d531ba",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0091.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0091.png",
+   "declared_size": 7415234,
+   "declared_checksum": "sha256:5f0e2df02adac2f4bb861e3416e80d5fac69adf95d057c2b1e812d19633e66a7",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/images/0100.png",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/images/0100.png",
+   "declared_size": 9792133,
+   "declared_checksum": "sha256:88e9aaf4283b7accc1f99ef2cea8a31fb6fdc0cd58cfee0dc5076dc980bb532f",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels.cache",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels.cache",
+   "declared_size": 5849,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0003.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0003.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0004.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0004.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0007.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0007.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0008.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0008.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0039.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0039.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0063.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0063.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0064.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0064.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0065.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0065.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0069.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0069.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0074.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0074.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0079.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0079.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0080.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0080.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0083.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0083.txt",
+   "declared_size": 74,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0091.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0091.txt",
+   "declared_size": 73,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "valid/labels/0100.txt",
+   "url": "https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/resolve/4b055b67631af010c8fa5805651735d83c5eee8d/valid/labels/0100.txt",
+   "declared_size": 72,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
