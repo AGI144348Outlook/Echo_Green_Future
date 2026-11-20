@@ -1,0 +1,107 @@
+{
+ "id": "zenodo:24394558",
+ "title": "Multi-source Cybersecurity LAN dataset",
+ "url": "https://zenodo.org/records/24394558",
+ "doi": "10.5281/zenodo.24394558",
+ "description": "<p>This dataset provides a heterogeneous collection of network traffic and system-level security data acquired in a controlled, enterprise-like network environment. It was developed to support research into intelligent cybersecurity applications, including network anomaly detection, attack classification, behavioral analysis, and the analysis of application-layer payloads and system logs.</p>\n<p>The collection combines realistic benign activities, nine controlled attack scenarios, and supplementary records representing potentially suspicious behavior. Data were acquired from multiple sources and processed into formats suitable for cybersecurity analysis and machine learning.</p>\n<h3>Dataset Contents</h3>\n<p>The dataset includes:</p>\n<ul>\n<li>\n<p><strong>Benign network traffic:</strong> 93 packet capture files and 1,114,057 extracted unidirectional network flows. The flow records contain network communication metadata and extracted application-layer payloads, where available.</p>\n</li>\n<li>\n<p><strong>Malicious network traffic:</strong> 20 packet capture files and 241,619 extracted unidirectional network flows, representing nine controlled attack scenarios. The flow records include network communication metadata and extracted application-layer payloads, where available.</p>\n</li>\n<li>\n<p><strong>Suspicious activities:</strong> A supplementary collection of 4,410 CSV records covering eight categories of potentially suspicious network behavior. These records contain only information derived from network packet headers, without application-layer payloads or associated packet captures.</p>\n</li>\n<li>\n<p><strong>System and service logs:</strong> Approximately 596,000 Windows and Linux log events, providing host-level observations.</p>\n</li>\n</ul>\n<p>The availability of both raw packet captures and structured flow records in the benign and malicious traffic collections enables analyses at different levels of granularity, including statistical traffic analysis and applicati",
+ "found_by_keywords": [
+  "dictionary"
+ ],
+ "topic_section": "my keywords",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/24394558",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "2.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-11-20T11:05:20.151096+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-4.0",
+   "normalized": "cc-by",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'dictionary'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:213a51131bb3124ccadff71c58576bb2f37d894846f728646d6c6fbdfacf595d",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-11-20T13:14:43+00:00",
+ "files": [
+  {
+   "name": "DATA_DICTIONARY_v1.0.md",
+   "url": "https://zenodo.org/api/records/24394558/files/DATA_DICTIONARY_v1.0.md/content",
+   "declared_size": 14172,
+   "declared_checksum": "md5:90aeec207da7538a809f3f4ae0bbd439",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "Benign_pcaps.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/Benign_pcaps.zip/content",
+   "declared_size": 2096933951,
+   "declared_checksum": "md5:6eca6cc21c92d34c28d10b6c9d371a71",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "benign_flows.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/benign_flows.zip/content",
+   "declared_size": 1451872725,
+   "declared_checksum": "md5:cccfdb213a56ed17a30f147294a1a203",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "attack_pcaps.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/attack_pcaps.zip/content",
+   "declared_size": 1166052037,
+   "declared_checksum": "md5:744ecf35d342d34e43dd3c726b1be90a",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "attack_flows.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/attack_flows.zip/content",
+   "declared_size": 1077152903,
+   "declared_checksum": "md5:2c5a5ff5007b2f2348aa6ae67407fc5e",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "System_and_service_logs.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/System_and_service_logs.zip/content",
+   "declared_size": 460724720,
+   "declared_checksum": "md5:65c2644351746b21fad77db2536aaa74",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "Suspicious_Activities_CSVs.zip",
+   "url": "https://zenodo.org/api/records/24394558/files/Suspicious_Activities_CSVs.zip/content",
+   "declared_size": 437455,
+   "declared_checksum": "md5:0745759f3da0cf0fa12f79b4e62746e8",
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}

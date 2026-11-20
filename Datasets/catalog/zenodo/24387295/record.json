@@ -1,0 +1,368 @@
+{
+ "id": "zenodo:24387295",
+ "title": "YOLC-E1: released tables, ledgers and processing scripts for a provenance-graded web corpus of Yuju (Henan) opera lyrics",
+ "url": "https://zenodo.org/records/24387295",
+ "doi": "10.5281/zenodo.24387295",
+ "description": "<p>YOLC-E1 is the released supplementary package for a provenance-graded web corpus of Yuju (Henan) opera lyrics. The corpus is organised in three layers: 604 source-page records, 58,294 line instances and 24,841 distinct normalised lines. Every line resolves to a page, a retained snapshot identifier and an ordinal position, and carries a confidence grade whose edition-checked top level is empty. The archive contains the three-layer TSV tables, the genre-screening cleaning ledger, the 63-page exclusion list with per-page evidence, the 24,841-line review verdicts, SHA-256 manifests, the eight step scripts with their helper modules and outputs, and an additional reproducibility note. Running the scripts in sequence, with Python 3.9 or later and no network access, reproduces the released tables and the 46 validation assertions from the pooled inventory in input/. Page snapshots are retained locally but are not redistributed, because the page text is third-party material of uncertain copyright status; manifest.txt records each page's identifier, URL, SHA-256 digest, retrieval timestamp and byte count, so every retained page remains identifiable at record level. Licence: CC BY-NC 4.0.</p>",
+ "found_by_keywords": [
+  "Indus sign corpus"
+ ],
+ "topic_section": "indus valley script",
+ "provenance": {
+  "source": {
+   "value": "https://zenodo.org/records/24387295",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "1.0",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-11-20T08:08:02.490147+00:00",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "cc-by-nc-4.0",
+   "normalized": "cc-by-nc",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (zenodo) for 'Indus sign corpus'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:a659c9b4cf9bada16e3d507480acabd568440d7f65ef90dfde38de04b04d1f6a",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-11-20T13:40:07+00:00",
+ "files": [
+  {
+   "name": "normalisation_check.json",
+   "url": "https://zenodo.org/api/records/24387295/files/normalisation_check.json/content",
+   "declared_size": 1203,
+   "declared_checksum": "md5:113b5814f4c2818c41a716a6b1db827e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "11_instance_pool.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/11_instance_pool.tsv/content",
+   "declared_size": 28356846,
+   "declared_checksum": "md5:bc03483f6292c3229b877b28d5ded437",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "count_rows.json",
+   "url": "https://zenodo.org/api/records/24387295/files/count_rows.json/content",
+   "declared_size": 6373,
+   "declared_checksum": "md5:7dbcf3a0a76fbc28ead9b6669b013fe7",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "freeze_hash.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/freeze_hash.py.txt/content",
+   "declared_size": 6445,
+   "declared_checksum": "md5:aec2c9793681196ffd73b85b08627545",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "validation_log.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/validation_log.tsv/content",
+   "declared_size": 2986,
+   "declared_checksum": "md5:07ccbc22701e60cad8812afbaac43090",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "yuju_sources.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/yuju_sources.tsv/content",
+   "declared_size": 206515,
+   "declared_checksum": "md5:e33591a213956e347a9c9a6e1e94caa5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "yolc_common.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/yolc_common.py.txt/content",
+   "declared_size": 3122,
+   "declared_checksum": "md5:1650dbac60b3cc921440d6f4a8acc5d5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "yuju_lines.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/yuju_lines.tsv/content",
+   "declared_size": 3164847,
+   "declared_checksum": "md5:c196205163e67b4e3806028479494b3e",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "README.md",
+   "url": "https://zenodo.org/api/records/24387295/files/README.md/content",
+   "declared_size": 7141,
+   "declared_checksum": "md5:d117aa32e28dccaf3155bef4cb22c13a",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "table5_ledger.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/table5_ledger.tsv/content",
+   "declared_size": 486,
+   "declared_checksum": "md5:5cd8cb7c916a0b09f39fff4e28c93574",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "build_yuju_subset.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/build_yuju_subset.py.txt/content",
+   "declared_size": 6881,
+   "declared_checksum": "md5:61751870e1f4e0aab5a74cd4b72c4f05",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "noise_candidates.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/noise_candidates.tsv/content",
+   "declared_size": 1133,
+   "declared_checksum": "md5:8a2ba1a07a5798ec7bae86387cce3558",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "describe_lengths.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/describe_lengths.py.txt/content",
+   "declared_size": 2220,
+   "declared_checksum": "md5:1d9b5ea4a6434b3b5dae275fd26a6c14",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "review_verdicts.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/review_verdicts.tsv/content",
+   "declared_size": 1375045,
+   "declared_checksum": "md5:47864a4401a8ea6f2a976e9db7073f7d",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "classify_line_type.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/classify_line_type.py.txt/content",
+   "declared_size": 4360,
+   "declared_checksum": "md5:84a05504e98ea4f1964ab4babe27baa7",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "excluded_sources.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/excluded_sources.tsv/content",
+   "declared_size": 19865,
+   "declared_checksum": "md5:06ca1d3d3e711f934ad547baa2e6a085",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "run_all.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/run_all.py.txt/content",
+   "declared_size": 1286,
+   "declared_checksum": "md5:7e234b7aa55f6688da39c198dbdbf7ca",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "yuju_instances.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/yuju_instances.tsv/content",
+   "declared_size": 25525821,
+   "declared_checksum": "md5:84af01db1c9051e4aa9fa4bf3eeacdca",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "moved_material.md",
+   "url": "https://zenodo.org/api/records/24387295/files/moved_material.md/content",
+   "declared_size": 8856,
+   "declared_checksum": "md5:97bbdcfd8c1c28a1d5841927b997ce6c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "strata.json",
+   "url": "https://zenodo.org/api/records/24387295/files/strata.json/content",
+   "declared_size": 1422,
+   "declared_checksum": "md5:5d1886539555774140452dcd729aacdc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "line_type_check.json",
+   "url": "https://zenodo.org/api/records/24387295/files/line_type_check.json/content",
+   "declared_size": 1366,
+   "declared_checksum": "md5:cc61959526345fe329ba2ad7473bc186",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "10_line_pool.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/10_line_pool.tsv/content",
+   "declared_size": 15656166,
+   "declared_checksum": "md5:8feb9d019c056e1d973fc2c347a852f9",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "strata_comparison.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/strata_comparison.tsv/content",
+   "declared_size": 364,
+   "declared_checksum": "md5:4abb5221dc1e3f9f57379f99565c2175",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "manifest.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/manifest.txt/content",
+   "declared_size": 129436,
+   "declared_checksum": "md5:0119a6aec46e46a6d765ed7396a5ecb3",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "08_source_inventory.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/08_source_inventory.tsv/content",
+   "declared_size": 207655,
+   "declared_checksum": "md5:2abb8958506d106d79b411a07c064222",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "normalise.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/normalise.py.txt/content",
+   "declared_size": 2620,
+   "declared_checksum": "md5:385c63e7f1155cecf296c508ec09ccdc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "cleaning_ledger.json",
+   "url": "https://zenodo.org/api/records/24387295/files/cleaning_ledger.json/content",
+   "declared_size": 1488,
+   "declared_checksum": "md5:d24a8e96c6fc62104776a7a725cee735",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "validate_46.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/validate_46.py.txt/content",
+   "declared_size": 10951,
+   "declared_checksum": "md5:682dd72e39688dd69f4be89b2694ecaa",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "count_rows.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/count_rows.py.txt/content",
+   "declared_size": 10121,
+   "declared_checksum": "md5:6930cf987a199087668fec6843a4a9dc",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "RENAME_TO_PY.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/RENAME_TO_PY.txt/content",
+   "declared_size": 996,
+   "declared_checksum": "md5:3b4d5fbb409d83bdfd6bf9621b84f04c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "table1_composition.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/table1_composition.tsv/content",
+   "declared_size": 353,
+   "declared_checksum": "md5:0e5c48f91a0910e037479a17aaa70e3d",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "table4_genres.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/table4_genres.tsv/content",
+   "declared_size": 618,
+   "declared_checksum": "md5:65df94be6b76757e5b824402373cc05c",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "lengths.json",
+   "url": "https://zenodo.org/api/records/24387295/files/lengths.json/content",
+   "declared_size": 503,
+   "declared_checksum": "md5:128be872ed8d8d1ab1befb68d5d8ba30",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "line_lengths.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/line_lengths.tsv/content",
+   "declared_size": 289,
+   "declared_checksum": "md5:7931524df7b36c755f457d178b6834ff",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "compare_strata.py.txt",
+   "url": "https://zenodo.org/api/records/24387295/files/compare_strata.py.txt/content",
+   "declared_size": 4664,
+   "declared_checksum": "md5:99de7d532a50a27fde508215fbccec56",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  },
+  {
+   "name": "12_review.tsv",
+   "url": "https://zenodo.org/api/records/24387295/files/12_review.tsv/content",
+   "declared_size": 8383093,
+   "declared_checksum": "md5:ebbb5b031c2aef13868e509e7dd24ed5",
+   "format": null,
+   "stored": null,
+   "skipped": "license 'cc-by-nc' is not on the download list"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
