@@ -101,3 +101,11 @@ The editorial thesis of the separate [Mashet textbook branch](https://github.com
 6. Before any GitHub repository tests, keep the prospective issue/discussion entry and same-thread actual-result follow-up requirements in §7. Source reviews and documentation-only writes are not presented as runtime tests. Ingestion, test, publication, app change and deployment have distinct authorization boundaries.
 
 Authoritative detailed protocols: [NexusBoard cross-domain research](https://github.com/AGI144348Outlook/NexusBoard/blob/main/research/Contract000_Research_Analysis_Publication.md), [issue review](https://github.com/AGI144348Outlook/NexusBoard/blob/main/research/REPOSITORY_ISSUES_REVIEW_PROTOCOL.md), [Neon catalog design](https://github.com/AGI144348Outlook/NexusBoard/blob/main/research/NEON_DOCUMENTATION_CATALOG_BOX.md). These supplementary processes remain subordinate to the standing privacy, provenance, test-publication and authority rules of Contract 000.
+
+## 11. Hourly gallery artwork (2026-11-21 amendment)
+
+On each hourly gallery run, finish at least one original, gallery-ready artwork for AetherDecay. Create the finished image and its title, exhibit wing, short caption, and alt text. A prompt, concept, incomplete image, or duplicate does not satisfy the hourly requirement.
+
+Add the finished work to the NexusBoard gallery portfolio on [`portfolio/redbubble`](https://github.com/AGI144348Outlook/NexusBoard/tree/portfolio/redbubble) and to [AetherDecay — The Disparate Gallery](https://aetherdecay-gallery.kind-grove-3997.chatgpt.site). Use one stable artwork identifier across destinations. Keep the original and metadata for recovery, check for duplicates before retrying, and verify the portfolio entry and published gallery entry independently. If a destination is unavailable, retain the finished work and resume the incomplete update without duplicating prior entries. Record what was completed and identify any missed hourly delivery.
+
+This work has its own hourly schedule. Gallery publication and portfolio additions are authorized for finished artwork in this workflow. Marketplace listings and changes to gallery access are outside this delegation.
