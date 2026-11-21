@@ -18,3 +18,7 @@ Keep the already configured hourly ChatGPT cadence. One selected repository per 
 ## Preserved work
 
 Identity/A-000, F-001, Library/mirror construction, MCP/TemplateApp and private Citadel work retain their source records and boundaries; process them when relevant to the selected repository. The new all-branch Scout audit does not certify Child Echo source promotion. Original proposals retain their approval status. See the current contract's legacy map and complete preserved earlier text.
+
+## Hourly AetherDecay gallery production
+
+Run a separate hourly gallery task under [Contract 000 §11](https://github.com/AGI144348Outlook/Echo_Green_Future/blob/main/Contract000_Audit/CONTRACT-000.md#11-hourly-gallery-artwork-2026-11-21-amendment). Finish at least one original gallery-ready artwork per run, add the work and its plaque to the gallery portfolios and publish it in AetherDecay — The Disparate Gallery. Record verified destinations and retain unfinished delivery steps for retry. This schedule is independent of the repository audit rotation.
