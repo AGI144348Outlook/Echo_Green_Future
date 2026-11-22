@@ -1,0 +1,737 @@
+{
+ "id": "huggingface:LisaMegaWatts/philosophy-corpus",
+ "title": "LisaMegaWatts/philosophy-corpus",
+ "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus",
+ "doi": null,
+ "description": "\n\t\n\t\t\n\t\n\t\n\t\tPhilosophy & Humanities Corpus\n\t\n\nCombined humanities and Wikipedia corpus for training small language models.\n\n\t\n\t\t\n\t\n\t\n\t\tDataset\n\t\n\n\n\t\n\t\t\nSplit\nLines\nSize\nDescription\n\n\n\t\t\ntrain.txt\n3.0M\n549 MB\nHumanities (368K lines) + WikiText-103 (2.6M lines)\n\n\nval.txt\n315K\n57 MB\nMatching validation split\n\n\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tSources\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tHumanities (368K lines, 66 MB)\n\t\n\n54 classical philosophy and humanities texts:\n\n\t\n\t\t\nCategory\nWorks\n\n\n\t\t\nPlato\nRepublic, Apology, Symposium, Phaedo… See the full description on the dataset page: https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus.",
+ "found_by_keywords": [
+  "philosophy"
+ ],
+ "topic_section": "echo study topics",
+ "provenance": {
+  "source": {
+   "value": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus",
+   "status": "unverified"
+  },
+  "version": {
+   "value": "5de10187ffeb505567900e730d2bff8c8ded82ba",
+   "status": "unverified"
+  },
+  "date": {
+   "value": "2026-02-26T04:55:49.000Z",
+   "status": "unverified"
+  },
+  "license": {
+   "value": "mit",
+   "normalized": "mit",
+   "status": "unverified"
+  },
+  "method": {
+   "value": "catalog API search (huggingface) for 'philosophy'",
+   "status": "unverified"
+  },
+  "checksum": {
+   "value": "sha256:9b93caf77e79d6f3922009652707cba9b08234878de604e029fa425894561d67",
+   "of": "record.raw.json.gz (uncompressed)",
+   "status": "unverified"
+  }
+ },
+ "fetched_at": "2026-11-22T16:28:29+00:00",
+ "files": [
+  {
+   "name": ".gitattributes",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/.gitattributes",
+   "declared_size": 2821,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "README.md",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/README.md",
+   "declared_size": 3273,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_categories.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_categories.txt",
+   "declared_size": 83447,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_ethics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_ethics.txt",
+   "declared_size": 649439,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_generation.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_generation.txt",
+   "declared_size": 158862,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_heavens.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_heavens.txt",
+   "declared_size": 230442,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_metaphysics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_metaphysics.txt",
+   "declared_size": 629362,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_physics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_physics.txt",
+   "declared_size": 474533,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_poetics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_poetics.txt",
+   "declared_size": 88522,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_politics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_politics.txt",
+   "declared_size": 583589,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_rhetoric.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_rhetoric.txt",
+   "declared_size": 370848,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/aristotle_soul.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/aristotle_soul.txt",
+   "declared_size": 183728,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/bacon_essays.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/bacon_essays.txt",
+   "declared_size": 303945,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/boethius_consolation.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/boethius_consolation.txt",
+   "declared_size": 255115,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/cicero_duties.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/cicero_duties.txt",
+   "declared_size": 719698,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/cicero_friendship.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/cicero_friendship.txt",
+   "declared_size": 167158,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/cicero_nature_gods.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/cicero_nature_gods.txt",
+   "declared_size": 1049069,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/descartes_meditations.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/descartes_meditations.txt",
+   "declared_size": 197335,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/descartes_method.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/descartes_method.txt",
+   "declared_size": 130407,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/diogenes_epicurus.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/diogenes_epicurus.txt",
+   "declared_size": 1125528,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/emerson_essays.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/emerson_essays.txt",
+   "declared_size": 418392,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/epictetus_discourses.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/epictetus_discourses.txt",
+   "declared_size": 331075,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/epictetus_enchiridion.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/epictetus_enchiridion.txt",
+   "declared_size": 71257,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/full_corpus.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/full_corpus.txt",
+   "declared_size": 26473556,
+   "declared_checksum": "sha256:befa698b83348cf768ea5313f833e50435ed350cdcdc3bb9c76f8525bab40933",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/hobbes_leviathan.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/hobbes_leviathan.txt",
+   "declared_size": 1230697,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/hume_understanding.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/hume_understanding.txt",
+   "declared_size": 353181,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/kant_pure_reason.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/kant_pure_reason.txt",
+   "declared_size": 1292640,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/latin_grammar.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/latin_grammar.txt",
+   "declared_size": 630819,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/locke_government.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/locke_government.txt",
+   "declared_size": 318613,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/lucretius_nature.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/lucretius_nature.txt",
+   "declared_size": 476411,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/machiavelli_prince.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/machiavelli_prince.txt",
+   "declared_size": 175607,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/marcus_meditations.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/marcus_meditations.txt",
+   "declared_size": 405393,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/mill_liberty.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/mill_liberty.txt",
+   "declared_size": 311180,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/mill_utilitarianism.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/mill_utilitarianism.txt",
+   "declared_size": 163595,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/montaigne_essays.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/montaigne_essays.txt",
+   "declared_size": 3064620,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/nietzsche_beyond.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/nietzsche_beyond.txt",
+   "declared_size": 388951,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/nietzsche_zarathustra.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/nietzsche_zarathustra.txt",
+   "declared_size": 654197,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_apology.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_apology.txt",
+   "declared_size": 87344,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_crito.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_crito.txt",
+   "declared_size": 36319,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_gorgias.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_gorgias.txt",
+   "declared_size": 334876,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_laws.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_laws.txt",
+   "declared_size": 1344542,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_meno.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_meno.txt",
+   "declared_size": 125640,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_phaedo.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_phaedo.txt",
+   "declared_size": 237288,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_phaedrus.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_phaedrus.txt",
+   "declared_size": 215536,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_protagoras.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_protagoras.txt",
+   "declared_size": 156371,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_republic.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_republic.txt",
+   "declared_size": 1219805,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_symposium.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_symposium.txt",
+   "declared_size": 181147,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_theaetetus.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_theaetetus.txt",
+   "declared_size": 377716,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/plato_timaeus.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/plato_timaeus.txt",
+   "declared_size": 454868,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/posterior_analytics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/posterior_analytics.txt",
+   "declared_size": 197065,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/prior_analytics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/prior_analytics.txt",
+   "declared_size": 265881,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/rousseau_social_contract.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/rousseau_social_contract.txt",
+   "declared_size": 721319,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/schopenhauer_essays.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/schopenhauer_essays.txt",
+   "declared_size": 433210,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/seneca_moral_essays.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/seneca_moral_essays.txt",
+   "declared_size": 837933,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/spinoza_ethics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/spinoza_ethics.txt",
+   "declared_size": 511722,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/thoreau_walden.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/thoreau_walden.txt",
+   "declared_size": 645382,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/topics.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/topics.txt",
+   "declared_size": 399988,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "data/train-00000-of-00005.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/train-00000-of-00005.parquet",
+   "declared_size": 296315180,
+   "declared_checksum": "sha256:7dbd11d13894961e5555f165d02b76990184bb99f151240ce9ff932dbd82f8d3",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/train-00001-of-00005.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/train-00001-of-00005.parquet",
+   "declared_size": 292421875,
+   "declared_checksum": "sha256:684ce5484b077ce83e04a9d0d0a273448053e119fd511c5c4ae0b551fbe07e66",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/train-00002-of-00005.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/train-00002-of-00005.parquet",
+   "declared_size": 292466676,
+   "declared_checksum": "sha256:909575902b40eb0f2ac854444ec05e868617a2403e51f73f74513ab33cb72229",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/train-00003-of-00005.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/train-00003-of-00005.parquet",
+   "declared_size": 292302873,
+   "declared_checksum": "sha256:cf83da61c6a977b7079ba89d763afee5cc5e2ad3b41bdd9f987043a2887732d6",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/train-00004-of-00005.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/train-00004-of-00005.parquet",
+   "declared_size": 292348058,
+   "declared_checksum": "sha256:eead46544f323f4b383b44cd827d7c35fa8e8daed99474860583b1ee1c690b30",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/training_data.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/training_data.txt",
+   "declared_size": 24916665,
+   "declared_checksum": "sha256:e8f481c56a12be421b88d8d5465724b91538aa415de1a2bc61ae0de910e38660",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "data/validation-00000-of-00001.parquet",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/data/validation-00000-of-00001.parquet",
+   "declared_size": 162478120,
+   "declared_checksum": "sha256:79bcd26ccb612b9304dcb29d7cbd790affa4e908986df0efdc95fd9758e7824a",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "encode_corpus.py",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/encode_corpus.py",
+   "declared_size": 3800,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "merges.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/merges.txt",
+   "declared_size": 13778,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "tokenizer.json",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/tokenizer.json",
+   "declared_size": 130033,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "tokenizer_4k.json",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/tokenizer_4k.json",
+   "declared_size": 268197,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train.bin",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train.bin",
+   "declared_size": 3179716468,
+   "declared_checksum": "sha256:4f5f5ea478864950655faeb01e218ba948ef02c7f7fd51e106d4e5a7cd9c2ece",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train.txt",
+   "declared_size": 549452974,
+   "declared_checksum": "sha256:1f92c37f3aae57bb73a472cc9ae8b3f4a53fda090137201282cd899ad7fcaa54",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train_enriched.jsonl",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train_enriched.jsonl",
+   "declared_size": 34042920,
+   "declared_checksum": "sha256:83d26d93eca643cf2861dfb6343808e854007f85e3c5267c315efc490fd6d6d4",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "train_philosophy.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train_philosophy.txt",
+   "declared_size": 9160489,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train_quadrivium.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train_quadrivium.txt",
+   "declared_size": 1666534,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  },
+  {
+   "name": "train_trivium.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/train_trivium.txt",
+   "declared_size": 11539626,
+   "declared_checksum": "sha256:874057a5df9727ce6273243cc5fce432034fec91d4ee5cedd5ddc05ae01e7fdf",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val.bin",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/val.bin",
+   "declared_size": 352924668,
+   "declared_checksum": "sha256:e165e076f51238884e752d0ea78632bf3e9904e5bf32ab993a6d6e1ffae63ac5",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "val.txt",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/val.txt",
+   "declared_size": 57239583,
+   "declared_checksum": "sha256:764486f49bad12e87705851aa3a31e2a80d40544a87c2e599f9744a1648d703c",
+   "format": null,
+   "stored": null,
+   "skipped": "larger than 10 MB"
+  },
+  {
+   "name": "vocab.json",
+   "url": "https://huggingface.co/datasets/LisaMegaWatts/philosophy-corpus/resolve/5de10187ffeb505567900e730d2bff8c8ded82ba/vocab.json",
+   "declared_size": 33568,
+   "declared_checksum": null,
+   "format": null,
+   "stored": null,
+   "skipped": "repository file budget (300 MB) reached"
+  }
+ ],
+ "skip_reason": null,
+ "executable": false
+}
