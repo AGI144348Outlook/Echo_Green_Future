@@ -33,6 +33,10 @@ Saved work lives in the browser: `echo-devsuite-v1` (Suite) and `ckt:*` (Keyboar
 - The substrate (`keyboard/src/substrate_data.py` and the Python in `page.html`) defines every keyboard, use,
   example and check: edit it to customize.
 
+## Neon notebook card references
+
+The canvas now has a read-only **Notebook card** reference item. It stores a canonical card ID and layout, and keeps any fetched card projection in memory only. The reference UI expects an authenticated exact-card endpoint; see [`docs/NEON_NOTEBOOK_CARD_WINDOW_IMPLEMENTATION.md`](docs/NEON_NOTEBOOK_CARD_WINDOW_IMPLEMENTATION.md) for the current API boundary and verification status.
+
 ## Build
 
 ```
