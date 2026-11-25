@@ -436,7 +436,7 @@ function renderNotebookCard(card, details){
 }
 async function loadNotebookCard(it,idInput,baseInput,state,details){
   const id=idInput.value.trim().toUpperCase();
-  if(!/^C-\\d{5}$/.test(id)){ state.textContent="Enter a valid card ID, e.g. C-00015."; return; }
+  if(!/^C-\d{5}$/.test(id)){ state.textContent="Enter a valid card ID, e.g. C-00015."; return; }
   let base;
   try{ base=new URL(baseInput.value.trim()||NOTEBOOK_API_DEFAULT); }
   catch(e){ state.textContent="Enter a valid Notebook Console HTTPS origin."; return; }
