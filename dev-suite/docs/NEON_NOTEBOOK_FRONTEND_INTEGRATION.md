@@ -46,8 +46,8 @@ Implement a notebook-card window that:
 
 Suggested initial service contract (names are proposals, not existing endpoints):
 
-- `GET /api/notebook/search?q=...` — authorized compact search results;
-- `GET /api/notebook/cards/:id` — authorized card projection.
+- Existing console route: `GET /api/cards?q=...` — search/list projection with optional `status`, `box`, and `limit`.
+- Echo frontend prototype expects a proposed `GET /api/cards/:id` — exact authorized card projection. This route is not present in the inspected console source yet.
 
 The card projection should initially expose only fields already approved for the notebook's reader interface. Do not infer permission to read evidence, private source text, correction history, or other tables from access to `notebook.card`.
 
@@ -79,6 +79,12 @@ MCP operations should invoke deterministic application services. They must not r
 - A normal search/open/move workflow consumes no external AI-provider generation quota.
 - Existing inversion, nested canvas, undo/redo, and Matrixed File behavior remain intact.
 - No schema or permission changes are made without explicit approval.
+
+## API integration blocker observed during implementation
+
+The current `Open_Diagram/notebook-console/app/api/cards/route.ts` provides only `GET /api/cards` (search/list). It returns card rows for a full-text query and does not guarantee exact lookup by card ID. The route source does not set CORS headers, and the Vercel project has SSO protection enabled for all deployment URLs.
+
+The Echo branch now contains a card-reference UI and an adapter that requests `GET /api/cards/:id`. That adapter cannot complete a browser cross-origin read until the Notebook Console exposes an exact-card route and an authenticated CORS or same-origin proxy boundary. This supporting change is not included in the Echo-only branch.
 
 ## Known unknowns to resolve during implementation
 
