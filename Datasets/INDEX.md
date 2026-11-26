@@ -4,12 +4,12 @@
 
 | Source | Title | License | Files stored | Keywords | Record |
 |---|---|---|---|---|---|
+| huggingface | SciAILab/OSWorld-Science-data | cc-by-nc | 0/0 | science | [record](catalog/huggingface/SciAILab_OSWorld-Science-data/record.json) |
 | zenodo | Valley Geometry Data and MATLAB Script for Xue Mountain Glacial Cirque No. 2, Taiwan | cc-by | 0/6 | Indus Valley script | [record](catalog/zenodo/24501196/record.json) |
 | huggingface | argus-science/et3space-workcell | cc-by | 0/11 | science | [record](catalog/huggingface/argus-science_et3space-workcell/record.json) |
 | huggingface | Royal-lobster/10001-Science-Facts | mit | 0/3 | science | [record](catalog/huggingface/Royal-lobster_10001-Science-Facts/record.json) |
 | huggingface | AItonomy/ScienceIDE-Traces | unknown | 0/0 | science | [record](catalog/huggingface/AItonomy_ScienceIDE-Traces/record.json) |
 | huggingface | Rapidata/world-models-physics-generation-human-feedback-benchmark | cc-by | 0/165 | physics | [record](catalog/huggingface/Rapidata_world-models-physics-generation-human-feedback-benchmark/record.json) |
-| huggingface | SciAILab/OSWorld-Science-data | cc-by-nc | 0/0 | science | [record](catalog/huggingface/SciAILab_OSWorld-Science-data/record.json) |
 | zenodo | LEXICAL-SEMANTIC CLASSIFICATION AND NAMING MOTIVATION OF TOPONYMS IN THE ANDIJAN REGION: A | cc-by | 0/1 | etymology | [record](catalog/zenodo/24498707/record.json) |
 | huggingface | ianncity/GLM-5.2-Science | apache-2.0 | 0/4 | science | [record](catalog/huggingface/ianncity_GLM-5.2-Science/record.json) |
 | huggingface | LisaMegaWatts/philosophy-corpus | mit | 0/77 | philosophy | [record](catalog/huggingface/LisaMegaWatts_philosophy-corpus/record.json) |
